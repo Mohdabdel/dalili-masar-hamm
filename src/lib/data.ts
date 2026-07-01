@@ -1,7 +1,10 @@
 // ============ Home Events ============
+export type ActivityCategory = "home" | "community";
+
 export interface HomeEvent {
   id: string;
   name: string;
+  category: ActivityCategory;
   currentTask: string;
   duration: string;
   steps: string[];
