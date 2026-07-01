@@ -1,87 +1,63 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
-import { Moon, Tv, Sprout, Sparkles, ShoppingCart, type LucideIcon } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Home as HomeIcon, Users, Landmark, ChevronLeft } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
-import { SearchBar } from "@/components/SearchBar";
-import { SmallCard } from "@/components/SmallCard";
-import { DetailSheet } from "@/components/DetailSheet";
-import { homeEvents, type HomeEvent } from "@/lib/data";
+import { homeEvents, resources } from "@/lib/data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "الأنشطة والمشاركات | دليلي - مسار همم" },
-      { name: "description", content: "أنشطة يومية منظمة لأصحاب الهمم مع خطوات تفاعلية وأفكار للدعم الحسي." },
+      { title: "دليلي - مسار همم" },
+      { name: "description", content: "منصة تخطيط انتقالي لأصحاب الهمم: أنشطة منزلية ومجتمعية ومصادر معتمدة." },
     ],
   }),
-  component: ActivitiesPage,
+  component: LandingPage,
 });
 
-const iconMap: Record<string, LucideIcon> = {
-  "EV-01": Moon,
-  "EV-02": Tv,
-  "EV-03": Sprout,
-  "EV-04": Sparkles,
-  "EV-05": ShoppingCart,
-};
+const homeCount = homeEvents.filter((e) => e.category === "home").length;
+const communityCount = homeEvents.filter((e) => e.category === "community").length;
 
-function ActivitiesPage() {
-  const [q, setQ] = useState("");
-  const [active, setActive] = useState<HomeEvent | null>(null);
+const categories = [
+  {
+    to: "/activities/home" as const,
+    title: "الأنشطة المنزلية",
+    subtitle: `${homeCount} نشاط داخل المنزل`,
+    icon: HomeIcon,
+  },
+  {
+    to: "/activities/community" as const,
+    title: "الأنشطة المجتمعية",
+    subtitle: `${communityCount} نشاط خارج المنزل`,
+    icon: Users,
+  },
+  {
+    to: "/resources" as const,
+    title: "مصادر مجتمعية",
+    subtitle: `${resources.length} خدمة وجهة معتمدة`,
+    icon: Landmark,
+  },
+];
 
-  const filtered = useMemo(() => {
-    const s = q.trim();
-    if (!s) return homeEvents;
-    return homeEvents.filter((e) =>
-      [e.id, e.name, e.currentTask].some((f) => f.includes(s)),
-    );
-  }, [q]);
-
+function LandingPage() {
   return (
-    <PageShell title="الأنشطة والمشاركات" subtitle={`${filtered.length} نشاط جاهز للتنفيذ`}>
-      <SearchBar value={q} onChange={setQ} placeholder="ابحث عن نشاط..." />
-      <div className="mt-4 space-y-3">
-        {filtered.map((e) => (
-          <SmallCard
-            key={e.id}
-            title={e.name}
-            meta={`⏱ ${e.duration}`}
-            icon={iconMap[e.id] ?? Sparkles}
-            onClick={() => setActive(e)}
-          />
+    <PageShell title="اختر الفئة" subtitle="ابدأ رحلتك بتحديد نوع المحتوى">
+      <div className="mt-2 space-y-4">
+        {categories.map(({ to, title, subtitle, icon: Icon }) => (
+          <Link
+            key={to}
+            to={to}
+            className="group flex items-center gap-4 rounded-3xl border border-border/60 bg-card p-5 shadow-card-soft transition-all hover:-translate-y-0.5 hover:border-gold/60 hover:shadow-elegant"
+          >
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground shadow-elegant">
+              <Icon className="h-7 w-7" strokeWidth={2.2} />
+            </div>
+            <div className="min-w-0 flex-1">
+              <h3 className="text-lg font-bold text-foreground">{title}</h3>
+              <p className="mt-1 text-xs font-medium text-muted-foreground">{subtitle}</p>
+            </div>
+            <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
+          </Link>
         ))}
-        {filtered.length === 0 && (
-          <p className="py-10 text-center text-sm text-muted-foreground">
-            لا توجد نتائج مطابقة
-          </p>
-        )}
       </div>
-
-      <DetailSheet
-        open={!!active}
-        onOpenChange={(o) => !o && setActive(null)}
-        eyebrow={active?.id}
-        title={active?.name ?? ""}
-        headline={active?.currentTask}
-        headlineLabel={`المهمة الحالية · ${active?.duration ?? ""}`}
-        checklist={active?.steps.map((s, i) => ({ key: `${active.id}-${i}`, label: s }))}
-        sections={
-          active
-            ? [
-                {
-                  id: "req",
-                  title: "متطلبات تحسين المشاركة والدعم الحسي",
-                  content: active.requirements,
-                },
-                {
-                  id: "fun",
-                  title: "أفكار لجعل المشاركة ممتعة",
-                  content: active.fun,
-                },
-              ]
-            : []
-        }
-      />
     </PageShell>
   );
 }
