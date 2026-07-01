@@ -1,7 +1,10 @@
 // ============ Home Events ============
+export type ActivityCategory = "home" | "community";
+
 export interface HomeEvent {
   id: string;
   name: string;
+  category: ActivityCategory;
   currentTask: string;
   duration: string;
   steps: string[];
@@ -12,6 +15,7 @@ export interface HomeEvent {
 export const homeEvents: HomeEvent[] = [
   {
     id: "EV-01",
+    category: "home",
     name: "الاستعداد للنوم والتهيئة الحسية المسائية",
     currentTask: "إطفاء الأنوار وتجهيز الملابس وضبط المنبه",
     duration: "20 دقيقة",
@@ -26,6 +30,7 @@ export const homeEvents: HomeEvent[] = [
   },
   {
     id: "EV-02",
+    category: "home",
     name: "مشاهدة التلفاز والاختيار الرقمي المستقل",
     currentTask: "تشغيل التلفاز واستخدام الريموت لاختيار البرنامج والتحكم بالصوت",
     duration: "30 دقيقة",
@@ -40,6 +45,7 @@ export const homeEvents: HomeEvent[] = [
   },
   {
     id: "EV-03",
+    category: "home",
     name: "رعاية النباتات والزراعة المنزلية",
     currentTask: "فحص رطوبة التربة باللمس وري نباتات الحديقة أو الشرفة بالكمية المناسبة",
     duration: "15 دقيقة",
@@ -54,6 +60,7 @@ export const homeEvents: HomeEvent[] = [
   },
   {
     id: "EV-04",
+    category: "home",
     name: "ترتيب الغرفة وتنظيف المساحة الشخصية",
     currentTask: "مسح الأسطح بالمناديل المخصصة وإعادة الأدوات الشخصية لأماكنها الصحيحة",
     duration: "20 دقيقة",
@@ -68,6 +75,7 @@ export const homeEvents: HomeEvent[] = [
   },
   {
     id: "EV-05",
+    category: "community",
     name: "التسوق الذكي وإدارة المصروف",
     currentTask: "مقارنة أسعار البدائل في الجمعية وحساب الميزانية المتبقية",
     duration: "20 دقيقة",
