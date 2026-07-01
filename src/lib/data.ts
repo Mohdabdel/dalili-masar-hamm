@@ -16,7 +16,7 @@ export interface HomeEvent {
   steps: string[];
   requirements: string;
   fun: string;
-  image: string;
+  image?: string;
 }
 
 export const activityImages: Record<string, string> = {
