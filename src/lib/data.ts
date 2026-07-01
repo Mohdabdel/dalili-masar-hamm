@@ -1,4 +1,10 @@
 // ============ Home Events ============
+import actSleep from "@/assets/act-sleep.jpg";
+import actTv from "@/assets/act-tv.jpg";
+import actPlants from "@/assets/act-plants.jpg";
+import actClean from "@/assets/act-clean.jpg";
+import actShopping from "@/assets/act-shopping.jpg";
+
 export type ActivityCategory = "home" | "community";
 
 export interface HomeEvent {
@@ -10,7 +16,16 @@ export interface HomeEvent {
   steps: string[];
   requirements: string;
   fun: string;
+  image?: string;
 }
+
+export const activityImages: Record<string, string> = {
+  "EV-01": actSleep,
+  "EV-02": actTv,
+  "EV-03": actPlants,
+  "EV-04": actClean,
+  "EV-05": actShopping,
+};
 
 export const homeEvents: HomeEvent[] = [
   {

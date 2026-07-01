@@ -1,11 +1,10 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { Moon, Tv, Sprout, Sparkles, ShoppingCart, type LucideIcon } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { SearchBar } from "@/components/SearchBar";
-import { SmallCard } from "@/components/SmallCard";
+import { ImageTile } from "@/components/ImageTile";
 import { DetailSheet } from "@/components/DetailSheet";
-import { homeEvents, type HomeEvent, type ActivityCategory } from "@/lib/data";
+import { homeEvents, activityImages, type HomeEvent, type ActivityCategory } from "@/lib/data";
 
 export const Route = createFileRoute("/activities/$category")({
   parseParams: (p) => {
@@ -35,13 +34,7 @@ export const Route = createFileRoute("/activities/$category")({
   ),
 });
 
-const iconMap: Record<string, LucideIcon> = {
-  "EV-01": Moon,
-  "EV-02": Tv,
-  "EV-03": Sprout,
-  "EV-04": Sparkles,
-  "EV-05": ShoppingCart,
-};
+
 
 function ActivitiesPage() {
   const { category } = Route.useParams();
@@ -65,20 +58,21 @@ function ActivitiesPage() {
   return (
     <PageShell title={title} subtitle={`${filtered.length} نشاط جاهز للتنفيذ`}>
       <SearchBar value={q} onChange={setQ} placeholder="ابحث عن نشاط..." />
-      <div className="mt-4 space-y-3">
+      <div className="mt-4 grid grid-cols-2 gap-3">
         {filtered.map((e) => (
-          <SmallCard
+          <ImageTile
             key={e.id}
             title={e.name}
-            meta={`⏱ ${e.duration}`}
-            icon={iconMap[e.id] ?? Sparkles}
+            meta={e.duration}
+            image={activityImages[e.id]}
             onClick={() => setActive(e)}
           />
         ))}
         {filtered.length === 0 && (
-          <p className="py-10 text-center text-sm text-muted-foreground">لا توجد نتائج مطابقة</p>
+          <p className="col-span-2 py-10 text-center text-sm text-muted-foreground">لا توجد نتائج مطابقة</p>
         )}
       </div>
+
 
       <DetailSheet
         open={!!active}
