@@ -13,6 +13,7 @@ import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as MessagesRouteImport } from './routes/messages'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ActivitiesCategoryRouteImport } from './routes/activities.$category'
 
 const ResourcesRoute = ResourcesRouteImport.update({
   id: '/resources',
@@ -34,18 +35,25 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ActivitiesCategoryRoute = ActivitiesCategoryRouteImport.update({
+  id: '/activities/$category',
+  path: '/activities/$category',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/calendar': typeof CalendarRoute
   '/messages': typeof MessagesRoute
   '/resources': typeof ResourcesRoute
+  '/activities/$category': typeof ActivitiesCategoryRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/calendar': typeof CalendarRoute
   '/messages': typeof MessagesRoute
   '/resources': typeof ResourcesRoute
+  '/activities/$category': typeof ActivitiesCategoryRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,25 @@ export interface FileRoutesById {
   '/calendar': typeof CalendarRoute
   '/messages': typeof MessagesRoute
   '/resources': typeof ResourcesRoute
+  '/activities/$category': typeof ActivitiesCategoryRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/calendar' | '/messages' | '/resources'
+  fullPaths:
+    | '/'
+    | '/calendar'
+    | '/messages'
+    | '/resources'
+    | '/activities/$category'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/calendar' | '/messages' | '/resources'
-  id: '__root__' | '/' | '/calendar' | '/messages' | '/resources'
+  to: '/' | '/calendar' | '/messages' | '/resources' | '/activities/$category'
+  id:
+    | '__root__'
+    | '/'
+    | '/calendar'
+    | '/messages'
+    | '/resources'
+    | '/activities/$category'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +87,7 @@ export interface RootRouteChildren {
   CalendarRoute: typeof CalendarRoute
   MessagesRoute: typeof MessagesRoute
   ResourcesRoute: typeof ResourcesRoute
+  ActivitiesCategoryRoute: typeof ActivitiesCategoryRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +120,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/activities/$category': {
+      id: '/activities/$category'
+      path: '/activities/$category'
+      fullPath: '/activities/$category'
+      preLoaderRoute: typeof ActivitiesCategoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +135,7 @@ const rootRouteChildren: RootRouteChildren = {
   CalendarRoute: CalendarRoute,
   MessagesRoute: MessagesRoute,
   ResourcesRoute: ResourcesRoute,
+  ActivitiesCategoryRoute: ActivitiesCategoryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
