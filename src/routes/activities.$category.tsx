@@ -34,13 +34,7 @@ export const Route = createFileRoute("/activities/$category")({
   ),
 });
 
-const iconMap: Record<string, LucideIcon> = {
-  "EV-01": Moon,
-  "EV-02": Tv,
-  "EV-03": Sprout,
-  "EV-04": Sparkles,
-  "EV-05": ShoppingCart,
-};
+
 
 function ActivitiesPage() {
   const { category } = Route.useParams();
