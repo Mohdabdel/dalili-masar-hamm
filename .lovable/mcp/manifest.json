@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "sdk_version": "0.20.0",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "daleeli-masar-himam-mcp",
+      "version": "0.1.0",
+      "title": "Daleeli - Masar Himam MCP"
+    },
+    "tools": [
+      {
+        "name": "list_activities",
+        "title": "List activities",
+        "description": "List daily-living activities (home or community) with steps, duration, requirements, and fun hooks.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "category": {
+              "default": "all",
+              "description": "Filter by activity category.",
+              "type": "string",
+              "enum": [
+                "home",
+                "community",
+                "all"
+              ]
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_interpreted_messages",
+        "title": "List interpreted behavior messages",
+        "description": "List interpreted behaviors: observed behavior, its likely meaning, and a caregiver recommendation.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_resources",
+        "title": "List institutional resources",
+        "description": "List UAE institutional resources for people of determination (entity, steps to access, benefits).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_calendar_events",
+        "title": "List community calendar events",
+        "description": "List upcoming community events relevant to people of determination.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
