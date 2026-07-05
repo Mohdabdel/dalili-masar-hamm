@@ -29,14 +29,34 @@ export const Route = createFileRoute("/")({
 type QuickCard = {
   title: string;
   to: "/activities/home" | "/activities/community" | "/resources";
+  search?: { open: string };
   icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
 };
 
 const quickCards: QuickCard[] = [
-  { title: "اليوم يوم غسل الملابس", to: "/activities/home", icon: Shirt },
-  { title: "سنذهب للتسوق", to: "/activities/community", icon: ShoppingCart },
-  { title: "لدينا موعد طبي", to: "/activities/community", icon: Stethoscope },
-  { title: "نحتاج إلى خدمة أو دعم", to: "/resources", icon: LifeBuoy },
+  {
+    title: "اليوم يوم غسل الملابس",
+    to: "/activities/home",
+    search: { open: "OP-COLLECT" },
+    icon: Shirt,
+  },
+  {
+    title: "سنذهب للتسوق",
+    to: "/activities/community",
+    search: { open: "COP-LIST" },
+    icon: ShoppingCart,
+  },
+  {
+    title: "لدينا موعد طبي",
+    to: "/activities/community",
+    search: { open: "COP-CHECKIN" },
+    icon: Stethoscope,
+  },
+  {
+    title: "نحتاج إلى خدمة أو دعم",
+    to: "/resources",
+    icon: LifeBuoy,
+  },
 ];
 
 const mainPortals = [
@@ -81,7 +101,31 @@ function LandingPage() {
         </Link>
       </section>
 
-      {/* القوائم الرئيسية الثلاث - أكبر وأوضح */}
+      {/* ما الذي يحدث اليوم؟ - نقطة بداية سريعة */}
+      <section className="mt-8">
+        <h3 className="mb-4 font-display text-xl font-bold text-foreground">
+          ما الذي يحدث اليوم؟
+        </h3>
+        <div className="grid grid-cols-2 gap-3">
+          {quickCards.map(({ title, to, search, icon: Icon }) => (
+            <Link
+              key={title}
+              to={to}
+              search={search as never}
+              className="group flex h-full flex-col justify-between gap-3 rounded-2xl border-2 border-border bg-card p-4 text-right shadow-card-soft transition-all hover:-translate-y-0.5 hover:border-gold"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-primary">
+                <Icon className="h-6 w-6" strokeWidth={2} />
+              </div>
+              <p className="text-base font-semibold leading-snug text-foreground">
+                {title}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* القوائم الرئيسية الثلاث */}
       <section className="mt-8">
         <h3 className="mb-4 font-display text-xl font-bold text-foreground">
           القوائم الرئيسية
@@ -107,30 +151,8 @@ function LandingPage() {
           ))}
         </div>
       </section>
-
-      {/* اختصارات اليوم - أربعة فقط */}
-      <section className="mt-8">
-        <h3 className="mb-4 font-display text-xl font-bold text-foreground">
-          ابدأ من حدث اليوم
-        </h3>
-        <div className="grid grid-cols-2 gap-3">
-          {quickCards.map(({ title, to, icon: Icon }) => (
-            <Link
-              key={title}
-              to={to}
-              className="group flex h-full flex-col justify-between gap-3 rounded-2xl border-2 border-border bg-card p-4 text-right shadow-card-soft transition-all hover:-translate-y-0.5 hover:border-gold"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-primary">
-                <Icon className="h-6 w-6" strokeWidth={2} />
-              </div>
-              <p className="text-base font-semibold leading-snug text-foreground">
-                {title}
-              </p>
-            </Link>
-          ))}
-        </div>
-      </section>
     </PageShell>
   );
 }
+
 

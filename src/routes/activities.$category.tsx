@@ -1,15 +1,20 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
+import { z } from "zod";
 import { PageShell } from "@/components/PageShell";
 import { HomeHierarchy } from "@/components/HomeHierarchy";
 import { communityHierarchy } from "@/lib/community-hierarchy";
 import type { ActivityCategory } from "@/lib/data";
 
+const searchSchema = z.object({
+  open: z.string().optional(),
+});
 
 export const Route = createFileRoute("/activities/$category")({
   parseParams: (p) => {
     if (p.category !== "home" && p.category !== "community") throw notFound();
     return { category: p.category as ActivityCategory };
   },
+  validateSearch: searchSchema,
   head: ({ params }) => {
     const isHome = params.category === "home";
     const title = isHome ? "الأنشطة المنزلية" : "الأنشطة المجتمعية";
@@ -35,6 +40,7 @@ export const Route = createFileRoute("/activities/$category")({
 
 function ActivitiesPage() {
   const { category } = Route.useParams();
+  const { open } = Route.useSearch();
 
   if (category === "home") {
     return (
@@ -43,7 +49,7 @@ function ActivitiesPage() {
         subtitle="مجال ← نشاط عام ← حدث حياة ← فرصة مشاركة ← بطاقة"
         breadcrumbs={[{ label: "الأنشطة المنزلية" }]}
       >
-        <HomeHierarchy />
+        <HomeHierarchy openOpportunityId={open} />
       </PageShell>
     );
   }
@@ -54,10 +60,11 @@ function ActivitiesPage() {
       subtitle="مجال ← نشاط عام ← حدث حياة ← فرصة مشاركة ← بطاقة"
       breadcrumbs={[{ label: "الأنشطة المجتمعية" }]}
     >
-      <HomeHierarchy domains={communityHierarchy} />
+      <HomeHierarchy domains={communityHierarchy} openOpportunityId={open} />
     </PageShell>
   );
 }
+
 
 
 

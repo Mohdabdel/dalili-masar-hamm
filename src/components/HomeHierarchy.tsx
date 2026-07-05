@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -20,6 +20,8 @@ import {
 
 interface HierarchyViewProps {
   domains?: HomeDomain[];
+  /** Deep-link: auto-open this opportunity id on mount. */
+  openOpportunityId?: string;
 }
 
 interface ActiveContext {
@@ -29,8 +31,25 @@ interface ActiveContext {
   opportunity: Opportunity;
 }
 
-export function HomeHierarchy({ domains = homeHierarchy }: HierarchyViewProps) {
+export function HomeHierarchy({ domains = homeHierarchy, openOpportunityId }: HierarchyViewProps) {
   const [active, setActive] = useState<ActiveContext | null>(null);
+
+  useEffect(() => {
+    if (!openOpportunityId) return;
+    for (const domain of domains) {
+      for (const activity of domain.activities) {
+        for (const event of activity.events) {
+          for (const opportunity of event.opportunities) {
+            if (opportunity.id === openOpportunityId) {
+              setActive({ domain, activity, event, opportunity });
+              return;
+            }
+          }
+        }
+      }
+    }
+  }, [openOpportunityId, domains]);
+
 
   const toData = (ctx: ActiveContext): ParticipationCardData => {
     const c = ctx.opportunity.card;
