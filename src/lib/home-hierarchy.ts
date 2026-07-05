@@ -15,6 +15,7 @@ export interface FullCard {
   support: string;
   levels: ParticipationLevels;
   progressIndicators: string[];
+  teachingAids?: string[];
   nextStep: string;
 }
 
