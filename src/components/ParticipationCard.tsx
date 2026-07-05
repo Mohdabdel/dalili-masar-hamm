@@ -111,20 +111,19 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
 
         <SheetHeader className="px-5 pt-4 pb-2 text-right">
           <div className="flex flex-wrap items-center gap-1.5">
-            <Badge variant="secondary" className="bg-primary/10 text-primary">
-              {data.id}
-            </Badge>
             <Badge variant="outline" className="text-[10px]">{data.domain}</Badge>
-            <Badge variant="outline" className="text-[10px]">{data.generalActivity}</Badge>
             <Badge variant="outline" className="text-[10px]">{data.lifeEvent}</Badge>
           </div>
           <SheetTitle className="text-right text-xl font-bold leading-snug">
             {data.title}
           </SheetTitle>
-          <p className="text-[12px] text-muted-foreground">
-            فرصة المشاركة: <span className="font-semibold text-foreground">{data.opportunity}</span>
-          </p>
+          {data.description && (
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {data.description}
+            </p>
+          )}
         </SheetHeader>
+
 
         <div className="space-y-4 px-5 pb-6">
           {data.whyParticipate && (
