@@ -16,13 +16,6 @@ import {
   WashingMachine,
 } from "lucide-react";
 
-const LEARNER_STEPS = [
-  { label: "اذهب إلى الغرفة", icon: ChevronLeft },
-  { label: "اجمع الملابس", icon: Shirt },
-  { label: "ضعها في السلة", icon: ShoppingBasket },
-  { label: "انقل السلة", icon: WashingMachine },
-];
-
 const VISUAL_AIDS = [
   { label: "سلة الملابس", icon: ShoppingBasket },
   { label: "الملابس المستخدمة", icon: Shirt },
