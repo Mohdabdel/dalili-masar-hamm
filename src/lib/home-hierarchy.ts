@@ -17,6 +17,10 @@ export interface FullCard {
   progressIndicators: string[];
   teachingAids?: string[];
   nextStep: string;
+  expectedMinutes?: number;
+  needsOutside?: boolean;
+  needsTools?: boolean;
+  keywords?: string[];
 }
 
 export interface Opportunity {
