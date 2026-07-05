@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { LayoutGrid, MessageCircle, Landmark, CalendarDays } from "lucide-react";
+import { LayoutGrid, MessageCircle, Landmark, CalendarDays, HelpCircle } from "lucide-react";
 
 const tabs = [
   { to: "/", label: "الفئات", icon: LayoutGrid },
