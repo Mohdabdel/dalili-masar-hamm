@@ -8,9 +8,8 @@ import {
   ShoppingCart,
   Stethoscope,
   LifeBuoy,
-  Sparkles,
-  MapPin,
 } from "lucide-react";
+
 import { PageShell } from "@/components/PageShell";
 
 export const Route = createFileRoute("/")({
