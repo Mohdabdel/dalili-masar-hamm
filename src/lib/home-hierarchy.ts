@@ -48,19 +48,14 @@ export interface HomeDomain {
   activities: GeneralActivity[];
 }
 
-const defaultLevels: ParticipationLevels = {
-  guided: "يشارك في خطوة واحدة بعد تلميح مباشر.",
-  shared: "ينفذ عدة خطوات بمساندة بسيطة.",
-  independent: "يتابع الفرصة كاملة ويتحقق من النتيجة.",
-};
+const oppCard = (id: string, card: FullCard): Opportunity => ({
+  id,
+  name: card.title,
+  levels: card.levels,
+  card,
+});
 
-const opp = (
-  id: string,
-  name: string,
-  levels: ParticipationLevels = defaultLevels,
-): Opportunity => ({ id, name, levels });
-
-// بطاقة جمع الملابس الكاملة (النموذج المرجعي)
+// ============ بطاقات إدارة الملابس ============
 const collectClothesCard: FullCard = {
   title: "جمع الملابس قبل الغسيل",
   whyParticipate:
@@ -78,92 +73,390 @@ const collectClothesCard: FullCard = {
     shared: "يجمع ملابسه من غرفته ويضعها في السلة.",
     independent: "يتابع موعد الغسيل وينقل السلة إلى مكان الغسيل.",
   },
-  progressIndicators: ["بدأ", "أكمل", "احتاج دعماً أقل", "كرر المشاركة"],
-  nextStep: "فرز الملابس",
+  progressIndicators: ["بدأ الخطوة", "أكمل الخطوة", "احتاج دعماً أقل", "كرر المشاركة"],
+  teachingAids: ["سلة ملابس ملوّنة", "بطاقة صور للخطوات"],
+  nextStep: "فرز الملابس حسب اللون والنوع.",
   expectedMinutes: 10,
   needsOutside: false,
   needsTools: true,
   keywords: ["ملابس", "غسيل", "منزل", "سلة"],
 };
 
-// حدث: غسل الملابس
+const sortClothesCard: FullCard = {
+  title: "فرز الملابس حسب اللون والنوع",
+  whyParticipate:
+    "يتعلم الشاب اتخاذ قرار عملي بسيط يحمي الملابس ويجنب الأخطاء الشائعة في الغسيل.",
+  setup: "سلتان أو أكثر بألوان مختلفة، مساحة كافية على الأرض، وقت هادئ.",
+  steps: [
+    "إخراج الملابس من السلة",
+    "التمييز بين الأبيض والملون",
+    "فصل الملابس الحساسة",
+    "وضع كل مجموعة في سلتها",
+    "التأكد من عدم اختلاط القطع",
+  ],
+  support: "بطاقات لونية، تلميح لفظي مختصر، نمذجة أولى ثم مشاركة.",
+  levels: {
+    guided: "يفرز قطعتين حسب اللون بمساعدة مباشرة.",
+    shared: "يفرز ملابسه إلى أبيض وملون مع تلميح بسيط.",
+    independent: "يفرز الملابس كاملة ويجهز كل مجموعة للغسيل.",
+  },
+  progressIndicators: [
+    "ميز الأبيض عن الملون",
+    "فصل الملابس الحساسة",
+    "أكمل الفرز دون خطأ",
+    "احتاج مساعدة أقل",
+  ],
+  teachingAids: ["بطاقة ألوان", "سلال معنونة"],
+  nextStep: "تشغيل الغسالة أو اختيار البرنامج المناسب.",
+  expectedMinutes: 10,
+  needsOutside: false,
+  needsTools: true,
+  keywords: ["فرز", "ملابس", "ألوان", "غسيل"],
+};
+
+const hangClothesCard: FullCard = {
+  title: "نشر الملابس بعد الغسيل",
+  whyParticipate:
+    "يمنح الشاب دوراً واضحاً ومحسوساً في مهمة تنتهي بنتيجة مرئية سريعة.",
+  setup: "حبل غسيل أو مجفف قابل للطي، مشابك، مساحة تهوية جيدة، سلة ملابس مبللة.",
+  steps: [
+    "نقل السلة إلى مكان النشر",
+    "التقاط القطعة ونفضها",
+    "تعليقها على الحبل",
+    "تثبيتها بمشبك",
+    "ترك مسافة بين القطع",
+  ],
+  support: "نمذجة، تلميح جسدي عند الحاجة، مشابك سهلة الاستخدام.",
+  levels: {
+    guided: "يعلق قطعة واحدة باستخدام مشابك مناسبة.",
+    shared: "يعلق عدة قطع مع تلميح.",
+    independent: "ينشر الملابس ويراعي المسافة والتهوية.",
+  },
+  progressIndicators: [
+    "نفض القطعة قبل التعليق",
+    "استخدم المشبك بشكل صحيح",
+    "ترك مسافات مناسبة",
+    "أكمل السلة كاملة",
+  ],
+  teachingAids: ["مشابك ملونة", "صورة توضيحية للمسافة بين القطع"],
+  nextStep: "تجميع الملابس الجافة وطيها.",
+  expectedMinutes: 15,
+  needsOutside: false,
+  needsTools: true,
+  keywords: ["نشر", "ملابس", "حبل", "مشابك"],
+};
+
+const closetCard: FullCard = {
+  title: "ترتيب الدولاب",
+  whyParticipate:
+    "يعزز استقلالية الشاب في إدارة ملابسه اليومية ويسهل عليه اختيار ملابس مناسبة كل يوم.",
+  setup: "دولاب مقسم بأرفف أو صناديق، ملابس مطوية جاهزة، وقت غير مزدحم.",
+  steps: [
+    "فتح الدولاب",
+    "تحديد مكان كل نوع",
+    "وضع الملابس المطوية في مكانها",
+    "تعليق الملابس التي تحتاج علاقة",
+    "إغلاق الدولاب",
+  ],
+  support: "ملصقات على الأرفف، صور توضح مكان كل نوع.",
+  levels: {
+    guided: "يضع قطعة مطوية في مكان محدد.",
+    shared: "يرتب مجموعة ملابس في الرف الصحيح.",
+    independent: "ينظم ملابسه حسب الاستخدام: خروج، منزل، مناسبة.",
+  },
+  progressIndicators: [
+    "وضع كل نوع في مكانه",
+    "علق الملابس التي تحتاج علاقة",
+    "حافظ على ترتيب الأرفف",
+    "احتاج تذكيراً أقل",
+  ],
+  teachingAids: ["ملصقات صور", "علاقات ملونة"],
+  nextStep: "اختيار ملابس اليوم التالي بشكل مستقل.",
+  expectedMinutes: 15,
+  needsOutside: false,
+  needsTools: true,
+  keywords: ["دولاب", "ترتيب", "ملابس", "تنظيم"],
+};
+
 const washingEvent: LifeEvent = {
   id: "EV-WASH",
   name: "غسل الملابس",
   opportunities: [
-    {
-      id: "OP-COLLECT",
-      name: "جمع الملابس",
-      levels: collectClothesCard.levels,
-      card: collectClothesCard,
-    },
-    opp("OP-SORT", "فرز الملابس", {
-      guided: "يفرز قطعتين حسب اللون بمساعدة مباشرة.",
-      shared: "يفرز ملابسه إلى أبيض وملون مع تلميح بسيط.",
-      independent: "يفرز الملابس كاملة ويجهز كل مجموعة للغسيل.",
-    }),
-    opp("OP-POCKETS", "مراجعة الجيوب"),
-    opp("OP-PROGRAM", "اختيار برنامج الغسيل"),
-    opp("OP-DETERGENT", "إضافة المنظف"),
-    opp("OP-START", "تشغيل الغسالة"),
-    opp("OP-UNLOAD", "إخراج الملابس"),
-    opp("OP-HANG", "نشر الملابس", {
-      guided: "يعلق قطعة واحدة باستخدام مشابك مناسبة.",
-      shared: "يعلق عدة قطع مع تلميح.",
-      independent: "ينشر الملابس ويراعي المسافة والتهوية.",
-    }),
-    opp("OP-COLLECT-DRY", "تجميع الملابس الجافة"),
-    opp("OP-FOLD", "طي الملابس"),
-    opp("OP-CLOSET", "ترتيب الدولاب", {
-      guided: "يضع قطعة مطوية في مكان محدد.",
-      shared: "يرتب مجموعة ملابس في الرف الصحيح.",
-      independent: "ينظم ملابسه حسب الاستخدام: خروج، منزل، مناسبة.",
-    }),
+    oppCard("OP-COLLECT", collectClothesCard),
+    oppCard("OP-SORT", sortClothesCard),
+    oppCard("OP-HANG", hangClothesCard),
   ],
 };
 
-const emptyEvent = (id: string, name: string): LifeEvent => ({
-  id,
-  name,
-  opportunities: [],
-});
+const closetEvent: LifeEvent = {
+  id: "EV-ORGANIZE",
+  name: "ترتيب الملابس",
+  opportunities: [oppCard("OP-CLOSET", closetCard)],
+};
 
-// نشاط: إدارة الملابس
 const clothesActivity: GeneralActivity = {
   id: "GA-CLOTHES",
   name: "إدارة الملابس",
+  events: [washingEvent, closetEvent],
+};
+
+// ============ بطاقات إدارة الغذاء ============
+const fridgeCard: FullCard = {
+  title: "مراجعة الثلاجة",
+  whyParticipate:
+    "يتعلم الشاب متابعة ما هو متوفر وما ينقص قبل إعداد قائمة المشتريات، ويقلل الهدر.",
+  setup: "ثلاجة نظيفة نسبياً، ورقة وقلم أو تطبيق ملاحظات، وقت هادئ قبل التسوق.",
+  steps: [
+    "فتح الثلاجة",
+    "مراجعة كل رف",
+    "تسجيل المنتجات الناقصة",
+    "التخلص من المنتهي الصلاحية",
+    "إغلاق الثلاجة",
+  ],
+  support: "قائمة مرجعية مصورة، تلميح لفظي، نمذجة أولى.",
+  levels: {
+    guided: "يفتح الثلاجة ويشير إلى صنف ناقص بعد تلميح.",
+    shared: "يراجع رفاً كاملاً ويسجل ما ينقص بمساعدة.",
+    independent: "يراجع الثلاجة كاملة ويعد قائمة أولية.",
+  },
+  progressIndicators: [
+    "فحص كل رف",
+    "سجل الناقص",
+    "لاحظ منتجات قاربت على النفاد",
+    "أكمل الخطوة دون تذكير",
+  ],
+  teachingAids: ["قائمة مصورة", "بطاقات أصناف"],
+  nextStep: "إعداد قائمة المشتريات النهائية.",
+  expectedMinutes: 10,
+  needsOutside: false,
+  needsTools: true,
+  keywords: ["ثلاجة", "غذاء", "مخزون", "تسوق"],
+};
+
+const shoppingListCard: FullCard = {
+  title: "إعداد قائمة مشتريات",
+  whyParticipate:
+    "يمنح الشاب دوراً في تخطيط احتياجات الأسرة ويربطه بمهارات القراءة والكتابة العملية.",
+  setup: "ورقة وقلم أو تطبيق ملاحظات، نتيجة مراجعة الثلاجة، وقت هادئ.",
+  steps: [
+    "مراجعة الأصناف الناقصة",
+    "إضافة كل صنف إلى القائمة",
+    "تجميع الأصناف حسب القسم",
+    "مراجعة القائمة النهائية",
+    "حفظ القائمة أو طباعتها",
+  ],
+  support: "قائمة نموذجية، صور للأصناف، تلميح لفظي.",
+  levels: {
+    guided: "يضيف صنفاً واحداً بعد تلميح مباشر.",
+    shared: "يكتب عدة أصناف مع تذكير بسيط.",
+    independent: "يعد القائمة كاملة ويرتبها حسب أقسام المتجر.",
+  },
+  progressIndicators: [
+    "سجل كل الأصناف",
+    "رتبها حسب القسم",
+    "راجع القائمة",
+    "احتاج تذكيراً أقل",
+  ],
+  teachingAids: ["نموذج قائمة", "صور الأصناف"],
+  nextStep: "الذهاب إلى المتجر واختيار المنتجات.",
+  expectedMinutes: 10,
+  needsOutside: false,
+  needsTools: true,
+  keywords: ["قائمة", "مشتريات", "تسوق", "تخطيط"],
+};
+
+const setTableCard: FullCard = {
+  title: "إعداد المائدة",
+  whyParticipate:
+    "دور يومي واضح النتيجة يعزز شعور الشاب بالمساهمة في وجبة العائلة.",
+  setup: "أدوات مائدة نظيفة، مفرش، عدد الأشخاص محدد مسبقاً، مساحة كافية.",
+  steps: [
+    "عد الأشخاص",
+    "فرد المفرش",
+    "توزيع الأطباق",
+    "توزيع الأدوات والأكواب",
+    "وضع الماء والخبز",
+  ],
+  support: "بطاقة صورة للترتيب النهائي، نمذجة، تلميح بصري.",
+  levels: {
+    guided: "يضع طبقاً واحداً في مكانه بعد تلميح.",
+    shared: "يوزع الأطباق والأدوات لأفراد الأسرة مع تذكير.",
+    independent: "يجهز المائدة كاملة ويراعي عدد الأشخاص.",
+  },
+  progressIndicators: [
+    "عد الأشخاص بدقة",
+    "وزع الأدوات بشكل صحيح",
+    "أضاف الماء والخبز",
+    "أكمل قبل موعد الوجبة",
+  ],
+  teachingAids: ["صورة مرجعية للترتيب", "قائمة عدد القطع"],
+  nextStep: "المشاركة في تقديم الطعام أو رفع المائدة بعد الوجبة.",
+  expectedMinutes: 10,
+  needsOutside: false,
+  needsTools: true,
+  keywords: ["مائدة", "طعام", "وجبة", "أسرة"],
+};
+
+const foodActivity: GeneralActivity = {
+  id: "GA-FOOD",
+  name: "تحضير الطعام والمخزون",
   events: [
-    washingEvent,
-    emptyEvent("EV-DRY", "تجفيف الملابس"),
-    emptyEvent("EV-IRON", "كي الملابس"),
-    emptyEvent("EV-ORGANIZE", "ترتيب الملابس"),
-    emptyEvent("EV-BUY", "شراء الملابس"),
-    emptyEvent("EV-DISPOSE", "التخلص من الملابس القديمة"),
-    emptyEvent("EV-WORK", "تجهيز ملابس العمل"),
-    emptyEvent("EV-OCCASION", "تجهيز ملابس المناسبات"),
+    {
+      id: "EV-STOCK",
+      name: "إدارة مخزون الغذاء",
+      opportunities: [
+        oppCard("OP-FRIDGE", fridgeCard),
+        oppCard("OP-LIST", shoppingListCard),
+      ],
+    },
+    {
+      id: "EV-MEAL",
+      name: "تجهيز الوجبات",
+      opportunities: [oppCard("OP-TABLE", setTableCard)],
+    },
   ],
 };
 
-const emptyActivity = (id: string, name: string): GeneralActivity => ({
-  id,
-  name,
-  events: [],
-});
+// ============ بطاقات السلامة المنزلية ============
+const closingHomeCard: FullCard = {
+  title: "فحص إغلاق المنزل قبل النوم أو الخروج",
+  whyParticipate:
+    "يعزز الشعور بالمسؤولية عن سلامة الأسرة ويبني روتين ختامي واضح لليوم.",
+  setup: "قائمة فحص قصيرة، وقت ثابت قبل النوم أو الخروج، إضاءة كافية.",
+  steps: [
+    "فحص باب المنزل الرئيسي",
+    "فحص النوافذ",
+    "إغلاق مصادر الغاز",
+    "فحص الحنفيات",
+    "إطفاء الأضواء غير الضرورية",
+  ],
+  support: "قائمة مصورة، تلميح لفظي، مرافقة أولى ثم مشاركة تدريجية.",
+  levels: {
+    guided: "يفحص بنداً واحداً بعد تلميح مباشر.",
+    shared: "يفحص عدة بنود بمساعدة بسيطة.",
+    independent: "ينفذ الفحص كاملاً ويؤكد الإغلاق.",
+  },
+  progressIndicators: [
+    "أكمل كل بنود القائمة",
+    "لاحظ خللاً وأبلغ عنه",
+    "التزم بالوقت الثابت",
+    "احتاج تذكيراً أقل",
+  ],
+  teachingAids: ["قائمة فحص مصورة", "بطاقة تذكير على الباب"],
+  nextStep: "تسجيل إتمام الفحص في روتين المساء.",
+  expectedMinutes: 10,
+  needsOutside: false,
+  needsTools: false,
+  keywords: ["سلامة", "إغلاق", "منزل", "روتين"],
+};
 
-// مجال: إدارة المنزل
-const houseDomain: HomeDomain = {
-  id: "H1",
-  name: "إدارة المنزل",
-  activities: [
-    clothesActivity,
-    emptyActivity("GA-ROOMS", "تنظيم الغرف"),
-    emptyActivity("GA-CLEAN", "النظافة المنزلية"),
-    emptyActivity("GA-MAINT", "الصيانة المنزلية البسيطة"),
-    emptyActivity("GA-STOCK", "إدارة المخزون"),
-    emptyActivity("GA-WASTE", "إدارة النفايات"),
+const safetyActivity: GeneralActivity = {
+  id: "GA-SAFETY",
+  name: "روتين السلامة اليومية",
+  events: [
+    {
+      id: "EV-CLOSE",
+      name: "تأمين المنزل",
+      opportunities: [oppCard("OP-CLOSE", closingHomeCard)],
+    },
   ],
 };
 
+// ============ بطاقات الصحة المنزلية ============
+const medicineCard: FullCard = {
+  title: "تجهيز الدواء اليومي",
+  whyParticipate:
+    "يبني عادة صحية مسؤولة ويقلل خطر نسيان الجرعات، ويعزز الاستقلالية في إدارة الصحة الشخصية.",
+  setup:
+    "علبة أدوية مقسمة حسب أيام الأسبوع، وصفة طبية واضحة، ماء، وقت ثابت يومياً.",
+  steps: [
+    "غسل اليدين",
+    "فتح علبة الدواء المخصصة لليوم",
+    "التأكد من نوع الجرعة",
+    "تناول الدواء مع الماء",
+    "إغلاق العلبة وتسجيل الجرعة",
+  ],
+  support:
+    "علبة أسبوعية ملونة، منبه في الهاتف، جدول مصور، إشراف الأسرة على الجرعات الحساسة.",
+  levels: {
+    guided: "يفتح خانة اليوم بعد تلميح مباشر.",
+    shared: "يجهز جرعته ويتناولها بمساندة بسيطة.",
+    independent: "يتابع مواعيده ويجهز جرعاته دون تذكير.",
+  },
+  progressIndicators: [
+    "التزم بالموعد",
+    "تأكد من الجرعة الصحيحة",
+    "سجل تناول الدواء",
+    "احتاج تذكيراً أقل",
+  ],
+  teachingAids: ["جدول جرعات مصور", "منبه صوتي"],
+  nextStep: "متابعة تعبئة العلبة الأسبوعية أو مراجعة الوصفة.",
+  expectedMinutes: 5,
+  needsOutside: false,
+  needsTools: true,
+  keywords: ["دواء", "صحة", "جرعة", "روتين"],
+};
+
+const healthActivity: GeneralActivity = {
+  id: "GA-HEALTH",
+  name: "الصحة المنزلية اليومية",
+  events: [
+    {
+      id: "EV-MED",
+      name: "إدارة الدواء",
+      opportunities: [oppCard("OP-MED", medicineCard)],
+    },
+  ],
+};
+
+// ============ بطاقات المشاركة الأسرية ============
+const familyMeetingCard: FullCard = {
+  title: "المشاركة في اجتماع عائلي",
+  whyParticipate:
+    "يمنح الشاب صوتاً حقيقياً في قرارات الأسرة ويعزز مهاراته الاجتماعية والانتماء.",
+  setup:
+    "وقت متفق عليه، مكان هادئ، جدول أعمال مختصر، دور واضح للشاب، مدة قصيرة في البداية.",
+  steps: [
+    "الحضور في الموعد",
+    "الاستماع إلى الموضوع",
+    "التعبير عن الرأي بجملة قصيرة",
+    "الاستماع لآراء الآخرين",
+    "المشاركة في القرار النهائي",
+  ],
+  support:
+    "بطاقة تعبير مصورة، تلميح لفظي لطلب الكلمة، تلخيص أسري بسيط بعد كل نقطة.",
+  levels: {
+    guided: "يحضر ويستمع دون مقاطعة بعد تلميح.",
+    shared: "يعبر عن رأيه بجملة قصيرة بمساندة.",
+    independent: "يشارك في النقاش ويصوت في القرار.",
+  },
+  progressIndicators: [
+    "حضر الاجتماع",
+    "انتظر دوره",
+    "عبّر عن رأي واضح",
+    "شارك في قرار جماعي",
+  ],
+  teachingAids: ["بطاقة أدوار", "بطاقة تعبير مصورة"],
+  nextStep: "متابعة تنفيذ القرار الذي شارك فيه.",
+  expectedMinutes: 20,
+  needsOutside: false,
+  needsTools: false,
+  keywords: ["اجتماع", "أسرة", "قرار", "مشاركة"],
+};
+
+const familyActivity: GeneralActivity = {
+  id: "GA-FAMILY",
+  name: "الحياة الأسرية المشتركة",
+  events: [
+    {
+      id: "EV-MEET",
+      name: "الاجتماعات والقرارات الأسرية",
+      opportunities: [oppCard("OP-MEET", familyMeetingCard)],
+    },
+  ],
+};
+
+// ============ المجالات ============
 const emptyDomain = (id: string, name: string): HomeDomain => ({
   id,
   name,
@@ -171,12 +464,12 @@ const emptyDomain = (id: string, name: string): HomeDomain => ({
 });
 
 export const homeHierarchy: HomeDomain[] = [
-  houseDomain,
-  emptyDomain("H2", "إدارة الغذاء"),
-  emptyDomain("H3", "إدارة الصحة المنزلية"),
-  emptyDomain("H4", "السلامة المنزلية"),
+  { id: "H1", name: "إدارة المنزل", activities: [clothesActivity] },
+  { id: "H2", name: "إدارة الغذاء", activities: [foodActivity] },
+  { id: "H3", name: "إدارة الصحة المنزلية", activities: [healthActivity] },
+  { id: "H4", name: "السلامة المنزلية", activities: [safetyActivity] },
   emptyDomain("H5", "إدارة الوقت والروتين"),
-  emptyDomain("H6", "المشاركة الأسرية"),
+  { id: "H6", name: "المشاركة الأسرية", activities: [familyActivity] },
   emptyDomain("H7", "الحديقة والزراعة"),
   emptyDomain("H8", "رعاية الحيوانات الأليفة"),
 ];
