@@ -7,21 +7,64 @@ export interface ParticipationLevels {
   independent: string;
 }
 
+/**
+ * القالب القياسى الموحّد لبطاقة المشاركة (15 حقلاً).
+ * أى بطاقة جديدة يجب أن تعبّئ هذه الحقول فقط، دون إعادة تصميم الواجهة.
+ *
+ *  1. activity              → title
+ *  2. generalInformation    → description
+ *  3. whyParticipate
+ *  4. preparation           → setup
+ *  5. steps
+ *  6. supportDuringImplementation → support
+ *  7. participationLevels   → levels
+ *  8. progressIndicators
+ *  9. supportResources      → teachingAids
+ * 10. afterCompletion       → nextStep
+ * 11. tags                  → keywords
+ * 12. category              → domain (يُشتق من الهرم)
+ * 13. event                 → lifeEvent (يُشتق من الهرم)
+ * 14. location              → needsOutside / locationHint
+ * 15. difficulty
+ *
+ * الأسماء القديمة (title/setup/support/…) تبقى للحفاظ على التوافق مع الواجهة
+ * الحالية، والأسماء القياسية أدناه هى المرجع لإدخال المحتوى مستقبلاً.
+ */
+export type Difficulty = "easy" | "medium" | "hard";
+
 export interface FullCard {
+  // ===== الحقول القياسية (canonical) =====
+  /** 1. Activity — اسم البطاقة */
   title: string;
+  /** 2. General Information — تعريف مختصر */
   description?: string;
+  /** 3. Why Participate */
   whyParticipate: string;
+  /** 4. Preparation — قبل أن تبدأ */
   setup: string;
+  /** 5. Steps */
   steps: string[];
+  /** 6. Support During Implementation */
   support: string;
+  /** 7. Participation Levels */
   levels: ParticipationLevels;
+  /** 8. Progress Indicators */
   progressIndicators: string[];
+  /** 9. Support Resources — موارد الدعم أثناء التطبيق */
   teachingAids?: string[];
+  /** 10. After Completion — ماذا بعد */
   nextStep: string;
+  /** 11. Tags */
+  keywords?: string[];
+  /** 14. Location — تلميح لمكان التنفيذ */
+  locationHint?: string;
+  /** 15. Difficulty */
+  difficulty?: Difficulty;
+
+  // ===== حقول مساعدة (اختيارية) =====
   expectedMinutes?: number;
   needsOutside?: boolean;
   needsTools?: boolean;
-  keywords?: string[];
 }
 
 
