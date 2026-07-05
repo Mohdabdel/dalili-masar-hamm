@@ -64,6 +64,9 @@ const issueCard: ServiceFullCard = {
   ],
   externalLink: "",
   relatedServices: ["الهوية الإماراتية", "التقارير الطبية"],
+  needsOutside: true,
+  needsTools: false,
+  keywords: ["بطاقة", "أصحاب الهمم", "هوية", "تسهيلات"],
 };
 
 const emptyOpp = (id: string, name: string): ServiceOpportunity => ({ id, name });
