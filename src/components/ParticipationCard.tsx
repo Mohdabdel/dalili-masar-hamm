@@ -21,6 +21,7 @@ export interface ParticipationLevelsInput {
 export interface ParticipationCardData {
   id: string;
   title: string;
+  description?: string;
   domain: string;
   generalActivity: string;
   lifeEvent: string;
@@ -34,6 +35,7 @@ export interface ParticipationCardData {
   teachingAids?: string[];
   nextStep?: string;
 }
+
 
 interface ParticipationCardProps {
   open: boolean;
