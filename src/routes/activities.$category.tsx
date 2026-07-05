@@ -56,7 +56,7 @@ function ActivitiesPage() {
         <Tabs defaultValue={defaultTab} className="w-full">
           <TabsList className="grid w-full grid-cols-2 h-auto p-1">
             <TabsTrigger value="today" className="py-2.5 text-sm font-bold">
-              حسب أحداث اليوم
+              أحداث اليوم
             </TabsTrigger>
             <TabsTrigger value="domains" className="py-2.5 text-sm font-bold">
               حسب المجالات
