@@ -7,10 +7,15 @@ import {
 } from "@/components/ui/accordion";
 import { ChevronLeft } from "lucide-react";
 import { DetailSheet } from "@/components/DetailSheet";
-import { homeHierarchy, type Opportunity } from "@/lib/home-hierarchy";
+import { homeHierarchy, type Opportunity, type HomeDomain } from "@/lib/home-hierarchy";
 
-export function HomeHierarchy() {
+interface HierarchyViewProps {
+  domains?: HomeDomain[];
+}
+
+export function HomeHierarchy({ domains = homeHierarchy }: HierarchyViewProps) {
   const [active, setActive] = useState<Opportunity | null>(null);
+
 
   const renderLevels = (o: Opportunity) => {
     const levels = o.card?.levels ?? o.levels;
@@ -27,7 +32,7 @@ export function HomeHierarchy() {
   return (
     <>
       <Accordion type="multiple" className="space-y-3">
-        {homeHierarchy.map((domain) => (
+        {domains.map((domain) => (
           <AccordionItem
             key={domain.id}
             value={domain.id}
