@@ -37,27 +37,53 @@ interface TodayEventDef {
   icon: React.ComponentType<{ className?: string }>;
 }
 
-const TODAY_EVENTS: TodayEventDef[] = [
-  { title: "اليوم يوم غسل الملابس", eventId: "EV-WASH", icon: Shirt },
-  { title: "سنجهز وجبة", eventId: "EV-MEAL", icon: UtensilsCrossed },
-  { title: "سنرتب غرفة", eventId: "EV-ROOM", icon: BedDouble },
-  { title: "سننظف جزءاً من المنزل", eventId: "EV-CLEAN", icon: Sparkles },
-  { title: "سنراجع الثلاجة أو المخزن", eventId: "EV-STOCK", icon: Refrigerator },
+interface TimeGroup {
+  label: string;
+  events: TodayEventDef[];
+}
+
+const TIME_GROUPS: TimeGroup[] = [
   {
-    title: "سنغادر المنزل ونحتاج فحص الإغلاق",
-    eventId: "EV-CLOSE",
-    icon: DoorClosed,
+    label: "الصباح",
+    events: [
+      { title: "لدينا دواء أو موعد صحي", eventId: "EV-MED", icon: Pill },
+      { title: "سنجهز وجبة", eventId: "EV-MEAL", icon: UtensilsCrossed },
+      {
+        title: "سنغادر المنزل ونحتاج فحص الإغلاق",
+        eventId: "EV-CLOSE",
+        icon: DoorClosed,
+      },
+    ],
   },
-  { title: "لدينا دواء أو موعد صحي", eventId: "EV-MED", icon: Pill },
-  { title: "سنستقبل ضيوفاً", eventId: "EV-GUESTS", icon: Users },
   {
-    title: "لدينا فاتورة أو وثيقة نراجعها",
-    eventId: "EV-BILL",
-    icon: FileText,
+    label: "منتصف اليوم",
+    events: [
+      { title: "اليوم يوم غسل الملابس", eventId: "EV-WASH", icon: Shirt },
+      { title: "سننظف جزءاً من المنزل", eventId: "EV-CLEAN", icon: Sparkles },
+      {
+        title: "سنراجع الثلاجة أو المخزن",
+        eventId: "EV-STOCK",
+        icon: Refrigerator,
+      },
+      {
+        title: "لدينا فاتورة أو وثيقة نراجعها",
+        eventId: "EV-BILL",
+        icon: FileText,
+      },
+    ],
   },
-  { title: "سنسقي النباتات", eventId: "EV-PLANTS", icon: Sprout },
-  { title: "سنعتني بالحيوان الأليف", eventId: "EV-PET", icon: PawPrint },
+  {
+    label: "المساء",
+    events: [
+      { title: "سنرتب غرفة", eventId: "EV-ROOM", icon: BedDouble },
+      { title: "سنستقبل ضيوفاً", eventId: "EV-GUESTS", icon: Users },
+      { title: "سنسقي النباتات", eventId: "EV-PLANTS", icon: Sprout },
+      { title: "سنعتني بالحيوان الأليف", eventId: "EV-PET", icon: PawPrint },
+    ],
+  },
 ];
+
+const ALL_EVENTS = TIME_GROUPS.flatMap((g) => g.events);
 
 interface EventMatch {
   domain: HomeDomain;
@@ -80,19 +106,24 @@ interface ActiveCtx extends EventMatch {
   opportunity: Opportunity;
 }
 
+function formatOpportunityCount(count: number): string {
+  if (count === 1) return "فرصة مشاركة متدرجة واحدة";
+  return `${count} فرصة مشاركة متدرجة`;
+}
+
 export function TodayEvents() {
   const [openEvent, setOpenEvent] = useState<EventMatch | null>(null);
   const [active, setActive] = useState<ActiveCtx | null>(null);
 
-  const items = useMemo(
-    () =>
-      TODAY_EVENTS.map((def) => {
-        const match = findEvent(def.eventId);
-        const count = match?.event.opportunities.length ?? 0;
-        return { def, match, count };
-      }),
-    [],
-  );
+  const itemsMap = useMemo(() => {
+    const map = new Map<string, { def: TodayEventDef; match: EventMatch | null; count: number }>();
+    for (const def of ALL_EVENTS) {
+      const match = findEvent(def.eventId);
+      const count = match?.event.opportunities.length ?? 0;
+      map.set(def.eventId, { def, match, count });
+    }
+    return map;
+  }, []);
 
   const toData = (ctx: ActiveCtx): ParticipationCardData => {
     const c = ctx.opportunity.card;
@@ -135,37 +166,53 @@ export function TodayEvents() {
 
   return (
     <>
-      <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-        {items.map(({ def, match, count }) => {
-          const Icon = def.icon;
-          const disabled = !match || count === 0;
-          return (
-            <li key={def.eventId}>
-              <button
-                type="button"
-                disabled={disabled}
-                onClick={() => match && setOpenEvent(match)}
-                className="group flex w-full items-center gap-3 rounded-2xl border-2 border-border/60 bg-card p-4 text-right shadow-card-soft transition-all hover:border-gold/60 hover:bg-gold/5 disabled:cursor-not-allowed disabled:opacity-50"
-              >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gold/15 text-primary">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block text-sm font-bold text-foreground">
-                    {def.title}
-                  </span>
-                  <span className="mt-0.5 block text-[11px] text-muted-foreground">
-                    {disabled
-                      ? "سيتم إضافة فرص المشاركة قريباً"
-                      : `${count} فرصة مشاركة`}
-                  </span>
-                </span>
-                <ChevronLeft className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-0.5" />
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+      <p className="mb-4 text-right text-sm leading-relaxed text-muted-foreground">
+        ابدأ بما يحدث فعلاً داخل المنزل اليوم، ثم اختر فرصة مشاركة مناسبة للشاب أو البالغ.
+      </p>
+
+      <div className="space-y-5">
+        {TIME_GROUPS.map((group) => (
+          <div key={group.label}>
+            <h3 className="mb-2.5 text-right text-sm font-bold text-foreground">
+              {group.label}
+            </h3>
+            <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+              {group.events.map((def) => {
+                const item = itemsMap.get(def.eventId);
+                if (!item) return null;
+                const { match, count } = item;
+                const Icon = def.icon;
+                const disabled = !match || count === 0;
+                return (
+                  <li key={def.eventId}>
+                    <button
+                      type="button"
+                      disabled={disabled}
+                      onClick={() => match && setOpenEvent(match)}
+                      className="group flex w-full items-center gap-3 rounded-2xl border-2 border-border/60 bg-card p-4 text-right shadow-card-soft transition-all hover:border-gold/60 hover:bg-gold/5 disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gold/15 text-primary">
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block text-sm font-bold text-foreground">
+                          {def.title}
+                        </span>
+                        <span className="mt-0.5 block text-[11px] text-muted-foreground">
+                          {disabled
+                            ? "قيد الإعداد"
+                            : formatOpportunityCount(count)}
+                        </span>
+                      </span>
+                      <ChevronLeft className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-0.5" />
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        ))}
+      </div>
 
       <Sheet
         open={!!openEvent}
