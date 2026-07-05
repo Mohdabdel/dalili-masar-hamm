@@ -55,31 +55,41 @@ const oppCard = (id: string, card: FullCard): Opportunity => ({
   card,
 });
 
+const opp = (id: string, name: string): Opportunity => ({ id, name });
+
 // ============ بطاقات إدارة الملابس ============
 const collectClothesCard: FullCard = {
   title: "جمع الملابس قبل الغسيل",
   whyParticipate:
-    "تساعد هذه المشاركة الشاب على تحمل مسؤولية جزء من إدارة ملابسه الشخصية.",
-  setup: "سلة واضحة، وقت ثابت، تلميح بصري عند الحاجة.",
+    "تساعد هذه المشاركة الشاب على تحمل مسؤولية جزء من إدارة ملابسه الشخصية، وتدعم الاستقلالية وتنظيم الروتين اليومي.",
+  setup:
+    "- اختر وقتاً ثابتاً قريباً من موعد الغسيل.\n- ضع سلة واضحة في مكان ثابت.\n- استخدم تلميحاً بصرياً عند الحاجة.\n- قلل المشتتات في بداية التنفيذ.",
   steps: [
-    "التوجه إلى الغرفة",
-    "تحديد الملابس المستخدمة",
-    "وضعها في السلة",
-    "نقل السلة إلى مكان الغسيل",
+    "التوجه إلى مكان الملابس.",
+    "تحديد الملابس المستخدمة.",
+    "وضع الملابس في السلة.",
+    "نقل السلة إلى مكان الغسيل.",
+    "إبلاغ الأسرة بانتهاء الخطوة.",
   ],
-  support: "بصري، لفظي، بيئي، جسدي عند الحاجة.",
+  support:
+    "- دعم بصري: صورة سلة الملابس.\n- دعم لفظي: تلميح قصير مثل \"وقت الغسيل\".\n- دعم بيئي: وضع السلة في مكان ثابت.\n- دعم جسدي: عند الحاجة فقط وبأقل قدر ممكن.",
   levels: {
     guided: "يضع قطعة واحدة في السلة بعد تلميح مباشر.",
     shared: "يجمع ملابسه من غرفته ويضعها في السلة.",
     independent: "يتابع موعد الغسيل وينقل السلة إلى مكان الغسيل.",
   },
-  progressIndicators: ["بدأ الخطوة", "أكمل الخطوة", "احتاج دعماً أقل", "كرر المشاركة"],
-  teachingAids: ["سلة ملابس ملوّنة", "بطاقة صور للخطوات"],
-  nextStep: "فرز الملابس حسب اللون والنوع.",
+  progressIndicators: [
+    "بدأ عند التلميح.",
+    "أكمل أكثر من خطوة.",
+    "احتاج دعماً أقل من السابق.",
+    "كرر المشاركة في يوم آخر.",
+  ],
+  teachingAids: ["بطاقة مصورة", "قائمة تحقق", "فيديو قصير لاحقاً", "رمز QR لاحقاً"],
+  nextStep: "فرز الملابس حسب اللون.",
   expectedMinutes: 10,
   needsOutside: false,
   needsTools: true,
-  keywords: ["ملابس", "غسيل", "منزل", "سلة"],
+  keywords: ["ملابس", "غسيل", "منزل", "سلة", "جمع"],
 };
 
 const sortClothesCard: FullCard = {
@@ -184,21 +194,43 @@ const washingEvent: LifeEvent = {
   opportunities: [
     oppCard("OP-COLLECT", collectClothesCard),
     oppCard("OP-SORT", sortClothesCard),
+    opp("OP-POCKETS", "مراجعة الجيوب"),
+    opp("OP-PROGRAM", "اختيار برنامج الغسيل"),
+    opp("OP-DETERGENT", "إضافة المنظف"),
+    opp("OP-START", "تشغيل الغسالة"),
+    opp("OP-REMOVE", "إخراج الملابس"),
     oppCard("OP-HANG", hangClothesCard),
+    opp("OP-GATHER", "تجميع الملابس الجافة"),
+    opp("OP-FOLD", "طي الملابس"),
+    oppCard("OP-CLOSET", closetCard),
   ],
 };
 
-const closetEvent: LifeEvent = {
-  id: "EV-ORGANIZE",
-  name: "ترتيب الملابس",
-  opportunities: [oppCard("OP-CLOSET", closetCard)],
-};
+const clothesEvents: LifeEvent[] = [
+  washingEvent,
+  { id: "EV-DRY", name: "تجفيف الملابس", opportunities: [] },
+  { id: "EV-IRON", name: "كي الملابس", opportunities: [] },
+  { id: "EV-ARRANGE", name: "ترتيب الملابس", opportunities: [] },
+  { id: "EV-BUY", name: "شراء الملابس", opportunities: [] },
+  { id: "EV-DISPOSE", name: "التخلص من الملابس القديمة", opportunities: [] },
+  { id: "EV-WORK", name: "تجهيز ملابس العمل", opportunities: [] },
+  { id: "EV-OCCASION", name: "تجهيز ملابس المناسبات", opportunities: [] },
+];
 
 const clothesActivity: GeneralActivity = {
   id: "GA-CLOTHES",
   name: "إدارة الملابس",
-  events: [washingEvent, closetEvent],
+  events: clothesEvents,
 };
+
+const homeManagementActivities: GeneralActivity[] = [
+  clothesActivity,
+  { id: "GA-ROOMS", name: "تنظيم الغرف", events: [] },
+  { id: "GA-CLEAN", name: "النظافة المنزلية", events: [] },
+  { id: "GA-MAINTAIN", name: "الصيانة المنزلية البسيطة", events: [] },
+  { id: "GA-STOCK-HOME", name: "إدارة المخزون", events: [] },
+  { id: "GA-WASTE", name: "إدارة النفايات", events: [] },
+];
 
 // ============ بطاقات إدارة الغذاء ============
 const fridgeCard: FullCard = {
@@ -464,7 +496,7 @@ const emptyDomain = (id: string, name: string): HomeDomain => ({
 });
 
 export const homeHierarchy: HomeDomain[] = [
-  { id: "H1", name: "إدارة المنزل", activities: [clothesActivity] },
+  { id: "H1", name: "إدارة المنزل", activities: homeManagementActivities },
   { id: "H2", name: "إدارة الغذاء", activities: [foodActivity] },
   { id: "H3", name: "إدارة الصحة المنزلية", activities: [healthActivity] },
   { id: "H4", name: "السلامة المنزلية", activities: [safetyActivity] },
