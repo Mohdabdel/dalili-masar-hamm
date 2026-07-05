@@ -46,13 +46,14 @@ function ActivitiesPage() {
     return (
       <PageShell
         title="الأنشطة المنزلية"
-        subtitle="مجال ← نشاط عام ← حدث حياة ← فرصة مشاركة ← بطاقة"
+        subtitle="اختر ما يحدث داخل المنزل اليوم، ثم افتح فرصة مشاركة مناسبة يمكن تنفيذها مع الشاب أو البالغ خطوة بخطوة."
         breadcrumbs={[{ label: "الأنشطة المنزلية" }]}
       >
         <HomeHierarchy openOpportunityId={open} />
       </PageShell>
     );
   }
+
 
   return (
     <PageShell
