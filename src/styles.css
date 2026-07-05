@@ -44,50 +44,51 @@
 
 :root {
   --radius: 0.875rem;
-  /* Navy #1a365d approx */
-  --background: oklch(0.985 0.005 250);
-  --foreground: oklch(0.24 0.06 260);
+  /* خلفية بيضاء دافئة + نص كحلي عميق لتباين ≥ 12:1 */
+  --background: oklch(0.99 0.004 250);
+  --foreground: oklch(0.18 0.05 260);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.24 0.06 260);
+  --card-foreground: oklch(0.18 0.05 260);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.24 0.06 260);
-  --primary: oklch(0.28 0.08 260);
-  --primary-foreground: oklch(0.985 0.005 250);
-  --secondary: oklch(0.95 0.01 250);
-  --secondary-foreground: oklch(0.28 0.08 260);
-  --muted: oklch(0.955 0.008 250);
-  --muted-foreground: oklch(0.5 0.03 260);
+  --popover-foreground: oklch(0.18 0.05 260);
+  --primary: oklch(0.26 0.07 260);
+  --primary-foreground: oklch(0.99 0.004 250);
+  --secondary: oklch(0.955 0.008 250);
+  --secondary-foreground: oklch(0.22 0.06 260);
+  --muted: oklch(0.96 0.006 250);
+  /* نص ثانوي أدكن لتباين أفضل مع الخلفية */
+  --muted-foreground: oklch(0.4 0.03 260);
   --accent: oklch(0.94 0.03 85);
-  --accent-foreground: oklch(0.28 0.08 260);
-  --gold: oklch(0.74 0.11 82);
-  --gold-foreground: oklch(0.22 0.06 260);
-  --destructive: oklch(0.577 0.245 27);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.9 0.01 250);
-  --input: oklch(0.92 0.01 250);
-  --ring: oklch(0.74 0.11 82);
+  --accent-foreground: oklch(0.22 0.06 260);
+  --gold: oklch(0.72 0.11 82);
+  --gold-foreground: oklch(0.18 0.05 260);
+  --destructive: oklch(0.52 0.18 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.88 0.012 250);
+  --input: oklch(0.9 0.012 250);
+  --ring: oklch(0.72 0.11 82);
 }
 
 .dark {
-  --background: oklch(0.18 0.04 260);
-  --foreground: oklch(0.97 0.005 250);
-  --card: oklch(0.24 0.05 260);
-  --card-foreground: oklch(0.97 0.005 250);
-  --popover: oklch(0.24 0.05 260);
-  --popover-foreground: oklch(0.97 0.005 250);
-  --primary: oklch(0.74 0.11 82);
-  --primary-foreground: oklch(0.22 0.06 260);
-  --secondary: oklch(0.28 0.05 260);
-  --secondary-foreground: oklch(0.97 0.005 250);
-  --muted: oklch(0.28 0.05 260);
-  --muted-foreground: oklch(0.72 0.02 260);
-  --accent: oklch(0.32 0.06 260);
-  --accent-foreground: oklch(0.97 0.005 250);
-  --gold: oklch(0.78 0.12 82);
-  --gold-foreground: oklch(0.22 0.06 260);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.74 0.11 82);
+  --background: oklch(0.16 0.04 260);
+  --foreground: oklch(0.98 0.005 250);
+  --card: oklch(0.22 0.05 260);
+  --card-foreground: oklch(0.98 0.005 250);
+  --popover: oklch(0.22 0.05 260);
+  --popover-foreground: oklch(0.98 0.005 250);
+  --primary: oklch(0.78 0.11 82);
+  --primary-foreground: oklch(0.18 0.05 260);
+  --secondary: oklch(0.26 0.05 260);
+  --secondary-foreground: oklch(0.98 0.005 250);
+  --muted: oklch(0.26 0.05 260);
+  --muted-foreground: oklch(0.78 0.02 260);
+  --accent: oklch(0.3 0.06 260);
+  --accent-foreground: oklch(0.98 0.005 250);
+  --gold: oklch(0.8 0.12 82);
+  --gold-foreground: oklch(0.18 0.05 260);
+  --border: oklch(1 0 0 / 14%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.78 0.12 82);
 }
 
 @layer base {
@@ -96,18 +97,29 @@
   }
   html {
     direction: rtl;
+    /* حجم أساسي أكبر للقراءة العربية على الهاتف */
+    font-size: 17px;
   }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-weight: 500;
+    line-height: 1.75;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.005em;
+    line-height: 1.35;
+  }
+  /* حد أدنى لمساحة اللمس على العناصر التفاعلية */
+  button, a[role="button"], [data-tap] {
+    min-height: 44px;
   }
 }
+
 
 @utility bg-gradient-primary {
   background-image: var(--gradient-primary);
