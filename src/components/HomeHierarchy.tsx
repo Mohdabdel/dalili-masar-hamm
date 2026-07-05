@@ -7,10 +7,15 @@ import {
 } from "@/components/ui/accordion";
 import { ChevronLeft } from "lucide-react";
 import { DetailSheet } from "@/components/DetailSheet";
-import { homeHierarchy, type Opportunity } from "@/lib/home-hierarchy";
+import { homeHierarchy, type Opportunity, type HomeDomain } from "@/lib/home-hierarchy";
 
-export function HomeHierarchy() {
+interface HierarchyViewProps {
+  domains?: HomeDomain[];
+}
+
+export function HomeHierarchy({ domains = homeHierarchy }: HierarchyViewProps) {
   const [active, setActive] = useState<Opportunity | null>(null);
+
 
   const renderLevels = (o: Opportunity) => {
     const levels = o.card?.levels ?? o.levels;
