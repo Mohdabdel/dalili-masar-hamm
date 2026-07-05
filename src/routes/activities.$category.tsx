@@ -47,61 +47,14 @@ function ActivitiesPage() {
     );
   }
 
-  return <CommunityView />;
-}
-
-function CommunityView() {
-  const [q, setQ] = useState("");
-  const [active, setActive] = useState<HomeEvent | null>(null);
-
-  const items = useMemo(
-    () => homeEvents.filter((e) => e.category === "community"),
-    [],
-  );
-  const filtered = useMemo(() => {
-    const s = q.trim();
-    if (!s) return items;
-    return items.filter((e) =>
-      [e.id, e.name, e.currentTask].some((f) => f.includes(s)),
-    );
-  }, [q, items]);
-
   return (
-    <PageShell title="الأنشطة المجتمعية" subtitle={`${filtered.length} نشاط جاهز للتنفيذ`}>
-      <SearchBar value={q} onChange={setQ} placeholder="ابحث عن نشاط..." />
-      <div className="mt-4 grid grid-cols-2 gap-3">
-        {filtered.map((e) => (
-          <ImageTile
-            key={e.id}
-            title={e.name}
-            meta={e.duration}
-            image={activityImages[e.id]}
-            onClick={() => setActive(e)}
-          />
-        ))}
-        {filtered.length === 0 && (
-          <p className="col-span-2 py-10 text-center text-sm text-muted-foreground">لا توجد نتائج مطابقة</p>
-        )}
-      </div>
-
-      <DetailSheet
-        open={!!active}
-        onOpenChange={(o) => !o && setActive(null)}
-        eyebrow={active?.id}
-        title={active?.name ?? ""}
-        headline={active?.currentTask}
-        headlineLabel={`المهمة الحالية · ${active?.duration ?? ""}`}
-        checklist={active?.steps.map((s, i) => ({ key: `${active.id}-${i}`, label: s }))}
-        sections={
-          active
-            ? [
-                { id: "req", title: "متطلبات تحسين المشاركة والدعم الحسي", content: active.requirements },
-                { id: "fun", title: "أفكار لجعل المشاركة ممتعة", content: active.fun },
-              ]
-            : []
-        }
-      />
+    <PageShell
+      title="الأنشطة المجتمعية"
+      subtitle="مجال ← نشاط عام ← حدث حياة ← فرصة مشاركة ← بطاقة"
+    >
+      <HomeHierarchy domains={communityHierarchy} />
     </PageShell>
   );
 }
+
 
