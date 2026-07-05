@@ -236,6 +236,8 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
               </Item>
             )}
           </Accordion>
+
+          {data.id === "OP-COLLECT" && <SupportResourcesPrototype />}
         </div>
 
         <div className="sticky bottom-0 grid grid-cols-3 gap-2 border-t border-border/60 bg-background/95 px-5 py-3 backdrop-blur">
