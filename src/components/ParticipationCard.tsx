@@ -191,7 +191,7 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
           )}
 
           {data.support && (
-            <Section title="كيف أجعل المشاركة أسهل؟">
+            <Section title="كيف أساعد أثناء التنفيذ؟">
               <p className="whitespace-pre-line text-sm leading-relaxed text-foreground">
                 {data.support}
               </p>
@@ -199,8 +199,7 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
           )}
 
           <Accordion type="multiple" className="space-y-2">
-
-            <Item value="levels" title="ابدأ من المستوى المناسب">
+            <Item value="levels" title="مستويات المشاركة">
               <div className="space-y-2">
                 <Level label="موجهة" text={data.levels.guided} tone="soft" />
                 <Level label="مشتركة" text={data.levels.shared} tone="mid" />
@@ -221,23 +220,17 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
                 </div>
               </Item>
             )}
-            {data.teachingAids && data.teachingAids.length > 0 && (
-              <Item value="aids" title="الوسائل التعليمية">
-                <ul className="list-inside list-disc space-y-1 leading-relaxed">
-                  {data.teachingAids.map((a) => (
-                    <li key={a}>{a}</li>
-                  ))}
-                </ul>
-              </Item>
-            )}
-            {data.nextStep && (
-              <Item value="next" title="ماذا بعد">
-                <p className="leading-relaxed">{data.nextStep}</p>
-              </Item>
-            )}
           </Accordion>
 
           {data.id === "OP-COLLECT" && <SupportResourcesPrototype />}
+
+          {data.nextStep && (
+            <Accordion type="multiple" className="space-y-2">
+              <Item value="next" title="ماذا بعد؟">
+                <p className="leading-relaxed">{data.nextStep}</p>
+              </Item>
+            </Accordion>
+          )}
         </div>
 
         <div className="sticky bottom-0 grid grid-cols-3 gap-2 border-t border-border/60 bg-background/95 px-5 py-3 backdrop-blur">
