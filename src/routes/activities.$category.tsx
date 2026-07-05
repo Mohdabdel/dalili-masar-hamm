@@ -1,11 +1,9 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
 import { PageShell } from "@/components/PageShell";
-import { SearchBar } from "@/components/SearchBar";
-import { ImageTile } from "@/components/ImageTile";
-import { DetailSheet } from "@/components/DetailSheet";
 import { HomeHierarchy } from "@/components/HomeHierarchy";
-import { homeEvents, activityImages, type HomeEvent, type ActivityCategory } from "@/lib/data";
+import { communityHierarchy } from "@/lib/community-hierarchy";
+import type { ActivityCategory } from "@/lib/data";
+
 
 export const Route = createFileRoute("/activities/$category")({
   parseParams: (p) => {
