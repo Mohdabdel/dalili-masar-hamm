@@ -686,4 +686,17 @@ export const homeHierarchy: HomeDomain[] = [
   emptyDomain("H-PETS", "رعاية الحيوانات الأليفة"),
 ];
 
+export function findOpportunityById(id: string): Opportunity | null {
+  for (const domain of homeHierarchy) {
+    for (const activity of domain.activities) {
+      for (const event of activity.events) {
+        for (const opp of event.opportunities) {
+          if (opp.id === id) return opp;
+        }
+      }
+    }
+  }
+  return null;
+}
+
 
