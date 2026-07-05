@@ -673,12 +673,16 @@ const emptyDomain = (id: string, name: string): HomeDomain => ({
 });
 
 export const homeHierarchy: HomeDomain[] = [
-  { id: "H1", name: "إدارة المنزل", activities: homeManagementActivities },
-  { id: "H2", name: "إدارة الغذاء", activities: [foodActivity] },
-  { id: "H3", name: "إدارة الصحة المنزلية", activities: [healthActivity] },
-  { id: "H4", name: "السلامة المنزلية", activities: [safetyActivity] },
-  emptyDomain("H5", "إدارة الوقت والروتين"),
-  { id: "H6", name: "المشاركة الأسرية", activities: [familyActivity] },
-  emptyDomain("H7", "الحديقة والزراعة"),
-  emptyDomain("H8", "رعاية الحيوانات الأليفة"),
+  { id: "H-CLOTHES", name: "إدارة الملابس", activities: [clothesActivity] },
+  { id: "H-KITCHEN", name: "المطبخ والوجبات", activities: [foodActivity] },
+  { id: "H-ORGANIZE", name: "ترتيب وتنظيم المنزل", activities: [roomsActivity] },
+  { id: "H-CLEAN", name: "النظافة المنزلية", activities: [cleanActivity] },
+  { id: "H-SAFETY", name: "السلامة داخل المنزل", activities: [safetyActivity] },
+  { id: "H-HEALTH", name: "الصحة والدواء", activities: [healthActivity] },
+  emptyDomain("H-TIME", "الوقت والروتين"),
+  { id: "H-FAMILY", name: "المشاركة الأسرية", activities: [familyActivity] },
+  emptyDomain("H-DOCS", "الوثائق والفواتير"),
+  emptyDomain("H-GARDEN", "الحديقة والزراعة"),
+  emptyDomain("H-PETS", "رعاية الحيوانات الأليفة"),
 ];
+
