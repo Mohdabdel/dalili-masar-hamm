@@ -30,7 +30,7 @@ function CalendarPage() {
   }, [q]);
 
   return (
-    <PageShell title="تقويم الفعاليات 2026" subtitle={`${filtered.length} فعالية قادمة`}>
+    <PageShell title="تقويم الفعاليات 2026" subtitle={`${filtered.length} فعالية قادمة`} breadcrumbs={[{ label: "الفعاليات" }]}>
       <SearchBar value={q} onChange={setQ} placeholder="ابحث عن فعالية..." />
       <div className="mt-4 space-y-3">
         {filtered.map((e) => (

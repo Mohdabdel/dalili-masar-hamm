@@ -34,7 +34,7 @@ function MessagesPage() {
   }, [q]);
 
   return (
-    <PageShell title="التصرفات والرسائل التعبيرية" subtitle={`${filtered.length} سلوك مُفسَّر`}>
+    <PageShell title="التصرفات والرسائل التعبيرية" subtitle={`${filtered.length} سلوك مُفسَّر`} breadcrumbs={[{ label: "الرسائل" }]}>
       <SearchBar value={q} onChange={setQ} placeholder="ابحث عن سلوك..." />
       <div className="mt-4 space-y-3">
         {filtered.map((m) => (
