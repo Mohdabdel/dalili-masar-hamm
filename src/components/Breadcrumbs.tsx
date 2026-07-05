@@ -22,16 +22,13 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
         <Fragment key={`${c.label}-${i}`}>
           <ChevronLeft className="h-3 w-3 shrink-0 text-primary-foreground/50" />
           {c.to && i < items.length - 1 ? (
-            <Link
-              to={c.to as string}
-              params={c.params as never}
-              className="hover:text-gold"
-            >
+            <a href={c.to} className="hover:text-gold">
               {c.label}
-            </Link>
+            </a>
           ) : (
             <span className="font-semibold text-gold">{c.label}</span>
           )}
+
 
         </Fragment>
       ))}
