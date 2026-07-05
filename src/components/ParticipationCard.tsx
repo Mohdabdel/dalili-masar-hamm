@@ -183,12 +183,12 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
           <Accordion type="multiple" className="space-y-2">
             {data.setup && (
               <Item value="setup" title="التهيئة">
-                <p className="leading-relaxed">{data.setup}</p>
+                <p className="whitespace-pre-line leading-relaxed">{data.setup}</p>
               </Item>
             )}
             {data.support && (
               <Item value="support" title="الدعم المناسب">
-                <p className="leading-relaxed">{data.support}</p>
+                <p className="whitespace-pre-line leading-relaxed">{data.support}</p>
               </Item>
             )}
             <Item value="levels" title="مستويات المشاركة">
