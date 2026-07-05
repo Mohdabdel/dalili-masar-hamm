@@ -32,7 +32,7 @@ export function HomeHierarchy({ domains = homeHierarchy }: HierarchyViewProps) {
   return (
     <>
       <Accordion type="multiple" className="space-y-3">
-        {homeHierarchy.map((domain) => (
+        {domains.map((domain) => (
           <AccordionItem
             key={domain.id}
             value={domain.id}
