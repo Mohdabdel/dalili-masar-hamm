@@ -9,6 +9,7 @@ export interface ParticipationLevels {
 
 export interface FullCard {
   title: string;
+  description?: string;
   whyParticipate: string;
   setup: string;
   steps: string[];
@@ -22,6 +23,7 @@ export interface FullCard {
   needsTools?: boolean;
   keywords?: string[];
 }
+
 
 export interface Opportunity {
   id: string;
