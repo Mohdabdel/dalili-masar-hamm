@@ -137,6 +137,14 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
             </div>
           )}
 
+          {data.setup && (
+            <Section title="قبل أن تبدأ">
+              <p className="whitespace-pre-line text-sm leading-relaxed text-foreground">
+                {data.setup}
+              </p>
+            </Section>
+          )}
+
           {data.steps && data.steps.length > 0 && (
             <Section
               title="خطوات المشاركة"
@@ -181,17 +189,16 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
             </Section>
           )}
 
+          {data.support && (
+            <Section title="كيف أساعده؟">
+              <p className="whitespace-pre-line text-sm leading-relaxed text-foreground">
+                {data.support}
+              </p>
+            </Section>
+          )}
+
           <Accordion type="multiple" className="space-y-2">
-            {data.setup && (
-              <Item value="setup" title="التهيئة">
-                <p className="whitespace-pre-line leading-relaxed">{data.setup}</p>
-              </Item>
-            )}
-            {data.support && (
-              <Item value="support" title="الدعم المناسب">
-                <p className="whitespace-pre-line leading-relaxed">{data.support}</p>
-              </Item>
-            )}
+
             <Item value="levels" title="مستويات المشاركة">
               <div className="space-y-2">
                 <Level label="موجهة" text={data.levels.guided} tone="soft" />
