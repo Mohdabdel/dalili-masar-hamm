@@ -469,15 +469,40 @@ const emptyDomain = (id: string, name: string): ServiceDomainNode => ({
   services: [],
 });
 
+const eduDomain: ServiceDomainNode = {
+  id: "SD-EDU",
+  name: "التعليم والتدريب",
+  services: [
+    {
+      id: "SV-EDU-TRAIN",
+      name: "التدريب المهني",
+      brief: "برامج بناء مهارات عملية.",
+      opportunities: [opp("SOP-EDU-TRAIN", trainingCard)],
+    },
+  ],
+};
+
+const jobOnlyDomain: ServiceDomainNode = {
+  id: "SD-JOB",
+  name: "التوظيف",
+  services: [
+    {
+      id: "SV-JOB",
+      name: "خدمات التوظيف",
+      brief: "منصات ترشح لفرص عمل شاملة أو مخصصة.",
+      opportunities: [opp("SOP-JOB", jobRegCard)],
+    },
+  ],
+};
+
+// jobDomain isn't exported directly; we split it above.
+void jobDomain;
+
 export const supportPortal: ServiceDomainNode[] = [
   idDomain,
   healthDomain,
-  {
-    id: "SD-EDU",
-    name: "التعليم والتدريب",
-    services: [jobDomain.services[1]], // التدريب المهني
-  },
-  { ...jobDomain, services: [jobDomain.services[0]] }, // التوظيف
+  eduDomain,
+  jobOnlyDomain,
   emptyDomain("SD-FIN", "الدعم المالي"),
   emptyDomain("SD-HOME", "الإسكان والمعيشة"),
   transportDomain,
@@ -487,3 +512,4 @@ export const supportPortal: ServiceDomainNode[] = [
   familyDomain,
   emergencyDomain,
 ];
+
