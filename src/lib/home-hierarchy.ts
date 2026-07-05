@@ -396,14 +396,18 @@ const clothesActivity: GeneralActivity = {
   events: clothesEvents,
 };
 
-const homeManagementActivities: GeneralActivity[] = [
-  clothesActivity,
-  { id: "GA-ROOMS", name: "تنظيم الغرف", events: [] },
-  { id: "GA-CLEAN", name: "النظافة المنزلية", events: [] },
-  { id: "GA-MAINTAIN", name: "الصيانة المنزلية البسيطة", events: [] },
-  { id: "GA-STOCK-HOME", name: "إدارة المخزون", events: [] },
-  { id: "GA-WASTE", name: "إدارة النفايات", events: [] },
-];
+const roomsActivity: GeneralActivity = {
+  id: "GA-ROOMS",
+  name: "تنظيم الغرف والمساحات",
+  events: [],
+};
+
+const cleanActivity: GeneralActivity = {
+  id: "GA-CLEAN",
+  name: "النظافة المنزلية",
+  events: [],
+};
+
 
 // ============ بطاقات إدارة الغذاء ============
 const fridgeCard: FullCard = {
