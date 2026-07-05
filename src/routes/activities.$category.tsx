@@ -2,11 +2,14 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { z } from "zod";
 import { PageShell } from "@/components/PageShell";
 import { HomeHierarchy } from "@/components/HomeHierarchy";
+import { TodayEvents } from "@/components/TodayEvents";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { communityHierarchy } from "@/lib/community-hierarchy";
 import type { ActivityCategory } from "@/lib/data";
 
 const searchSchema = z.object({
   open: z.string().optional(),
+  view: z.enum(["today", "domains"]).optional(),
 });
 
 export const Route = createFileRoute("/activities/$category")({
@@ -40,16 +43,32 @@ export const Route = createFileRoute("/activities/$category")({
 
 function ActivitiesPage() {
   const { category } = Route.useParams();
-  const { open } = Route.useSearch();
+  const { open, view } = Route.useSearch();
 
   if (category === "home") {
+    const defaultTab = open ? "domains" : (view ?? "today");
     return (
       <PageShell
         title="الأنشطة المنزلية"
         subtitle="اختر ما يحدث داخل المنزل اليوم، ثم افتح فرصة مشاركة مناسبة يمكن تنفيذها مع الشاب أو البالغ خطوة بخطوة."
         breadcrumbs={[{ label: "الأنشطة المنزلية" }]}
       >
-        <HomeHierarchy openOpportunityId={open} />
+        <Tabs defaultValue={defaultTab} className="w-full">
+          <TabsList className="grid w-full grid-cols-2 h-auto p-1">
+            <TabsTrigger value="today" className="py-2.5 text-sm font-bold">
+              حسب أحداث اليوم
+            </TabsTrigger>
+            <TabsTrigger value="domains" className="py-2.5 text-sm font-bold">
+              حسب المجالات
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="today" className="mt-4">
+            <TodayEvents />
+          </TabsContent>
+          <TabsContent value="domains" className="mt-4">
+            <HomeHierarchy openOpportunityId={open} />
+          </TabsContent>
+        </Tabs>
       </PageShell>
     );
   }
@@ -65,6 +84,7 @@ function ActivitiesPage() {
     </PageShell>
   );
 }
+
 
 
 
