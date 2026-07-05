@@ -21,6 +21,7 @@ export interface ParticipationLevelsInput {
 export interface ParticipationCardData {
   id: string;
   title: string;
+  description?: string;
   domain: string;
   generalActivity: string;
   lifeEvent: string;
@@ -34,6 +35,7 @@ export interface ParticipationCardData {
   teachingAids?: string[];
   nextStep?: string;
 }
+
 
 interface ParticipationCardProps {
   open: boolean;
@@ -109,20 +111,19 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
 
         <SheetHeader className="px-5 pt-4 pb-2 text-right">
           <div className="flex flex-wrap items-center gap-1.5">
-            <Badge variant="secondary" className="bg-primary/10 text-primary">
-              {data.id}
-            </Badge>
             <Badge variant="outline" className="text-[10px]">{data.domain}</Badge>
-            <Badge variant="outline" className="text-[10px]">{data.generalActivity}</Badge>
             <Badge variant="outline" className="text-[10px]">{data.lifeEvent}</Badge>
           </div>
           <SheetTitle className="text-right text-xl font-bold leading-snug">
             {data.title}
           </SheetTitle>
-          <p className="text-[12px] text-muted-foreground">
-            فرصة المشاركة: <span className="font-semibold text-foreground">{data.opportunity}</span>
-          </p>
+          {data.description && (
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {data.description}
+            </p>
+          )}
         </SheetHeader>
+
 
         <div className="space-y-4 px-5 pb-6">
           {data.whyParticipate && (
@@ -134,6 +135,14 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
                 {data.whyParticipate}
               </p>
             </div>
+          )}
+
+          {data.setup && (
+            <Section title="قبل أن تبدأ">
+              <p className="whitespace-pre-line text-sm leading-relaxed text-foreground">
+                {data.setup}
+              </p>
+            </Section>
           )}
 
           {data.steps && data.steps.length > 0 && (
@@ -180,17 +189,16 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
             </Section>
           )}
 
+          {data.support && (
+            <Section title="كيف أساعده؟">
+              <p className="whitespace-pre-line text-sm leading-relaxed text-foreground">
+                {data.support}
+              </p>
+            </Section>
+          )}
+
           <Accordion type="multiple" className="space-y-2">
-            {data.setup && (
-              <Item value="setup" title="التهيئة">
-                <p className="whitespace-pre-line leading-relaxed">{data.setup}</p>
-              </Item>
-            )}
-            {data.support && (
-              <Item value="support" title="الدعم المناسب">
-                <p className="whitespace-pre-line leading-relaxed">{data.support}</p>
-              </Item>
-            )}
+
             <Item value="levels" title="مستويات المشاركة">
               <div className="space-y-2">
                 <Level label="موجهة" text={data.levels.guided} tone="soft" />

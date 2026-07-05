@@ -9,6 +9,7 @@ export interface ParticipationLevels {
 
 export interface FullCard {
   title: string;
+  description?: string;
   whyParticipate: string;
   setup: string;
   steps: string[];
@@ -22,6 +23,7 @@ export interface FullCard {
   needsTools?: boolean;
   keywords?: string[];
 }
+
 
 export interface Opportunity {
   id: string;
@@ -60,8 +62,11 @@ const opp = (id: string, name: string): Opportunity => ({ id, name });
 // ============ بطاقات إدارة الملابس ============
 const collectClothesCard: FullCard = {
   title: "جمع الملابس قبل الغسيل",
+  description:
+    "فرصة بسيطة لإشراك الشاب في بداية دورة غسل الملابس من خلال جمع ملابسه المستخدمة ووضعها في المكان المخصص.",
   whyParticipate:
     "تساعد هذه المشاركة الشاب على تحمل مسؤولية جزء من إدارة ملابسه الشخصية، وتدعم الاستقلالية وتنظيم الروتين اليومي.",
+
   setup:
     "- اختر وقتاً ثابتاً قريباً من موعد الغسيل.\n- ضع سلة واضحة في مكان ثابت.\n- استخدم تلميحاً بصرياً عند الحاجة.\n- قلل المشتتات في بداية التنفيذ.",
   steps: [
@@ -188,21 +193,188 @@ const closetCard: FullCard = {
   keywords: ["دولاب", "ترتيب", "ملابس", "تنظيم"],
 };
 
+// ---- بطاقات مبسطة لبقية خطوات دورة الغسيل ----
+const miniWashCard = (
+  title: string,
+  description: string,
+  whyParticipate: string,
+  setup: string,
+  steps: string[],
+  support: string,
+  levels: ParticipationLevels,
+  progressIndicators: string[],
+  nextStep: string,
+  keywords: string[],
+): FullCard => ({
+  title,
+  description,
+  whyParticipate,
+  setup,
+  steps,
+  support,
+  levels,
+  progressIndicators,
+  teachingAids: ["بطاقة مصورة", "قائمة تحقق"],
+  nextStep,
+  expectedMinutes: 8,
+  needsOutside: false,
+  needsTools: true,
+  keywords,
+});
+
+const pocketsCard = miniWashCard(
+  "مراجعة الجيوب قبل الغسيل",
+  "خطوة سريعة تحمي الغسالة والملابس وتمنح الشاب دوراً واضحاً في تجهيز الغسيل.",
+  "يبني عادة الفحص الذاتي قبل تنفيذ أي مهمة ويقلل الأخطاء الشائعة أثناء الغسيل.",
+  "- سلة الملابس جاهزة.\n- مكان مضاء لفحص الجيوب.\n- علبة صغيرة لوضع ما يخرج منها.",
+  [
+    "التقاط القطعة من السلة.",
+    "فحص كل جيب باليد.",
+    "إخراج ما بداخله ووضعه في العلبة.",
+    "إعادة القطعة إلى السلة.",
+    "الانتقال إلى القطعة التالية.",
+  ],
+  "- تلميح لفظي: \"تفقد الجيوب قبل الغسيل\".\n- نمذجة أولى ثم مشاركة تدريجية.\n- ثناء عند اكتشاف قطعة نقود أو ورق.",
+  {
+    guided: "يفحص جيب قطعة واحدة بعد تلميح مباشر.",
+    shared: "يفحص جيوب عدة قطع بتذكير بسيط.",
+    independent: "يفحص جيوب كل الملابس قبل تسليمها للغسالة.",
+  },
+  ["فحص كل قطعة", "أخرج محتويات الجيوب", "أبلغ عن الأشياء المهمة", "احتاج تذكيراً أقل"],
+  "إضافة المنظف إلى الغسالة.",
+  ["جيوب", "فحص", "غسيل", "ملابس"],
+);
+
+const detergentCard = miniWashCard(
+  "إضافة المنظف",
+  "خطوة قصيرة تُشعر الشاب بالمسؤولية عن نتيجة الغسيل وتعزز مهارة القياس.",
+  "يتعلم قياس كمية محددة واتباع تعليمات مكتوبة على العبوة.",
+  "- منظف مناسب.\n- كوب قياس واضح.\n- ملصق بكمية الجرعة المعتادة.",
+  [
+    "فتح درج المنظف في الغسالة.",
+    "استخدام كوب القياس.",
+    "صب الكمية المحددة.",
+    "إغلاق درج المنظف.",
+    "إعادة العبوة إلى مكانها.",
+  ],
+  "- علامة على كوب القياس تحدد الكمية.\n- تلميح لفظي مختصر.\n- إشراف عند التعامل مع المنظف السائل.",
+  {
+    guided: "يصب الجرعة بعد تجهيزها كاملة.",
+    shared: "يقيس الجرعة بتلميح بصري ويصبها في الدرج.",
+    independent: "يختار الجرعة المناسبة حسب حجم الغسيل ويضيفها.",
+  },
+  ["استخدم كوب القياس", "أضاف الكمية الصحيحة", "أغلق الدرج", "احتاج مساعدة أقل"],
+  "تشغيل الغسالة على البرنامج المناسب.",
+  ["منظف", "غسيل", "قياس"],
+);
+
+const startWashCard = miniWashCard(
+  "تشغيل الغسالة",
+  "خطوة تمنح الشاب شعوراً بإتمام المهمة وتربطه بالأجهزة المنزلية بأمان.",
+  "يبني الثقة في استخدام الأجهزة اليومية باتباع خطوات ثابتة وواضحة.",
+  "- الغسالة موصولة وجاهزة.\n- ملصق فوق الأزرار يوضح البرنامج المعتاد.\n- الملابس والمنظف بالداخل.",
+  [
+    "إغلاق باب الغسالة بإحكام.",
+    "اختيار البرنامج من اللوحة.",
+    "الضغط على زر التشغيل.",
+    "التأكد من بدء الدوران.",
+    "تسجيل وقت الانتهاء المتوقع.",
+  ],
+  "- ملصق ألوان يشير إلى البرنامج المعتاد.\n- نمذجة أولى ثم مشاركة.\n- منبه للوقت المتوقع للانتهاء.",
+  {
+    guided: "يضغط زر التشغيل بعد تجهيز الإعدادات كاملة.",
+    shared: "يختار البرنامج المعتاد ويشغل الغسالة بتلميح.",
+    independent: "يختار البرنامج المناسب لنوع الغسيل ويشغلها.",
+  },
+  ["أغلق الباب", "اختار البرنامج الصحيح", "بدأ التشغيل", "تابع وقت الانتهاء"],
+  "إخراج الملابس عند انتهاء الدورة.",
+  ["غسالة", "تشغيل", "برنامج"],
+);
+
+const removeWashCard = miniWashCard(
+  "إخراج الملابس من الغسالة",
+  "خطوة تربط الشاب بمتابعة نتيجة عمله وتجهيزه لدورة النشر أو التجفيف.",
+  "يتعلم متابعة انتهاء المهمة والانتقال للخطوة التالية دون تأخير.",
+  "- سلة ملابس نظيفة قريبة.\n- الغسالة متوقفة والدورة انتهت.\n- إضاءة كافية.",
+  [
+    "التأكد من توقف الغسالة.",
+    "فتح باب الغسالة.",
+    "إخراج القطع قطعة قطعة.",
+    "وضعها في السلة النظيفة.",
+    "إغلاق باب الغسالة.",
+  ],
+  "- تلميح صوتي عند انتهاء الدورة.\n- ثناء على السرعة في نقل الغسيل.",
+  {
+    guided: "يخرج قطعة واحدة ويضعها في السلة بعد تلميح.",
+    shared: "يفرغ الغسالة كاملة بمساندة بسيطة.",
+    independent: "يتابع انتهاء الدورة ويفرغ الغسالة ويجهزها للنشر.",
+  },
+  ["استجاب لإشارة انتهاء الدورة", "أفرغ الغسالة كاملة", "لم يترك قطعاً بالداخل", "احتاج تذكيراً أقل"],
+  "نشر الملابس أو نقلها إلى المجفف.",
+  ["غسالة", "إخراج", "ملابس"],
+);
+
+const gatherDryCard = miniWashCard(
+  "تجميع الملابس الجافة",
+  "خطوة سريعة تحضّر الملابس لعملية الطي والترتيب داخل الدولاب.",
+  "يبني عادة إنهاء المهمة من طرفيها: من الغسل إلى الترتيب.",
+  "- سلة ملابس فارغة.\n- الملابس المنشورة جافة.\n- الوقت مناسب قبل موعد الطي.",
+  [
+    "التأكد من جفاف كل قطعة.",
+    "فك المشبك عن القطعة.",
+    "طي القطعة طياً بسيطاً.",
+    "وضعها في السلة.",
+    "نقل السلة إلى مكان الطي.",
+  ],
+  "- تلميح بصري لموقع سلة التجميع.\n- ثناء على الحفاظ على المشابك في مكانها.",
+  {
+    guided: "يجمع عدة قطع بعد تلميح مباشر.",
+    shared: "يجمع الملابس كاملة مع مساندة بسيطة.",
+    independent: "يتابع جفاف الملابس ويجمعها في الوقت المناسب.",
+  },
+  ["فك المشابك بلطف", "جمع كل القطع", "نقل السلة", "احتاج مساعدة أقل"],
+  "طي الملابس قبل ترتيبها في الدولاب.",
+  ["تجميع", "ملابس", "جافة"],
+);
+
+const foldCard = miniWashCard(
+  "طي الملابس",
+  "خطوة تعزز مهارة التآزر البصري الحركي وتُظهر نتيجة مرتبة يعتز بها الشاب.",
+  "يتعلم الترتيب البصري والتنظيم عبر مهمة متكررة بنتائج واضحة.",
+  "- مساحة مستوية للطي.\n- سلة الملابس الجافة.\n- بطاقة مصورة لطريقة الطي.",
+  [
+    "أخذ قطعة واحدة من السلة.",
+    "فردها على السطح.",
+    "طيها حسب النموذج المصور.",
+    "وضعها في كومة حسب النوع.",
+    "الانتقال إلى القطعة التالية.",
+  ],
+  "- نموذج مصور لكل نوع من الملابس.\n- نمذجة أولى ثم مشاركة تدريجية.\n- تقسيم المهمة إلى دفعات صغيرة عند الحاجة.",
+  {
+    guided: "يطوي قطعة واحدة بمساعدة مباشرة.",
+    shared: "يطوي عدة قطع من نفس النوع مع تلميح.",
+    independent: "يطوي كل الملابس ويصنفها حسب النوع.",
+  },
+  ["طوى القطعة بشكل صحيح", "صنف الملابس حسب النوع", "أكمل السلة كاملة", "احتاج تذكيراً أقل"],
+  "ترتيب الملابس في الدولاب.",
+  ["طي", "ملابس", "ترتيب"],
+);
+
 const washingEvent: LifeEvent = {
   id: "EV-WASH",
   name: "غسل الملابس",
   opportunities: [
     oppCard("OP-COLLECT", collectClothesCard),
     oppCard("OP-SORT", sortClothesCard),
-    opp("OP-POCKETS", "مراجعة الجيوب"),
-    opp("OP-PROGRAM", "اختيار برنامج الغسيل"),
-    opp("OP-DETERGENT", "إضافة المنظف"),
-    opp("OP-START", "تشغيل الغسالة"),
-    opp("OP-REMOVE", "إخراج الملابس"),
+    oppCard("OP-POCKETS", pocketsCard),
+    oppCard("OP-DETERGENT", detergentCard),
+    oppCard("OP-START", startWashCard),
+    oppCard("OP-REMOVE", removeWashCard),
     oppCard("OP-HANG", hangClothesCard),
-    opp("OP-GATHER", "تجميع الملابس الجافة"),
-    opp("OP-FOLD", "طي الملابس"),
+    oppCard("OP-GATHER", gatherDryCard),
+    oppCard("OP-FOLD", foldCard),
     oppCard("OP-CLOSET", closetCard),
+    opp("OP-PROGRAM", "اختيار برنامج الغسيل"),
   ],
 };
 
@@ -210,12 +382,13 @@ const clothesEvents: LifeEvent[] = [
   washingEvent,
   { id: "EV-DRY", name: "تجفيف الملابس", opportunities: [] },
   { id: "EV-IRON", name: "كي الملابس", opportunities: [] },
-  { id: "EV-ARRANGE", name: "ترتيب الملابس", opportunities: [] },
+  { id: "EV-ARRANGE", name: "ترتيب الملابس في الدولاب", opportunities: [oppCard("OP-CLOSET-2", closetCard)] },
   { id: "EV-BUY", name: "شراء الملابس", opportunities: [] },
-  { id: "EV-DISPOSE", name: "التخلص من الملابس القديمة", opportunities: [] },
-  { id: "EV-WORK", name: "تجهيز ملابس العمل", opportunities: [] },
+  { id: "EV-DISPOSE", name: "مراجعة الملابس التي تحتاج استبدالاً", opportunities: [] },
+  { id: "EV-WORK", name: "تجهيز ملابس العمل أو الخروج", opportunities: [] },
   { id: "EV-OCCASION", name: "تجهيز ملابس المناسبات", opportunities: [] },
 ];
+
 
 const clothesActivity: GeneralActivity = {
   id: "GA-CLOTHES",
@@ -223,14 +396,18 @@ const clothesActivity: GeneralActivity = {
   events: clothesEvents,
 };
 
-const homeManagementActivities: GeneralActivity[] = [
-  clothesActivity,
-  { id: "GA-ROOMS", name: "تنظيم الغرف", events: [] },
-  { id: "GA-CLEAN", name: "النظافة المنزلية", events: [] },
-  { id: "GA-MAINTAIN", name: "الصيانة المنزلية البسيطة", events: [] },
-  { id: "GA-STOCK-HOME", name: "إدارة المخزون", events: [] },
-  { id: "GA-WASTE", name: "إدارة النفايات", events: [] },
-];
+const roomsActivity: GeneralActivity = {
+  id: "GA-ROOMS",
+  name: "تنظيم الغرف والمساحات",
+  events: [],
+};
+
+const cleanActivity: GeneralActivity = {
+  id: "GA-CLEAN",
+  name: "النظافة المنزلية",
+  events: [],
+};
+
 
 // ============ بطاقات إدارة الغذاء ============
 const fridgeCard: FullCard = {
@@ -496,12 +673,16 @@ const emptyDomain = (id: string, name: string): HomeDomain => ({
 });
 
 export const homeHierarchy: HomeDomain[] = [
-  { id: "H1", name: "إدارة المنزل", activities: homeManagementActivities },
-  { id: "H2", name: "إدارة الغذاء", activities: [foodActivity] },
-  { id: "H3", name: "إدارة الصحة المنزلية", activities: [healthActivity] },
-  { id: "H4", name: "السلامة المنزلية", activities: [safetyActivity] },
-  emptyDomain("H5", "إدارة الوقت والروتين"),
-  { id: "H6", name: "المشاركة الأسرية", activities: [familyActivity] },
-  emptyDomain("H7", "الحديقة والزراعة"),
-  emptyDomain("H8", "رعاية الحيوانات الأليفة"),
+  { id: "H-CLOTHES", name: "إدارة الملابس", activities: [clothesActivity] },
+  { id: "H-KITCHEN", name: "المطبخ والوجبات", activities: [foodActivity] },
+  { id: "H-ORGANIZE", name: "ترتيب وتنظيم المنزل", activities: [roomsActivity] },
+  { id: "H-CLEAN", name: "النظافة المنزلية", activities: [cleanActivity] },
+  { id: "H-SAFETY", name: "السلامة داخل المنزل", activities: [safetyActivity] },
+  { id: "H-HEALTH", name: "الصحة والدواء", activities: [healthActivity] },
+  emptyDomain("H-TIME", "الوقت والروتين"),
+  { id: "H-FAMILY", name: "المشاركة الأسرية", activities: [familyActivity] },
+  emptyDomain("H-DOCS", "الوثائق والفواتير"),
+  emptyDomain("H-GARDEN", "الحديقة والزراعة"),
+  emptyDomain("H-PETS", "رعاية الحيوانات الأليفة"),
 ];
+
