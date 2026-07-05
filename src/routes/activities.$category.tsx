@@ -4,6 +4,7 @@ import { PageShell } from "@/components/PageShell";
 import { SearchBar } from "@/components/SearchBar";
 import { ImageTile } from "@/components/ImageTile";
 import { DetailSheet } from "@/components/DetailSheet";
+import { HomeHierarchy } from "@/components/HomeHierarchy";
 import { homeEvents, activityImages, type HomeEvent, type ActivityCategory } from "@/lib/data";
 
 export const Route = createFileRoute("/activities/$category")({
@@ -34,16 +35,30 @@ export const Route = createFileRoute("/activities/$category")({
   ),
 });
 
-
-
 function ActivitiesPage() {
   const { category } = Route.useParams();
+
+  if (category === "home") {
+    return (
+      <PageShell
+        title="الأنشطة المنزلية"
+        subtitle="مجال ← نشاط عام ← حدث حياة ← فرصة مشاركة ← بطاقة"
+      >
+        <HomeHierarchy />
+      </PageShell>
+    );
+  }
+
+  return <CommunityView />;
+}
+
+function CommunityView() {
   const [q, setQ] = useState("");
   const [active, setActive] = useState<HomeEvent | null>(null);
 
   const items = useMemo(
-    () => homeEvents.filter((e) => e.category === category),
-    [category],
+    () => homeEvents.filter((e) => e.category === "community"),
+    [],
   );
   const filtered = useMemo(() => {
     const s = q.trim();
@@ -53,10 +68,8 @@ function ActivitiesPage() {
     );
   }, [q, items]);
 
-  const title = category === "home" ? "الأنشطة المنزلية" : "الأنشطة المجتمعية";
-
   return (
-    <PageShell title={title} subtitle={`${filtered.length} نشاط جاهز للتنفيذ`}>
+    <PageShell title="الأنشطة المجتمعية" subtitle={`${filtered.length} نشاط جاهز للتنفيذ`}>
       <SearchBar value={q} onChange={setQ} placeholder="ابحث عن نشاط..." />
       <div className="mt-4 grid grid-cols-2 gap-3">
         {filtered.map((e) => (
@@ -72,7 +85,6 @@ function ActivitiesPage() {
           <p className="col-span-2 py-10 text-center text-sm text-muted-foreground">لا توجد نتائج مطابقة</p>
         )}
       </div>
-
 
       <DetailSheet
         open={!!active}
@@ -94,3 +106,4 @@ function ActivitiesPage() {
     </PageShell>
   );
 }
+
