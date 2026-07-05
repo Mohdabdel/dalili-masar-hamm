@@ -6,10 +6,15 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { ChevronLeft, ExternalLink } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
-import { DetailSheet } from "@/components/DetailSheet";
-import { supportPortal, type ServiceOpportunity } from "@/lib/support-portal";
+import { ServiceCard, type ServiceCardData } from "@/components/ServiceCard";
+import {
+  supportPortal,
+  type ServiceDomainNode,
+  type ServiceItem,
+  type ServiceOpportunity,
+} from "@/lib/support-portal";
 
 export const Route = createFileRoute("/resources")({
   head: () => ({
@@ -25,8 +30,45 @@ export const Route = createFileRoute("/resources")({
   component: SupportPortalPage,
 });
 
+interface ActiveCtx {
+  domain: ServiceDomainNode;
+  service: ServiceItem;
+  opportunity: ServiceOpportunity;
+}
+
 function SupportPortalPage() {
-  const [active, setActive] = useState<ServiceOpportunity | null>(null);
+  const [active, setActive] = useState<ActiveCtx | null>(null);
+
+  const toData = (ctx: ActiveCtx): ServiceCardData => {
+    const c = ctx.opportunity.card;
+    return {
+      id: ctx.opportunity.id,
+      title: c?.title ?? ctx.opportunity.name,
+      domain: ctx.domain.name,
+      service: ctx.service.name,
+      opportunity: ctx.opportunity.name,
+      whyNeed: c?.whyNeed,
+      whenToUse: c?.whenToUse,
+      whatToPrepare: c?.whatToPrepare,
+      generalSteps: c?.generalSteps,
+      whatNext: c?.whatNext,
+      relatedServices: c?.relatedServices,
+      externalLink: c?.externalLink,
+    };
+  };
+
+  const goNext = () => {
+    if (!active) return;
+    const opps = active.service.opportunities;
+    const idx = opps.findIndex((o) => o.id === active.opportunity.id);
+    const next = opps[idx + 1];
+    if (next) setActive({ ...active, opportunity: next });
+  };
+
+  const hasNext = active
+    ? active.service.opportunities.findIndex((o) => o.id === active.opportunity.id) <
+      active.service.opportunities.length - 1
+    : false;
 
   return (
     <PageShell
@@ -78,15 +120,17 @@ function SupportPortalPage() {
                               <li key={op.id}>
                                 <button
                                   type="button"
-                                  onClick={() => setActive(op)}
+                                  onClick={() =>
+                                    setActive({ domain, service: svc, opportunity: op })
+                                  }
                                   className="group flex w-full items-center justify-between gap-2 rounded-lg border border-border/50 bg-card p-3 text-right transition-all hover:border-gold/60 hover:bg-gold/5"
                                 >
-                                  <div className="flex-1">
+                                  <div className="min-w-0 flex-1">
                                     <div className="flex items-center gap-2">
                                       <span className="text-[10px] font-semibold text-muted-foreground">
                                         {op.id}
                                       </span>
-                                      <span className="text-sm font-semibold text-foreground">
+                                      <span className="truncate text-sm font-semibold text-foreground">
                                         {op.name}
                                       </span>
                                       {op.card && (
@@ -112,100 +156,14 @@ function SupportPortalPage() {
         ))}
       </Accordion>
 
-      <DetailSheet
+      <ServiceCard
         open={!!active}
         onOpenChange={(o) => !o && setActive(null)}
-        eyebrow={active?.id}
-        title={active?.card?.title ?? active?.name ?? ""}
-        headline={active?.card?.whyNeed}
-        headlineLabel="لماذا قد تحتاج هذه الخدمة"
-        checklist={active?.card?.generalSteps.map((s, i) => ({
-          key: `${active.id}-${i}`,
-          label: s,
-        }))}
-        checklistTitle="خطوات عامة"
-        sections={buildSections(active)}
+        data={active ? toData(active) : null}
+        onNext={hasNext ? goNext : undefined}
       />
     </PageShell>
   );
-}
-
-function buildSections(op: ServiceOpportunity | null) {
-  if (!op?.card) return [];
-  const c = op.card;
-  const sections: { id: string; title: string; content: React.ReactNode }[] = [];
-
-  if (c.whenToUse) {
-    sections.push({
-      id: "when",
-      title: "متى تستخدمها",
-      content: <p className="leading-relaxed">{c.whenToUse}</p>,
-    });
-  }
-  if (c.whatToPrepare?.length) {
-    sections.push({
-      id: "prepare",
-      title: "ماذا تجهز",
-      content: (
-        <ul className="list-inside list-disc space-y-1 leading-relaxed">
-          {c.whatToPrepare.map((it) => (
-            <li key={it}>{it}</li>
-          ))}
-        </ul>
-      ),
-    });
-  }
-  if (c.whatNext?.length) {
-    sections.push({
-      id: "next",
-      title: "ماذا بعد",
-      content: (
-        <ul className="list-inside list-disc space-y-1 leading-relaxed">
-          {c.whatNext.map((it) => (
-            <li key={it}>{it}</li>
-          ))}
-        </ul>
-      ),
-    });
-  }
-  if (c.relatedServices?.length) {
-    sections.push({
-      id: "related",
-      title: "خدمات مرتبطة",
-      content: (
-        <div className="flex flex-wrap gap-2">
-          {c.relatedServices.map((s) => (
-            <span
-              key={s}
-              className="rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold text-primary"
-            >
-              {s}
-            </span>
-          ))}
-        </div>
-      ),
-    });
-  }
-  sections.push({
-    id: "link",
-    title: "الرابط الرسمي",
-    content: c.externalLink ? (
-      <a
-        href={c.externalLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
-      >
-        <ExternalLink className="h-4 w-4" />
-        فتح الرابط
-      </a>
-    ) : (
-      <p className="text-xs text-muted-foreground">
-        سيتم إضافة الرابط الرسمي لاحقاً.
-      </p>
-    ),
-  });
-  return sections;
 }
 
 function EmptyNote({ text }: { text: string }) {

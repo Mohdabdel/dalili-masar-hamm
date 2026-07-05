@@ -6,28 +6,70 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ChevronLeft } from "lucide-react";
-import { DetailSheet } from "@/components/DetailSheet";
-import { homeHierarchy, type Opportunity, type HomeDomain } from "@/lib/home-hierarchy";
+import {
+  ParticipationCard,
+  type ParticipationCardData,
+} from "@/components/ParticipationCard";
+import {
+  homeHierarchy,
+  type HomeDomain,
+  type Opportunity,
+  type GeneralActivity,
+  type LifeEvent,
+} from "@/lib/home-hierarchy";
 
 interface HierarchyViewProps {
   domains?: HomeDomain[];
 }
 
+interface ActiveContext {
+  domain: HomeDomain;
+  activity: GeneralActivity;
+  event: LifeEvent;
+  opportunity: Opportunity;
+}
+
 export function HomeHierarchy({ domains = homeHierarchy }: HierarchyViewProps) {
-  const [active, setActive] = useState<Opportunity | null>(null);
+  const [active, setActive] = useState<ActiveContext | null>(null);
 
-
-  const renderLevels = (o: Opportunity) => {
-    const levels = o.card?.levels ?? o.levels;
-    if (!levels) return null;
-    return (
-      <div className="grid gap-2 text-xs">
-        <LevelRow label="موجهة" text={levels.guided} tone="soft" />
-        <LevelRow label="مشتركة" text={levels.shared} tone="mid" />
-        <LevelRow label="مستقلة" text={levels.independent} tone="strong" />
-      </div>
-    );
+  const toData = (ctx: ActiveContext): ParticipationCardData => {
+    const c = ctx.opportunity.card;
+    const levels = c?.levels ??
+      ctx.opportunity.levels ?? {
+        guided: "",
+        shared: "",
+        independent: "",
+      };
+    return {
+      id: ctx.opportunity.id,
+      title: c?.title ?? ctx.opportunity.name,
+      domain: ctx.domain.name,
+      generalActivity: ctx.activity.name,
+      lifeEvent: ctx.event.name,
+      opportunity: ctx.opportunity.name,
+      whyParticipate: c?.whyParticipate,
+      setup: c?.setup,
+      steps: c?.steps,
+      support: c?.support,
+      levels,
+      progressIndicators: c?.progressIndicators,
+      teachingAids: c?.teachingAids,
+      nextStep: c?.nextStep,
+    };
   };
+
+  const goNext = () => {
+    if (!active) return;
+    const opps = active.event.opportunities;
+    const idx = opps.findIndex((o) => o.id === active.opportunity.id);
+    const next = opps[idx + 1];
+    if (next) setActive({ ...active, opportunity: next });
+  };
+
+  const hasNext = active
+    ? active.event.opportunities.findIndex((o) => o.id === active.opportunity.id) <
+      active.event.opportunities.length - 1
+    : false;
 
   return (
     <>
@@ -83,15 +125,22 @@ export function HomeHierarchy({ domains = homeHierarchy }: HierarchyViewProps) {
                                         <li key={op.id}>
                                           <button
                                             type="button"
-                                            onClick={() => setActive(op)}
+                                            onClick={() =>
+                                              setActive({
+                                                domain,
+                                                activity: act,
+                                                event: ev,
+                                                opportunity: op,
+                                              })
+                                            }
                                             className="group flex w-full items-center justify-between gap-2 rounded-lg border border-border/50 bg-background p-3 text-right transition-all hover:border-gold/60 hover:bg-gold/5"
                                           >
-                                            <div className="flex-1 space-y-2">
+                                            <div className="min-w-0 flex-1">
                                               <div className="flex items-center gap-2">
                                                 <span className="text-[10px] font-semibold text-muted-foreground">
                                                   {op.id}
                                                 </span>
-                                                <span className="text-sm font-semibold text-foreground">
+                                                <span className="truncate text-sm font-semibold text-foreground">
                                                   {op.name}
                                                 </span>
                                                 {op.card && (
@@ -100,7 +149,6 @@ export function HomeHierarchy({ domains = homeHierarchy }: HierarchyViewProps) {
                                                   </span>
                                                 )}
                                               </div>
-                                              {renderLevels(op)}
                                             </div>
                                             <ChevronLeft className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-0.5" />
                                           </button>
@@ -123,104 +171,13 @@ export function HomeHierarchy({ domains = homeHierarchy }: HierarchyViewProps) {
         ))}
       </Accordion>
 
-      <DetailSheet
+      <ParticipationCard
         open={!!active}
         onOpenChange={(o) => !o && setActive(null)}
-        eyebrow={active?.id}
-        title={active?.card?.title ?? active?.name ?? ""}
-        headline={active?.card?.whyParticipate}
-        headlineLabel="لماذا نشارك"
-        checklist={active?.card?.steps.map((s, i) => ({
-          key: `${active.id}-${i}`,
-          label: s,
-        }))}
-        checklistTitle="الخطوات"
-        sections={buildSections(active)}
+        data={active ? toData(active) : null}
+        onNext={hasNext ? goNext : undefined}
       />
     </>
-  );
-}
-
-function buildSections(op: Opportunity | null) {
-  if (!op) return [];
-  const levels = op.card?.levels ?? op.levels;
-  const sections: { id: string; title: string; content: React.ReactNode }[] = [];
-
-  if (op.card?.setup) {
-    sections.push({
-      id: "setup",
-      title: "التهيئة",
-      content: <p className="leading-relaxed">{op.card.setup}</p>,
-    });
-  }
-  if (op.card?.support) {
-    sections.push({
-      id: "support",
-      title: "الدعم",
-      content: <p className="leading-relaxed">{op.card.support}</p>,
-    });
-  }
-  if (levels) {
-    sections.push({
-      id: "levels",
-      title: "مستويات المشاركة",
-      content: (
-        <div className="space-y-2">
-          <LevelRow label="موجهة" text={levels.guided} tone="soft" />
-          <LevelRow label="مشتركة" text={levels.shared} tone="mid" />
-          <LevelRow label="مستقلة" text={levels.independent} tone="strong" />
-        </div>
-      ),
-    });
-  }
-  if (op.card?.progressIndicators?.length) {
-    sections.push({
-      id: "progress",
-      title: "مؤشرات التقدم",
-      content: (
-        <div className="flex flex-wrap gap-2">
-          {op.card.progressIndicators.map((p) => (
-            <span
-              key={p}
-              className="rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold text-primary"
-            >
-              {p}
-            </span>
-          ))}
-        </div>
-      ),
-    });
-  }
-  if (op.card?.nextStep) {
-    sections.push({
-      id: "next",
-      title: "ماذا بعد",
-      content: <p className="leading-relaxed">{op.card.nextStep}</p>,
-    });
-  }
-  return sections;
-}
-
-function LevelRow({
-  label,
-  text,
-  tone,
-}: {
-  label: string;
-  text: string;
-  tone: "soft" | "mid" | "strong";
-}) {
-  const toneClasses =
-    tone === "soft"
-      ? "border-border/60 bg-background"
-      : tone === "mid"
-        ? "border-gold/40 bg-gold/5"
-        : "border-primary/40 bg-primary/5";
-  return (
-    <div className={`rounded-lg border p-2.5 ${toneClasses}`}>
-      <div className="mb-1 text-[10px] font-bold text-primary">{label}</div>
-      <div className="text-[12px] leading-relaxed text-foreground">{text}</div>
-    </div>
   );
 }
 
