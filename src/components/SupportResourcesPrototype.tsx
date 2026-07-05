@@ -1,4 +1,5 @@
 import { useState, type ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -10,19 +11,10 @@ import {
   Smartphone,
   Send,
   Printer,
-  ChevronRight,
-  ChevronLeft,
   ShoppingBasket,
   Shirt,
   WashingMachine,
 } from "lucide-react";
-
-const LEARNER_STEPS = [
-  { label: "اذهب إلى الغرفة", icon: ChevronLeft },
-  { label: "اجمع الملابس", icon: Shirt },
-  { label: "ضعها في السلة", icon: ShoppingBasket },
-  { label: "انقل السلة", icon: WashingMachine },
-];
 
 const VISUAL_AIDS = [
   { label: "سلة الملابس", icon: ShoppingBasket },
@@ -39,15 +31,6 @@ const SEQUENCE_STEPS = [
 
 export function SupportResourcesPrototype() {
   const [aidsOpen, setAidsOpen] = useState(false);
-  const [learnerOpen, setLearnerOpen] = useState(false);
-  const [learnerIdx, setLearnerIdx] = useState(0);
-
-  const openLearner = () => {
-    setLearnerIdx(0);
-    setLearnerOpen(true);
-  };
-
-  const CurrentIcon = LEARNER_STEPS[learnerIdx].icon;
 
   return (
     <section className="rounded-2xl border border-border/60 bg-card p-4 shadow-card-soft">
@@ -133,8 +116,10 @@ export function SupportResourcesPrototype() {
           title="نسخة المتعلم"
           description="واجهة مبسطة تعرض خطوات المشاركة بخط كبير وبأقل قدر من النص، لاستخدامها على جهاز المتعلم."
         >
-          <Button size="sm" className="w-full" onClick={openLearner}>
-            فتح نسخة المتعلم
+          <Button size="sm" className="w-full" asChild>
+            <Link to="/learner/$id" params={{ id: "OP-COLLECT" }}>
+              فتح نسخة المتعلم
+            </Link>
           </Button>
         </ResourceCard>
 
@@ -190,53 +175,6 @@ export function SupportResourcesPrototype() {
               );
             })}
           </ul>
-        </DialogContent>
-      </Dialog>
-
-      {/* Learner view dialog */}
-      <Dialog open={learnerOpen} onOpenChange={setLearnerOpen}>
-        <DialogContent className="max-w-md p-0" dir="rtl">
-          <div className="flex min-h-[80vh] flex-col bg-background">
-            <DialogHeader className="border-b border-border/60 px-6 py-4">
-              <DialogTitle className="text-right text-2xl font-extrabold">
-                جمع الملابس
-              </DialogTitle>
-            </DialogHeader>
-
-            <div className="flex flex-1 flex-col items-center justify-center gap-6 p-8 text-center">
-              <span className="flex h-32 w-32 items-center justify-center rounded-3xl bg-gold/20 text-primary">
-                <CurrentIcon className="h-16 w-16" />
-              </span>
-              <div className="text-4xl font-black text-primary">{learnerIdx + 1}</div>
-              <div className="text-3xl font-extrabold leading-snug text-foreground">
-                {LEARNER_STEPS[learnerIdx].label}
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3 border-t border-border/60 p-4">
-              <Button
-                size="lg"
-                variant="outline"
-                className="h-14 text-lg font-bold"
-                disabled={learnerIdx === 0}
-                onClick={() => setLearnerIdx((i) => Math.max(0, i - 1))}
-              >
-                <ChevronRight className="ml-1 h-5 w-5" />
-                السابق
-              </Button>
-              <Button
-                size="lg"
-                className="h-14 text-lg font-bold"
-                disabled={learnerIdx === LEARNER_STEPS.length - 1}
-                onClick={() =>
-                  setLearnerIdx((i) => Math.min(LEARNER_STEPS.length - 1, i + 1))
-                }
-              >
-                التالي
-                <ChevronLeft className="mr-1 h-5 w-5" />
-              </Button>
-            </div>
-          </div>
         </DialogContent>
       </Dialog>
     </section>
