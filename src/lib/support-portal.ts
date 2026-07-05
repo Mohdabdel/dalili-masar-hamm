@@ -10,6 +10,9 @@ export interface ServiceFullCard {
   whatNext: string[];
   externalLink?: string; // قابل للتعبئة لاحقاً
   relatedServices?: string[]; // أسماء خدمات مرتبطة
+  needsOutside?: boolean;
+  needsTools?: boolean;
+  keywords?: string[];
 }
 
 export interface ServiceOpportunity {
