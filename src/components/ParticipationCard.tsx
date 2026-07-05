@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Bookmark, Share2, ArrowLeft, Check } from "lucide-react";
 import { toast } from "sonner";
+import { SupportResourcesPrototype } from "@/components/SupportResourcesPrototype";
 
 export interface ParticipationLevelsInput {
   guided: string;
