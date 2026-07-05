@@ -53,6 +53,10 @@ const pickProductCard: FullCard = {
     "أكمل الخطوة داخل المتجر",
   ],
   nextStep: "الدفع ومراجعة الفاتورة.",
+  expectedMinutes: 20,
+  needsOutside: true,
+  needsTools: false,
+  keywords: ["تسوق", "منتج", "متجر", "قائمة", "سعر"],
 };
 
 const chooseProductsEvent: LifeEvent = {

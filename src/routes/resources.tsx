@@ -74,7 +74,9 @@ function SupportPortalPage() {
     <PageShell
       title="بوابة الدعم والخدمات"
       subtitle="مجال ← خدمة ← فرصة استفادة ← بطاقة"
+      breadcrumbs={[{ label: "بوابة الدعم والخدمات" }]}
     >
+
       <Accordion type="multiple" className="space-y-3">
         {supportPortal.map((domain) => (
           <AccordionItem

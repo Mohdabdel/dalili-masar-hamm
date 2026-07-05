@@ -41,6 +41,7 @@ function ActivitiesPage() {
       <PageShell
         title="الأنشطة المنزلية"
         subtitle="مجال ← نشاط عام ← حدث حياة ← فرصة مشاركة ← بطاقة"
+        breadcrumbs={[{ label: "الأنشطة المنزلية" }]}
       >
         <HomeHierarchy />
       </PageShell>
@@ -51,10 +52,12 @@ function ActivitiesPage() {
     <PageShell
       title="الأنشطة المجتمعية"
       subtitle="مجال ← نشاط عام ← حدث حياة ← فرصة مشاركة ← بطاقة"
+      breadcrumbs={[{ label: "الأنشطة المجتمعية" }]}
     >
       <HomeHierarchy domains={communityHierarchy} />
     </PageShell>
   );
 }
+
 
 

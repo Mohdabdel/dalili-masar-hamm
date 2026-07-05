@@ -17,6 +17,10 @@ export interface FullCard {
   progressIndicators: string[];
   teachingAids?: string[];
   nextStep: string;
+  expectedMinutes?: number;
+  needsOutside?: boolean;
+  needsTools?: boolean;
+  keywords?: string[];
 }
 
 export interface Opportunity {
@@ -76,6 +80,10 @@ const collectClothesCard: FullCard = {
   },
   progressIndicators: ["بدأ", "أكمل", "احتاج دعماً أقل", "كرر المشاركة"],
   nextStep: "فرز الملابس",
+  expectedMinutes: 10,
+  needsOutside: false,
+  needsTools: true,
+  keywords: ["ملابس", "غسيل", "منزل", "سلة"],
 };
 
 // حدث: غسل الملابس

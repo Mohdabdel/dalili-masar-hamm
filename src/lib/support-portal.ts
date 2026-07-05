@@ -10,6 +10,9 @@ export interface ServiceFullCard {
   whatNext: string[];
   externalLink?: string; // قابل للتعبئة لاحقاً
   relatedServices?: string[]; // أسماء خدمات مرتبطة
+  needsOutside?: boolean;
+  needsTools?: boolean;
+  keywords?: string[];
 }
 
 export interface ServiceOpportunity {
@@ -61,6 +64,9 @@ const issueCard: ServiceFullCard = {
   ],
   externalLink: "",
   relatedServices: ["الهوية الإماراتية", "التقارير الطبية"],
+  needsOutside: true,
+  needsTools: false,
+  keywords: ["بطاقة", "أصحاب الهمم", "هوية", "تسهيلات"],
 };
 
 const emptyOpp = (id: string, name: string): ServiceOpportunity => ({ id, name });

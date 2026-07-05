@@ -21,7 +21,9 @@ function HowToUsePage() {
     <PageShell
       title="كيف تستخدم دليلي؟"
       subtitle="مرافق للأسرة في الحياة اليومية"
+      breadcrumbs={[{ label: "كيف تستخدم دليلي" }]}
     >
+
       {/* الهدف */}
       <section className="rounded-2xl border border-border/60 bg-card p-5 shadow-card-soft">
         <h2 className="font-display text-lg font-bold text-foreground">
