@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as MessagesRouteImport } from './routes/messages'
@@ -16,11 +17,17 @@ import { Route as McpRouteImport } from './routes/mcp'
 import { Route as HowToUseRouteImport } from './routes/how-to-use'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SettingsAddEventRouteImport } from './routes/settings.add-event'
 import { Route as ActivitiesCategoryRouteImport } from './routes/activities.$category'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
 import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
 
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SearchRoute = SearchRouteImport.update({
   id: '/search',
   path: '/search',
@@ -56,6 +63,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SettingsAddEventRoute = SettingsAddEventRouteImport.update({
+  id: '/add-event',
+  path: '/add-event',
+  getParentRoute: () => SettingsRoute,
+} as any)
 const ActivitiesCategoryRoute = ActivitiesCategoryRouteImport.update({
   id: '/activities/$category',
   path: '/activities/$category',
@@ -88,9 +100,11 @@ export interface FileRoutesByFullPath {
   '/messages': typeof MessagesRoute
   '/resources': typeof ResourcesRoute
   '/search': typeof SearchRoute
+  '/settings': typeof SettingsRouteWithChildren
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/activities/$category': typeof ActivitiesCategoryRoute
+  '/settings/add-event': typeof SettingsAddEventRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
 export interface FileRoutesByTo {
@@ -101,9 +115,11 @@ export interface FileRoutesByTo {
   '/messages': typeof MessagesRoute
   '/resources': typeof ResourcesRoute
   '/search': typeof SearchRoute
+  '/settings': typeof SettingsRouteWithChildren
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/activities/$category': typeof ActivitiesCategoryRoute
+  '/settings/add-event': typeof SettingsAddEventRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
 export interface FileRoutesById {
@@ -115,9 +131,11 @@ export interface FileRoutesById {
   '/messages': typeof MessagesRoute
   '/resources': typeof ResourcesRoute
   '/search': typeof SearchRoute
+  '/settings': typeof SettingsRouteWithChildren
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/activities/$category': typeof ActivitiesCategoryRoute
+  '/settings/add-event': typeof SettingsAddEventRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
 export interface FileRouteTypes {
@@ -130,9 +148,11 @@ export interface FileRouteTypes {
     | '/messages'
     | '/resources'
     | '/search'
+    | '/settings'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/activities/$category'
+    | '/settings/add-event'
     | '/.mcp/invoke-tool/$tool'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -143,9 +163,11 @@ export interface FileRouteTypes {
     | '/messages'
     | '/resources'
     | '/search'
+    | '/settings'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/activities/$category'
+    | '/settings/add-event'
     | '/.mcp/invoke-tool/$tool'
   id:
     | '__root__'
@@ -156,9 +178,11 @@ export interface FileRouteTypes {
     | '/messages'
     | '/resources'
     | '/search'
+    | '/settings'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/activities/$category'
+    | '/settings/add-event'
     | '/.mcp/invoke-tool/$tool'
   fileRoutesById: FileRoutesById
 }
@@ -170,6 +194,7 @@ export interface RootRouteChildren {
   MessagesRoute: typeof MessagesRoute
   ResourcesRoute: typeof ResourcesRoute
   SearchRoute: typeof SearchRoute
+  SettingsRoute: typeof SettingsRouteWithChildren
   Char91DotmcpChar93ListToolsRoute: typeof Char91DotmcpChar93ListToolsRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   ActivitiesCategoryRoute: typeof ActivitiesCategoryRoute
@@ -178,6 +203,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/search': {
       id: '/search'
       path: '/search'
@@ -227,6 +259,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/settings/add-event': {
+      id: '/settings/add-event'
+      path: '/add-event'
+      fullPath: '/settings/add-event'
+      preLoaderRoute: typeof SettingsAddEventRouteImport
+      parentRoute: typeof SettingsRoute
+    }
     '/activities/$category': {
       id: '/activities/$category'
       path: '/activities/$category'
@@ -258,6 +297,18 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface SettingsRouteChildren {
+  SettingsAddEventRoute: typeof SettingsAddEventRoute
+}
+
+const SettingsRouteChildren: SettingsRouteChildren = {
+  SettingsAddEventRoute: SettingsAddEventRoute,
+}
+
+const SettingsRouteWithChildren = SettingsRoute._addFileChildren(
+  SettingsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CalendarRoute: CalendarRoute,
@@ -266,6 +317,7 @@ const rootRouteChildren: RootRouteChildren = {
   MessagesRoute: MessagesRoute,
   ResourcesRoute: ResourcesRoute,
   SearchRoute: SearchRoute,
+  SettingsRoute: SettingsRouteWithChildren,
   Char91DotmcpChar93ListToolsRoute: Char91DotmcpChar93ListToolsRoute,
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
     Char91DotwellKnownChar93OauthProtectedResourceRoute,
