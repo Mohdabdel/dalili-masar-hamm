@@ -1,4 +1,5 @@
 import { useState, type ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -10,8 +11,6 @@ import {
   Smartphone,
   Send,
   Printer,
-  ChevronRight,
-  ChevronLeft,
   ShoppingBasket,
   Shirt,
   WashingMachine,
