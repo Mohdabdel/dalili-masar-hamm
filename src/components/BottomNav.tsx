@@ -1,11 +1,12 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { LayoutGrid, MessageCircle, Landmark, CalendarDays } from "lucide-react";
+import { LayoutGrid, MessageCircle, Landmark, CalendarDays, HelpCircle } from "lucide-react";
 
 const tabs = [
   { to: "/", label: "الفئات", icon: LayoutGrid },
   { to: "/messages", label: "الرسائل", icon: MessageCircle },
   { to: "/resources", label: "الخدمات", icon: Landmark },
   { to: "/calendar", label: "الفعاليات", icon: CalendarDays },
+  { to: "/how-to-use", label: "الدليل", icon: HelpCircle },
 ] as const;
 
 export function BottomNav() {

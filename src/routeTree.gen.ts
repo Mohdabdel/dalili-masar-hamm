@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as MessagesRouteImport } from './routes/messages'
 import { Route as McpRouteImport } from './routes/mcp'
+import { Route as HowToUseRouteImport } from './routes/how-to-use'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ActivitiesCategoryRouteImport } from './routes/activities.$category'
@@ -32,6 +33,11 @@ const MessagesRoute = MessagesRouteImport.update({
 const McpRoute = McpRouteImport.update({
   id: '/mcp',
   path: '/mcp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowToUseRoute = HowToUseRouteImport.update({
+  id: '/how-to-use',
+  path: '/how-to-use',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CalendarRoute = CalendarRouteImport.update({
@@ -71,6 +77,7 @@ const Char91DotmcpChar93InvokeToolToolRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/calendar': typeof CalendarRoute
+  '/how-to-use': typeof HowToUseRoute
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
   '/resources': typeof ResourcesRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/calendar': typeof CalendarRoute
+  '/how-to-use': typeof HowToUseRoute
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
   '/resources': typeof ResourcesRoute
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/calendar': typeof CalendarRoute
+  '/how-to-use': typeof HowToUseRoute
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
   '/resources': typeof ResourcesRoute
@@ -107,6 +116,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/calendar'
+    | '/how-to-use'
     | '/mcp'
     | '/messages'
     | '/resources'
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/calendar'
+    | '/how-to-use'
     | '/mcp'
     | '/messages'
     | '/resources'
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/calendar'
+    | '/how-to-use'
     | '/mcp'
     | '/messages'
     | '/resources'
@@ -141,6 +153,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CalendarRoute: typeof CalendarRoute
+  HowToUseRoute: typeof HowToUseRoute
   McpRoute: typeof McpRoute
   MessagesRoute: typeof MessagesRoute
   ResourcesRoute: typeof ResourcesRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       path: '/mcp'
       fullPath: '/mcp'
       preLoaderRoute: typeof McpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-to-use': {
+      id: '/how-to-use'
+      path: '/how-to-use'
+      fullPath: '/how-to-use'
+      preLoaderRoute: typeof HowToUseRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/calendar': {
@@ -221,6 +241,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CalendarRoute: CalendarRoute,
+  HowToUseRoute: HowToUseRoute,
   McpRoute: McpRoute,
   MessagesRoute: MessagesRoute,
   ResourcesRoute: ResourcesRoute,
