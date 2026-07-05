@@ -133,10 +133,31 @@ function LandingPage() {
                   {subtitle}
                 </p>
               </div>
-              <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
+          <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
             </Link>
           ))}
         </div>
+      </section>
+
+      {/* كيف تستخدم دليلي؟ */}
+      <section className="mt-7">
+        <Link
+          to="/how-to-use"
+          className="group flex items-center gap-4 rounded-2xl border border-border/60 bg-card p-4 shadow-card-soft transition-all hover:-translate-y-0.5 hover:border-gold/60 hover:shadow-elegant"
+        >
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-gold text-primary shadow-card-soft">
+            <span className="text-lg font-bold">؟</span>
+          </div>
+          <div className="min-w-0 flex-1">
+            <h4 className="text-base font-bold text-foreground">
+              كيف تستخدم دليلي؟
+            </h4>
+            <p className="mt-0.5 text-xs font-medium leading-relaxed text-muted-foreground">
+              دليل سريع للبدء واعتبارات المشاركة
+            </p>
+          </div>
+          <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
+        </Link>
       </section>
     </PageShell>
   );
