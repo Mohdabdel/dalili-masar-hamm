@@ -36,10 +36,17 @@ export function PageShell({ title, subtitle, description, breadcrumbs, children 
           )}
           <div className="flex items-center justify-between">
             <div className="min-w-0">
-              <p className="text-xs font-semibold tracking-wider text-gold/90">
-                دليلي · مسار همم
-              </p>
+              {!isHome && (
+                <p className="text-xs font-semibold tracking-wider text-gold/90">
+                  دليلي · مسار همم
+                </p>
+              )}
               <h1 className="mt-1 truncate text-2xl font-bold">{title}</h1>
+              {description && (
+                <p className="mt-1 text-sm font-medium text-primary-foreground/80">
+                  {description}
+                </p>
+              )}
               {subtitle && (
                 <p className="mt-1 text-xs text-primary-foreground/70">{subtitle}</p>
               )}
