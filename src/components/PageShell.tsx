@@ -7,11 +7,12 @@ import { Breadcrumbs, BackButton, type Crumb } from "./Breadcrumbs";
 interface PageShellProps {
   title: string;
   subtitle?: string;
+  description?: string;
   breadcrumbs?: Crumb[];
   children: ReactNode;
 }
 
-export function PageShell({ title, subtitle, breadcrumbs, children }: PageShellProps) {
+export function PageShell({ title, subtitle, description, breadcrumbs, children }: PageShellProps) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const isHome = pathname === "/";
   return (
