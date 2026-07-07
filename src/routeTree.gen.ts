@@ -20,6 +20,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ActivitiesIndexRouteImport } from './routes/activities.index'
 import { Route as SettingsAddEventRouteImport } from './routes/settings.add-event'
 import { Route as LearnerIdRouteImport } from './routes/learner.$id'
+import { Route as ActivitiesMyDayRouteImport } from './routes/activities.my-day'
 import { Route as ActivitiesCategoryRouteImport } from './routes/activities.$category'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
@@ -80,6 +81,11 @@ const LearnerIdRoute = LearnerIdRouteImport.update({
   path: '/learner/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ActivitiesMyDayRoute = ActivitiesMyDayRouteImport.update({
+  id: '/activities/my-day',
+  path: '/activities/my-day',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ActivitiesCategoryRoute = ActivitiesCategoryRouteImport.update({
   id: '/activities/$category',
   path: '/activities/$category',
@@ -116,6 +122,7 @@ export interface FileRoutesByFullPath {
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/activities/$category': typeof ActivitiesCategoryRoute
+  '/activities/my-day': typeof ActivitiesMyDayRoute
   '/learner/$id': typeof LearnerIdRoute
   '/settings/add-event': typeof SettingsAddEventRoute
   '/activities/': typeof ActivitiesIndexRoute
@@ -133,6 +140,7 @@ export interface FileRoutesByTo {
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/activities/$category': typeof ActivitiesCategoryRoute
+  '/activities/my-day': typeof ActivitiesMyDayRoute
   '/learner/$id': typeof LearnerIdRoute
   '/settings/add-event': typeof SettingsAddEventRoute
   '/activities': typeof ActivitiesIndexRoute
@@ -151,6 +159,7 @@ export interface FileRoutesById {
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/activities/$category': typeof ActivitiesCategoryRoute
+  '/activities/my-day': typeof ActivitiesMyDayRoute
   '/learner/$id': typeof LearnerIdRoute
   '/settings/add-event': typeof SettingsAddEventRoute
   '/activities/': typeof ActivitiesIndexRoute
@@ -170,6 +179,7 @@ export interface FileRouteTypes {
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/activities/$category'
+    | '/activities/my-day'
     | '/learner/$id'
     | '/settings/add-event'
     | '/activities/'
@@ -187,6 +197,7 @@ export interface FileRouteTypes {
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/activities/$category'
+    | '/activities/my-day'
     | '/learner/$id'
     | '/settings/add-event'
     | '/activities'
@@ -204,6 +215,7 @@ export interface FileRouteTypes {
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/activities/$category'
+    | '/activities/my-day'
     | '/learner/$id'
     | '/settings/add-event'
     | '/activities/'
@@ -222,6 +234,7 @@ export interface RootRouteChildren {
   Char91DotmcpChar93ListToolsRoute: typeof Char91DotmcpChar93ListToolsRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   ActivitiesCategoryRoute: typeof ActivitiesCategoryRoute
+  ActivitiesMyDayRoute: typeof ActivitiesMyDayRoute
   LearnerIdRoute: typeof LearnerIdRoute
   ActivitiesIndexRoute: typeof ActivitiesIndexRoute
   Char91DotmcpChar93InvokeToolToolRoute: typeof Char91DotmcpChar93InvokeToolToolRoute
@@ -306,6 +319,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LearnerIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/activities/my-day': {
+      id: '/activities/my-day'
+      path: '/activities/my-day'
+      fullPath: '/activities/my-day'
+      preLoaderRoute: typeof ActivitiesMyDayRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/activities/$category': {
       id: '/activities/$category'
       path: '/activities/$category'
@@ -362,6 +382,7 @@ const rootRouteChildren: RootRouteChildren = {
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
     Char91DotwellKnownChar93OauthProtectedResourceRoute,
   ActivitiesCategoryRoute: ActivitiesCategoryRoute,
+  ActivitiesMyDayRoute: ActivitiesMyDayRoute,
   LearnerIdRoute: LearnerIdRoute,
   ActivitiesIndexRoute: ActivitiesIndexRoute,
   Char91DotmcpChar93InvokeToolToolRoute: Char91DotmcpChar93InvokeToolToolRoute,
