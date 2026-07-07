@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Clock, TrendingUp, ShieldCheck, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 
 export const Route = createFileRoute("/how-to-use")({
@@ -9,106 +9,103 @@ export const Route = createFileRoute("/how-to-use")({
       {
         name: "description",
         content:
-          "دليل استخدام دليلي: قاعدة 15 دقيقة، المشاركة قبل الإتقان، واعتبارات قبل البدء.",
+          "ست خطوات لاستخدام دليلي، مع شرح مستويات المشاركة الثلاثة: موجهة، مشتركة، ومستقلة.",
       },
     ],
   }),
   component: HowToUsePage,
 });
 
+const STEPS: { title: string; body: string }[] = [
+  {
+    title: "١. اختر حدثاً حقيقياً من يومكم",
+    body: "ابدأ من موقف يحدث فعلاً داخل البيت أو المجتمع، لا تصنع نشاطاً إضافياً.",
+  },
+  {
+    title: "٢. ابدأ بفرصة مشاركة بسيطة",
+    body: "اختر جزءاً صغيراً من المهمة يمكن تنفيذه في وقت قصير.",
+  },
+  {
+    title: "٣. اختر مستوى المشاركة المناسب",
+    body: "قدّر مستوى الدعم الذي يحتاجه الشاب اليوم، وابدأ منه دون مبالغة.",
+  },
+  {
+    title: "٤. قدم الدعم دون أن تسيطر على المهمة",
+    body: "اترك مساحة كافية للشاب لأداء دوره، وتدخّل فقط عند الحاجة.",
+  },
+  {
+    title: "٥. كرر المشاركة حتى تصبح جزءاً من الروتين",
+    body: "التكرار الهادئ هو ما يبني المهارة والثقة، وليس الجلسة المكثفة.",
+  },
+  {
+    title: "٦. قلل المساعدة تدريجياً",
+    body: "خفّف التلميحات مع الوقت حتى يزداد استقلال الشاب في المهمة.",
+  },
+];
+
+const LEVELS: { label: string; body: string }[] = [
+  {
+    label: "مشاركة موجهة",
+    body: "يشارك الشاب في جزء بسيط من المهمة مع دعم مباشر.",
+  },
+  {
+    label: "مشاركة مشتركة",
+    body: "ينفذ جزءاً أكبر من المهمة مع تلميحات أو متابعة قريبة.",
+  },
+  {
+    label: "مشاركة مستقلة",
+    body: "يؤدي المهمة بدرجة أعلى من الاستقلال مع مراجعة بسيطة عند الحاجة.",
+  },
+];
+
 function HowToUsePage() {
   return (
     <PageShell
       title="كيف تستخدم دليلي؟"
-      subtitle="مرافق للأسرة في الحياة اليومية"
+      subtitle="ست خطوات عملية للأسرة"
       breadcrumbs={[{ label: "كيف تستخدم دليلي" }]}
     >
+      <div className="space-y-3">
+        {STEPS.map((s) => (
+          <section
+            key={s.title}
+            className="rounded-2xl border border-border/60 bg-card p-5 shadow-card-soft"
+          >
+            <h3 className="font-display text-base font-bold text-foreground">
+              {s.title}
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              {s.body}
+            </p>
+          </section>
+        ))}
+      </div>
 
-      {/* الهدف */}
-      <section className="rounded-2xl border border-border/60 bg-card p-5 shadow-card-soft">
+      <section className="mt-8 rounded-2xl border border-border/60 bg-card p-5 shadow-card-soft">
         <h2 className="font-display text-lg font-bold text-foreground">
-          دليلي ليس دليلاً للأنشطة، بل مرافق للأسرة في الحياة اليومية
+          مستويات المشاركة
         </h2>
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-          الهدف من دليلي ليس إضافة أعباء جديدة على الأسرة، ولا تحويل الحياة
-          اليومية إلى جلسات تدريب، بل مساعدة الأسرة على استثمار ما يحدث فعلاً
-          داخل المنزل والمجتمع وتحويله إلى فرص مشاركة حقيقية للشاب أو البالغ
-          من ذوي الهمم.
-        </p>
-      </section>
-
-      {/* قاعدة 15 دقيقة */}
-      <section className="mt-5 rounded-2xl border border-border/60 bg-card p-5 shadow-card-soft">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-gold text-primary shadow-card-soft">
-            <Clock className="h-5 w-5" strokeWidth={2.2} />
-          </div>
-          <h3 className="font-display text-base font-bold text-foreground">
-            قاعدة 15 دقيقة
-          </h3>
-        </div>
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-          لا تحتاج المشاركة إلى وقت طويل. ابدأ بفرصة صغيرة داخل حدث يومي
-          حقيقي، وكررها بهدوء حتى تصبح جزءاً من الروتين.
-        </p>
-      </section>
-
-      {/* المشاركة قبل الإتقان */}
-      <section className="mt-5 rounded-2xl border border-border/60 bg-card p-5 shadow-card-soft">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-gold text-primary shadow-card-soft">
-            <TrendingUp className="h-5 w-5" strokeWidth={2.2} />
-          </div>
-          <h3 className="font-display text-base font-bold text-foreground">
-            المشاركة قبل الإتقان
-          </h3>
-        </div>
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-          لا يشترط أن ينفذ الشاب المهمة كاملة من البداية. يكفي أن يكون له دور
-          واضح، ثم يزداد هذا الدور تدريجياً مع انخفاض الدعم.
-        </p>
-      </section>
-
-      {/* اعتبارات قبل البدء */}
-      <section className="mt-5 rounded-2xl border border-border/60 bg-card p-5 shadow-card-soft">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-gold text-primary shadow-card-soft">
-            <ShieldCheck className="h-5 w-5" strokeWidth={2.2} />
-          </div>
-          <h3 className="font-display text-base font-bold text-foreground">
-            اعتبارات قبل البدء
-          </h3>
-        </div>
-        <ul className="mt-4 space-y-2.5">
-          {[
-            "اختر حدثاً يحدث فعلاً في يومكم.",
-            "لا تحول المشاركة إلى اختبار.",
-            "ابدأ بمستوى دعم مناسب.",
-            "استخدم التلميحات البصرية أو اللفظية عند الحاجة.",
-            "قلل المساعدة تدريجياً.",
-            "راقب التقدم البسيط.",
-            "احترم عمر الشاب ودوره كراشد.",
-            "توقف إذا ظهر إجهاد واضح أو ازدحام حسي.",
-            "عد للمشاركة لاحقاً دون ضغط.",
-          ].map((item) => (
+        <ul className="mt-4 space-y-3">
+          {LEVELS.map((l) => (
             <li
-              key={item}
-              className="flex items-start gap-2 text-sm text-muted-foreground"
+              key={l.label}
+              className="rounded-xl border border-border/60 bg-background p-4"
             >
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
-              <span className="leading-relaxed">{item}</span>
+              <div className="text-sm font-bold text-primary">{l.label}</div>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                {l.body}
+              </p>
             </li>
           ))}
         </ul>
       </section>
 
-      {/* زر البدء */}
       <div className="mt-6">
         <Link
-          to="/"
+          to="/activities"
           className="group flex items-center justify-center gap-2 rounded-2xl bg-gradient-primary px-6 py-3.5 text-sm font-bold text-primary-foreground shadow-elegant transition-all hover:opacity-90"
         >
-          <span>ابدأ من حدث اليوم</span>
+          <span>ابدأ استخدام دليلي</span>
           <ArrowLeft
             className="h-4 w-4 transition-transform group-hover:-translate-x-1"
             strokeWidth={2.5}
