@@ -35,6 +35,10 @@ function AddEventPage() {
         { label: "إضافة حدث جديد" },
       ]}
     >
+      <div className="mb-4 flex items-center gap-2">
+        <Badge variant="outline" className="text-[10px]">نموذج أولي</Badge>
+        <span className="text-xs text-muted-foreground">قيد التطوير</span>
+      </div>
       <div className="space-y-6">
         <Card>
           <CardContent className="space-y-6 p-5">
