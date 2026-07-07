@@ -191,7 +191,7 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
           )}
 
           {data.support && (
-            <Section title="كيف أساعد أثناء التنفيذ؟">
+            <Section title="كيف أجعل المشاركة أسهل؟">
               <p className="whitespace-pre-line text-sm leading-relaxed text-foreground">
                 {data.support}
               </p>
@@ -199,7 +199,7 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
           )}
 
           <Accordion type="multiple" className="space-y-2">
-            <Item value="levels" title="مستويات المشاركة">
+            <Item value="levels" title="ابدأ من المستوى المناسب">
               <div className="space-y-2">
                 <Level label="موجهة" text={data.levels.guided} tone="soft" />
                 <Level label="مشتركة" text={data.levels.shared} tone="mid" />
