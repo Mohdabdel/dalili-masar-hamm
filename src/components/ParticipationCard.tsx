@@ -191,7 +191,7 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
           )}
 
           {data.support && (
-            <Section title="كيف أساعد أثناء التنفيذ؟">
+            <Section title="كيف أجعل المشاركة أسهل؟">
               <p className="whitespace-pre-line text-sm leading-relaxed text-foreground">
                 {data.support}
               </p>
