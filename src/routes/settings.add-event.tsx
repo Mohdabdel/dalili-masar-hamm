@@ -126,6 +126,19 @@ function AddEventPage() {
                 </SelectContent>
               </Select>
             </div>
+
+            {/* ملاحظات الأسرة */}
+            <div className="space-y-2">
+              <Label htmlFor="family-notes" className="text-base font-bold">
+                ملاحظات الأسرة
+              </Label>
+              <textarea
+                id="family-notes"
+                rows={3}
+                placeholder="أضف أي ملاحظة تساعد على تنفيذ الحدث..."
+                className="w-full rounded-md border border-input bg-background px-3 py-2 text-right text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              />
+            </div>
           </CardContent>
         </Card>
 
