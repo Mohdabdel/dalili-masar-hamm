@@ -18,6 +18,7 @@ import { Route as HowToUseRouteImport } from './routes/how-to-use'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ActivitiesIndexRouteImport } from './routes/activities.index'
+import { Route as SettingsFamilyRouteImport } from './routes/settings.family'
 import { Route as SettingsAddEventRouteImport } from './routes/settings.add-event'
 import { Route as LearnerIdRouteImport } from './routes/learner.$id'
 import { Route as ActivitiesMyDayRouteImport } from './routes/activities.my-day'
@@ -70,6 +71,11 @@ const ActivitiesIndexRoute = ActivitiesIndexRouteImport.update({
   id: '/activities/',
   path: '/activities/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsFamilyRoute = SettingsFamilyRouteImport.update({
+  id: '/family',
+  path: '/family',
+  getParentRoute: () => SettingsRoute,
 } as any)
 const SettingsAddEventRoute = SettingsAddEventRouteImport.update({
   id: '/add-event',
@@ -125,6 +131,7 @@ export interface FileRoutesByFullPath {
   '/activities/my-day': typeof ActivitiesMyDayRoute
   '/learner/$id': typeof LearnerIdRoute
   '/settings/add-event': typeof SettingsAddEventRoute
+  '/settings/family': typeof SettingsFamilyRoute
   '/activities/': typeof ActivitiesIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
@@ -143,6 +150,7 @@ export interface FileRoutesByTo {
   '/activities/my-day': typeof ActivitiesMyDayRoute
   '/learner/$id': typeof LearnerIdRoute
   '/settings/add-event': typeof SettingsAddEventRoute
+  '/settings/family': typeof SettingsFamilyRoute
   '/activities': typeof ActivitiesIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
@@ -162,6 +170,7 @@ export interface FileRoutesById {
   '/activities/my-day': typeof ActivitiesMyDayRoute
   '/learner/$id': typeof LearnerIdRoute
   '/settings/add-event': typeof SettingsAddEventRoute
+  '/settings/family': typeof SettingsFamilyRoute
   '/activities/': typeof ActivitiesIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
@@ -182,6 +191,7 @@ export interface FileRouteTypes {
     | '/activities/my-day'
     | '/learner/$id'
     | '/settings/add-event'
+    | '/settings/family'
     | '/activities/'
     | '/.mcp/invoke-tool/$tool'
   fileRoutesByTo: FileRoutesByTo
@@ -200,6 +210,7 @@ export interface FileRouteTypes {
     | '/activities/my-day'
     | '/learner/$id'
     | '/settings/add-event'
+    | '/settings/family'
     | '/activities'
     | '/.mcp/invoke-tool/$tool'
   id:
@@ -218,6 +229,7 @@ export interface FileRouteTypes {
     | '/activities/my-day'
     | '/learner/$id'
     | '/settings/add-event'
+    | '/settings/family'
     | '/activities/'
     | '/.mcp/invoke-tool/$tool'
   fileRoutesById: FileRoutesById
@@ -305,6 +317,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ActivitiesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/settings/family': {
+      id: '/settings/family'
+      path: '/family'
+      fullPath: '/settings/family'
+      preLoaderRoute: typeof SettingsFamilyRouteImport
+      parentRoute: typeof SettingsRoute
+    }
     '/settings/add-event': {
       id: '/settings/add-event'
       path: '/add-event'
@@ -359,10 +378,12 @@ declare module '@tanstack/react-router' {
 
 interface SettingsRouteChildren {
   SettingsAddEventRoute: typeof SettingsAddEventRoute
+  SettingsFamilyRoute: typeof SettingsFamilyRoute
 }
 
 const SettingsRouteChildren: SettingsRouteChildren = {
   SettingsAddEventRoute: SettingsAddEventRoute,
+  SettingsFamilyRoute: SettingsFamilyRoute,
 }
 
 const SettingsRouteWithChildren = SettingsRoute._addFileChildren(
