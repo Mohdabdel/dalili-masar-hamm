@@ -121,7 +121,7 @@ const num = (s: string) => {
 function splitSentences(text: string): string[] {
   if (!text) return [];
   return text
-    .split(/(?<=[\.\!\?؟])\s+|\n+/u)
+    .split(/(?<=[.!?؟])\s+|\n+/u)
     .map((s) => s.trim())
     .filter((s) => s.length > 0);
 }
