@@ -159,8 +159,25 @@ function buildCard(
   };
 }
 
+// ---------- Categories ----------
+/** تصنيفات المجالات كما تظهر في العمود `category` داخل 01_domains.csv. */
+export type DomainCategory = "منزلي" | "مجتمعي" | "منزلي/مجتمعي";
+
+const HOME_CATEGORIES: ReadonlySet<string> = new Set<DomainCategory>([
+  "منزلي",
+  "منزلي/مجتمعي",
+]);
+const COMMUNITY_CATEGORIES: ReadonlySet<string> = new Set<DomainCategory>([
+  "مجتمعي",
+  "منزلي/مجتمعي",
+]);
+
 // ---------- Build indexed model ----------
-function build(): { domains: HomeDomain[]; pendingOpportunityIds: string[] } {
+function build(): {
+  domains: HomeDomain[];
+  categoryByDomainId: Map<string, string>;
+  pendingOpportunityIds: string[];
+} {
   const domainRows = parseCsv(domainsCsv) as unknown as DomainRow[];
   const eventRows = parseCsv(eventsCsv) as unknown as EventRow[];
   const opportunityRows = parseCsv(
@@ -202,7 +219,6 @@ function build(): { domains: HomeDomain[]; pendingOpportunityIds: string[] } {
   const cardByOpportunity = new Map<string, CardRow>();
   cardRows.forEach((c) => {
     if (!c.card_id || !validOpportunityIds.has(c.opportunity_id)) return;
-    // بطاقة مكتملة: تحتوي على الحقول الأساسية الثمانية غير فارغة
     const required = [
       c.why,
       c.before_start,
@@ -213,19 +229,21 @@ function build(): { domains: HomeDomain[]; pendingOpportunityIds: string[] } {
       c.whats_next,
     ];
     if (required.some((v) => !v || !v.trim())) return; // card_pending
-    // أول بطاقة صالحة فقط لكل فرصة
     if (!cardByOpportunity.has(c.opportunity_id)) {
       cardByOpportunity.set(c.opportunity_id, c);
     }
   });
 
   const pendingOpportunityIds: string[] = [];
+  const categoryByDomainId = new Map<string, string>();
 
   const sortedDomains = [...domainRows].sort(
     (a, b) => num(a.display_order) - num(b.display_order),
   );
 
   const domains: HomeDomain[] = sortedDomains.map((d) => {
+    categoryByDomainId.set(d.domain_id, d.category);
+
     const events = (eventsByDomain.get(d.domain_id) ?? [])
       .slice()
       .sort((a, b) => num(a.display_order) - num(b.display_order));
@@ -240,7 +258,7 @@ function build(): { domains: HomeDomain[]; pendingOpportunityIds: string[] } {
         const card = cardByOpportunity.get(op.opportunity_id);
         if (!card) {
           pendingOpportunityIds.push(op.opportunity_id);
-          continue; // لا تعرض الفرصة غير المكتملة للمستخدم النهائي
+          continue;
         }
         const full = buildCard(card, op.opportunity_name_ar, ev.description);
         opportunities.push({
@@ -271,20 +289,57 @@ function build(): { domains: HomeDomain[]; pendingOpportunityIds: string[] } {
     };
   });
 
-  return { domains, pendingOpportunityIds };
+  return { domains, categoryByDomainId, pendingOpportunityIds };
 }
 
 const built = build();
 
-/** المجالات المعتمدة من ملفات CSV، جاهزة للاستخدام مع مكونات الواجهة الحالية. */
-export const knowledgeDomains: HomeDomain[] = built.domains;
+/**
+ * جميع المجالات المعتمدة من ملفات CSV (منزلية ومجتمعية).
+ * يبقى هذا التصدير للحفاظ على توافق المكونات الحالية،
+ * والتي كانت تستهلك المجالات المنزلية فقط قبل توسّع المستودع.
+ * استخدم `getHomeDomains()` أو `getCommunityDomains()` للتمييز.
+ */
+export const knowledgeDomains: HomeDomain[] = built.domains.filter((d) =>
+  HOME_CATEGORIES.has(built.categoryByDomainId.get(d.id) ?? ""),
+);
 
 /** فرص بلا بطاقات مكتملة — لا تُعرض للمستخدم النهائي (تشخيص فقط). */
 export const pendingOpportunityIds: string[] = built.pendingOpportunityIds;
 
+/** تصنيف المجال كما ورد في 01_domains.csv. */
+export function getDomainCategory(domainId: string): string | undefined {
+  return built.categoryByDomainId.get(domainId);
+}
+
+/** المجالات التي تظهر في تبويب الأنشطة المنزلية (منزلي + منزلي/مجتمعي). */
+export function getHomeDomains(): HomeDomain[] {
+  return built.domains.filter((d) =>
+    HOME_CATEGORIES.has(built.categoryByDomainId.get(d.id) ?? ""),
+  );
+}
+
+/** المجالات التي تظهر في تبويب الأنشطة المجتمعية (مجتمعي + منزلي/مجتمعي). */
+export function getCommunityDomains(): HomeDomain[] {
+  return built.domains.filter((d) =>
+    COMMUNITY_CATEGORIES.has(built.categoryByDomainId.get(d.id) ?? ""),
+  );
+}
+
+/**
+ * إرجاع المجالات المطابقة لتصنيف واحد كما هو مكتوب في CSV
+ * ("منزلي" | "مجتمعي" | "منزلي/مجتمعي").
+ * السجل المشترك "منزلي/مجتمعي" يُعاد كنسخة واحدة دون تكرار.
+ */
+export function getDomainsByCategory(category: string): HomeDomain[] {
+  return built.domains.filter(
+    (d) => built.categoryByDomainId.get(d.id) === category,
+  );
+}
+
 /** بحث موحّد عن فرصة مشاركة داخل مستودع المعرفة. */
 export function findOpportunityById(id: string): Opportunity | null {
-  for (const domain of knowledgeDomains) {
+  for (const domain of built.domains) {
     for (const activity of domain.activities) {
       for (const event of activity.events) {
         for (const opp of event.opportunities) {
@@ -299,7 +354,8 @@ export function findOpportunityById(id: string): Opportunity | null {
 if (import.meta.env.DEV) {
   // eslint-disable-next-line no-console
   console.info(
-    `[knowledge-base] domains=${knowledgeDomains.length} pending_cards=${pendingOpportunityIds.length}`,
+    `[knowledge-base] domains=${built.domains.length} home=${getHomeDomains().length} community=${getCommunityDomains().length} pending_cards=${pendingOpportunityIds.length}`,
   );
 }
+
 
