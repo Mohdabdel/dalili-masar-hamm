@@ -12,12 +12,12 @@ import {
   type ParticipationCardData,
 } from "@/components/ParticipationCard";
 import {
-  homeHierarchy,
   type HomeDomain,
   type Opportunity,
   type GeneralActivity,
   type LifeEvent,
 } from "@/lib/home-hierarchy";
+import { knowledgeDomains } from "@/lib/knowledge-base";
 
 interface HierarchyViewProps {
   domains?: HomeDomain[];
