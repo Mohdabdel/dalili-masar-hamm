@@ -1,6 +1,6 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { findOpportunityById } from "@/lib/home-hierarchy";
+import { findOpportunityById } from "@/lib/knowledge-base";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 

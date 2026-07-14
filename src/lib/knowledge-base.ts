@@ -282,9 +282,24 @@ export const knowledgeDomains: HomeDomain[] = built.domains;
 /** فرص بلا بطاقات مكتملة — لا تُعرض للمستخدم النهائي (تشخيص فقط). */
 export const pendingOpportunityIds: string[] = built.pendingOpportunityIds;
 
+/** بحث موحّد عن فرصة مشاركة داخل مستودع المعرفة. */
+export function findOpportunityById(id: string): Opportunity | null {
+  for (const domain of knowledgeDomains) {
+    for (const activity of domain.activities) {
+      for (const event of activity.events) {
+        for (const opp of event.opportunities) {
+          if (opp.id === id) return opp;
+        }
+      }
+    }
+  }
+  return null;
+}
+
 if (import.meta.env.DEV) {
   // eslint-disable-next-line no-console
   console.info(
     `[knowledge-base] domains=${knowledgeDomains.length} pending_cards=${pendingOpportunityIds.length}`,
   );
 }
+

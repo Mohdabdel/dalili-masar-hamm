@@ -1,4 +1,5 @@
-import { homeHierarchy } from "./home-hierarchy";
+import type { HomeDomain } from "./home-hierarchy";
+import { knowledgeDomains } from "./knowledge-base";
 import { communityHierarchy } from "./community-hierarchy";
 import { supportPortal } from "./support-portal";
 
@@ -22,8 +23,9 @@ export interface SearchItem {
 
 function collectParticipation(
   kind: "home" | "community",
-  domains: typeof homeHierarchy,
+  domains: HomeDomain[],
 ): SearchItem[] {
+
   const items: SearchItem[] = [];
   const route = kind === "home" ? "/activities/home" : "/activities/community";
   for (const d of domains) {
@@ -79,7 +81,7 @@ function collectServices(): SearchItem[] {
 }
 
 export const searchIndex: SearchItem[] = [
-  ...collectParticipation("home", homeHierarchy),
+  ...collectParticipation("home", knowledgeDomains),
   ...collectParticipation("community", communityHierarchy),
   ...collectServices(),
 ];
