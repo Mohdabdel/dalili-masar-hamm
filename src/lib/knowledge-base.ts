@@ -1,0 +1,290 @@
+// طبقة بيانات مركزية: تقرأ ملفات CSV المعتمدة كمصدر حقيقة وحيد
+// وتبني الفهارس حسب المعرفات: domain_id → event_id → opportunity_id → card_id.
+// أي تعديل على المحتوى يتم عبر تحديث ملفات CSV فقط.
+
+import domainsCsv from "@/data/knowledge/01_domains.csv?raw";
+import eventsCsv from "@/data/knowledge/02_events.csv?raw";
+import opportunitiesCsv from "@/data/knowledge/03_participation_opportunities.csv?raw";
+import cardsCsv from "@/data/knowledge/04_participation_cards.csv?raw";
+
+import type {
+  FullCard,
+  HomeDomain,
+  GeneralActivity,
+  LifeEvent,
+  Opportunity,
+  ParticipationLevels,
+} from "@/lib/home-hierarchy";
+
+// ---------- CSV parser (يدعم الحقول المقتبسة والأسطر متعددة الأسطر) ----------
+function parseCsv(text: string): Record<string, string>[] {
+  // remove BOM
+  const src = text.replace(/^\uFEFF/, "");
+  const rows: string[][] = [];
+  let cur: string[] = [];
+  let field = "";
+  let inQuotes = false;
+
+  for (let i = 0; i < src.length; i++) {
+    const ch = src[i];
+    if (inQuotes) {
+      if (ch === '"') {
+        if (src[i + 1] === '"') {
+          field += '"';
+          i++;
+        } else {
+          inQuotes = false;
+        }
+      } else {
+        field += ch;
+      }
+    } else {
+      if (ch === '"') {
+        inQuotes = true;
+      } else if (ch === ",") {
+        cur.push(field);
+        field = "";
+      } else if (ch === "\n" || ch === "\r") {
+        if (ch === "\r" && src[i + 1] === "\n") i++;
+        cur.push(field);
+        field = "";
+        // skip fully empty lines
+        if (!(cur.length === 1 && cur[0] === "")) rows.push(cur);
+        cur = [];
+      } else {
+        field += ch;
+      }
+    }
+  }
+  if (field !== "" || cur.length > 0) {
+    cur.push(field);
+    if (!(cur.length === 1 && cur[0] === "")) rows.push(cur);
+  }
+  if (rows.length === 0) return [];
+  const headers = rows[0].map((h) => h.trim());
+  return rows.slice(1).map((r) => {
+    const obj: Record<string, string> = {};
+    headers.forEach((h, idx) => {
+      obj[h] = (r[idx] ?? "").trim();
+    });
+    return obj;
+  });
+}
+
+// ---------- Row shapes ----------
+interface DomainRow {
+  domain_id: string;
+  domain_name_ar: string;
+  category: string;
+  display_order: string;
+  status: string;
+}
+interface EventRow {
+  event_id: string;
+  domain_id: string;
+  event_name: string;
+  description: string;
+  display_order: string;
+  status: string;
+}
+interface OpportunityRow {
+  opportunity_id: string;
+  event_id: string;
+  opportunity_name_ar: string;
+  display_order: string;
+  status: string;
+}
+interface CardRow {
+  card_id: string;
+  opportunity_id: string;
+  why: string;
+  before_start: string;
+  participation_steps: string;
+  make_it_easier: string;
+  participation_levels: string;
+  indicators: string;
+  whats_next: string;
+  support_notes: string;
+  status: string;
+}
+
+// ---------- Utilities ----------
+const num = (s: string) => {
+  const n = parseInt(s, 10);
+  return Number.isFinite(n) ? n : 0;
+};
+
+/**
+ * قسّم نصاً حراً إلى جمل قصيرة صالحة كعناصر قائمة
+ * دون تعديل النص الأصلي أو إعادة صياغته.
+ */
+function splitSentences(text: string): string[] {
+  if (!text) return [];
+  return text
+    .split(/(?<=[\.\!\?؟])\s+|\n+/u)
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0);
+}
+
+function buildLevels(raw: string): ParticipationLevels {
+  const parts = splitSentences(raw);
+  return {
+    guided: parts[0] ?? "",
+    shared: parts[1] ?? "",
+    independent: parts[2] ?? parts.slice(2).join(" ") ?? "",
+  };
+}
+
+function buildCard(
+  row: CardRow,
+  opportunityName: string,
+  eventDescription: string,
+): FullCard {
+  return {
+    title: opportunityName,
+    description: eventDescription || undefined,
+    whyParticipate: row.why,
+    setup: row.before_start,
+    steps: splitSentences(row.participation_steps),
+    support: row.make_it_easier,
+    levels: buildLevels(row.participation_levels),
+    progressIndicators: splitSentences(row.indicators),
+    teachingAids: row.support_notes
+      ? row.support_notes
+          .split(/[،,\n]+/)
+          .map((s) => s.trim())
+          .filter(Boolean)
+      : undefined,
+    nextStep: row.whats_next,
+  };
+}
+
+// ---------- Build indexed model ----------
+function build(): { domains: HomeDomain[]; pendingOpportunityIds: string[] } {
+  const domainRows = parseCsv(domainsCsv) as unknown as DomainRow[];
+  const eventRows = parseCsv(eventsCsv) as unknown as EventRow[];
+  const opportunityRows = parseCsv(
+    opportunitiesCsv,
+  ) as unknown as OpportunityRow[];
+  const cardRows = parseCsv(cardsCsv) as unknown as CardRow[];
+
+  const domainById = new Map<string, DomainRow>();
+  domainRows.forEach((d) => d.domain_id && domainById.set(d.domain_id, d));
+
+  const eventsByDomain = new Map<string, EventRow[]>();
+  eventRows.forEach((e) => {
+    if (!e.event_id || !domainById.has(e.domain_id)) return; // drop orphans
+    const arr = eventsByDomain.get(e.domain_id) ?? [];
+    arr.push(e);
+    eventsByDomain.set(e.domain_id, arr);
+  });
+
+  const validEventIds = new Set(
+    eventRows
+      .filter((e) => domainById.has(e.domain_id))
+      .map((e) => e.event_id),
+  );
+
+  const opportunitiesByEvent = new Map<string, OpportunityRow[]>();
+  opportunityRows.forEach((op) => {
+    if (!op.opportunity_id || !validEventIds.has(op.event_id)) return;
+    const arr = opportunitiesByEvent.get(op.event_id) ?? [];
+    arr.push(op);
+    opportunitiesByEvent.set(op.event_id, arr);
+  });
+
+  const validOpportunityIds = new Set(
+    opportunityRows
+      .filter((o) => validEventIds.has(o.event_id))
+      .map((o) => o.opportunity_id),
+  );
+
+  const cardByOpportunity = new Map<string, CardRow>();
+  cardRows.forEach((c) => {
+    if (!c.card_id || !validOpportunityIds.has(c.opportunity_id)) return;
+    // بطاقة مكتملة: تحتوي على الحقول الأساسية الثمانية غير فارغة
+    const required = [
+      c.why,
+      c.before_start,
+      c.participation_steps,
+      c.make_it_easier,
+      c.participation_levels,
+      c.indicators,
+      c.whats_next,
+    ];
+    if (required.some((v) => !v || !v.trim())) return; // card_pending
+    // أول بطاقة صالحة فقط لكل فرصة
+    if (!cardByOpportunity.has(c.opportunity_id)) {
+      cardByOpportunity.set(c.opportunity_id, c);
+    }
+  });
+
+  const pendingOpportunityIds: string[] = [];
+
+  const sortedDomains = [...domainRows].sort(
+    (a, b) => num(a.display_order) - num(b.display_order),
+  );
+
+  const domains: HomeDomain[] = sortedDomains.map((d) => {
+    const events = (eventsByDomain.get(d.domain_id) ?? [])
+      .slice()
+      .sort((a, b) => num(a.display_order) - num(b.display_order));
+
+    const lifeEvents: LifeEvent[] = events.map((ev) => {
+      const opps = (opportunitiesByEvent.get(ev.event_id) ?? [])
+        .slice()
+        .sort((a, b) => num(a.display_order) - num(b.display_order));
+
+      const opportunities: Opportunity[] = [];
+      for (const op of opps) {
+        const card = cardByOpportunity.get(op.opportunity_id);
+        if (!card) {
+          pendingOpportunityIds.push(op.opportunity_id);
+          continue; // لا تعرض الفرصة غير المكتملة للمستخدم النهائي
+        }
+        const full = buildCard(card, op.opportunity_name_ar, ev.description);
+        opportunities.push({
+          id: op.opportunity_id,
+          name: op.opportunity_name_ar,
+          levels: full.levels,
+          card: full,
+        });
+      }
+
+      return {
+        id: ev.event_id,
+        name: ev.event_name,
+        opportunities,
+      };
+    });
+
+    const activity: GeneralActivity = {
+      id: `${d.domain_id}-ALL`,
+      name: d.domain_name_ar,
+      events: lifeEvents.filter((e) => e.opportunities.length > 0),
+    };
+
+    return {
+      id: d.domain_id,
+      name: d.domain_name_ar,
+      activities: activity.events.length > 0 ? [activity] : [],
+    };
+  });
+
+  return { domains, pendingOpportunityIds };
+}
+
+const built = build();
+
+/** المجالات المعتمدة من ملفات CSV، جاهزة للاستخدام مع مكونات الواجهة الحالية. */
+export const knowledgeDomains: HomeDomain[] = built.domains;
+
+/** فرص بلا بطاقات مكتملة — لا تُعرض للمستخدم النهائي (تشخيص فقط). */
+export const pendingOpportunityIds: string[] = built.pendingOpportunityIds;
+
+if (import.meta.env.DEV) {
+  // eslint-disable-next-line no-console
+  console.info(
+    `[knowledge-base] domains=${knowledgeDomains.length} pending_cards=${pendingOpportunityIds.length}`,
+  );
+}
