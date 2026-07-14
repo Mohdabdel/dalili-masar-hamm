@@ -12,12 +12,12 @@ import {
   type ParticipationCardData,
 } from "@/components/ParticipationCard";
 import {
-  homeHierarchy,
   type HomeDomain,
   type Opportunity,
   type GeneralActivity,
   type LifeEvent,
 } from "@/lib/home-hierarchy";
+import { knowledgeDomains } from "@/lib/knowledge-base";
 
 interface HierarchyViewProps {
   domains?: HomeDomain[];
@@ -45,7 +45,7 @@ const featuredClothesEvents: {
   { title: "نراجع الملابس التي تحتاج استبدالاً", eventId: "EV-DISPOSE", icon: RefreshCw },
 ];
 
-export function HomeHierarchy({ domains = homeHierarchy, openOpportunityId }: HierarchyViewProps) {
+export function HomeHierarchy({ domains = knowledgeDomains, openOpportunityId }: HierarchyViewProps) {
   const [active, setActive] = useState<ActiveContext | null>(null);
 
   useEffect(() => {
