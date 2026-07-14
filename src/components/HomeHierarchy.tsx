@@ -45,7 +45,7 @@ const featuredClothesEvents: {
   { title: "نراجع الملابس التي تحتاج استبدالاً", eventId: "EV-DISPOSE", icon: RefreshCw },
 ];
 
-export function HomeHierarchy({ domains = homeHierarchy, openOpportunityId }: HierarchyViewProps) {
+export function HomeHierarchy({ domains = knowledgeDomains, openOpportunityId }: HierarchyViewProps) {
   const [active, setActive] = useState<ActiveContext | null>(null);
 
   useEffect(() => {
