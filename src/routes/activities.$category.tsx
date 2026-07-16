@@ -4,7 +4,7 @@ import { PageShell } from "@/components/PageShell";
 import { HomeHierarchy } from "@/components/HomeHierarchy";
 import { TodayEvents } from "@/components/TodayEvents";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { communityHierarchy } from "@/lib/community-hierarchy";
+import { getCommunityDomains } from "@/lib/knowledge-base";
 import type { ActivityCategory } from "@/lib/data";
 
 const searchSchema = z.object({
