@@ -4,7 +4,7 @@ import { PageShell } from "@/components/PageShell";
 import { HomeHierarchy } from "@/components/HomeHierarchy";
 import { TodayEvents } from "@/components/TodayEvents";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { communityHierarchy } from "@/lib/community-hierarchy";
+import { getCommunityDomains } from "@/lib/knowledge-base";
 import type { ActivityCategory } from "@/lib/data";
 
 const searchSchema = z.object({
@@ -80,7 +80,7 @@ function ActivitiesPage() {
       subtitle="اختر ما يحدث خارج المنزل اليوم، ثم افتح فرصة مشاركة مناسبة يمكن تنفيذها مع الشاب أو البالغ خطوة بخطوة."
       breadcrumbs={[{ label: "الأنشطة المجتمعية" }]}
     >
-      <HomeHierarchy domains={communityHierarchy} openOpportunityId={open} />
+      <HomeHierarchy domains={getCommunityDomains()} openOpportunityId={open} />
     </PageShell>
   );
 }

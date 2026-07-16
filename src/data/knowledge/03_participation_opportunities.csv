@@ -49,6 +49,260 @@ CLO-047-OP001,CLO-047,تغيير ملابس الطفل بعد الحادثات (
 CLO-048-OP001,CLO-048,غسل ملابس الأطفال الرضع بشكل منفصل,1,,,معتمد مبدئيًا,Pasted markdown(20).md
 CLO-049-OP001,CLO-049,ترتيب ملابس الأطفال حسب العمر والمقاس,1,,,معتمد مبدئيًا,Pasted markdown(20).md
 CLO-050-OP001,CLO-050,تفقد مقاسات الملابس وتحديثها مع نمو الأطفال,1,,,معتمد مبدئيًا,Pasted markdown(20).md
+COMM-001-OP001,COMM-001,خلع الحذاء في المكان المخصص,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-001-OP002,COMM-001,التوجه إلى مكان الصلاة داخل دار العبادة,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-001-OP003,COMM-001,المشاركة في الشعائر الدينية,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-001-OP004,COMM-001,مغادرة المكان بانتظام,4,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-002-OP001,COMM-002,تجهيز أغراض النزهة,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-002-OP002,COMM-002,اختيار موقع الجلوس المناسب,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-002-OP003,COMM-002,المشاركة في المشي داخل الحديقة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-002-OP004,COMM-002,جمع الأغراض والمخلفات قبل المغادرة,4,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-003-OP001,COMM-003,ارتداء الملابس والأحذية المناسبة للمشي,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-003-OP002,COMM-003,اختيار مسار المشي في الحي,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-003-OP003,COMM-003,عبور الشارع من الأماكن المخصصة,3,,إشراف مباشر,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-003-OP004,COMM-003,العودة إلى المنزل بعد انتهاء الجولة,4,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-004-OP001,COMM-004,إعداد شيء بسيط يؤخذ للزيارة,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-004-OP002,COMM-004,طرق الباب أو استخدام الجرس عند الوصول,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-004-OP003,COMM-004,إلقاء التحية على الأقارب,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-004-OP004,COMM-004,المشاركة في تقديم المساعدة أثناء الزيارة,4,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-004-OP005,COMM-004,توديع الأقارب عند المغادرة,5,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-005-OP001,COMM-005,تحديد موعد ومكان اللقاء الأسري,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-005-OP002,COMM-005,استقبال أفراد الأسرة عند الوصول,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-005-OP003,COMM-005,اختيار مقعد للجلوس مع المجموعة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-005-OP004,COMM-005,توديع أفراد الأسرة بعد انتهاء اللقاء,4,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-006-OP001,COMM-006,الاطلاع على قائمة المشروبات,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-006-OP002,COMM-006,إبلاغ الموظف بالطلب,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-006-OP003,COMM-006,دفع الحساب,3,,مرافقة,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-006-OP004,COMM-006,استلام الطلب والجلوس,4,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-007-OP001,COMM-007,طلب المساعدة في اختيار طاولة,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-007-OP002,COMM-007,اختيار الوجبة من القائمة,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-007-OP003,COMM-007,إبلاغ النادل بالطلب,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-007-OP004,COMM-007,دفع الحساب عند الانتهاء,4,,إشراف مباشر,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-008-OP001,COMM-008,التوجه لاستلام الطلب المحجوز,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-008-OP002,COMM-008,إعطاء الاسم أو رقم الطلب للموظف,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-008-OP003,COMM-008,التأكد من محتويات الطلب قبل المغادرة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-009-OP001,COMM-009,تقديم بطاقة العضوية للاستعلامات,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-009-OP002,COMM-009,البحث عن القسم المراد تصفحه,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-009-OP003,COMM-009,اختيار أماكن الجلوس للقراءة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-009-OP004,COMM-009,إعادة الكتب لمكانها بعد الانتهاء,4,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-010-OP001,COMM-010,اختيار الكتاب المراد استعارته,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-010-OP002,COMM-010,تقديم البطاقة للموظف لإتمام الإعارة,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-010-OP003,COMM-010,استلام إيصال موعد الإرجاع,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-011-OP001,COMM-011,التوجه لمكتب إرجاع الكتب,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-011-OP002,COMM-011,تسليم الكتب للموظف أو وضعها في الصندوق,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-011-OP003,COMM-011,التأكد من إتمام عملية الإرجاع في النظام,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-012-OP001,COMM-012,إبراز تذكرة الحضور عند المدخل,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-012-OP002,COMM-012,الوصول للمقعد المخصص,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-012-OP003,COMM-012,المشاركة في التفاعل أثناء الفعالية,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-012-OP004,COMM-012,المغادرة بعد انتهاء النشاط,4,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-013-OP001,COMM-013,الحصول على جدول الفعاليات أو خريطة المعرض,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-013-OP002,COMM-013,التنقل بين الأجنحة,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-013-OP003,COMM-013,الاستفسار من ممثلي الأجنحة عن المعروضات,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-014-OP001,COMM-014,شراء تذكرة العرض,1,,مرافقة,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-014-OP002,COMM-014,شراء وجبات خفيفة قبل بدء العرض,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-014-OP003,COMM-014,التوجه للمقعد الخاص,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-014-OP004,COMM-014,مغادرة القاعة بعد انتهاء العرض,4,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-015-OP001,COMM-015,قطع تذكرة الدخول,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-015-OP002,COMM-015,التجول في أروقة المتحف,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-015-OP003,COMM-015,قراءة اللوحات التعريفية للأعمال,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-015-OP004,COMM-015,التوجه لمتجر المتحف التذكاري,4,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-016-OP001,COMM-016,تعبئة طلب الانضمام أو التجديد,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-016-OP002,COMM-016,دفع الرسوم,2,,إشراف مباشر,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-016-OP003,COMM-016,استلام بطاقة العضوية,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-017-OP001,COMM-017,ارتداء ملابس التمرين,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-017-OP002,COMM-017,التوجه للملعب أو الصالة المحددة,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-017-OP003,COMM-017,المشاركة في التمرين الجماعي,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-017-OP004,COMM-017,ترتيب الأدوات بعد الانتهاء,4,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-018-OP001,COMM-018,الوصول إلى المرافق الرياضية,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-018-OP002,COMM-018,استخدام الأجهزة المتاحة في الملعب,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-018-OP003,COMM-018,مغادرة الموقع بعد انتهاء التمرين,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-019-OP001,COMM-019,تجهيز أغراض السباحة أو الاستجمام,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-019-OP002,COMM-019,اختيار موقع الجلوس على الشاطئ,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-019-OP003,COMM-019,السباحة أو المشي في المناطق المحددة,3,,إشراف مباشر,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-019-OP004,COMM-019,جمع المخلفات قبل المغادرة,4,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-020-OP001,COMM-020,التجول في أرجاء السوق,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-020-OP002,COMM-020,الاستفسار عن جودة أو نوع المنتجات,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-020-OP003,COMM-020,شراء المقتنيات المطلوبة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-021-OP001,COMM-021,استخدام خريطة المركز,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-021-OP002,COMM-021,زيارة المتاجر المطلوبة,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-021-OP003,COMM-021,اختيار مطعم أو مقهى للاستراحة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-022-OP001,COMM-022,التوجه للصالون والحجز,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-022-OP002,COMM-022,طلب نوع الحلاقة أو العناية المطلوبة,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-022-OP003,COMM-022,دفع قيمة الخدمة,3,,مرافقة,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-023-OP001,COMM-023,حمل الملابس المراد تسليمها,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-023-OP002,COMM-023,تسليم الملابس للموظف,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-023-OP003,COMM-023,استلام إيصال الاستلام,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-024-OP001,COMM-024,التوجه لمكتب البريد,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-024-OP002,COMM-024,طلب الخدمة (إرسال أو استلام),2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-024-OP003,COMM-024,إتمام المعاملة المالية,3,,إشراف مباشر,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-025-OP001,COMM-025,تعبئة بيانات العنوان على الطرد,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-025-OP002,COMM-025,تسليم الطرد للموظف,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-025-OP003,COMM-025,استلام إيصال الإرسال,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-026-OP001,COMM-026,تقديم رقم التتبع للموظف,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-026-OP002,COMM-026,إبراز الهوية للاستلام,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-026-OP003,COMM-026,توقيع نموذج الاستلام,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-027-OP001,COMM-027,التوجه للصراف الآلي أو داخل البنك,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-027-OP002,COMM-027,إدخال البطاقة والقيام بالعملية,2,,إشراف مباشر,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-027-OP003,COMM-027,استلام الإيصال والنقود,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-028-OP001,COMM-028,أخذ تذكرة الدور من الجهاز,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-028-OP002,COMM-028,الانتظار حتى سماع الرقم,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-028-OP003,COMM-028,إنجاز المعاملة مع الموظف,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-029-OP001,COMM-029,التوجه للجهة الخدمية,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-029-OP002,COMM-029,تقديم الأوراق المطلوبة للتحديث,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-029-OP003,COMM-029,التأكد من اكتمال الإجراء,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-030-OP001,COMM-030,الوصول للموعد الرسمي,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-030-OP002,COMM-030,تقديم النفس أو الهوية عند الدخول,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-030-OP003,COMM-030,المشاركة في الاجتماع,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-031-OP001,COMM-031,إلقاء التحية على المضيفين,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-031-OP002,COMM-031,الجلوس في المكان المخصص,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-031-OP003,COMM-031,تناول الوجبة مع الآخرين,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-032-OP001,COMM-032,تقديم التهنئة لأهل الزفاف,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-032-OP002,COMM-032,الجلوس في المكان المخصص للضيوف,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-032-OP003,COMM-032,الانصراف بعد تقديم التهنئة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-033-OP001,COMM-033,تقديم واجب العزاء لأهل المتوفى,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-033-OP002,COMM-033,الجلوس بوقار في مجلس العزاء,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-033-OP003,COMM-033,المغادرة بعد فترة مناسبة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-034-OP001,COMM-034,الوصول لساحة الاحتفال,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-034-OP002,COMM-034,المشاركة في الفعالية الوطنية,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-034-OP003,COMM-034,المغادرة عند انتهاء الاحتفال,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-035-OP001,COMM-035,التوجه لمقر العمل التطوعي,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-035-OP002,COMM-035,استلام المهام من مسؤول التطوع,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-035-OP003,COMM-035,تنفيذ المهمة التطوعية,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-036-OP001,COMM-036,التوجه لمقر الجمعية الخيرية,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-036-OP002,COMM-036,الاستفسار عن فرص التبرع أو الخدمات,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-036-OP003,COMM-036,استلام الكتيبات التعريفية,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-037-OP001,COMM-037,الحضور للقاعة المخصصة,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-037-OP002,COMM-037,التفاعل مع المشاركين في الورشة,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-037-OP003,COMM-037,أخذ الملاحظات من الورشة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-038-OP001,COMM-038,تقديم بطاقة المركز عند الدخول,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-038-OP002,COMM-038,الاستفادة من الخدمات المتاحة,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-038-OP003,COMM-038,شكر الموظفين قبل المغادرة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-039-OP001,COMM-039,الاتصال لتأكيد موعد الزيارة,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-039-OP002,COMM-039,إلقاء التحية عند الوصول,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-039-OP003,COMM-039,الجلوس والتبادل الحديث,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-040-OP001,COMM-040,اختيار مكان اللقاء المقترح,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-040-OP002,COMM-040,التوجه للمكان المحدد,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-040-OP003,COMM-040,تبادل الأحاديث مع الصديق,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-041-OP001,COMM-041,التوجه للمتجر أو البقالة القريبة,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-041-OP002,COMM-041,شراء الاحتياجات البسيطة,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-041-OP003,COMM-041,الدفع والمغادرة,3,,مرافقة,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-042-OP001,COMM-042,التوجه للصيدلية الخارجية,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-042-OP002,COMM-042,سؤال الصيدلي عن الدواء,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-042-OP003,COMM-042,دفع القيمة المالية,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-043-OP001,COMM-043,البحث عن دورة مياه عامة,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-043-OP002,COMM-043,استخدام المرفق بشكل صحيح,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-043-OP003,COMM-043,غسل اليدين بعد الاستخدام,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-044-OP001,COMM-044,الانضمام لنهاية الطابور,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-044-OP002,COMM-044,الانتظار بانتظام,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-044-OP003,COMM-044,إنهاء الخدمة المطلوبة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-045-OP001,COMM-045,البحث عن موظف في المكان,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-045-OP002,COMM-045,طلب المساعدة أو التوجيه بوضوح,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-045-OP003,COMM-045,شكر الموظف بعد المساعدة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-046-OP001,COMM-046,اختيار شخص مناسب للاستفسار,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-046-OP002,COMM-046,الاستفسار عن الاتجاه,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-046-OP003,COMM-046,شكر الشخص والمتابعة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-047-OP001,COMM-047,الضغط على زر استدعاء المصعد,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-047-OP002,COMM-047,الدخول والضغط على زر الطابق,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-047-OP003,COMM-047,الخروج بعد الوصول,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-048-OP001,COMM-048,وضع الأغراض في جهاز التفتيش,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-048-OP002,COMM-048,المرور عبر البوابة الأمنية,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-048-OP003,COMM-048,استلام الأغراض بعد الفحص,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-049-OP001,COMM-049,إدخال السيارة في الموقف المخصص,1,,إشراف مباشر,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-049-OP002,COMM-049,دفع رسوم الموقف عند الحاجة,2,,مرافقة,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-049-OP003,COMM-049,مغادرة الموقف عند انتهاء الوقت,3,,إشراف مباشر,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-050-OP001,COMM-050,البحث عن مقعد انتظار,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-050-OP002,COMM-050,الانتظار بهدوء,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-050-OP003,COMM-050,المغادرة عند نداء الاسم,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-051-OP001,COMM-051,جمع المخلفات الخاصة,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-051-OP002,COMM-051,رمي المخلفات في السلة العامة,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-052-OP001,COMM-052,جمع الأغراض الشخصية,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-052-OP002,COMM-052,إعادة الكرسي لمكانه,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-052-OP003,COMM-052,تنظيف سطح الطاولة إن لزم,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-053-OP001,COMM-053,الاستعداد للمشاركة في النشاط الجماعي,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-053-OP002,COMM-053,التفاعل مع المجموعة أثناء النشاط,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-053-OP003,COMM-053,مغادرة المكان بانتظام,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-054-OP001,COMM-054,حمل أغراض النزهة,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-054-OP002,COMM-054,المشاركة في الجلسة الخارجية,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-054-OP003,COMM-054,جمع الأغراض قبل المغادرة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-055-OP001,COMM-055,تجهيز حقيبة احتياجات الرحلة,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-055-OP002,COMM-055,المشاركة في التنقل للوجهة,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-055-OP003,COMM-055,استكشاف المعالم في الرحلة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-055-OP004,COMM-055,العودة من الرحلة بسلام,4,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-056-OP001,COMM-056,التسجيل في معرض التوظيف,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-056-OP002,COMM-056,زيارة أجنحة الشركات,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-056-OP003,COMM-056,أخذ مطوية تعريفية,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-057-OP001,COMM-057,التوجه لمكان العمل,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-057-OP002,COMM-057,إلقاء التحية على الزملاء,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-057-OP003,COMM-057,المغادرة بعد إتمام الزيارة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-058-OP001,COMM-058,الوصول للقاء التعريفي,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-058-OP002,COMM-058,الاستماع للشرح والتوجيهات,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-058-OP003,COMM-058,أخذ كتيب المعلومات,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-059-OP001,COMM-059,تحديد نوع الهدية,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-059-OP002,COMM-059,حمل الهدية وتغليفها,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-059-OP003,COMM-059,دفع ثمن الهدية,3,,إشراف مباشر,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-060-OP001,COMM-060,حمل الهدية للمكان,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-060-OP002,COMM-060,تقديم التهنئة والهدية,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-060-OP003,COMM-060,حضور المناسبة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-061-OP001,COMM-061,الدخول للمريض بهدوء,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-061-OP002,COMM-061,الاطمئنان على المريض,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-061-OP003,COMM-061,المغادرة في وقت مناسب,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-062-OP001,COMM-062,عرض المساعدة على الجار,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-062-OP002,COMM-062,حمل الأغراض للجار,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-062-OP003,COMM-062,توديع الجار,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-063-OP001,COMM-063,الحضور لمكان الاجتماع,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-063-OP002,COMM-063,الجلوس والمشاركة في النقاش,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-063-OP003,COMM-063,المغادرة بعد ختام الاجتماع,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-064-OP001,COMM-064,لمس الشاشة للخدمة,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-064-OP002,COMM-064,إتمام الخدمة الرقمية,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-064-OP003,COMM-064,استلام الناتج من الجهاز,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-065-OP001,COMM-065,الضغط على زر الخدمة المطلوبة,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-065-OP002,COMM-065,سحب تذكرة الانتظار,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-065-OP003,COMM-065,الانتظار في المقعد المخصص,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-066-OP001,COMM-066,استخدام كشك الخدمة الذاتية,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-066-OP002,COMM-066,إتمام الطلب,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-066-OP003,COMM-066,استلام الإيصال,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-067-OP001,COMM-067,طلب التسجيل للنشاط,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-067-OP002,COMM-067,تعبئة البيانات,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-067-OP003,COMM-067,استلام الجدول,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-068-OP001,COMM-068,التوجه لصندوق التبرعات,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-068-OP002,COMM-068,وضع التبرع في الصندوق,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-068-OP003,COMM-068,شكر القائمين,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-069-OP001,COMM-069,التوضؤ,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-069-OP002,COMM-069,الدخول للمسجد,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-069-OP003,COMM-069,الصلاة مع الجماعة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-070-OP001,COMM-070,التوجه للمقبرة,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-070-OP002,COMM-070,الوقوف مع المعزين,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-070-OP003,COMM-070,المغادرة بوقار,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-071-OP001,COMM-071,حضور الدرس الديني,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-071-OP002,COMM-071,الجلوس والاستماع,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-071-OP003,COMM-071,الخروج بعد انتهاء الدرس,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-072-OP001,COMM-072,زيارة المركز بوقار,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-072-OP002,COMM-072,السلام على المسنين,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-072-OP003,COMM-072,الجلوس والحديث معهم,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-073-OP001,COMM-073,التوجه لموقع الحملة,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-073-OP002,COMM-073,أخذ المنشورات التوعوية,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-073-OP003,COMM-073,الاستماع للمنظمين,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-074-OP001,COMM-074,المشي في الحديقة,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-074-OP002,COMM-074,استخدام المرافق العامة,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-074-OP003,COMM-074,المغادرة بعد وقت الراحة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-075-OP001,COMM-075,دخول النادي الاجتماعي,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-075-OP002,COMM-075,المشاركة في الأنشطة,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-075-OP003,COMM-075,إعادة أغراض اللعب للمكان,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-076-OP001,COMM-076,التوجه لقاعة المحاضرة,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-076-OP002,COMM-076,الجلوس والاستماع,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-076-OP003,COMM-076,شكر المحاضر بعد الانتهاء,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-077-OP001,COMM-077,التوجه للاستقبال,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-077-OP002,COMM-077,الانتظار لدور الفحص,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-077-OP003,COMM-077,مقابلة الطبيب,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-078-OP001,COMM-078,انتظار وسيلة النقل في الموقف,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-078-OP002,COMM-078,صعود المركبة,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-078-OP003,COMM-078,النزول في المحطة المطلوبة,3,,إشراف مباشر,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-079-OP001,COMM-079,طلب التذكرة من الموظف,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-079-OP002,COMM-079,دفع القيمة المالية,2,,مرافقة,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-079-OP003,COMM-079,استلام التذكرة,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-080-OP001,COMM-080,التوجه للمكان المخصص للجهاز,1,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-080-OP002,COMM-080,تصفح الإنترنت,2,,,معتمد مبدئيًا,community_opportunities_assistant_2
+COMM-080-OP003,COMM-080,تسجيل الخروج,3,,,معتمد مبدئيًا,community_opportunities_assistant_2
 FOOD-001-OP001,FOOD-001,إخراج المكونات من الثلاجة,1,,,معتمد مبدئيًا,Pasted text (3)(2).txt
 FOOD-001-OP002,FOOD-001,تحضير الأطباق والأكواب,2,,,معتمد مبدئيًا,Pasted text (3)(2).txt
 FOOD-001-OP003,FOOD-001,تقطيع الخبز,3,,,معتمد مبدئيًا,Pasted text (3)(2).txt
@@ -184,9 +438,6 @@ FOOD-036-OP003,FOOD-036,غسل الطبق الزجاجي أو شبك الفرن,
 FOOD-037-OP001,FOOD-037,كشط بقايا الطعام بالفرشاة المخصصة,1,,,معتمد مبدئيًا,Pasted text (3)(2).txt
 FOOD-037-OP002,FOOD-037,مسح الهيكل الخارجي,2,,,معتمد مبدئيًا,Pasted text (3)(2).txt
 FOOD-037-OP003,FOOD-037,تفريغ بقايا الفحم أو الرماد,3,,,معتمد مبدئيًا,Pasted text (3)(2).txt
-HOME-052-OP001,HOME-052,إخراج العلب من الخزانة ومسح الأرفف,1,,,معتمد مبدئيًا,Pasted text (3)(2).txt
-HOME-052-OP002,HOME-052,التخلص من العلب الفارغة أو التالفة,2,,,معتمد مبدئيًا,Pasted text (3)(2).txt
-HOME-052-OP003,HOME-052,ترتيب العلب حسب نوعها واستخدامها,3,,,معتمد مبدئيًا,Pasted text (3)(2).txt
 FOOD-039-OP001,FOOD-039,جرد المكونات المتاحة,1,,,معتمد مبدئيًا,Pasted text (3)(2).txt
 FOOD-039-OP002,FOOD-039,اقتراح وجبات مقبلة,2,,,معتمد مبدئيًا,Pasted text (3)(2).txt
 FOOD-039-OP003,FOOD-039,كتابة القائمة المطلوبة في ورقة أو ملاحظة,3,,,معتمد مبدئيًا,Pasted text (3)(2).txt
@@ -345,313 +596,6 @@ FOOD-089-OP003,FOOD-089,وضع المريول في سلة الغسيل,3,,,مع�
 FOOD-090-OP001,FOOD-090,رش سائل التلميع على الحنفية,1,,,معتمد مبدئيًا,Pasted text (3)(2).txt
 FOOD-090-OP002,FOOD-090,فرك الحنفية بالإسفنجة,2,,,معتمد مبدئيًا,Pasted text (3)(2).txt
 FOOD-090-OP003,FOOD-090,تجفيف الحنفية وتلميعها بفوطة جافة,3,,,معتمد مبدئيًا,Pasted text (3)(2).txt
-SHOP-001-OP001,SHOP-001,جرد محتويات الخزائن والثلاجة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-001-OP002,SHOP-001,تدوين المنتجات الناقصة (ورقيًا أو رقميًا),2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-001-OP003,SHOP-001,تصنيف القائمة حسب أقسام المتجر,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-002-OP001,SHOP-002,فحص تواريخ صلاحية المنتجات الحالية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-002-OP002,SHOP-002,التبليغ عن المنتجات التي أوشكت على الانتهاء,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-002-OP003,SHOP-002,كتابة مسودة النواقص الأولية,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-003-OP001,SHOP-003,حساب المبالغ المتاحة للتسوق,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-003-OP002,SHOP-003,توزيع الميزانية التقديرية على أقسام القائمة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-003-OP003,SHOP-003,تسجيل الميزانية في تطبيق المصروفات,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-004-OP001,SHOP-004,تجهيز أكياس التسوق القابلة لإعادة الاستخدام,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-004-OP002,SHOP-004,حمل الأكياس الفارغة إلى السيارة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-004-OP003,SHOP-004,التأكد من إغلاق أبواب المنزل قبل المغادرة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-005-OP001,SHOP-005,اختيار الثمار السليمة والناضجة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-005-OP002,SHOP-005,وضع الخضار في الأكياس المخصصة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-005-OP003,SHOP-005,تسليم الأكياس للوزن أو وضعها في العربة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-006-OP001,SHOP-006,طلب الكمية المحددة من موظف القسم,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-006-OP002,SHOP-006,استلام مغلفات اللحوم,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-006-OP003,SHOP-006,التأكد من إغلاق المغلفات قبل وضعها بالعربة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-007-OP001,SHOP-007,اختيار نوع الخبز المطلوب,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-007-OP002,SHOP-007,فحص تاريخ الإنتاج,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-007-OP003,SHOP-007,وضع المخبوزات في أعلى العربة لحمايتها من التلف,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-008-OP001,SHOP-008,فتح وإغلاق أبواب الثلاجات في المتجر,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-008-OP002,SHOP-008,اختيار المنتجات المجمدة السليمة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-008-OP003,SHOP-008,تجميع المجمدات في نهاية التسوق للحفاظ على برودتها,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-009-OP001,SHOP-009,البحث عن الأصناف المطلوبة على الرفوف,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-009-OP002,SHOP-009,فحص سلامة العبوات من الانبعاج أو التلف,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-009-OP003,SHOP-009,مطابقة أحجام العبوات مع القائمة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-010-OP001,SHOP-010,اختيار الروائح والأنواع المفضلة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-010-OP002,SHOP-010,التأكد من إحكام إغلاق العبوات السائلة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-010-OP003,SHOP-010,عزل المنظفات عن المواد الغذائية داخل العربة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-011-OP001,SHOP-011,مقارنة أحجام العبوات (شامبو، صابون),1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-011-OP002,SHOP-011,اختيار العلامات التجارية المعتادة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-011-OP003,SHOP-011,وضع المستلزمات الشخصية في السلة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-012-OP001,SHOP-012,تقديم الوصفة الطبية للصيدلي,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-012-OP002,SHOP-012,استلام الأدوية,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-012-OP003,SHOP-012,دفع قيمة المشتريات الطبية,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-013-OP001,SHOP-013,اختيار المقاس المناسب للحفاضات,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-013-OP002,SHOP-013,البحث عن العلامات التجارية المطلوبة لأغذية الأطفال,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-013-OP003,SHOP-013,وضع المستلزمات في العربة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-014-OP001,SHOP-014,البحث عن المقاسات المناسبة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-014-OP002,SHOP-014,اختيار القطع والألوان,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-014-OP003,SHOP-014,نقل الملابس لغرفة القياس,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-015-OP001,SHOP-015,البحث عن المقاس الصحيح,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-015-OP002,SHOP-015,تجربة الحذاء والمشي به للتأكد من القياس,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-015-OP003,SHOP-015,إعادة ترتيب الأحذية غير المناسبة في علبها,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-016-OP001,SHOP-016,فحص جودة الإكسسوار أو الحقيبة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-016-OP002,SHOP-016,تجربة القطع للتأكد من الملاءمة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-016-OP003,SHOP-016,مناولة القطع المختارة للمحاسب,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-017-OP001,SHOP-017,البحث عن الأدوات المطلوبة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-017-OP002,SHOP-017,فحص سلامة الأواني أو الأكواب الزجاجية,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-017-OP003,SHOP-017,حمل الأدوات بحذر لتجنب الكسر,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-018-OP001,SHOP-018,أخذ القياسات بالمتر الشريطي,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-018-OP002,SHOP-018,تجربة الجلوس على الأثاث لتقييمه,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-018-OP003,SHOP-018,مقارنة الخيارات المتوفرة في المعرض,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-019-OP001,SHOP-019,مقارنة مواصفات الأجهزة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-019-OP002,SHOP-019,طلب تجربة الجهاز من البائع,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-019-OP003,SHOP-019,استلام وحفظ شهادة الضمان والفاتورة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-020-OP001,SHOP-020,مراجعة قائمة الطلبات المدرسية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-020-OP002,SHOP-020,اختيار الدفاتر والأقلام,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-020-OP003,SHOP-020,وضع الأدوات في السلة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-021-OP001,SHOP-021,تجربة الأداة الرياضية في المتجر,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-021-OP002,SHOP-021,اختيار المقاس المناسب,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-021-OP003,SHOP-021,فحص متانة الأداة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-022-OP001,SHOP-022,اختيار الهدية المناسبة للفئة العمرية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-022-OP002,SHOP-022,طلب خدمة تغليف الهدية,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-022-OP003,SHOP-022,كتابة بطاقة الإهداء,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-023-OP001,SHOP-023,اختيار النباتات السليمة والخالية من الآفات,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-023-OP002,SHOP-023,حمل أكياس التربة الزراعية,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-023-OP003,SHOP-023,اختيار الأوعية أو الأحواض المناسبة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-024-OP001,SHOP-024,مطابقة الأدوات مع المقاسات المطلوبة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-024-OP002,SHOP-024,حمل العبوات أو الأدوات الثقيلة (بمساعدة),2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-024-OP003,SHOP-024,تسليم قائمة الطلبات لمسؤول المبيعات,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-025-OP001,SHOP-025,تقديم استمارة السيارة أو تفاصيل الموديل للبائع,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-025-OP002,SHOP-025,استلام القطع وفحصها,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-025-OP003,SHOP-025,حمل القطع إلى السيارة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-026-OP001,SHOP-026,تتبع خريطة المركز التجاري للوصول للمتاجر,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-026-OP002,SHOP-026,حمل أكياس المشتريات,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-026-OP003,SHOP-026,متابعة الوقت خلال التسوق,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-027-OP001,SHOP-027,إبراز بطاقة المساهم عند الدفع,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-027-OP002,SHOP-027,البحث عن المنتجات المخفضة الخاصة بالجمعية,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-027-OP003,SHOP-027,دفع عربة التسوق داخل الممرات,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-028-OP001,SHOP-028,الشراء السريع للطلبات اليومية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-028-OP002,SHOP-028,دفع المبلغ النقدي للبائع,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-028-OP003,SHOP-028,استلام وتأكيد الباقي,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-029-OP001,SHOP-029,الاستفسار من البائع عن تفاصيل المنتجات,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-029-OP002,SHOP-029,مقارنة الخيارات المتخصصة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-029-OP003,SHOP-029,اختيار المنتج النهائي,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-030-OP001,SHOP-030,البحث في أقسام التخفيضات,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-030-OP002,SHOP-030,مقارنة السعر الأصلي بسعر الخصم,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-030-OP003,SHOP-030,فحص جودة المنتجات المخفضة بدقة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-031-OP001,SHOP-031,تقييم جودة الصناديق الكبيرة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-031-OP002,SHOP-031,التفاوض المعقول على السعر,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-031-OP003,SHOP-031,مساعدة الحمّال في توجيه الصناديق للسيارة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-032-OP001,SHOP-032,اختيار الأسماك الطازجة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-032-OP002,SHOP-032,طلب تنظيف وتقطيع الأسماك,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-032-OP003,SHOP-032,استلام الأكياس بعد التجهيز,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-033-OP001,SHOP-033,طلب الكمية والنوع المحدد,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-033-OP002,SHOP-033,استلام الأكياس الساخنة بحذر,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-033-OP003,SHOP-033,دفع الحساب للبائع,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-034-OP001,SHOP-034,تحديد نوع التقطيع المطلوب من الجزار,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-034-OP002,SHOP-034,مراقبة عملية الوزن,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-034-OP003,SHOP-034,استلام الأكياس والدفع,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-035-OP001,SHOP-035,مراجعة جودة المنتجات المعروضة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-035-OP002,SHOP-035,التفاوض على الأسعار,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-035-OP003,SHOP-035,حمل المشتريات المباشرة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-036-OP001,SHOP-036,قراءة أسماء المنتجات للوصول للمطلوب,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-036-OP002,SHOP-036,سحب المنتجات من الرف برفق,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-036-OP003,SHOP-036,مطابقة المنتج المسحوب مع القائمة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-037-OP001,SHOP-037,البحث عن مكونات تسبب الحساسية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-037-OP002,SHOP-037,مقارنة السعرات الحرارية بين منتجين,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-037-OP003,SHOP-037,قراءة التعليمات الغذائية,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-038-OP001,SHOP-038,قراءة تاريخ الإنتاج والانتهاء,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-038-OP002,SHOP-038,البحث في الرفوف الخلفية عن تواريخ أطول,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-038-OP003,SHOP-038,استبعاد المنتجات منتهية الصلاحية,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-039-OP001,SHOP-039,قراءة بطاقات الأسعار على الرفوف,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-039-OP002,SHOP-039,مقارنة السعر بالنسبة للوزن أو الحجم,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-039-OP003,SHOP-039,اختيار المنتج الأوفر للقائمة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-040-OP001,SHOP-040,تدوين أسعار السلع الأساسية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-040-OP002,SHOP-040,زيارة متاجر مختلفة للاستطلاع,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-040-OP003,SHOP-040,اتخاذ قرار الشراء من المتجر الأنسب,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-041-OP001,SHOP-041,سحب العربة من منطقة التجمع,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-041-OP002,SHOP-041,قيادة العربة بأمان بين الممرات,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-041-OP003,SHOP-041,ترتيب المنتجات داخل العربة لضمان استيعابها,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-042-OP001,SHOP-042,إحضار السلة عند الدخول,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-042-OP002,SHOP-042,حمل السلة أثناء التنقل,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-042-OP003,SHOP-042,ترتيب المنتجات داخلها لتحقيق التوازن,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-043-OP001,SHOP-043,وضع المنتجات على ميزان المتجر الذاتي,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-043-OP002,SHOP-043,إدخال كود الصنف أو اختياره من الشاشة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-043-OP003,SHOP-043,طباعة الملصق ولصقه على الكيس,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-044-OP001,SHOP-044,البحث عن موظف متاح,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-044-OP002,SHOP-044,توجيه السؤال بوضوح عن موقع المنتج,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-044-OP003,SHOP-044,تتبع إرشادات الموظف للوصول للرف,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-045-OP001,SHOP-045,حمل القطع المراد قياسها,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-045-OP002,SHOP-045,تجربة الملابس والتأكد من الراحة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-045-OP003,SHOP-045,تسليم القطع غير المناسبة لموظف الغرفة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-046-OP001,SHOP-046,تجميع الكوبونات الورقية أو الرقمية مسبقاً,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-046-OP002,SHOP-046,إبراز الكوبون للكاشير وقت الحساب,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-046-OP003,SHOP-046,التأكد من تطبيق الخصم على الشاشة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-047-OP001,SHOP-047,إبراز بطاقة الولاء أو إدخال رقم الهاتف,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-047-OP002,SHOP-047,الاستفسار عن رصيد النقاط المتاح,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-047-OP003,SHOP-047,اتخاذ قرار بخصم النقاط من الفاتورة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-048-OP001,SHOP-048,اختيار الطابور الأقصر أو المناسب للكمية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-048-OP002,SHOP-048,الالتزام بالدور,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-048-OP003,SHOP-048,التقدم بانتظام مع تحرك الطابور,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-049-OP001,SHOP-049,إخراج المنتجات من العربة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-049-OP002,SHOP-049,ترتيب المنتجات بشكل يسهل مسحها,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-049-OP003,SHOP-049,وضع الفاصل البلاستيكي بعد الانتهاء,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-050-OP001,SHOP-050,فرز المنتجات (عزل المنظفات عن الطعام),1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-050-OP002,SHOP-050,وضع الأشياء الثقيلة أسفل الكيس,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-050-OP003,SHOP-050,توزيع الأوزان لتسهيل الحمل,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-051-OP001,SHOP-051,تجهيز المبلغ المطلوب,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-051-OP002,SHOP-051,تسليم النقود للكاشير,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-051-OP003,SHOP-051,استلام الباقي والتأكد من صحته,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-052-OP001,SHOP-052,تمرير أو إدخال البطاقة في الجهاز,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-052-OP002,SHOP-052,إدخال الرقم السري,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-052-OP003,SHOP-052,استلام وسحب البطاقة بعد نجاح العملية,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-053-OP001,SHOP-053,فتح التطبيق وتجهيز رمز الدفع,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-053-OP002,SHOP-053,تمرير الهاتف على جهاز القارئ,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-053-OP003,SHOP-053,تأكيد عملية الدفع من الهاتف,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-054-OP001,SHOP-054,تمرير المنتجات (الباركود) أمام الماسح,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-054-OP002,SHOP-054,وضع المنتجات الممسوحة في منطقة الوزن المخصصة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-054-OP003,SHOP-054,إتمام عملية الدفع الآلي واستلام الإيصال,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-055-OP001,SHOP-055,طلب الفاتورة الضريبية من الكاشير,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-055-OP002,SHOP-055,تقديم البيانات المطلوبة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-055-OP003,SHOP-055,استلام الفاتورة والاحتفاظ بها,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-056-OP001,SHOP-056,توزيع الأكياس لتوازن الحمل,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-056-OP002,SHOP-056,حمل الأكياس حتى المخرج,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-056-OP003,SHOP-056,إعادة عربة التسوق إلى المكان المخصص,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-057-OP001,SHOP-057,فتح صندوق السيارة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-057-OP002,SHOP-057,نقل الأكياس من العربة إلى الصندوق,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-057-OP003,SHOP-057,إغلاق الصندوق بإحكام,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-058-OP001,SHOP-058,تأمين الأكياس لمنع انسكابها أثناء القيادة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-058-OP002,SHOP-058,عزل الأشياء القابلة للكسر كزجاجات الزيت,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-058-OP003,SHOP-058,وضع الأغراض الخفيفة في الأعلى,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-059-OP001,SHOP-059,حمل الأكياس من صندوق السيارة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-059-OP002,SHOP-059,التأكد من عدم نسيان أي غرض داخل السيارة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-059-OP003,SHOP-059,إغلاق السيارة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-060-OP001,SHOP-060,فتح باب المنزل,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-060-OP002,SHOP-060,نقل الأكياس إلى المطبخ أو أماكن التخزين,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-060-OP003,SHOP-060,وضع الأكياس على طاولة الفرز,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-061-OP001,SHOP-061,إخراج المنتجات من الأكياس,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-061-OP002,SHOP-061,فرز المشتريات بناءً على مكان تخزينها,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-061-OP003,SHOP-061,عزل المنتجات التي تحتاج للتبريد الفوري,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-062-OP001,SHOP-062,طي الأكياس القابلة لإعادة الاستخدام,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-062-OP002,SHOP-062,تجميع الأغلفة البلاستيكية والورقية الزائدة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-062-OP003,SHOP-062,رمي الأغلفة التالفة في سلة المهملات,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-063-OP001,SHOP-063,مسح العبوات الزجاجية أو البلاستيكية قبل إدخالها,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-063-OP002,SHOP-063,ترتيب المنتجات على الرفوف المناسبة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-063-OP003,SHOP-063,تنظيم الخضار والفواكه في الأدراج المخصصة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-064-OP001,SHOP-064,ترتيب العلب والأكياس الجافة على الرفوف,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-064-OP002,SHOP-064,وضع المنتجات الأحدث في الخلف لدعم استهلاك القديم,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-065-OP001,SHOP-065,نقل المنظفات لخزانة أدوات التنظيف,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-065-OP002,SHOP-065,ترتيب العبوات بشكل آمن ومغلق,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-065-OP003,SHOP-065,التأكد من إبعادها عن المواد الغذائية,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-066-OP001,SHOP-066,توزيع عبوات الشامبو والصابون في الحمامات,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-066-OP002,SHOP-066,ترتيب الأدوات الاحتياطية في خزانة الحمام,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-067-OP001,SHOP-067,إزالة بطاقات الأسعار والأغلفة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-067-OP002,SHOP-067,تعليق الملابس على الشماعات,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-067-OP003,SHOP-067,ترتيب الملابس الجديدة في الخزانة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-068-OP001,SHOP-068,مطابقة المنتجات في الفاتورة مع المشتريات الفعلية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-068-OP002,SHOP-068,التأكد من صحة الأسعار والعروض المحتسبة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-069-OP001,SHOP-069,إدخال القيمة الإجمالية في تطبيق الميزانية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-069-OP002,SHOP-069,تصنيف المصروفات حسب الأقسام (طعام، تنظيف),2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-070-OP001,SHOP-070,كتابة تاريخ الشراء على الإيصال,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-070-OP002,SHOP-070,إيداع الإيصال في الملف المخصص للضمانات,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-071-OP001,SHOP-071,تصفح الأقسام وتطبيق الفلاتر (السعر، المقاس),1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-071-OP002,SHOP-071,البحث عن المنتجات المطلوبة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-071-OP003,SHOP-071,استعراض صور المنتج,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-072-OP001,SHOP-072,تحديد الكميات المطلوبة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-072-OP002,SHOP-072,اختيار الخيارات (اللون، المقاس),2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-072-OP003,SHOP-072,"النقر على زر ""إضافة للسلة""",3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-073-OP001,SHOP-073,قراءة تقييمات وتعليقات المشترين,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-073-OP002,SHOP-073,فحص الصور المرفقة من المستخدمين,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-073-OP003,SHOP-073,اتخاذ قرار الشراء بناءً على المراجعات,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-074-OP001,SHOP-074,حفظ المنتجات المفضلة للمقارنة اللاحقة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-074-OP002,SHOP-074,مراجعة وتصفية القائمة لاحقاً,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-075-OP001,SHOP-075,مراجعة محتويات السلة النهائية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-075-OP002,SHOP-075,إدخال أو تأكيد عنوان التوصيل,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-075-OP003,SHOP-075,اختيار طريقة الدفع وتأكيد الطلب,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-076-OP001,SHOP-076,مقارنة تكاليف أساليب الشحن المتاحة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-076-OP002,SHOP-076,اختيار التوقيت المناسب للتوصيل,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-076-OP003,SHOP-076,اعتماد الاختيار لإتمام العملية,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-077-OP001,SHOP-077,فتح رابط التتبع دورياً,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-077-OP002,SHOP-077,متابعة مسار الشحنة على الخريطة أو عبر الحالات,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-077-OP003,SHOP-077,توقع وتحديد موعد الاستلام,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-078-OP001,SHOP-078,قراءة الرسالة النصية أو إشعار التطبيق,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-078-OP002,SHOP-078,تجهيز كود الاستلام المطلوب,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-078-OP003,SHOP-078,إبلاغ أفراد الأسرة بوصول المندوب,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-079-OP001,SHOP-079,التوجه للباب لاستقبال المندوب,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-079-OP002,SHOP-079,استلام الطرد أو الأكياس,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-079-OP003,SHOP-079,تزويد المندوب بكود التسليم إن لزم,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-080-OP001,SHOP-080,فتح الطرد أو الغلاف,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-080-OP002,SHOP-080,مطابقة المحتويات مع الطلب الرقمي,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-080-OP003,SHOP-080,فحص سلامة المنتجات من أي تلف,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-081-OP001,SHOP-081,تجهيز المبلغ المطلوب نقداً,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-081-OP002,SHOP-081,تسليم المبلغ للمندوب,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-081-OP003,SHOP-081,استلام وتأكيد التغيير (الباقي),3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-082-OP001,SHOP-082,قراءة بيانات الإيصال,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-082-OP002,SHOP-082,التوقيع بالاسم أو التوقيع الإلكتروني,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-082-OP003,SHOP-082,استلام النسخة الخاصة بالعميل,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-083-OP001,SHOP-083,تغليف المنتج بغلافه الأصلي,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-083-OP002,SHOP-083,إحضار الفاتورة أو الإيصال,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-083-OP003,SHOP-083,تسليم المنتج لموظف خدمة العملاء,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-084-OP001,SHOP-084,اختيار البديل المناسب من الرفوف,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-084-OP002,SHOP-084,التوجه لقسم الاستبدال بالمنتج الجديد والقديم,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-084-OP003,SHOP-084,إتمام عملية التبديل مع الموظف,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-085-OP001,SHOP-085,تقديم طلب إرجاع في التطبيق,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-085-OP002,SHOP-085,تغليف المنتج وتجهيزه,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-085-OP003,SHOP-085,تسليم الطرد لمندوب شركة الشحن,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-086-OP001,SHOP-086,متابعة الحساب البنكي للتأكد من وصول الحوالة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-086-OP002,SHOP-086,حفظ رسالة التأكيد أو الإشعار,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-087-OP001,SHOP-087,استلام بطاقة القسيمة أو تأكيد الرصيد الرقمي,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-087-OP002,SHOP-087,حفظ الرصيد في التطبيق,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-087-OP003,SHOP-087,استخدام الرصيد في عمليات الشراء القادمة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-088-OP001,SHOP-088,التواصل مع الدعم الفني أو خدمة العملاء,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-088-OP002,SHOP-088,شرح العطل بوضوح,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-088-OP003,SHOP-088,تسليم الجهاز لمركز الصيانة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-089-OP001,SHOP-089,تقديم الطلب عبر خيارات التقسيط المتاحة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-089-OP002,SHOP-089,متابعة جدول الأقساط,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-089-OP003,SHOP-089,سداد القسط في الموعد المحدد,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-090-OP001,SHOP-090,اختيار العبوات والكراتين الكبيرة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-090-OP002,SHOP-090,المساعدة في تحميل الكراتين إلى السيارة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-090-OP003,SHOP-090,ترتيب الكراتين في مساحة التخزين,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-091-OP001,SHOP-091,تفريغ الكراتين الكبيرة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-091-OP002,SHOP-091,تعبئة المنتجات في أكياس أو عبوات صغيرة قابلة للاستخدام,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-091-OP003,SHOP-091,وضع التواريخ على العبوات المفرزة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-092-OP001,SHOP-092,مراسلة البائع للاستفسار عن السعر والمواصفات,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-092-OP002,SHOP-092,تزويد البائع بعنوان التوصيل وتأكيد الطلب,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-092-OP003,SHOP-092,تحويل المبلغ ومشاركة إيصال التحويل,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-093-OP001,SHOP-093,تصفح قوائم المطاعم,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-093-OP002,SHOP-093,تحديد واختيار الوجبات المطلوبة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-093-OP003,SHOP-093,متابعة خط سير المندوب على الخريطة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-094-OP001,SHOP-094,إدخال العملات أو تمرير البطاقة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-094-OP002,SHOP-094,إدخال أو اختيار كود المنتج المطلوب,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-094-OP003,SHOP-094,سحب المنتج من الفتحة المخصصة واستلام الباقي,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-095-OP001,SHOP-095,توجيه السيارة نحو المضخة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-095-OP002,SHOP-095,طلب نوع وكمية الوقود من عامل المحطة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-095-OP003,SHOP-095,دفع القيمة للعامل,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-096-OP001,SHOP-096,إدخال النقود أو البطاقة في الجهاز,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-096-OP002,SHOP-096,تحديد نوع التذكرة أو الوجهة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-096-OP003,SHOP-096,استلام التذكرة من الجهاز,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-097-OP001,SHOP-097,اختيار نوع وقيمة البطاقة من الرف,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-097-OP002,SHOP-097,دفع قيمة البطاقة لتفعيلها عند الكاشير,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-097-OP003,SHOP-097,تسليمها كهدية أو شحنها في الهاتف,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-098-OP001,SHOP-098,التوجه للخزانة الذكية أو النقطة المحددة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-098-OP002,SHOP-098,إدخال كود الاستلام في الشاشة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-098-OP003,SHOP-098,سحب الطرد وإغلاق باب الخزانة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-099-OP001,SHOP-099,شراء المنتجات المخصصة للتبرع (أغذية، ملابس),1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-099-OP002,SHOP-099,وضع المنتجات في صندوق التبرع الخاص بالجمعية في المتجر,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-100-OP001,SHOP-100,اختيار الحلويات ومستلزمات الضيافة الموسمية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-100-OP002,SHOP-100,مقارنة العروض الخاصة بالموسم,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-100-OP003,SHOP-100,ترتيب المنتجات الموسمية في المنزل استعداداً للمناسبة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-101-OP001,SHOP-101,اختيار أدوات الزينة (بالونات، شموع),1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-101-OP002,SHOP-101,تنسيق واختيار ألوان المستلزمات,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-101-OP003,SHOP-101,اختيار وشراء بطاقات الدعوة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-102-OP001,SHOP-102,سحب كراتين الماء أو الجالونات,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-102-OP002,SHOP-102,ترتيب الكراتين في أسفل عربة التسوق,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-102-OP003,SHOP-102,رفع الكراتين ونقلها للسيارة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-103-OP001,SHOP-103,دحرجة أو نقل الأنبوبة الفارغة لمحل الاستبدال,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-103-OP002,SHOP-103,دفع قيمة الاستبدال,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-103-OP003,SHOP-103,تحميل الأنبوبة الممتلئة بأمان,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-104-OP001,SHOP-104,اختيار نوع الطعام المناسب للحيوان,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-104-OP002,SHOP-104,قراءة المكونات الخاصة بالغذاء,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-104-OP003,SHOP-104,حمل أكياس الرمل أو الطعام للسيارة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-105-OP001,SHOP-105,اختيار ألوان الخيوط والأقمشة ومطابقتها,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-105-OP002,SHOP-105,فحص متانة وجودة الأدوات (إبر، مقصات),2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
-SHOP-105-OP003,SHOP-105,تجميع الأدوات وتجهيزها للحساب,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
 HEALTH-001-OP001,HEALTH-001,البحث عن رقم العيادة,1,,,معتمد مبدئيًا,Pasted text (3)(5).txt
 HEALTH-001-OP002,HEALTH-001,إجراء المكالمة للحجز,2,,,معتمد مبدئيًا,Pasted text (3)(5).txt
 HEALTH-001-OP003,HEALTH-001,تسجيل موعد الزيارة في التقويم,3,,,معتمد مبدئيًا,Pasted text (3)(5).txt
@@ -1029,6 +973,9 @@ HOME-050-OP002,HOME-050,فرك الصنابير وتجفيفها لتعود لا
 HOME-051-OP001,HOME-051,رش المنظف المخصص للفواصل.,1,,,بطاقة مشاركة مطلوبة,Pasted text (3)(3).txt
 HOME-051-OP002,HOME-051,فرك الفواصل بفرشاة التنظيف.,2,,,بطاقة مشاركة مطلوبة,Pasted text (3)(3).txt
 HOME-051-OP003,HOME-051,شطف الجدران بالماء.,3,,,بطاقة مشاركة مطلوبة,Pasted text (3)(3).txt
+HOME-052-OP001,HOME-052,إخراج العلب من الخزانة ومسح الأرفف,1,,,معتمد مبدئيًا,Pasted text (3)(2).txt
+HOME-052-OP002,HOME-052,التخلص من العلب الفارغة أو التالفة,2,,,معتمد مبدئيًا,Pasted text (3)(2).txt
+HOME-052-OP003,HOME-052,ترتيب العلب حسب نوعها واستخدامها,3,,,معتمد مبدئيًا,Pasted text (3)(2).txt
 HOME-053-OP001,HOME-053,استخراج عبوات المنظفات لفحصها.,1,,,بطاقة مشاركة مطلوبة,Pasted text (3)(3).txt
 HOME-053-OP002,HOME-053,فرز العبوات التالفة أو المنتهية.,2,,,بطاقة مشاركة مطلوبة,Pasted text (3)(3).txt
 HOME-053-OP003,HOME-053,إلقاء العبوات الفاسدة في القمامة.,3,,,بطاقة مشاركة مطلوبة,Pasted text (3)(3).txt
@@ -1158,3 +1105,310 @@ HOME-100-OP002,HOME-100,طي وتجميع الكراتين والورق.,2,,,ب�
 HOME-100-OP003,HOME-100,وضع كل نوع في حاوية إعادة التدوير المخصصة.,3,,,بطاقة مشاركة مطلوبة,Pasted text (3)(3).txt
 HOME-100-OP004,HOME-100,**ما أُضيف اليوم:** كتالوج أحداث إدارة المنزل (HOME-001 إلى HOME-100) متضمناً فرص المشاركة المستخرجة كأدوار فعلية.,4,,,بطاقة مشاركة مطلوبة,Pasted text (3)(3).txt
 HOME-100-OP005,HOME-100,"**ما يحتاج استكمال بياناته:** تحويل فرص المشاركة إلى بطاقات أداء تفصيلية لاحقاً، وربطها بمرحلة ""الحياة الانتقالية"" لتخصيصها حسب مستويات الاستقلالية.",5,,,بطاقة مشاركة مطلوبة,Pasted text (3)(3).txt
+SHOP-001-OP001,SHOP-001,جرد محتويات الخزائن والثلاجة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-001-OP002,SHOP-001,تدوين المنتجات الناقصة (ورقيًا أو رقميًا),2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-001-OP003,SHOP-001,تصنيف القائمة حسب أقسام المتجر,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-002-OP001,SHOP-002,فحص تواريخ صلاحية المنتجات الحالية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-002-OP002,SHOP-002,التبليغ عن المنتجات التي أوشكت على الانتهاء,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-002-OP003,SHOP-002,كتابة مسودة النواقص الأولية,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-003-OP001,SHOP-003,حساب المبالغ المتاحة للتسوق,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-003-OP002,SHOP-003,توزيع الميزانية التقديرية على أقسام القائمة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-003-OP003,SHOP-003,تسجيل الميزانية في تطبيق المصروفات,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-004-OP001,SHOP-004,تجهيز أكياس التسوق القابلة لإعادة الاستخدام,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-004-OP002,SHOP-004,حمل الأكياس الفارغة إلى السيارة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-004-OP003,SHOP-004,التأكد من إغلاق أبواب المنزل قبل المغادرة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-005-OP001,SHOP-005,اختيار الثمار السليمة والناضجة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-005-OP002,SHOP-005,وضع الخضار في الأكياس المخصصة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-005-OP003,SHOP-005,تسليم الأكياس للوزن أو وضعها في العربة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-006-OP001,SHOP-006,طلب الكمية المحددة من موظف القسم,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-006-OP002,SHOP-006,استلام مغلفات اللحوم,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-006-OP003,SHOP-006,التأكد من إغلاق المغلفات قبل وضعها بالعربة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-007-OP001,SHOP-007,اختيار نوع الخبز المطلوب,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-007-OP002,SHOP-007,فحص تاريخ الإنتاج,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-007-OP003,SHOP-007,وضع المخبوزات في أعلى العربة لحمايتها من التلف,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-008-OP001,SHOP-008,فتح وإغلاق أبواب الثلاجات في المتجر,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-008-OP002,SHOP-008,اختيار المنتجات المجمدة السليمة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-008-OP003,SHOP-008,تجميع المجمدات في نهاية التسوق للحفاظ على برودتها,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-009-OP001,SHOP-009,البحث عن الأصناف المطلوبة على الرفوف,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-009-OP002,SHOP-009,فحص سلامة العبوات من الانبعاج أو التلف,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-009-OP003,SHOP-009,مطابقة أحجام العبوات مع القائمة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-010-OP001,SHOP-010,اختيار الروائح والأنواع المفضلة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-010-OP002,SHOP-010,التأكد من إحكام إغلاق العبوات السائلة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-010-OP003,SHOP-010,عزل المنظفات عن المواد الغذائية داخل العربة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-011-OP001,SHOP-011,مقارنة أحجام العبوات (شامبو، صابون),1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-011-OP002,SHOP-011,اختيار العلامات التجارية المعتادة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-011-OP003,SHOP-011,وضع المستلزمات الشخصية في السلة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-012-OP001,SHOP-012,تقديم الوصفة الطبية للصيدلي,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-012-OP002,SHOP-012,استلام الأدوية,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-012-OP003,SHOP-012,دفع قيمة المشتريات الطبية,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-013-OP001,SHOP-013,اختيار المقاس المناسب للحفاضات,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-013-OP002,SHOP-013,البحث عن العلامات التجارية المطلوبة لأغذية الأطفال,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-013-OP003,SHOP-013,وضع المستلزمات في العربة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-014-OP001,SHOP-014,البحث عن المقاسات المناسبة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-014-OP002,SHOP-014,اختيار القطع والألوان,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-014-OP003,SHOP-014,نقل الملابس لغرفة القياس,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-015-OP001,SHOP-015,البحث عن المقاس الصحيح,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-015-OP002,SHOP-015,تجربة الحذاء والمشي به للتأكد من القياس,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-015-OP003,SHOP-015,إعادة ترتيب الأحذية غير المناسبة في علبها,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-016-OP001,SHOP-016,فحص جودة الإكسسوار أو الحقيبة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-016-OP002,SHOP-016,تجربة القطع للتأكد من الملاءمة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-016-OP003,SHOP-016,مناولة القطع المختارة للمحاسب,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-017-OP001,SHOP-017,البحث عن الأدوات المطلوبة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-017-OP002,SHOP-017,فحص سلامة الأواني أو الأكواب الزجاجية,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-017-OP003,SHOP-017,حمل الأدوات بحذر لتجنب الكسر,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-018-OP001,SHOP-018,أخذ القياسات بالمتر الشريطي,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-018-OP002,SHOP-018,تجربة الجلوس على الأثاث لتقييمه,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-018-OP003,SHOP-018,مقارنة الخيارات المتوفرة في المعرض,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-019-OP001,SHOP-019,مقارنة مواصفات الأجهزة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-019-OP002,SHOP-019,طلب تجربة الجهاز من البائع,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-019-OP003,SHOP-019,استلام وحفظ شهادة الضمان والفاتورة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-020-OP001,SHOP-020,مراجعة قائمة الطلبات المدرسية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-020-OP002,SHOP-020,اختيار الدفاتر والأقلام,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-020-OP003,SHOP-020,وضع الأدوات في السلة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-021-OP001,SHOP-021,تجربة الأداة الرياضية في المتجر,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-021-OP002,SHOP-021,اختيار المقاس المناسب,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-021-OP003,SHOP-021,فحص متانة الأداة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-022-OP001,SHOP-022,اختيار الهدية المناسبة للفئة العمرية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-022-OP002,SHOP-022,طلب خدمة تغليف الهدية,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-022-OP003,SHOP-022,كتابة بطاقة الإهداء,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-023-OP001,SHOP-023,اختيار النباتات السليمة والخالية من الآفات,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-023-OP002,SHOP-023,حمل أكياس التربة الزراعية,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-023-OP003,SHOP-023,اختيار الأوعية أو الأحواض المناسبة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-024-OP001,SHOP-024,مطابقة الأدوات مع المقاسات المطلوبة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-024-OP002,SHOP-024,حمل العبوات أو الأدوات الثقيلة (بمساعدة),2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-024-OP003,SHOP-024,تسليم قائمة الطلبات لمسؤول المبيعات,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-025-OP001,SHOP-025,تقديم استمارة السيارة أو تفاصيل الموديل للبائع,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-025-OP002,SHOP-025,استلام القطع وفحصها,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-025-OP003,SHOP-025,حمل القطع إلى السيارة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-026-OP001,SHOP-026,تتبع خريطة المركز التجاري للوصول للمتاجر,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-026-OP002,SHOP-026,حمل أكياس المشتريات,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-026-OP003,SHOP-026,متابعة الوقت خلال التسوق,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-027-OP001,SHOP-027,إبراز بطاقة المساهم عند الدفع,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-027-OP002,SHOP-027,البحث عن المنتجات المخفضة الخاصة بالجمعية,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-027-OP003,SHOP-027,دفع عربة التسوق داخل الممرات,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-028-OP001,SHOP-028,الشراء السريع للطلبات اليومية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-028-OP002,SHOP-028,دفع المبلغ النقدي للبائع,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-028-OP003,SHOP-028,استلام وتأكيد الباقي,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-029-OP001,SHOP-029,الاستفسار من البائع عن تفاصيل المنتجات,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-029-OP002,SHOP-029,مقارنة الخيارات المتخصصة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-029-OP003,SHOP-029,اختيار المنتج النهائي,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-030-OP001,SHOP-030,البحث في أقسام التخفيضات,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-030-OP002,SHOP-030,مقارنة السعر الأصلي بسعر الخصم,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-030-OP003,SHOP-030,فحص جودة المنتجات المخفضة بدقة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-031-OP001,SHOP-031,تقييم جودة الصناديق الكبيرة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-031-OP002,SHOP-031,التفاوض المعقول على السعر,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-031-OP003,SHOP-031,مساعدة الحمّال في توجيه الصناديق للسيارة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-032-OP001,SHOP-032,اختيار الأسماك الطازجة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-032-OP002,SHOP-032,طلب تنظيف وتقطيع الأسماك,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-032-OP003,SHOP-032,استلام الأكياس بعد التجهيز,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-033-OP001,SHOP-033,طلب الكمية والنوع المحدد,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-033-OP002,SHOP-033,استلام الأكياس الساخنة بحذر,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-033-OP003,SHOP-033,دفع الحساب للبائع,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-034-OP001,SHOP-034,تحديد نوع التقطيع المطلوب من الجزار,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-034-OP002,SHOP-034,مراقبة عملية الوزن,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-034-OP003,SHOP-034,استلام الأكياس والدفع,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-035-OP001,SHOP-035,مراجعة جودة المنتجات المعروضة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-035-OP002,SHOP-035,التفاوض على الأسعار,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-035-OP003,SHOP-035,حمل المشتريات المباشرة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-036-OP001,SHOP-036,قراءة أسماء المنتجات للوصول للمطلوب,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-036-OP002,SHOP-036,سحب المنتجات من الرف برفق,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-036-OP003,SHOP-036,مطابقة المنتج المسحوب مع القائمة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-037-OP001,SHOP-037,البحث عن مكونات تسبب الحساسية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-037-OP002,SHOP-037,مقارنة السعرات الحرارية بين منتجين,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-037-OP003,SHOP-037,قراءة التعليمات الغذائية,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-038-OP001,SHOP-038,قراءة تاريخ الإنتاج والانتهاء,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-038-OP002,SHOP-038,البحث في الرفوف الخلفية عن تواريخ أطول,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-038-OP003,SHOP-038,استبعاد المنتجات منتهية الصلاحية,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-039-OP001,SHOP-039,قراءة بطاقات الأسعار على الرفوف,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-039-OP002,SHOP-039,مقارنة السعر بالنسبة للوزن أو الحجم,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-039-OP003,SHOP-039,اختيار المنتج الأوفر للقائمة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-040-OP001,SHOP-040,تدوين أسعار السلع الأساسية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-040-OP002,SHOP-040,زيارة متاجر مختلفة للاستطلاع,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-040-OP003,SHOP-040,اتخاذ قرار الشراء من المتجر الأنسب,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-041-OP001,SHOP-041,سحب العربة من منطقة التجمع,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-041-OP002,SHOP-041,قيادة العربة بأمان بين الممرات,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-041-OP003,SHOP-041,ترتيب المنتجات داخل العربة لضمان استيعابها,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-042-OP001,SHOP-042,إحضار السلة عند الدخول,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-042-OP002,SHOP-042,حمل السلة أثناء التنقل,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-042-OP003,SHOP-042,ترتيب المنتجات داخلها لتحقيق التوازن,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-043-OP001,SHOP-043,وضع المنتجات على ميزان المتجر الذاتي,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-043-OP002,SHOP-043,إدخال كود الصنف أو اختياره من الشاشة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-043-OP003,SHOP-043,طباعة الملصق ولصقه على الكيس,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-044-OP001,SHOP-044,البحث عن موظف متاح,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-044-OP002,SHOP-044,توجيه السؤال بوضوح عن موقع المنتج,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-044-OP003,SHOP-044,تتبع إرشادات الموظف للوصول للرف,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-045-OP001,SHOP-045,حمل القطع المراد قياسها,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-045-OP002,SHOP-045,تجربة الملابس والتأكد من الراحة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-045-OP003,SHOP-045,تسليم القطع غير المناسبة لموظف الغرفة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-046-OP001,SHOP-046,تجميع الكوبونات الورقية أو الرقمية مسبقاً,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-046-OP002,SHOP-046,إبراز الكوبون للكاشير وقت الحساب,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-046-OP003,SHOP-046,التأكد من تطبيق الخصم على الشاشة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-047-OP001,SHOP-047,إبراز بطاقة الولاء أو إدخال رقم الهاتف,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-047-OP002,SHOP-047,الاستفسار عن رصيد النقاط المتاح,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-047-OP003,SHOP-047,اتخاذ قرار بخصم النقاط من الفاتورة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-048-OP001,SHOP-048,اختيار الطابور الأقصر أو المناسب للكمية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-048-OP002,SHOP-048,الالتزام بالدور,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-048-OP003,SHOP-048,التقدم بانتظام مع تحرك الطابور,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-049-OP001,SHOP-049,إخراج المنتجات من العربة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-049-OP002,SHOP-049,ترتيب المنتجات بشكل يسهل مسحها,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-049-OP003,SHOP-049,وضع الفاصل البلاستيكي بعد الانتهاء,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-050-OP001,SHOP-050,فرز المنتجات (عزل المنظفات عن الطعام),1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-050-OP002,SHOP-050,وضع الأشياء الثقيلة أسفل الكيس,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-050-OP003,SHOP-050,توزيع الأوزان لتسهيل الحمل,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-051-OP001,SHOP-051,تجهيز المبلغ المطلوب,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-051-OP002,SHOP-051,تسليم النقود للكاشير,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-051-OP003,SHOP-051,استلام الباقي والتأكد من صحته,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-052-OP001,SHOP-052,تمرير أو إدخال البطاقة في الجهاز,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-052-OP002,SHOP-052,إدخال الرقم السري,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-052-OP003,SHOP-052,استلام وسحب البطاقة بعد نجاح العملية,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-053-OP001,SHOP-053,فتح التطبيق وتجهيز رمز الدفع,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-053-OP002,SHOP-053,تمرير الهاتف على جهاز القارئ,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-053-OP003,SHOP-053,تأكيد عملية الدفع من الهاتف,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-054-OP001,SHOP-054,تمرير المنتجات (الباركود) أمام الماسح,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-054-OP002,SHOP-054,وضع المنتجات الممسوحة في منطقة الوزن المخصصة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-054-OP003,SHOP-054,إتمام عملية الدفع الآلي واستلام الإيصال,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-055-OP001,SHOP-055,طلب الفاتورة الضريبية من الكاشير,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-055-OP002,SHOP-055,تقديم البيانات المطلوبة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-055-OP003,SHOP-055,استلام الفاتورة والاحتفاظ بها,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-056-OP001,SHOP-056,توزيع الأكياس لتوازن الحمل,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-056-OP002,SHOP-056,حمل الأكياس حتى المخرج,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-056-OP003,SHOP-056,إعادة عربة التسوق إلى المكان المخصص,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-057-OP001,SHOP-057,فتح صندوق السيارة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-057-OP002,SHOP-057,نقل الأكياس من العربة إلى الصندوق,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-057-OP003,SHOP-057,إغلاق الصندوق بإحكام,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-058-OP001,SHOP-058,تأمين الأكياس لمنع انسكابها أثناء القيادة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-058-OP002,SHOP-058,عزل الأشياء القابلة للكسر كزجاجات الزيت,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-058-OP003,SHOP-058,وضع الأغراض الخفيفة في الأعلى,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-059-OP001,SHOP-059,حمل الأكياس من صندوق السيارة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-059-OP002,SHOP-059,التأكد من عدم نسيان أي غرض داخل السيارة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-059-OP003,SHOP-059,إغلاق السيارة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-060-OP001,SHOP-060,فتح باب المنزل,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-060-OP002,SHOP-060,نقل الأكياس إلى المطبخ أو أماكن التخزين,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-060-OP003,SHOP-060,وضع الأكياس على طاولة الفرز,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-061-OP001,SHOP-061,إخراج المنتجات من الأكياس,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-061-OP002,SHOP-061,فرز المشتريات بناءً على مكان تخزينها,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-061-OP003,SHOP-061,عزل المنتجات التي تحتاج للتبريد الفوري,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-062-OP001,SHOP-062,طي الأكياس القابلة لإعادة الاستخدام,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-062-OP002,SHOP-062,تجميع الأغلفة البلاستيكية والورقية الزائدة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-062-OP003,SHOP-062,رمي الأغلفة التالفة في سلة المهملات,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-063-OP001,SHOP-063,مسح العبوات الزجاجية أو البلاستيكية قبل إدخالها,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-063-OP002,SHOP-063,ترتيب المنتجات على الرفوف المناسبة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-063-OP003,SHOP-063,تنظيم الخضار والفواكه في الأدراج المخصصة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-064-OP001,SHOP-064,ترتيب العلب والأكياس الجافة على الرفوف,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-064-OP002,SHOP-064,وضع المنتجات الأحدث في الخلف لدعم استهلاك القديم,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-065-OP001,SHOP-065,نقل المنظفات لخزانة أدوات التنظيف,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-065-OP002,SHOP-065,ترتيب العبوات بشكل آمن ومغلق,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-065-OP003,SHOP-065,التأكد من إبعادها عن المواد الغذائية,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-066-OP001,SHOP-066,توزيع عبوات الشامبو والصابون في الحمامات,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-066-OP002,SHOP-066,ترتيب الأدوات الاحتياطية في خزانة الحمام,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-067-OP001,SHOP-067,إزالة بطاقات الأسعار والأغلفة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-067-OP002,SHOP-067,تعليق الملابس على الشماعات,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-067-OP003,SHOP-067,ترتيب الملابس الجديدة في الخزانة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-068-OP001,SHOP-068,مطابقة المنتجات في الفاتورة مع المشتريات الفعلية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-068-OP002,SHOP-068,التأكد من صحة الأسعار والعروض المحتسبة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-069-OP001,SHOP-069,إدخال القيمة الإجمالية في تطبيق الميزانية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-069-OP002,SHOP-069,تصنيف المصروفات حسب الأقسام (طعام، تنظيف),2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-070-OP001,SHOP-070,كتابة تاريخ الشراء على الإيصال,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-070-OP002,SHOP-070,إيداع الإيصال في الملف المخصص للضمانات,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-071-OP001,SHOP-071,تصفح الأقسام وتطبيق الفلاتر (السعر، المقاس),1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-071-OP002,SHOP-071,البحث عن المنتجات المطلوبة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-071-OP003,SHOP-071,استعراض صور المنتج,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-072-OP001,SHOP-072,تحديد الكميات المطلوبة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-072-OP002,SHOP-072,اختيار الخيارات (اللون، المقاس),2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-072-OP003,SHOP-072,"النقر على زر ""إضافة للسلة""",3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-073-OP001,SHOP-073,قراءة تقييمات وتعليقات المشترين,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-073-OP002,SHOP-073,فحص الصور المرفقة من المستخدمين,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-073-OP003,SHOP-073,اتخاذ قرار الشراء بناءً على المراجعات,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-074-OP001,SHOP-074,حفظ المنتجات المفضلة للمقارنة اللاحقة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-074-OP002,SHOP-074,مراجعة وتصفية القائمة لاحقاً,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-075-OP001,SHOP-075,مراجعة محتويات السلة النهائية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-075-OP002,SHOP-075,إدخال أو تأكيد عنوان التوصيل,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-075-OP003,SHOP-075,اختيار طريقة الدفع وتأكيد الطلب,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-076-OP001,SHOP-076,مقارنة تكاليف أساليب الشحن المتاحة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-076-OP002,SHOP-076,اختيار التوقيت المناسب للتوصيل,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-076-OP003,SHOP-076,اعتماد الاختيار لإتمام العملية,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-077-OP001,SHOP-077,فتح رابط التتبع دورياً,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-077-OP002,SHOP-077,متابعة مسار الشحنة على الخريطة أو عبر الحالات,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-077-OP003,SHOP-077,توقع وتحديد موعد الاستلام,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-078-OP001,SHOP-078,قراءة الرسالة النصية أو إشعار التطبيق,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-078-OP002,SHOP-078,تجهيز كود الاستلام المطلوب,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-078-OP003,SHOP-078,إبلاغ أفراد الأسرة بوصول المندوب,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-079-OP001,SHOP-079,التوجه للباب لاستقبال المندوب,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-079-OP002,SHOP-079,استلام الطرد أو الأكياس,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-079-OP003,SHOP-079,تزويد المندوب بكود التسليم إن لزم,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-080-OP001,SHOP-080,فتح الطرد أو الغلاف,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-080-OP002,SHOP-080,مطابقة المحتويات مع الطلب الرقمي,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-080-OP003,SHOP-080,فحص سلامة المنتجات من أي تلف,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-081-OP001,SHOP-081,تجهيز المبلغ المطلوب نقداً,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-081-OP002,SHOP-081,تسليم المبلغ للمندوب,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-081-OP003,SHOP-081,استلام وتأكيد التغيير (الباقي),3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-082-OP001,SHOP-082,قراءة بيانات الإيصال,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-082-OP002,SHOP-082,التوقيع بالاسم أو التوقيع الإلكتروني,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-082-OP003,SHOP-082,استلام النسخة الخاصة بالعميل,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-083-OP001,SHOP-083,تغليف المنتج بغلافه الأصلي,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-083-OP002,SHOP-083,إحضار الفاتورة أو الإيصال,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-083-OP003,SHOP-083,تسليم المنتج لموظف خدمة العملاء,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-084-OP001,SHOP-084,اختيار البديل المناسب من الرفوف,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-084-OP002,SHOP-084,التوجه لقسم الاستبدال بالمنتج الجديد والقديم,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-084-OP003,SHOP-084,إتمام عملية التبديل مع الموظف,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-085-OP001,SHOP-085,تقديم طلب إرجاع في التطبيق,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-085-OP002,SHOP-085,تغليف المنتج وتجهيزه,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-085-OP003,SHOP-085,تسليم الطرد لمندوب شركة الشحن,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-086-OP001,SHOP-086,متابعة الحساب البنكي للتأكد من وصول الحوالة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-086-OP002,SHOP-086,حفظ رسالة التأكيد أو الإشعار,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-087-OP001,SHOP-087,استلام بطاقة القسيمة أو تأكيد الرصيد الرقمي,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-087-OP002,SHOP-087,حفظ الرصيد في التطبيق,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-087-OP003,SHOP-087,استخدام الرصيد في عمليات الشراء القادمة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-088-OP001,SHOP-088,التواصل مع الدعم الفني أو خدمة العملاء,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-088-OP002,SHOP-088,شرح العطل بوضوح,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-088-OP003,SHOP-088,تسليم الجهاز لمركز الصيانة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-089-OP001,SHOP-089,تقديم الطلب عبر خيارات التقسيط المتاحة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-089-OP002,SHOP-089,متابعة جدول الأقساط,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-089-OP003,SHOP-089,سداد القسط في الموعد المحدد,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-090-OP001,SHOP-090,اختيار العبوات والكراتين الكبيرة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-090-OP002,SHOP-090,المساعدة في تحميل الكراتين إلى السيارة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-090-OP003,SHOP-090,ترتيب الكراتين في مساحة التخزين,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-091-OP001,SHOP-091,تفريغ الكراتين الكبيرة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-091-OP002,SHOP-091,تعبئة المنتجات في أكياس أو عبوات صغيرة قابلة للاستخدام,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-091-OP003,SHOP-091,وضع التواريخ على العبوات المفرزة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-092-OP001,SHOP-092,مراسلة البائع للاستفسار عن السعر والمواصفات,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-092-OP002,SHOP-092,تزويد البائع بعنوان التوصيل وتأكيد الطلب,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-092-OP003,SHOP-092,تحويل المبلغ ومشاركة إيصال التحويل,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-093-OP001,SHOP-093,تصفح قوائم المطاعم,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-093-OP002,SHOP-093,تحديد واختيار الوجبات المطلوبة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-093-OP003,SHOP-093,متابعة خط سير المندوب على الخريطة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-094-OP001,SHOP-094,إدخال العملات أو تمرير البطاقة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-094-OP002,SHOP-094,إدخال أو اختيار كود المنتج المطلوب,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-094-OP003,SHOP-094,سحب المنتج من الفتحة المخصصة واستلام الباقي,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-095-OP001,SHOP-095,توجيه السيارة نحو المضخة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-095-OP002,SHOP-095,طلب نوع وكمية الوقود من عامل المحطة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-095-OP003,SHOP-095,دفع القيمة للعامل,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-096-OP001,SHOP-096,إدخال النقود أو البطاقة في الجهاز,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-096-OP002,SHOP-096,تحديد نوع التذكرة أو الوجهة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-096-OP003,SHOP-096,استلام التذكرة من الجهاز,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-097-OP001,SHOP-097,اختيار نوع وقيمة البطاقة من الرف,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-097-OP002,SHOP-097,دفع قيمة البطاقة لتفعيلها عند الكاشير,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-097-OP003,SHOP-097,تسليمها كهدية أو شحنها في الهاتف,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-098-OP001,SHOP-098,التوجه للخزانة الذكية أو النقطة المحددة,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-098-OP002,SHOP-098,إدخال كود الاستلام في الشاشة,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-098-OP003,SHOP-098,سحب الطرد وإغلاق باب الخزانة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-099-OP001,SHOP-099,شراء المنتجات المخصصة للتبرع (أغذية، ملابس),1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-099-OP002,SHOP-099,وضع المنتجات في صندوق التبرع الخاص بالجمعية في المتجر,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-100-OP001,SHOP-100,اختيار الحلويات ومستلزمات الضيافة الموسمية,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-100-OP002,SHOP-100,مقارنة العروض الخاصة بالموسم,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-100-OP003,SHOP-100,ترتيب المنتجات الموسمية في المنزل استعداداً للمناسبة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-101-OP001,SHOP-101,اختيار أدوات الزينة (بالونات، شموع),1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-101-OP002,SHOP-101,تنسيق واختيار ألوان المستلزمات,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-101-OP003,SHOP-101,اختيار وشراء بطاقات الدعوة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-102-OP001,SHOP-102,سحب كراتين الماء أو الجالونات,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-102-OP002,SHOP-102,ترتيب الكراتين في أسفل عربة التسوق,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-102-OP003,SHOP-102,رفع الكراتين ونقلها للسيارة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-103-OP001,SHOP-103,دحرجة أو نقل الأنبوبة الفارغة لمحل الاستبدال,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-103-OP002,SHOP-103,دفع قيمة الاستبدال,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-103-OP003,SHOP-103,تحميل الأنبوبة الممتلئة بأمان,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-104-OP001,SHOP-104,اختيار نوع الطعام المناسب للحيوان,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-104-OP002,SHOP-104,قراءة المكونات الخاصة بالغذاء,2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-104-OP003,SHOP-104,حمل أكياس الرمل أو الطعام للسيارة,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-105-OP001,SHOP-105,اختيار ألوان الخيوط والأقمشة ومطابقتها,1,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-105-OP002,SHOP-105,فحص متانة وجودة الأدوات (إبر، مقصات),2,,,معتمد مبدئيًا,Pasted text (3)(4).txt
+SHOP-105-OP003,SHOP-105,تجميع الأدوات وتجهيزها للحساب,3,,,معتمد مبدئيًا,Pasted text (3)(4).txt
