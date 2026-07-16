@@ -82,7 +82,7 @@ function collectServices(): SearchItem[] {
 
 export const searchIndex: SearchItem[] = [
   ...collectParticipation("home", knowledgeDomains),
-  ...collectParticipation("community", communityHierarchy),
+  ...collectParticipation("community", getCommunityDomains()),
   ...collectServices(),
 ];
 
