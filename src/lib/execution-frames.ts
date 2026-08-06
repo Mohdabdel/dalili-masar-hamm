@@ -4,7 +4,7 @@
 import framesCsv from "@/data/execution/09_visual_frames.csv?raw";
 import recipesCsv from "@/data/execution/10_execution_recipes.csv?raw";
 
-function parseCsv(text: string): Record<string, string>[] {
+export function parseCsv(text: string): Record<string, string>[] {
   const src = text.replace(/^\uFEFF/, "").trim();
   const rows: string[][] = [];
   let cur: string[] = [];

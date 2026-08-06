@@ -14,6 +14,7 @@ import { toast } from "sonner";
 import { SupportResourcesPrototype } from "@/components/SupportResourcesPrototype";
 import { VisualAidPrototype } from "@/components/VisualAidPrototype";
 import { VisualFramePilot } from "@/components/VisualFramePilot";
+import { ReminderCardPilot } from "@/components/ReminderCardPilot";
 
 export interface ParticipationLevelsInput {
   guided: string;
@@ -218,6 +219,16 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
           )}
 
           {data.id === "COMM-007-OP002" && <VisualAidPrototype />}
+
+          {data.id === "COMM-030-OP001" && (
+            <ReminderCardPilot
+              executionUnitId="EXU-COMM-030-OP001-001"
+              onUseModeChange={(u) => {
+                setRunning(u);
+                if (!u) setShowDetails(false);
+              }}
+            />
+          )}
 
           {data.id === "HOME-052-OP001" && (
             <VisualFramePilot
