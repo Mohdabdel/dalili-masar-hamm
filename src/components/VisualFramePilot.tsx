@@ -199,7 +199,7 @@ export function VisualFramePilot({ executionUnitId, onRunModeChange }: Props) {
 
   const current = session[index];
   const optionalNow = current ? isFrameOptional(recipe, current.frame.frameId) : false;
-  const canSkip = !!current && (optionalNow || current.frame.skippable);
+  const canSkip = !!current && optionalNow && current.frame.skippable;
   const isLast = index >= session.length - 1;
 
   const skipCurrent = () => {
