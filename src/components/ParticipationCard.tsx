@@ -50,6 +50,8 @@ interface ParticipationCardProps {
 export function ParticipationCard({ open, onOpenChange, data, onNext }: ParticipationCardProps) {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   const [saved, setSaved] = useState(false);
+  const [running, setRunning] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
 
   useEffect(() => {
     if (!open) {
@@ -129,6 +131,18 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
 
 
         <div className="space-y-4 px-5 pb-6">
+          {running && (
+            <button
+              type="button"
+              onClick={() => setShowDetails((v) => !v)}
+              className="w-full text-center text-sm font-semibold text-primary underline underline-offset-4"
+            >
+              {showDetails ? "إخفاء تفاصيل البطاقة" : "عرض تفاصيل البطاقة"}
+            </button>
+          )}
+
+          {(!running || showDetails) && (
+          <div className="space-y-4">
           {data.whyParticipate && (
             <div className="rounded-2xl bg-gradient-primary p-5 text-primary-foreground shadow-elegant">
               <p className="text-[11px] font-semibold uppercase tracking-wider text-gold">
@@ -200,13 +214,23 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
             </Section>
           )}
 
+          </div>
+          )}
+
           {data.id === "COMM-007-OP002" && <VisualAidPrototype />}
 
           {data.id === "HOME-052-OP001" && (
-            <VisualFramePilot executionUnitId="EXU-HOME-052-OP001-001" />
+            <VisualFramePilot
+              executionUnitId="EXU-HOME-052-OP001-001"
+              onRunModeChange={(r) => {
+                setRunning(r);
+                if (!r) setShowDetails(false);
+              }}
+            />
           )}
 
 
+          {!running && (
           <Accordion type="multiple" className="space-y-2">
             <Item value="levels" title="ابدأ من المستوى المناسب">
               <div className="space-y-2">
@@ -230,10 +254,11 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
               </Item>
             )}
           </Accordion>
+          )}
 
           {data.id === "OP-COLLECT" && <SupportResourcesPrototype />}
 
-          {data.nextStep && (
+          {!running && data.nextStep && (
             <Accordion type="multiple" className="space-y-2">
               <Item value="next" title="ماذا بعد؟">
                 <p className="leading-relaxed">{data.nextStep}</p>
@@ -242,6 +267,7 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
           )}
         </div>
 
+        {!running && (
         <div className="sticky bottom-0 grid grid-cols-3 gap-2 border-t border-border/60 bg-background/95 px-5 py-3 backdrop-blur">
           <Button variant="outline" size="sm" onClick={handleSave} className="gap-1.5">
             {saved ? <Check className="h-4 w-4" /> : <Bookmark className="h-4 w-4" />}
@@ -261,6 +287,7 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
             <ArrowLeft className="h-4 w-4" />
           </Button>
         </div>
+        )}
       </SheetContent>
     </Sheet>
   );

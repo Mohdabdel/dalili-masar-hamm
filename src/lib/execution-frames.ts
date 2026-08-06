@@ -55,6 +55,18 @@ function parseCsv(text: string): Record<string, string>[] {
 const bool = (v: string) => v.toLowerCase() === "true";
 const list = (v: string) => v.split("|").map((s) => s.trim()).filter(Boolean);
 
+export type FocusShape = "none" | "rectangle" | "circle" | "spotlight";
+
+export interface FrameFocus {
+  shape: FocusShape;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  opacity: number;
+  enabled: boolean;
+}
+
 export interface VisualFrame {
   frameId: string;
   sceneId: string;
@@ -68,7 +80,9 @@ export interface VisualFrame {
   repeatable: boolean;
   status: string;
   version: string;
+  focus: FrameFocus | null;
 }
+
 
 export interface ExecutionRecipe {
   recipeId: string;
@@ -84,6 +98,34 @@ export interface ExecutionRecipe {
   version: string;
 }
 
+const SHAPES: FocusShape[] = ["none", "rectangle", "circle", "spotlight"];
+
+/** يتحقق من بيانات التركيز؛ يعيد null عند أي قيمة ناقصة أو خارج المدى 0–1. */
+function parseFocus(r: Record<string, string>): FrameFocus | null {
+  if (!bool(r["focus_enabled"] ?? "")) return null;
+  const shape = (r["focus_shape"] ?? "").trim().toLowerCase() as FocusShape;
+  const nums = {
+    x: Number(r["focus_x"]),
+    y: Number(r["focus_y"]),
+    width: Number(r["focus_width"]),
+    height: Number(r["focus_height"]),
+    opacity: Number(r["focus_opacity"]),
+  };
+  const valid =
+    SHAPES.includes(shape) &&
+    shape !== "none" &&
+    Object.values(nums).every((n) => Number.isFinite(n) && n >= 0 && n <= 1);
+  if (!valid) {
+    if (import.meta.env.DEV) {
+      console.warn(
+        `[visual-frames] بيانات تركيز غير صالحة للإطار ${r["frame_id"]} — سيتم تجاهل الطبقة.`,
+      );
+    }
+    return null;
+  }
+  return { shape, ...nums, enabled: true };
+}
+
 const frames: VisualFrame[] = parseCsv(framesCsv).map((r) => ({
   frameId: r["frame_id"] ?? "",
   sceneId: r["scene_id"] ?? "",
@@ -97,7 +139,9 @@ const frames: VisualFrame[] = parseCsv(framesCsv).map((r) => ({
   repeatable: bool(r["repeatable"] ?? ""),
   status: r["status"] ?? "",
   version: r["version"] ?? "",
+  focus: parseFocus(r),
 }));
+
 
 const recipes: ExecutionRecipe[] = parseCsv(recipesCsv).map((r) => ({
   recipeId: r["recipe_id"] ?? "",
