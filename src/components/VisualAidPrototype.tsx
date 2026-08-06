@@ -4,13 +4,17 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import visualAid from "@/assets/visual-aid-meal-choice.jpg";
+import option1 from "@/assets/meal-option-1.jpg";
+import option2 from "@/assets/meal-option-2.jpg";
 
 /**
  * EXU-COMM-007-OP002-001 / EXA-EXU-COMM-007-OP002-001-V001
  * Visual Aid — نموذج أولي، يظهر عند الحاجة فقط (Progressive Disclosure).
  */
-const OPTIONS = ["أرز مع دجاج", "مكرونة بالصلصة"];
+const OPTIONS = [
+  { src: option1, name: "دجاج مع بطاطس وفاصولياء" },
+  { src: option2, name: "سلمون مع أرز وبروكلي" },
+];
 
 export function VisualAidPrototype() {
   return (
@@ -24,19 +28,19 @@ export function VisualAidPrototype() {
         </AccordionTrigger>
         <AccordionContent className="px-4 pb-4">
           <div className="grid grid-cols-2 gap-3" dir="rtl">
-            {OPTIONS.map((name) => (
-              <figure key={name} className="m-0">
+            {OPTIONS.map((o) => (
+              <figure key={o.name} className="m-0">
                 <img
-                  src={visualAid}
+                  src={o.src}
                   alt=""
                   aria-hidden="true"
                   loading="lazy"
-                  width={1024}
-                  height={512}
-                  className="h-24 w-full rounded-xl object-cover"
+                  width={624}
+                  height={832}
+                  className="h-32 w-full rounded-xl object-cover"
                 />
                 <figcaption className="mt-2 text-center text-sm font-semibold text-foreground">
-                  {name}
+                  {o.name}
                 </figcaption>
               </figure>
             ))}
