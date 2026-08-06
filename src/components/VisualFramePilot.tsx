@@ -272,7 +272,12 @@ export function VisualFramePilot({ executionUnitId, onRunModeChange }: Props) {
                       </DropdownMenuItem>
                     )}
                     {index > 0 && (
-                      <DropdownMenuItem onSelect={() => setIndex(0)}>
+                      <DropdownMenuItem
+                        onSelect={() => {
+                          setSession((s) => s.slice(index));
+                          setIndex(0);
+                        }}
+                      >
                         البدء من هذه الخطوة
                       </DropdownMenuItem>
                     )}
