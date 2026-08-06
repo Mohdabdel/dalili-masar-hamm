@@ -321,12 +321,12 @@ export function VisualFramePilot({ executionUnitId, onRunModeChange }: Props) {
                 </span>
               </div>
 
-              <div className="relative mx-auto w-full overflow-hidden rounded-xl bg-muted/30">
+              <div className="relative mx-auto w-fit max-w-full overflow-hidden rounded-xl">
                 <img
                   src={current.frame.assetPath}
                   alt={current.frame.altTextAr}
                   loading="lazy"
-                  className="mx-auto max-h-[42vh] w-full object-contain"
+                  className="block max-h-[42vh] w-auto max-w-full object-contain"
                 />
                 {showFocus && <FocusOverlay frame={current.frame} />}
               </div>
