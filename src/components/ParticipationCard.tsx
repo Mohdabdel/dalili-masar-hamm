@@ -201,6 +201,10 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
 
           {data.id === "COMM-007-OP002" && <VisualAidPrototype />}
 
+          {data.id === "HOME-052-OP001" && (
+            <VisualFramePilot executionUnitId="EXU-HOME-052-OP001-001" />
+          )}
+
 
           <Accordion type="multiple" className="space-y-2">
             <Item value="levels" title="ابدأ من المستوى المناسب">
