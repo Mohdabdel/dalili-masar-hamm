@@ -1,4 +1,4 @@
 frame_id,scene_id,action_id,asset_path,title_ar,alt_text_ar,default_order,optional,skippable,repeatable,status,version,focus_shape,focus_x,focus_y,focus_width,focus_height,focus_opacity,focus_enabled
 FR-PANTRY-001,PANTRY_SHELF_01,REMOVE_CONTAINERS,/assets/execution/pantry/PANTRY_SHELF_01-frame01.webp,إخراج العلب,يدان تخرجان عبوات المؤن من مساحة محددة على الرف.,1,false,true,true,Ready,1.0,rectangle,0.18,0.38,0.64,0.30,0.20,true
-FR-PANTRY-002,PANTRY_SHELF_01,WIPE_SHELF,/assets/execution/pantry/PANTRY_SHELF_01-frame02.webp,مسح المساحة,يد تمسح المساحة الفارغة على الرف بقطعة قماش.,2,true,true,true,Ready,1.0,spotlight,0.50,0.52,0.52,0.30,0.22,true
+FR-PANTRY-002,PANTRY_SHELF_01,WIPE_SHELF,/assets/execution/pantry/PANTRY_SHELF_01-frame02.webp,مسح المساحة,يد تمسح المساحة الفارغة على الرف بقطعة قماش.,2,true,true,true,Ready,1.0,spotlight,0.58,0.72,0.50,0.34,0.22,true
 FR-PANTRY-003,PANTRY_SHELF_01,RETURN_CONTAINERS,/assets/execution/pantry/PANTRY_SHELF_01-frame03.webp,إعادة العلب,يدان تعيدان عبوات المؤن إلى المساحة على الرف.,3,false,true,true,Ready,1.0,rectangle,0.20,0.36,0.60,0.32,0.20,true

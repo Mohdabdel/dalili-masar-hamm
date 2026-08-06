@@ -199,7 +199,7 @@ export function VisualFramePilot({ executionUnitId, onRunModeChange }: Props) {
 
   const current = session[index];
   const optionalNow = current ? isFrameOptional(recipe, current.frame.frameId) : false;
-  const canSkip = !!current && (optionalNow || current.frame.skippable);
+  const canSkip = !!current && optionalNow && current.frame.skippable;
   const isLast = index >= session.length - 1;
 
   const skipCurrent = () => {
@@ -272,7 +272,12 @@ export function VisualFramePilot({ executionUnitId, onRunModeChange }: Props) {
                       </DropdownMenuItem>
                     )}
                     {index > 0 && (
-                      <DropdownMenuItem onSelect={() => setIndex(0)}>
+                      <DropdownMenuItem
+                        onSelect={() => {
+                          setSession((s) => s.slice(index));
+                          setIndex(0);
+                        }}
+                      >
                         البدء من هذه الخطوة
                       </DropdownMenuItem>
                     )}
@@ -316,12 +321,12 @@ export function VisualFramePilot({ executionUnitId, onRunModeChange }: Props) {
                 </span>
               </div>
 
-              <div className="relative mx-auto w-full overflow-hidden rounded-xl bg-muted/30">
+              <div className="relative mx-auto w-fit max-w-full overflow-hidden rounded-xl">
                 <img
                   src={current.frame.assetPath}
                   alt={current.frame.altTextAr}
                   loading="lazy"
-                  className="mx-auto max-h-[42vh] w-full object-contain"
+                  className="block max-h-[42vh] w-auto max-w-full object-contain"
                 />
                 {showFocus && <FocusOverlay frame={current.frame} />}
               </div>
