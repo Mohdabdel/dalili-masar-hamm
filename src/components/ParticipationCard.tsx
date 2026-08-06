@@ -199,6 +199,9 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
             </Section>
           )}
 
+          {data.id === "COMM-007-OP002" && <VisualAidPrototype />}
+
+
           <Accordion type="multiple" className="space-y-2">
             <Item value="levels" title="ابدأ من المستوى المناسب">
               <div className="space-y-2">
