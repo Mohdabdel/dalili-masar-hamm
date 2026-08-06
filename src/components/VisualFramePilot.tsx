@@ -134,9 +134,12 @@ export function VisualFramePilot({ executionUnitId, onRunModeChange }: Props) {
   const [index, setIndex] = useState(0);
   const [dragId, setDragId] = useState<string | null>(null);
   const [showFocus, setShowFocus] = useState(true);
+  const [open, setOpen] = useState(false);
+  const setOpen0 = (v: string) => setOpen(v === "visual-frames");
 
   const setMode = (m: Mode) => {
     setModeState(m);
+    if (m === "run") setOpen(true);
     onRunModeChange?.(m === "run");
   };
 
@@ -214,8 +217,8 @@ export function VisualFramePilot({ executionUnitId, onRunModeChange }: Props) {
       type="single"
       collapsible
       className="space-y-2"
-      value={mode === "run" ? "visual-frames" : undefined}
-      defaultValue={undefined}
+      value={open ? "visual-frames" : ""}
+      onValueChange={setOpen0}
     >
       <AccordionItem
         value="visual-frames"
@@ -262,7 +265,7 @@ export function VisualFramePilot({ executionUnitId, onRunModeChange }: Props) {
                       <MoreVertical className="h-5 w-5" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent align="start" dir="rtl">
+                  <DropdownMenuContent align="start" className="text-right">
                     {current.frame.repeatable && (
                       <DropdownMenuItem onSelect={repeatCurrent}>
                         تكرار هذه الخطوة
