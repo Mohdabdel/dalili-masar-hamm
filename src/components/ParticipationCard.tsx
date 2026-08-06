@@ -15,6 +15,9 @@ import { SupportResourcesPrototype } from "@/components/SupportResourcesPrototyp
 import { VisualAidPrototype } from "@/components/VisualAidPrototype";
 import { VisualFramePilot } from "@/components/VisualFramePilot";
 import { ReminderCardPilot } from "@/components/ReminderCardPilot";
+import { NoAssetNotice } from "@/components/NoAssetNotice";
+import { HumanSafetyNotice } from "@/components/HumanSafetyNotice";
+import { getSupportDecisionForOpportunity } from "@/lib/support-decisions";
 
 export interface ParticipationLevelsInput {
   guided: string;
@@ -53,10 +56,14 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
   const [saved, setSaved] = useState(false);
   const [running, setRunning] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  const [safetyAcknowledged, setSafetyAcknowledged] = useState(false);
 
   useEffect(() => {
     if (!open) {
       setChecked({});
+      setSafetyAcknowledged(false);
+      setRunning(false);
+      setShowDetails(false);
       return;
     }
     if (data) {
@@ -71,6 +78,7 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
 
   if (!data) return null;
 
+  const supportDecision = getSupportDecisionForOpportunity(data.id);
   const total = data.steps?.length ?? 0;
   const done = Object.values(checked).filter(Boolean).length;
 
@@ -219,6 +227,23 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
           )}
 
           {data.id === "COMM-007-OP002" && <VisualAidPrototype />}
+
+          {supportDecision?.decision === "Not Required" && (
+            <NoAssetNotice decision={supportDecision} />
+          )}
+
+          {supportDecision?.decision === "Human Support Required" && (
+            <HumanSafetyNotice
+              decision={supportDecision}
+              acknowledged={safetyAcknowledged}
+              onAcknowledge={() => setSafetyAcknowledged(true)}
+              onFocusModeChange={(f) => {
+                setRunning(f);
+                if (!f) setShowDetails(false);
+              }}
+            />
+          )}
+
 
           {data.id === "COMM-030-OP001" && (
             <ReminderCardPilot
