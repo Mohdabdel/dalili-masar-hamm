@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Bookmark, Share2, ArrowLeft, Check } from "lucide-react";
 import { toast } from "sonner";
 import { SupportResourcesPrototype } from "@/components/SupportResourcesPrototype";
+import { VisualAidPrototype } from "@/components/VisualAidPrototype";
 
 export interface ParticipationLevelsInput {
   guided: string;
@@ -197,6 +198,9 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
               </p>
             </Section>
           )}
+
+          {data.id === "COMM-007-OP002" && <VisualAidPrototype />}
+
 
           <Accordion type="multiple" className="space-y-2">
             <Item value="levels" title="ابدأ من المستوى المناسب">
