@@ -1,0 +1,2 @@
+asset_id,execution_unit_id,asset_type,title_ar,message_template_ar,target_audience,execution_stage,shareable,offline_capable,version,status
+EXAF-COMM-030-OP001-001,EXU-COMM-030-OP001-001,Reminder Card,تذكير موعد اللقاء,موعدك [الوقت] في [المكان],Person,Before,true,true,1.0,Ready
