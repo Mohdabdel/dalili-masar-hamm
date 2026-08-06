@@ -15,6 +15,9 @@ import { SupportResourcesPrototype } from "@/components/SupportResourcesPrototyp
 import { VisualAidPrototype } from "@/components/VisualAidPrototype";
 import { VisualFramePilot } from "@/components/VisualFramePilot";
 import { ReminderCardPilot } from "@/components/ReminderCardPilot";
+import { NoAssetNotice } from "@/components/NoAssetNotice";
+import { HumanSafetyNotice } from "@/components/HumanSafetyNotice";
+import { getSupportDecisionForOpportunity } from "@/lib/support-decisions";
 
 export interface ParticipationLevelsInput {
   guided: string;
@@ -53,10 +56,14 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
   const [saved, setSaved] = useState(false);
   const [running, setRunning] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  const [safetyAcknowledged, setSafetyAcknowledged] = useState(false);
 
   useEffect(() => {
     if (!open) {
       setChecked({});
+      setSafetyAcknowledged(false);
+      setRunning(false);
+      setShowDetails(false);
       return;
     }
     if (data) {
