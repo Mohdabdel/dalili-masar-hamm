@@ -13,6 +13,7 @@ import { Bookmark, Share2, ArrowLeft, Check } from "lucide-react";
 import { toast } from "sonner";
 import { SupportResourcesPrototype } from "@/components/SupportResourcesPrototype";
 import { VisualAidPrototype } from "@/components/VisualAidPrototype";
+import { VisualFramePilot } from "@/components/VisualFramePilot";
 
 export interface ParticipationLevelsInput {
   guided: string;
