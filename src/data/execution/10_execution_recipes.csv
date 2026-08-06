@@ -1,0 +1,2 @@
+recipe_id,execution_unit_id,frame_ids,default_order,optional_frame_ids,reorder_allowed,skip_allowed,repeat_allowed,display_mode,status,version
+RCP-HOME052-001,EXU-HOME-052-OP001-001,FR-PANTRY-001|FR-PANTRY-002|FR-PANTRY-003,FR-PANTRY-001|FR-PANTRY-002|FR-PANTRY-003,FR-PANTRY-002,true,true,true,step-by-step,Ready,1.0

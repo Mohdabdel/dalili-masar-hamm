@@ -13,6 +13,7 @@ import { Bookmark, Share2, ArrowLeft, Check } from "lucide-react";
 import { toast } from "sonner";
 import { SupportResourcesPrototype } from "@/components/SupportResourcesPrototype";
 import { VisualAidPrototype } from "@/components/VisualAidPrototype";
+import { VisualFramePilot } from "@/components/VisualFramePilot";
 
 export interface ParticipationLevelsInput {
   guided: string;
@@ -200,6 +201,10 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
           )}
 
           {data.id === "COMM-007-OP002" && <VisualAidPrototype />}
+
+          {data.id === "HOME-052-OP001" && (
+            <VisualFramePilot executionUnitId="EXU-HOME-052-OP001-001" />
+          )}
 
 
           <Accordion type="multiple" className="space-y-2">
