@@ -55,6 +55,18 @@ function parseCsv(text: string): Record<string, string>[] {
 const bool = (v: string) => v.toLowerCase() === "true";
 const list = (v: string) => v.split("|").map((s) => s.trim()).filter(Boolean);
 
+export type FocusShape = "none" | "rectangle" | "circle" | "spotlight";
+
+export interface FrameFocus {
+  shape: FocusShape;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  opacity: number;
+  enabled: boolean;
+}
+
 export interface VisualFrame {
   frameId: string;
   sceneId: string;
@@ -68,7 +80,9 @@ export interface VisualFrame {
   repeatable: boolean;
   status: string;
   version: string;
+  focus: FrameFocus | null;
 }
+
 
 export interface ExecutionRecipe {
   recipeId: string;
