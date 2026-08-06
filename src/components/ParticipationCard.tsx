@@ -78,6 +78,7 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
 
   if (!data) return null;
 
+  const supportDecision = getSupportDecisionForOpportunity(data.id);
   const total = data.steps?.length ?? 0;
   const done = Object.values(checked).filter(Boolean).length;
 
