@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Bookmark, Share2, ArrowLeft, Check } from "lucide-react";
 import { toast } from "sonner";
 import { SupportResourcesPrototype } from "@/components/SupportResourcesPrototype";
+import { VisualAidPrototype } from "@/components/VisualAidPrototype";
 
 export interface ParticipationLevelsInput {
   guided: string;
