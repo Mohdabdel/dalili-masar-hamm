@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as ReminderRouteImport } from './routes/reminder'
 import { Route as MessagesRouteImport } from './routes/messages'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as HowToUseRouteImport } from './routes/how-to-use'
@@ -40,6 +41,11 @@ const SearchRoute = SearchRouteImport.update({
 const ResourcesRoute = ResourcesRouteImport.update({
   id: '/resources',
   path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReminderRoute = ReminderRouteImport.update({
+  id: '/reminder',
+  path: '/reminder',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MessagesRoute = MessagesRouteImport.update({
@@ -122,6 +128,7 @@ export interface FileRoutesByFullPath {
   '/how-to-use': typeof HowToUseRoute
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
+  '/reminder': typeof ReminderRoute
   '/resources': typeof ResourcesRoute
   '/search': typeof SearchRoute
   '/settings': typeof SettingsRouteWithChildren
@@ -141,6 +148,7 @@ export interface FileRoutesByTo {
   '/how-to-use': typeof HowToUseRoute
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
+  '/reminder': typeof ReminderRoute
   '/resources': typeof ResourcesRoute
   '/search': typeof SearchRoute
   '/settings': typeof SettingsRouteWithChildren
@@ -161,6 +169,7 @@ export interface FileRoutesById {
   '/how-to-use': typeof HowToUseRoute
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
+  '/reminder': typeof ReminderRoute
   '/resources': typeof ResourcesRoute
   '/search': typeof SearchRoute
   '/settings': typeof SettingsRouteWithChildren
@@ -182,6 +191,7 @@ export interface FileRouteTypes {
     | '/how-to-use'
     | '/mcp'
     | '/messages'
+    | '/reminder'
     | '/resources'
     | '/search'
     | '/settings'
@@ -201,6 +211,7 @@ export interface FileRouteTypes {
     | '/how-to-use'
     | '/mcp'
     | '/messages'
+    | '/reminder'
     | '/resources'
     | '/search'
     | '/settings'
@@ -220,6 +231,7 @@ export interface FileRouteTypes {
     | '/how-to-use'
     | '/mcp'
     | '/messages'
+    | '/reminder'
     | '/resources'
     | '/search'
     | '/settings'
@@ -240,6 +252,7 @@ export interface RootRouteChildren {
   HowToUseRoute: typeof HowToUseRoute
   McpRoute: typeof McpRoute
   MessagesRoute: typeof MessagesRoute
+  ReminderRoute: typeof ReminderRoute
   ResourcesRoute: typeof ResourcesRoute
   SearchRoute: typeof SearchRoute
   SettingsRoute: typeof SettingsRouteWithChildren
@@ -273,6 +286,13 @@ declare module '@tanstack/react-router' {
       path: '/resources'
       fullPath: '/resources'
       preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reminder': {
+      id: '/reminder'
+      path: '/reminder'
+      fullPath: '/reminder'
+      preLoaderRoute: typeof ReminderRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/messages': {
@@ -396,6 +416,7 @@ const rootRouteChildren: RootRouteChildren = {
   HowToUseRoute: HowToUseRoute,
   McpRoute: McpRoute,
   MessagesRoute: MessagesRoute,
+  ReminderRoute: ReminderRoute,
   ResourcesRoute: ResourcesRoute,
   SearchRoute: SearchRoute,
   SettingsRoute: SettingsRouteWithChildren,
