@@ -228,6 +228,23 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
 
           {data.id === "COMM-007-OP002" && <VisualAidPrototype />}
 
+          {supportDecision?.decision === "Not Required" && (
+            <NoAssetNotice decision={supportDecision} />
+          )}
+
+          {supportDecision?.decision === "Human Support Required" && (
+            <HumanSafetyNotice
+              decision={supportDecision}
+              acknowledged={safetyAcknowledged}
+              onAcknowledge={() => setSafetyAcknowledged(true)}
+              onFocusModeChange={(f) => {
+                setRunning(f);
+                if (!f) setShowDetails(false);
+              }}
+            />
+          )}
+
+
           {data.id === "COMM-030-OP001" && (
             <ReminderCardPilot
               executionUnitId="EXU-COMM-030-OP001-001"
