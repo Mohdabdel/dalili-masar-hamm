@@ -54,8 +54,8 @@ function LearnerPage() {
       <header className="px-5 pb-4 pt-6">
         <div className="mb-4">
           <Link
-            to="/activities/home"
-            search={{ view: "today" }}
+            to="/activities/$category"
+            params={{ category: "home" }}
             className="inline-flex items-center gap-1 rounded-lg bg-primary-foreground/10 px-3 py-1.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/20"
           >
             <ChevronLeft className="h-4 w-4" />
