@@ -1,0 +1,3 @@
+execution_unit_id,decision,reason_ar,risk_level,human_support_required,visual_support_role,visual_support_status,safety_message_ar,safety_secondary_ar,status,version
+EXU-COMM-011-OP002-001,Not Required,الدور مباشر وواضح داخل المكان، ويمكن تنفيذه دون صورة أو تسلسل أو تذكير إضافي.,,,,,,,Ready,1.0
+EXU-COMM-003-OP003-001,Human Support Required,,High,true,تحديد نقطة التوقف وانتظار الداعم.,Pending Safety Review,ابقَ بجانب الشخص عند نقطة العبور وحتى الوصول إلى الجانب الآخر.,أي صورة أو تذكير بصري يساعد على التوقف والانتظار فقط، ولا يقرر متى يكون العبور آمنًا.,Ready,1.0
