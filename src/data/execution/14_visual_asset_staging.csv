@@ -1,0 +1,21 @@
+asset_code,coded_filename,domain_code,visual_family,variant_no,title_ar,asset_level,qa_status,version,production_notes
+VRS-HOME-BAG-PREP-001-V01,VRS-HOME-BAG-PREP-001-V01.jpg,HOME,BAG-PREP,001,تجهيز حقيبة الخروج,Reference Sheet,Pending Gemini QA,V01,حقيبة بنية
+VRS-HOME-BAG-PREP-002-V01,VRS-HOME-BAG-PREP-002-V01.jpg,HOME,BAG-PREP,002,تجهيز حقيبة الخروج,Reference Sheet,Pending Gemini QA,V01,حقيبة خضراء
+VRS-HOME-CLOTHES-HANG-001-V01,VRS-HOME-CLOTHES-HANG-001-V01.jpg,HOME,CLOTHES-HANG,001,تعليق الملابس,Reference Sheet,Pending Gemini QA,V01,أربعة إطارات رأسية
+VRS-HOME-CLOTHES-PREP-001-V01,VRS-HOME-CLOTHES-PREP-001-V01.jpg,HOME,CLOTHES-PREP,001,تجهيز الملابس للخروج,Reference Sheet,Pending Gemini QA,V01,قميص أزرق وبنطال بيج
+VRS-HOME-CLOTHES-PREP-002-V01,VRS-HOME-CLOTHES-PREP-002-V01.jpg,HOME,CLOTHES-PREP,002,تجهيز الملابس للخروج,Reference Sheet,Pending Gemini QA,V01,قميص أزرق وبنطال رمادي
+VRS-HOME-DISH-WASH-001-V01,VRS-HOME-DISH-WASH-001-V01.jpg,HOME,DISH-WASH,001,غسل أدوات المائدة,Reference Sheet,Pending Gemini QA,V01,أطباق معدنية وخزفية؛ مرقمة
+VRS-HOME-DISH-WASH-002-V01,VRS-HOME-DISH-WASH-002-V01.jpg,HOME,DISH-WASH,002,غسل أدوات المائدة,Reference Sheet,Pending Gemini QA,V01,أطباق بيضاء؛ مرقمة
+VRS-HOME-FRIDGE-STORAGE-001-V01,VRS-HOME-FRIDGE-STORAGE-001-V01.jpg,HOME,FRIDGE-STORAGE,001,ترتيب المشتريات في الثلاجة,Reference Sheet,Pending Gemini QA,V01,لوحة مرقمة؛ تحتاج مراجعة
+VRS-HOME-FRIDGE-STORAGE-002-V01,VRS-HOME-FRIDGE-STORAGE-002-V01.jpg,HOME,FRIDGE-STORAGE,002,ترتيب المشتريات في الثلاجة,Reference Sheet,Pending Gemini QA,V01,لوحة مرقمة؛ تحتاج مراجعة
+VRS-HOME-PANTRY-STORAGE-001-V01,VRS-HOME-PANTRY-STORAGE-001-V01.jpg,HOME,PANTRY-STORAGE,001,ترتيب المشتريات في خزانة المؤن,Reference Sheet,Pending Gemini QA,V01,شبكة 2×2 مرقمة
+VRS-HOME-PANTRY-STORAGE-002-V01,VRS-HOME-PANTRY-STORAGE-002-V01.jpg,HOME,PANTRY-STORAGE,002,ترتيب المشتريات في خزانة المؤن,Reference Sheet,Pending Gemini QA,V01,أربعة إطارات رأسية غير مرقمة
+VRS-HOME-TABLE-CLEAN-001-V01,VRS-HOME-TABLE-CLEAN-001-V01.jpg,HOME,TABLE-CLEAN,001,تنظيف سطح الطاولة,Reference Sheet,Pending Gemini QA,V01,أكواب ولوح صغير
+VRS-HOME-TABLE-CLEAN-002-V01,VRS-HOME-TABLE-CLEAN-002-V01.jpg,HOME,TABLE-CLEAN,002,تنظيف سطح الطاولة,Reference Sheet,Pending Gemini QA,V01,كتاب ومناديل
+VRS-HOME-TABLE-CLEAN-003-V01,VRS-HOME-TABLE-CLEAN-003-V01.jpg,HOME,TABLE-CLEAN,003,تنظيف سطح الطاولة,Reference Sheet,Pending Gemini QA,V01,أكواب ونباتات
+VRS-HOME-TABLE-CLEAN-004-V01,VRS-HOME-TABLE-CLEAN-004-V01.jpg,HOME,TABLE-CLEAN,004,تنظيف سطح الطاولة,Reference Sheet,Pending Gemini QA,V01,كتاب ونظارة
+VRS-HOME-TABLE-SET-001-V01,VRS-HOME-TABLE-SET-001-V01.jpg,HOME,TABLE-SET,001,ترتيب مائدة الطعام,Reference Sheet,Pending Gemini QA,V01,شبكة 2×2
+VRS-HOME-TABLE-SET-002-V01,VRS-HOME-TABLE-SET-002-V01.jpg,HOME,TABLE-SET,002,ترتيب مائدة الطعام,Reference Sheet,Pending Gemini QA,V01,شبكة 2×2 بديلة
+VRS-HOME-TABLE-SET-003-V01,VRS-HOME-TABLE-SET-003-V01.jpg,HOME,TABLE-SET,003,ترتيب مائدة الطعام,Reference Sheet,Pending Gemini QA,V01,أربعة إطارات رأسية
+VRS-HOME-WASTE-SORT-001-V01,VRS-HOME-WASTE-SORT-001-V01.jpg,HOME,WASTE-SORT,001,فرز النفايات المنزلية,Reference Sheet,Pending Gemini QA,V01,ثلاث حاويات
+VRS-HOME-WASTE-SORT-002-V01,VRS-HOME-WASTE-SORT-002-V01.jpg,HOME,WASTE-SORT,002,فرز النفايات المنزلية,Reference Sheet,Pending Gemini QA,V01,حاويتان
