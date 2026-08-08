@@ -13,6 +13,8 @@ import { Bookmark, Share2, ArrowLeft, Check } from "lucide-react";
 import { toast } from "sonner";
 import { SupportResourcesPrototype } from "@/components/SupportResourcesPrototype";
 import { VisualAidPrototype } from "@/components/VisualAidPrototype";
+import { VisualSupportAid } from "@/components/VisualSupportAid";
+
 import { VisualFramePilot } from "@/components/VisualFramePilot";
 import { ReminderCardPilot } from "@/components/ReminderCardPilot";
 import { NoAssetNotice } from "@/components/NoAssetNotice";
@@ -227,6 +229,9 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
           )}
 
           {data.id === "COMM-007-OP002" && <VisualAidPrototype />}
+
+          <VisualSupportAid opportunityId={data.id} />
+
 
           {supportDecision?.decision === "Not Required" && (
             <NoAssetNotice decision={supportDecision} />
