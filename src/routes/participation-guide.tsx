@@ -1,20 +1,35 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { AlertTriangle, Info, ShieldAlert } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  CONSIDERATION_GROUPS,
+  STOP_SIGNALS,
+} from "@/lib/participation-considerations";
 
 export const Route = createFileRoute("/participation-guide")({
   head: () => ({
     meta: [
-      { title: "دليل المشاركة | دليلي - مسار همم" },
+      { title: "دليل المشاركة واعتباراتها | دليلي - مسار همم" },
       {
         name: "description",
         content:
-          "الشرح الكامل لفلسفة دليل المشاركة الحياتية: معنى فرصة المشاركة، كيفية استخدام الدليل، والاستفادة من الدعم أثناء التطبيق.",
+          "الشرح الكامل لفلسفة دليل المشاركة الحياتية، مع اعتبارات عملية للأسرة قبل وأثناء المشاركة حسب مصدر التحدي.",
       },
-      { property: "og:title", content: "دليل المشاركة | دليلي - مسار همم" },
+      {
+        property: "og:title",
+        content: "دليل المشاركة واعتباراتها | دليلي - مسار همم",
+      },
       {
         property: "og:description",
         content:
-          "فلسفة المشاركة الحياتية وكيفية تحويل أحداث اليوم إلى فرص مشاركة عملية داخل الأسرة.",
+          "فلسفة المشاركة الحياتية واعتبارات عملية للأسرة: المشارك، الداعم، الفرصة، والبيئة.",
       },
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary" },
@@ -22,6 +37,7 @@ export const Route = createFileRoute("/participation-guide")({
   }),
   component: ParticipationGuidePage,
 });
+
 
 type Section = { title: string; body: string; points?: string[] };
 
