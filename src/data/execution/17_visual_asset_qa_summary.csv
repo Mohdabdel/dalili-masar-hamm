@@ -1,17 +1,17 @@
-asset_code,qa_status,reason,severity,qa_batch,action_required
-VRS-HOME-ITEMS-ORGANIZE-001,APPROVED,Passed Gemini visual QA,None,DALILI_VISUAL_BATCH_03,Proceed to frame slicing
-VRS-HOME-ITEMS-ORGANIZE-002,APPROVED,Passed Gemini visual QA,None,DALILI_VISUAL_BATCH_03,Proceed to frame slicing
-VRS-HOME-WASTE-OUT-001,REGENERATE,Embedded numbers 1 2 3 4 inside image,High,DALILI_VISUAL_BATCH_03,Regenerate asset
-VRS-HOME-WASTE-OUT-002,APPROVED,Passed Gemini visual QA,None,DALILI_VISUAL_BATCH_03,Proceed to frame slicing
-VRS-HOME-WATER-FILL-001,APPROVED,Passed Gemini visual QA,None,DALILI_VISUAL_BATCH_03,Proceed to frame slicing
-VRS-HOME-WATER-FILL-002,APPROVED,Passed Gemini visual QA,None,DALILI_VISUAL_BATCH_03,Proceed to frame slicing
-VRS-HOME-DISH-UNLOAD-001,APPROVED,Passed Gemini visual QA,None,DALILI_VISUAL_BATCH_03,Proceed to frame slicing
-VRS-HOME-DISH-UNLOAD-002,APPROVED,Passed Gemini visual QA,None,DALILI_VISUAL_BATCH_03,Proceed to frame slicing
-VRS-HOME-SNACK-PREP-001,REGENERATE,Logical error: plate appears only in final panel,High,DALILI_VISUAL_BATCH_03,Regenerate asset
-VRS-HOME-SNACK-PREP-002,REGENERATE,Logical error: plate appears only in final panel,High,DALILI_VISUAL_BATCH_03,Regenerate asset
-VRS-HOME-BED-MAKE-001,UNMATCHED,Image file not provided in Gemini batch,None,DALILI_VISUAL_BATCH_03,Deliver image file to QA batch
-VRS-HOME-BED-MAKE-002,UNMATCHED,Image file not provided in Gemini batch,None,DALILI_VISUAL_BATCH_03,Deliver image file to QA batch
-VRS-HOME-CLOSET-ORGANIZE-001,UNMATCHED,Image file not provided in Gemini batch,None,DALILI_VISUAL_BATCH_03,Deliver image file to QA batch
-VRS-HOME-CLOSET-ORGANIZE-002,UNMATCHED,Image file not provided in Gemini batch,None,DALILI_VISUAL_BATCH_03,Deliver image file to QA batch
-VRS-HOME-CLOTHES-FOLD-001,UNMATCHED,Image file not provided in Gemini batch,None,DALILI_VISUAL_BATCH_03,Deliver image file to QA batch
-VRS-HOME-CLOTHES-FOLD-002,UNMATCHED,Image file not provided in Gemini batch,None,DALILI_VISUAL_BATCH_03,Deliver image file to QA batch
+asset_code,qa_status,reason,severity,qa_batch,action_required,library_role,pilot_status
+VRS-HOME-ITEMS-ORGANIZE-001,FINAL,Canonical asset approved for DALILI-EXECUTION-ASSETS-PILOT-V1,None,DALILI_VISUAL_BATCH_03,Deliver binary file to public/assets/execution/visual/,canonical,APPROVED_FOR_PILOT
+VRS-HOME-ITEMS-ORGANIZE-002,APPROVED,Passed Gemini visual QA,None,DALILI_VISUAL_BATCH_03,Proceed to frame slicing,archive,NOT_IN_PILOT
+VRS-HOME-WASTE-OUT-001,FINAL,Canonical asset approved for DALILI-EXECUTION-ASSETS-PILOT-V1,None,DALILI_VISUAL_BATCH_03,Deliver binary file to public/assets/execution/visual/,canonical,APPROVED_FOR_PILOT
+VRS-HOME-WASTE-OUT-002,APPROVED,Passed Gemini visual QA,None,DALILI_VISUAL_BATCH_03,Proceed to frame slicing,archive,NOT_IN_PILOT
+VRS-HOME-WATER-FILL-001,FINAL,Canonical asset approved for DALILI-EXECUTION-ASSETS-PILOT-V1,None,DALILI_VISUAL_BATCH_03,Deliver binary file to public/assets/execution/visual/,canonical,APPROVED_FOR_PILOT
+VRS-HOME-WATER-FILL-002,APPROVED,Passed Gemini visual QA,None,DALILI_VISUAL_BATCH_03,Proceed to frame slicing,archive,NOT_IN_PILOT
+VRS-HOME-DISH-UNLOAD-001,FINAL,Canonical asset approved for DALILI-EXECUTION-ASSETS-PILOT-V1,None,DALILI_VISUAL_BATCH_03,Deliver binary file to public/assets/execution/visual/,canonical,APPROVED_FOR_PILOT
+VRS-HOME-DISH-UNLOAD-002,APPROVED,Passed Gemini visual QA,None,DALILI_VISUAL_BATCH_03,Proceed to frame slicing,archive,NOT_IN_PILOT
+VRS-HOME-SNACK-PREP-001,FINAL,Canonical asset approved for DALILI-EXECUTION-ASSETS-PILOT-V1,None,DALILI_VISUAL_BATCH_03,Deliver binary file to public/assets/execution/visual/,canonical,APPROVED_FOR_PILOT
+VRS-HOME-SNACK-PREP-002,REGENERATE,Logical error: plate appears only in final panel,High,DALILI_VISUAL_BATCH_03,Regenerate asset,archive,NOT_IN_PILOT
+VRS-HOME-BED-MAKE-001,FINAL,Canonical asset approved for DALILI-EXECUTION-ASSETS-PILOT-V1,None,DALILI_VISUAL_BATCH_03,Deliver binary file to public/assets/execution/visual/,canonical,APPROVED_FOR_PILOT
+VRS-HOME-BED-MAKE-002,UNMATCHED,Image file not provided in Gemini batch,None,DALILI_VISUAL_BATCH_03,Deliver image file to QA batch,archive,NOT_IN_PILOT
+VRS-HOME-CLOSET-ORGANIZE-001,FINAL,Canonical asset approved for DALILI-EXECUTION-ASSETS-PILOT-V1,None,DALILI_VISUAL_BATCH_03,Deliver binary file to public/assets/execution/visual/,canonical,APPROVED_FOR_PILOT
+VRS-HOME-CLOSET-ORGANIZE-002,UNMATCHED,Image file not provided in Gemini batch,None,DALILI_VISUAL_BATCH_03,Deliver image file to QA batch,archive,NOT_IN_PILOT
+VRS-HOME-CLOTHES-FOLD-001,FINAL,Canonical asset approved for DALILI-EXECUTION-ASSETS-PILOT-V1,None,DALILI_VISUAL_BATCH_03,Deliver binary file to public/assets/execution/visual/,canonical,APPROVED_FOR_PILOT
+VRS-HOME-CLOTHES-FOLD-002,UNMATCHED,Image file not provided in Gemini batch,None,DALILI_VISUAL_BATCH_03,Deliver image file to QA batch,archive,NOT_IN_PILOT
