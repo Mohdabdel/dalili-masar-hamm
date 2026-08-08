@@ -77,9 +77,16 @@ function ActivitiesHubPage() {
           <ChevronLeft className="h-4 w-4" />
         </Link>
       </section>
-
+      <Link
+        to="/activities/level"
+        className="mb-4 flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-gold p-4 text-base font-bold text-primary shadow-elegant transition-transform hover:-translate-y-0.5"
+      >
+        ابدأ الآن
+        <ChevronLeft className="h-5 w-5" />
+      </Link>
 
       <div className="space-y-3">
+
         {PATHS.map(({ title, description, icon: Icon, to, params, search }) => (
           <Link
             key={title}

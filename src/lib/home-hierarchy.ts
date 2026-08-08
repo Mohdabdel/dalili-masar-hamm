@@ -68,11 +68,31 @@ export interface FullCard {
 }
 
 
+/**
+ * مستوى فرصة المشاركة (يصف الفرصة نفسها، لا قدرة الشخص).
+ * simple = مستوى مشاركة بسيط، moderate = متوسط، advanced = متقدم.
+ */
+export type ParticipationLevelKey = "simple" | "moderate" | "advanced";
+
+/** أبعاد التصنيف الداخلية لفرصة المشاركة. */
+export interface ParticipationClassification {
+  level: ParticipationLevelKey;
+  roleScope: ParticipationLevelKey;
+  organizationDemand: ParticipationLevelKey;
+  variationDemand: ParticipationLevelKey;
+  reason: string;
+  reviewRequired: boolean;
+}
+
 export interface Opportunity {
   id: string;
   name: string;
   levels?: ParticipationLevels;
   card?: FullCard;
+  /** مستوى فرصة المشاركة المعتمد. */
+  participationLevel?: ParticipationLevelKey;
+  /** تفاصيل التصنيف الداخلية. */
+  classification?: ParticipationClassification;
 }
 
 export interface LifeEvent {

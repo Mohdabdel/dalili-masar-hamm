@@ -14,7 +14,46 @@ import type {
   LifeEvent,
   Opportunity,
   ParticipationLevels,
+  ParticipationLevelKey,
 } from "@/lib/home-hierarchy";
+
+// ---------- مستويات المشاركة ----------
+/** يصف المستوى فرصة المشاركة نفسها، لا قدرة الشخص. */
+export const PARTICIPATION_LEVEL_KEYS = [
+  "simple",
+  "moderate",
+  "advanced",
+] as const;
+
+export const participationLevelLabel: Record<ParticipationLevelKey, string> = {
+  simple: "مستوى مشاركة بسيط",
+  moderate: "مستوى مشاركة متوسط",
+  advanced: "مستوى مشاركة متقدم",
+};
+
+export const participationLevelDescription: Record<
+  ParticipationLevelKey,
+  string
+> = {
+  simple:
+    "دور واحد محدود وواضح، بإجراء أو خطوات قليلة مباشرة، وبداية ونهاية واضحتان.",
+  moderate:
+    "جزء وظيفي متكامل من الحدث، يتضمن عدة إجراءات مترابطة أو بعض الاختيارات.",
+  advanced:
+    "دور ممتد أو مسؤولية عن مرحلة كبيرة من الحدث، يتضمن تنظيمًا أو قرارات ومتابعة أو تنسيق عدة عناصر.",
+};
+
+export function isParticipationLevel(
+  value: string | undefined | null,
+): value is ParticipationLevelKey {
+  return (
+    value === "simple" || value === "moderate" || value === "advanced"
+  );
+}
+
+function toLevelKey(value: string | undefined): ParticipationLevelKey {
+  return isParticipationLevel(value) ? value : "moderate";
+}
 
 // ---------- CSV parser (يدعم الحقول المقتبسة والأسطر متعددة الأسطر) ----------
 function parseCsv(text: string): Record<string, string>[] {
@@ -93,6 +132,12 @@ interface OpportunityRow {
   opportunity_name_ar: string;
   display_order: string;
   status: string;
+  participation_level: string;
+  role_scope: string;
+  organization_demand: string;
+  variation_demand: string;
+  classification_reason: string;
+  review_required: string;
 }
 interface CardRow {
   card_id: string;
@@ -261,11 +306,21 @@ function build(): {
           continue;
         }
         const full = buildCard(card, op.opportunity_name_ar, ev.description);
+        const level = toLevelKey(op.participation_level);
         opportunities.push({
           id: op.opportunity_id,
           name: op.opportunity_name_ar,
           levels: full.levels,
           card: full,
+          participationLevel: level,
+          classification: {
+            level,
+            roleScope: toLevelKey(op.role_scope),
+            organizationDemand: toLevelKey(op.organization_demand),
+            variationDemand: toLevelKey(op.variation_demand),
+            reason: op.classification_reason ?? "",
+            reviewRequired: (op.review_required ?? "").toLowerCase() === "true",
+          },
         });
       }
 
@@ -359,3 +414,76 @@ if (import.meta.env.DEV) {
 }
 
 
+
+// ---------- فلترة حسب مستوى المشاركة ----------
+/**
+ * ترشيح شجرة المجالات بحيث تبقى فرص المشاركة المطابقة للمستوى فقط،
+ * مع الحفاظ على العلاقات domain → event → opportunity → card.
+ * تمرير مستوى غير محدد يعيد كل المحتوى (fallback آمن).
+ */
+export function filterDomainsByLevel(
+  domains: HomeDomain[],
+  level?: ParticipationLevelKey,
+): HomeDomain[] {
+  if (!level) return domains;
+  return domains
+    .map((d) => ({
+      ...d,
+      activities: d.activities
+        .map((a) => ({
+          ...a,
+          events: a.events
+            .map((e) => ({
+              ...e,
+              opportunities: e.opportunities.filter(
+                (o) => o.participationLevel === level,
+              ),
+            }))
+            .filter((e) => e.opportunities.length > 0),
+        }))
+        .filter((a) => a.events.length > 0),
+    }))
+    .filter((d) => d.activities.length > 0);
+}
+
+export interface FlatOpportunity {
+  domain: HomeDomain;
+  activity: GeneralActivity;
+  event: LifeEvent;
+  opportunity: Opportunity;
+}
+
+/** كل فرص المشاركة (منزلية ومجتمعية) مسطّحة، مع ترشيح اختياري بالمستوى. */
+export function getAllOpportunities(
+  level?: ParticipationLevelKey,
+): FlatOpportunity[] {
+  const out: FlatOpportunity[] = [];
+  for (const domain of built.domains) {
+    for (const activity of domain.activities) {
+      for (const event of activity.events) {
+        for (const opportunity of event.opportunities) {
+          if (level && opportunity.participationLevel !== level) continue;
+          out.push({ domain, activity, event, opportunity });
+        }
+      }
+    }
+  }
+  return out;
+}
+
+/** إحصاء الفرص المنشورة لكل مستوى مشاركة. */
+export function countOpportunitiesByLevel(): Record<
+  ParticipationLevelKey,
+  number
+> {
+  const counts: Record<ParticipationLevelKey, number> = {
+    simple: 0,
+    moderate: 0,
+    advanced: 0,
+  };
+  for (const { opportunity } of getAllOpportunities()) {
+    const level = opportunity.participationLevel;
+    if (level) counts[level] += 1;
+  }
+  return counts;
+}

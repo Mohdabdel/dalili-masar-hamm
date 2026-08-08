@@ -27,7 +27,8 @@ import type {
   LifeEvent,
   Opportunity,
 } from "@/lib/home-hierarchy";
-import { knowledgeDomains } from "@/lib/knowledge-base";
+import { knowledgeDomains, filterDomainsByLevel } from "@/lib/knowledge-base";
+import type { ParticipationLevelKey } from "@/lib/home-hierarchy";
 
 interface TodayEventDef {
   title: string;
@@ -81,8 +82,8 @@ interface EventMatch {
   event: LifeEvent;
 }
 
-function findEvent(eventId: string): EventMatch | null {
-  for (const domain of knowledgeDomains) {
+function findEvent(eventId: string, domains: HomeDomain[]): EventMatch | null {
+  for (const domain of domains) {
     for (const activity of domain.activities) {
       for (const event of activity.events) {
         if (event.id === eventId) return { domain, activity, event };
@@ -101,9 +102,14 @@ function formatOpportunityCount(count: number): string {
   return `${count} فرصة مشاركة متدرجة`;
 }
 
-export function TodayEvents() {
+export function TodayEvents({ level }: { level?: ParticipationLevelKey } = {}) {
   const [openEvent, setOpenEvent] = useState<EventMatch | null>(null);
   const [active, setActive] = useState<ActiveCtx | null>(null);
+
+  const domains = useMemo(
+    () => filterDomainsByLevel(knowledgeDomains, level),
+    [level],
+  );
 
   const groups = useMemo(
     () =>
@@ -111,7 +117,7 @@ export function TodayEvents() {
         label: g.label,
         items: g.events
           .map((def) => {
-            const match = findEvent(def.eventId);
+            const match = findEvent(def.eventId, domains);
             const count = match?.event.opportunities.length ?? 0;
             return { def, match, count };
           })
@@ -121,7 +127,7 @@ export function TodayEvents() {
               !!x.match && x.count > 0,
           ),
       })).filter((g) => g.items.length > 0),
-    [],
+    [domains],
   );
 
   const toData = (ctx: ActiveCtx): ParticipationCardData => {
