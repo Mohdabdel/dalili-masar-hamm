@@ -11,14 +11,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Bookmark, Share2, ArrowLeft, Check } from "lucide-react";
 import { toast } from "sonner";
-import { SupportResourcesPrototype } from "@/components/SupportResourcesPrototype";
-import { VisualSupportAid } from "@/components/VisualSupportAid";
-
-import { VisualFramePilot } from "@/components/VisualFramePilot";
-import { ReminderCardPilot } from "@/components/ReminderCardPilot";
+import { SupportDuringExecution } from "@/components/SupportDuringExecution";
 import { NoAssetNotice } from "@/components/NoAssetNotice";
 import { HumanSafetyNotice } from "@/components/HumanSafetyNotice";
 import { getSupportDecisionForOpportunity } from "@/lib/support-decisions";
+
 
 export interface ParticipationLevelsInput {
   guided: string;
@@ -227,8 +224,14 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
           </div>
           )}
 
-          <VisualSupportAid opportunityId={data.id} />
-
+          <SupportDuringExecution
+            opportunityId={data.id}
+            hasSteps={(data.steps?.length ?? 0) > 0}
+            onRunModeChange={(r) => {
+              setRunning(r);
+              if (!r) setShowDetails(false);
+            }}
+          />
 
           {supportDecision?.decision === "Not Required" && (
             <NoAssetNotice decision={supportDecision} />
@@ -246,26 +249,6 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
             />
           )}
 
-
-          {data.id === "COMM-030-OP001" && (
-            <ReminderCardPilot
-              executionUnitId="EXU-COMM-030-OP001-001"
-              onUseModeChange={(u) => {
-                setRunning(u);
-                if (!u) setShowDetails(false);
-              }}
-            />
-          )}
-
-          {data.id === "HOME-052-OP001" && (
-            <VisualFramePilot
-              executionUnitId="EXU-HOME-052-OP001-001"
-              onRunModeChange={(r) => {
-                setRunning(r);
-                if (!r) setShowDetails(false);
-              }}
-            />
-          )}
 
 
           {!running && (
@@ -294,7 +277,7 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
           </Accordion>
           )}
 
-          {data.id === "OP-COLLECT" && <SupportResourcesPrototype />}
+
 
           {!running && data.nextStep && (
             <Accordion type="multiple" className="space-y-2">

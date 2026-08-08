@@ -5,7 +5,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import {
   Select,
   SelectContent,
@@ -80,7 +79,6 @@ function FamilyProfilePage() {
       ]}
     >
       <div className="mb-4 flex items-center gap-2">
-        <Badge variant="outline" className="text-[10px]">نموذج أولي</Badge>
       </div>
 
       <Card>

@@ -5,8 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { ChevronLeft, Shirt, Archive, Briefcase, RefreshCw } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ChevronLeft } from "lucide-react";
 import {
   ParticipationCard,
   type ParticipationCardData,
@@ -32,18 +31,6 @@ interface ActiveContext {
   opportunity: Opportunity;
 }
 
-const CLOTHES_DOMAIN_ID = "H-CLOTHES";
-
-const featuredClothesEvents: {
-  title: string;
-  eventId: string;
-  icon: React.ComponentType<{ className?: string }>;
-}[] = [
-  { title: "اليوم يوم غسل الملابس", eventId: "EV-WASH", icon: Shirt },
-  { title: "نحتاج ترتيب الدولاب", eventId: "EV-ARRANGE", icon: Archive },
-  { title: "نجهز ملابس الخروج أو العمل", eventId: "EV-WORK", icon: Briefcase },
-  { title: "نراجع الملابس التي تحتاج استبدالاً", eventId: "EV-DISPOSE", icon: RefreshCw },
-];
 
 export function HomeHierarchy({ domains = knowledgeDomains, openOpportunityId }: HierarchyViewProps) {
   const [active, setActive] = useState<ActiveContext | null>(null);
@@ -143,7 +130,6 @@ function DomainBody({
   domain: HomeDomain;
   onOpen: (ctx: ActiveContext) => void;
 }) {
-  const [showAll, setShowAll] = useState(false);
 
   const allEvents: { activity: GeneralActivity; event: LifeEvent }[] = useMemo(
     () =>
@@ -154,75 +140,12 @@ function DomainBody({
   );
 
   if (domain.activities.length === 0 || allEvents.length === 0) {
-    return <EmptyNote text="سيتم إضافة أحداث هذا المجال قريباً." />;
-  }
-
-  // Special featured layout for clothes domain
-  if (domain.id === CLOTHES_DOMAIN_ID) {
-    return (
-      <div className="space-y-3">
-        <div>
-          <h4 className="mb-2 px-1 text-xs font-bold text-muted-foreground">
-            أكثر أحداث الملابس استخداماً
-          </h4>
-          <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-            {featuredClothesEvents.map((fe) => {
-              const match = allEvents.find((x) => x.event.id === fe.eventId);
-              if (!match) return null;
-              const Icon = fe.icon;
-              const disabled = match.event.opportunities.length === 0;
-              return (
-                <li key={fe.eventId}>
-                  <button
-                    type="button"
-                    disabled={disabled}
-                    onClick={() => {
-                      const first = match.event.opportunities[0];
-                      if (!first) return;
-                      onOpen({
-                        domain,
-                        activity: match.activity,
-                        event: match.event,
-                        opportunity: first,
-                      });
-                    }}
-                    className="group flex w-full items-center gap-3 rounded-xl border-2 border-border/60 bg-background p-3 text-right transition-all hover:border-gold/60 hover:bg-gold/5 disabled:opacity-50"
-                  >
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gold/15 text-primary">
-                      <Icon className="h-5 w-5" />
-                    </span>
-                    <span className="flex-1 text-sm font-semibold text-foreground">
-                      {fe.title}
-                    </span>
-                    <ChevronLeft className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-0.5" />
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-
-        {!showAll ? (
-          <Button
-            variant="outline"
-            className="w-full"
-            onClick={() => setShowAll(true)}
-          >
-            عرض جميع أحداث الملابس
-          </Button>
-        ) : (
-          <EventsList
-            domain={domain}
-            allEvents={allEvents}
-            onOpen={onOpen}
-          />
-        )}
-      </div>
-    );
+    return <EmptyNote text="لا توجد أحداث منشورة في هذا المجال حالياً." />;
   }
 
   return <EventsList domain={domain} allEvents={allEvents} onOpen={onOpen} />;
 }
+
 
 function EventsList({
   domain,
@@ -246,7 +169,7 @@ function EventsList({
           </AccordionTrigger>
           <AccordionContent className="px-3 pb-3">
             {event.opportunities.length === 0 ? (
-              <EmptyNote text="سيتم إضافة فرص المشاركة قريباً." />
+              <EmptyNote text="لا توجد فرص مشاركة منشورة لهذا الحدث حالياً." />
             ) : (
               <ul className="space-y-2">
                 {event.opportunities.map((op) => (

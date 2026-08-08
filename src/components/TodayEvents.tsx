@@ -8,14 +8,12 @@ import {
 import {
   Shirt,
   UtensilsCrossed,
-  BedDouble,
   Sparkles,
-  Refrigerator,
+  Archive,
   DoorClosed,
   Pill,
   Users,
   FileText,
-  Sprout,
   PawPrint,
   ChevronLeft,
 } from "lucide-react";
@@ -23,16 +21,17 @@ import {
   ParticipationCard,
   type ParticipationCardData,
 } from "@/components/ParticipationCard";
-import {
-  homeHierarchy,
-  type HomeDomain,
-  type GeneralActivity,
-  type LifeEvent,
-  type Opportunity,
+import type {
+  HomeDomain,
+  GeneralActivity,
+  LifeEvent,
+  Opportunity,
 } from "@/lib/home-hierarchy";
+import { knowledgeDomains } from "@/lib/knowledge-base";
 
 interface TodayEventDef {
   title: string;
+  /** معرف الحدث كما هو في 02_events.csv (مستودع المعرفة الحالي). */
   eventId: string;
   icon: React.ComponentType<{ className?: string }>;
 }
@@ -42,48 +41,39 @@ interface TimeGroup {
   events: TodayEventDef[];
 }
 
+/**
+ * الربط يتم بمعرفات المستودع الحالية فقط.
+ * أي حدث لا يمكن إثبات مطابقته أو لا يملك فرص مشاركة منشورة لا يُعرض إطلاقًا.
+ */
 const TIME_GROUPS: TimeGroup[] = [
   {
     label: "الصباح",
     events: [
-      { title: "لدينا دواء أو موعد صحي", eventId: "EV-MED", icon: Pill },
-      { title: "سنجهز وجبة", eventId: "EV-MEAL", icon: UtensilsCrossed },
-      {
-        title: "سنغادر المنزل ونحتاج فحص الإغلاق",
-        eventId: "EV-CLOSE",
-        icon: DoorClosed,
-      },
+      { title: "لدينا دواء اليوم", eventId: "HEALTH-013", icon: Pill },
+      { title: "سنعدّ وجبة سريعة", eventId: "FOOD-009", icon: UtensilsCrossed },
+      { title: "سنتفقد إغلاق الغاز أو الكهرباء", eventId: "FOOD-062", icon: DoorClosed },
     ],
   },
   {
     label: "منتصف اليوم",
     events: [
-      { title: "اليوم يوم غسل الملابس", eventId: "EV-WASH", icon: Shirt },
-      { title: "سننظف جزءاً من المنزل", eventId: "EV-CLEAN", icon: Sparkles },
-      {
-        title: "سنراجع الثلاجة أو المخزن",
-        eventId: "EV-STOCK",
-        icon: Refrigerator,
-      },
-      {
-        title: "لدينا فاتورة أو وثيقة نراجعها",
-        eventId: "EV-BILL",
-        icon: FileText,
-      },
+      { title: "سنفرز الملابس قبل الغسيل", eventId: "CLO-011", icon: Shirt },
+      { title: "سنطوي الملابس النظيفة", eventId: "CLO-016", icon: Shirt },
+      { title: "سننظف منطقة إعداد الطعام", eventId: "FOOD-017", icon: Sparkles },
+      { title: "سنرتب خزانة المؤن", eventId: "HOME-052", icon: Archive },
+      { title: "سنراجع الفاتورة والإيصالات", eventId: "SHOP-068", icon: FileText },
     ],
   },
   {
     label: "المساء",
     events: [
-      { title: "سنرتب غرفة", eventId: "EV-ROOM", icon: BedDouble },
-      { title: "سنستقبل ضيوفاً", eventId: "EV-GUESTS", icon: Users },
-      { title: "سنسقي النباتات", eventId: "EV-PLANTS", icon: Sprout },
-      { title: "سنعتني بالحيوان الأليف", eventId: "EV-PET", icon: PawPrint },
+      { title: "سنعلّق الملابس في الخزانة", eventId: "CLO-017", icon: Shirt },
+      { title: "سنستقبل ضيوفاً", eventId: "FOOD-006", icon: Users },
+      { title: "سنجفف الأطباق ونعيدها للرفوف", eventId: "FOOD-064", icon: UtensilsCrossed },
+      { title: "سنعتني بالحيوان الأليف", eventId: "FOOD-042", icon: PawPrint },
     ],
   },
 ];
-
-const ALL_EVENTS = TIME_GROUPS.flatMap((g) => g.events);
 
 interface EventMatch {
   domain: HomeDomain;
@@ -92,7 +82,7 @@ interface EventMatch {
 }
 
 function findEvent(eventId: string): EventMatch | null {
-  for (const domain of homeHierarchy) {
+  for (const domain of knowledgeDomains) {
     for (const activity of domain.activities) {
       for (const event of activity.events) {
         if (event.id === eventId) return { domain, activity, event };
@@ -115,15 +105,24 @@ export function TodayEvents() {
   const [openEvent, setOpenEvent] = useState<EventMatch | null>(null);
   const [active, setActive] = useState<ActiveCtx | null>(null);
 
-  const itemsMap = useMemo(() => {
-    const map = new Map<string, { def: TodayEventDef; match: EventMatch | null; count: number }>();
-    for (const def of ALL_EVENTS) {
-      const match = findEvent(def.eventId);
-      const count = match?.event.opportunities.length ?? 0;
-      map.set(def.eventId, { def, match, count });
-    }
-    return map;
-  }, []);
+  const groups = useMemo(
+    () =>
+      TIME_GROUPS.map((g) => ({
+        label: g.label,
+        items: g.events
+          .map((def) => {
+            const match = findEvent(def.eventId);
+            const count = match?.event.opportunities.length ?? 0;
+            return { def, match, count };
+          })
+          // استبعاد أي سجل غير قابل للمطابقة بدل كسر الرحلة
+          .filter(
+            (x): x is { def: TodayEventDef; match: EventMatch; count: number } =>
+              !!x.match && x.count > 0,
+          ),
+      })).filter((g) => g.items.length > 0),
+    [],
+  );
 
   const toData = (ctx: ActiveCtx): ParticipationCardData => {
     const c = ctx.opportunity.card;
@@ -171,25 +170,20 @@ export function TodayEvents() {
       </p>
 
       <div className="space-y-5">
-        {TIME_GROUPS.map((group) => (
+        {groups.map((group) => (
           <div key={group.label}>
             <h3 className="mb-2.5 text-right text-sm font-bold text-foreground">
               {group.label}
             </h3>
             <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-              {group.events.map((def) => {
-                const item = itemsMap.get(def.eventId);
-                if (!item) return null;
-                const { match, count } = item;
+              {group.items.map(({ def, match, count }) => {
                 const Icon = def.icon;
-                const disabled = !match || count === 0;
                 return (
                   <li key={def.eventId}>
                     <button
                       type="button"
-                      disabled={disabled}
-                      onClick={() => match && setOpenEvent(match)}
-                      className="group flex w-full items-center gap-3 rounded-2xl border-2 border-border/60 bg-card p-4 text-right shadow-card-soft transition-all hover:border-gold/60 hover:bg-gold/5 disabled:cursor-not-allowed disabled:opacity-50"
+                      onClick={() => setOpenEvent(match)}
+                      className="group flex w-full items-center gap-3 rounded-2xl border-2 border-border/60 bg-card p-4 text-right shadow-card-soft transition-all hover:border-gold/60 hover:bg-gold/5"
                     >
                       <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gold/15 text-primary">
                         <Icon className="h-5 w-5" />
@@ -199,9 +193,7 @@ export function TodayEvents() {
                           {def.title}
                         </span>
                         <span className="mt-0.5 block text-[11px] text-muted-foreground">
-                          {disabled
-                            ? "قيد الإعداد"
-                            : formatOpportunityCount(count)}
+                          {formatOpportunityCount(count)}
                         </span>
                       </span>
                       <ChevronLeft className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-0.5" />

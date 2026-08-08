@@ -1,18 +1,18 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { PageShell } from "@/components/PageShell";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import {
   Shirt,
   UtensilsCrossed,
-  Refrigerator,
+  Archive,
   Users,
-  Stethoscope,
+  Pill,
   ChevronLeft,
 } from "lucide-react";
+import { knowledgeDomains } from "@/lib/knowledge-base";
 
 export const Route = createFileRoute("/activities/my-day")({
   head: () => ({
@@ -23,31 +23,58 @@ export const Route = createFileRoute("/activities/my-day")({
         content:
           "اختر أحداث اليوم من قاعدة المعرفة، ورافق الأسرة في تنفيذ فرص المشاركة.",
       },
+      { property: "og:title", content: "أحداث يومي | دليلي" },
+      {
+        property: "og:description",
+        content: "اختر أحداث اليوم ورافق الأسرة في تنفيذ فرص المشاركة.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: MyDayPage,
 });
 
 type DayEvent = {
-  id: string;
+  /** معرف الحدث في مستودع المعرفة الحالي. */
+  eventId: string;
   title: string;
   icon: React.ComponentType<{ className?: string }>;
-  category: "home" | "community";
-  openId?: string;
 };
 
 const OPTIONS: DayEvent[] = [
-  { id: "wash", title: "اليوم يوم غسل الملابس", icon: Shirt, category: "home", openId: "OP-COLLECT" },
-  { id: "meal", title: "سنجهز وجبة", icon: UtensilsCrossed, category: "home" },
-  { id: "med", title: "لدينا موعد صحي", icon: Stethoscope, category: "community" },
-  { id: "stock", title: "سنراجع الثلاجة أو المخزن", icon: Refrigerator, category: "home" },
-  { id: "guests", title: "سنستقبل ضيوفاً", icon: Users, category: "home" },
+  { eventId: "CLO-011", title: "سنفرز الملابس قبل الغسيل", icon: Shirt },
+  { eventId: "CLO-016", title: "سنطوي الملابس النظيفة", icon: Shirt },
+  { eventId: "FOOD-009", title: "سنعدّ وجبة سريعة", icon: UtensilsCrossed },
+  { eventId: "HEALTH-013", title: "لدينا دواء اليوم", icon: Pill },
+  { eventId: "HOME-052", title: "سنرتب خزانة المؤن", icon: Archive },
+  { eventId: "FOOD-006", title: "سنستقبل ضيوفاً", icon: Users },
 ];
 
 const STORAGE_KEY = "dalili-my-day";
 
+function firstOpportunityId(eventId: string): string | null {
+  for (const domain of knowledgeDomains) {
+    for (const activity of domain.activities) {
+      for (const event of activity.events) {
+        if (event.id === eventId) return event.opportunities[0]?.id ?? null;
+      }
+    }
+  }
+  return null;
+}
+
 function MyDayPage() {
   const [selected, setSelected] = useState<Record<string, boolean>>({});
+
+  // لا يُعرض إلا الحدث القابل للفتح فعليًا داخل المستودع الحالي.
+  const options = useMemo(
+    () =>
+      OPTIONS.map((op) => ({ ...op, openId: firstOpportunityId(op.eventId) })).filter(
+        (op): op is DayEvent & { openId: string } => op.openId !== null,
+      ),
+    [],
+  );
 
   useEffect(() => {
     try {
@@ -58,13 +85,12 @@ function MyDayPage() {
     }
   }, []);
 
-  const toggle = (id: string) =>
-    setSelected((p) => ({ ...p, [id]: !p[id] }));
+  const toggle = (id: string) => setSelected((p) => ({ ...p, [id]: !p[id] }));
 
   const save = () => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(selected));
-      toast("تم حفظ خطة اليوم محلياً");
+      toast("تم حفظ خطة اليوم على هذا الجهاز");
     } catch {
       toast("تعذر الحفظ");
     }
@@ -75,59 +101,53 @@ function MyDayPage() {
   return (
     <PageShell
       title="أحداث يومي"
-      subtitle="نموذج أولي"
+      subtitle="اختر ما يحدث في يومكم، ثم افتح فرصة المشاركة المناسبة مباشرة."
       breadcrumbs={[
         { label: "الأنشطة", to: "/activities" },
         { label: "أحداث يومي" },
       ]}
     >
-      <div className="mb-4 flex items-center gap-2">
-        <Badge variant="outline" className="text-[10px]">نموذج أولي</Badge>
-        <span className="text-xs text-muted-foreground">قيد التطوير</span>
-      </div>
-
-      <p className="mb-5 rounded-2xl border border-border/60 bg-card p-4 text-sm leading-relaxed text-muted-foreground shadow-card-soft">
-        هذه الميزة تساعد الأسرة على تنظيم فرص المشاركة خلال اليوم. سيتم تطويرها
-        لاحقاً لحفظ خطة يومية كاملة.
-      </p>
-
       <ul className="space-y-2.5">
-        {OPTIONS.map((op) => {
+        {options.map((op) => {
           const Icon = op.icon;
-          const isOn = !!selected[op.id];
+          const isOn = !!selected[op.eventId];
           return (
-            <li key={op.id}>
-              <label
-                className={`flex cursor-pointer items-center gap-3 rounded-2xl border-2 p-4 transition-all ${
-                  isOn ? "border-gold bg-gold/10" : "border-border bg-card hover:border-gold/50"
+            <li key={op.eventId}>
+              <div
+                className={`flex items-center gap-3 rounded-2xl border-2 p-3 transition-all ${
+                  isOn ? "border-gold bg-gold/10" : "border-border bg-card"
                 }`}
               >
-                <Checkbox checked={isOn} onCheckedChange={() => toggle(op.id)} />
+                <Checkbox
+                  checked={isOn}
+                  onCheckedChange={() => toggle(op.eventId)}
+                  aria-label={`اختيار ${op.title}`}
+                />
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gold/15 text-primary">
                   <Icon className="h-5 w-5" />
                 </span>
-                <span className="flex-1 text-right text-sm font-bold text-foreground">
+                <span className="min-w-0 flex-1 text-right text-sm font-bold text-foreground">
                   {op.title}
                 </span>
-              </label>
+                <Link
+                  to="/activities/$category"
+                  params={{ category: "home" }}
+                  search={{ open: op.openId, view: "domains" as const }}
+                  className="group inline-flex shrink-0 items-center gap-1 rounded-xl border border-border bg-background px-3 py-2 text-xs font-semibold text-foreground transition-all hover:border-gold"
+                >
+                  ابدأ
+                  <ChevronLeft className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-0.5" />
+                </Link>
+              </div>
             </li>
           );
         })}
       </ul>
 
-      <div className="sticky bottom-24 mt-6 space-y-3">
+      <div className="mt-6">
         <Button onClick={save} className="w-full" size="lg" disabled={count === 0}>
           حفظ خطة اليوم ({count})
         </Button>
-        <Link
-          to="/activities/$category"
-          params={{ category: "home" }}
-          search={{ open: "OP-COLLECT" }}
-          className="group flex items-center justify-center gap-2 rounded-2xl border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground transition-all hover:border-gold"
-        >
-          افتح بطاقة مشاركة تجريبية
-          <ChevronLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-        </Link>
       </div>
     </PageShell>
   );

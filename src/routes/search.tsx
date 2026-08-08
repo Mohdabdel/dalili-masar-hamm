@@ -184,11 +184,18 @@ function SearchPage() {
       ) : (
         <ul className="space-y-2">
           {results.map((r) => (
-            <li key={r.id}>
+            <li key={`${r.kind}-${r.id}`}>
               <Link
-                to={r.route}
+                to={r.kind === "services" ? "/resources" : "/activities/$category"}
+                params={
+                  r.kind === "services"
+                    ? undefined
+                    : { category: r.kind === "home" ? "home" : "community" }
+                }
+                search={r.kind === "services" ? undefined : { open: r.id, view: "domains" as const }}
                 className="group flex items-start justify-between gap-3 rounded-xl border border-border/60 bg-card p-3 shadow-card-soft transition-all hover:border-gold/60"
               >
+
                 <div className="min-w-0 flex-1 text-right">
                   <div className="mb-1 flex flex-wrap items-center gap-1.5">
                     <Badge variant="secondary" className="bg-primary/10 text-[10px] text-primary">
