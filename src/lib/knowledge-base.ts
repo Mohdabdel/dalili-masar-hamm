@@ -414,3 +414,76 @@ if (import.meta.env.DEV) {
 }
 
 
+
+// ---------- فلترة حسب مستوى المشاركة ----------
+/**
+ * ترشيح شجرة المجالات بحيث تبقى فرص المشاركة المطابقة للمستوى فقط،
+ * مع الحفاظ على العلاقات domain → event → opportunity → card.
+ * تمرير مستوى غير محدد يعيد كل المحتوى (fallback آمن).
+ */
+export function filterDomainsByLevel(
+  domains: HomeDomain[],
+  level?: ParticipationLevelKey,
+): HomeDomain[] {
+  if (!level) return domains;
+  return domains
+    .map((d) => ({
+      ...d,
+      activities: d.activities
+        .map((a) => ({
+          ...a,
+          events: a.events
+            .map((e) => ({
+              ...e,
+              opportunities: e.opportunities.filter(
+                (o) => o.participationLevel === level,
+              ),
+            }))
+            .filter((e) => e.opportunities.length > 0),
+        }))
+        .filter((a) => a.events.length > 0),
+    }))
+    .filter((d) => d.activities.length > 0);
+}
+
+export interface FlatOpportunity {
+  domain: HomeDomain;
+  activity: GeneralActivity;
+  event: LifeEvent;
+  opportunity: Opportunity;
+}
+
+/** كل فرص المشاركة (منزلية ومجتمعية) مسطّحة، مع ترشيح اختياري بالمستوى. */
+export function getAllOpportunities(
+  level?: ParticipationLevelKey,
+): FlatOpportunity[] {
+  const out: FlatOpportunity[] = [];
+  for (const domain of built.domains) {
+    for (const activity of domain.activities) {
+      for (const event of activity.events) {
+        for (const opportunity of event.opportunities) {
+          if (level && opportunity.participationLevel !== level) continue;
+          out.push({ domain, activity, event, opportunity });
+        }
+      }
+    }
+  }
+  return out;
+}
+
+/** إحصاء الفرص المنشورة لكل مستوى مشاركة. */
+export function countOpportunitiesByLevel(): Record<
+  ParticipationLevelKey,
+  number
+> {
+  const counts: Record<ParticipationLevelKey, number> = {
+    simple: 0,
+    moderate: 0,
+    advanced: 0,
+  };
+  for (const { opportunity } of getAllOpportunities()) {
+    const level = opportunity.participationLevel;
+    if (level) counts[level] += 1;
+  }
+  return counts;
+}
