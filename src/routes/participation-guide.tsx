@@ -234,17 +234,17 @@ function ConsiderationsTab() {
 function ParticipationGuidePage() {
   return (
     <PageShell
-      title="دليل المشاركة"
-      subtitle="الفلسفة، طريقة الاستخدام، واعتبارات المشاركة"
+      title="دليل الاستخدام"
+      subtitle="طريقة الاستخدام واعتبارات المشاركة"
       breadcrumbs={[
         { label: "دليلي للمشاركة الحياتية", to: "/activities" },
-        { label: "دليل المشاركة" },
+        { label: "دليل الاستخدام" },
       ]}
     >
-      <Tabs defaultValue="guide" className="w-full">
+      <Tabs defaultValue="guide" dir="rtl" className="w-full">
         <TabsList className="mb-4 grid w-full grid-cols-2">
           <TabsTrigger value="guide" className="text-sm font-bold">
-            دليل المشاركة
+            دليل الاستخدام
           </TabsTrigger>
           <TabsTrigger value="considerations" className="text-sm font-bold">
             اعتبارات المشاركة
