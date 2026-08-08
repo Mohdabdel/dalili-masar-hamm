@@ -1,9 +1,9 @@
 asset_code,title_ar,file_name,asset_path,version,status,source,qa_status,library_role,missing_binary
-VRS-HOME-ITEMS-ORGANIZE-001,ترتيب الأغراض الشخصية,VRS-HOME-ITEMS-ORGANIZE-001.webp,/assets/execution/visual/VRS-HOME-ITEMS-ORGANIZE-001.webp,1.0,FINAL,Bing Image Creator,APPROVED_FOR_PILOT,canonical,true
-VRS-HOME-WASTE-OUT-001,إخراج النفايات المنزلية,VRS-HOME-WASTE-OUT-001.webp,/assets/execution/visual/VRS-HOME-WASTE-OUT-001.webp,1.0,FINAL,Bing Image Creator,APPROVED_FOR_PILOT,canonical,true
-VRS-HOME-WATER-FILL-001,تعبئة زجاجة الماء,VRS-HOME-WATER-FILL-001.webp,/assets/execution/visual/VRS-HOME-WATER-FILL-001.webp,1.0,FINAL,Bing Image Creator,APPROVED_FOR_PILOT,canonical,true
-VRS-HOME-SNACK-PREP-001,تجهيز وجبة خفيفة,VRS-HOME-SNACK-PREP-001.webp,/assets/execution/visual/VRS-HOME-SNACK-PREP-001.webp,1.0,FINAL,Bing Image Creator,APPROVED_FOR_PILOT,canonical,true
-VRS-HOME-DISH-UNLOAD-001,إخراج الأطباق من غسالة الصحون,VRS-HOME-DISH-UNLOAD-001.webp,/assets/execution/visual/VRS-HOME-DISH-UNLOAD-001.webp,1.0,FINAL,Bing Image Creator,APPROVED_FOR_PILOT,canonical,true
-VRS-HOME-CLOTHES-FOLD-001,طي الملابس,VRS-HOME-CLOTHES-FOLD-001.webp,/assets/execution/visual/VRS-HOME-CLOTHES-FOLD-001.webp,1.0,FINAL,Bing Image Creator,APPROVED_FOR_PILOT,canonical,true
-VRS-HOME-CLOSET-ORGANIZE-001,ترتيب الملابس بالخزانة,VRS-HOME-CLOSET-ORGANIZE-001.webp,/assets/execution/visual/VRS-HOME-CLOSET-ORGANIZE-001.webp,1.0,FINAL,Bing Image Creator,APPROVED_FOR_PILOT,canonical,true
-VRS-HOME-BED-MAKE-001,ترتيب السرير,VRS-HOME-BED-MAKE-001.webp,/assets/execution/visual/VRS-HOME-BED-MAKE-001.webp,1.0,FINAL,Bing Image Creator,APPROVED_FOR_PILOT,canonical,true
+VRS-HOME-ITEMS-ORGANIZE-001,ترتيب الأغراض الشخصية,VRS-HOME-ITEMS-ORGANIZE-001.webp,/assets/execution/visual/VRS-HOME-ITEMS-ORGANIZE-001.webp,1.0,FINAL,DALILI_VISUAL_BATCH_03,APPROVED_FOR_PILOT,canonical,true
+VRS-HOME-WASTE-OUT-001,إخراج النفايات المنزلية,VRS-HOME-WASTE-OUT-001.webp,/assets/execution/visual/VRS-HOME-WASTE-OUT-001.webp,1.0,FINAL,DALILI_VISUAL_BATCH_03,APPROVED_FOR_PILOT,canonical,true
+VRS-HOME-WATER-FILL-001,تعبئة زجاجة الماء,VRS-HOME-WATER-FILL-001.webp,/assets/execution/visual/VRS-HOME-WATER-FILL-001.webp,1.0,FINAL,DALILI_VISUAL_BATCH_03,APPROVED_FOR_PILOT,canonical,true
+VRS-HOME-SNACK-PREP-001,تجهيز وجبة خفيفة,VRS-HOME-SNACK-PREP-001.webp,/assets/execution/visual/VRS-HOME-SNACK-PREP-001.webp,1.0,FINAL,DALILI_VISUAL_BATCH_03,APPROVED_FOR_PILOT,canonical,true
+VRS-HOME-DISH-UNLOAD-001,إخراج الأطباق من غسالة الصحون,VRS-HOME-DISH-UNLOAD-001.webp,/assets/execution/visual/VRS-HOME-DISH-UNLOAD-001.webp,1.0,FINAL,DALILI_VISUAL_BATCH_03,APPROVED_FOR_PILOT,canonical,true
+VRS-HOME-CLOTHES-FOLD-001,طي الملابس,VRS-HOME-CLOTHES-FOLD-001.webp,/assets/execution/visual/VRS-HOME-CLOTHES-FOLD-001.webp,1.0,FINAL,DALILI_VISUAL_BATCH_03,APPROVED_FOR_PILOT,canonical,true
+VRS-HOME-CLOSET-ORGANIZE-001,ترتيب الملابس بالخزانة,VRS-HOME-CLOSET-ORGANIZE-001.webp,/assets/execution/visual/VRS-HOME-CLOSET-ORGANIZE-001.webp,1.0,FINAL,DALILI_VISUAL_BATCH_03,APPROVED_FOR_PILOT,canonical,true
+VRS-HOME-BED-MAKE-001,ترتيب السرير,VRS-HOME-BED-MAKE-001.webp,/assets/execution/visual/VRS-HOME-BED-MAKE-001.webp,1.0,FINAL,DALILI_VISUAL_BATCH_03,APPROVED_FOR_PILOT,canonical,true
