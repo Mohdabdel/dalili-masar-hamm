@@ -12,7 +12,6 @@ import { Button } from "@/components/ui/button";
 import { Bookmark, Share2, ArrowLeft, Check } from "lucide-react";
 import { toast } from "sonner";
 import { SupportResourcesPrototype } from "@/components/SupportResourcesPrototype";
-import { VisualAidPrototype } from "@/components/VisualAidPrototype";
 import { VisualSupportAid } from "@/components/VisualSupportAid";
 
 import { VisualFramePilot } from "@/components/VisualFramePilot";
@@ -227,8 +226,6 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
 
           </div>
           )}
-
-          {data.id === "COMM-007-OP002" && <VisualAidPrototype />}
 
           <VisualSupportAid opportunityId={data.id} />
 
