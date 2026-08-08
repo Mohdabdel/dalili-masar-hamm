@@ -24,6 +24,7 @@ import { Route as ActivitiesIndexRouteImport } from './routes/activities.index'
 import { Route as SettingsFamilyRouteImport } from './routes/settings.family'
 import { Route as SettingsAddEventRouteImport } from './routes/settings.add-event'
 import { Route as LearnerIdRouteImport } from './routes/learner.$id'
+import { Route as ActivitiesOptionsRouteImport } from './routes/activities.options'
 import { Route as ActivitiesMyDayRouteImport } from './routes/activities.my-day'
 import { Route as ActivitiesLevelRouteImport } from './routes/activities.level'
 import { Route as ActivitiesCategoryRouteImport } from './routes/activities.$category'
@@ -106,6 +107,11 @@ const LearnerIdRoute = LearnerIdRouteImport.update({
   path: '/learner/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ActivitiesOptionsRoute = ActivitiesOptionsRouteImport.update({
+  id: '/activities/options',
+  path: '/activities/options',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ActivitiesMyDayRoute = ActivitiesMyDayRouteImport.update({
   id: '/activities/my-day',
   path: '/activities/my-day',
@@ -157,6 +163,7 @@ export interface FileRoutesByFullPath {
   '/activities/$category': typeof ActivitiesCategoryRoute
   '/activities/level': typeof ActivitiesLevelRoute
   '/activities/my-day': typeof ActivitiesMyDayRoute
+  '/activities/options': typeof ActivitiesOptionsRoute
   '/learner/$id': typeof LearnerIdRoute
   '/settings/add-event': typeof SettingsAddEventRoute
   '/settings/family': typeof SettingsFamilyRoute
@@ -180,6 +187,7 @@ export interface FileRoutesByTo {
   '/activities/$category': typeof ActivitiesCategoryRoute
   '/activities/level': typeof ActivitiesLevelRoute
   '/activities/my-day': typeof ActivitiesMyDayRoute
+  '/activities/options': typeof ActivitiesOptionsRoute
   '/learner/$id': typeof LearnerIdRoute
   '/settings/add-event': typeof SettingsAddEventRoute
   '/settings/family': typeof SettingsFamilyRoute
@@ -204,6 +212,7 @@ export interface FileRoutesById {
   '/activities/$category': typeof ActivitiesCategoryRoute
   '/activities/level': typeof ActivitiesLevelRoute
   '/activities/my-day': typeof ActivitiesMyDayRoute
+  '/activities/options': typeof ActivitiesOptionsRoute
   '/learner/$id': typeof LearnerIdRoute
   '/settings/add-event': typeof SettingsAddEventRoute
   '/settings/family': typeof SettingsFamilyRoute
@@ -229,6 +238,7 @@ export interface FileRouteTypes {
     | '/activities/$category'
     | '/activities/level'
     | '/activities/my-day'
+    | '/activities/options'
     | '/learner/$id'
     | '/settings/add-event'
     | '/settings/family'
@@ -252,6 +262,7 @@ export interface FileRouteTypes {
     | '/activities/$category'
     | '/activities/level'
     | '/activities/my-day'
+    | '/activities/options'
     | '/learner/$id'
     | '/settings/add-event'
     | '/settings/family'
@@ -275,6 +286,7 @@ export interface FileRouteTypes {
     | '/activities/$category'
     | '/activities/level'
     | '/activities/my-day'
+    | '/activities/options'
     | '/learner/$id'
     | '/settings/add-event'
     | '/settings/family'
@@ -299,6 +311,7 @@ export interface RootRouteChildren {
   ActivitiesCategoryRoute: typeof ActivitiesCategoryRoute
   ActivitiesLevelRoute: typeof ActivitiesLevelRoute
   ActivitiesMyDayRoute: typeof ActivitiesMyDayRoute
+  ActivitiesOptionsRoute: typeof ActivitiesOptionsRoute
   LearnerIdRoute: typeof LearnerIdRoute
   ActivitiesIndexRoute: typeof ActivitiesIndexRoute
   Char91DotmcpChar93InvokeToolToolRoute: typeof Char91DotmcpChar93InvokeToolToolRoute
@@ -411,6 +424,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LearnerIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/activities/options': {
+      id: '/activities/options'
+      path: '/activities/options'
+      fullPath: '/activities/options'
+      preLoaderRoute: typeof ActivitiesOptionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/activities/my-day': {
       id: '/activities/my-day'
       path: '/activities/my-day'
@@ -488,6 +508,7 @@ const rootRouteChildren: RootRouteChildren = {
   ActivitiesCategoryRoute: ActivitiesCategoryRoute,
   ActivitiesLevelRoute: ActivitiesLevelRoute,
   ActivitiesMyDayRoute: ActivitiesMyDayRoute,
+  ActivitiesOptionsRoute: ActivitiesOptionsRoute,
   LearnerIdRoute: LearnerIdRoute,
   ActivitiesIndexRoute: ActivitiesIndexRoute,
   Char91DotmcpChar93InvokeToolToolRoute: Char91DotmcpChar93InvokeToolToolRoute,
