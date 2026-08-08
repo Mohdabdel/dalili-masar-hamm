@@ -16,6 +16,8 @@ import { Route as ReminderRouteImport } from './routes/reminder'
 import { Route as MessagesRouteImport } from './routes/messages'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as HowToUseRouteImport } from './routes/how-to-use'
+import { Route as EducationSupportRouteImport } from './routes/education-support'
+import { Route as CommunitySupportRouteImport } from './routes/community-support'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ActivitiesIndexRouteImport } from './routes/activities.index'
@@ -61,6 +63,16 @@ const McpRoute = McpRouteImport.update({
 const HowToUseRoute = HowToUseRouteImport.update({
   id: '/how-to-use',
   path: '/how-to-use',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EducationSupportRoute = EducationSupportRouteImport.update({
+  id: '/education-support',
+  path: '/education-support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunitySupportRoute = CommunitySupportRouteImport.update({
+  id: '/community-support',
+  path: '/community-support',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CalendarRoute = CalendarRouteImport.update({
@@ -125,6 +137,8 @@ const Char91DotmcpChar93InvokeToolToolRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/calendar': typeof CalendarRoute
+  '/community-support': typeof CommunitySupportRoute
+  '/education-support': typeof EducationSupportRoute
   '/how-to-use': typeof HowToUseRoute
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
@@ -145,6 +159,8 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/calendar': typeof CalendarRoute
+  '/community-support': typeof CommunitySupportRoute
+  '/education-support': typeof EducationSupportRoute
   '/how-to-use': typeof HowToUseRoute
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
@@ -166,6 +182,8 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/calendar': typeof CalendarRoute
+  '/community-support': typeof CommunitySupportRoute
+  '/education-support': typeof EducationSupportRoute
   '/how-to-use': typeof HowToUseRoute
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
@@ -188,6 +206,8 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/calendar'
+    | '/community-support'
+    | '/education-support'
     | '/how-to-use'
     | '/mcp'
     | '/messages'
@@ -208,6 +228,8 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/calendar'
+    | '/community-support'
+    | '/education-support'
     | '/how-to-use'
     | '/mcp'
     | '/messages'
@@ -228,6 +250,8 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/calendar'
+    | '/community-support'
+    | '/education-support'
     | '/how-to-use'
     | '/mcp'
     | '/messages'
@@ -249,6 +273,8 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CalendarRoute: typeof CalendarRoute
+  CommunitySupportRoute: typeof CommunitySupportRoute
+  EducationSupportRoute: typeof EducationSupportRoute
   HowToUseRoute: typeof HowToUseRoute
   McpRoute: typeof McpRoute
   MessagesRoute: typeof MessagesRoute
@@ -314,6 +340,20 @@ declare module '@tanstack/react-router' {
       path: '/how-to-use'
       fullPath: '/how-to-use'
       preLoaderRoute: typeof HowToUseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/education-support': {
+      id: '/education-support'
+      path: '/education-support'
+      fullPath: '/education-support'
+      preLoaderRoute: typeof EducationSupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/community-support': {
+      id: '/community-support'
+      path: '/community-support'
+      fullPath: '/community-support'
+      preLoaderRoute: typeof CommunitySupportRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/calendar': {
@@ -413,6 +453,8 @@ const SettingsRouteWithChildren = SettingsRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CalendarRoute: CalendarRoute,
+  CommunitySupportRoute: CommunitySupportRoute,
+  EducationSupportRoute: EducationSupportRoute,
   HowToUseRoute: HowToUseRoute,
   McpRoute: McpRoute,
   MessagesRoute: MessagesRoute,
