@@ -14,7 +14,46 @@ import type {
   LifeEvent,
   Opportunity,
   ParticipationLevels,
+  ParticipationLevelKey,
 } from "@/lib/home-hierarchy";
+
+// ---------- مستويات المشاركة ----------
+/** يصف المستوى فرصة المشاركة نفسها، لا قدرة الشخص. */
+export const PARTICIPATION_LEVEL_KEYS = [
+  "simple",
+  "moderate",
+  "advanced",
+] as const;
+
+export const participationLevelLabel: Record<ParticipationLevelKey, string> = {
+  simple: "مستوى مشاركة بسيط",
+  moderate: "مستوى مشاركة متوسط",
+  advanced: "مستوى مشاركة متقدم",
+};
+
+export const participationLevelDescription: Record<
+  ParticipationLevelKey,
+  string
+> = {
+  simple:
+    "دور واحد محدود وواضح، بإجراء أو خطوات قليلة مباشرة، وبداية ونهاية واضحتان.",
+  moderate:
+    "جزء وظيفي متكامل من الحدث، يتضمن عدة إجراءات مترابطة أو بعض الاختيارات.",
+  advanced:
+    "دور ممتد أو مسؤولية عن مرحلة كبيرة من الحدث، يتضمن تنظيمًا أو قرارات ومتابعة أو تنسيق عدة عناصر.",
+};
+
+export function isParticipationLevel(
+  value: string | undefined | null,
+): value is ParticipationLevelKey {
+  return (
+    value === "simple" || value === "moderate" || value === "advanced"
+  );
+}
+
+function toLevelKey(value: string | undefined): ParticipationLevelKey {
+  return isParticipationLevel(value) ? value : "moderate";
+}
 
 // ---------- CSV parser (يدعم الحقول المقتبسة والأسطر متعددة الأسطر) ----------
 function parseCsv(text: string): Record<string, string>[] {
