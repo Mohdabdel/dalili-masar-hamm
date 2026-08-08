@@ -130,7 +130,6 @@ function DomainBody({
   domain: HomeDomain;
   onOpen: (ctx: ActiveContext) => void;
 }) {
-  const [showAll, setShowAll] = useState(false);
 
   const allEvents: { activity: GeneralActivity; event: LifeEvent }[] = useMemo(
     () =>
