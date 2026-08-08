@@ -87,49 +87,168 @@ const SECTIONS: Section[] = [
   },
 ];
 
+function GuideTab() {
+  return (
+    <div className="space-y-4">
+      {SECTIONS.map((section, index) => (
+        <section
+          key={section.title}
+          className="rounded-2xl border border-border/70 bg-card p-5 text-right shadow-card-soft"
+        >
+          <div className="flex items-start gap-3">
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-gold text-sm font-bold text-primary">
+              {index + 1}
+            </span>
+            <h2 className="mt-0.5 text-lg font-bold leading-snug text-foreground">
+              {section.title}
+            </h2>
+          </div>
+          <p className="mt-3 text-[0.95rem] leading-relaxed text-muted-foreground">
+            {section.body}
+          </p>
+          {section.points && (
+            <ul className="mt-3 space-y-2">
+              {section.points.map((point) => (
+                <li
+                  key={point}
+                  className="flex items-start gap-2 text-[0.95rem] leading-relaxed text-foreground/90"
+                >
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      ))}
+    </div>
+  );
+}
+
+function ConsiderationsTab() {
+  return (
+    <div className="space-y-4">
+      <div className="flex items-start gap-3 rounded-2xl border border-border/70 bg-secondary p-4 text-right">
+        <Info className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
+        <p className="text-sm leading-relaxed text-foreground/90">
+          هذه الاعتبارات إرشادات دعم عامة وليست تشخيصاً أو خطة علاجية، وتُعدّل
+          بحسب الشخص والسياق.
+        </p>
+      </div>
+
+      {CONSIDERATION_GROUPS.map((group) => (
+        <section
+          key={group.id}
+          className="rounded-2xl border border-border/70 bg-card p-4 text-right shadow-card-soft"
+        >
+          <h2 className="text-base font-bold text-foreground">{group.title}</h2>
+          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+            {group.intro}
+          </p>
+          <Accordion type="single" collapsible className="mt-2">
+            {group.items.map((item) => (
+              <AccordionItem key={item.id} value={`${group.id}-${item.id}`}>
+                <AccordionTrigger className="text-right text-[0.95rem] font-bold text-foreground">
+                  {item.title}
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="space-y-3 pb-1">
+                    <div>
+                      <h3 className="text-xs font-bold tracking-wide text-gold">
+                        ما الذي قد تلاحظه؟
+                      </h3>
+                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                        {item.notice}
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-bold tracking-wide text-gold">
+                        اعتبارات قبل وأثناء المشاركة
+                      </h3>
+                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                        {item.considerations}
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-bold tracking-wide text-gold">
+                        إجراءات عملية
+                      </h3>
+                      <ul className="mt-1 space-y-1.5">
+                        {item.actions.map((action) => (
+                          <li
+                            key={action}
+                            className="flex items-start gap-2 text-sm leading-relaxed text-foreground/90"
+                          >
+                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sage" />
+                            <span>{action}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </section>
+      ))}
+
+      <section className="rounded-2xl border-2 border-destructive/40 bg-card p-5 text-right shadow-card-soft">
+        <div className="flex items-start gap-3">
+          <ShieldAlert className="mt-0.5 h-6 w-6 shrink-0 text-destructive" />
+          <div>
+            <h2 className="text-base font-bold text-foreground">
+              متى نوقف المشاركة أو نعدّلها فوراً؟
+            </h2>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+              السلامة والكرامة أولاً. المشاركة دعوة وليست إجباراً، وإيقافها في
+              الوقت المناسب قرار صحيح لا تراجع.
+            </p>
+          </div>
+        </div>
+        <ul className="mt-3 space-y-2">
+          {STOP_SIGNALS.map((signal) => (
+            <li
+              key={signal}
+              className="flex items-start gap-2 text-sm leading-relaxed text-foreground/90"
+            >
+              <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-destructive" />
+              <span>{signal}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  );
+}
+
 function ParticipationGuidePage() {
   return (
     <PageShell
       title="دليل المشاركة"
-      subtitle="الفلسفة، طريقة الاستخدام، ومعنى فرصة المشاركة"
+      subtitle="الفلسفة، طريقة الاستخدام، واعتبارات المشاركة"
       breadcrumbs={[
         { label: "دليل المشاركة الحياتية", to: "/activities" },
         { label: "دليل المشاركة" },
       ]}
     >
-      <div className="space-y-4">
-        {SECTIONS.map((section, index) => (
-          <section
-            key={section.title}
-            className="rounded-2xl border border-border/70 bg-card p-5 text-right shadow-card-soft"
-          >
-            <div className="flex items-start gap-3">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-gold text-sm font-bold text-primary">
-                {index + 1}
-              </span>
-              <h2 className="mt-0.5 text-lg font-bold leading-snug text-foreground">
-                {section.title}
-              </h2>
-            </div>
-            <p className="mt-3 text-[0.95rem] leading-relaxed text-muted-foreground">
-              {section.body}
-            </p>
-            {section.points && (
-              <ul className="mt-3 space-y-2">
-                {section.points.map((point) => (
-                  <li
-                    key={point}
-                    className="flex items-start gap-2 text-[0.95rem] leading-relaxed text-foreground/90"
-                  >
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </section>
-        ))}
-      </div>
+      <Tabs defaultValue="guide" className="w-full">
+        <TabsList className="mb-4 grid w-full grid-cols-2">
+          <TabsTrigger value="guide" className="text-sm font-bold">
+            دليل المشاركة
+          </TabsTrigger>
+          <TabsTrigger value="considerations" className="text-sm font-bold">
+            اعتبارات المشاركة
+          </TabsTrigger>
+        </TabsList>
+        <TabsContent value="guide">
+          <GuideTab />
+        </TabsContent>
+        <TabsContent value="considerations">
+          <ConsiderationsTab />
+        </TabsContent>
+      </Tabs>
     </PageShell>
   );
 }
+
