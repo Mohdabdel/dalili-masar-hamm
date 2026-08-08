@@ -68,13 +68,6 @@ function LandingPage() {
         <p className="mt-2 text-base leading-relaxed text-primary-foreground/90">
           مشاركة حياتية يومية، ودليل وصول للخدمات المجتمعية والتعليمية.
         </p>
-        <a
-          href="#services"
-          className="mt-5 inline-flex items-center gap-2 rounded-2xl bg-gold px-5 py-3 text-sm font-bold text-gold-foreground shadow-card-soft transition-transform hover:-translate-y-0.5"
-        >
-          استعرض الخدمات الثلاث
-          <ChevronLeft className="h-4 w-4" strokeWidth={2.4} />
-        </a>
       </section>
 
       <section id="services" className="mt-6 space-y-3">
@@ -103,17 +96,6 @@ function LandingPage() {
             <ChevronLeft className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
           </Link>
         ))}
-      </section>
-
-      <section className="mt-6 rounded-2xl border border-border/60 bg-card p-5 shadow-card-soft">
-        <h3 className="font-display text-base font-bold text-foreground">
-          فكرة دليلي
-        </h3>
-        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          لا نضيف أنشطة جديدة إلى يوم الأسرة، بل نستثمر ما يحدث بالفعل داخل المنزل
-          أو المجتمع، ونحوله إلى فرص مشاركة متدرجة وهادفة، مع دليل وصول واضح
-          للخدمات المجتمعية والتعليمية.
-        </p>
       </section>
     </PageShell>
   );

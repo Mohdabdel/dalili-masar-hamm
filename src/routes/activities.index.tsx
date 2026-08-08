@@ -60,6 +60,11 @@ function ActivitiesHubPage() {
       subtitle="اختر نقطة البداية المناسبة لكم اليوم"
       breadcrumbs={[{ label: "الأنشطة" }]}
     >
+      <p className="mb-4 rounded-2xl border border-border/60 bg-card p-4 text-sm leading-relaxed text-muted-foreground shadow-card-soft">
+        لا نضيف أنشطة جديدة إلى يوم الأسرة، بل نستثمر ما يحدث بالفعل داخل المنزل
+        أو المجتمع، ونحوله إلى فرص مشاركة متدرجة وهادفة.
+      </p>
+
       <div className="space-y-3">
         {PATHS.map(({ title, description, icon: Icon, to, params, search }) => (
           <Link
