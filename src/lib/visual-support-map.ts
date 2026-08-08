@@ -10,7 +10,11 @@ import {
 /** opportunity_id → أكواد الأصول Canonical المرتبطة (بالترتيب المعتمد للعرض) */
 const OPPORTUNITY_TO_ASSETS: Record<string, string[]> = {
   // دفعة DALILI_VISUAL_BATCH_03 (لوحة واحدة canonical لكل فرصة)
+  // ملاحظة تدقيق MVP: HOME-001-OP001 / HOME-008-OP002 / HOME-009-OP003 و FOOD-008-OP003
+  // و FOOD-064-OP003 و CLO-017-OP001 ما زالت "بطاقة مشاركة مطلوبة" في المستودع (04)،
+  // لذلك لا تُفتح في الواجهة ويبقى ربطها خاملًا حتى نشر بطاقاتها — دون أي رابط مكسور.
   "HOME-001-OP001": ["VRS-HOME-BED-MAKE-001"],
+
   "HOME-008-OP002": ["VRS-HOME-ITEMS-ORGANIZE-001"],
   "HOME-009-OP003": ["VRS-HOME-WASTE-OUT-001"],
   "FOOD-008-OP003": ["VRS-HOME-WATER-FILL-001"],
