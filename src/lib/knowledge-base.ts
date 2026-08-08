@@ -267,11 +267,21 @@ function build(): {
           continue;
         }
         const full = buildCard(card, op.opportunity_name_ar, ev.description);
+        const level = toLevelKey(op.participation_level);
         opportunities.push({
           id: op.opportunity_id,
           name: op.opportunity_name_ar,
           levels: full.levels,
           card: full,
+          participationLevel: level,
+          classification: {
+            level,
+            roleScope: toLevelKey(op.role_scope),
+            organizationDemand: toLevelKey(op.organization_demand),
+            variationDemand: toLevelKey(op.variation_demand),
+            reason: op.classification_reason ?? "",
+            reviewRequired: (op.review_required ?? "").toLowerCase() === "true",
+          },
         });
       }
 
