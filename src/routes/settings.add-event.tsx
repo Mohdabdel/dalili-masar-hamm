@@ -90,6 +90,8 @@ function AddEventPage() {
               </Label>
               <Input
                 id="event-name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 placeholder="مثال: اليوم يوم غسل الملابس"
                 className="text-right"
               />
@@ -99,7 +101,8 @@ function AddEventPage() {
             <div className="space-y-2">
               <Label className="text-base font-bold">نوع الحدث</Label>
               <RadioGroup
-                defaultValue="home"
+                value={type}
+                onValueChange={setType}
                 className="flex flex-wrap gap-6"
               >
                 <div className="flex items-center gap-2">
@@ -122,7 +125,7 @@ function AddEventPage() {
               <Label htmlFor="domain" className="text-base font-bold">
                 المجال
               </Label>
-              <Select>
+              <Select value={domain} onValueChange={setDomain}>
                 <SelectTrigger id="domain" className="text-right">
                   <SelectValue placeholder="اختر المجال" />
                 </SelectTrigger>
@@ -146,6 +149,8 @@ function AddEventPage() {
               </Label>
               <Input
                 id="location"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
                 placeholder="مثال: غرفة الغسيل"
                 className="text-right"
               />
@@ -156,7 +161,7 @@ function AddEventPage() {
               <Label htmlFor="participation-level" className="text-base font-bold">
                 مستوى المشاركة الابتدائي
               </Label>
-              <Select>
+              <Select value={level} onValueChange={setLevel}>
                 <SelectTrigger id="participation-level" className="text-right">
                   <SelectValue placeholder="اختر المستوى" />
                 </SelectTrigger>
@@ -176,6 +181,8 @@ function AddEventPage() {
               <textarea
                 id="family-notes"
                 rows={3}
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
                 placeholder="أضف أي ملاحظة تساعد على تنفيذ الحدث..."
                 className="w-full rounded-md border border-input bg-background px-3 py-2 text-right text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               />
@@ -185,7 +192,8 @@ function AddEventPage() {
 
         {/* زر الحفظ */}
         <Button
-          disabled
+          disabled={!canSave}
+          onClick={save}
           className="w-full gap-2 text-lg font-bold"
           size="lg"
         >
@@ -195,7 +203,7 @@ function AddEventPage() {
 
         {/* رسالة أسفل الصفحة */}
         <p className="text-center text-sm leading-relaxed text-muted-foreground">
-          سيتم دعم إنشاء أحداث مخصصة وربطها ببطاقات المشاركة فى إصدار لاحق.
+          تُحفظ الأحداث المخصصة على هذا الجهاز فقط.
         </p>
       </div>
     </PageShell>
