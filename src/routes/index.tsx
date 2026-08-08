@@ -1,97 +1,120 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, HeartHandshake, MapPinned, GraduationCap } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "دليلي — مسار همم" },
+      { title: "دليلي — دعم وتمكين أسر ذوي الإعاقة" },
       {
         name: "description",
         content:
-          "دليلي: مرافق عملي يساعد الأسرة على تحويل أحداث الحياة اليومية إلى فرص مشاركة حقيقية للشاب أو البالغ من ذوي الهمم.",
+          "دليلي: منصة واحدة بثلاث خدمات — المشاركة الحياتية اليومية، مصادر الدعم المجتمعي، ومصادر الدعم التعليمي والتأهيلي.",
+      },
+      { property: "og:title", content: "دليلي — دعم وتمكين أسر ذوي الإعاقة" },
+      {
+        property: "og:description",
+        content:
+          "ثلاث خدمات مستقلة: المشاركة الحياتية، الدعم المجتمعي، والدعم التعليمي.",
       },
     ],
   }),
   component: LandingPage,
 });
 
+const SERVICES = [
+  {
+    title: "دليلي للمشاركة الحياتية",
+    description:
+      "حوّل أحداث اليوم العادية إلى فرص مشاركة متدرجة، مع بطاقات عملية ودعم أثناء التطبيق.",
+    icon: HeartHandshake,
+    to: "/activities" as const,
+    accent: "bg-gradient-primary text-primary-foreground",
+    tint: "border-primary/30",
+  },
+  {
+    title: "مصادر الدعم المجتمعي",
+    description:
+      "دليل وصول للمرافق والفعاليات والتسهيلات والنقل والمبادرات المجتمعية.",
+    icon: MapPinned,
+    to: "/community-support" as const,
+    accent: "bg-gradient-sage text-primary-foreground",
+    tint: "border-sage/40",
+  },
+  {
+    title: "مصادر الدعم التعليمي",
+    description:
+      "دليل وصول لمزودي الخدمات التعليمية والتأهيلية: تربية خاصة، نطق، علاج وظيفي وطبيعي، وتدريب مهني.",
+    icon: GraduationCap,
+    to: "/education-support" as const,
+    accent: "bg-gradient-gold text-primary",
+    tint: "border-gold/50",
+  },
+];
+
 function LandingPage() {
   return (
     <PageShell
       title="دليلي"
-      description="مرافق الأسرة لإتاحة المشاركة اليومية للشباب والبالغين من ذوي الهمم"
-      subtitle="خطوات بسيطة مستمرة تحقق مشاركة مستدامة"
+      description="دليل دعم وتمكين أسر الأشخاص من ذوي الإعاقة"
     >
-      <section className="mt-1 rounded-3xl bg-gradient-primary p-6 text-primary-foreground shadow-elegant">
-        <h2 className="font-display text-2xl font-bold leading-snug sm:text-3xl">
-          ابدأ من الحياة اليومية... لا من الجلسة التدريبية
+      <section className="mt-1 rounded-3xl bg-gradient-primary p-6 text-primary-foreground shadow-elegant sm:p-8">
+        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
+          منصة واحدة · ثلاث خدمات
+        </p>
+        <h2 className="mt-3 font-display text-2xl font-bold leading-snug sm:text-3xl">
+          كل ما تحتاجه الأسرة في مكان واحد
         </h2>
-        <p className="mt-3 text-base leading-relaxed text-primary-foreground/90 max-w-[90%]">
-          دليلي ليس برنامجاً تدريبياً إضافياً، بل مرافق عملي يساعد الأسرة على
-          تحويل أحداث الحياة اليومية إلى فرص مشاركة حقيقية للشاب أو البالغ من
-          ذوي الهمم.
+        <p className="mt-2 text-base leading-relaxed text-primary-foreground/90">
+          مشاركة حياتية يومية، ودليل وصول للخدمات المجتمعية والتعليمية.
         </p>
-        <p className="mt-3 text-base leading-relaxed text-primary-foreground/90 max-w-[90%]">
-          <strong className="text-gold">الفكرة الأساسية بسيطة:</strong>{" "}
-          لا نضيف أنشطة جديدة إلى يوم الأسرة، بل نستثمر ما يحدث بالفعل داخل
-          المنزل أو المجتمع، مثل غسل الملابس، إعداد وجبة، التسوق، مراجعة موعد،
-          أو استقبال ضيوف، ونحول هذه الأحداث إلى فرص مشاركة متدرجة وهادفة.
-        </p>
+        <a
+          href="#services"
+          className="mt-5 inline-flex items-center gap-2 rounded-2xl bg-gold px-5 py-3 text-sm font-bold text-gold-foreground shadow-card-soft transition-transform hover:-translate-y-0.5"
+        >
+          استعرض الخدمات الثلاث
+          <ChevronLeft className="h-4 w-4" strokeWidth={2.4} />
+        </a>
       </section>
 
-      <Article title="لماذا المشاركة مهمة؟">
-        في هذه المرحلة العمرية، تمنح المشاركة الشاب أو البالغ دوراً حقيقياً
-        داخل أسرته ومجتمعه، وتدعم الاستقلالية، والثقة بالنفس، وتنظيم الروتين
-        اليومي. المشاركة ليست وسيلة للتدريب فقط، بل هي وسيلة لبناء
-        الاستقلالية، والانتماء، وتحسين جودة الحياة. والهدف ليس أن يؤدي
-        المهمة كاملة منذ البداية، بل أن يبدأ بدور مناسب يتوسع تدريجياً مع
-        الوقت.
-      </Article>
+      <section id="services" className="mt-6 space-y-3">
+        <h2 className="px-1 font-display text-lg font-bold text-foreground">
+          الخدمات
+        </h2>
+        {SERVICES.map(({ title, description, icon: Icon, to, accent, tint }) => (
+          <Link
+            key={title}
+            to={to}
+            className={`group flex items-start gap-4 rounded-2xl border-2 bg-card p-5 shadow-card-soft transition-all hover:-translate-y-0.5 hover:shadow-elegant ${tint}`}
+          >
+            <span
+              className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl shadow-card-soft ${accent}`}
+            >
+              <Icon className="h-6 w-6" strokeWidth={2} />
+            </span>
+            <span className="min-w-0 flex-1 text-right">
+              <span className="block font-display text-lg font-bold text-foreground">
+                {title}
+              </span>
+              <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
+                {description}
+              </span>
+            </span>
+            <ChevronLeft className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
+          </Link>
+        ))}
+      </section>
 
-      <Article title="قاعدة 15 دقيقة">
-        لا تحتاج المشاركة إلى ساعات طويلة. ابدأ بخمسة عشر دقيقة داخل حدث
-        يومي حقيقي، وكررها باستمرار. الاستمرار أهم من الكمال، والمشاركة
-        الصغيرة المتكررة أكثر أثراً من نشاط طويل يحدث مرة واحدة.
-      </Article>
-
-      <Article title="لا تحتاج أن تكون مختصاً">
-        صُمم دليلي للأب، والأم، والأخ، والأخت، أو أي فرد من الأسرة يريد
-        إتاحة دور حقيقي للشاب في الحياة اليومية. لا تحتاج إلى أدوات متخصصة أو
-        جلسات تدريبية. يكفي أن تبدأ بموقف بسيط، وتقدم الدعم المناسب، ثم
-        تقلل المساعدة تدريجياً. ابدأ بما تعرفه... ودع دليلي يساعدك فيما لا
-        تعرفه.
-      </Article>
-
-      <div className="mt-8">
-        <Link
-          to="/activities"
-          className="group flex items-center justify-center gap-2 rounded-2xl bg-gold px-6 py-4 text-base font-bold text-gold-foreground shadow-elegant transition-transform hover:-translate-y-0.5"
-        >
-          ابدأ أول فرصة مشاركة
-          <ChevronLeft
-            className="h-5 w-5 transition-transform group-hover:-translate-x-1"
-            strokeWidth={2.4}
-          />
-        </Link>
-      </div>
+      <section className="mt-6 rounded-2xl border border-border/60 bg-card p-5 shadow-card-soft">
+        <h3 className="font-display text-base font-bold text-foreground">
+          فكرة دليلي
+        </h3>
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+          لا نضيف أنشطة جديدة إلى يوم الأسرة، بل نستثمر ما يحدث بالفعل داخل المنزل
+          أو المجتمع، ونحوله إلى فرص مشاركة متدرجة وهادفة، مع دليل وصول واضح
+          للخدمات المجتمعية والتعليمية.
+        </p>
+      </section>
     </PageShell>
-  );
-}
-
-function Article({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <section className="mt-4 rounded-2xl border border-border/60 bg-card p-4 shadow-card-soft">
-      <h3 className="font-display text-lg font-bold text-foreground">{title}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-muted-foreground max-w-[75%]">
-        {children}
-      </p>
-    </section>
   );
 }

@@ -27,6 +27,8 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-gold: var(--gold);
   --color-gold-foreground: var(--gold-foreground);
+  --color-sage: var(--sage);
+  --color-sage-foreground: var(--sage-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -40,6 +42,7 @@
   --shadow-card: 0 2px 12px -4px color-mix(in oklab, var(--primary) 15%, transparent);
   --gradient-primary: linear-gradient(135deg, oklch(0.28 0.08 260), oklch(0.22 0.06 260));
   --gradient-gold: linear-gradient(135deg, oklch(0.78 0.11 85), oklch(0.68 0.10 75));
+  --gradient-sage: linear-gradient(135deg, oklch(0.46 0.07 165), oklch(0.36 0.06 170));
 }
 
 :root {
@@ -62,6 +65,8 @@
   --accent-foreground: oklch(0.22 0.06 260);
   --gold: oklch(0.72 0.11 82);
   --gold-foreground: oklch(0.18 0.05 260);
+  --sage: oklch(0.46 0.07 165);
+  --sage-foreground: oklch(0.99 0.004 250);
   --destructive: oklch(0.52 0.18 27);
   --destructive-foreground: oklch(0.99 0 0);
   --border: oklch(0.88 0.012 250);
@@ -86,6 +91,8 @@
   --accent-foreground: oklch(0.98 0.005 250);
   --gold: oklch(0.8 0.12 82);
   --gold-foreground: oklch(0.18 0.05 260);
+  --sage: oklch(0.62 0.08 165);
+  --sage-foreground: oklch(0.16 0.04 260);
   --border: oklch(1 0 0 / 14%);
   --input: oklch(1 0 0 / 16%);
   --ring: oklch(0.78 0.12 82);
@@ -123,6 +130,9 @@
 
 @utility bg-gradient-primary {
   background-image: var(--gradient-primary);
+}
+@utility bg-gradient-sage {
+  background-image: var(--gradient-sage);
 }
 @utility bg-gradient-gold {
   background-image: var(--gradient-gold);

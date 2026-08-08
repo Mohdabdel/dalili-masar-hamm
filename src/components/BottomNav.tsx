@@ -1,11 +1,11 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { LayoutGrid, MessageCircle, Landmark, CalendarDays, HelpCircle } from "lucide-react";
+import { Home, HeartHandshake, MapPinned, GraduationCap, HelpCircle } from "lucide-react";
 
 const tabs = [
-  { to: "/", label: "الرئيسية", icon: LayoutGrid },
-  { to: "/messages", label: "الرسائل", icon: MessageCircle },
-  { to: "/resources", label: "الخدمات", icon: Landmark },
-  { to: "/calendar", label: "الفعاليات", icon: CalendarDays },
+  { to: "/", label: "الرئيسية", icon: Home },
+  { to: "/activities", label: "المشاركة", icon: HeartHandshake },
+  { to: "/community-support", label: "مجتمعي", icon: MapPinned },
+  { to: "/education-support", label: "تعليمي", icon: GraduationCap },
   { to: "/how-to-use", label: "الدليل", icon: HelpCircle },
 ] as const;
 
@@ -15,15 +15,13 @@ export function BottomNav() {
     <nav className="fixed bottom-0 inset-x-0 z-40 border-t border-border bg-card/95 backdrop-blur-lg shadow-elegant">
       <ul className="mx-auto flex max-w-2xl items-stretch justify-around px-2 py-1.5 pb-[calc(env(safe-area-inset-bottom)+0.375rem)]">
         {tabs.map(({ to, label, icon: Icon }) => {
-          const active = pathname === to;
+          const active = to === "/" ? pathname === "/" : pathname.startsWith(to);
           return (
             <li key={to} className="flex-1">
               <Link
                 to={to}
                 className={`flex flex-col items-center gap-1 rounded-xl py-2 transition-all ${
-                  active
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                  active ? "text-primary" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 <span
@@ -33,7 +31,7 @@ export function BottomNav() {
                 >
                   <Icon className={`h-5 w-5 ${active ? "text-primary" : ""}`} strokeWidth={active ? 2.4 : 2} />
                 </span>
-                <span className={`text-[11px] font-semibold ${active ? "text-primary" : ""}`}>
+                <span className={`text-[10.5px] font-semibold ${active ? "text-primary" : ""}`}>
                   {label}
                 </span>
               </Link>
