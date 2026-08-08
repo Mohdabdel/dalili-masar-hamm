@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { PageShell } from "@/components/PageShell";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -12,36 +13,76 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Save } from "lucide-react";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/settings/add-event")({
   head: () => ({
     meta: [
       { title: "إضافة حدث جديد — دليلي" },
-      { name: "description", content: "نموذج أولي لإضافة حدث أو فرصة مشاركة جديدة." },
+      { name: "description", content: "أضف حدثاً أسرياً مخصصاً واحفظه على هذا الجهاز." },
+      { property: "og:title", content: "إضافة حدث جديد — دليلي" },
+      {
+        property: "og:description",
+        content: "أضف حدثاً أسرياً مخصصاً واحفظه على هذا الجهاز.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: AddEventPage,
 });
 
+const STORAGE_KEY = "dalili-custom-events";
+
 function AddEventPage() {
+  const [name, setName] = useState("");
+  const [type, setType] = useState("home");
+  const [domain, setDomain] = useState("");
+  const [location, setLocation] = useState("");
+  const [level, setLevel] = useState("");
+  const [notes, setNotes] = useState("");
+
+  const canSave = name.trim().length > 0;
+
+  const save = () => {
+    if (!canSave) return;
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      const list = raw ? JSON.parse(raw) : [];
+      const next = Array.isArray(list) ? list : [];
+      next.push({
+        name: name.trim(),
+        type,
+        domain,
+        location: location.trim(),
+        level,
+        notes: notes.trim(),
+        createdAt: new Date().toISOString(),
+      });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+      setName("");
+      setLocation("");
+      setNotes("");
+      toast("تم حفظ الحدث على هذا الجهاز");
+    } catch {
+      toast("تعذر الحفظ");
+    }
+  };
+
   return (
     <PageShell
       title="إضافة حدث جديد"
-      subtitle="نموذج أولي"
+      subtitle="أضف حدثاً أسرياً مخصصاً يُحفظ على هذا الجهاز."
       breadcrumbs={[
         { label: "الإعدادات", to: "/settings" },
         { label: "إضافة حدث جديد" },
       ]}
     >
-      <div className="mb-4 flex items-center gap-2">
-        <Badge variant="outline" className="text-[10px]">نموذج أولي</Badge>
-        <span className="text-xs text-muted-foreground">قيد التطوير</span>
-      </div>
       <div className="space-y-6">
         <Card>
           <CardContent className="space-y-6 p-5">
+
             {/* اسم الحدث */}
             <div className="space-y-2">
               <Label htmlFor="event-name" className="text-base font-bold">
