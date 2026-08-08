@@ -18,14 +18,31 @@ export interface CanonicalVisualAsset {
   missingBinary: boolean;
 }
 
-// الملفات الموجودة فعليًا داخل public/assets/execution/visual/
-const presentFiles = new Set(
-  Object.keys(
-    import.meta.glob("../../public/assets/execution/visual/*.webp", {
-      query: "?url",
-    }),
-  ).map((p) => p.split("/").pop() as string),
-);
+// الملفات الموجودة فعليًا داخل المشروع (public + أصول مجمّعة في src/assets).
+// المفتاح = اسم الملف، القيمة = رابط قابل للعرض.
+const presentFiles = new Map<string, string>();
+
+for (const p of Object.keys(
+  import.meta.glob("../../public/assets/execution/**/*.{webp,jpg,jpeg,png}", {
+    query: "?url",
+  }),
+)) {
+  const fileName = p.split("/").pop() as string;
+  const publicPath = p.replace("../../public", "");
+  presentFiles.set(fileName, publicPath);
+}
+
+const bundled = import.meta.glob("../assets/*.{webp,jpg,jpeg,png}", {
+  query: "?url",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+for (const [p, url] of Object.entries(bundled)) {
+  const fileName = p.split("/").pop() as string;
+  if (!presentFiles.has(fileName)) presentFiles.set(fileName, url);
+}
+
 
 function warn(message: string) {
   if (import.meta.env.DEV) console.warn(`[visual-asset-catalog] ${message}`);
