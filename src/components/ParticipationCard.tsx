@@ -256,7 +256,7 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
             <Item value="levels" title="ابدأ من المستوى المناسب">
               <div className="space-y-2">
                 <Level label="موجهة" text={data.levels.guided} tone="soft" />
-                <Level label="مشتركة" text={data.levels.shared} tone="mid" />
+                <Level label="مستقلة جزئياً" text={data.levels.shared} tone="mid" />
                 <Level label="مستقلة" text={data.levels.independent} tone="strong" />
               </div>
             </Item>
