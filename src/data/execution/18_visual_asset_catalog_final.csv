@@ -7,3 +7,9 @@ VRS-HOME-DISH-UNLOAD-001,إخراج الأطباق من غسالة الصحون,
 VRS-HOME-CLOTHES-FOLD-001,طي الملابس,VRS-HOME-CLOTHES-FOLD-001.webp,/assets/execution/visual/VRS-HOME-CLOTHES-FOLD-001.webp,1.0,FINAL,DALILI_VISUAL_BATCH_03,APPROVED_FOR_PILOT,canonical,false
 VRS-HOME-CLOSET-ORGANIZE-001,ترتيب الملابس بالخزانة,VRS-HOME-CLOSET-ORGANIZE-001.webp,/assets/execution/visual/VRS-HOME-CLOSET-ORGANIZE-001.webp,1.0,FINAL,DALILI_VISUAL_BATCH_03,APPROVED_FOR_PILOT,canonical,false
 VRS-HOME-BED-MAKE-001,ترتيب السرير,VRS-HOME-BED-MAKE-001.webp,/assets/execution/visual/VRS-HOME-BED-MAKE-001.webp,1.0,FINAL,DALILI_VISUAL_BATCH_03,APPROVED_FOR_PILOT,canonical,false
+VRS-COMM-MEAL-CHOICE-001,خيار الوجبة: دجاج مع بطاطس وفاصولياء,meal-option-1.jpg,src/assets/meal-option-1.jpg,1.0,FINAL,DALILI_VISUAL_BATCH_01,APPROVED_FOR_PILOT,canonical,false
+VRS-COMM-MEAL-CHOICE-002,خيار الوجبة: سلمون مع أرز وبروكلي,meal-option-2.jpg,src/assets/meal-option-2.jpg,1.0,FINAL,DALILI_VISUAL_BATCH_01,APPROVED_FOR_PILOT,canonical,false
+VRS-HOME-PANTRY-SHELF-FR001,ترتيب خزانة المؤن — إخراج العلب,PANTRY_SHELF_01-frame01.webp,/assets/execution/pantry/PANTRY_SHELF_01-frame01.webp,1.0,FINAL,DALILI_VISUAL_BATCH_02,APPROVED_FOR_PILOT,canonical,false
+VRS-HOME-PANTRY-SHELF-FR002,ترتيب خزانة المؤن — مسح المساحة,PANTRY_SHELF_01-frame02.webp,/assets/execution/pantry/PANTRY_SHELF_01-frame02.webp,1.0,FINAL,DALILI_VISUAL_BATCH_02,APPROVED_FOR_PILOT,canonical,false
+VRS-HOME-PANTRY-SHELF-FR003,ترتيب خزانة المؤن — إعادة العلب,PANTRY_SHELF_01-frame03.webp,/assets/execution/pantry/PANTRY_SHELF_01-frame03.webp,1.0,FINAL,DALILI_VISUAL_BATCH_02,APPROVED_FOR_PILOT,canonical,false
+VRS-HOME-PANTRY-SHELF-SHEET-001,ترتيب خزانة المؤن — اللوحة المصدر,PANTRY_SHELF_01-sheet.webp,/assets/execution/pantry/PANTRY_SHELF_01-sheet.webp,1.0,SOURCE_BOARD,DALILI_VISUAL_BATCH_02,NOT_IN_PILOT,archive,false
