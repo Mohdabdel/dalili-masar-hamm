@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useMemo } from "react";
 import { PageShell } from "@/components/PageShell";
 import { ServiceDirectory } from "@/components/ServiceDirectory";
-import { COMMUNITY_CATEGORIES, COMMUNITY_PROVIDERS } from "@/lib/service-directories";
+import { getCommunityServices } from "@/lib/service-directories";
 
 export const Route = createFileRoute("/community-support")({
   head: () => ({
@@ -10,20 +11,24 @@ export const Route = createFileRoute("/community-support")({
       {
         name: "description",
         content:
-          "دليل وصول للخدمات المجتمعية: الترفيه والفعاليات، المراكز والمرافق، التسهيلات وإمكانية الوصول، النقل، والمبادرات المجتمعية.",
+          "دليل وصول للخدمات المجتمعية: النقل، الرياضة، الثقافة، التسهيلات وإمكانية الوصول، الدعم المالي، ودعم الأسرة والأقران في دولة الإمارات.",
       },
       { property: "og:title", content: "مصادر الدعم المجتمعي | دليلي" },
       {
         property: "og:description",
         content:
-          "دليل وصول للخدمات المجتمعية لأسر الأشخاص من ذوي الإعاقة، مع بحث وفلاتر حسب الإمارة ونوع الخدمة.",
+          "دليل وصول للخدمات المجتمعية لأسر الأشخاص من ذوي الإعاقة، مع بحث وفلاتر حسب الإمارة والمجال وطريقة الوصول.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: CommunitySupportPage,
 });
 
 function CommunitySupportPage() {
+  const services = useMemo(() => getCommunityServices(), []);
+
   return (
     <PageShell
       title="مصادر الدعم المجتمعي"
@@ -31,11 +36,10 @@ function CommunitySupportPage() {
       breadcrumbs={[{ label: "مصادر الدعم المجتمعي" }]}
     >
       <ServiceDirectory
-        intro="هذا الدليل يساعد الأسرة على الوصول إلى الخدمات والمرافق والفعاليات المجتمعية. يعرض معلومات وصول فقط، دون تقييم أو ترتيب أو تفضيل لأي جهة."
-        categories={COMMUNITY_CATEGORIES}
-        providers={COMMUNITY_PROVIDERS}
-        emptyTitle="الدليل جاهز لاستقبال الجهات"
-        emptyBody="لم تُضف بعد جهات موثقة ضمن هذه الفئة. البنية والفلاتر جاهزة، وستظهر الجهات هنا فور اعتماد بياناتها الرسمية."
+        intro="هذا الدليل يساعد الأسرة على الوصول إلى الخدمات المجتمعية المتاحة. يعرض معلومات وصول فقط، دون تقييم أو ترتيب أو تفضيل لأي جهة، وتُوضَّح حالة التحقق من كل خدمة بشفافية."
+        services={services}
+        emptyTitle="لا توجد نتائج مطابقة"
+        emptyBody="جرّب تعديل كلمة البحث أو إعادة ضبط المرشحات لعرض الخدمات المتاحة."
       />
     </PageShell>
   );
