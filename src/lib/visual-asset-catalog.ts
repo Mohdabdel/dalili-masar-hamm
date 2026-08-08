@@ -18,14 +18,31 @@ export interface CanonicalVisualAsset {
   missingBinary: boolean;
 }
 
-// الملفات الموجودة فعليًا داخل public/assets/execution/visual/
-const presentFiles = new Set(
-  Object.keys(
-    import.meta.glob("../../public/assets/execution/visual/*.webp", {
-      query: "?url",
-    }),
-  ).map((p) => p.split("/").pop() as string),
-);
+// الملفات الموجودة فعليًا داخل المشروع (public + أصول مجمّعة في src/assets).
+// المفتاح = اسم الملف، القيمة = رابط قابل للعرض.
+const presentFiles = new Map<string, string>();
+
+for (const p of Object.keys(
+  import.meta.glob("../../public/assets/execution/**/*.{webp,jpg,jpeg,png}", {
+    query: "?url",
+  }),
+)) {
+  const fileName = p.split("/").pop() as string;
+  const publicPath = p.replace("../../public", "");
+  presentFiles.set(fileName, publicPath);
+}
+
+const bundled = import.meta.glob("../assets/*.{webp,jpg,jpeg,png}", {
+  query: "?url",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+for (const [p, url] of Object.entries(bundled)) {
+  const fileName = p.split("/").pop() as string;
+  if (!presentFiles.has(fileName)) presentFiles.set(fileName, url);
+}
+
 
 function warn(message: string) {
   if (import.meta.env.DEV) console.warn(`[visual-asset-catalog] ${message}`);
@@ -40,25 +57,31 @@ for (const r of parseCsv(catalogCsv)) {
 
   if (!assetCode || !fileName) continue;
   if (libraryRole !== "canonical") continue; // الأرشيف لا يدخل المكتبة إطلاقًا
+
+  // بوابة QA: لا يدخل المكتبة أي أصل مرفوض أو يحتاج إعادة توليد أو غير مطابق.
+  const qaStatus = (r["qa_status"] ?? "").toUpperCase();
+  if (["REJECTED", "REGENERATE", "UNMATCHED"].includes(qaStatus)) continue;
+
   if (byCode.has(assetCode)) {
     warn(`asset_code مكرر — تم تجاهل النسخة الثانية: ${assetCode}`);
     continue;
   }
 
-  const exists = presentFiles.has(fileName);
+  const url = presentFiles.get(fileName) ?? null;
 
   byCode.set(assetCode, {
     assetCode,
     titleAr: r["title_ar"] ?? "",
     fileName,
-    assetPath: exists ? `/assets/execution/visual/${fileName}` : null,
+    assetPath: url,
     version: r["version"] ?? "",
     status: r["status"] ?? "",
     source: r["source"] ?? "",
     qaStatus: r["qa_status"] ?? "",
     libraryRole: "canonical",
-    missingBinary: !exists,
+    missingBinary: url === null,
   });
+
 }
 
 const assets = Array.from(byCode.values());
