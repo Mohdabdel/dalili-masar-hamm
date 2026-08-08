@@ -93,6 +93,12 @@ interface OpportunityRow {
   opportunity_name_ar: string;
   display_order: string;
   status: string;
+  participation_level: string;
+  role_scope: string;
+  organization_demand: string;
+  variation_demand: string;
+  classification_reason: string;
+  review_required: string;
 }
 interface CardRow {
   card_id: string;
