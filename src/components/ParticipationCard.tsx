@@ -15,6 +15,8 @@ import { SupportDuringExecution } from "@/components/SupportDuringExecution";
 import { NoAssetNotice } from "@/components/NoAssetNotice";
 import { HumanSafetyNotice } from "@/components/HumanSafetyNotice";
 import { getSupportDecisionForOpportunity } from "@/lib/support-decisions";
+import { participationLevelLabel } from "@/lib/knowledge-base";
+import type { ParticipationLevelKey } from "@/lib/home-hierarchy";
 
 
 export interface ParticipationLevelsInput {
@@ -36,6 +38,8 @@ export interface ParticipationCardData {
   steps?: string[];
   support?: string;
   levels: ParticipationLevelsInput;
+  /** مستوى فرصة المشاركة (يصف الفرصة، لا قدرة الشخص). */
+  participationLevel?: ParticipationLevelKey;
   progressIndicators?: string[];
   teachingAids?: string[];
   nextStep?: string;
@@ -125,6 +129,11 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
           <div className="flex flex-wrap items-center gap-1.5">
             <Badge variant="outline" className="text-[10px]">{data.domain}</Badge>
             <Badge variant="outline" className="text-[10px]">{data.lifeEvent}</Badge>
+            {data.participationLevel && (
+              <Badge className="bg-gold/15 text-[10px] text-gold hover:bg-gold/15">
+                {participationLevelLabel[data.participationLevel]}
+              </Badge>
+            )}
           </div>
           <SheetTitle className="text-right text-xl font-bold leading-snug">
             {data.title}

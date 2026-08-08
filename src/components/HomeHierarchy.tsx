@@ -75,6 +75,7 @@ export function HomeHierarchy({ domains = knowledgeDomains, openOpportunityId }:
       progressIndicators: c?.progressIndicators,
       teachingAids: c?.teachingAids,
       nextStep: c?.nextStep,
+      participationLevel: ctx.opportunity.participationLevel,
     };
   };
 

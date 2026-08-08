@@ -31,6 +31,7 @@ function toData(ctx: FlatOpportunity): ParticipationCardData {
     progressIndicators: c?.progressIndicators,
     teachingAids: c?.teachingAids,
     nextStep: c?.nextStep,
+    participationLevel: ctx.opportunity.participationLevel,
   };
 }
 
