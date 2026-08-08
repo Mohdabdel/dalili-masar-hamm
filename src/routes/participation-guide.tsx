@@ -154,7 +154,7 @@ function ConsiderationsTab() {
           <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
             {group.intro}
           </p>
-          <Accordion type="single" collapsible className="mt-2">
+          <Accordion type="single" collapsible dir="rtl" className="mt-2">
             {group.items.map((item) => (
               <AccordionItem key={item.id} value={`${group.id}-${item.id}`}>
                 <AccordionTrigger className="text-right text-[0.95rem] font-bold text-foreground">
