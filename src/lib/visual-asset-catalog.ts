@@ -57,25 +57,31 @@ for (const r of parseCsv(catalogCsv)) {
 
   if (!assetCode || !fileName) continue;
   if (libraryRole !== "canonical") continue; // الأرشيف لا يدخل المكتبة إطلاقًا
+
+  // بوابة QA: لا يدخل المكتبة أي أصل مرفوض أو يحتاج إعادة توليد أو غير مطابق.
+  const qaStatus = (r["qa_status"] ?? "").toUpperCase();
+  if (["REJECTED", "REGENERATE", "UNMATCHED"].includes(qaStatus)) continue;
+
   if (byCode.has(assetCode)) {
     warn(`asset_code مكرر — تم تجاهل النسخة الثانية: ${assetCode}`);
     continue;
   }
 
-  const exists = presentFiles.has(fileName);
+  const url = presentFiles.get(fileName) ?? null;
 
   byCode.set(assetCode, {
     assetCode,
     titleAr: r["title_ar"] ?? "",
     fileName,
-    assetPath: exists ? `/assets/execution/visual/${fileName}` : null,
+    assetPath: url,
     version: r["version"] ?? "",
     status: r["status"] ?? "",
     source: r["source"] ?? "",
     qaStatus: r["qa_status"] ?? "",
     libraryRole: "canonical",
-    missingBinary: !exists,
+    missingBinary: url === null,
   });
+
 }
 
 const assets = Array.from(byCode.values());
