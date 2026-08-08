@@ -1,37 +1,37 @@
-asset_code,coded_filename,domain_code,visual_family,variant_no,title_ar,asset_level,qa_status,version,production_notes,qa_source_code
-VRS-HOME-BAG-PREP-001-V01,VRS-HOME-BAG-PREP-001-V01.jpg,HOME,BAG-PREP,001,تجهيز حقيبة الخروج,Reference Sheet,Pending Gemini QA,V01,حقيبة بنية,VRS-HOME-BAG-PREP-001
-VRS-HOME-BAG-PREP-002-V01,VRS-HOME-BAG-PREP-002-V01.jpg,HOME,BAG-PREP,002,تجهيز حقيبة الخروج,Reference Sheet,Pending Gemini QA,V01,حقيبة خضراء,VRS-HOME-BAG-PREP-002
-VRS-HOME-CLOTHES-HANG-001-V01,VRS-HOME-CLOTHES-HANG-001-V01.jpg,HOME,CLOTHES-HANG,001,تعليق الملابس,Reference Sheet,Pending Gemini QA,V01,أربعة إطارات رأسية,VRS-HOME-CLOTHES-HANG-001
-VRS-HOME-CLOTHES-PREP-001-V01,VRS-HOME-CLOTHES-PREP-001-V01.jpg,HOME,CLOTHES-PREP,001,تجهيز الملابس للخروج,Reference Sheet,Pending Gemini QA,V01,قميص أزرق وبنطال بيج,VRS-HOME-CLOTHES-PREP-001
-VRS-HOME-CLOTHES-PREP-002-V01,VRS-HOME-CLOTHES-PREP-002-V01.jpg,HOME,CLOTHES-PREP,002,تجهيز الملابس للخروج,Reference Sheet,Pending Gemini QA,V01,قميص أزرق وبنطال رمادي,VRS-HOME-CLOTHES-PREP-002
-VRS-HOME-DISH-WASH-001-V01,VRS-HOME-DISH-WASH-001-V01.jpg,HOME,DISH-WASH,001,غسل أدوات المائدة,Reference Sheet,Pending Gemini QA,V01,أطباق معدنية وخزفية؛ مرقمة,VRS-HOME-DISH-WASH-001
-VRS-HOME-DISH-WASH-002-V01,VRS-HOME-DISH-WASH-002-V01.jpg,HOME,DISH-WASH,002,غسل أدوات المائدة,Reference Sheet,Pending Gemini QA,V01,أطباق بيضاء؛ مرقمة,VRS-HOME-DISH-WASH-002
-VRS-HOME-FRIDGE-STORAGE-001-V01,VRS-HOME-FRIDGE-STORAGE-001-V01.jpg,HOME,FRIDGE-STORAGE,001,ترتيب المشتريات في الثلاجة,Reference Sheet,Pending Gemini QA,V01,لوحة مرقمة؛ تحتاج مراجعة,VRS-HOME-FRIDGE-STORAGE-001
-VRS-HOME-FRIDGE-STORAGE-002-V01,VRS-HOME-FRIDGE-STORAGE-002-V01.jpg,HOME,FRIDGE-STORAGE,002,ترتيب المشتريات في الثلاجة,Reference Sheet,Pending Gemini QA,V01,لوحة مرقمة؛ تحتاج مراجعة,VRS-HOME-FRIDGE-STORAGE-002
-VRS-HOME-PANTRY-STORAGE-001-V01,VRS-HOME-PANTRY-STORAGE-001-V01.jpg,HOME,PANTRY-STORAGE,001,ترتيب المشتريات في خزانة المؤن,Reference Sheet,Pending Gemini QA,V01,شبكة 2×2 مرقمة,VRS-HOME-PANTRY-STORAGE-001
-VRS-HOME-PANTRY-STORAGE-002-V01,VRS-HOME-PANTRY-STORAGE-002-V01.jpg,HOME,PANTRY-STORAGE,002,ترتيب المشتريات في خزانة المؤن,Reference Sheet,Pending Gemini QA,V01,أربعة إطارات رأسية غير مرقمة,VRS-HOME-PANTRY-STORAGE-002
-VRS-HOME-TABLE-CLEAN-001-V01,VRS-HOME-TABLE-CLEAN-001-V01.jpg,HOME,TABLE-CLEAN,001,تنظيف سطح الطاولة,Reference Sheet,Pending Gemini QA,V01,أكواب ولوح صغير,VRS-HOME-TABLE-CLEAN-001
-VRS-HOME-TABLE-CLEAN-002-V01,VRS-HOME-TABLE-CLEAN-002-V01.jpg,HOME,TABLE-CLEAN,002,تنظيف سطح الطاولة,Reference Sheet,Pending Gemini QA,V01,كتاب ومناديل,VRS-HOME-TABLE-CLEAN-002
-VRS-HOME-TABLE-CLEAN-003-V01,VRS-HOME-TABLE-CLEAN-003-V01.jpg,HOME,TABLE-CLEAN,003,تنظيف سطح الطاولة,Reference Sheet,Pending Gemini QA,V01,أكواب ونباتات,VRS-HOME-TABLE-CLEAN-003
-VRS-HOME-TABLE-CLEAN-004-V01,VRS-HOME-TABLE-CLEAN-004-V01.jpg,HOME,TABLE-CLEAN,004,تنظيف سطح الطاولة,Reference Sheet,Pending Gemini QA,V01,كتاب ونظارة,VRS-HOME-TABLE-CLEAN-004
-VRS-HOME-TABLE-SET-001-V01,VRS-HOME-TABLE-SET-001-V01.jpg,HOME,TABLE-SET,001,ترتيب مائدة الطعام,Reference Sheet,Pending Gemini QA,V01,شبكة 2×2,VRS-HOME-TABLE-SET-001
-VRS-HOME-TABLE-SET-002-V01,VRS-HOME-TABLE-SET-002-V01.jpg,HOME,TABLE-SET,002,ترتيب مائدة الطعام,Reference Sheet,Pending Gemini QA,V01,شبكة 2×2 بديلة,VRS-HOME-TABLE-SET-002
-VRS-HOME-TABLE-SET-003-V01,VRS-HOME-TABLE-SET-003-V01.jpg,HOME,TABLE-SET,003,ترتيب مائدة الطعام,Reference Sheet,Pending Gemini QA,V01,أربعة إطارات رأسية,VRS-HOME-TABLE-SET-003
-VRS-HOME-WASTE-SORT-001-V01,VRS-HOME-WASTE-SORT-001-V01.jpg,HOME,WASTE-SORT,001,فرز النفايات المنزلية,Reference Sheet,Pending Gemini QA,V01,ثلاث حاويات,VRS-HOME-WASTE-SORT-001
-VRS-HOME-WASTE-SORT-002-V01,VRS-HOME-WASTE-SORT-002-V01.jpg,HOME,WASTE-SORT,002,فرز النفايات المنزلية,Reference Sheet,Pending Gemini QA,V01,حاويتان,VRS-HOME-WASTE-SORT-002
-VRS-HOME-ITEMS-ORGANIZE-001-V01,VRS-HOME-ITEMS-ORGANIZE-001-V01.jpg,HOME,ITEMS-ORGANIZE,001,ترتيب الأغراض في مكانها,Reference Sheet,APPROVED,V01,معتمد من دفعة Gemini الثالثة,VRS-HOME-ITEMS-ORGANIZE-001
-VRS-HOME-ITEMS-ORGANIZE-002-V01,VRS-HOME-ITEMS-ORGANIZE-002-V01.jpg,HOME,ITEMS-ORGANIZE,002,ترتيب الأغراض في مكانها,Reference Sheet,APPROVED,V01,معتمد من دفعة Gemini الثالثة,VRS-HOME-ITEMS-ORGANIZE-002
-VRS-HOME-WASTE-OUT-001-V01,VRS-HOME-WASTE-OUT-001-V01.jpg,HOME,WASTE-OUT,001,إخراج النفايات,Reference Sheet,REGENERATE,V01,أرقام مضمّنة داخل الصورة؛ يلزم إعادة توليد,VRS-HOME-WASTE-OUT-001
-VRS-HOME-WASTE-OUT-002-V01,VRS-HOME-WASTE-OUT-002-V01.jpg,HOME,WASTE-OUT,002,إخراج النفايات,Reference Sheet,APPROVED,V01,معتمد من دفعة Gemini الثالثة,VRS-HOME-WASTE-OUT-002
-VRS-HOME-WATER-FILL-001-V01,VRS-HOME-WATER-FILL-001-V01.jpg,HOME,WATER-FILL,001,تعبئة الماء,Reference Sheet,APPROVED,V01,معتمد من دفعة Gemini الثالثة,VRS-HOME-WATER-FILL-001
-VRS-HOME-WATER-FILL-002-V01,VRS-HOME-WATER-FILL-002-V01.jpg,HOME,WATER-FILL,002,تعبئة الماء,Reference Sheet,APPROVED,V01,معتمد من دفعة Gemini الثالثة,VRS-HOME-WATER-FILL-002
-VRS-HOME-DISH-UNLOAD-001-V01,VRS-HOME-DISH-UNLOAD-001-V01.jpg,HOME,DISH-UNLOAD,001,إفراغ أدوات المائدة,Reference Sheet,APPROVED,V01,معتمد من دفعة Gemini الثالثة,VRS-HOME-DISH-UNLOAD-001
-VRS-HOME-DISH-UNLOAD-002-V01,VRS-HOME-DISH-UNLOAD-002-V01.jpg,HOME,DISH-UNLOAD,002,إفراغ أدوات المائدة,Reference Sheet,APPROVED,V01,معتمد من دفعة Gemini الثالثة,VRS-HOME-DISH-UNLOAD-002
-VRS-HOME-SNACK-PREP-001-V01,VRS-HOME-SNACK-PREP-001-V01.jpg,HOME,SNACK-PREP,001,تحضير وجبة خفيفة,Reference Sheet,REGENERATE,V01,خطأ منطقي: الطبق يظهر في الإطار الأخير فقط,VRS-HOME-SNACK-PREP-001
-VRS-HOME-SNACK-PREP-002-V01,VRS-HOME-SNACK-PREP-002-V01.jpg,HOME,SNACK-PREP,002,تحضير وجبة خفيفة,Reference Sheet,REGENERATE,V01,خطأ منطقي: الطبق يظهر في الإطار الأخير فقط,VRS-HOME-SNACK-PREP-002
-VRS-HOME-BED-MAKE-001-V01,VRS-HOME-BED-MAKE-001-V01.jpg,HOME,BED-MAKE,001,ترتيب السرير,Reference Sheet,UNMATCHED,V01,لم تُسلَّم الصورة ضمن دفعة Gemini,VRS-HOME-BED-MAKE-001
-VRS-HOME-BED-MAKE-002-V01,VRS-HOME-BED-MAKE-002-V01.jpg,HOME,BED-MAKE,002,ترتيب السرير,Reference Sheet,UNMATCHED,V01,لم تُسلَّم الصورة ضمن دفعة Gemini,VRS-HOME-BED-MAKE-002
-VRS-HOME-CLOSET-ORGANIZE-001-V01,VRS-HOME-CLOSET-ORGANIZE-001-V01.jpg,HOME,CLOSET-ORGANIZE,001,ترتيب خزانة الملابس,Reference Sheet,UNMATCHED,V01,لم تُسلَّم الصورة ضمن دفعة Gemini,VRS-HOME-CLOSET-ORGANIZE-001
-VRS-HOME-CLOSET-ORGANIZE-002-V01,VRS-HOME-CLOSET-ORGANIZE-002-V01.jpg,HOME,CLOSET-ORGANIZE,002,ترتيب خزانة الملابس,Reference Sheet,UNMATCHED,V01,لم تُسلَّم الصورة ضمن دفعة Gemini,VRS-HOME-CLOSET-ORGANIZE-002
-VRS-HOME-CLOTHES-FOLD-001-V01,VRS-HOME-CLOTHES-FOLD-001-V01.jpg,HOME,CLOTHES-FOLD,001,طي الملابس,Reference Sheet,UNMATCHED,V01,لم تُسلَّم الصورة ضمن دفعة Gemini,VRS-HOME-CLOTHES-FOLD-001
-VRS-HOME-CLOTHES-FOLD-002-V01,VRS-HOME-CLOTHES-FOLD-002-V01.jpg,HOME,CLOTHES-FOLD,002,طي الملابس,Reference Sheet,UNMATCHED,V01,لم تُسلَّم الصورة ضمن دفعة Gemini,VRS-HOME-CLOTHES-FOLD-002
+asset_code,coded_filename,domain_code,visual_family,variant_no,title_ar,asset_level,qa_status,version,production_notes,qa_source_code,library_role,pilot_status,missing_binary
+VRS-HOME-BAG-PREP-001-V01,VRS-HOME-BAG-PREP-001-V01.jpg,HOME,BAG-PREP,001,تجهيز حقيبة الخروج,Reference Sheet,Pending Gemini QA,V01,حقيبة بنية,VRS-HOME-BAG-PREP-001,archive,NOT_IN_PILOT,
+VRS-HOME-BAG-PREP-002-V01,VRS-HOME-BAG-PREP-002-V01.jpg,HOME,BAG-PREP,002,تجهيز حقيبة الخروج,Reference Sheet,Pending Gemini QA,V01,حقيبة خضراء,VRS-HOME-BAG-PREP-002,archive,NOT_IN_PILOT,
+VRS-HOME-CLOTHES-HANG-001-V01,VRS-HOME-CLOTHES-HANG-001-V01.jpg,HOME,CLOTHES-HANG,001,تعليق الملابس,Reference Sheet,Pending Gemini QA,V01,أربعة إطارات رأسية,VRS-HOME-CLOTHES-HANG-001,archive,NOT_IN_PILOT,
+VRS-HOME-CLOTHES-PREP-001-V01,VRS-HOME-CLOTHES-PREP-001-V01.jpg,HOME,CLOTHES-PREP,001,تجهيز الملابس للخروج,Reference Sheet,Pending Gemini QA,V01,قميص أزرق وبنطال بيج,VRS-HOME-CLOTHES-PREP-001,archive,NOT_IN_PILOT,
+VRS-HOME-CLOTHES-PREP-002-V01,VRS-HOME-CLOTHES-PREP-002-V01.jpg,HOME,CLOTHES-PREP,002,تجهيز الملابس للخروج,Reference Sheet,Pending Gemini QA,V01,قميص أزرق وبنطال رمادي,VRS-HOME-CLOTHES-PREP-002,archive,NOT_IN_PILOT,
+VRS-HOME-DISH-WASH-001-V01,VRS-HOME-DISH-WASH-001-V01.jpg,HOME,DISH-WASH,001,غسل أدوات المائدة,Reference Sheet,Pending Gemini QA,V01,أطباق معدنية وخزفية؛ مرقمة,VRS-HOME-DISH-WASH-001,archive,NOT_IN_PILOT,
+VRS-HOME-DISH-WASH-002-V01,VRS-HOME-DISH-WASH-002-V01.jpg,HOME,DISH-WASH,002,غسل أدوات المائدة,Reference Sheet,Pending Gemini QA,V01,أطباق بيضاء؛ مرقمة,VRS-HOME-DISH-WASH-002,archive,NOT_IN_PILOT,
+VRS-HOME-FRIDGE-STORAGE-001-V01,VRS-HOME-FRIDGE-STORAGE-001-V01.jpg,HOME,FRIDGE-STORAGE,001,ترتيب المشتريات في الثلاجة,Reference Sheet,Pending Gemini QA,V01,لوحة مرقمة؛ تحتاج مراجعة,VRS-HOME-FRIDGE-STORAGE-001,archive,NOT_IN_PILOT,
+VRS-HOME-FRIDGE-STORAGE-002-V01,VRS-HOME-FRIDGE-STORAGE-002-V01.jpg,HOME,FRIDGE-STORAGE,002,ترتيب المشتريات في الثلاجة,Reference Sheet,Pending Gemini QA,V01,لوحة مرقمة؛ تحتاج مراجعة,VRS-HOME-FRIDGE-STORAGE-002,archive,NOT_IN_PILOT,
+VRS-HOME-PANTRY-STORAGE-001-V01,VRS-HOME-PANTRY-STORAGE-001-V01.jpg,HOME,PANTRY-STORAGE,001,ترتيب المشتريات في خزانة المؤن,Reference Sheet,Pending Gemini QA,V01,شبكة 2×2 مرقمة,VRS-HOME-PANTRY-STORAGE-001,archive,NOT_IN_PILOT,
+VRS-HOME-PANTRY-STORAGE-002-V01,VRS-HOME-PANTRY-STORAGE-002-V01.jpg,HOME,PANTRY-STORAGE,002,ترتيب المشتريات في خزانة المؤن,Reference Sheet,Pending Gemini QA,V01,أربعة إطارات رأسية غير مرقمة,VRS-HOME-PANTRY-STORAGE-002,archive,NOT_IN_PILOT,
+VRS-HOME-TABLE-CLEAN-001-V01,VRS-HOME-TABLE-CLEAN-001-V01.jpg,HOME,TABLE-CLEAN,001,تنظيف سطح الطاولة,Reference Sheet,Pending Gemini QA,V01,أكواب ولوح صغير,VRS-HOME-TABLE-CLEAN-001,archive,NOT_IN_PILOT,
+VRS-HOME-TABLE-CLEAN-002-V01,VRS-HOME-TABLE-CLEAN-002-V01.jpg,HOME,TABLE-CLEAN,002,تنظيف سطح الطاولة,Reference Sheet,Pending Gemini QA,V01,كتاب ومناديل,VRS-HOME-TABLE-CLEAN-002,archive,NOT_IN_PILOT,
+VRS-HOME-TABLE-CLEAN-003-V01,VRS-HOME-TABLE-CLEAN-003-V01.jpg,HOME,TABLE-CLEAN,003,تنظيف سطح الطاولة,Reference Sheet,Pending Gemini QA,V01,أكواب ونباتات,VRS-HOME-TABLE-CLEAN-003,archive,NOT_IN_PILOT,
+VRS-HOME-TABLE-CLEAN-004-V01,VRS-HOME-TABLE-CLEAN-004-V01.jpg,HOME,TABLE-CLEAN,004,تنظيف سطح الطاولة,Reference Sheet,Pending Gemini QA,V01,كتاب ونظارة,VRS-HOME-TABLE-CLEAN-004,archive,NOT_IN_PILOT,
+VRS-HOME-TABLE-SET-001-V01,VRS-HOME-TABLE-SET-001-V01.jpg,HOME,TABLE-SET,001,ترتيب مائدة الطعام,Reference Sheet,Pending Gemini QA,V01,شبكة 2×2,VRS-HOME-TABLE-SET-001,archive,NOT_IN_PILOT,
+VRS-HOME-TABLE-SET-002-V01,VRS-HOME-TABLE-SET-002-V01.jpg,HOME,TABLE-SET,002,ترتيب مائدة الطعام,Reference Sheet,Pending Gemini QA,V01,شبكة 2×2 بديلة,VRS-HOME-TABLE-SET-002,archive,NOT_IN_PILOT,
+VRS-HOME-TABLE-SET-003-V01,VRS-HOME-TABLE-SET-003-V01.jpg,HOME,TABLE-SET,003,ترتيب مائدة الطعام,Reference Sheet,Pending Gemini QA,V01,أربعة إطارات رأسية,VRS-HOME-TABLE-SET-003,archive,NOT_IN_PILOT,
+VRS-HOME-WASTE-SORT-001-V01,VRS-HOME-WASTE-SORT-001-V01.jpg,HOME,WASTE-SORT,001,فرز النفايات المنزلية,Reference Sheet,Pending Gemini QA,V01,ثلاث حاويات,VRS-HOME-WASTE-SORT-001,archive,NOT_IN_PILOT,
+VRS-HOME-WASTE-SORT-002-V01,VRS-HOME-WASTE-SORT-002-V01.jpg,HOME,WASTE-SORT,002,فرز النفايات المنزلية,Reference Sheet,Pending Gemini QA,V01,حاويتان,VRS-HOME-WASTE-SORT-002,archive,NOT_IN_PILOT,
+VRS-HOME-ITEMS-ORGANIZE-001-V01,VRS-HOME-ITEMS-ORGANIZE-001-V01.jpg,HOME,ITEMS-ORGANIZE,001,ترتيب الأغراض في مكانها,Reference Sheet,FINAL,V01,معتمد من دفعة Gemini الثالثة,VRS-HOME-ITEMS-ORGANIZE-001,canonical,APPROVED_FOR_PILOT,true
+VRS-HOME-ITEMS-ORGANIZE-002-V01,VRS-HOME-ITEMS-ORGANIZE-002-V01.jpg,HOME,ITEMS-ORGANIZE,002,ترتيب الأغراض في مكانها,Reference Sheet,APPROVED,V01,معتمد من دفعة Gemini الثالثة,VRS-HOME-ITEMS-ORGANIZE-002,archive,NOT_IN_PILOT,
+VRS-HOME-WASTE-OUT-001-V01,VRS-HOME-WASTE-OUT-001-V01.jpg,HOME,WASTE-OUT,001,إخراج النفايات,Reference Sheet,FINAL,V01,أرقام مضمّنة داخل الصورة؛ يلزم إعادة توليد,VRS-HOME-WASTE-OUT-001,canonical,APPROVED_FOR_PILOT,true
+VRS-HOME-WASTE-OUT-002-V01,VRS-HOME-WASTE-OUT-002-V01.jpg,HOME,WASTE-OUT,002,إخراج النفايات,Reference Sheet,APPROVED,V01,معتمد من دفعة Gemini الثالثة,VRS-HOME-WASTE-OUT-002,archive,NOT_IN_PILOT,
+VRS-HOME-WATER-FILL-001-V01,VRS-HOME-WATER-FILL-001-V01.jpg,HOME,WATER-FILL,001,تعبئة الماء,Reference Sheet,FINAL,V01,معتمد من دفعة Gemini الثالثة,VRS-HOME-WATER-FILL-001,canonical,APPROVED_FOR_PILOT,true
+VRS-HOME-WATER-FILL-002-V01,VRS-HOME-WATER-FILL-002-V01.jpg,HOME,WATER-FILL,002,تعبئة الماء,Reference Sheet,APPROVED,V01,معتمد من دفعة Gemini الثالثة,VRS-HOME-WATER-FILL-002,archive,NOT_IN_PILOT,
+VRS-HOME-DISH-UNLOAD-001-V01,VRS-HOME-DISH-UNLOAD-001-V01.jpg,HOME,DISH-UNLOAD,001,إفراغ أدوات المائدة,Reference Sheet,FINAL,V01,معتمد من دفعة Gemini الثالثة,VRS-HOME-DISH-UNLOAD-001,canonical,APPROVED_FOR_PILOT,true
+VRS-HOME-DISH-UNLOAD-002-V01,VRS-HOME-DISH-UNLOAD-002-V01.jpg,HOME,DISH-UNLOAD,002,إفراغ أدوات المائدة,Reference Sheet,APPROVED,V01,معتمد من دفعة Gemini الثالثة,VRS-HOME-DISH-UNLOAD-002,archive,NOT_IN_PILOT,
+VRS-HOME-SNACK-PREP-001-V01,VRS-HOME-SNACK-PREP-001-V01.jpg,HOME,SNACK-PREP,001,تحضير وجبة خفيفة,Reference Sheet,FINAL,V01,خطأ منطقي: الطبق يظهر في الإطار الأخير فقط,VRS-HOME-SNACK-PREP-001,canonical,APPROVED_FOR_PILOT,true
+VRS-HOME-SNACK-PREP-002-V01,VRS-HOME-SNACK-PREP-002-V01.jpg,HOME,SNACK-PREP,002,تحضير وجبة خفيفة,Reference Sheet,REGENERATE,V01,خطأ منطقي: الطبق يظهر في الإطار الأخير فقط,VRS-HOME-SNACK-PREP-002,archive,NOT_IN_PILOT,
+VRS-HOME-BED-MAKE-001-V01,VRS-HOME-BED-MAKE-001-V01.jpg,HOME,BED-MAKE,001,ترتيب السرير,Reference Sheet,FINAL,V01,لم تُسلَّم الصورة ضمن دفعة Gemini,VRS-HOME-BED-MAKE-001,canonical,APPROVED_FOR_PILOT,true
+VRS-HOME-BED-MAKE-002-V01,VRS-HOME-BED-MAKE-002-V01.jpg,HOME,BED-MAKE,002,ترتيب السرير,Reference Sheet,UNMATCHED,V01,لم تُسلَّم الصورة ضمن دفعة Gemini,VRS-HOME-BED-MAKE-002,archive,NOT_IN_PILOT,
+VRS-HOME-CLOSET-ORGANIZE-001-V01,VRS-HOME-CLOSET-ORGANIZE-001-V01.jpg,HOME,CLOSET-ORGANIZE,001,ترتيب خزانة الملابس,Reference Sheet,FINAL,V01,لم تُسلَّم الصورة ضمن دفعة Gemini,VRS-HOME-CLOSET-ORGANIZE-001,canonical,APPROVED_FOR_PILOT,true
+VRS-HOME-CLOSET-ORGANIZE-002-V01,VRS-HOME-CLOSET-ORGANIZE-002-V01.jpg,HOME,CLOSET-ORGANIZE,002,ترتيب خزانة الملابس,Reference Sheet,UNMATCHED,V01,لم تُسلَّم الصورة ضمن دفعة Gemini,VRS-HOME-CLOSET-ORGANIZE-002,archive,NOT_IN_PILOT,
+VRS-HOME-CLOTHES-FOLD-001-V01,VRS-HOME-CLOTHES-FOLD-001-V01.jpg,HOME,CLOTHES-FOLD,001,طي الملابس,Reference Sheet,FINAL,V01,لم تُسلَّم الصورة ضمن دفعة Gemini,VRS-HOME-CLOTHES-FOLD-001,canonical,APPROVED_FOR_PILOT,true
+VRS-HOME-CLOTHES-FOLD-002-V01,VRS-HOME-CLOTHES-FOLD-002-V01.jpg,HOME,CLOTHES-FOLD,002,طي الملابس,Reference Sheet,UNMATCHED,V01,لم تُسلَّم الصورة ضمن دفعة Gemini,VRS-HOME-CLOTHES-FOLD-002,archive,NOT_IN_PILOT,
