@@ -202,7 +202,7 @@ function ServiceCardItem({ item }: { item: ServiceWithProvider }) {
         )}
         <span>{label(SCOPE_LABELS, service.serviceScope)}</span>
         <span>{label(ACCESS_LABELS, service.accessMethod)}</span>
-        {service.targetAge && <span>الفئة العمرية: {service.targetAge}</span>}
+        {service.targetAge && <span>الفئة العمرية: {label(AGE_LABELS, service.targetAge)}</span>}
       </div>
 
       <div className="mt-3 flex flex-wrap items-center gap-2">
