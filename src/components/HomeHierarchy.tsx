@@ -5,8 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { ChevronLeft, Shirt, Archive, Briefcase, RefreshCw } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ChevronLeft } from "lucide-react";
 import {
   ParticipationCard,
   type ParticipationCardData,
@@ -32,18 +31,6 @@ interface ActiveContext {
   opportunity: Opportunity;
 }
 
-const CLOTHES_DOMAIN_ID = "H-CLOTHES";
-
-const featuredClothesEvents: {
-  title: string;
-  eventId: string;
-  icon: React.ComponentType<{ className?: string }>;
-}[] = [
-  { title: "اليوم يوم غسل الملابس", eventId: "EV-WASH", icon: Shirt },
-  { title: "نحتاج ترتيب الدولاب", eventId: "EV-ARRANGE", icon: Archive },
-  { title: "نجهز ملابس الخروج أو العمل", eventId: "EV-WORK", icon: Briefcase },
-  { title: "نراجع الملابس التي تحتاج استبدالاً", eventId: "EV-DISPOSE", icon: RefreshCw },
-];
 
 export function HomeHierarchy({ domains = knowledgeDomains, openOpportunityId }: HierarchyViewProps) {
   const [active, setActive] = useState<ActiveContext | null>(null);
