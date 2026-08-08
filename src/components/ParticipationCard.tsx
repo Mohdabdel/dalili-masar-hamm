@@ -11,14 +11,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Bookmark, Share2, ArrowLeft, Check } from "lucide-react";
 import { toast } from "sonner";
-import { SupportResourcesPrototype } from "@/components/SupportResourcesPrototype";
-import { VisualSupportAid } from "@/components/VisualSupportAid";
-
-import { VisualFramePilot } from "@/components/VisualFramePilot";
-import { ReminderCardPilot } from "@/components/ReminderCardPilot";
+import { SupportDuringExecution } from "@/components/SupportDuringExecution";
 import { NoAssetNotice } from "@/components/NoAssetNotice";
 import { HumanSafetyNotice } from "@/components/HumanSafetyNotice";
 import { getSupportDecisionForOpportunity } from "@/lib/support-decisions";
+
 
 export interface ParticipationLevelsInput {
   guided: string;
