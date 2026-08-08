@@ -184,7 +184,7 @@ function SearchPage() {
       ) : (
         <ul className="space-y-2">
           {results.map((r) => (
-            <li key={r.id}>
+            <li key={`${r.kind}-${r.id}`}>
               <Link
                 to={r.kind === "services" ? "/resources" : "/activities/$category"}
                 params={
