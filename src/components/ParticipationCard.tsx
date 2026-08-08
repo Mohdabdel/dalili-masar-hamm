@@ -277,7 +277,7 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
           </Accordion>
           )}
 
-          {data.id === "OP-COLLECT" && <SupportResourcesPrototype />}
+
 
           {!running && data.nextStep && (
             <Accordion type="multiple" className="space-y-2">
