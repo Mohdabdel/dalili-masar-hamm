@@ -73,7 +73,7 @@ function ActivitiesHubPage() {
           to="/participation-guide"
           className="mt-3 inline-flex items-center gap-1 text-sm font-bold text-gold underline-offset-4 hover:underline"
         >
-          المزيد
+          دليل الاستخدام
           <ChevronLeft className="h-4 w-4" />
         </Link>
       </section>
