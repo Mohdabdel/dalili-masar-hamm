@@ -5,7 +5,7 @@ import { PageShell } from "@/components/PageShell";
 export const Route = createFileRoute("/activities/")({
   head: () => ({
     meta: [
-      { title: "الأنشطة | دليلي - مسار همم" },
+      { title: "دليل المشاركة الحياتية | دليلي - مسار همم" },
       {
         name: "description",
         content:
