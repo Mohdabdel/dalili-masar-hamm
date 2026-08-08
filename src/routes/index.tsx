@@ -97,17 +97,6 @@ function LandingPage() {
           </Link>
         ))}
       </section>
-
-      <section className="mt-6 rounded-2xl border border-border/60 bg-card p-5 shadow-card-soft">
-        <h3 className="font-display text-base font-bold text-foreground">
-          فكرة دليلي
-        </h3>
-        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          لا نضيف أنشطة جديدة إلى يوم الأسرة، بل نستثمر ما يحدث بالفعل داخل المنزل
-          أو المجتمع، ونحوله إلى فرص مشاركة متدرجة وهادفة، مع دليل وصول واضح
-          للخدمات المجتمعية والتعليمية.
-        </p>
-      </section>
     </PageShell>
   );
 }
