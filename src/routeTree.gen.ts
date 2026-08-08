@@ -27,6 +27,7 @@ import { Route as LearnerIdRouteImport } from './routes/learner.$id'
 import { Route as ActivitiesOptionsRouteImport } from './routes/activities.options'
 import { Route as ActivitiesMyDayRouteImport } from './routes/activities.my-day'
 import { Route as ActivitiesLevelRouteImport } from './routes/activities.level'
+import { Route as ActivitiesBrowseRouteImport } from './routes/activities.browse'
 import { Route as ActivitiesCategoryRouteImport } from './routes/activities.$category'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
@@ -122,6 +123,11 @@ const ActivitiesLevelRoute = ActivitiesLevelRouteImport.update({
   path: '/activities/level',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ActivitiesBrowseRoute = ActivitiesBrowseRouteImport.update({
+  id: '/activities/browse',
+  path: '/activities/browse',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ActivitiesCategoryRoute = ActivitiesCategoryRouteImport.update({
   id: '/activities/$category',
   path: '/activities/$category',
@@ -161,6 +167,7 @@ export interface FileRoutesByFullPath {
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/activities/$category': typeof ActivitiesCategoryRoute
+  '/activities/browse': typeof ActivitiesBrowseRoute
   '/activities/level': typeof ActivitiesLevelRoute
   '/activities/my-day': typeof ActivitiesMyDayRoute
   '/activities/options': typeof ActivitiesOptionsRoute
@@ -185,6 +192,7 @@ export interface FileRoutesByTo {
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/activities/$category': typeof ActivitiesCategoryRoute
+  '/activities/browse': typeof ActivitiesBrowseRoute
   '/activities/level': typeof ActivitiesLevelRoute
   '/activities/my-day': typeof ActivitiesMyDayRoute
   '/activities/options': typeof ActivitiesOptionsRoute
@@ -210,6 +218,7 @@ export interface FileRoutesById {
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/activities/$category': typeof ActivitiesCategoryRoute
+  '/activities/browse': typeof ActivitiesBrowseRoute
   '/activities/level': typeof ActivitiesLevelRoute
   '/activities/my-day': typeof ActivitiesMyDayRoute
   '/activities/options': typeof ActivitiesOptionsRoute
@@ -236,6 +245,7 @@ export interface FileRouteTypes {
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/activities/$category'
+    | '/activities/browse'
     | '/activities/level'
     | '/activities/my-day'
     | '/activities/options'
@@ -260,6 +270,7 @@ export interface FileRouteTypes {
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/activities/$category'
+    | '/activities/browse'
     | '/activities/level'
     | '/activities/my-day'
     | '/activities/options'
@@ -284,6 +295,7 @@ export interface FileRouteTypes {
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/activities/$category'
+    | '/activities/browse'
     | '/activities/level'
     | '/activities/my-day'
     | '/activities/options'
@@ -309,6 +321,7 @@ export interface RootRouteChildren {
   Char91DotmcpChar93ListToolsRoute: typeof Char91DotmcpChar93ListToolsRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   ActivitiesCategoryRoute: typeof ActivitiesCategoryRoute
+  ActivitiesBrowseRoute: typeof ActivitiesBrowseRoute
   ActivitiesLevelRoute: typeof ActivitiesLevelRoute
   ActivitiesMyDayRoute: typeof ActivitiesMyDayRoute
   ActivitiesOptionsRoute: typeof ActivitiesOptionsRoute
@@ -445,6 +458,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ActivitiesLevelRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/activities/browse': {
+      id: '/activities/browse'
+      path: '/activities/browse'
+      fullPath: '/activities/browse'
+      preLoaderRoute: typeof ActivitiesBrowseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/activities/$category': {
       id: '/activities/$category'
       path: '/activities/$category'
@@ -506,6 +526,7 @@ const rootRouteChildren: RootRouteChildren = {
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
     Char91DotwellKnownChar93OauthProtectedResourceRoute,
   ActivitiesCategoryRoute: ActivitiesCategoryRoute,
+  ActivitiesBrowseRoute: ActivitiesBrowseRoute,
   ActivitiesLevelRoute: ActivitiesLevelRoute,
   ActivitiesMyDayRoute: ActivitiesMyDayRoute,
   ActivitiesOptionsRoute: ActivitiesOptionsRoute,
