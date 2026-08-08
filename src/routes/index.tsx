@@ -63,10 +63,10 @@ function LandingPage() {
           منصة واحدة · ثلاث خدمات
         </p>
         <h2 className="mt-3 font-display text-2xl font-bold leading-snug sm:text-3xl">
-          دليلي
+          كل ما تحتاجه الأسرة في مكان واحد
         </h2>
         <p className="mt-2 text-base leading-relaxed text-primary-foreground/90">
-          دليل دعم وتمكين أسر الأشخاص من ذوي الإعاقة.
+          مشاركة حياتية يومية، ودليل وصول للخدمات المجتمعية والتعليمية.
         </p>
         <a
           href="#services"
