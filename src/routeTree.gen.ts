@@ -13,6 +13,7 @@ import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as ReminderRouteImport } from './routes/reminder'
+import { Route as ParticipationGuideRouteImport } from './routes/participation-guide'
 import { Route as MessagesRouteImport } from './routes/messages'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as HowToUseRouteImport } from './routes/how-to-use'
@@ -48,6 +49,11 @@ const ResourcesRoute = ResourcesRouteImport.update({
 const ReminderRoute = ReminderRouteImport.update({
   id: '/reminder',
   path: '/reminder',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParticipationGuideRoute = ParticipationGuideRouteImport.update({
+  id: '/participation-guide',
+  path: '/participation-guide',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MessagesRoute = MessagesRouteImport.update({
@@ -142,6 +148,7 @@ export interface FileRoutesByFullPath {
   '/how-to-use': typeof HowToUseRoute
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
+  '/participation-guide': typeof ParticipationGuideRoute
   '/reminder': typeof ReminderRoute
   '/resources': typeof ResourcesRoute
   '/search': typeof SearchRoute
@@ -164,6 +171,7 @@ export interface FileRoutesByTo {
   '/how-to-use': typeof HowToUseRoute
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
+  '/participation-guide': typeof ParticipationGuideRoute
   '/reminder': typeof ReminderRoute
   '/resources': typeof ResourcesRoute
   '/search': typeof SearchRoute
@@ -187,6 +195,7 @@ export interface FileRoutesById {
   '/how-to-use': typeof HowToUseRoute
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
+  '/participation-guide': typeof ParticipationGuideRoute
   '/reminder': typeof ReminderRoute
   '/resources': typeof ResourcesRoute
   '/search': typeof SearchRoute
@@ -211,6 +220,7 @@ export interface FileRouteTypes {
     | '/how-to-use'
     | '/mcp'
     | '/messages'
+    | '/participation-guide'
     | '/reminder'
     | '/resources'
     | '/search'
@@ -233,6 +243,7 @@ export interface FileRouteTypes {
     | '/how-to-use'
     | '/mcp'
     | '/messages'
+    | '/participation-guide'
     | '/reminder'
     | '/resources'
     | '/search'
@@ -255,6 +266,7 @@ export interface FileRouteTypes {
     | '/how-to-use'
     | '/mcp'
     | '/messages'
+    | '/participation-guide'
     | '/reminder'
     | '/resources'
     | '/search'
@@ -278,6 +290,7 @@ export interface RootRouteChildren {
   HowToUseRoute: typeof HowToUseRoute
   McpRoute: typeof McpRoute
   MessagesRoute: typeof MessagesRoute
+  ParticipationGuideRoute: typeof ParticipationGuideRoute
   ReminderRoute: typeof ReminderRoute
   ResourcesRoute: typeof ResourcesRoute
   SearchRoute: typeof SearchRoute
@@ -319,6 +332,13 @@ declare module '@tanstack/react-router' {
       path: '/reminder'
       fullPath: '/reminder'
       preLoaderRoute: typeof ReminderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/participation-guide': {
+      id: '/participation-guide'
+      path: '/participation-guide'
+      fullPath: '/participation-guide'
+      preLoaderRoute: typeof ParticipationGuideRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/messages': {
@@ -458,6 +478,7 @@ const rootRouteChildren: RootRouteChildren = {
   HowToUseRoute: HowToUseRoute,
   McpRoute: McpRoute,
   MessagesRoute: MessagesRoute,
+  ParticipationGuideRoute: ParticipationGuideRoute,
   ReminderRoute: ReminderRoute,
   ResourcesRoute: ResourcesRoute,
   SearchRoute: SearchRoute,

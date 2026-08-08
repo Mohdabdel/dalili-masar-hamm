@@ -56,14 +56,28 @@ const PATHS: Path[] = [
 function ActivitiesHubPage() {
   return (
     <PageShell
-      title="الأنشطة"
+      title="دليل المشاركة الحياتية"
       subtitle="اختر نقطة البداية المناسبة لكم اليوم"
-      breadcrumbs={[{ label: "الأنشطة" }]}
+      breadcrumbs={[{ label: "دليل المشاركة الحياتية" }]}
     >
-      <p className="mb-4 rounded-2xl border border-border/60 bg-card p-4 text-sm leading-relaxed text-muted-foreground shadow-card-soft">
-        لا نضيف أنشطة جديدة إلى يوم الأسرة، بل نستثمر ما يحدث بالفعل داخل المنزل
-        أو المجتمع، ونحوله إلى فرص مشاركة متدرجة وهادفة.
-      </p>
+      <section className="mb-4 rounded-2xl border border-border/70 bg-card p-4 text-right shadow-card-soft">
+        <h2 className="text-base font-bold text-foreground">
+          ما هو دليل المشاركة الحياتية؟
+        </h2>
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+          دليل يساعد الأسرة على استثمار أحداث الحياة اليومية وتحويلها إلى فرص
+          مشاركة عملية وهادفة، دون إضافة أنشطة جديدة إلى اليوم أو تقديم تدريب
+          منفصل.
+        </p>
+        <Link
+          to="/participation-guide"
+          className="mt-3 inline-flex items-center gap-1 text-sm font-bold text-gold underline-offset-4 hover:underline"
+        >
+          المزيد
+          <ChevronLeft className="h-4 w-4" />
+        </Link>
+      </section>
+
 
       <div className="space-y-3">
         {PATHS.map(({ title, description, icon: Icon, to, params, search }) => (
