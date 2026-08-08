@@ -151,6 +151,7 @@ export function TodayEvents({ level }: { level?: ParticipationLevelKey } = {}) {
       progressIndicators: c?.progressIndicators,
       teachingAids: c?.teachingAids,
       nextStep: c?.nextStep,
+      participationLevel: ctx.opportunity.participationLevel,
     };
   };
 
