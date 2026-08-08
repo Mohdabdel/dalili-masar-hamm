@@ -16,20 +16,20 @@ import {
 export const Route = createFileRoute("/participation-guide")({
   head: () => ({
     meta: [
-      { title: "دليل المشاركة واعتباراتها | دليلي - مسار همم" },
+      { title: "دليل الاستخدام واعتبارات المشاركة | دليلي" },
       {
         name: "description",
         content:
-          "الشرح الكامل لفلسفة دليل المشاركة الحياتية، مع اعتبارات عملية للأسرة قبل وأثناء المشاركة حسب مصدر التحدي.",
+          "دليل استخدام دليلي للمشاركة الحياتية: الفلسفة، معنى فرصة المشاركة، مستويات المشاركة، والدعم أثناء التطبيق، مع اعتبارات عملية للأسرة.",
       },
       {
         property: "og:title",
-        content: "دليل المشاركة واعتباراتها | دليلي - مسار همم",
+        content: "دليل الاستخدام واعتبارات المشاركة | دليلي",
       },
       {
         property: "og:description",
         content:
-          "فلسفة المشاركة الحياتية واعتبارات عملية للأسرة: المشارك، الداعم، الفرصة، والبيئة.",
+          "كيف تستخدم دليلي للمشاركة الحياتية، واعتبارات عملية للأسرة: المشارك، الداعم، الفرصة، والبيئة.",
       },
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary" },
@@ -44,7 +44,7 @@ type Section = { title: string; body: string; points?: string[] };
 const SECTIONS: Section[] = [
   {
     title: "الفلسفة: نستثمر ما يحدث بالفعل",
-    body: "ينطلق دليل المشاركة الحياتية من قناعة بسيطة: يوم الأسرة ممتلئ أصلاً بالأحداث، والطفل أو الشاب حاضر في هذه الأحداث سواء شارك فيها أو لا. لذلك لا نطلب من الأسرة وقتاً إضافياً ولا جلسات تدريب منفصلة، بل نعيد النظر في الحدث القائم ونحوّله إلى فرصة مشاركة لها معنى.",
+    body: "ينطلق دليلي للمشاركة الحياتية من قناعة بسيطة: يوم الأسرة ممتلئ أصلاً بالأحداث، والطفل أو الشاب حاضر في هذه الأحداث سواء شارك فيها أو لا. لذلك لا نطلب من الأسرة وقتاً إضافياً ولا جلسات تدريب منفصلة، بل نعيد النظر في الحدث القائم ونحوّله إلى فرصة مشاركة لها معنى.",
     points: [
       "لا أنشطة جديدة تُضاف إلى جدول الأسرة.",
       "لا فصل بين «وقت التدريب» و«وقت الحياة».",
@@ -79,6 +79,15 @@ const SECTIONS: Section[] = [
       "نسخة مبسطة للمتعلم بخط كبير وتباين عالٍ.",
       "تنبيهات السلامة والدعم البشري عند الحاجة.",
       "روابط داعمة ومصادر إضافية عند توفرها.",
+    ],
+  },
+  {
+    title: "مستويات المشاركة",
+    body: "لكل فرصة ثلاثة مستويات، ابدأوا من المستوى الذي يناسب الشخص اليوم وليس من الأصعب. المستوى ليس تصنيفاً للشخص، بل وصفاً لمقدار الدعم في هذه اللحظة.",
+    points: [
+      "مشاركة موجهة: يشارك في جزء بسيط من المهمة مع دعم مباشر.",
+      "مشاركة مستقلة جزئياً: ينفّذ جزءاً أكبر من المهمة مع تلميحات أو متابعة قريبة.",
+      "مشاركة مستقلة: يؤدي المهمة بدرجة أعلى من الاستقلال مع مراجعة بسيطة عند الحاجة.",
     ],
   },
   {
@@ -145,7 +154,7 @@ function ConsiderationsTab() {
           <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
             {group.intro}
           </p>
-          <Accordion type="single" collapsible className="mt-2">
+          <Accordion type="single" collapsible dir="rtl" className="mt-2">
             {group.items.map((item) => (
               <AccordionItem key={item.id} value={`${group.id}-${item.id}`}>
                 <AccordionTrigger className="text-right text-[0.95rem] font-bold text-foreground">
@@ -225,17 +234,17 @@ function ConsiderationsTab() {
 function ParticipationGuidePage() {
   return (
     <PageShell
-      title="دليل المشاركة"
-      subtitle="الفلسفة، طريقة الاستخدام، واعتبارات المشاركة"
+      title="دليل الاستخدام"
+      subtitle="طريقة الاستخدام واعتبارات المشاركة"
       breadcrumbs={[
-        { label: "دليل المشاركة الحياتية", to: "/activities" },
-        { label: "دليل المشاركة" },
+        { label: "دليلي للمشاركة الحياتية", to: "/activities" },
+        { label: "دليل الاستخدام" },
       ]}
     >
-      <Tabs defaultValue="guide" className="w-full">
+      <Tabs defaultValue="guide" dir="rtl" className="w-full">
         <TabsList className="mb-4 grid w-full grid-cols-2">
           <TabsTrigger value="guide" className="text-sm font-bold">
-            دليل المشاركة
+            دليل الاستخدام
           </TabsTrigger>
           <TabsTrigger value="considerations" className="text-sm font-bold">
             اعتبارات المشاركة

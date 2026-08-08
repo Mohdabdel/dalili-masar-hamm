@@ -5,7 +5,7 @@ import { PageShell } from "@/components/PageShell";
 export const Route = createFileRoute("/activities/")({
   head: () => ({
     meta: [
-      { title: "دليل المشاركة الحياتية | دليلي - مسار همم" },
+      { title: "دليلي للمشاركة الحياتية | دليلي - مسار همم" },
       {
         name: "description",
         content:
@@ -56,13 +56,13 @@ const PATHS: Path[] = [
 function ActivitiesHubPage() {
   return (
     <PageShell
-      title="دليل المشاركة الحياتية"
+      title="دليلي للمشاركة الحياتية"
       subtitle="اختر نقطة البداية المناسبة لكم اليوم"
-      breadcrumbs={[{ label: "دليل المشاركة الحياتية" }]}
+      breadcrumbs={[{ label: "دليلي للمشاركة الحياتية" }]}
     >
       <section className="mb-4 rounded-2xl border border-border/70 bg-card p-4 text-right shadow-card-soft">
         <h2 className="text-base font-bold text-foreground">
-          ما هو دليل المشاركة الحياتية؟
+          ما هو دليلي للمشاركة الحياتية؟
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
           دليل يساعد الأسرة على استثمار أحداث الحياة اليومية وتحويلها إلى فرص
@@ -73,7 +73,7 @@ function ActivitiesHubPage() {
           to="/participation-guide"
           className="mt-3 inline-flex items-center gap-1 text-sm font-bold text-gold underline-offset-4 hover:underline"
         >
-          المزيد
+          دليل الاستخدام
           <ChevronLeft className="h-4 w-4" />
         </Link>
       </section>
