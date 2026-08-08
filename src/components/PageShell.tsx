@@ -38,7 +38,7 @@ export function PageShell({ title, subtitle, description, breadcrumbs, children 
             <div className="min-w-0">
               {!isHome && (
                 <p className="text-xs font-semibold tracking-wider text-gold/90">
-                  دليلي · مسار همم
+                  دليلي
                 </p>
               )}
               <h1 className="mt-1 truncate text-2xl font-bold">{title}</h1>
