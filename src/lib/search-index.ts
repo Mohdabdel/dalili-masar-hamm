@@ -1,6 +1,5 @@
 import type { HomeDomain } from "./home-hierarchy";
-import { knowledgeDomains } from "./knowledge-base";
-import { getCommunityDomains } from "./knowledge-base";
+import { getHomeDomains, getCommunityDomains } from "./knowledge-base";
 import { supportPortal } from "./support-portal";
 
 export type SearchKind = "home" | "community" | "services";
@@ -81,7 +80,7 @@ function collectServices(): SearchItem[] {
 }
 
 export const searchIndex: SearchItem[] = [
-  ...collectParticipation("home", knowledgeDomains),
+  ...collectParticipation("home", getHomeDomains()),
   ...collectParticipation("community", getCommunityDomains()),
   ...collectServices(),
 ];
