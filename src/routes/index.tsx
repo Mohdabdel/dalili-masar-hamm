@@ -68,13 +68,6 @@ function LandingPage() {
         <p className="mt-2 text-base leading-relaxed text-primary-foreground/90">
           مشاركة حياتية يومية، ودليل وصول للخدمات المجتمعية والتعليمية.
         </p>
-        <a
-          href="#services"
-          className="mt-5 inline-flex items-center gap-2 rounded-2xl bg-gold px-5 py-3 text-sm font-bold text-gold-foreground shadow-card-soft transition-transform hover:-translate-y-0.5"
-        >
-          استعرض الخدمات الثلاث
-          <ChevronLeft className="h-4 w-4" strokeWidth={2.4} />
-        </a>
       </section>
 
       <section id="services" className="mt-6 space-y-3">
