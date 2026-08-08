@@ -256,7 +256,19 @@ export const COMPLETENESS_LABELS: Record<string, string> = {
   PARTIAL: "قيد استكمال التحقق",
 };
 
+export const AGE_LABELS: Record<string, string> = {
+  "All Ages": "كل الأعمار",
+  Adults: "البالغون",
+  "Adults/Youth": "البالغون والشباب",
+  "Youth/Adults": "الشباب والبالغون",
+  "Teens/Adults": "المراهقون والبالغون",
+  "Under 60": "أقل من 60 سنة",
+  "16+": "16 سنة فأكثر",
+  "15-25": "15 – 25 سنة",
+};
+
 export const label = (map: Record<string, string>, key: string) => map[key] ?? key;
+
 
 // ---------------------------------------------------------------- selectors
 
