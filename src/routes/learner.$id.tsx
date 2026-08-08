@@ -22,31 +22,24 @@ export const Route = createFileRoute("/learner/$id")({
 
 function LearnerPage() {
   const { id } = Route.useParams();
-  const opp = findOpportunityById(id);
-
-  if (!opp || !opp.card) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-background">
-        <p className="text-muted-foreground">الفرصة غير موجودة</p>
-      </div>
-    );
-  }
-
   const [stepIndex, setStepIndex] = useState(0);
-  const steps = opp.card.steps ?? [];
-  const title = opp.card.title;
+  const opp = findOpportunityById(id);
+  const steps = opp?.card?.steps ?? [];
 
-  if (steps.length === 0) {
+  if (!opp || !opp.card || steps.length === 0) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-background">
-        <p className="text-muted-foreground">لا توجد خطوات متاحة</p>
+        <p className="text-muted-foreground">الفرصة غير متاحة</p>
       </div>
     );
   }
 
-  const currentStep = steps[stepIndex];
-  const isFirst = stepIndex === 0;
-  const isLast = stepIndex === steps.length - 1;
+  const title = opp.card.title;
+  const safeIndex = Math.min(stepIndex, steps.length - 1);
+  const currentStep = steps[safeIndex];
+  const isFirst = safeIndex === 0;
+  const isLast = safeIndex === steps.length - 1;
+
 
   return (
     <div className="flex min-h-screen flex-col bg-gradient-primary text-primary-foreground">
