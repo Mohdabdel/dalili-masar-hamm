@@ -63,14 +63,14 @@ function LearnerPage() {
         <div className="w-full max-w-lg rounded-3xl bg-card p-8 text-center shadow-elegant">
           <div className="mb-6">
             <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-gold/20 text-2xl font-black text-primary">
-              {stepIndex + 1}
+              {safeIndex + 1}
             </span>
           </div>
           <p className="text-3xl font-bold leading-relaxed text-card-foreground">
             {currentStep}
           </p>
           <p className="mt-6 text-sm font-semibold text-muted-foreground">
-            الخطوة {stepIndex + 1} من {steps.length}
+            الخطوة {safeIndex + 1} من {steps.length}
           </p>
         </div>
       </main>
