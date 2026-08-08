@@ -169,7 +169,7 @@ function EventsList({
           </AccordionTrigger>
           <AccordionContent className="px-3 pb-3">
             {event.opportunities.length === 0 ? (
-              <EmptyNote text="سيتم إضافة فرص المشاركة قريباً." />
+              <EmptyNote text="لا توجد فرص مشاركة منشورة لهذا الحدث حالياً." />
             ) : (
               <ul className="space-y-2">
                 {event.opportunities.map((op) => (

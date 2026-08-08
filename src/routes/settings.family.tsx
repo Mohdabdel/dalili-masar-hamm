@@ -80,7 +80,6 @@ function FamilyProfilePage() {
       ]}
     >
       <div className="mb-4 flex items-center gap-2">
-        <Badge variant="outline" className="text-[10px]">نموذج أولي</Badge>
       </div>
 
       <Card>

@@ -94,7 +94,7 @@ function SupportPortalPage() {
             </AccordionTrigger>
             <AccordionContent className="px-3 pb-3">
               {domain.services.length === 0 ? (
-                <EmptyNote text="سيتم إضافة الخدمات قريباً." />
+                <EmptyNote text="لا توجد خدمات منشورة في هذا المجال حالياً." />
               ) : (
                 <Accordion type="multiple" className="space-y-2">
                   {domain.services.map((svc) => (
@@ -115,7 +115,7 @@ function SupportPortalPage() {
                       </AccordionTrigger>
                       <AccordionContent className="px-3 pb-3">
                         {svc.opportunities.length === 0 ? (
-                          <EmptyNote text="سيتم إضافة فرص الاستفادة قريباً." />
+                          <EmptyNote text="لا توجد فرص استفادة منشورة حالياً." />
                         ) : (
                           <ul className="space-y-2">
                             {svc.opportunities.map((op) => (
