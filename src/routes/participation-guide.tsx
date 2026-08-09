@@ -240,6 +240,8 @@ function ConsiderationsTab() {
 }
 
 function ParticipationGuidePage() {
+  const { tab } = Route.useSearch();
+  const activeTab = tab === "considerations" ? "considerations" : "guide";
   return (
     <PageShell
       title="دليل الاستخدام"
@@ -249,7 +251,7 @@ function ParticipationGuidePage() {
         { label: "دليل الاستخدام" },
       ]}
     >
-      <Tabs defaultValue="guide" dir="rtl" className="w-full">
+      <Tabs key={activeTab} defaultValue={activeTab} dir="rtl" className="w-full">
         <TabsList className="mb-4 grid w-full grid-cols-2">
           <TabsTrigger value="guide" className="text-sm font-bold">
             دليل الاستخدام
