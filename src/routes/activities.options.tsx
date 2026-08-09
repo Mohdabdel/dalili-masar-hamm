@@ -21,7 +21,7 @@ export const Route = createFileRoute("/activities/options")({
       {
         name: "description",
         content:
-          "اختر طريقة استعراض فرص المشاركة: حسب المجالات، أو حسب أحداث اليوم، أو مشاركات عامة.",
+          "اختر طريقة استعراض فرص المشاركة: حسب المجال، أو حسب الأحداث اليومية، أو مشاركات عامة.",
       },
       {
         property: "og:title",
