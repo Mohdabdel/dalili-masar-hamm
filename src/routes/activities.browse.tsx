@@ -27,7 +27,7 @@ export const Route = createFileRoute("/activities/browse")({
       {
         name: "description",
         content:
-          "استعرض فرص المشاركة المطابقة لمستوى المشاركة المختار حسب المجالات أو أحداث اليوم أو كقائمة عامة.",
+          "استعرض فرص المشاركة المطابقة لمستوى المشاركة المختار حسب المجال أو الأحداث اليومية أو كقائمة عامة.",
       },
       {
         property: "og:title",
@@ -61,8 +61,8 @@ function BrowsePage() {
   );
 
   const titles: Record<string, string> = {
-    domains: "مشاركات حسب المجالات",
-    today: "مشاركات حسب أحداث اليوم",
+    domains: "مشاركات حسب المجال",
+    today: "مشاركات حسب الأحداث اليومية",
     all: "مشاركات عامة",
   };
 

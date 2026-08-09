@@ -21,7 +21,7 @@ export const Route = createFileRoute("/activities/options")({
       {
         name: "description",
         content:
-          "اختر طريقة استعراض فرص المشاركة: حسب المجالات، أو حسب أحداث اليوم، أو مشاركات عامة.",
+          "اختر طريقة استعراض فرص المشاركة: حسب المجال، أو حسب الأحداث اليومية، أو مشاركات عامة.",
       },
       {
         property: "og:title",
@@ -46,14 +46,14 @@ const OPTIONS: {
   icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
 }[] = [
   {
-    title: "مشاركات حسب المجالات",
+    title: "مشاركات حسب المجال",
     description:
       "استعرض فرص المشاركة مرتبة حسب مجالات الحياة والأحداث المرتبطة بها.",
     view: "domains",
     icon: Layers,
   },
   {
-    title: "مشاركات حسب أحداث اليوم",
+    title: "مشاركات حسب الأحداث اليومية",
     description: "ابدأ مما يحدث فعلاً في يومكم الآن واختر فرصة مناسبة.",
     view: "today",
     icon: CalendarDays,

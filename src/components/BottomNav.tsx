@@ -3,7 +3,7 @@ import { Home, HeartHandshake, MapPinned, GraduationCap } from "lucide-react";
 
 const tabs = [
   { to: "/", label: "الرئيسية", icon: Home },
-  { to: "/activities", label: "المشاركة", icon: HeartHandshake },
+  { to: "/activities", label: "دليلي للمشاركة الحياتية", icon: HeartHandshake },
   { to: "/community-support", label: "مجتمعي", icon: MapPinned },
   { to: "/education-support", label: "تعليمي", icon: GraduationCap },
 ] as const;
