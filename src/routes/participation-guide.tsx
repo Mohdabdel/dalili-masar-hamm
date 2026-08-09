@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { z } from "zod";
 import { AlertTriangle, Info, ShieldAlert } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -13,7 +14,12 @@ import {
   STOP_SIGNALS,
 } from "@/lib/participation-considerations";
 
+const searchSchema = z.object({
+  tab: z.string().optional(),
+});
+
 export const Route = createFileRoute("/participation-guide")({
+  validateSearch: searchSchema,
   head: () => ({
     meta: [
       { title: "دليل الاستخدام واعتبارات المشاركة | دليلي" },
@@ -64,9 +70,9 @@ const SECTIONS: Section[] = [
     title: "كيف تستخدم الدليل؟",
     body: "ابدأ من نقطة البداية الأقرب لواقعكم اليوم، ثم افتح بطاقة الفرصة واقرأها كاملة قبل التنفيذ. البطاقة مبنية بترتيب ثابت حتى تعرف دائماً أين تجد ما تحتاجه.",
     points: [
-      "«أحداث يومي»: ابدأ من أحداث يومكم الحالي.",
-      "«حسب أحداث اليوم»: استعرض الأحداث المتاحة واختر ما يناسبكم الآن.",
-      "«حسب المجالات»: تصفح الفرص حسب مجالات الحياة.",
+      "«مشاركات حسب المجال»: تصفح الفرص حسب مجالات الحياة.",
+      "«مشاركات حسب الأحداث اليومية»: ابدأ مما يحدث فعلاً في يومكم الآن.",
+      "«مشاركات عامة»: قائمة موحّدة بجميع الفرص المطابقة للمستوى.",
       "افتح بطاقة الفرصة، واقرأ «قبل أن تبدأ» ثم «الخطوات».",
       "اختر المستوى الذي يناسب الشخص، ولا تبدأ من الأصعب.",
     ],
