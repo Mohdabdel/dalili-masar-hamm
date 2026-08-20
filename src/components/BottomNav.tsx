@@ -4,8 +4,8 @@ import { Home, HeartHandshake, MapPinned, GraduationCap } from "lucide-react";
 const tabs = [
   { to: "/", label: "الرئيسية", icon: Home },
   { to: "/activities", label: "دليلي للمشاركة الحياتية", icon: HeartHandshake },
-  { to: "/community-support", label: "مجتمعي", icon: MapPinned },
-  { to: "/education-support", label: "تعليمي", icon: GraduationCap },
+  { to: "/community-support", label: "الدعم المجتمعي", icon: MapPinned },
+  { to: "/education-support", label: "الدعم التعليمي", icon: GraduationCap },
 ] as const;
 
 export function BottomNav() {

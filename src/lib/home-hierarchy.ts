@@ -19,7 +19,7 @@ export interface ParticipationLevels {
  *  6. supportDuringImplementation → support
  *  7. participationLevels   → levels
  *  8. progressIndicators
- *  9. supportResources      → supportResources
+ *  9. supportResources      → مصادر الدعم أثناء المشاركة
  * 10. afterCompletion       → nextStep
  * 11. tags                  → keywords
  * 12. category              → domain (يُشتق من الهرم)
