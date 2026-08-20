@@ -194,7 +194,7 @@ function buildCard(
     support: row.make_it_easier,
     levels: buildLevels(row.participation_levels),
     progressIndicators: splitSentences(row.indicators),
-    teachingAids: row.support_notes
+    supportResources: row.support_notes
       ? row.support_notes
           .split(/[،,\n]+/)
           .map((s) => s.trim())
