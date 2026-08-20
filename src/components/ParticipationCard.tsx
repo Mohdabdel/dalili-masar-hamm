@@ -41,7 +41,7 @@ export interface ParticipationCardData {
   /** مستوى فرصة المشاركة (يصف الفرصة، لا قدرة الشخص). */
   participationLevel?: ParticipationLevelKey;
   progressIndicators?: string[];
-  teachingAids?: string[];
+  supportResources?: string[];
   nextStep?: string;
 }
 

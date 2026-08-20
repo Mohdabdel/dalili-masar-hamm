@@ -149,7 +149,7 @@ export function TodayEvents({ level }: { level?: ParticipationLevelKey } = {}) {
       support: c?.support,
       levels,
       progressIndicators: c?.progressIndicators,
-      teachingAids: c?.teachingAids,
+      supportResources: c?.supportResources,
       nextStep: c?.nextStep,
       participationLevel: ctx.opportunity.participationLevel,
     };

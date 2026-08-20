@@ -19,7 +19,7 @@ export interface ParticipationLevels {
  *  6. supportDuringImplementation → support
  *  7. participationLevels   → levels
  *  8. progressIndicators
- *  9. supportResources      → teachingAids
+ *  9. supportResources      → supportResources
  * 10. afterCompletion       → nextStep
  * 11. tags                  → keywords
  * 12. category              → domain (يُشتق من الهرم)
@@ -51,7 +51,7 @@ export interface FullCard {
   /** 8. Progress Indicators */
   progressIndicators: string[];
   /** 9. Support Resources — موارد الدعم أثناء التطبيق */
-  teachingAids?: string[];
+  supportResources?: string[];
   /** 10. After Completion — ماذا بعد */
   nextStep: string;
   /** 11. Tags */
@@ -152,7 +152,7 @@ const collectClothesCard: FullCard = {
     "احتاج دعماً أقل من السابق.",
     "كرر المشاركة في يوم آخر.",
   ],
-  teachingAids: ["بطاقة مصورة", "قائمة تحقق", "فيديو قصير لاحقاً", "رمز QR لاحقاً"],
+  supportResources: ["بطاقة مصورة", "قائمة تحقق", "فيديو قصير لاحقاً", "رمز QR لاحقاً"],
   nextStep: "فرز الملابس حسب اللون.",
   expectedMinutes: 10,
   needsOutside: false,
@@ -184,7 +184,7 @@ const sortClothesCard: FullCard = {
     "أكمل الفرز دون خطأ",
     "احتاج مساعدة أقل",
   ],
-  teachingAids: ["بطاقة ألوان", "سلال معنونة"],
+  supportResources: ["بطاقة ألوان", "سلال معنونة"],
   nextStep: "تشغيل الغسالة أو اختيار البرنامج المناسب.",
   expectedMinutes: 10,
   needsOutside: false,
@@ -216,7 +216,7 @@ const hangClothesCard: FullCard = {
     "ترك مسافات مناسبة",
     "أكمل السلة كاملة",
   ],
-  teachingAids: ["مشابك ملونة", "صورة توضيحية للمسافة بين القطع"],
+  supportResources: ["مشابك ملونة", "صورة توضيحية للمسافة بين القطع"],
   nextStep: "تجميع الملابس الجافة وطيها.",
   expectedMinutes: 15,
   needsOutside: false,
@@ -248,7 +248,7 @@ const closetCard: FullCard = {
     "حافظ على ترتيب الأرفف",
     "احتاج تذكيراً أقل",
   ],
-  teachingAids: ["ملصقات صور", "علاقات ملونة"],
+  supportResources: ["ملصقات صور", "علاقات ملونة"],
   nextStep: "اختيار ملابس اليوم التالي بشكل مستقل.",
   expectedMinutes: 15,
   needsOutside: false,
@@ -277,7 +277,7 @@ const miniWashCard = (
   support,
   levels,
   progressIndicators,
-  teachingAids: ["بطاقة مصورة", "قائمة تحقق"],
+  supportResources: ["بطاقة مصورة", "قائمة تحقق"],
   nextStep,
   expectedMinutes: 8,
   needsOutside: false,
@@ -497,7 +497,7 @@ const fridgeCard: FullCard = {
     "لاحظ منتجات قاربت على النفاد",
     "أكمل الخطوة دون تذكير",
   ],
-  teachingAids: ["قائمة مصورة", "بطاقات أصناف"],
+  supportResources: ["قائمة مصورة", "بطاقات أصناف"],
   nextStep: "إعداد قائمة المشتريات النهائية.",
   expectedMinutes: 10,
   needsOutside: false,
@@ -529,7 +529,7 @@ const shoppingListCard: FullCard = {
     "راجع القائمة",
     "احتاج تذكيراً أقل",
   ],
-  teachingAids: ["نموذج قائمة", "صور الأصناف"],
+  supportResources: ["نموذج قائمة", "صور الأصناف"],
   nextStep: "الذهاب إلى المتجر واختيار المنتجات.",
   expectedMinutes: 10,
   needsOutside: false,
@@ -561,7 +561,7 @@ const setTableCard: FullCard = {
     "أضاف الماء والخبز",
     "أكمل قبل موعد الوجبة",
   ],
-  teachingAids: ["صورة مرجعية للترتيب", "قائمة عدد القطع"],
+  supportResources: ["صورة مرجعية للترتيب", "قائمة عدد القطع"],
   nextStep: "المشاركة في تقديم الطعام أو رفع المائدة بعد الوجبة.",
   expectedMinutes: 10,
   needsOutside: false,
@@ -614,7 +614,7 @@ const closingHomeCard: FullCard = {
     "التزم بالوقت الثابت",
     "احتاج تذكيراً أقل",
   ],
-  teachingAids: ["قائمة فحص مصورة", "بطاقة تذكير على الباب"],
+  supportResources: ["قائمة فحص مصورة", "بطاقة تذكير على الباب"],
   nextStep: "تسجيل إتمام الفحص في روتين المساء.",
   expectedMinutes: 10,
   needsOutside: false,
@@ -661,7 +661,7 @@ const medicineCard: FullCard = {
     "سجل تناول الدواء",
     "احتاج تذكيراً أقل",
   ],
-  teachingAids: ["جدول جرعات مصور", "منبه صوتي"],
+  supportResources: ["جدول جرعات مصور", "منبه صوتي"],
   nextStep: "متابعة تعبئة العلبة الأسبوعية أو مراجعة الوصفة.",
   expectedMinutes: 5,
   needsOutside: false,
@@ -708,7 +708,7 @@ const familyMeetingCard: FullCard = {
     "عبّر عن رأي واضح",
     "شارك في قرار جماعي",
   ],
-  teachingAids: ["بطاقة أدوار", "بطاقة تعبير مصورة"],
+  supportResources: ["بطاقة أدوار", "بطاقة تعبير مصورة"],
   nextStep: "متابعة تنفيذ القرار الذي شارك فيه.",
   expectedMinutes: 20,
   needsOutside: false,
