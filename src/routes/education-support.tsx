@@ -1,10 +1,13 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo } from "react";
+import { Wrench } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { ServiceDirectory } from "@/components/ServiceDirectory";
 import { ResourceDirectory } from "@/components/ResourceDirectory";
+import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getEducationServices, getResources } from "@/lib/service-directories";
+import { VISUAL_TOOL_TYPES } from "@/lib/visual-tools/types";
 
 export const Route = createFileRoute("/education-support")({
   head: () => ({
