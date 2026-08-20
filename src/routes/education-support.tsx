@@ -39,12 +39,15 @@ function EducationSupportPage() {
       breadcrumbs={[{ label: "مصادر الدعم التعليمي" }]}
     >
       <Tabs defaultValue="providers" dir="rtl" className="space-y-4">
-        <TabsList className="grid w-full grid-cols-2">
+        <TabsList className="grid w-full grid-cols-3">
           <TabsTrigger value="providers" className="min-h-11 text-xs font-semibold">
-            مقدمو الخدمات التعليمية والتأهيلية
+            مقدمو الخدمات
           </TabsTrigger>
           <TabsTrigger value="resources" className="min-h-11 text-xs font-semibold">
             المصادر التعليمية
+          </TabsTrigger>
+          <TabsTrigger value="tools" className="min-h-11 text-xs font-semibold">
+            أدوات ووسائل داعمة
           </TabsTrigger>
         </TabsList>
 
@@ -63,7 +66,32 @@ function EducationSupportPage() {
             resources={resources}
           />
         </TabsContent>
+
+        <TabsContent value="tools" className="space-y-4">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            أدوات بصرية تصنعها الأسرة بنفسها: الجدول البصري، التسلسل البصري، لوحة الاختيار، لوحة
+            التواصل البسيطة، وتصميم مشاركة خاصة. كل ما تنشئه يبقى خاصًا بأسرتك ومحفوظًا على جهازك،
+            ولا يُضاف إلى محتوى دليلي العام.
+          </p>
+          <div className="grid gap-2">
+            {VISUAL_TOOL_TYPES.map((t) => (
+              <div key={t.type} className="rounded-2xl border border-border bg-card p-3">
+                <p className="text-sm font-bold text-foreground">{t.titleAr}</p>
+                <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
+                  {t.descriptionAr}
+                </p>
+              </div>
+            ))}
+          </div>
+          <Button asChild className="min-h-12 w-full gap-2 text-sm font-semibold">
+            <Link to="/tools">
+              <Wrench className="h-4 w-4" />
+              فتح أدوات ووسائل داعمة
+            </Link>
+          </Button>
+        </TabsContent>
       </Tabs>
+
     </PageShell>
   );
 }
