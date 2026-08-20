@@ -20,7 +20,9 @@ import { Route as EducationSupportRouteImport } from './routes/education-support
 import { Route as CommunitySupportRouteImport } from './routes/community-support'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ToolsIndexRouteImport } from './routes/tools.index'
 import { Route as ActivitiesIndexRouteImport } from './routes/activities.index'
+import { Route as ToolsProjectIdRouteImport } from './routes/tools.$projectId'
 import { Route as SettingsFamilyRouteImport } from './routes/settings.family'
 import { Route as SettingsAddEventRouteImport } from './routes/settings.add-event'
 import { Route as LearnerIdRouteImport } from './routes/learner.$id'
@@ -88,9 +90,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ToolsIndexRoute = ToolsIndexRouteImport.update({
+  id: '/tools/',
+  path: '/tools/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ActivitiesIndexRoute = ActivitiesIndexRouteImport.update({
   id: '/activities/',
   path: '/activities/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsProjectIdRoute = ToolsProjectIdRouteImport.update({
+  id: '/tools/$projectId',
+  path: '/tools/$projectId',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SettingsFamilyRoute = SettingsFamilyRouteImport.update({
@@ -174,7 +186,9 @@ export interface FileRoutesByFullPath {
   '/learner/$id': typeof LearnerIdRoute
   '/settings/add-event': typeof SettingsAddEventRoute
   '/settings/family': typeof SettingsFamilyRoute
+  '/tools/$projectId': typeof ToolsProjectIdRoute
   '/activities/': typeof ActivitiesIndexRoute
+  '/tools/': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
 export interface FileRoutesByTo {
@@ -199,7 +213,9 @@ export interface FileRoutesByTo {
   '/learner/$id': typeof LearnerIdRoute
   '/settings/add-event': typeof SettingsAddEventRoute
   '/settings/family': typeof SettingsFamilyRoute
+  '/tools/$projectId': typeof ToolsProjectIdRoute
   '/activities': typeof ActivitiesIndexRoute
+  '/tools': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
 export interface FileRoutesById {
@@ -225,7 +241,9 @@ export interface FileRoutesById {
   '/learner/$id': typeof LearnerIdRoute
   '/settings/add-event': typeof SettingsAddEventRoute
   '/settings/family': typeof SettingsFamilyRoute
+  '/tools/$projectId': typeof ToolsProjectIdRoute
   '/activities/': typeof ActivitiesIndexRoute
+  '/tools/': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
 export interface FileRouteTypes {
@@ -252,7 +270,9 @@ export interface FileRouteTypes {
     | '/learner/$id'
     | '/settings/add-event'
     | '/settings/family'
+    | '/tools/$projectId'
     | '/activities/'
+    | '/tools/'
     | '/.mcp/invoke-tool/$tool'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -277,7 +297,9 @@ export interface FileRouteTypes {
     | '/learner/$id'
     | '/settings/add-event'
     | '/settings/family'
+    | '/tools/$projectId'
     | '/activities'
+    | '/tools'
     | '/.mcp/invoke-tool/$tool'
   id:
     | '__root__'
@@ -302,7 +324,9 @@ export interface FileRouteTypes {
     | '/learner/$id'
     | '/settings/add-event'
     | '/settings/family'
+    | '/tools/$projectId'
     | '/activities/'
+    | '/tools/'
     | '/.mcp/invoke-tool/$tool'
   fileRoutesById: FileRoutesById
 }
@@ -326,7 +350,9 @@ export interface RootRouteChildren {
   ActivitiesMyDayRoute: typeof ActivitiesMyDayRoute
   ActivitiesOptionsRoute: typeof ActivitiesOptionsRoute
   LearnerIdRoute: typeof LearnerIdRoute
+  ToolsProjectIdRoute: typeof ToolsProjectIdRoute
   ActivitiesIndexRoute: typeof ActivitiesIndexRoute
+  ToolsIndexRoute: typeof ToolsIndexRoute
   Char91DotmcpChar93InvokeToolToolRoute: typeof Char91DotmcpChar93InvokeToolToolRoute
 }
 
@@ -409,11 +435,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tools/': {
+      id: '/tools/'
+      path: '/tools'
+      fullPath: '/tools/'
+      preLoaderRoute: typeof ToolsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/activities/': {
       id: '/activities/'
       path: '/activities'
       fullPath: '/activities/'
       preLoaderRoute: typeof ActivitiesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/$projectId': {
+      id: '/tools/$projectId'
+      path: '/tools/$projectId'
+      fullPath: '/tools/$projectId'
+      preLoaderRoute: typeof ToolsProjectIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/settings/family': {
@@ -531,7 +571,9 @@ const rootRouteChildren: RootRouteChildren = {
   ActivitiesMyDayRoute: ActivitiesMyDayRoute,
   ActivitiesOptionsRoute: ActivitiesOptionsRoute,
   LearnerIdRoute: LearnerIdRoute,
+  ToolsProjectIdRoute: ToolsProjectIdRoute,
   ActivitiesIndexRoute: ActivitiesIndexRoute,
+  ToolsIndexRoute: ToolsIndexRoute,
   Char91DotmcpChar93InvokeToolToolRoute: Char91DotmcpChar93InvokeToolToolRoute,
 }
 export const routeTree = rootRouteImport
