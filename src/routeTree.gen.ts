@@ -34,6 +34,7 @@ import { Route as ActivitiesLevelRouteImport } from './routes/activities.level'
 import { Route as ActivitiesBrowseRouteImport } from './routes/activities.browse'
 import { Route as ActivitiesCategoryRouteImport } from './routes/activities.$category'
 import { Route as AuthenticatedMyRoutineRouteImport } from './routes/_authenticated/my-routine'
+import { Route as AuthenticatedActiveParticipationsRouteImport } from './routes/_authenticated/active-participations'
 import { Route as AuthenticatedAccountRouteImport } from './routes/_authenticated/account'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
@@ -163,6 +164,12 @@ const AuthenticatedMyRoutineRoute = AuthenticatedMyRoutineRouteImport.update({
   path: '/my-routine',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedActiveParticipationsRoute =
+  AuthenticatedActiveParticipationsRouteImport.update({
+    id: '/active-participations',
+    path: '/active-participations',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const AuthenticatedAccountRoute = AuthenticatedAccountRouteImport.update({
   id: '/account',
   path: '/account',
@@ -203,6 +210,7 @@ export interface FileRoutesByFullPath {
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/account': typeof AuthenticatedAccountRoute
+  '/active-participations': typeof AuthenticatedActiveParticipationsRoute
   '/my-routine': typeof AuthenticatedMyRoutineRoute
   '/activities/$category': typeof ActivitiesCategoryRoute
   '/activities/browse': typeof ActivitiesBrowseRoute
@@ -233,6 +241,7 @@ export interface FileRoutesByTo {
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/account': typeof AuthenticatedAccountRoute
+  '/active-participations': typeof AuthenticatedActiveParticipationsRoute
   '/my-routine': typeof AuthenticatedMyRoutineRoute
   '/activities/$category': typeof ActivitiesCategoryRoute
   '/activities/browse': typeof ActivitiesBrowseRoute
@@ -265,6 +274,7 @@ export interface FileRoutesById {
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/_authenticated/account': typeof AuthenticatedAccountRoute
+  '/_authenticated/active-participations': typeof AuthenticatedActiveParticipationsRoute
   '/_authenticated/my-routine': typeof AuthenticatedMyRoutineRoute
   '/activities/$category': typeof ActivitiesCategoryRoute
   '/activities/browse': typeof ActivitiesBrowseRoute
@@ -297,6 +307,7 @@ export interface FileRouteTypes {
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/account'
+    | '/active-participations'
     | '/my-routine'
     | '/activities/$category'
     | '/activities/browse'
@@ -327,6 +338,7 @@ export interface FileRouteTypes {
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/account'
+    | '/active-participations'
     | '/my-routine'
     | '/activities/$category'
     | '/activities/browse'
@@ -358,6 +370,7 @@ export interface FileRouteTypes {
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/_authenticated/account'
+    | '/_authenticated/active-participations'
     | '/_authenticated/my-routine'
     | '/activities/$category'
     | '/activities/browse'
@@ -578,6 +591,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedMyRoutineRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/active-participations': {
+      id: '/_authenticated/active-participations'
+      path: '/active-participations'
+      fullPath: '/active-participations'
+      preLoaderRoute: typeof AuthenticatedActiveParticipationsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/account': {
       id: '/_authenticated/account'
       path: '/account'
@@ -611,11 +631,14 @@ declare module '@tanstack/react-router' {
 
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedAccountRoute: typeof AuthenticatedAccountRoute
+  AuthenticatedActiveParticipationsRoute: typeof AuthenticatedActiveParticipationsRoute
   AuthenticatedMyRoutineRoute: typeof AuthenticatedMyRoutineRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedAccountRoute: AuthenticatedAccountRoute,
+  AuthenticatedActiveParticipationsRoute:
+    AuthenticatedActiveParticipationsRoute,
   AuthenticatedMyRoutineRoute: AuthenticatedMyRoutineRoute,
 }
 
