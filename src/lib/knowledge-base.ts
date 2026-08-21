@@ -487,3 +487,37 @@ export function countOpportunitiesByLevel(): Record<
   }
   return counts;
 }
+
+// ---------- الأحداث اليومية (Daily Events) ----------
+export interface FlatEvent {
+  domain: HomeDomain;
+  activity: GeneralActivity;
+  event: LifeEvent;
+}
+
+/** كل الأحداث المنشورة في المستودع (مصدر الأحداث اليومية الوحيد). */
+export function getAllEvents(): FlatEvent[] {
+  const out: FlatEvent[] = [];
+  for (const domain of built.domains) {
+    for (const activity of domain.activities) {
+      for (const event of activity.events) {
+        out.push({ domain, activity, event });
+      }
+    }
+  }
+  return out;
+}
+
+/** بحث عن حدث يومي واحد بمعرّفه كما في 02_events.csv. */
+export function findEventById(eventId: string): FlatEvent | null {
+  return getAllEvents().find((e) => e.event.id === eventId) ?? null;
+}
+
+/** بحث عن فرصة مشاركة مع سياقها الكامل (مجال ← حدث). */
+export function findOpportunityContextById(
+  opportunityId: string,
+): FlatOpportunity | null {
+  return (
+    getAllOpportunities().find((x) => x.opportunity.id === opportunityId) ?? null
+  );
+}
