@@ -458,7 +458,13 @@ function StationParticipations({
                           setup: op.card?.setup,
                           steps: op.card?.steps,
                           support: op.card?.support,
-                          levels: op.card?.levels ?? op.levels,
+                          levels:
+                            op.card?.levels ??
+                            op.levels ?? {
+                              guided: "",
+                              shared: "",
+                              independent: "",
+                            },
                           progressIndicators: op.card?.progressIndicators,
                           supportResources: op.card?.supportResources,
                           nextStep: op.card?.nextStep,
