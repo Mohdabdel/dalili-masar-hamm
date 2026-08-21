@@ -1,0 +1,99 @@
+// طبقة الوصول للمشاركات النشطة وسجلات الإنجاز اليومي.
+// تُخزَّن المعرفات فقط؛ كل محتوى العرض يُستخرج من مستودع المعرفة (CSV).
+
+import { supabase } from "@/integrations/supabase/client";
+
+export interface ActiveParticipation {
+  id: string;
+  opportunity_id: string;
+  routine_station_id: string | null;
+  status: string;
+  completion_source: string | null;
+  started_at: string;
+  completed_at: string | null;
+  closed_at: string | null;
+}
+
+export const todayISO = () => new Date().toISOString().slice(0, 10);
+
+export async function listActiveParticipations(): Promise<ActiveParticipation[]> {
+  const { data, error } = await supabase
+    .from("active_participations")
+    .select(
+      "id, opportunity_id, routine_station_id, status, completion_source, started_at, completed_at, closed_at",
+    )
+    .order("started_at", { ascending: true });
+  if (error) throw error;
+  return data ?? [];
+}
+
+export async function startParticipation(input: {
+  opportunityId: string;
+  routineStationId?: string | null;
+  source?: string;
+}): Promise<void> {
+  const { error } = await supabase.from("active_participations").insert({
+    opportunity_id: input.opportunityId,
+    routine_station_id: input.routineStationId ?? null,
+    source: input.source ?? "routine_station",
+    status: "active",
+  });
+  if (error) throw error;
+}
+
+export async function closeParticipation(id: string): Promise<void> {
+  const { error } = await supabase
+    .from("active_participations")
+    .update({ status: "closed", closed_at: new Date().toISOString() })
+    .eq("id", id);
+  if (error) throw error;
+}
+
+export async function completeParticipationManually(id: string): Promise<void> {
+  const { error } = await supabase
+    .from("active_participations")
+    .update({
+      status: "completed",
+      completion_source: "manual",
+      completed_at: new Date().toISOString(),
+    })
+    .eq("id", id);
+  if (error) throw error;
+}
+
+export interface DailyLog {
+  id: string;
+  active_participation_id: string;
+  log_date: string;
+  did_participate: boolean;
+}
+
+export async function listTodayLogs(): Promise<DailyLog[]> {
+  const { data, error } = await supabase
+    .from("participation_daily_logs")
+    .select("id, active_participation_id, log_date, did_participate")
+    .eq("log_date", todayISO());
+  if (error) throw error;
+  return data ?? [];
+}
+
+export async function setTodayLog(
+  activeParticipationId: string,
+  didParticipate: boolean,
+  existingLogId?: string,
+): Promise<void> {
+  if (existingLogId) {
+    const { error } = await supabase
+      .from("participation_daily_logs")
+      .update({ did_participate: didParticipate })
+      .eq("id", existingLogId);
+    if (error) throw error;
+    return;
+  }
+  const { error } = await supabase.from("participation_daily_logs").insert({
+    active_participation_id: activeParticipationId,
+    log_date: todayISO(),
+    did_participate: didParticipate,
+  });
+  if (error) throw error;
+}
