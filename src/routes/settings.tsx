@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { Card, CardContent } from "@/components/ui/card";
-import { PlusCircle, Users, UserCircle } from "lucide-react";
+import { PlusCircle, Users, UserCircle, CalendarClock, ListChecks } from "lucide-react";
 
 export const Route = createFileRoute("/settings")({
   head: () => ({
