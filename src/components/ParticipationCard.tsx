@@ -1,4 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import {
   Accordion,
@@ -7,9 +8,16 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Bookmark, Share2, ArrowLeft, Check } from "lucide-react";
+import {
+  Bookmark,
+  Share2,
+  ArrowLeft,
+  Check,
+  Images,
+  Info,
+  CalendarCheck,
+} from "lucide-react";
 import { toast } from "sonner";
 import { SupportDuringExecution } from "@/components/SupportDuringExecution";
 import { NoAssetNotice } from "@/components/NoAssetNotice";
@@ -17,7 +25,6 @@ import { HumanSafetyNotice } from "@/components/HumanSafetyNotice";
 import { getSupportDecisionForOpportunity } from "@/lib/support-decisions";
 import { participationLevelLabel } from "@/lib/knowledge-base";
 import type { ParticipationLevelKey } from "@/lib/home-hierarchy";
-
 
 export interface ParticipationLevelsInput {
   guided: string;
@@ -45,7 +52,6 @@ export interface ParticipationCardData {
   nextStep?: string;
 }
 
-
 interface ParticipationCardProps {
   open: boolean;
   onOpenChange: (o: boolean) => void;
@@ -53,10 +59,23 @@ interface ParticipationCardProps {
   onNext?: () => void;
 }
 
+const todayKey = () => `did-today:${new Date().toISOString().slice(0, 10)}`;
+
+function readSet(key: string): Set<string> {
+  try {
+    const list = JSON.parse(localStorage.getItem(key) ?? "[]");
+    return new Set<string>(Array.isArray(list) ? list : []);
+  } catch {
+    return new Set<string>();
+  }
+}
+
 export function ParticipationCard({ open, onOpenChange, data, onNext }: ParticipationCardProps) {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   const [saved, setSaved] = useState(false);
+  const [doneToday, setDoneToday] = useState(false);
   const [running, setRunning] = useState(false);
+  const [showVisual, setShowVisual] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [safetyAcknowledged, setSafetyAcknowledged] = useState(false);
 
@@ -65,16 +84,13 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
       setChecked({});
       setSafetyAcknowledged(false);
       setRunning(false);
+      setShowVisual(false);
       setShowDetails(false);
       return;
     }
     if (data) {
-      try {
-        const list = JSON.parse(localStorage.getItem("saved-participation") ?? "[]");
-        setSaved(Array.isArray(list) && list.includes(data.id));
-      } catch {
-        setSaved(false);
-      }
+      setSaved(readSet("saved-participation").has(data.id));
+      setDoneToday(readSet(todayKey()).has(data.id));
     }
   }, [open, data]);
 
@@ -83,24 +99,33 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
   const supportDecision = getSupportDecisionForOpportunity(data.id);
   const total = data.steps?.length ?? 0;
   const done = Object.values(checked).filter(Boolean).length;
+  const context = [data.generalActivity, data.lifeEvent]
+    .filter(Boolean)
+    .join(" › ");
 
-  const handleSave = () => {
+  const toggleStored = (key: string, on: boolean) => {
+    const set = readSet(key);
+    if (on) set.add(data.id);
+    else set.delete(data.id);
     try {
-      const list = JSON.parse(localStorage.getItem("saved-participation") ?? "[]");
-      const set = new Set<string>(Array.isArray(list) ? list : []);
-      if (set.has(data.id)) {
-        set.delete(data.id);
-        setSaved(false);
-        toast("أزيلت من المحفوظات");
-      } else {
-        set.add(data.id);
-        setSaved(true);
-        toast("تم الحفظ");
-      }
-      localStorage.setItem("saved-participation", JSON.stringify([...set]));
+      localStorage.setItem(key, JSON.stringify([...set]));
     } catch {
       /* ignore */
     }
+  };
+
+  const handleSave = () => {
+    const next = !saved;
+    setSaved(next);
+    toggleStored("saved-participation", next);
+    toast(next ? "تم الحفظ" : "أزيلت من المحفوظات");
+  };
+
+  const handleDoneToday = () => {
+    const next = !doneToday;
+    setDoneToday(next);
+    toggleStored(todayKey(), next);
+    toast(next ? "سُجّلت مشاركة اليوم" : "أُلغي تسجيل اليوم");
   };
 
   const handleShare = async () => {
@@ -126,59 +151,28 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
         <div className="mx-auto mt-2 h-1.5 w-12 rounded-full bg-muted" />
 
         <SheetHeader className="px-5 pt-4 pb-2 text-right">
-          <div className="flex flex-wrap items-center gap-1.5">
-            <Badge variant="outline" className="text-[10px]">{data.domain}</Badge>
-            <Badge variant="outline" className="text-[10px]">{data.lifeEvent}</Badge>
-            {data.participationLevel && (
-              <Badge className="bg-gold/15 text-[10px] text-gold hover:bg-gold/15">
-                {participationLevelLabel[data.participationLevel]}
-              </Badge>
-            )}
-          </div>
           <SheetTitle className="text-right text-xl font-bold leading-snug">
             {data.title}
           </SheetTitle>
-          {data.description && (
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              {data.description}
+          {context && (
+            <p className="text-sm font-medium leading-relaxed text-muted-foreground">
+              ضمن: {context}
             </p>
           )}
         </SheetHeader>
 
-
         <div className="space-y-4 px-5 pb-6">
-          {running && (
-            <button
-              type="button"
-              onClick={() => setShowDetails((v) => !v)}
-              className="w-full text-center text-sm font-semibold text-primary underline underline-offset-4"
-            >
-              {showDetails ? "إخفاء تفاصيل البطاقة" : "عرض تفاصيل البطاقة"}
-            </button>
-          )}
-
-          {(!running || showDetails) && (
-          <div className="space-y-4">
-          {data.whyParticipate && (
-            <div className="rounded-2xl bg-gradient-primary p-5 text-primary-foreground shadow-elegant">
-              <p className="text-[11px] font-semibold uppercase tracking-wider text-gold">
-                لماذا نشارك
-              </p>
-              <p className="mt-2 text-sm font-semibold leading-relaxed">
-                {data.whyParticipate}
-              </p>
-            </div>
-          )}
-
-          {data.setup && (
-            <Section title="قبل أن تبدأ">
+          {/* ما نحتاجه */}
+          {!running && data.setup && (
+            <Section title="ما نحتاجه">
               <p className="whitespace-pre-line text-sm leading-relaxed text-foreground">
                 {data.setup}
               </p>
             </Section>
           )}
 
-          {data.steps && data.steps.length > 0 && (
+          {/* خطوات المشاركة — المصدر كما هو */}
+          {!running && data.steps && data.steps.length > 0 && (
             <Section
               title="خطوات المشاركة"
               right={
@@ -222,27 +216,54 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
             </Section>
           )}
 
-          {data.support && (
-            <Section title="كيف أجعل المشاركة أسهل؟">
-              <p className="whitespace-pre-line text-sm leading-relaxed text-foreground">
-                {data.support}
-              </p>
+          {/* هل فعلنا هذا اليوم؟ */}
+          {!running && (
+            <Section title="هل فعلنا هذا اليوم؟">
+              <Button
+                variant={doneToday ? "default" : "outline"}
+                className="min-h-11 w-full gap-2"
+                onClick={handleDoneToday}
+                aria-pressed={doneToday}
+              >
+                <CalendarCheck className="h-4 w-4" />
+                {doneToday ? "نعم، شاركنا اليوم" : "تسجيل مشاركة اليوم"}
+              </Button>
             </Section>
           )}
 
-          </div>
+          {/* إجراءات أساسية */}
+          {!running && (
+            <div className="grid gap-2 sm:grid-cols-2">
+              <Button
+                variant="outline"
+                className="min-h-11 w-full gap-2"
+                onClick={() => setShowVisual((v) => !v)}
+                aria-expanded={showVisual}
+              >
+                <Images className="h-4 w-4" />
+                {showVisual ? "إخفاء الخطوات البصرية" : "عرض الخطوات البصرية"}
+              </Button>
+              <Button variant="outline" className="min-h-11 w-full gap-2" asChild>
+                <Link to="/participation-guide" search={{ tab: "considerations" }}>
+                  <Info className="h-4 w-4" />
+                  عرض الاعتبارات
+                </Link>
+              </Button>
+            </div>
           )}
 
-          <SupportDuringExecution
-            opportunityId={data.id}
-            hasSteps={(data.steps?.length ?? 0) > 0}
-            onRunModeChange={(r) => {
-              setRunning(r);
-              if (!r) setShowDetails(false);
-            }}
-          />
+          {(showVisual || running) && (
+            <SupportDuringExecution
+              opportunityId={data.id}
+              hasSteps={(data.steps?.length ?? 0) > 0}
+              onRunModeChange={(r) => {
+                setRunning(r);
+                if (!r) setShowDetails(false);
+              }}
+            />
+          )}
 
-          {supportDecision?.decision === "Not Required" && (
+          {supportDecision?.decision === "Not Required" && !running && (
             <NoAssetNotice decision={supportDecision} />
           )}
 
@@ -258,65 +279,76 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
             />
           )}
 
-
-
+          {/* محتوى ثانوي مطوي */}
           {!running && (
-          <Accordion type="multiple" className="space-y-2">
-            <Item value="levels" title="ابدأ من المستوى المناسب">
-              <div className="space-y-2">
-                <Level label="موجهة" text={data.levels.guided} tone="soft" />
-                <Level label="مستقلة جزئياً" text={data.levels.shared} tone="mid" />
-                <Level label="مستقلة" text={data.levels.independent} tone="strong" />
-              </div>
-            </Item>
-            {data.progressIndicators && data.progressIndicators.length > 0 && (
-              <Item value="progress" title="مؤشرات التقدم">
-                <div className="flex flex-wrap gap-2">
-                  {data.progressIndicators.map((p) => (
-                    <span
-                      key={p}
-                      className="rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold text-primary"
-                    >
-                      {p}
-                    </span>
-                  ))}
+            <Accordion type="multiple" className="space-y-2">
+              {data.whyParticipate && (
+                <Item value="why" title="لماذا نشارك">
+                  <p className="leading-relaxed text-foreground">{data.whyParticipate}</p>
+                </Item>
+              )}
+              {data.support && (
+                <Item value="easier" title="كيف أجعل المشاركة أسهل؟">
+                  <p className="whitespace-pre-line leading-relaxed text-foreground">
+                    {data.support}
+                  </p>
+                </Item>
+              )}
+              <Item value="levels" title="ابدأ من المستوى المناسب">
+                <div className="space-y-2">
+                  <Level label="موجهة" text={data.levels.guided} tone="soft" />
+                  <Level label="مستقلة جزئياً" text={data.levels.shared} tone="mid" />
+                  <Level label="مستقلة" text={data.levels.independent} tone="strong" />
                 </div>
               </Item>
-            )}
-          </Accordion>
-          )}
-
-
-
-          {!running && data.nextStep && (
-            <Accordion type="multiple" className="space-y-2">
-              <Item value="next" title="ماذا بعد؟">
-                <p className="leading-relaxed">{data.nextStep}</p>
+              {data.progressIndicators && data.progressIndicators.length > 0 && (
+                <Item value="progress" title="مؤشرات التقدم">
+                  <div className="flex flex-wrap gap-2">
+                    {data.progressIndicators.map((p) => (
+                      <span
+                        key={p}
+                        className="rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold text-primary"
+                      >
+                        {p}
+                      </span>
+                    ))}
+                  </div>
+                </Item>
+              )}
+              {data.nextStep && (
+                <Item value="next" title="ماذا بعد؟">
+                  <p className="leading-relaxed">{data.nextStep}</p>
+                </Item>
+              )}
+              <Item value="context" title="أين تقع هذه المشاركة؟">
+                <ul className="space-y-1.5 text-foreground">
+                  <li>المجال: {data.domain}</li>
+                  {data.generalActivity && <li>السياق اليومي: {data.generalActivity}</li>}
+                  {data.lifeEvent && <li>حدث الحياة: {data.lifeEvent}</li>}
+                  {data.participationLevel && (
+                    <li>{participationLevelLabel[data.participationLevel]}</li>
+                  )}
+                </ul>
               </Item>
             </Accordion>
           )}
         </div>
 
         {!running && (
-        <div className="sticky bottom-0 grid grid-cols-3 gap-2 border-t border-border/60 bg-background/95 px-5 py-3 backdrop-blur">
-          <Button variant="outline" size="sm" onClick={handleSave} className="gap-1.5">
-            {saved ? <Check className="h-4 w-4" /> : <Bookmark className="h-4 w-4" />}
-            {saved ? "محفوظ" : "حفظ"}
-          </Button>
-          <Button variant="outline" size="sm" onClick={handleShare} className="gap-1.5">
-            <Share2 className="h-4 w-4" />
-            مشاركة
-          </Button>
-          <Button
-            size="sm"
-            onClick={onNext}
-            disabled={!onNext}
-            className="gap-1.5"
-          >
-            التالي
-            <ArrowLeft className="h-4 w-4" />
-          </Button>
-        </div>
+          <div className="sticky bottom-0 grid grid-cols-3 gap-2 border-t border-border/60 bg-background/95 px-5 py-3 backdrop-blur">
+            <Button variant="outline" size="sm" onClick={handleSave} className="gap-1.5">
+              {saved ? <Check className="h-4 w-4" /> : <Bookmark className="h-4 w-4" />}
+              {saved ? "محفوظ" : "حفظ"}
+            </Button>
+            <Button variant="outline" size="sm" onClick={handleShare} className="gap-1.5">
+              <Share2 className="h-4 w-4" />
+              مشاركة
+            </Button>
+            <Button size="sm" onClick={onNext} disabled={!onNext} className="gap-1.5">
+              التالي
+              <ArrowLeft className="h-4 w-4" />
+            </Button>
+          </div>
         )}
       </SheetContent>
     </Sheet>
