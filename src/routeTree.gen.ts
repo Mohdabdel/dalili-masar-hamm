@@ -19,6 +19,8 @@ import { Route as McpRouteImport } from './routes/mcp'
 import { Route as EducationSupportRouteImport } from './routes/education-support'
 import { Route as CommunitySupportRouteImport } from './routes/community-support'
 import { Route as CalendarRouteImport } from './routes/calendar'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ToolsIndexRouteImport } from './routes/tools.index'
 import { Route as ActivitiesIndexRouteImport } from './routes/activities.index'
@@ -31,6 +33,7 @@ import { Route as ActivitiesMyDayRouteImport } from './routes/activities.my-day'
 import { Route as ActivitiesLevelRouteImport } from './routes/activities.level'
 import { Route as ActivitiesBrowseRouteImport } from './routes/activities.browse'
 import { Route as ActivitiesCategoryRouteImport } from './routes/activities.$category'
+import { Route as AuthenticatedAccountRouteImport } from './routes/_authenticated/account'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
 import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
@@ -83,6 +86,15 @@ const CommunitySupportRoute = CommunitySupportRouteImport.update({
 const CalendarRoute = CalendarRouteImport.update({
   id: '/calendar',
   path: '/calendar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -145,6 +157,11 @@ const ActivitiesCategoryRoute = ActivitiesCategoryRouteImport.update({
   path: '/activities/$category',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAccountRoute = AuthenticatedAccountRouteImport.update({
+  id: '/account',
+  path: '/account',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const Char91DotwellKnownChar93OauthProtectedResourceRoute =
   Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
     id: '/.well-known/oauth-protected-resource',
@@ -166,6 +183,7 @@ const Char91DotmcpChar93InvokeToolToolRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
   '/calendar': typeof CalendarRoute
   '/community-support': typeof CommunitySupportRoute
   '/education-support': typeof EducationSupportRoute
@@ -178,6 +196,7 @@ export interface FileRoutesByFullPath {
   '/settings': typeof SettingsRouteWithChildren
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  '/account': typeof AuthenticatedAccountRoute
   '/activities/$category': typeof ActivitiesCategoryRoute
   '/activities/browse': typeof ActivitiesBrowseRoute
   '/activities/level': typeof ActivitiesLevelRoute
@@ -193,6 +212,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
   '/calendar': typeof CalendarRoute
   '/community-support': typeof CommunitySupportRoute
   '/education-support': typeof EducationSupportRoute
@@ -205,6 +225,7 @@ export interface FileRoutesByTo {
   '/settings': typeof SettingsRouteWithChildren
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  '/account': typeof AuthenticatedAccountRoute
   '/activities/$category': typeof ActivitiesCategoryRoute
   '/activities/browse': typeof ActivitiesBrowseRoute
   '/activities/level': typeof ActivitiesLevelRoute
@@ -221,6 +242,8 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/auth': typeof AuthRoute
   '/calendar': typeof CalendarRoute
   '/community-support': typeof CommunitySupportRoute
   '/education-support': typeof EducationSupportRoute
@@ -233,6 +256,7 @@ export interface FileRoutesById {
   '/settings': typeof SettingsRouteWithChildren
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  '/_authenticated/account': typeof AuthenticatedAccountRoute
   '/activities/$category': typeof ActivitiesCategoryRoute
   '/activities/browse': typeof ActivitiesBrowseRoute
   '/activities/level': typeof ActivitiesLevelRoute
@@ -250,6 +274,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/auth'
     | '/calendar'
     | '/community-support'
     | '/education-support'
@@ -262,6 +287,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
+    | '/account'
     | '/activities/$category'
     | '/activities/browse'
     | '/activities/level'
@@ -277,6 +303,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/auth'
     | '/calendar'
     | '/community-support'
     | '/education-support'
@@ -289,6 +316,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
+    | '/account'
     | '/activities/$category'
     | '/activities/browse'
     | '/activities/level'
@@ -304,6 +332,8 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
+    | '/auth'
     | '/calendar'
     | '/community-support'
     | '/education-support'
@@ -316,6 +346,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
+    | '/_authenticated/account'
     | '/activities/$category'
     | '/activities/browse'
     | '/activities/level'
@@ -332,6 +363,8 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AuthRoute: typeof AuthRoute
   CalendarRoute: typeof CalendarRoute
   CommunitySupportRoute: typeof CommunitySupportRoute
   EducationSupportRoute: typeof EducationSupportRoute
@@ -428,6 +461,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CalendarRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -512,6 +559,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ActivitiesCategoryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/account': {
+      id: '/_authenticated/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AuthenticatedAccountRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/.well-known/oauth-protected-resource': {
       id: '/.well-known/oauth-protected-resource'
       path: '/.well-known/oauth-protected-resource'
@@ -536,6 +590,17 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAccountRoute: typeof AuthenticatedAccountRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAccountRoute: AuthenticatedAccountRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 interface SettingsRouteChildren {
   SettingsAddEventRoute: typeof SettingsAddEventRoute
   SettingsFamilyRoute: typeof SettingsFamilyRoute
@@ -552,6 +617,8 @@ const SettingsRouteWithChildren = SettingsRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AuthRoute: AuthRoute,
   CalendarRoute: CalendarRoute,
   CommunitySupportRoute: CommunitySupportRoute,
   EducationSupportRoute: EducationSupportRoute,
