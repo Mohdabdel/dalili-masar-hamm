@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { Card, CardContent } from "@/components/ui/card";
-import { PlusCircle, Users } from "lucide-react";
+import { PlusCircle, Users, UserCircle } from "lucide-react";
 
 export const Route = createFileRoute("/settings")({
   head: () => ({
@@ -25,6 +25,12 @@ const items = [
     title: "ملف الأسرة",
     subtitle: "بيانات الأسرة والشاب أو الشابة",
     icon: Users,
+  },
+  {
+    to: "/account" as const,
+    title: "حساب الأسرة",
+    subtitle: "الدخول والخروج وحفظ بيانات أسرتكم",
+    icon: UserCircle,
   },
 ];
 
