@@ -15,6 +15,18 @@ export const Route = createFileRoute("/settings")({
 
 const items = [
   {
+    to: "/my-routine" as const,
+    title: "روتين يومنا",
+    subtitle: "ابنِ محطات يومكم من أحداث الحياة اليومية",
+    icon: CalendarClock,
+  },
+  {
+    to: "/active-participations" as const,
+    title: "المشاركات النشطة",
+    subtitle: "تابعوا ما تشاركون فيه حالياً وسجّلوا إنجاز اليوم",
+    icon: ListChecks,
+  },
+  {
     to: "/settings/add-event" as const,
     title: "إضافة حدث جديد",
     subtitle: "ابدأ بإنشاء حدث أو فرصة مشاركة جديدة",
