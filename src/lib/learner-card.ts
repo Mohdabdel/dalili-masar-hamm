@@ -46,7 +46,7 @@ export function getLearnerCard(opportunityId: string): LearnerCardData | null {
 
   return {
     title: card.title,
-    context: [opp.generalActivity, opp.lifeEvent].filter(Boolean).join(" › "),
+    context: card.description ?? "",
     steps: rawSteps.map((text, i) => ({
       text,
       image: aligned ? images[i].src : null,
