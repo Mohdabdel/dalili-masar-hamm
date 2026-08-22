@@ -97,3 +97,36 @@ export async function setTodayLog(
   });
   if (error) throw error;
 }
+
+/** يبحث عن مشاركة نشطة للمستخدم الحالي مرتبطة بهذه الفرصة (إن وُجدت). */
+export async function findActiveParticipationByOpportunity(
+  opportunityId: string,
+): Promise<ActiveParticipation | null> {
+  const { data: auth } = await supabase.auth.getUser();
+  if (!auth.user) return null;
+  const { data, error } = await supabase
+    .from("active_participations")
+    .select(
+      "id, opportunity_id, routine_station_id, status, completion_source, started_at, completed_at, closed_at",
+    )
+    .eq("opportunity_id", opportunityId)
+    .neq("status", "closed")
+    .order("started_at", { ascending: false })
+    .limit(1);
+  if (error) throw error;
+  return data?.[0] ?? null;
+}
+
+/** يقرأ سجل اليوم لمشاركة نشطة محددة. */
+export async function getTodayLog(
+  activeParticipationId: string,
+): Promise<DailyLog | null> {
+  const { data, error } = await supabase
+    .from("participation_daily_logs")
+    .select("id, active_participation_id, log_date, did_participate")
+    .eq("active_participation_id", activeParticipationId)
+    .eq("log_date", todayISO())
+    .limit(1);
+  if (error) throw error;
+  return data?.[0] ?? null;
+}
