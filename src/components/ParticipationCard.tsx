@@ -24,6 +24,11 @@ import { NoAssetNotice } from "@/components/NoAssetNotice";
 import { HumanSafetyNotice } from "@/components/HumanSafetyNotice";
 import { getSupportDecisionForOpportunity } from "@/lib/support-decisions";
 import { participationLevelLabel } from "@/lib/knowledge-base";
+import {
+  findActiveParticipationByOpportunity,
+  getTodayLog,
+  setTodayLog,
+} from "@/lib/active-participations";
 import type { ParticipationLevelKey } from "@/lib/home-hierarchy";
 
 export interface ParticipationLevelsInput {
@@ -78,6 +83,9 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
   const [showVisual, setShowVisual] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [safetyAcknowledged, setSafetyAcknowledged] = useState(false);
+  const [activeId, setActiveId] = useState<string | null>(null);
+  const [todayLogId, setTodayLogId] = useState<string | undefined>(undefined);
+  const [syncing, setSyncing] = useState(false);
 
   useEffect(() => {
     if (!open) {
@@ -88,11 +96,31 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
       setShowDetails(false);
       return;
     }
-    if (data) {
-      setSaved(readSet("saved-participation").has(data.id));
-      setDoneToday(readSet(todayKey()).has(data.id));
-    }
+    if (!data) return;
+    setSaved(readSet("saved-participation").has(data.id));
+    setDoneToday(readSet(todayKey()).has(data.id));
+    setActiveId(null);
+    setTodayLogId(undefined);
+
+    let cancelled = false;
+    (async () => {
+      try {
+        const active = await findActiveParticipationByOpportunity(data.id);
+        if (cancelled || !active) return;
+        setActiveId(active.id);
+        const log = await getTodayLog(active.id);
+        if (cancelled) return;
+        setTodayLogId(log?.id);
+        setDoneToday(!!log?.did_participate);
+      } catch {
+        /* تصفح حر أو بدون جلسة: يبقى السلوك المحلي */
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
   }, [open, data]);
+
 
   if (!data) return null;
 
@@ -121,11 +149,27 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
     toast(next ? "تم الحفظ" : "أزيلت من المحفوظات");
   };
 
-  const handleDoneToday = () => {
+  const handleDoneToday = async () => {
     const next = !doneToday;
+    if (!activeId) {
+      setDoneToday(next);
+      toggleStored(todayKey(), next);
+      toast(next ? "سُجّلت مشاركة اليوم" : "أُلغي تسجيل اليوم");
+      return;
+    }
+    setSyncing(true);
     setDoneToday(next);
-    toggleStored(todayKey(), next);
-    toast(next ? "سُجّلت مشاركة اليوم" : "أُلغي تسجيل اليوم");
+    try {
+      await setTodayLog(activeId, next, todayLogId);
+      const log = await getTodayLog(activeId);
+      setTodayLogId(log?.id);
+      toast(next ? "سُجّلت مشاركة اليوم" : "أُلغي تسجيل اليوم");
+    } catch {
+      setDoneToday(!next);
+      toast("تعذّر حفظ تسجيل اليوم");
+    } finally {
+      setSyncing(false);
+    }
   };
 
   const handleShare = async () => {
@@ -223,6 +267,7 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
                 variant={doneToday ? "default" : "outline"}
                 className="min-h-11 w-full gap-2"
                 onClick={handleDoneToday}
+                disabled={syncing}
                 aria-pressed={doneToday}
               >
                 <CalendarCheck className="h-4 w-4" />
