@@ -78,6 +78,9 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
   const [showVisual, setShowVisual] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [safetyAcknowledged, setSafetyAcknowledged] = useState(false);
+  const [activeId, setActiveId] = useState<string | null>(null);
+  const [todayLogId, setTodayLogId] = useState<string | undefined>(undefined);
+  const [syncing, setSyncing] = useState(false);
 
   useEffect(() => {
     if (!open) {
@@ -88,11 +91,31 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
       setShowDetails(false);
       return;
     }
-    if (data) {
-      setSaved(readSet("saved-participation").has(data.id));
-      setDoneToday(readSet(todayKey()).has(data.id));
-    }
+    if (!data) return;
+    setSaved(readSet("saved-participation").has(data.id));
+    setDoneToday(readSet(todayKey()).has(data.id));
+    setActiveId(null);
+    setTodayLogId(undefined);
+
+    let cancelled = false;
+    (async () => {
+      try {
+        const active = await findActiveParticipationByOpportunity(data.id);
+        if (cancelled || !active) return;
+        setActiveId(active.id);
+        const log = await getTodayLog(active.id);
+        if (cancelled) return;
+        setTodayLogId(log?.id);
+        setDoneToday(!!log?.did_participate);
+      } catch {
+        /* تصفح حر أو بدون جلسة: يبقى السلوك المحلي */
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
   }, [open, data]);
+
 
   if (!data) return null;
 
