@@ -1,8 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { z } from "zod";
-import { AlertTriangle, Info, ShieldAlert } from "lucide-react";
+import { AlertTriangle, ChevronLeft, Info, ShieldAlert } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 import {
   Accordion,
   AccordionContent,
