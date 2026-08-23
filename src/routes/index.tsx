@@ -61,12 +61,6 @@ const SERVICES = [
   },
 ];
 
-function LandingPage() {
-  return (
-    <PageShell
-      title="دليلي"
-      description="دليل دعم وتمكين أسر الأشخاص من ذوي الإعاقة"
-    >
 const FAMILY_TOOLS = [
   {
     title: "بناء روتيننا اليومي",
@@ -94,6 +88,8 @@ function LandingPage() {
       title="دليلي"
       description="دليل دعم وتمكين أسر الأشخاص من ذوي الإعاقة"
     >
+      <section className="mt-1 rounded-3xl bg-gradient-primary p-6 text-primary-foreground shadow-elegant sm:p-8">
+
 
         <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
           منصة واحدة · ثلاث خدمات
