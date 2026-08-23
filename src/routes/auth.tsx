@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, useNavigate, useRouter, Link } from "@tanstack/react-router";
+import { ChevronRight, Home } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,6 +31,7 @@ export const Route = createFileRoute("/auth")({
 
 function AuthPage() {
   const navigate = useNavigate();
+  const router = useRouter();
   const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -72,6 +74,24 @@ function AuthPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-5 py-10">
       <div className="w-full max-w-md">
+        <div className="mb-4 flex items-center justify-between gap-2">
+          <button
+            type="button"
+            onClick={() => router.history.back()}
+            className="inline-flex min-h-11 items-center gap-1 rounded-xl border border-border/60 bg-card px-3 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
+            aria-label="رجوع"
+          >
+            <ChevronRight className="h-4 w-4" />
+            رجوع
+          </button>
+          <Link
+            to="/"
+            className="inline-flex min-h-11 items-center gap-1 rounded-xl px-3 py-2 text-sm font-semibold text-primary hover:underline"
+          >
+            <Home className="h-4 w-4" />
+            الرئيسية
+          </Link>
+        </div>
         <div className="mb-6 text-center">
           <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-gold text-primary shadow-card-soft">
             <span className="text-2xl font-bold">د</span>
