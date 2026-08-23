@@ -1,6 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { z } from "zod";
-import { CalendarDays, ChevronLeft, Layers, ListChecks } from "lucide-react";
+import {
+  CalendarDays,
+  CalendarClock,
+  ChevronLeft,
+  Layers,
+  ListChecks,
+  Sparkles,
+} from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import {
   participationLevelDescription,
