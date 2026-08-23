@@ -67,7 +67,34 @@ function LandingPage() {
       title="دليلي"
       description="دليل دعم وتمكين أسر الأشخاص من ذوي الإعاقة"
     >
-      <section className="mt-1 rounded-3xl bg-gradient-primary p-6 text-primary-foreground shadow-elegant sm:p-8">
+const FAMILY_TOOLS = [
+  {
+    title: "بناء روتيننا اليومي",
+    description: "رتّبوا محطات يومكم (صباح، بعد الظهر، مساء) واربطوا بها المشاركات.",
+    icon: CalendarClock,
+    to: "/my-routine" as const,
+  },
+  {
+    title: "ساعدني في الاختيار",
+    description: "ثلاث خطوات قصيرة تقترح عليكم فرصة مشاركة مناسبة الآن.",
+    icon: Sparkles,
+    to: "/help-me-choose" as const,
+  },
+  {
+    title: "مشاركاتي النشطة",
+    description: "تابعوا المشاركات الجارية وسجّلوا ما فعلتموه اليوم.",
+    icon: ListChecks,
+    to: "/active-participations" as const,
+  },
+];
+
+function LandingPage() {
+  return (
+    <PageShell
+      title="دليلي"
+      description="دليل دعم وتمكين أسر الأشخاص من ذوي الإعاقة"
+    >
+
         <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
           منصة واحدة · ثلاث خدمات
         </p>
