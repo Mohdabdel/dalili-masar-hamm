@@ -1,6 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ChevronLeft, HeartHandshake, MapPinned, GraduationCap } from "lucide-react";
+import {
+  ChevronLeft,
+  HeartHandshake,
+  MapPinned,
+  GraduationCap,
+  CalendarClock,
+  Sparkles,
+  ListChecks,
+} from "lucide-react";
 import { PageShell } from "@/components/PageShell";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -52,6 +61,27 @@ const SERVICES = [
   },
 ];
 
+const FAMILY_TOOLS = [
+  {
+    title: "بناء روتيننا اليومي",
+    description: "رتّبوا محطات يومكم (صباح، بعد الظهر، مساء) واربطوا بها المشاركات.",
+    icon: CalendarClock,
+    to: "/my-routine" as const,
+  },
+  {
+    title: "ساعدني في الاختيار",
+    description: "ثلاث خطوات قصيرة تقترح عليكم فرصة مشاركة مناسبة الآن.",
+    icon: Sparkles,
+    to: "/help-me-choose" as const,
+  },
+  {
+    title: "مشاركاتي النشطة",
+    description: "تابعوا المشاركات الجارية وسجّلوا ما فعلتموه اليوم.",
+    icon: ListChecks,
+    to: "/active-participations" as const,
+  },
+];
+
 function LandingPage() {
   return (
     <PageShell
@@ -59,6 +89,8 @@ function LandingPage() {
       description="دليل دعم وتمكين أسر الأشخاص من ذوي الإعاقة"
     >
       <section className="mt-1 rounded-3xl bg-gradient-primary p-6 text-primary-foreground shadow-elegant sm:p-8">
+
+
         <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
           منصة واحدة · ثلاث خدمات
         </p>
@@ -97,6 +129,33 @@ function LandingPage() {
           </Link>
         ))}
       </section>
+
+      <section id="family-tools" className="mt-6 space-y-3">
+        <h2 className="px-1 font-display text-lg font-bold text-foreground">
+          ابدأ من هنا
+        </h2>
+        {FAMILY_TOOLS.map(({ title, description, icon: Icon, to }) => (
+          <Link
+            key={title}
+            to={to}
+            className="group flex items-start gap-4 rounded-2xl border-2 border-border bg-card p-5 shadow-card-soft transition-all hover:-translate-y-0.5 hover:border-gold hover:shadow-elegant"
+          >
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-gold text-primary shadow-card-soft">
+              <Icon className="h-5 w-5" strokeWidth={2} />
+            </span>
+            <span className="min-w-0 flex-1 text-right">
+              <span className="block text-base font-bold text-foreground">
+                {title}
+              </span>
+              <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
+                {description}
+              </span>
+            </span>
+            <ChevronLeft className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
+          </Link>
+        ))}
+      </section>
+
     </PageShell>
   );
 }

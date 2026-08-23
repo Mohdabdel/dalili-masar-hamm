@@ -16,6 +16,7 @@ import { Route as ReminderRouteImport } from './routes/reminder'
 import { Route as ParticipationGuideRouteImport } from './routes/participation-guide'
 import { Route as MessagesRouteImport } from './routes/messages'
 import { Route as McpRouteImport } from './routes/mcp'
+import { Route as HelpMeChooseRouteImport } from './routes/help-me-choose'
 import { Route as EducationSupportRouteImport } from './routes/education-support'
 import { Route as CommunitySupportRouteImport } from './routes/community-support'
 import { Route as CalendarRouteImport } from './routes/calendar'
@@ -73,6 +74,11 @@ const MessagesRoute = MessagesRouteImport.update({
 const McpRoute = McpRouteImport.update({
   id: '/mcp',
   path: '/mcp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpMeChooseRoute = HelpMeChooseRouteImport.update({
+  id: '/help-me-choose',
+  path: '/help-me-choose',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EducationSupportRoute = EducationSupportRouteImport.update({
@@ -200,6 +206,7 @@ export interface FileRoutesByFullPath {
   '/calendar': typeof CalendarRoute
   '/community-support': typeof CommunitySupportRoute
   '/education-support': typeof EducationSupportRoute
+  '/help-me-choose': typeof HelpMeChooseRoute
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
   '/participation-guide': typeof ParticipationGuideRoute
@@ -231,6 +238,7 @@ export interface FileRoutesByTo {
   '/calendar': typeof CalendarRoute
   '/community-support': typeof CommunitySupportRoute
   '/education-support': typeof EducationSupportRoute
+  '/help-me-choose': typeof HelpMeChooseRoute
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
   '/participation-guide': typeof ParticipationGuideRoute
@@ -264,6 +272,7 @@ export interface FileRoutesById {
   '/calendar': typeof CalendarRoute
   '/community-support': typeof CommunitySupportRoute
   '/education-support': typeof EducationSupportRoute
+  '/help-me-choose': typeof HelpMeChooseRoute
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
   '/participation-guide': typeof ParticipationGuideRoute
@@ -297,6 +306,7 @@ export interface FileRouteTypes {
     | '/calendar'
     | '/community-support'
     | '/education-support'
+    | '/help-me-choose'
     | '/mcp'
     | '/messages'
     | '/participation-guide'
@@ -328,6 +338,7 @@ export interface FileRouteTypes {
     | '/calendar'
     | '/community-support'
     | '/education-support'
+    | '/help-me-choose'
     | '/mcp'
     | '/messages'
     | '/participation-guide'
@@ -360,6 +371,7 @@ export interface FileRouteTypes {
     | '/calendar'
     | '/community-support'
     | '/education-support'
+    | '/help-me-choose'
     | '/mcp'
     | '/messages'
     | '/participation-guide'
@@ -393,6 +405,7 @@ export interface RootRouteChildren {
   CalendarRoute: typeof CalendarRoute
   CommunitySupportRoute: typeof CommunitySupportRoute
   EducationSupportRoute: typeof EducationSupportRoute
+  HelpMeChooseRoute: typeof HelpMeChooseRoute
   McpRoute: typeof McpRoute
   MessagesRoute: typeof MessagesRoute
   ParticipationGuideRoute: typeof ParticipationGuideRoute
@@ -463,6 +476,13 @@ declare module '@tanstack/react-router' {
       path: '/mcp'
       fullPath: '/mcp'
       preLoaderRoute: typeof McpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help-me-choose': {
+      id: '/help-me-choose'
+      path: '/help-me-choose'
+      fullPath: '/help-me-choose'
+      preLoaderRoute: typeof HelpMeChooseRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/education-support': {
@@ -666,6 +686,7 @@ const rootRouteChildren: RootRouteChildren = {
   CalendarRoute: CalendarRoute,
   CommunitySupportRoute: CommunitySupportRoute,
   EducationSupportRoute: EducationSupportRoute,
+  HelpMeChooseRoute: HelpMeChooseRoute,
   McpRoute: McpRoute,
   MessagesRoute: MessagesRoute,
   ParticipationGuideRoute: ParticipationGuideRoute,
