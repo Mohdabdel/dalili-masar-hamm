@@ -100,6 +100,43 @@ function OptionsPage() {
           </Link>
         </div>
 
+        <Link
+          to="/my-routine"
+          className="group flex items-start gap-4 rounded-2xl border-2 border-border bg-card p-5 shadow-card-soft transition-all hover:-translate-y-0.5 hover:border-gold hover:shadow-elegant"
+        >
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-gold text-primary shadow-card-soft">
+            <CalendarClock className="h-5 w-5" strokeWidth={2} />
+          </span>
+          <span className="min-w-0 flex-1 text-start">
+            <span className="block text-base font-bold text-foreground">
+              مشاركات حسب الروتين اليومي
+            </span>
+            <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
+              ابدأوا من محطات روتينكم المحفوظة واربطوا كل محطة بفرصة مشاركة.
+            </span>
+          </span>
+          <ChevronLeft className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
+        </Link>
+
+        <Link
+          to="/help-me-choose"
+          className="group flex items-start gap-4 rounded-2xl border-2 border-border bg-card p-5 shadow-card-soft transition-all hover:-translate-y-0.5 hover:border-gold hover:shadow-elegant"
+        >
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-gold text-primary shadow-card-soft">
+            <Sparkles className="h-5 w-5" strokeWidth={2} />
+          </span>
+          <span className="min-w-0 flex-1 text-start">
+            <span className="block text-base font-bold text-foreground">
+              ساعدني في الاختيار
+            </span>
+            <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
+              مسار موجّه في ثلاث خطوات يقترح عليكم فرصة مشاركة مناسبة الآن.
+            </span>
+          </span>
+          <ChevronLeft className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
+        </Link>
+
+
         {OPTIONS.map(({ title, description, view, icon: Icon }) => (
           <Link
             key={view}
