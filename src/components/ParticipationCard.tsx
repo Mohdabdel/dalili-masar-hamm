@@ -203,7 +203,20 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
               ضمن: {context}
             </p>
           )}
+          <div className="flex flex-wrap items-center gap-2 pt-1">
+            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary">
+              بطاقة الداعم
+            </span>
+            <Link
+              to="/learner/$id"
+              params={{ id: data.id }}
+              className="rounded-full border border-gold/60 bg-gold/10 px-3 py-1 text-xs font-bold text-primary transition-colors hover:bg-gold/20"
+            >
+              عرض نسخة المشارك
+            </Link>
+          </div>
         </SheetHeader>
+
 
         <div className="space-y-4 px-5 pb-6">
           {/* ما نحتاجه */}
