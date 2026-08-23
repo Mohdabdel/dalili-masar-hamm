@@ -1,6 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ChevronLeft, HeartHandshake, MapPinned, GraduationCap } from "lucide-react";
+import {
+  ChevronLeft,
+  HeartHandshake,
+  MapPinned,
+  GraduationCap,
+  CalendarClock,
+  Sparkles,
+  ListChecks,
+} from "lucide-react";
 import { PageShell } from "@/components/PageShell";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
