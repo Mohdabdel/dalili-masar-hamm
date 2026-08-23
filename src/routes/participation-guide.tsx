@@ -241,33 +241,33 @@ function ConsiderationsTab() {
 
 function ParticipationGuidePage() {
   const { tab } = Route.useSearch();
-  const activeTab = tab === "considerations" ? "considerations" : "guide";
+  const isConsiderations = tab === "considerations";
   return (
     <PageShell
-      title="دليل الاستخدام"
-      subtitle="طريقة الاستخدام واعتبارات المشاركة"
+      title={isConsiderations ? "اعتبارات الاستخدام" : "دليل الاستخدام"}
+      subtitle={
+        isConsiderations
+          ? "اعتبارات عملية تخص المشارك والداعم والفرصة والبيئة"
+          : "طريقة استخدام الدليل خطوة بخطوة"
+      }
       breadcrumbs={[
         { label: "دليلي للمشاركة الحياتية", to: "/activities" },
-        { label: "دليل الاستخدام" },
+        { label: isConsiderations ? "اعتبارات الاستخدام" : "دليل الاستخدام" },
       ]}
     >
-      <Tabs key={activeTab} defaultValue={activeTab} dir="rtl" className="w-full">
-        <TabsList className="mb-4 grid w-full grid-cols-2">
-          <TabsTrigger value="guide" className="text-sm font-bold">
-            دليل الاستخدام
-          </TabsTrigger>
-          <TabsTrigger value="considerations" className="text-sm font-bold">
-            اعتبارات المشاركة
-          </TabsTrigger>
-        </TabsList>
-        <TabsContent value="guide">
-          <GuideTab />
-        </TabsContent>
-        <TabsContent value="considerations">
-          <ConsiderationsTab />
-        </TabsContent>
-      </Tabs>
+      <div dir="rtl" className="text-start">
+        {isConsiderations ? <ConsiderationsTab /> : <GuideTab />}
+
+        <Link
+          to="/activities/level"
+          className="mt-6 flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-gold p-4 text-base font-bold text-primary shadow-elegant transition-transform hover:-translate-y-0.5"
+        >
+          ابدأ الآن
+          <ChevronLeft className="h-5 w-5" />
+        </Link>
+      </div>
     </PageShell>
   );
 }
+
 
