@@ -129,6 +129,33 @@ function LandingPage() {
           </Link>
         ))}
       </section>
+
+      <section id="family-tools" className="mt-6 space-y-3">
+        <h2 className="px-1 font-display text-lg font-bold text-foreground">
+          ابدأ من هنا
+        </h2>
+        {FAMILY_TOOLS.map(({ title, description, icon: Icon, to }) => (
+          <Link
+            key={title}
+            to={to}
+            className="group flex items-start gap-4 rounded-2xl border-2 border-border bg-card p-5 shadow-card-soft transition-all hover:-translate-y-0.5 hover:border-gold hover:shadow-elegant"
+          >
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-gold text-primary shadow-card-soft">
+              <Icon className="h-5 w-5" strokeWidth={2} />
+            </span>
+            <span className="min-w-0 flex-1 text-right">
+              <span className="block text-base font-bold text-foreground">
+                {title}
+              </span>
+              <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
+                {description}
+              </span>
+            </span>
+            <ChevronLeft className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
+          </Link>
+        ))}
+      </section>
+
     </PageShell>
   );
 }
