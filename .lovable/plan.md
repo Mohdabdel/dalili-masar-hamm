@@ -64,7 +64,7 @@ lab.tsx                      تخطيط Lab: Outlet + LabShell + Scenario Switch
 | 16 | `/lab/card/$cardId` | Learner Card #1: التاريخ، المشاركة، الخطوات المصورة المعتمدة والتسلسل | preview/participations | بدء التنفيذ | `/lab/run/$cardId` | `card.opened` | صور الخطوات، `learner.$id` كمرجع | `LabLearnerCard` |
 | 17 | `/lab/run/$cardId` | Execution Mode: خطوة واحدة/شاشة، Full screen لجهاز منفصل، الدعم عند الطلب | card | إنهاء | `/lab/feedback/$cardId` | `run.completedSteps`, `run.count++` | `VisualFramePilot`, `ReminderCardPilot` كنماذج | `LabExecutionMode`, `LabSupportDrawer` |
 | 18 | `/lab/feedback/$cardId` | «كيف كانت المشاركة اليوم؟» 🙂 مريحة / 😐 عادية / 🙁 صعبة اليوم — أسباب اختيارية عند 🙁 فقط، بلا درجات | run | تسجيل | `/lab/participations` أو `/lab/lifecycle` | `feedback[]` | — | `LabFeedbackSheet`, `LabReasonChips` |
-| 19 | `/lab/lifecycle/$id` | بعد عدة مرات: نستمر كما هي / نغير شيئاً / نوسع المشاركة / نجعلها من روتيننا / نتوقف عنها الآن — بلا ترقية تلقائية | feedback أو participations | اختيار مسار | Workspace جديد أو participations | `lifecycle.state`, نسخة بطاقة جديدة عند التوسيع | — | `LabLifecycleChoices`, `LabCardVersions` |
+| 19 | `/lab/lifecycle/$id` | بعد عدة مرات: نستمر كما هي / نغير شيئاً / نوسع المشاركة / نجعلها من روتيننا / نتوقف عنها الآن — بلا ترقية تلقائية. عند «مشاركة أوسع» لا يفترض النظام أن الخطوة التالية في التسلسل هي التوسعة الصحيحة: الأسرة تختار المشاركة الأوسع بنفسها أو تعود إلى الـWorkspace، والنظام يقترح فقط كخيار قابل للتجاهل | feedback أو participations | اختيار مسار | Workspace جديد أو participations | `lifecycle.state`, نسخة بطاقة جديدة عند التوسيع مع حفظ السابقة | — | `LabLifecycleChoices`, `LabCardVersions`, `LabExpandChoice` |
 | 20 | `/lab/participations` | «مشاركات نكررها الآن»: المشاركة، الحدث، عدد مرات الاستخدام، آخر استخدام، بدء التنفيذ + قسم «من مشاركاتنا المعتادة» | Lab nav | بدء / فتح دورة الحياة | `/lab/run` أو `/lab/lifecycle` | `lastOpened` | — | `LabParticipationsBoard`, `LabRepeatBadge` |
 | 21 | `/lab/visual` | طبقة بصرية مولَّدة من بيانات الروتين نفسها: Visual Schedule، Now/Next، Tell Me Before، Visual Timer، Visual Sequence — بلا إعادة إدخال | routine/support | فتح أداة | `/lab/visual/$toolId` | — | `visual-tools/*`, أصول WebP | `LabVisualRoutineLayer` |
 | 22 | `/lab/visual/$toolId` | أداة بصرية مفردة + نسخة للطباعة | visual | طباعة/عرض | رجوع | `tools[]` | `VisualToolPreview` كمرجع | `LabToolCanvas`, `LabPrintSheet` |
@@ -105,8 +105,10 @@ LabState {
   participations: [{ id, opportunityId, eventId, status, timesShared, lastSharedAt, stableInRoutine }],
   setups: { [participationId]: { priorSteps[], stopPointStepId, supports[] } },
   cards: [{ id, participationId, version, date, steps[], approvedAt }],
+  // completedSteps: لإدارة انتقال الشاشة بين الخطوات داخل Lab فقط.
+  // ليس مؤشر إنجاز ولا نسبة إكمال، ولا يُشتق منه أي تقدم أو تقييم.
   runs: [{ cardId, date, completedSteps[] }],
-  feedback: [{ cardId, date, tone: 'easy'|'usual'|'hard', reasons[] }],
+  feedback: [{ cardId, date, tone: 'comfortable'|'usual'|'difficult_today', reasons[] }],
   weaving: { interests[], matches[] },
   suggestions: []
 }
@@ -114,7 +116,8 @@ LabState {
 
 - المحتوى الحقيقي (المجالات/الأحداث/الفرص/البطاقات/الأدلة/المصادر) يُقرأ من CSV الحالي عبر `src/lab/data/knowledge-read.ts` (قراءة فقط).
 - كل الكتابة في `LabStateProvider` (reducer) + `sessionStorage:dalili-lab-v1`.
-- لا حقول Score/Mastery/Ability في أي مكان من النموذج.
+- لا حقول Score/Mastery/Ability في أي مكان من النموذج، ولا اشتقاق نسب إكمال من `completedSteps`.
+- قيم `tone` الداخلية: `comfortable` (مريحة) · `usual` (عادية) · `difficult_today` (صعبة اليوم).
 
 ## 5. Scenario Switcher
 
@@ -164,4 +167,4 @@ LabState {
 
 ## 10. الإزالة الكاملة
 
-حذف `src/routes/lab*.tsx` + مجلد `src/lab/` + قاعدة `no-restricted-imports` = إزالة كاملة بلا أثر. التوثيق في `docs/execution/DALILI_LAB_PROTOTYPE_V1.md` (داخل نطاق Lab، وسأطلب موافقتك قبل إنشائه إن اعتبرته خارج النطاق).
+حذف `src/routes/lab*.tsx` + مجلد `src/lab/` + قاعدة `no-restricted-imports` = إزالة كاملة بلا أثر. لا ملف توثيق خارج نطاق العزل الآن؛ يؤجَّل التوثيق إلى ما بعد نجاح النموذج.
