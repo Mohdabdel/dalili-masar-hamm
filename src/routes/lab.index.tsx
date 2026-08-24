@@ -17,6 +17,11 @@ function LabIndex() {
         description="المدخل الأساسي هو يومكم كما هو، لا قائمة أنشطة."
       >
         <LabGrid>
+          <LabChoiceCard
+            title="نموذج المشاركة (Slice)"
+            hint="الإفطار · الغسيل · التسوق — من الحدث إلى بطاقة المشارك"
+            to="/lab/slice"
+          />
           <LabChoiceCard title="ابدأ من روتينكم" hint="ما الذي يحدث في يومكم عادة؟" to="/lab/start" />
           <LabChoiceCard title="محطات اليوم" hint="اختيار محطة واحدة الآن" to="/lab/stations" />
           <LabChoiceCard title="روتيننا" hint="محطات اليوم كما رتبتموها" to="/lab/routine" />
