@@ -105,8 +105,10 @@ LabState {
   participations: [{ id, opportunityId, eventId, status, timesShared, lastSharedAt, stableInRoutine }],
   setups: { [participationId]: { priorSteps[], stopPointStepId, supports[] } },
   cards: [{ id, participationId, version, date, steps[], approvedAt }],
+  // completedSteps: لإدارة انتقال الشاشة بين الخطوات داخل Lab فقط.
+  // ليس مؤشر إنجاز ولا نسبة إكمال، ولا يُشتق منه أي تقدم أو تقييم.
   runs: [{ cardId, date, completedSteps[] }],
-  feedback: [{ cardId, date, tone: 'easy'|'usual'|'hard', reasons[] }],
+  feedback: [{ cardId, date, tone: 'comfortable'|'usual'|'difficult_today', reasons[] }],
   weaving: { interests[], matches[] },
   suggestions: []
 }
