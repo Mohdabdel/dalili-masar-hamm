@@ -31,6 +31,13 @@ import { Route as ToolsProjectIdRouteImport } from './routes/tools.$projectId'
 import { Route as SettingsFamilyRouteImport } from './routes/settings.family'
 import { Route as SettingsAddEventRouteImport } from './routes/settings.add-event'
 import { Route as LearnerIdRouteImport } from './routes/learner.$id'
+import { Route as LabWeavingRouteImport } from './routes/lab.weaving'
+import { Route as LabVisualRouteImport } from './routes/lab.visual'
+import { Route as LabStartRouteImport } from './routes/lab.start'
+import { Route as LabRoutineRouteImport } from './routes/lab.routine'
+import { Route as LabParticipationsRouteImport } from './routes/lab.participations'
+import { Route as LabCommunityRouteImport } from './routes/lab.community'
+import { Route as LabAiRouteImport } from './routes/lab.ai'
 import { Route as ActivitiesOptionsRouteImport } from './routes/activities.options'
 import { Route as ActivitiesMyDayRouteImport } from './routes/activities.my-day'
 import { Route as ActivitiesLevelRouteImport } from './routes/activities.level'
@@ -152,6 +159,41 @@ const LearnerIdRoute = LearnerIdRouteImport.update({
   path: '/learner/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LabWeavingRoute = LabWeavingRouteImport.update({
+  id: '/weaving',
+  path: '/weaving',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabVisualRoute = LabVisualRouteImport.update({
+  id: '/visual',
+  path: '/visual',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabStartRoute = LabStartRouteImport.update({
+  id: '/start',
+  path: '/start',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabRoutineRoute = LabRoutineRouteImport.update({
+  id: '/routine',
+  path: '/routine',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabParticipationsRoute = LabParticipationsRouteImport.update({
+  id: '/participations',
+  path: '/participations',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabCommunityRoute = LabCommunityRouteImport.update({
+  id: '/community',
+  path: '/community',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabAiRoute = LabAiRouteImport.update({
+  id: '/ai',
+  path: '/ai',
+  getParentRoute: () => LabRoute,
+} as any)
 const ActivitiesOptionsRoute = ActivitiesOptionsRouteImport.update({
   id: '/activities/options',
   path: '/activities/options',
@@ -237,6 +279,13 @@ export interface FileRoutesByFullPath {
   '/activities/level': typeof ActivitiesLevelRoute
   '/activities/my-day': typeof ActivitiesMyDayRoute
   '/activities/options': typeof ActivitiesOptionsRoute
+  '/lab/ai': typeof LabAiRoute
+  '/lab/community': typeof LabCommunityRoute
+  '/lab/participations': typeof LabParticipationsRoute
+  '/lab/routine': typeof LabRoutineRoute
+  '/lab/start': typeof LabStartRoute
+  '/lab/visual': typeof LabVisualRoute
+  '/lab/weaving': typeof LabWeavingRoute
   '/learner/$id': typeof LearnerIdRoute
   '/settings/add-event': typeof SettingsAddEventRoute
   '/settings/family': typeof SettingsFamilyRoute
@@ -270,6 +319,13 @@ export interface FileRoutesByTo {
   '/activities/level': typeof ActivitiesLevelRoute
   '/activities/my-day': typeof ActivitiesMyDayRoute
   '/activities/options': typeof ActivitiesOptionsRoute
+  '/lab/ai': typeof LabAiRoute
+  '/lab/community': typeof LabCommunityRoute
+  '/lab/participations': typeof LabParticipationsRoute
+  '/lab/routine': typeof LabRoutineRoute
+  '/lab/start': typeof LabStartRoute
+  '/lab/visual': typeof LabVisualRoute
+  '/lab/weaving': typeof LabWeavingRoute
   '/learner/$id': typeof LearnerIdRoute
   '/settings/add-event': typeof SettingsAddEventRoute
   '/settings/family': typeof SettingsFamilyRoute
@@ -306,6 +362,13 @@ export interface FileRoutesById {
   '/activities/level': typeof ActivitiesLevelRoute
   '/activities/my-day': typeof ActivitiesMyDayRoute
   '/activities/options': typeof ActivitiesOptionsRoute
+  '/lab/ai': typeof LabAiRoute
+  '/lab/community': typeof LabCommunityRoute
+  '/lab/participations': typeof LabParticipationsRoute
+  '/lab/routine': typeof LabRoutineRoute
+  '/lab/start': typeof LabStartRoute
+  '/lab/visual': typeof LabVisualRoute
+  '/lab/weaving': typeof LabWeavingRoute
   '/learner/$id': typeof LearnerIdRoute
   '/settings/add-event': typeof SettingsAddEventRoute
   '/settings/family': typeof SettingsFamilyRoute
@@ -342,6 +405,13 @@ export interface FileRouteTypes {
     | '/activities/level'
     | '/activities/my-day'
     | '/activities/options'
+    | '/lab/ai'
+    | '/lab/community'
+    | '/lab/participations'
+    | '/lab/routine'
+    | '/lab/start'
+    | '/lab/visual'
+    | '/lab/weaving'
     | '/learner/$id'
     | '/settings/add-event'
     | '/settings/family'
@@ -375,6 +445,13 @@ export interface FileRouteTypes {
     | '/activities/level'
     | '/activities/my-day'
     | '/activities/options'
+    | '/lab/ai'
+    | '/lab/community'
+    | '/lab/participations'
+    | '/lab/routine'
+    | '/lab/start'
+    | '/lab/visual'
+    | '/lab/weaving'
     | '/learner/$id'
     | '/settings/add-event'
     | '/settings/family'
@@ -410,6 +487,13 @@ export interface FileRouteTypes {
     | '/activities/level'
     | '/activities/my-day'
     | '/activities/options'
+    | '/lab/ai'
+    | '/lab/community'
+    | '/lab/participations'
+    | '/lab/routine'
+    | '/lab/start'
+    | '/lab/visual'
+    | '/lab/weaving'
     | '/learner/$id'
     | '/settings/add-event'
     | '/settings/family'
@@ -606,6 +690,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LearnerIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lab/weaving': {
+      id: '/lab/weaving'
+      path: '/weaving'
+      fullPath: '/lab/weaving'
+      preLoaderRoute: typeof LabWeavingRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/visual': {
+      id: '/lab/visual'
+      path: '/visual'
+      fullPath: '/lab/visual'
+      preLoaderRoute: typeof LabVisualRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/start': {
+      id: '/lab/start'
+      path: '/start'
+      fullPath: '/lab/start'
+      preLoaderRoute: typeof LabStartRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/routine': {
+      id: '/lab/routine'
+      path: '/routine'
+      fullPath: '/lab/routine'
+      preLoaderRoute: typeof LabRoutineRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/participations': {
+      id: '/lab/participations'
+      path: '/participations'
+      fullPath: '/lab/participations'
+      preLoaderRoute: typeof LabParticipationsRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/community': {
+      id: '/lab/community'
+      path: '/community'
+      fullPath: '/lab/community'
+      preLoaderRoute: typeof LabCommunityRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/ai': {
+      id: '/lab/ai'
+      path: '/ai'
+      fullPath: '/lab/ai'
+      preLoaderRoute: typeof LabAiRouteImport
+      parentRoute: typeof LabRoute
+    }
     '/activities/options': {
       id: '/activities/options'
       path: '/activities/options'
@@ -703,10 +836,24 @@ const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
 interface LabRouteChildren {
+  LabAiRoute: typeof LabAiRoute
+  LabCommunityRoute: typeof LabCommunityRoute
+  LabParticipationsRoute: typeof LabParticipationsRoute
+  LabRoutineRoute: typeof LabRoutineRoute
+  LabStartRoute: typeof LabStartRoute
+  LabVisualRoute: typeof LabVisualRoute
+  LabWeavingRoute: typeof LabWeavingRoute
   LabIndexRoute: typeof LabIndexRoute
 }
 
 const LabRouteChildren: LabRouteChildren = {
+  LabAiRoute: LabAiRoute,
+  LabCommunityRoute: LabCommunityRoute,
+  LabParticipationsRoute: LabParticipationsRoute,
+  LabRoutineRoute: LabRoutineRoute,
+  LabStartRoute: LabStartRoute,
+  LabVisualRoute: LabVisualRoute,
+  LabWeavingRoute: LabWeavingRoute,
   LabIndexRoute: LabIndexRoute,
 }
 
