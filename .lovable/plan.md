@@ -116,7 +116,8 @@ LabState {
 
 - المحتوى الحقيقي (المجالات/الأحداث/الفرص/البطاقات/الأدلة/المصادر) يُقرأ من CSV الحالي عبر `src/lab/data/knowledge-read.ts` (قراءة فقط).
 - كل الكتابة في `LabStateProvider` (reducer) + `sessionStorage:dalili-lab-v1`.
-- لا حقول Score/Mastery/Ability في أي مكان من النموذج.
+- لا حقول Score/Mastery/Ability في أي مكان من النموذج، ولا اشتقاق نسب إكمال من `completedSteps`.
+- قيم `tone` الداخلية: `comfortable` (مريحة) · `usual` (عادية) · `difficult_today` (صعبة اليوم).
 
 ## 5. Scenario Switcher
 
