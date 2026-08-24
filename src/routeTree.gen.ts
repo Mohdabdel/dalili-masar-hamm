@@ -50,6 +50,8 @@ import { Route as AuthenticatedActiveParticipationsRouteImport } from './routes/
 import { Route as AuthenticatedAccountRouteImport } from './routes/_authenticated/account'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
+import { Route as LabWorkspaceParticipationIdRouteImport } from './routes/lab.workspace.$participationId'
+import { Route as LabMatchOpportunityIdRouteImport } from './routes/lab.match.$opportunityId'
 import { Route as LabEventEventIdRouteImport } from './routes/lab.event.$eventId'
 import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
 
@@ -260,6 +262,17 @@ const Char91DotmcpChar93ListToolsRoute =
     path: '/.mcp/list-tools',
     getParentRoute: () => rootRouteImport,
   } as any)
+const LabWorkspaceParticipationIdRoute =
+  LabWorkspaceParticipationIdRouteImport.update({
+    id: '/workspace/$participationId',
+    path: '/workspace/$participationId',
+    getParentRoute: () => LabRoute,
+  } as any)
+const LabMatchOpportunityIdRoute = LabMatchOpportunityIdRouteImport.update({
+  id: '/match/$opportunityId',
+  path: '/match/$opportunityId',
+  getParentRoute: () => LabRoute,
+} as any)
 const LabEventEventIdRoute = LabEventEventIdRouteImport.update({
   id: '/event/$eventId',
   path: '/event/$eventId',
@@ -315,6 +328,8 @@ export interface FileRoutesByFullPath {
   '/tools/': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
   '/lab/event/$eventId': typeof LabEventEventIdRoute
+  '/lab/match/$opportunityId': typeof LabMatchOpportunityIdRoute
+  '/lab/workspace/$participationId': typeof LabWorkspaceParticipationIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -358,6 +373,8 @@ export interface FileRoutesByTo {
   '/tools': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
   '/lab/event/$eventId': typeof LabEventEventIdRoute
+  '/lab/match/$opportunityId': typeof LabMatchOpportunityIdRoute
+  '/lab/workspace/$participationId': typeof LabWorkspaceParticipationIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -404,6 +421,8 @@ export interface FileRoutesById {
   '/tools/': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
   '/lab/event/$eventId': typeof LabEventEventIdRoute
+  '/lab/match/$opportunityId': typeof LabMatchOpportunityIdRoute
+  '/lab/workspace/$participationId': typeof LabWorkspaceParticipationIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -450,6 +469,8 @@ export interface FileRouteTypes {
     | '/tools/'
     | '/.mcp/invoke-tool/$tool'
     | '/lab/event/$eventId'
+    | '/lab/match/$opportunityId'
+    | '/lab/workspace/$participationId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -493,6 +514,8 @@ export interface FileRouteTypes {
     | '/tools'
     | '/.mcp/invoke-tool/$tool'
     | '/lab/event/$eventId'
+    | '/lab/match/$opportunityId'
+    | '/lab/workspace/$participationId'
   id:
     | '__root__'
     | '/'
@@ -538,6 +561,8 @@ export interface FileRouteTypes {
     | '/tools/'
     | '/.mcp/invoke-tool/$tool'
     | '/lab/event/$eventId'
+    | '/lab/match/$opportunityId'
+    | '/lab/workspace/$participationId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -859,6 +884,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char91DotmcpChar93ListToolsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lab/workspace/$participationId': {
+      id: '/lab/workspace/$participationId'
+      path: '/workspace/$participationId'
+      fullPath: '/lab/workspace/$participationId'
+      preLoaderRoute: typeof LabWorkspaceParticipationIdRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/match/$opportunityId': {
+      id: '/lab/match/$opportunityId'
+      path: '/match/$opportunityId'
+      fullPath: '/lab/match/$opportunityId'
+      preLoaderRoute: typeof LabMatchOpportunityIdRouteImport
+      parentRoute: typeof LabRoute
+    }
     '/lab/event/$eventId': {
       id: '/lab/event/$eventId'
       path: '/event/$eventId'
@@ -904,6 +943,8 @@ interface LabRouteChildren {
   LabWeavingRoute: typeof LabWeavingRoute
   LabIndexRoute: typeof LabIndexRoute
   LabEventEventIdRoute: typeof LabEventEventIdRoute
+  LabMatchOpportunityIdRoute: typeof LabMatchOpportunityIdRoute
+  LabWorkspaceParticipationIdRoute: typeof LabWorkspaceParticipationIdRoute
 }
 
 const LabRouteChildren: LabRouteChildren = {
@@ -918,6 +959,8 @@ const LabRouteChildren: LabRouteChildren = {
   LabWeavingRoute: LabWeavingRoute,
   LabIndexRoute: LabIndexRoute,
   LabEventEventIdRoute: LabEventEventIdRoute,
+  LabMatchOpportunityIdRoute: LabMatchOpportunityIdRoute,
+  LabWorkspaceParticipationIdRoute: LabWorkspaceParticipationIdRoute,
 }
 
 const LabRouteWithChildren = LabRoute._addFileChildren(LabRouteChildren)
