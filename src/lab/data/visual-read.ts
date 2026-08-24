@@ -19,7 +19,8 @@ export function visualsForOpportunity(opportunityId: string): LabVisualItem[] {
 export function sampleVisualLibrary(limit = 12): LabVisualItem[] {
   return getRenderableVisualAssets()
     .slice(0, limit)
-    .map((a) => ({ src: a.assetPath, title: a.titleAr || a.assetCode }));
+    .map((a) => ({ src: a.assetPath ?? "", title: a.titleAr || a.assetCode }))
+    .filter((a) => Boolean(a.src));
 }
 
 export function learnerCardFor(opportunityId: string): LearnerCardData | null {
