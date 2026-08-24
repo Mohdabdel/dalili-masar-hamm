@@ -32,6 +32,7 @@ const STORAGE_KEY = "dalili-lab-v1";
 
 type Action =
   | { type: "reset" }
+  | { type: "hydrate"; value: LabState }
   | { type: "scenario"; id: string }
   | { type: "uiState"; value: LabUiState }
   | { type: "timeOfDay"; value: LabTimeOfDay }
@@ -55,6 +56,8 @@ function reducer(state: LabState, action: Action): LabState {
   switch (action.type) {
     case "reset":
       return baseState();
+    case "hydrate":
+      return action.value;
     case "scenario":
       return buildScenario(action.id);
     case "uiState":
@@ -179,7 +182,7 @@ export function LabStateProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const stored = readStored();
-    if (stored) dispatch({ type: "scenario", id: stored.scenario });
+    if (stored) dispatch({ type: "hydrate", value: { ...baseState(), ...stored } });
     markHydrated();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
