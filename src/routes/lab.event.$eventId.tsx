@@ -113,7 +113,7 @@ function LabEvent() {
                   key={l}
                   type="button"
                   aria-pressed={level === l}
-                  title={participationLevelDescription(l)}
+                  title={participationLevelDescription[l]}
                   onClick={() => dispatch({ type: "path", value: { level: l } })}
                   className={`min-h-[44px] rounded-xl border px-4 text-sm font-bold ${
                     level === l
@@ -121,7 +121,7 @@ function LabEvent() {
                       : "border-border bg-card"
                   }`}
                 >
-                  {participationLevelLabel(l)}
+                  {participationLevelLabel[l]}
                 </button>
               ))}
             </div>
@@ -139,7 +139,7 @@ function LabEvent() {
                     key={m.opportunityId}
                     title={safeText(m.name)}
                     hint={m.whyParticipate ? safeText(m.whyParticipate).slice(0, 110) : undefined}
-                    meta={m.level ? participationLevelLabel(m.level) : undefined}
+                    meta={m.level ? participationLevelLabel[m.level] : undefined}
                     to="/lab/match/$opportunityId"
                     params={{ opportunityId: m.opportunityId }}
                   />
