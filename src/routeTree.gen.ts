@@ -16,6 +16,7 @@ import { Route as ReminderRouteImport } from './routes/reminder'
 import { Route as ParticipationGuideRouteImport } from './routes/participation-guide'
 import { Route as MessagesRouteImport } from './routes/messages'
 import { Route as McpRouteImport } from './routes/mcp'
+import { Route as LabRouteImport } from './routes/lab'
 import { Route as HelpMeChooseRouteImport } from './routes/help-me-choose'
 import { Route as EducationSupportRouteImport } from './routes/education-support'
 import { Route as CommunitySupportRouteImport } from './routes/community-support'
@@ -24,11 +25,19 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ToolsIndexRouteImport } from './routes/tools.index'
+import { Route as LabIndexRouteImport } from './routes/lab.index'
 import { Route as ActivitiesIndexRouteImport } from './routes/activities.index'
 import { Route as ToolsProjectIdRouteImport } from './routes/tools.$projectId'
 import { Route as SettingsFamilyRouteImport } from './routes/settings.family'
 import { Route as SettingsAddEventRouteImport } from './routes/settings.add-event'
 import { Route as LearnerIdRouteImport } from './routes/learner.$id'
+import { Route as LabWeavingRouteImport } from './routes/lab.weaving'
+import { Route as LabVisualRouteImport } from './routes/lab.visual'
+import { Route as LabStartRouteImport } from './routes/lab.start'
+import { Route as LabRoutineRouteImport } from './routes/lab.routine'
+import { Route as LabParticipationsRouteImport } from './routes/lab.participations'
+import { Route as LabCommunityRouteImport } from './routes/lab.community'
+import { Route as LabAiRouteImport } from './routes/lab.ai'
 import { Route as ActivitiesOptionsRouteImport } from './routes/activities.options'
 import { Route as ActivitiesMyDayRouteImport } from './routes/activities.my-day'
 import { Route as ActivitiesLevelRouteImport } from './routes/activities.level'
@@ -76,6 +85,11 @@ const McpRoute = McpRouteImport.update({
   path: '/mcp',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LabRoute = LabRouteImport.update({
+  id: '/lab',
+  path: '/lab',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HelpMeChooseRoute = HelpMeChooseRouteImport.update({
   id: '/help-me-choose',
   path: '/help-me-choose',
@@ -115,6 +129,11 @@ const ToolsIndexRoute = ToolsIndexRouteImport.update({
   path: '/tools/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LabIndexRoute = LabIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LabRoute,
+} as any)
 const ActivitiesIndexRoute = ActivitiesIndexRouteImport.update({
   id: '/activities/',
   path: '/activities/',
@@ -139,6 +158,41 @@ const LearnerIdRoute = LearnerIdRouteImport.update({
   id: '/learner/$id',
   path: '/learner/$id',
   getParentRoute: () => rootRouteImport,
+} as any)
+const LabWeavingRoute = LabWeavingRouteImport.update({
+  id: '/weaving',
+  path: '/weaving',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabVisualRoute = LabVisualRouteImport.update({
+  id: '/visual',
+  path: '/visual',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabStartRoute = LabStartRouteImport.update({
+  id: '/start',
+  path: '/start',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabRoutineRoute = LabRoutineRouteImport.update({
+  id: '/routine',
+  path: '/routine',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabParticipationsRoute = LabParticipationsRouteImport.update({
+  id: '/participations',
+  path: '/participations',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabCommunityRoute = LabCommunityRouteImport.update({
+  id: '/community',
+  path: '/community',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabAiRoute = LabAiRouteImport.update({
+  id: '/ai',
+  path: '/ai',
+  getParentRoute: () => LabRoute,
 } as any)
 const ActivitiesOptionsRoute = ActivitiesOptionsRouteImport.update({
   id: '/activities/options',
@@ -207,6 +261,7 @@ export interface FileRoutesByFullPath {
   '/community-support': typeof CommunitySupportRoute
   '/education-support': typeof EducationSupportRoute
   '/help-me-choose': typeof HelpMeChooseRoute
+  '/lab': typeof LabRouteWithChildren
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
   '/participation-guide': typeof ParticipationGuideRoute
@@ -224,11 +279,19 @@ export interface FileRoutesByFullPath {
   '/activities/level': typeof ActivitiesLevelRoute
   '/activities/my-day': typeof ActivitiesMyDayRoute
   '/activities/options': typeof ActivitiesOptionsRoute
+  '/lab/ai': typeof LabAiRoute
+  '/lab/community': typeof LabCommunityRoute
+  '/lab/participations': typeof LabParticipationsRoute
+  '/lab/routine': typeof LabRoutineRoute
+  '/lab/start': typeof LabStartRoute
+  '/lab/visual': typeof LabVisualRoute
+  '/lab/weaving': typeof LabWeavingRoute
   '/learner/$id': typeof LearnerIdRoute
   '/settings/add-event': typeof SettingsAddEventRoute
   '/settings/family': typeof SettingsFamilyRoute
   '/tools/$projectId': typeof ToolsProjectIdRoute
   '/activities/': typeof ActivitiesIndexRoute
+  '/lab/': typeof LabIndexRoute
   '/tools/': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
@@ -256,11 +319,19 @@ export interface FileRoutesByTo {
   '/activities/level': typeof ActivitiesLevelRoute
   '/activities/my-day': typeof ActivitiesMyDayRoute
   '/activities/options': typeof ActivitiesOptionsRoute
+  '/lab/ai': typeof LabAiRoute
+  '/lab/community': typeof LabCommunityRoute
+  '/lab/participations': typeof LabParticipationsRoute
+  '/lab/routine': typeof LabRoutineRoute
+  '/lab/start': typeof LabStartRoute
+  '/lab/visual': typeof LabVisualRoute
+  '/lab/weaving': typeof LabWeavingRoute
   '/learner/$id': typeof LearnerIdRoute
   '/settings/add-event': typeof SettingsAddEventRoute
   '/settings/family': typeof SettingsFamilyRoute
   '/tools/$projectId': typeof ToolsProjectIdRoute
   '/activities': typeof ActivitiesIndexRoute
+  '/lab': typeof LabIndexRoute
   '/tools': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
@@ -273,6 +344,7 @@ export interface FileRoutesById {
   '/community-support': typeof CommunitySupportRoute
   '/education-support': typeof EducationSupportRoute
   '/help-me-choose': typeof HelpMeChooseRoute
+  '/lab': typeof LabRouteWithChildren
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
   '/participation-guide': typeof ParticipationGuideRoute
@@ -290,11 +362,19 @@ export interface FileRoutesById {
   '/activities/level': typeof ActivitiesLevelRoute
   '/activities/my-day': typeof ActivitiesMyDayRoute
   '/activities/options': typeof ActivitiesOptionsRoute
+  '/lab/ai': typeof LabAiRoute
+  '/lab/community': typeof LabCommunityRoute
+  '/lab/participations': typeof LabParticipationsRoute
+  '/lab/routine': typeof LabRoutineRoute
+  '/lab/start': typeof LabStartRoute
+  '/lab/visual': typeof LabVisualRoute
+  '/lab/weaving': typeof LabWeavingRoute
   '/learner/$id': typeof LearnerIdRoute
   '/settings/add-event': typeof SettingsAddEventRoute
   '/settings/family': typeof SettingsFamilyRoute
   '/tools/$projectId': typeof ToolsProjectIdRoute
   '/activities/': typeof ActivitiesIndexRoute
+  '/lab/': typeof LabIndexRoute
   '/tools/': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
@@ -307,6 +387,7 @@ export interface FileRouteTypes {
     | '/community-support'
     | '/education-support'
     | '/help-me-choose'
+    | '/lab'
     | '/mcp'
     | '/messages'
     | '/participation-guide'
@@ -324,11 +405,19 @@ export interface FileRouteTypes {
     | '/activities/level'
     | '/activities/my-day'
     | '/activities/options'
+    | '/lab/ai'
+    | '/lab/community'
+    | '/lab/participations'
+    | '/lab/routine'
+    | '/lab/start'
+    | '/lab/visual'
+    | '/lab/weaving'
     | '/learner/$id'
     | '/settings/add-event'
     | '/settings/family'
     | '/tools/$projectId'
     | '/activities/'
+    | '/lab/'
     | '/tools/'
     | '/.mcp/invoke-tool/$tool'
   fileRoutesByTo: FileRoutesByTo
@@ -356,11 +445,19 @@ export interface FileRouteTypes {
     | '/activities/level'
     | '/activities/my-day'
     | '/activities/options'
+    | '/lab/ai'
+    | '/lab/community'
+    | '/lab/participations'
+    | '/lab/routine'
+    | '/lab/start'
+    | '/lab/visual'
+    | '/lab/weaving'
     | '/learner/$id'
     | '/settings/add-event'
     | '/settings/family'
     | '/tools/$projectId'
     | '/activities'
+    | '/lab'
     | '/tools'
     | '/.mcp/invoke-tool/$tool'
   id:
@@ -372,6 +469,7 @@ export interface FileRouteTypes {
     | '/community-support'
     | '/education-support'
     | '/help-me-choose'
+    | '/lab'
     | '/mcp'
     | '/messages'
     | '/participation-guide'
@@ -389,11 +487,19 @@ export interface FileRouteTypes {
     | '/activities/level'
     | '/activities/my-day'
     | '/activities/options'
+    | '/lab/ai'
+    | '/lab/community'
+    | '/lab/participations'
+    | '/lab/routine'
+    | '/lab/start'
+    | '/lab/visual'
+    | '/lab/weaving'
     | '/learner/$id'
     | '/settings/add-event'
     | '/settings/family'
     | '/tools/$projectId'
     | '/activities/'
+    | '/lab/'
     | '/tools/'
     | '/.mcp/invoke-tool/$tool'
   fileRoutesById: FileRoutesById
@@ -406,6 +512,7 @@ export interface RootRouteChildren {
   CommunitySupportRoute: typeof CommunitySupportRoute
   EducationSupportRoute: typeof EducationSupportRoute
   HelpMeChooseRoute: typeof HelpMeChooseRoute
+  LabRoute: typeof LabRouteWithChildren
   McpRoute: typeof McpRoute
   MessagesRoute: typeof MessagesRoute
   ParticipationGuideRoute: typeof ParticipationGuideRoute
@@ -478,6 +585,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof McpRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lab': {
+      id: '/lab'
+      path: '/lab'
+      fullPath: '/lab'
+      preLoaderRoute: typeof LabRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/help-me-choose': {
       id: '/help-me-choose'
       path: '/help-me-choose'
@@ -534,6 +648,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ToolsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lab/': {
+      id: '/lab/'
+      path: '/'
+      fullPath: '/lab/'
+      preLoaderRoute: typeof LabIndexRouteImport
+      parentRoute: typeof LabRoute
+    }
     '/activities/': {
       id: '/activities/'
       path: '/activities'
@@ -568,6 +689,55 @@ declare module '@tanstack/react-router' {
       fullPath: '/learner/$id'
       preLoaderRoute: typeof LearnerIdRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/lab/weaving': {
+      id: '/lab/weaving'
+      path: '/weaving'
+      fullPath: '/lab/weaving'
+      preLoaderRoute: typeof LabWeavingRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/visual': {
+      id: '/lab/visual'
+      path: '/visual'
+      fullPath: '/lab/visual'
+      preLoaderRoute: typeof LabVisualRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/start': {
+      id: '/lab/start'
+      path: '/start'
+      fullPath: '/lab/start'
+      preLoaderRoute: typeof LabStartRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/routine': {
+      id: '/lab/routine'
+      path: '/routine'
+      fullPath: '/lab/routine'
+      preLoaderRoute: typeof LabRoutineRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/participations': {
+      id: '/lab/participations'
+      path: '/participations'
+      fullPath: '/lab/participations'
+      preLoaderRoute: typeof LabParticipationsRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/community': {
+      id: '/lab/community'
+      path: '/community'
+      fullPath: '/lab/community'
+      preLoaderRoute: typeof LabCommunityRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/ai': {
+      id: '/lab/ai'
+      path: '/ai'
+      fullPath: '/lab/ai'
+      preLoaderRoute: typeof LabAiRouteImport
+      parentRoute: typeof LabRoute
     }
     '/activities/options': {
       id: '/activities/options'
@@ -665,6 +835,30 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
 const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
+interface LabRouteChildren {
+  LabAiRoute: typeof LabAiRoute
+  LabCommunityRoute: typeof LabCommunityRoute
+  LabParticipationsRoute: typeof LabParticipationsRoute
+  LabRoutineRoute: typeof LabRoutineRoute
+  LabStartRoute: typeof LabStartRoute
+  LabVisualRoute: typeof LabVisualRoute
+  LabWeavingRoute: typeof LabWeavingRoute
+  LabIndexRoute: typeof LabIndexRoute
+}
+
+const LabRouteChildren: LabRouteChildren = {
+  LabAiRoute: LabAiRoute,
+  LabCommunityRoute: LabCommunityRoute,
+  LabParticipationsRoute: LabParticipationsRoute,
+  LabRoutineRoute: LabRoutineRoute,
+  LabStartRoute: LabStartRoute,
+  LabVisualRoute: LabVisualRoute,
+  LabWeavingRoute: LabWeavingRoute,
+  LabIndexRoute: LabIndexRoute,
+}
+
+const LabRouteWithChildren = LabRoute._addFileChildren(LabRouteChildren)
+
 interface SettingsRouteChildren {
   SettingsAddEventRoute: typeof SettingsAddEventRoute
   SettingsFamilyRoute: typeof SettingsFamilyRoute
@@ -687,6 +881,7 @@ const rootRouteChildren: RootRouteChildren = {
   CommunitySupportRoute: CommunitySupportRoute,
   EducationSupportRoute: EducationSupportRoute,
   HelpMeChooseRoute: HelpMeChooseRoute,
+  LabRoute: LabRouteWithChildren,
   McpRoute: McpRoute,
   MessagesRoute: MessagesRoute,
   ParticipationGuideRoute: ParticipationGuideRoute,
