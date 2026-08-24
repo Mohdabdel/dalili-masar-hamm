@@ -50,6 +50,7 @@ import { Route as AuthenticatedActiveParticipationsRouteImport } from './routes/
 import { Route as AuthenticatedAccountRouteImport } from './routes/_authenticated/account'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
+import { Route as LabEventEventIdRouteImport } from './routes/lab.event.$eventId'
 import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
 
 const SettingsRoute = SettingsRouteImport.update({
@@ -259,6 +260,11 @@ const Char91DotmcpChar93ListToolsRoute =
     path: '/.mcp/list-tools',
     getParentRoute: () => rootRouteImport,
   } as any)
+const LabEventEventIdRoute = LabEventEventIdRouteImport.update({
+  id: '/event/$eventId',
+  path: '/event/$eventId',
+  getParentRoute: () => LabRoute,
+} as any)
 const Char91DotmcpChar93InvokeToolToolRoute =
   Char91DotmcpChar93InvokeToolToolRouteImport.update({
     id: '/.mcp/invoke-tool/$tool',
@@ -308,6 +314,7 @@ export interface FileRoutesByFullPath {
   '/lab/': typeof LabIndexRoute
   '/tools/': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/lab/event/$eventId': typeof LabEventEventIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -350,6 +357,7 @@ export interface FileRoutesByTo {
   '/lab': typeof LabIndexRoute
   '/tools': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/lab/event/$eventId': typeof LabEventEventIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -395,6 +403,7 @@ export interface FileRoutesById {
   '/lab/': typeof LabIndexRoute
   '/tools/': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/lab/event/$eventId': typeof LabEventEventIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -440,6 +449,7 @@ export interface FileRouteTypes {
     | '/lab/'
     | '/tools/'
     | '/.mcp/invoke-tool/$tool'
+    | '/lab/event/$eventId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -482,6 +492,7 @@ export interface FileRouteTypes {
     | '/lab'
     | '/tools'
     | '/.mcp/invoke-tool/$tool'
+    | '/lab/event/$eventId'
   id:
     | '__root__'
     | '/'
@@ -526,6 +537,7 @@ export interface FileRouteTypes {
     | '/lab/'
     | '/tools/'
     | '/.mcp/invoke-tool/$tool'
+    | '/lab/event/$eventId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -847,6 +859,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char91DotmcpChar93ListToolsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lab/event/$eventId': {
+      id: '/lab/event/$eventId'
+      path: '/event/$eventId'
+      fullPath: '/lab/event/$eventId'
+      preLoaderRoute: typeof LabEventEventIdRouteImport
+      parentRoute: typeof LabRoute
+    }
     '/.mcp/invoke-tool/$tool': {
       id: '/.mcp/invoke-tool/$tool'
       path: '/.mcp/invoke-tool/$tool'
@@ -884,6 +903,7 @@ interface LabRouteChildren {
   LabVisualRoute: typeof LabVisualRoute
   LabWeavingRoute: typeof LabWeavingRoute
   LabIndexRoute: typeof LabIndexRoute
+  LabEventEventIdRoute: typeof LabEventEventIdRoute
 }
 
 const LabRouteChildren: LabRouteChildren = {
@@ -897,6 +917,7 @@ const LabRouteChildren: LabRouteChildren = {
   LabVisualRoute: LabVisualRoute,
   LabWeavingRoute: LabWeavingRoute,
   LabIndexRoute: LabIndexRoute,
+  LabEventEventIdRoute: LabEventEventIdRoute,
 }
 
 const LabRouteWithChildren = LabRoute._addFileChildren(LabRouteChildren)
