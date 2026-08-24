@@ -1,101 +1,167 @@
-# نموذج «دليلي Lab» التفاعلي داخل المشروع
+# دليلي Lab — نموذج تفاعلي كامل للتصور المستقبلي
 
-مساحة تجريبية كاملة تحت `/lab/*` لاختبار تصور UX جديد جنباً إلى جنب مع النسخة الحالية، دون أي مساس بالمسارات الإنتاجية أو قاعدة البيانات.
+بيئة تجريبية معزولة تحت `/lab/*` تختبر تصور دليلي القادم End-to-End: البداية من روتين الأسرة، تفكيك الحدث، مساحة عمل الأسرة، بطاقة المشارك، الدعم البصري، التكرار ودورة حياة المشاركة — مع إعادة استخدام محتوى ومكونات دليلي الحالية قراءةً فقط.
 
-## 1. بنية /lab المقترحة
+## قواعد العزل (ثابتة)
+
+كل الملفات تحت `src/routes/lab*.tsx` و`src/lab/**` فقط · لا تعديل أو حذف لأي مسار إنتاجي · لا Supabase/RLS/Storage/Auth/migrations · الحالة في الذاكرة + `sessionStorage` · قراءة CSV والأصول والمكونات فقط · Lab variants بدل تعديل المكونات المشتركة · لا ظهور في التنقل الإنتاجي · `noindex` · الاستثناء الوحيد خارج Lab هو `eslint.config.js` لقاعدة `no-restricted-imports` تمنع استيراد `@/integrations/supabase/*` و`family-routine` و`active-participations` داخل Lab. أي تعديل آخر خارج `/lab` = توقف وطلب موافقة.
+
+## 1. Lab Route Map
 
 ```text
-src/routes/
-  lab.tsx                  ← تخطيط Lab (Outlet + شريط Lab + State Switcher)
-  lab.index.tsx            ← لوحة الدخول: قائمة التدفقات + شرح النموذج
-  lab.home.tsx             ← تصور جديد للصفحة الرئيسية
-  lab.today.tsx            ← «ماذا يحدث اليوم؟» / الروتين اليومي
-  lab.choose.tsx           ← ويزارد اختيار المشاركة (وقت → حدث → مستوى → نتائج)
-  lab.card.$id.tsx         ← بطاقة الداعم بتصميم جديد
-  lab.learner.$id.tsx      ← نسخة المشارك (شاشة/خطوة)
-  lab.active.tsx           ← المشاركات النشطة ومتابعة اليوم
-  lab.support.tsx          ← بوابة الدعم والخدمات (تصور جديد)
-src/lab/
-  data/            ← نموذج البيانات الوهمي + محمّل CSV للقراءة فقط
-  state/           ← LabStateProvider + سيناريوهات + sessionStorage
-  components/      ← نسخ Lab من المكونات
-  theme/           ← طبقة تصميم Lab فوق التوكنز الحالية
+/lab                         lab.index.tsx            لوحة الدخول والتدفقات
+/lab/start                   lab.start.tsx            «ابدأ من روتينكم»
+/lab/context                 lab.context.tsx          روتين منزلي | مجتمعي
+/lab/mode                    lab.mode.tsx             محطة واحدة | ابنِ روتيناً
+/lab/stations                lab.stations.tsx         اختيار محطة (الإفطار…)
+/lab/station/$stationId      lab.station.$stationId.tsx   قبل / أثناء / بعد
+/lab/component/$componentId  lab.component.$componentId.tsx  مكوّن الحدث
+/lab/level/$componentId      lab.level.$componentId.tsx   مستوى المشاركة
+/lab/matches                 lab.matches.tsx          فرص المشاركة المناسبة
+/lab/assist                  lab.assist.tsx           ساعدني أختار (سياقي)
+/lab/routine                 lab.routine.tsx          Routine Builder
+/lab/routine/preview         lab.routine.preview.tsx  معاينة الروتين
+/lab/workspace/$participationId  lab.workspace.$participationId.tsx  مساحة عمل الأسرة
+/lab/support/$participationId    lab.support.$participationId.tsx    + دعم إضافي
+/lab/preview/$cardId         lab.preview.$cardId.tsx  معاينة واعتماد البطاقة
+/lab/card/$cardId            lab.card.$cardId.tsx     Learner Card
+/lab/run/$cardId             lab.run.$cardId.tsx      Execution Mode (Full screen)
+/lab/feedback/$cardId        lab.feedback.$cardId.tsx كيف كانت المشاركة اليوم؟
+/lab/lifecycle/$participationId  lab.lifecycle.$participationId.tsx  بعد التكرار
+/lab/participations          lab.participations.tsx   مشاركات نكررها الآن
+/lab/visual                  lab.visual.tsx           طبقة الروتين البصرية
+/lab/visual/$toolId          lab.visual.$toolId.tsx   أداة بصرية مفردة/للطباعة
+/lab/community               lab.community.tsx        المشاركة المجتمعية
+/lab/community-support       lab.community-support.tsx  خدمات ومرافق (مسار مساند)
+/lab/family-resources        lab.family-resources.tsx مصادر ومساندة للأسرة
+/lab/weaving                 lab.weaving.tsx          شيء يحبه أو يفعله بالفعل
+/lab/ai                      lab.ai.tsx               مختبر الاقتراحات (محاكاة)
+/lab/states                  lab.states.tsx           عرض حالات Empty/Loading/Error
+lab.tsx                      تخطيط Lab: Outlet + LabShell + Scenario Switcher
 ```
 
-كل ما يخص النموذج داخل `src/lab/` و`src/routes/lab*.tsx` فقط — لا ملف واحد خارجها.
+## 2. Screen Inventory
 
-## 2. مكونات حالية سنعيد استخدامها (قراءة فقط، بلا تعديل)
+لكل شاشة: الغرض · الدخول · الإجراء الأساسي · الخروج · الحالة المكتوبة · أصول دليلي المعاد استخدامها · مكونات Lab الجديدة.
 
-- عناصر shadcn في `src/components/ui/*` (Accordion, Tabs, Sheet, Button, Card…).
-- `src/styles.css` والتوكنز اللونية وخطوط Cairo/Tajawal وهوية RTL.
-- طبقات القراءة: `knowledge-base.ts`, `home-hierarchy.ts` (الأنواع), `daily-events.ts`, `participation-considerations.ts`, `service-directories.ts`, `visual-asset-catalog.ts`, `visual-support-map.ts`.
-- ملفات CSV في `src/data/knowledge` و`src/data/support-directories` و`src/data/execution` — استيراد `?raw` للقراءة فقط.
-- الأصول البصرية في `public/assets/execution/visual/`.
+| # | الشاشة | الغرض | الدخول | الإجراء | الخروج | State Written | إعادة استخدام | مكونات Lab |
+|---|---|---|---|---|---|---|---|---|
+| 1 | `/lab` | مدخل النموذج وشرحه | رابط مباشر | اختيار تدفق | `/lab/start` | `session.entered` | التوكنز، shadcn | `LabHome`, `LabFlowCard` |
+| 2 | `/lab/start` | «ابدأ من روتينكم» | `/lab` | ابدأ | `/lab/context` | — | `PageShell` نمطاً | `LabStartHero` |
+| 3 | `/lab/context` | منزلي / مجتمعي | start | اختيار السياق | `/lab/mode` | `context` | `knowledge-base` (category) | `LabContextChoice` |
+| 4 | `/lab/mode` | محطة واحدة / بناء روتين | context | اختيار المسار | `/lab/stations` أو `/lab/routine` | `mode` | — | `LabModeChoice` |
+| 5 | `/lab/stations` | اختيار محطة من اليوم | mode | اختيار محطة | `/lab/station/$id` | `stationId` | `daily-events`, `02_events.csv` | `LabStationGrid` |
+| 6 | `/lab/station/$id` | قبل / أثناء / بعد | stations | اختيار الطور | `/lab/component/$id` | `phase` | بيانات الحدث | `LabPhaseSplit` |
+| 7 | `/lab/component/$id` | مكوّن الحدث (إعداد الطاولة…) | phase | اختيار المكوّن | `/lab/level/$id` | `componentId` | فرص `03_...csv` مجمّعة | `LabComponentList` |
+| 8 | `/lab/level/$id` | مستوى المشاركة (بسيط/متوسط/متقدم) — يصف المشاركة لا الشخص | component | اختيار المستوى | `/lab/matches` | `level` | `participationLevelLabel/Description` | `LabLevelPicker` |
+| 9 | `/lab/matches` | فرص مشاركة مناسبة للسياق | level | اختيار مشاركة | `/lab/workspace/$id` | `selectedParticipationId` | بطاقات `04_...csv` | `LabMatchList`, `LabMatchCard` |
+| 10 | `/lab/assist` | ساعدني أختار سياقي: لا يعيد سؤال ما هو معروف، يرشّح 3–5 خيارات | زر من 7/8/9 أو الروتين | قبول ترشيح | `/lab/workspace/$id` | `assistTrace` | `knowledge-base`, considerations | `LabContextualAssist`, `LabWhyThis` |
+| 11 | `/lab/routine` | بناء روتين: يومي/أيام محددة/أسبوعي/شهري/دوري، ترتيب سحب، أحداث بلا مشاركة مسموحة | mode | إضافة/ترتيب أحداث | `/lab/routine/preview` | `routine.events[]` | `daily-events`, `family-routine` كنموذج قراءة فقط | `LabRoutineBuilder`, `LabEventRow`, `LabCadencePicker` |
+| 12 | `/lab/routine/preview` | معاينة الروتين وتحديد محطات المشاركة | routine | تحديد محطة مشاركة | `/lab/stations` أو `/lab/visual` | `routine.stations[]` | — | `LabRoutineTimeline` |
+| 13 | `/lab/workspace/$id` | Family Participation Workspace: عرض المهمة وتسلسلها، «ما الأجزاء التي شارك فيها من قبل؟» (اختياري)، «أين تكون نهاية المشاركة هذه المرة؟» | matches/assist | ضبط الإعداد | `/lab/support/$id` أو `/lab/preview` | `setup.priorSteps[]`, `setup.stopPoint` | خطوات البطاقة، `HumanSafetyNotice`, `NoAssetNotice` كنماذج | `LabWorkspace`, `LabStepLadder`, `LabStopPointPicker` |
+| 14 | `/lab/support/$id` | + دعم إضافي: جدول بصري، تسلسل، الآن/بعد ذلك، منظم/مؤقت، لوحة اختيارات، أخبره مسبقاً، Visual Builder — كلها اختيارية | workspace | إضافة أدوات | رجوع للـWorkspace | `setup.supports[]` | `visual-tools/*`, `visual-asset-catalog`, `visual-support-map`, أصول `public/assets/execution/visual` | `LabSupportPicker`, `LabToolPreview` |
+| 15 | `/lab/preview/$cardId` | معاينة واعتماد بطاقة المشارك | workspace | اعتماد | `/lab/card/$cardId` | `card.status = approved` | `learner-card.ts` | `LabCardPreview` |
+| 16 | `/lab/card/$cardId` | Learner Card #1: التاريخ، المشاركة، الخطوات المصورة المعتمدة والتسلسل | preview/participations | بدء التنفيذ | `/lab/run/$cardId` | `card.opened` | صور الخطوات، `learner.$id` كمرجع | `LabLearnerCard` |
+| 17 | `/lab/run/$cardId` | Execution Mode: خطوة واحدة/شاشة، Full screen لجهاز منفصل، الدعم عند الطلب | card | إنهاء | `/lab/feedback/$cardId` | `run.completedSteps`, `run.count++` | `VisualFramePilot`, `ReminderCardPilot` كنماذج | `LabExecutionMode`, `LabSupportDrawer` |
+| 18 | `/lab/feedback/$cardId` | «كيف كانت المشاركة اليوم؟» 🙂 مريحة / 😐 عادية / 🙁 صعبة اليوم — أسباب اختيارية عند 🙁 فقط، بلا درجات | run | تسجيل | `/lab/participations` أو `/lab/lifecycle` | `feedback[]` | — | `LabFeedbackSheet`, `LabReasonChips` |
+| 19 | `/lab/lifecycle/$id` | بعد عدة مرات: نستمر كما هي / نغير شيئاً / نوسع المشاركة / نجعلها من روتيننا / نتوقف عنها الآن — بلا ترقية تلقائية | feedback أو participations | اختيار مسار | Workspace جديد أو participations | `lifecycle.state`, نسخة بطاقة جديدة عند التوسيع | — | `LabLifecycleChoices`, `LabCardVersions` |
+| 20 | `/lab/participations` | «مشاركات نكررها الآن»: المشاركة، الحدث، عدد مرات الاستخدام، آخر استخدام، بدء التنفيذ + قسم «من مشاركاتنا المعتادة» | Lab nav | بدء / فتح دورة الحياة | `/lab/run` أو `/lab/lifecycle` | `lastOpened` | — | `LabParticipationsBoard`, `LabRepeatBadge` |
+| 21 | `/lab/visual` | طبقة بصرية مولَّدة من بيانات الروتين نفسها: Visual Schedule، Now/Next، Tell Me Before، Visual Timer، Visual Sequence — بلا إعادة إدخال | routine/support | فتح أداة | `/lab/visual/$toolId` | — | `visual-tools/*`, أصول WebP | `LabVisualRoutineLayer` |
+| 22 | `/lab/visual/$toolId` | أداة بصرية مفردة + نسخة للطباعة | visual | طباعة/عرض | رجوع | `tools[]` | `VisualToolPreview` كمرجع | `LabToolCanvas`, `LabPrintSheet` |
+| 23 | `/lab/community` | المشاركة المجتمعية عبر نفس Participation Engine: تسوق، زيارة، مطعم، تنقل، متنزه، خدمات وفعاليات | context | نفس تدفق 5→9 | Workspace | نفس مفاتيح المسار | فرص community في CSV | إعادة استخدام مكونات 5–9 |
+| 24 | `/lab/community-support` | مسار مساند منفصل: خدمات، مرافق، تسهيلات، نقل، مصادر — غير مدمج بالـEngine | Lab nav | تصفح/فلترة | — | — | `service-directories`, `support-directories/*.csv` | `LabDirectory` |
+| 25 | `/lab/family-resources` | إعادة تموضع المحتوى التعليمي كـ«مصادر ومساندة للأسرة» بلا لغة تعليم/علاج | Lab nav | تصفح | — | — | بيانات `education-support` كما هي | `LabResourceShelf` |
+| 26 | `/lab/weaving` | «شيء يحبه أو يفعله بالفعل» → سياقات حياتية حقيقية لهذا الفعل (ماء → سقي النباتات/غسل الخضار/تعبئة الزجاجات) بلا تحويله لتدريب أو إلزام | Lab nav / assist | إدخال اهتمام | `/lab/matches` مُصفّاة | `weaving.interests[]` | فهرس `search-index`, فرص CSV | `LabWeavingInput`, `LabWeavingResults` |
+| 27 | `/lab/ai` | محاكاة اقتراحات: مساعدة سياقية، Weaving، اقتراح روتين، اقتراح دعم بصري، استخدام مشاركة في أحداث أخرى — بيانات وهمية بلا اتصال | Lab nav / نقاط سياقية | توليد اقتراح | الشاشة ذات الصلة | `suggestionsAccepted[]` | — | `LabSuggestionEngine` (mock), `LabSuggestionCard` |
+| 28 | `/lab/states` | عرض Empty/Loading/Error لكل شاشة رئيسية | Switcher | تبديل حالة | أي شاشة | `uiState` | — | `LabStateGallery` |
 
-## 3. مكونات ستُنشأ لها نسخ Lab
+## 3. التدفق End-to-End
 
-| الإنتاجي | نسخة Lab |
-| --- | --- |
-| `PageShell` | `LabShell` — رأس مختلف، شريط Lab، بدون BottomNav الإنتاجي |
-| `BottomNav` | `LabNav` — تنقل خاص بتدفقات النموذج |
-| `ParticipationCard` | `LabParticipationCard` — إعادة ترتيب الأقسام والتفاعلات |
-| `TodayEvents` / `HomeHierarchy` | `LabTodayBoard` / `LabBrowse` |
-| بطاقة المتعلم | `LabLearnerView` |
-| `ServiceDirectory` / `ResourceDirectory` | `LabDirectory` |
+```text
+/lab/start → context (منزلي|مجتمعي) → mode
+   ├─ محطة واحدة → stations → station(قبل|أثناء|بعد) → component → level → matches
+   │        └─ [ساعدني أختار سياقي] ← يعرف السياق مسبقاً
+   └─ ابنِ روتيناً → routine builder → preview → تحديد محطة مشاركة → stations…
 
-المكونات الإنتاجية تبقى كما هي حرفياً.
+matches → Family Workspace (خطوات + مشاركة سابقة اختيارية + نقطة نهاية هذه المرة)
+        → + دعم إضافي (اختياري) → معاينة → اعتماد
+        → Learner Card #1 → Execution Mode → «كيف كانت المشاركة اليوم؟»
+        → participations (عدد المرات وآخر استخدام)
+        → بعد التكرار: نستمر | نغير | نوسع (نسخة جديدة + حفظ السابقة) | من روتيننا | نتوقف الآن
+Routine ⇄ Visual Routine Layer (جدول/الآن وبعد/أخبره مسبقاً/مؤقت/تسلسل)
+Community Participation = نفس المسار بسياق مجتمعي · Community Support مسار مساند مستقل
+```
 
-## 4. نموذج البيانات الوهمي
+دورة الحياة: `Draft → Active → Repeated → Continue / Adjust / Expand / Routine / Archive` — بلا Mastered/Failed وبلا ترقية تلقائية.
 
-- `src/lab/data/fixtures.ts`: أسرة تجريبية، مشارك واحد، 3 محطات روتين (صباح/ظهر/مساء)، ~8 مشاركات نشطة، سجل إنجاز 7 أيام، عناصر أدوات بصرية.
-- المحتوى الحقيقي (الأحداث/الفرص/البطاقات) يُقرأ من CSV الحالي عبر غلاف `lab/data/knowledge-read.ts` (قراءة فقط) لواقعية أعلى.
-- كل الكتابة (إكمال مهمة، إضافة مشاركة، بناء روتين) تعدل حالة في الذاكرة فقط.
+## 4. Data/State Model (وهمي بالكامل)
 
-## 5. آلية State/Scenario Switcher
+```ts
+LabState {
+  scenario, uiState: 'ready'|'empty'|'loading'|'error', timeOfDay,
+  context: 'home'|'community', mode: 'single'|'routine',
+  path: { stationId, phase, componentId, level },
+  routine: { cadence, events: [{ id, label, order, isParticipationStation }] },
+  participations: [{ id, opportunityId, eventId, status, timesShared, lastSharedAt, stableInRoutine }],
+  setups: { [participationId]: { priorSteps[], stopPointStepId, supports[] } },
+  cards: [{ id, participationId, version, date, steps[], approvedAt }],
+  runs: [{ cardId, date, completedSteps[] }],
+  feedback: [{ cardId, date, tone: 'easy'|'usual'|'hard', reasons[] }],
+  weaving: { interests[], matches[] },
+  suggestions: []
+}
+```
 
-شريط علوي ثابت داخل `/lab` (قابل للطي) يبدل فوراً:
-- **السيناريو:** أسرة جديدة (فارغ) · أسرة نشطة · يوم مزدحم · مشارك متقدم · حالة سلامة/إيقاف.
-- **الحالة:** غير مسجّل دخول · مسجّل · تحميل · خطأ · لا توجد بيانات.
-- **الوقت:** صباح / بعد الظهر / مساء (يؤثر على «اليوم»).
-- أزرار: إعادة ضبط النموذج، نسخ رابط السيناريو (`?scenario=...&state=...`).
+- المحتوى الحقيقي (المجالات/الأحداث/الفرص/البطاقات/الأدلة/المصادر) يُقرأ من CSV الحالي عبر `src/lab/data/knowledge-read.ts` (قراءة فقط).
+- كل الكتابة في `LabStateProvider` (reducer) + `sessionStorage:dalili-lab-v1`.
+- لا حقول Score/Mastery/Ability في أي مكان من النموذج.
 
-التنفيذ: `LabStateProvider` (React Context + reducer) + حفظ في `sessionStorage` تحت مفتاح `dalili-lab-v1`، ومزامنة مع search params للمشاركة.
+## 5. Scenario Switcher
 
-## 6. ضمان عدم وصول /lab إلى Supabase
+شريط علوي قابل للطي داخل `/lab` يبدل فوراً: أسرة جديدة · روتين قائم · مشاركة لأول مرة · مشاركة متكررة · مشاركة كانت صعبة اليوم · مشاركة مستقرة في الروتين · يوم مزدحم · اهتمام/فعل موجود (Weaving) · Empty · Loading · Error. إضافة: وقت اليوم، إعادة الضبط، نسخ رابط السيناريو (`?scenario=&state=`).
 
-- لا استيراد لـ `@/integrations/supabase/*` ولا لـ `family-routine.ts` / `active-participations.ts` داخل أي ملف Lab.
-- كل الوصول للبيانات يمر عبر `src/lab/data/*` فقط (واجهة واحدة).
-- قاعدة ESLint `no-restricted-imports` مقيّدة بمسارات `src/lab/**` و`src/routes/lab*` تمنع هذه الاستيرادات وتفشل الفحص عند المخالفة.
-- `/lab` خارج `_authenticated`، فلا middleware ولا جلسة ولا server functions.
+## 6. المكونات والبيانات المعاد استخدامها (Read-only)
 
-## 7. عزل الأثر عن الإنتاج
+`src/components/ui/*` · `src/styles.css` والتوكنز وخطوط Cairo/Tajawal · `knowledge-base.ts`, `home-hierarchy.ts` (أنواع), `daily-events.ts`, `learner-card.ts`, `participation-considerations.ts`, `service-directories.ts`, `search-index.ts`, `execution-frames.ts`, `execution-support.ts`, `visual-support-map.ts`, `visual-asset-catalog.ts`, `visual-tools/*` · كل CSV في `data/knowledge`, `data/support-directories`, `data/execution` · أصول `public/assets/execution/*` · أنماط `ParticipationCard`, `VisualFramePilot`, `ReminderCardPilot`, `HumanSafetyNotice`, `NoAssetNotice` كمرجع بصري فقط.
 
-- لا رابط لـ `/lab` من `BottomNav` أو الصفحة الرئيسية أو أي مسار إنتاجي.
-- المدخل: `/lab` مباشرة عبر الرابط (يُعرض في الرد بعد التنفيذ) — صفحة دخول توضح أنها بيئة تجربة.
-- `robots: noindex` في `head()` لكل مسارات Lab.
-- التقسيم التلقائي للكود في TanStack Router يعني أن حزمة Lab لا تُحمَّل إلا عند زيارة `/lab`؛ لا استيراد من كود الإنتاج إلى `src/lab/`.
-- لا تعديل على `__root.tsx` أو `start.ts` أو أي إعداد عام.
+## 7. المكونات الجديدة داخل Lab
 
-## 8. خطة الإزالة (Rollback)
+بنية: `LabShell`, `LabNav`, `LabScenarioSwitcher`, `LabStateProvider`, `LabStateBoundary` (Empty/Loading/Error).
+تدفق: `LabStartHero`, `LabContextChoice`, `LabModeChoice`, `LabStationGrid`, `LabPhaseSplit`, `LabComponentList`, `LabLevelPicker`, `LabMatchList/Card`, `LabContextualAssist`, `LabWhyThis`.
+روتين: `LabRoutineBuilder`, `LabEventRow`, `LabCadencePicker`, `LabRoutineTimeline`.
+مساحة الأسرة والتنفيذ: `LabWorkspace`, `LabStepLadder`, `LabStopPointPicker`, `LabSupportPicker`, `LabToolPreview`, `LabCardPreview`, `LabLearnerCard`, `LabExecutionMode`, `LabSupportDrawer`.
+التكرار: `LabFeedbackSheet`, `LabReasonChips`, `LabLifecycleChoices`, `LabCardVersions`, `LabParticipationsBoard`, `LabRepeatBadge`.
+بصري ومصادر: `LabVisualRoutineLayer`, `LabToolCanvas`, `LabPrintSheet`, `LabDirectory`, `LabResourceShelf`.
+تجريبي: `LabWeavingInput`, `LabWeavingResults`, `LabSuggestionEngine` (mock), `LabSuggestionCard`.
 
-الإزالة الكاملة = حذف ثلاثة أشياء فقط:
-1. `src/routes/lab*.tsx`
-2. مجلد `src/lab/`
-3. قاعدة `no-restricted-imports` المضافة في `eslint.config.js`
+## 8. خطة الـSprints
 
-لا يوجد أي أثر آخر: لا migrations، لا تعديل مكونات، لا تغيير تنقل. سيتم توثيق ذلك في `docs/execution/DALILI_LAB_PROTOTYPE_V1.md`.
+| Sprint | المخرجات |
+|---|---|
+| 0 | `lab.tsx`, `LabShell`, `LabStateProvider`, Scenario Switcher، `/lab`، `/lab/states`، قاعدة ESLint، طبقة القراءة من CSV |
+| 1 | «ابدأ من روتينكم» + `/lab/context` + `/lab/mode` |
+| 2 | منزلي/مجتمعي + اختيار محطة واحدة أو بناء روتين (`/lab/stations`) |
+| 3 | Routine Builder + المعاينة والترتيب والدوريات ومحطات المشاركة |
+| 4 | تفكيك الحدث: قبل/أثناء/بعد → المكوّن → المستوى → المشاركات |
+| 5 | Contextual Help Me Choose + «لماذا هذه المشاركة» |
+| 6 | Family Participation Workspace (الخطوات، المشاركة السابقة، نقطة النهاية) |
+| 7 | معاينة واعتماد + Learner Card + Execution Mode Full screen |
+| 8 | تكامل الدعم البصري من «+ دعم إضافي» ونسخة الطباعة |
+| 9 | Feedback (3 حالات + أسباب اختيارية عند 🙁) |
+| 10 | التكرار ودورة الحياة والنسخ عند التوسيع |
+| 11 | «مشاركات نكررها الآن» + «من مشاركاتنا المعتادة» |
+| 12 | Visual Routine Layer المولَّد من الروتين |
+| 13 | المشاركة المجتمعية + Community Support كمسار مساند |
+| 14 | Participation Weaving |
+| 15 | Experimental AI (محاكاة الاقتراحات) |
+| 16 | إمكانية الوصول WCAG 2.2 AA، الحالات الحدية، اختبار End-to-End وتقرير مقارنة |
 
-## 9. خطة التنفيذ على Sprints
+## 9. اللغة وإمكانية الوصول
 
-- **Sprint 0:** الهيكل — `lab.tsx`, `LabShell`, `LabStateProvider`, Switcher, صفحة `/lab`.
-- **Sprint 1:** الرئيسية الجديدة + «اليوم» + الروتين.
-- **Sprint 2:** ويزارد الاختيار + التصفح + المستويات.
-- **Sprint 3:** بطاقة الداعم/المشارك الجديدة + الوسائل البصرية.
-- **Sprint 4:** المشاركات النشطة والمتابعة + بوابة الدعم.
-- **Sprint 5:** ربط التدفقات End-to-End + مراجعة حالات الفراغ/الخطأ + تقرير مقارنة.
+- معجم مسموح: مشاركة، حدث، دور، اختيار، فرصة، ما يساعد، نجعلها أسهل، نكررها، نستمر، مشاركة أوسع، مكان داخل اليوم. ممنوع: تعليم، تدريب، إتقان، نجاح/فشل، قدرة/عدم قدرة، Mastery، Passed/Failed، درجات.
+- فحص نصي آلي داخل Lab يمنع تسرب المصطلحات الممنوعة.
+- عربية وRTL أساساً · تنقل بلوحة المفاتيح وحالات تركيز واضحة · دلالات قارئ الشاشة · تباين AA · مساحات لمس ≥44px · نص قابل للتكبير · تقليل الحمل المعرفي (قرار واحد لكل شاشة).
 
-## ملاحظات تقنية
+## 10. الإزالة الكاملة
 
-- المسارات تتبع اصطلاح TanStack (`lab.card.$id.tsx` → `/lab/card/$id`).
-- الحفاظ على RTL والعربية والتوكنز الدلالية؛ أي لون/تباعد جديد يُعرَّف كطبقة Lab محلية لا كتعديل على `styles.css` (إن لزم إضافة توكن، أطلب موافقتك أولاً).
-- لا تعديل خارج `/lab` بدون موافقة صريحة منك.
+حذف `src/routes/lab*.tsx` + مجلد `src/lab/` + قاعدة `no-restricted-imports` = إزالة كاملة بلا أثر. التوثيق في `docs/execution/DALILI_LAB_PROTOTYPE_V1.md` (داخل نطاق Lab، وسأطلب موافقتك قبل إنشائه إن اعتبرته خارج النطاق).
