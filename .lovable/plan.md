@@ -166,4 +166,4 @@ LabState {
 
 ## 10. الإزالة الكاملة
 
-حذف `src/routes/lab*.tsx` + مجلد `src/lab/` + قاعدة `no-restricted-imports` = إزالة كاملة بلا أثر. التوثيق في `docs/execution/DALILI_LAB_PROTOTYPE_V1.md` (داخل نطاق Lab، وسأطلب موافقتك قبل إنشائه إن اعتبرته خارج النطاق).
+حذف `src/routes/lab*.tsx` + مجلد `src/lab/` + قاعدة `no-restricted-imports` = إزالة كاملة بلا أثر. لا ملف توثيق خارج نطاق العزل الآن؛ يؤجَّل التوثيق إلى ما بعد نجاح النموذج.
