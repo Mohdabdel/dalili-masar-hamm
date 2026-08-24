@@ -16,6 +16,7 @@ import { Route as ReminderRouteImport } from './routes/reminder'
 import { Route as ParticipationGuideRouteImport } from './routes/participation-guide'
 import { Route as MessagesRouteImport } from './routes/messages'
 import { Route as McpRouteImport } from './routes/mcp'
+import { Route as LabRouteImport } from './routes/lab'
 import { Route as HelpMeChooseRouteImport } from './routes/help-me-choose'
 import { Route as EducationSupportRouteImport } from './routes/education-support'
 import { Route as CommunitySupportRouteImport } from './routes/community-support'
@@ -24,6 +25,7 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ToolsIndexRouteImport } from './routes/tools.index'
+import { Route as LabIndexRouteImport } from './routes/lab.index'
 import { Route as ActivitiesIndexRouteImport } from './routes/activities.index'
 import { Route as ToolsProjectIdRouteImport } from './routes/tools.$projectId'
 import { Route as SettingsFamilyRouteImport } from './routes/settings.family'
@@ -76,6 +78,11 @@ const McpRoute = McpRouteImport.update({
   path: '/mcp',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LabRoute = LabRouteImport.update({
+  id: '/lab',
+  path: '/lab',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HelpMeChooseRoute = HelpMeChooseRouteImport.update({
   id: '/help-me-choose',
   path: '/help-me-choose',
@@ -114,6 +121,11 @@ const ToolsIndexRoute = ToolsIndexRouteImport.update({
   id: '/tools/',
   path: '/tools/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const LabIndexRoute = LabIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LabRoute,
 } as any)
 const ActivitiesIndexRoute = ActivitiesIndexRouteImport.update({
   id: '/activities/',
@@ -207,6 +219,7 @@ export interface FileRoutesByFullPath {
   '/community-support': typeof CommunitySupportRoute
   '/education-support': typeof EducationSupportRoute
   '/help-me-choose': typeof HelpMeChooseRoute
+  '/lab': typeof LabRouteWithChildren
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
   '/participation-guide': typeof ParticipationGuideRoute
@@ -229,6 +242,7 @@ export interface FileRoutesByFullPath {
   '/settings/family': typeof SettingsFamilyRoute
   '/tools/$projectId': typeof ToolsProjectIdRoute
   '/activities/': typeof ActivitiesIndexRoute
+  '/lab/': typeof LabIndexRoute
   '/tools/': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
@@ -261,6 +275,7 @@ export interface FileRoutesByTo {
   '/settings/family': typeof SettingsFamilyRoute
   '/tools/$projectId': typeof ToolsProjectIdRoute
   '/activities': typeof ActivitiesIndexRoute
+  '/lab': typeof LabIndexRoute
   '/tools': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
@@ -273,6 +288,7 @@ export interface FileRoutesById {
   '/community-support': typeof CommunitySupportRoute
   '/education-support': typeof EducationSupportRoute
   '/help-me-choose': typeof HelpMeChooseRoute
+  '/lab': typeof LabRouteWithChildren
   '/mcp': typeof McpRoute
   '/messages': typeof MessagesRoute
   '/participation-guide': typeof ParticipationGuideRoute
@@ -295,6 +311,7 @@ export interface FileRoutesById {
   '/settings/family': typeof SettingsFamilyRoute
   '/tools/$projectId': typeof ToolsProjectIdRoute
   '/activities/': typeof ActivitiesIndexRoute
+  '/lab/': typeof LabIndexRoute
   '/tools/': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
@@ -307,6 +324,7 @@ export interface FileRouteTypes {
     | '/community-support'
     | '/education-support'
     | '/help-me-choose'
+    | '/lab'
     | '/mcp'
     | '/messages'
     | '/participation-guide'
@@ -329,6 +347,7 @@ export interface FileRouteTypes {
     | '/settings/family'
     | '/tools/$projectId'
     | '/activities/'
+    | '/lab/'
     | '/tools/'
     | '/.mcp/invoke-tool/$tool'
   fileRoutesByTo: FileRoutesByTo
@@ -361,6 +380,7 @@ export interface FileRouteTypes {
     | '/settings/family'
     | '/tools/$projectId'
     | '/activities'
+    | '/lab'
     | '/tools'
     | '/.mcp/invoke-tool/$tool'
   id:
@@ -372,6 +392,7 @@ export interface FileRouteTypes {
     | '/community-support'
     | '/education-support'
     | '/help-me-choose'
+    | '/lab'
     | '/mcp'
     | '/messages'
     | '/participation-guide'
@@ -394,6 +415,7 @@ export interface FileRouteTypes {
     | '/settings/family'
     | '/tools/$projectId'
     | '/activities/'
+    | '/lab/'
     | '/tools/'
     | '/.mcp/invoke-tool/$tool'
   fileRoutesById: FileRoutesById
@@ -406,6 +428,7 @@ export interface RootRouteChildren {
   CommunitySupportRoute: typeof CommunitySupportRoute
   EducationSupportRoute: typeof EducationSupportRoute
   HelpMeChooseRoute: typeof HelpMeChooseRoute
+  LabRoute: typeof LabRouteWithChildren
   McpRoute: typeof McpRoute
   MessagesRoute: typeof MessagesRoute
   ParticipationGuideRoute: typeof ParticipationGuideRoute
@@ -478,6 +501,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof McpRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lab': {
+      id: '/lab'
+      path: '/lab'
+      fullPath: '/lab'
+      preLoaderRoute: typeof LabRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/help-me-choose': {
       id: '/help-me-choose'
       path: '/help-me-choose'
@@ -533,6 +563,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/tools/'
       preLoaderRoute: typeof ToolsIndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/lab/': {
+      id: '/lab/'
+      path: '/'
+      fullPath: '/lab/'
+      preLoaderRoute: typeof LabIndexRouteImport
+      parentRoute: typeof LabRoute
     }
     '/activities/': {
       id: '/activities/'
@@ -665,6 +702,16 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
 const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
+interface LabRouteChildren {
+  LabIndexRoute: typeof LabIndexRoute
+}
+
+const LabRouteChildren: LabRouteChildren = {
+  LabIndexRoute: LabIndexRoute,
+}
+
+const LabRouteWithChildren = LabRoute._addFileChildren(LabRouteChildren)
+
 interface SettingsRouteChildren {
   SettingsAddEventRoute: typeof SettingsAddEventRoute
   SettingsFamilyRoute: typeof SettingsFamilyRoute
@@ -687,6 +734,7 @@ const rootRouteChildren: RootRouteChildren = {
   CommunitySupportRoute: CommunitySupportRoute,
   EducationSupportRoute: EducationSupportRoute,
   HelpMeChooseRoute: HelpMeChooseRoute,
+  LabRoute: LabRouteWithChildren,
   McpRoute: McpRoute,
   MessagesRoute: MessagesRoute,
   ParticipationGuideRoute: ParticipationGuideRoute,
