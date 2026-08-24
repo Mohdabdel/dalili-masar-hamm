@@ -36,5 +36,27 @@ export default tseslint.config(
       "@typescript-eslint/no-unused-vars": "off",
     },
   },
+  {
+    // عزل مساحة النموذج التجريبي: ممنوع أي اتصال بقاعدة البيانات أو المصادقة داخل /lab.
+    files: ["src/lab/**/*.{ts,tsx}", "src/routes/lab*.{ts,tsx}"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: [
+                "@/integrations/supabase/*",
+                "**/integrations/supabase/*",
+                "@supabase/*",
+              ],
+              message:
+                "مساحة /lab معزولة: ممنوع استيراد Supabase أو المصادقة داخل النموذج التجريبي.",
+            },
+          ],
+        },
+      ],
+    },
+  },
   eslintPluginPrettier,
 );

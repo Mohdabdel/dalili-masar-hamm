@@ -33,6 +33,8 @@ import { Route as SettingsAddEventRouteImport } from './routes/settings.add-even
 import { Route as LearnerIdRouteImport } from './routes/learner.$id'
 import { Route as LabWeavingRouteImport } from './routes/lab.weaving'
 import { Route as LabVisualRouteImport } from './routes/lab.visual'
+import { Route as LabStationsRouteImport } from './routes/lab.stations'
+import { Route as LabStatesRouteImport } from './routes/lab.states'
 import { Route as LabStartRouteImport } from './routes/lab.start'
 import { Route as LabRoutineRouteImport } from './routes/lab.routine'
 import { Route as LabParticipationsRouteImport } from './routes/lab.participations'
@@ -48,6 +50,14 @@ import { Route as AuthenticatedActiveParticipationsRouteImport } from './routes/
 import { Route as AuthenticatedAccountRouteImport } from './routes/_authenticated/account'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
+import { Route as LabWorkspaceParticipationIdRouteImport } from './routes/lab.workspace.$participationId'
+import { Route as LabRunParticipationIdRouteImport } from './routes/lab.run.$participationId'
+import { Route as LabPrintParticipationIdRouteImport } from './routes/lab.print.$participationId'
+import { Route as LabMatchOpportunityIdRouteImport } from './routes/lab.match.$opportunityId'
+import { Route as LabLearnerParticipationIdRouteImport } from './routes/lab.learner.$participationId'
+import { Route as LabFeedbackParticipationIdRouteImport } from './routes/lab.feedback.$participationId'
+import { Route as LabEventEventIdRouteImport } from './routes/lab.event.$eventId'
+import { Route as LabCardParticipationIdRouteImport } from './routes/lab.card.$participationId'
 import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
 
 const SettingsRoute = SettingsRouteImport.update({
@@ -169,6 +179,16 @@ const LabVisualRoute = LabVisualRouteImport.update({
   path: '/visual',
   getParentRoute: () => LabRoute,
 } as any)
+const LabStationsRoute = LabStationsRouteImport.update({
+  id: '/stations',
+  path: '/stations',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabStatesRoute = LabStatesRouteImport.update({
+  id: '/states',
+  path: '/states',
+  getParentRoute: () => LabRoute,
+} as any)
 const LabStartRoute = LabStartRouteImport.update({
   id: '/start',
   path: '/start',
@@ -247,6 +267,49 @@ const Char91DotmcpChar93ListToolsRoute =
     path: '/.mcp/list-tools',
     getParentRoute: () => rootRouteImport,
   } as any)
+const LabWorkspaceParticipationIdRoute =
+  LabWorkspaceParticipationIdRouteImport.update({
+    id: '/workspace/$participationId',
+    path: '/workspace/$participationId',
+    getParentRoute: () => LabRoute,
+  } as any)
+const LabRunParticipationIdRoute = LabRunParticipationIdRouteImport.update({
+  id: '/run/$participationId',
+  path: '/run/$participationId',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabPrintParticipationIdRoute = LabPrintParticipationIdRouteImport.update({
+  id: '/print/$participationId',
+  path: '/print/$participationId',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabMatchOpportunityIdRoute = LabMatchOpportunityIdRouteImport.update({
+  id: '/match/$opportunityId',
+  path: '/match/$opportunityId',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabLearnerParticipationIdRoute =
+  LabLearnerParticipationIdRouteImport.update({
+    id: '/learner/$participationId',
+    path: '/learner/$participationId',
+    getParentRoute: () => LabRoute,
+  } as any)
+const LabFeedbackParticipationIdRoute =
+  LabFeedbackParticipationIdRouteImport.update({
+    id: '/feedback/$participationId',
+    path: '/feedback/$participationId',
+    getParentRoute: () => LabRoute,
+  } as any)
+const LabEventEventIdRoute = LabEventEventIdRouteImport.update({
+  id: '/event/$eventId',
+  path: '/event/$eventId',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabCardParticipationIdRoute = LabCardParticipationIdRouteImport.update({
+  id: '/card/$participationId',
+  path: '/card/$participationId',
+  getParentRoute: () => LabRoute,
+} as any)
 const Char91DotmcpChar93InvokeToolToolRoute =
   Char91DotmcpChar93InvokeToolToolRouteImport.update({
     id: '/.mcp/invoke-tool/$tool',
@@ -284,6 +347,8 @@ export interface FileRoutesByFullPath {
   '/lab/participations': typeof LabParticipationsRoute
   '/lab/routine': typeof LabRoutineRoute
   '/lab/start': typeof LabStartRoute
+  '/lab/states': typeof LabStatesRoute
+  '/lab/stations': typeof LabStationsRoute
   '/lab/visual': typeof LabVisualRoute
   '/lab/weaving': typeof LabWeavingRoute
   '/learner/$id': typeof LearnerIdRoute
@@ -294,6 +359,14 @@ export interface FileRoutesByFullPath {
   '/lab/': typeof LabIndexRoute
   '/tools/': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/lab/card/$participationId': typeof LabCardParticipationIdRoute
+  '/lab/event/$eventId': typeof LabEventEventIdRoute
+  '/lab/feedback/$participationId': typeof LabFeedbackParticipationIdRoute
+  '/lab/learner/$participationId': typeof LabLearnerParticipationIdRoute
+  '/lab/match/$opportunityId': typeof LabMatchOpportunityIdRoute
+  '/lab/print/$participationId': typeof LabPrintParticipationIdRoute
+  '/lab/run/$participationId': typeof LabRunParticipationIdRoute
+  '/lab/workspace/$participationId': typeof LabWorkspaceParticipationIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -324,6 +397,8 @@ export interface FileRoutesByTo {
   '/lab/participations': typeof LabParticipationsRoute
   '/lab/routine': typeof LabRoutineRoute
   '/lab/start': typeof LabStartRoute
+  '/lab/states': typeof LabStatesRoute
+  '/lab/stations': typeof LabStationsRoute
   '/lab/visual': typeof LabVisualRoute
   '/lab/weaving': typeof LabWeavingRoute
   '/learner/$id': typeof LearnerIdRoute
@@ -334,6 +409,14 @@ export interface FileRoutesByTo {
   '/lab': typeof LabIndexRoute
   '/tools': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/lab/card/$participationId': typeof LabCardParticipationIdRoute
+  '/lab/event/$eventId': typeof LabEventEventIdRoute
+  '/lab/feedback/$participationId': typeof LabFeedbackParticipationIdRoute
+  '/lab/learner/$participationId': typeof LabLearnerParticipationIdRoute
+  '/lab/match/$opportunityId': typeof LabMatchOpportunityIdRoute
+  '/lab/print/$participationId': typeof LabPrintParticipationIdRoute
+  '/lab/run/$participationId': typeof LabRunParticipationIdRoute
+  '/lab/workspace/$participationId': typeof LabWorkspaceParticipationIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -367,6 +450,8 @@ export interface FileRoutesById {
   '/lab/participations': typeof LabParticipationsRoute
   '/lab/routine': typeof LabRoutineRoute
   '/lab/start': typeof LabStartRoute
+  '/lab/states': typeof LabStatesRoute
+  '/lab/stations': typeof LabStationsRoute
   '/lab/visual': typeof LabVisualRoute
   '/lab/weaving': typeof LabWeavingRoute
   '/learner/$id': typeof LearnerIdRoute
@@ -377,6 +462,14 @@ export interface FileRoutesById {
   '/lab/': typeof LabIndexRoute
   '/tools/': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/lab/card/$participationId': typeof LabCardParticipationIdRoute
+  '/lab/event/$eventId': typeof LabEventEventIdRoute
+  '/lab/feedback/$participationId': typeof LabFeedbackParticipationIdRoute
+  '/lab/learner/$participationId': typeof LabLearnerParticipationIdRoute
+  '/lab/match/$opportunityId': typeof LabMatchOpportunityIdRoute
+  '/lab/print/$participationId': typeof LabPrintParticipationIdRoute
+  '/lab/run/$participationId': typeof LabRunParticipationIdRoute
+  '/lab/workspace/$participationId': typeof LabWorkspaceParticipationIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -410,6 +503,8 @@ export interface FileRouteTypes {
     | '/lab/participations'
     | '/lab/routine'
     | '/lab/start'
+    | '/lab/states'
+    | '/lab/stations'
     | '/lab/visual'
     | '/lab/weaving'
     | '/learner/$id'
@@ -420,6 +515,14 @@ export interface FileRouteTypes {
     | '/lab/'
     | '/tools/'
     | '/.mcp/invoke-tool/$tool'
+    | '/lab/card/$participationId'
+    | '/lab/event/$eventId'
+    | '/lab/feedback/$participationId'
+    | '/lab/learner/$participationId'
+    | '/lab/match/$opportunityId'
+    | '/lab/print/$participationId'
+    | '/lab/run/$participationId'
+    | '/lab/workspace/$participationId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -450,6 +553,8 @@ export interface FileRouteTypes {
     | '/lab/participations'
     | '/lab/routine'
     | '/lab/start'
+    | '/lab/states'
+    | '/lab/stations'
     | '/lab/visual'
     | '/lab/weaving'
     | '/learner/$id'
@@ -460,6 +565,14 @@ export interface FileRouteTypes {
     | '/lab'
     | '/tools'
     | '/.mcp/invoke-tool/$tool'
+    | '/lab/card/$participationId'
+    | '/lab/event/$eventId'
+    | '/lab/feedback/$participationId'
+    | '/lab/learner/$participationId'
+    | '/lab/match/$opportunityId'
+    | '/lab/print/$participationId'
+    | '/lab/run/$participationId'
+    | '/lab/workspace/$participationId'
   id:
     | '__root__'
     | '/'
@@ -492,6 +605,8 @@ export interface FileRouteTypes {
     | '/lab/participations'
     | '/lab/routine'
     | '/lab/start'
+    | '/lab/states'
+    | '/lab/stations'
     | '/lab/visual'
     | '/lab/weaving'
     | '/learner/$id'
@@ -502,6 +617,14 @@ export interface FileRouteTypes {
     | '/lab/'
     | '/tools/'
     | '/.mcp/invoke-tool/$tool'
+    | '/lab/card/$participationId'
+    | '/lab/event/$eventId'
+    | '/lab/feedback/$participationId'
+    | '/lab/learner/$participationId'
+    | '/lab/match/$opportunityId'
+    | '/lab/print/$participationId'
+    | '/lab/run/$participationId'
+    | '/lab/workspace/$participationId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -704,6 +827,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LabVisualRouteImport
       parentRoute: typeof LabRoute
     }
+    '/lab/stations': {
+      id: '/lab/stations'
+      path: '/stations'
+      fullPath: '/lab/stations'
+      preLoaderRoute: typeof LabStationsRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/states': {
+      id: '/lab/states'
+      path: '/states'
+      fullPath: '/lab/states'
+      preLoaderRoute: typeof LabStatesRouteImport
+      parentRoute: typeof LabRoute
+    }
     '/lab/start': {
       id: '/lab/start'
       path: '/start'
@@ -809,6 +946,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char91DotmcpChar93ListToolsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lab/workspace/$participationId': {
+      id: '/lab/workspace/$participationId'
+      path: '/workspace/$participationId'
+      fullPath: '/lab/workspace/$participationId'
+      preLoaderRoute: typeof LabWorkspaceParticipationIdRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/run/$participationId': {
+      id: '/lab/run/$participationId'
+      path: '/run/$participationId'
+      fullPath: '/lab/run/$participationId'
+      preLoaderRoute: typeof LabRunParticipationIdRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/print/$participationId': {
+      id: '/lab/print/$participationId'
+      path: '/print/$participationId'
+      fullPath: '/lab/print/$participationId'
+      preLoaderRoute: typeof LabPrintParticipationIdRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/match/$opportunityId': {
+      id: '/lab/match/$opportunityId'
+      path: '/match/$opportunityId'
+      fullPath: '/lab/match/$opportunityId'
+      preLoaderRoute: typeof LabMatchOpportunityIdRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/learner/$participationId': {
+      id: '/lab/learner/$participationId'
+      path: '/learner/$participationId'
+      fullPath: '/lab/learner/$participationId'
+      preLoaderRoute: typeof LabLearnerParticipationIdRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/feedback/$participationId': {
+      id: '/lab/feedback/$participationId'
+      path: '/feedback/$participationId'
+      fullPath: '/lab/feedback/$participationId'
+      preLoaderRoute: typeof LabFeedbackParticipationIdRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/event/$eventId': {
+      id: '/lab/event/$eventId'
+      path: '/event/$eventId'
+      fullPath: '/lab/event/$eventId'
+      preLoaderRoute: typeof LabEventEventIdRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/card/$participationId': {
+      id: '/lab/card/$participationId'
+      path: '/card/$participationId'
+      fullPath: '/lab/card/$participationId'
+      preLoaderRoute: typeof LabCardParticipationIdRouteImport
+      parentRoute: typeof LabRoute
+    }
     '/.mcp/invoke-tool/$tool': {
       id: '/.mcp/invoke-tool/$tool'
       path: '/.mcp/invoke-tool/$tool'
@@ -841,9 +1034,19 @@ interface LabRouteChildren {
   LabParticipationsRoute: typeof LabParticipationsRoute
   LabRoutineRoute: typeof LabRoutineRoute
   LabStartRoute: typeof LabStartRoute
+  LabStatesRoute: typeof LabStatesRoute
+  LabStationsRoute: typeof LabStationsRoute
   LabVisualRoute: typeof LabVisualRoute
   LabWeavingRoute: typeof LabWeavingRoute
   LabIndexRoute: typeof LabIndexRoute
+  LabCardParticipationIdRoute: typeof LabCardParticipationIdRoute
+  LabEventEventIdRoute: typeof LabEventEventIdRoute
+  LabFeedbackParticipationIdRoute: typeof LabFeedbackParticipationIdRoute
+  LabLearnerParticipationIdRoute: typeof LabLearnerParticipationIdRoute
+  LabMatchOpportunityIdRoute: typeof LabMatchOpportunityIdRoute
+  LabPrintParticipationIdRoute: typeof LabPrintParticipationIdRoute
+  LabRunParticipationIdRoute: typeof LabRunParticipationIdRoute
+  LabWorkspaceParticipationIdRoute: typeof LabWorkspaceParticipationIdRoute
 }
 
 const LabRouteChildren: LabRouteChildren = {
@@ -852,9 +1055,19 @@ const LabRouteChildren: LabRouteChildren = {
   LabParticipationsRoute: LabParticipationsRoute,
   LabRoutineRoute: LabRoutineRoute,
   LabStartRoute: LabStartRoute,
+  LabStatesRoute: LabStatesRoute,
+  LabStationsRoute: LabStationsRoute,
   LabVisualRoute: LabVisualRoute,
   LabWeavingRoute: LabWeavingRoute,
   LabIndexRoute: LabIndexRoute,
+  LabCardParticipationIdRoute: LabCardParticipationIdRoute,
+  LabEventEventIdRoute: LabEventEventIdRoute,
+  LabFeedbackParticipationIdRoute: LabFeedbackParticipationIdRoute,
+  LabLearnerParticipationIdRoute: LabLearnerParticipationIdRoute,
+  LabMatchOpportunityIdRoute: LabMatchOpportunityIdRoute,
+  LabPrintParticipationIdRoute: LabPrintParticipationIdRoute,
+  LabRunParticipationIdRoute: LabRunParticipationIdRoute,
+  LabWorkspaceParticipationIdRoute: LabWorkspaceParticipationIdRoute,
 }
 
 const LabRouteWithChildren = LabRoute._addFileChildren(LabRouteChildren)

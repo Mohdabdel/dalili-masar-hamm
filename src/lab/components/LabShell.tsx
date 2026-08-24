@@ -11,12 +11,14 @@ import type { LabTimeOfDay } from "@/lab/state/types";
 const NAV = [
   { to: "/lab", label: "المختبر" },
   { to: "/lab/start", label: "ابدأ من روتينكم" },
+  { to: "/lab/stations", label: "محطات اليوم" },
   { to: "/lab/routine", label: "روتيننا" },
-  { to: "/lab/participations", label: "مشاركات نكررها" },
+  { to: "/lab/participations", label: "مشاركاتنا" },
   { to: "/lab/visual", label: "الوسائل البصرية" },
-  { to: "/lab/community", label: "المجتمع" },
+  { to: "/lab/community", label: "خارج البيت" },
   { to: "/lab/weaving", label: "شيء يحبه" },
   { to: "/lab/ai", label: "اقتراحات" },
+  { to: "/lab/states", label: "حالات الواجهة" },
 ] as const;
 
 const TIMES: { id: LabTimeOfDay; label: string }[] = [
