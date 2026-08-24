@@ -59,10 +59,10 @@ function LabCommunity() {
             <ul className="space-y-2">
               {services.map((s) => (
                 <li key={s.service.id} className="rounded-2xl border border-border bg-card p-4">
-                  <h3 className="text-base font-bold">{s.service.nameAr || s.service.nameEn}</h3>
+                  <h3 className="text-base font-bold">{s.service.nameAr}</h3>
                   {s.provider && (
                     <p className="mt-1 text-sm text-muted-foreground">
-                      {s.provider.nameAr || s.provider.nameEn}
+                      {s.provider.nameAr}
                     </p>
                   )}
                 </li>
