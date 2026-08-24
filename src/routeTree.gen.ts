@@ -33,6 +33,8 @@ import { Route as SettingsAddEventRouteImport } from './routes/settings.add-even
 import { Route as LearnerIdRouteImport } from './routes/learner.$id'
 import { Route as LabWeavingRouteImport } from './routes/lab.weaving'
 import { Route as LabVisualRouteImport } from './routes/lab.visual'
+import { Route as LabStationsRouteImport } from './routes/lab.stations'
+import { Route as LabStatesRouteImport } from './routes/lab.states'
 import { Route as LabStartRouteImport } from './routes/lab.start'
 import { Route as LabRoutineRouteImport } from './routes/lab.routine'
 import { Route as LabParticipationsRouteImport } from './routes/lab.participations'
@@ -169,6 +171,16 @@ const LabVisualRoute = LabVisualRouteImport.update({
   path: '/visual',
   getParentRoute: () => LabRoute,
 } as any)
+const LabStationsRoute = LabStationsRouteImport.update({
+  id: '/stations',
+  path: '/stations',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabStatesRoute = LabStatesRouteImport.update({
+  id: '/states',
+  path: '/states',
+  getParentRoute: () => LabRoute,
+} as any)
 const LabStartRoute = LabStartRouteImport.update({
   id: '/start',
   path: '/start',
@@ -284,6 +296,8 @@ export interface FileRoutesByFullPath {
   '/lab/participations': typeof LabParticipationsRoute
   '/lab/routine': typeof LabRoutineRoute
   '/lab/start': typeof LabStartRoute
+  '/lab/states': typeof LabStatesRoute
+  '/lab/stations': typeof LabStationsRoute
   '/lab/visual': typeof LabVisualRoute
   '/lab/weaving': typeof LabWeavingRoute
   '/learner/$id': typeof LearnerIdRoute
@@ -324,6 +338,8 @@ export interface FileRoutesByTo {
   '/lab/participations': typeof LabParticipationsRoute
   '/lab/routine': typeof LabRoutineRoute
   '/lab/start': typeof LabStartRoute
+  '/lab/states': typeof LabStatesRoute
+  '/lab/stations': typeof LabStationsRoute
   '/lab/visual': typeof LabVisualRoute
   '/lab/weaving': typeof LabWeavingRoute
   '/learner/$id': typeof LearnerIdRoute
@@ -367,6 +383,8 @@ export interface FileRoutesById {
   '/lab/participations': typeof LabParticipationsRoute
   '/lab/routine': typeof LabRoutineRoute
   '/lab/start': typeof LabStartRoute
+  '/lab/states': typeof LabStatesRoute
+  '/lab/stations': typeof LabStationsRoute
   '/lab/visual': typeof LabVisualRoute
   '/lab/weaving': typeof LabWeavingRoute
   '/learner/$id': typeof LearnerIdRoute
@@ -410,6 +428,8 @@ export interface FileRouteTypes {
     | '/lab/participations'
     | '/lab/routine'
     | '/lab/start'
+    | '/lab/states'
+    | '/lab/stations'
     | '/lab/visual'
     | '/lab/weaving'
     | '/learner/$id'
@@ -450,6 +470,8 @@ export interface FileRouteTypes {
     | '/lab/participations'
     | '/lab/routine'
     | '/lab/start'
+    | '/lab/states'
+    | '/lab/stations'
     | '/lab/visual'
     | '/lab/weaving'
     | '/learner/$id'
@@ -492,6 +514,8 @@ export interface FileRouteTypes {
     | '/lab/participations'
     | '/lab/routine'
     | '/lab/start'
+    | '/lab/states'
+    | '/lab/stations'
     | '/lab/visual'
     | '/lab/weaving'
     | '/learner/$id'
@@ -704,6 +728,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LabVisualRouteImport
       parentRoute: typeof LabRoute
     }
+    '/lab/stations': {
+      id: '/lab/stations'
+      path: '/stations'
+      fullPath: '/lab/stations'
+      preLoaderRoute: typeof LabStationsRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/states': {
+      id: '/lab/states'
+      path: '/states'
+      fullPath: '/lab/states'
+      preLoaderRoute: typeof LabStatesRouteImport
+      parentRoute: typeof LabRoute
+    }
     '/lab/start': {
       id: '/lab/start'
       path: '/start'
@@ -841,6 +879,8 @@ interface LabRouteChildren {
   LabParticipationsRoute: typeof LabParticipationsRoute
   LabRoutineRoute: typeof LabRoutineRoute
   LabStartRoute: typeof LabStartRoute
+  LabStatesRoute: typeof LabStatesRoute
+  LabStationsRoute: typeof LabStationsRoute
   LabVisualRoute: typeof LabVisualRoute
   LabWeavingRoute: typeof LabWeavingRoute
   LabIndexRoute: typeof LabIndexRoute
@@ -852,6 +892,8 @@ const LabRouteChildren: LabRouteChildren = {
   LabParticipationsRoute: LabParticipationsRoute,
   LabRoutineRoute: LabRoutineRoute,
   LabStartRoute: LabStartRoute,
+  LabStatesRoute: LabStatesRoute,
+  LabStationsRoute: LabStationsRoute,
   LabVisualRoute: LabVisualRoute,
   LabWeavingRoute: LabWeavingRoute,
   LabIndexRoute: LabIndexRoute,
