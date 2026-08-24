@@ -33,7 +33,7 @@ function LabStations() {
           const list = stations.filter((s) => s.timeOfDay === part);
           if (list.length === 0) return null;
           return (
-            <LabSection key={part} title={partOfDayLabel(part)}>
+            <LabSection key={part} title={partOfDayLabel[part]}>
               <LabGrid>
                 {list.map((s) => (
                   <LabChoiceCard
