@@ -22,27 +22,52 @@ LabParticipationSpec
   majorSteps: LabMajorStep[]
 
 LabMajorStep
-  id, instruction_family_ar, instruction_short_ar, visual_asset?
+  id, order, instruction_family_ar, instruction_short_ar, visual_asset?
   substeps: LabSubstep[]
 
 LabSubstep
-  id, instruction_family_ar, instruction_short_ar, visual_asset?
+  id, order, instruction_family_ar, instruction_short_ar, visual_asset?
+  executionOptions?: LabExecutionOption[]   // طرق تنفيذ بديلة متساوية للخطوة نفسها
+
+LabExecutionOption
+  id, label_ar, visual_asset?
 ```
 
 `visual_asset` = مسار صورة موجودة فعلاً أو `null` (يعرض Placeholder باسم الخطوة). Mapping الصور في ملف واحد: `step_id → asset`.
 
-Snapshot بطاقة المتعلم:
+`executionOptions` ليست خطوات متتابعة ولا مستويات: هي بدائل متكافئة لتنفيذ الخطوة ذاتها، تُعرض بلا ترتيب أفضلية، وتختار الأسرة منها واحدة (أو تتركها مفتوحة) داخل Workspace، فتظهر داخل إطار الخطوة نفسه في البطاقة بلا إضافة إطار جديد.
+
+اختيار الأسرة في Workspace يُحفظ **مرتباً صراحةً**:
+
+```text
+LabThisTimeSelection
+  specId
+  selected: { stepId, order }[]      // ترتيب تنفيذ صريح، لا Set ولا ترتيب ضمني
+  chosenExecutionOptionByStepId: Record<stepId, optionId>
+  supportTools: string[]
+```
+
+Snapshot بطاقة المتعلم — نسخة مجمدة وقت الاعتماد، لا تُعاد توليدها من الـFixture:
 
 ```text
 LabCardSnapshot
-  id, participationSpecId, version, createdAt
-  title_ar
-  selectedStepIds: string[]        // مرجع للشجرة الكاملة، لا نسخ لها
-  frames: { text_short_ar, asset|null }[]  // + إطار ختامي «انتهينا»
-  supportTools: string[]           // أدوات مستقلة، لا تدخل البطاقة
+  id, participationSpecId, version, createdAt      // مرجع المصدر للرجوع والتعديل لاحقاً
+  title_ar                                          // منسوخ وقت الاعتماد
+  frames: LabCardFrame[]                            // مجمدة
+  supportTools: string[]                            // أدوات مستقلة، لا تدخل البطاقة
+
+LabCardFrame
+  sourceStepId
+  order
+  text_short_ar        // نص منسوخ، لا مرجع
+  assetRef | null      // مسار منسوخ، لا مرجع
+  executionOptionLabel_ar?   // إن اختارت الأسرة طريقة تنفيذ
 ```
 
-لا حقول تقييم ولا نسب ولا مؤشرات إتقان في أي من النموذجين.
+الإطار الختامي «انتهينا» جزء من `frames` المجمدة. تغيّر أي Fixture لاحقاً لا يغيّر بطاقة معتمدة سابقاً؛ التعديل ينتج Snapshot جديداً بنسخة أعلى مع بقاء السابق كما هو.
+
+لا حقول تقييم ولا نسب ولا مؤشرات إتقان في أي من النماذج.
+
 
 ## المسار المنفذ
 
