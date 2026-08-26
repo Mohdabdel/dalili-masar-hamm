@@ -77,6 +77,10 @@ export interface LabCardFrame {
   sourceText_ar?: string;
   assetRef: string | null;
   executionOptionLabel_ar?: string;
+  /** كيف اعتمدت الأسرة عرض هذه الخطوة. */
+  presentation?: StepPresentationMode;
+  /** ترتيب الصورة/الجملة كما اعتمدته الأسرة. */
+  blockOrder?: StepBlockOrder;
 }
 
 export interface LabCardSnapshot {
