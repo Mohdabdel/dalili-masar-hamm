@@ -117,7 +117,18 @@ export function libraryDomainNames(context?: SpaceContext): string[] {
 
 export function defaultStations(context: SpaceContext): SpaceEvent[] {
   const ids = context === "home" ? DEFAULT_HOME_STATION_IDS : DEFAULT_COMMUNITY_STATION_IDS;
-  return ids.map(getSpaceEvent).filter((e): e is SpaceEvent => Boolean(e));
+  const picked = ids.map(getSpaceEvent).filter((e): e is SpaceEvent => Boolean(e));
+  // بعض الأحداث المفضلة قد لا تكون جاهزة في المكتبة بعد؛ نكمل بمحطات مألوفة أخرى من نفس السياق.
+  if (picked.length < 8) {
+    const seen = new Set(picked.map((e) => e.id));
+    for (const e of allSpaceEvents(context)) {
+      if (picked.length >= 8) break;
+      if (seen.has(e.id)) continue;
+      seen.add(e.id);
+      picked.push(e);
+    }
+  }
+  return picked;
 }
 
 // ---------- المشاركات الوظيفية ----------
