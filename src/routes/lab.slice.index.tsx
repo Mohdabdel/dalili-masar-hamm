@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ChevronDown, ChevronLeft, Home, Trees, X, Menu, Info } from "lucide-react";
+import { ChevronDown, ChevronLeft, Home, Trees, X, Menu, Info, Images, CalendarRange, MessageSquare } from "lucide-react";
 import { labHead } from "@/lab/components/lab-ui";
 import { defaultStations, getSpaceEvent, getSpaceSpec, type SpaceContext } from "@/lab/data/space/catalog";
 import { useSlice } from "@/lab/slice/state";
@@ -16,7 +16,7 @@ function SliceHome() {
   const [context, setContext] = useState<SpaceContext | null>(null);
   const [summaryOpen, setSummaryOpen] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
-  const [showClosed, setShowClosed] = useState(false);
+  const [view, setView] = useState<"active" | "history">("active");
   const [openBlocks, setOpenBlocks] = useState<Record<string, boolean>>({});
 
   const blocks = useMemo(() => {
@@ -26,18 +26,29 @@ function SliceHome() {
       const cards = state.snapshots.filter((s) => s.participationSpecId === specId);
       const open = cards.filter((c) => !state.closedCards.includes(c.id));
       const closed = cards.filter((c) => state.closedCards.includes(c.id));
+      const frames = open.flatMap((c) => c.frames.filter((f) => f.sourceStepId !== "__done__"));
+      const ready = frames.filter((f) => f.assetRef).length;
+      const coverage =
+        frames.length === 0
+          ? ""
+          : ready === frames.length
+            ? "الدعم البصري مكتمل"
+            : frames.length - ready === 1
+              ? "الدعم البصري: تحتاج هذه المشاركة معينًا واحدًا"
+              : `الدعم البصري: ${ready} من ${frames.length} جاهزة`;
       return {
         specId,
         title: spec?.title_ar ?? cards[0]?.participationTitle_ar ?? "مشاركة",
         eventTitle: spec?.eventTitle_ar ?? cards[0]?.eventTitle_ar ?? "",
         open,
         closed,
+        coverage,
       };
     });
   }, [state.snapshots, state.closedCards]);
 
   const activeBlocks = blocks.filter((b) => b.open.length > 0);
-  const pastBlocks = blocks.filter((b) => b.open.length === 0);
+  const pastBlocks = blocks.filter((b) => b.closed.length > 0);
   const started = state.snapshots.length > 0;
 
   return (
@@ -117,42 +128,51 @@ function SliceHome() {
             </Link>
           </div>
         ) : (
-          <ul className="mt-4 divide-y divide-border border-y border-border">
-            {activeBlocks.map((b) => (
-              <TaskBlock
-                key={b.specId}
-                block={b}
-                expanded={openBlocks[b.specId] ?? true}
-                onToggle={() =>
-                  setOpenBlocks((p) => ({ ...p, [b.specId]: !(p[b.specId] ?? true) }))
-                }
-                closedIds={state.closedCards}
-              />
-            ))}
-            {showClosed &&
-              pastBlocks.map((b) => (
-                <TaskBlock
-                  key={b.specId}
-                  block={b}
-                  expanded={openBlocks[b.specId] ?? false}
-                  onToggle={() =>
-                    setOpenBlocks((p) => ({ ...p, [b.specId]: !(p[b.specId] ?? false) }))
-                  }
-                  closedIds={state.closedCards}
-                />
-              ))}
-          </ul>
-        )}
+          <>
+            <div role="group" aria-label="عرض المشاركات" className="mt-4 flex gap-2">
+              <ViewTab on={view === "active"} onClick={() => setView("active")}>
+                المشاركات الفعالة
+              </ViewTab>
+              <ViewTab on={view === "history"} onClick={() => setView("history")}>
+                السجل
+              </ViewTab>
+            </div>
 
-        {pastBlocks.length > 0 && (
-          <button
-            type="button"
-            onClick={() => setShowClosed((v) => !v)}
-            className="mt-3 min-h-[40px] text-sm font-bold text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-          >
-            {showClosed ? "إخفاء السابق" : `عرض السابق (${pastBlocks.length})`}
-          </button>
+            {(view === "active" ? activeBlocks : pastBlocks).length === 0 ? (
+              <p className="mt-4 text-sm text-muted-foreground">
+                {view === "active" ? "لا توجد بطاقة مفتوحة الآن." : "لا توجد بطاقات مغلقة بعد."}
+              </p>
+            ) : (
+              <ul className="mt-4 divide-y divide-border border-y border-border">
+                {(view === "active" ? activeBlocks : pastBlocks).map((b) => (
+                  <TaskBlock
+                    key={b.specId}
+                    block={b}
+                    historyView={view === "history"}
+                    expanded={openBlocks[b.specId] ?? view === "active"}
+                    onToggle={() =>
+                      setOpenBlocks((p) => ({
+                        ...p,
+                        [b.specId]: !(p[b.specId] ?? view === "active"),
+                      }))
+                    }
+                    closedIds={state.closedCards}
+                  />
+                ))}
+              </ul>
+            )}
+          </>
         )}
+      </section>
+
+      {/* أدوات دليلي */}
+      <section className="mt-9">
+        <h2 className="text-lg font-bold text-foreground">أدوات دليلي</h2>
+        <ul className="mt-3 grid gap-2 sm:grid-cols-3">
+          <ToolLink to="/lab/visual" icon={<Images className="h-4 w-4" aria-hidden />} label="المعينات البصرية" />
+          <ToolLink to="/tools" icon={<CalendarRange className="h-4 w-4" aria-hidden />} label="الجداول البصرية" />
+          <ToolLink to="/tools" icon={<MessageSquare className="h-4 w-4" aria-hidden />} label="وسيلة التواصل" />
+        </ul>
       </section>
 
       {/* مدخل الاهتمام */}
@@ -211,6 +231,7 @@ interface BlockView {
   eventTitle: string;
   open: { id: string; title_ar: string }[];
   closed: { id: string; title_ar: string }[];
+  coverage: string;
 }
 
 function TaskBlock({
@@ -218,13 +239,15 @@ function TaskBlock({
   expanded,
   onToggle,
   closedIds,
+  historyView,
 }: {
   block: BlockView;
   expanded: boolean;
   onToggle: () => void;
   closedIds: string[];
+  historyView?: boolean;
 }) {
-  const cards = [...block.open, ...block.closed];
+  const cards = historyView ? block.closed : block.open;
   return (
     <li className="py-3">
       <button
@@ -269,6 +292,9 @@ function TaskBlock({
               </li>
             );
           })}
+          {!historyView && block.coverage && (
+            <li className="px-3 pt-1 text-xs font-bold text-muted-foreground">{block.coverage}</li>
+          )}
           <li>
             <Link
               to="/lab/slice/card/$specId"
@@ -447,5 +473,51 @@ function InfoAccordion() {
         </li>
       ))}
     </ul>
+  );
+}
+
+function ViewTab({
+  on,
+  onClick,
+  children,
+}: {
+  on: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      aria-pressed={on}
+      onClick={onClick}
+      className={cn(
+        "min-h-[40px] rounded-xl border px-4 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+        on ? "border-primary bg-primary text-primary-foreground" : "border-border text-muted-foreground hover:bg-accent",
+      )}
+    >
+      {children}
+    </button>
+  );
+}
+
+function ToolLink({
+  to,
+  icon,
+  label,
+}: {
+  to: string;
+  icon: React.ReactNode;
+  label: string;
+}) {
+  return (
+    <li>
+      <Link
+        to={to}
+        className="flex min-h-[48px] items-center gap-2 rounded-xl border border-border px-3 text-sm font-bold text-foreground hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        {icon}
+        {label}
+      </Link>
+    </li>
   );
 }
