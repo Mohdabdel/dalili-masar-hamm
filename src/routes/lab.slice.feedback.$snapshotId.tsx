@@ -125,7 +125,7 @@ function SliceFeedback() {
                 aria-pressed={lifecycle === l.id}
                 onClick={() => setLifecycle(l.id)}
                 className={cn(
-                  "w-full rounded-2xl border p-4 text-start",
+                  "w-full rounded-2xl border p-4 text-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                   lifecycle === l.id ? "border-primary bg-primary/5" : "border-border bg-card",
                 )}
               >
@@ -151,7 +151,7 @@ function Chip({ label, on, onClick }: { label: string; on: boolean; onClick: () 
       aria-pressed={on}
       onClick={onClick}
       className={cn(
-        "min-h-[44px] rounded-xl border px-4 text-base font-semibold",
+        "min-h-11 rounded-xl border px-4 text-base font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
         on ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card",
       )}
     >
