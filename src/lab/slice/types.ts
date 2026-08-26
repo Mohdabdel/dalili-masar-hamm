@@ -41,6 +41,12 @@ export interface LabParticipationSpec {
   majorSteps: LabMajorStep[];
 }
 
+/** كيف تُعرض الخطوة للمشارك: صورة وجملة، صورة فقط، أو جملة فقط. */
+export type StepPresentationMode = "both" | "visual" | "text";
+
+/** ترتيب الكتلتين داخل بطاقة الخطوة. */
+export type StepBlockOrder = "visual-text" | "text-visual";
+
 /** اختيار الأسرة لهذه المرة — بترتيب تنفيذ صريح. */
 export interface LabThisTimeSelection {
   specId: string;
