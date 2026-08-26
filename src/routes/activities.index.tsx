@@ -1,112 +1,178 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { BookOpen, ChevronLeft, Info, ShieldCheck } from "lucide-react";
+import {
+  BookOpen,
+  CalendarRange,
+  ChevronLeft,
+  Home,
+  Images,
+  Info,
+  MessageSquare,
+  ShieldCheck,
+  Sparkles,
+  Trees,
+  X,
+} from "lucide-react";
 import { PageShell } from "@/components/PageShell";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const Route = createFileRoute("/activities/")({
   head: () => ({
     meta: [
-      { title: "دليلي للمشاركة الحياتية | دليلي - مسار همم" },
+      { title: "دليلي — مساحة مشاركات الأسرة" },
       {
         name: "description",
         content:
-          "خطوات بسيطة مستمرة تحقق مشاركة مستدامة: تعرّف على دليلي للمشاركة الحياتية ودليل الاستخدام واعتبارات الاستخدام، ثم ابدأ الآن.",
+          "المشاركة ليست تدريبًا على الحياة… المشاركة هي الحياة نفسها. الفرصة الموجودة تكفي: ابدأوا من حدث معتاد في يومكم داخل المنزل أو خارجه.",
       },
-      {
-        property: "og:title",
-        content: "دليلي للمشاركة الحياتية | دليلي - مسار همم",
-      },
+      { property: "og:title", content: "دليلي — مساحة مشاركات الأسرة" },
       {
         property: "og:description",
         content:
-          "حوّل أحداث الحياة اليومية إلى فرص مشاركة حقيقية بخطوات بسيطة مستمرة.",
+          "الفرصة الموجودة تكفي — مساحة الأسرة لإعداد مشاركات حقيقية داخل أحداث الحياة اليومية.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
   }),
-  component: ActivitiesHubPage,
+  component: DaliliHome,
 });
 
-function AboutTab() {
+function DaliliHome() {
+  const [infoOpen, setInfoOpen] = useState(false);
+
   return (
-    <div className="space-y-4 text-start">
-      <section className="rounded-2xl border border-border/70 bg-card p-5 shadow-card-soft">
-        <h2 className="text-base font-bold text-foreground">
-          ما هو دليلي للمشاركة الحياتية؟
-        </h2>
-        <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground">
-          دليل يساعد الأسرة على استثمار أحداث الحياة اليومية وتحويلها إلى فرص
-          مشاركة عملية وهادفة، دون إضافة مهام جديدة إلى اليوم أو جلسات منفصلة.
-        </p>
-      </section>
+    <PageShell title="دليلي" subtitle="مساحة مشاركات الأسرة">
+      <div dir="rtl" className="text-start">
+        {/* هوية وفلسفة */}
+        <section className="rounded-3xl border border-border/70 bg-card p-5 shadow-card-soft sm:p-6">
+          <div className="flex items-start justify-between gap-3">
+            <p className="max-w-[46ch] text-lg font-bold leading-relaxed text-foreground sm:text-xl">
+              المشاركة ليست تدريبًا على الحياة… المشاركة هي الحياة نفسها.
+            </p>
+            <button
+              type="button"
+              onClick={() => setInfoOpen(true)}
+              className="inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-xl border border-border px-3 text-sm font-bold text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              <Info className="h-4 w-4" aria-hidden />
+              عن دليلي
+            </button>
+          </div>
 
-      <section className="rounded-2xl border border-border/70 bg-card p-5 shadow-card-soft">
-        <h2 className="text-base font-bold text-foreground">
-          لماذا تستخدم دليلي للمشاركة الحياتية؟
-        </h2>
-        <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground">
-          الهدف الأساسي من هذا الدليل هو خلق مساحة حقيقية للشاب أو
-          الشابة من ذوي الإعاقة داخل أحداث الحياة اليومية للأسرة. فاستمرار
-          المشاركة في أحداث الحياة والقيام بدور حقيقي فيها يسهم في تعزيز الاستقرار
-          والروتين والشعور بالانتماء والفاعلية، ويزيد من فرص المشاركة مع مرور
-          الوقت.
-        </p>
-      </section>
+          <p className="mt-4 text-base font-bold text-gold">الفرصة الموجودة تكفي.</p>
+          <p className="mt-2 max-w-[52ch] text-[0.95rem] leading-relaxed text-muted-foreground">
+            لا تحتاجون إلى تخصيص وقت للمشاركة. عندما يحدث شيء معتاد في يومكم، يمكن
+            إتاحة جزء صغير منه للمشاركة — ولو للحظات، وبالقدر الذي يناسب الموقف
+            والأسرة.
+          </p>
+          <p className="mt-2 max-w-[52ch] text-[0.95rem] leading-relaxed text-muted-foreground">
+            لا يشترط إكمال النشاط كله. يمكن أن تبدأ المشاركة بخطوة واحدة أو جزء صغير
+            له معنى حقيقي، ثم تتكرر الفرصة كلما عاد هذا الحدث طبيعيًا في يومكم.
+          </p>
+        </section>
 
-      <section className="rounded-2xl border border-border/70 bg-secondary p-5">
-        <h2 className="text-base font-bold text-foreground">قاعدة الـ15 دقيقة</h2>
-        <div className="mt-2 space-y-2 text-[0.95rem] leading-relaxed text-foreground/90">
-          <p>
-            صُمم هذا الدليل ليكون عمليًا وقابلًا للتطبيق داخل الحياة اليومية، ولا
-            يتطلب من الأسرة وقتًا طويلًا أو ترتيبات خاصة.
+        {/* سياق الحياة */}
+        <section className="mt-6">
+          <h2 className="px-1 text-lg font-bold text-foreground">أين تحدث المشاركة؟</h2>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            <ContextCard
+              to="/activities/$category"
+              params={{ category: "home" }}
+              icon={Home}
+              title="داخل المنزل"
+              description="محطات وأحداث منزلية معتادة في يومكم."
+            />
+            <ContextCard
+              to="/activities/$category"
+              params={{ category: "community" }}
+              icon={Trees}
+              title="خارج المنزل"
+              description="أحداث الحياة التي تحدث خارج المنزل."
+            />
+          </div>
+        </section>
+
+        {/* مشاركاتنا */}
+        <section className="mt-6">
+          <div className="flex items-center justify-between gap-3 px-1">
+            <h2 className="text-lg font-bold text-foreground">مشاركاتنا</h2>
+            <Link
+              to="/lab/slice"
+              className="inline-flex min-h-11 items-center rounded-xl bg-gradient-gold px-4 text-sm font-bold text-primary shadow-card-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              مساحة الأسرة
+            </Link>
+          </div>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            <PlainLink
+              to="/active-participations"
+              title="المشاركات الفعالة"
+              description="البطاقات المفتوحة والقابلة للمتابعة."
+            />
+            <PlainLink
+              to="/activities/browse"
+              title="مكتبة الحياة"
+              description="لم تجدوا الحدث؟ استكشفوا الأحداث والمشاركات المتاحة."
+            />
+          </div>
+        </section>
+
+        {/* أدوات دليلي */}
+        <section className="mt-6">
+          <h2 className="px-1 text-lg font-bold text-foreground">أدوات دليلي</h2>
+          <ul className="mt-3 grid gap-2 sm:grid-cols-3">
+            <ToolLink to="/tools" icon={Images} label="المعينات البصرية" />
+            <ToolLink to="/tools" icon={CalendarRange} label="الجداول البصرية" />
+            <ToolLink to="/tools" icon={MessageSquare} label="وسيلة التواصل" />
+          </ul>
+        </section>
+
+        {/* اكتشاف من الاهتمام */}
+        <section className="mt-8 border-t border-border pt-6">
+          <h2 className="text-base font-bold text-foreground">
+            لم تجدوا ما يشبه حياتكم؟
+          </h2>
+          <p className="mt-1 max-w-[48ch] text-sm leading-relaxed text-muted-foreground">
+            ابدأوا من نشاط يحبه، شيء يفعله، أو اهتمام يعود إليه.
           </p>
-          <p>
-            استثمروا روتينكم اليومي كما هو؛ سيعرض لكم دليلي فرص مشاركة مألوفة داخل
-            المنزل وفي المجتمع يمكن تحويلها إلى فرص حقيقية للمشاركة.
-          </p>
-          <p>
-            لا تحتاج البداية إلى أكثر من 15 دقيقة يوميًا. اختاروا مستوى المشاركة
-            الذي يجعل للشاب أو الشابة دورًا حقيقيًا يمكن تنفيذه، حتى لو كان هذا
-            الدور بسيطًا جدًا.
-          </p>
-          <p>
-            استمروا في إتاحة الفرصة للمشاركة في النشاط نفسه بصورة متكررة، وقدّموا
-            الدعم عند الحاجة بصورة متدرجة، مع ترك مساحة أكبر للمبادرة والأداء كلما
-            أصبح ذلك ممكنًا.
-          </p>
-          <p>
-            عندما تصبح المشاركة في هذا النشاط أكثر ثباتًا، يمكن إضافة نشاط آخر.
-            ومع تكرار هذه الفرص بمرور الوقت، تتسع مساحة مشاركة الشاب أو الشابة في
-            أحداث الحياة اليومية.
-          </p>
-        </div>
-      </section>
-    </div>
+          <Link
+            to="/help-me-choose"
+            className="mt-3 inline-flex min-h-11 items-center gap-2 rounded-xl border border-border px-4 text-sm font-bold text-foreground transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            <Sparkles className="h-4 w-4" aria-hidden />
+            استكشفوا من اهتمام
+          </Link>
+        </section>
+      </div>
+
+      {infoOpen && <AboutPanel onClose={() => setInfoOpen(false)} />}
+    </PageShell>
   );
 }
 
-function EntryLink({
+function ContextCard({
+  to,
+  params,
+  icon: Icon,
   title,
   description,
-  icon: Icon,
-  tab,
 }: {
+  to: "/activities/$category";
+  params: { category: string };
+  icon: React.ComponentType<{ className?: string }>;
   title: string;
   description: string;
-  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
-  tab: "guide" | "considerations";
 }) {
   return (
     <Link
-      to="/participation-guide"
-      search={{ tab }}
-      className="group flex items-start gap-4 rounded-2xl border-2 border-border bg-card p-5 shadow-card-soft transition-all hover:-translate-y-0.5 hover:border-gold hover:shadow-elegant"
+      to={to}
+      params={params}
+      className="group flex items-start gap-3 rounded-2xl border-2 border-border bg-card p-5 shadow-card-soft transition-all hover:-translate-y-0.5 hover:border-gold hover:shadow-elegant focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
     >
-      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-gold text-primary shadow-card-soft">
-        <Icon className="h-5 w-5" strokeWidth={2} />
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-gold text-primary">
+        <Icon className="h-5 w-5" />
       </span>
-      <span className="min-w-0 flex-1 text-start">
+      <span className="min-w-0 flex-1">
         <span className="block text-base font-bold text-foreground">{title}</span>
         <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
           {description}
@@ -117,68 +183,136 @@ function EntryLink({
   );
 }
 
-function ActivitiesHubPage() {
+function PlainLink({
+  to,
+  title,
+  description,
+}: {
+  to: "/active-participations" | "/activities/browse";
+  title: string;
+  description: string;
+}) {
   return (
-    <PageShell
-      title="دليلي للمشاركة الحياتية"
-      subtitle="خطوات بسيطة مستمرة تحقق مشاركة مستدامة"
-      breadcrumbs={[{ label: "دليلي للمشاركة الحياتية" }]}
+    <Link
+      to={to}
+      className="flex min-h-[64px] items-start justify-between gap-3 rounded-2xl border border-border bg-card p-4 transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
     >
-      <div dir="rtl" className="text-start">
-        <Tabs defaultValue="about" dir="rtl" className="w-full">
-          <TabsList className="mb-4 grid w-full grid-cols-3">
-            <TabsTrigger value="about" className="text-[0.72rem] font-bold sm:text-sm">
-              ما هو دليلي
-            </TabsTrigger>
-            <TabsTrigger value="guide" className="text-[0.72rem] font-bold sm:text-sm">
-              دليل الاستخدام
-            </TabsTrigger>
-            <TabsTrigger
-              value="considerations"
-              className="text-[0.72rem] font-bold sm:text-sm"
-            >
-              اعتبارات الاستخدام
-            </TabsTrigger>
-          </TabsList>
+      <span className="min-w-0">
+        <span className="block text-base font-bold text-foreground">{title}</span>
+        <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
+          {description}
+        </span>
+      </span>
+      <ChevronLeft className="mt-1 h-5 w-5 shrink-0 text-muted-foreground" aria-hidden />
+    </Link>
+  );
+}
 
-          <TabsContent value="about">
-            <AboutTab />
-          </TabsContent>
+function ToolLink({
+  to,
+  icon: Icon,
+  label,
+}: {
+  to: "/tools";
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+}) {
+  return (
+    <li>
+      <Link
+        to={to}
+        className="flex min-h-12 items-center gap-2 rounded-xl border border-border bg-card px-3 text-sm font-bold text-foreground transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        <Icon className="h-4 w-4 text-gold" />
+        {label}
+      </Link>
+    </li>
+  );
+}
 
-          <TabsContent value="guide">
-            <EntryLink
-              title="دليل الاستخدام"
-              description="طريقة استخدام الدليل خطوة بخطوة: من الحدث اليومي إلى بطاقة فرصة المشاركة."
-              icon={BookOpen}
-              tab="guide"
-            />
-          </TabsContent>
-
-          <TabsContent value="considerations">
-            <EntryLink
-              title="اعتبارات الاستخدام"
-              description="اعتبارات عملية تخص المشارك والداعم والفرصة والبيئة، ومتى نوقف المشاركة."
-              icon={ShieldCheck}
-              tab="considerations"
-            />
-          </TabsContent>
-        </Tabs>
-
-        <div className="mt-4 flex items-start gap-3 rounded-2xl border border-border/70 bg-secondary p-4">
-          <Info className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
-          <p className="text-sm leading-relaxed text-foreground/90">
-            قراءة هذه المداخل اختيارية، ويمكنكم البدء مباشرة في أي وقت.
-          </p>
+function AboutPanel({ onClose }: { onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-50 flex items-end justify-center bg-foreground/40 p-0 sm:items-center sm:p-4">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="عن دليلي"
+        dir="rtl"
+        className="max-h-[85vh] w-full max-w-lg overflow-y-auto rounded-t-3xl bg-background p-5 text-start sm:rounded-3xl"
+      >
+        <div className="mb-4 flex items-center justify-between gap-3">
+          <h2 className="text-lg font-bold text-foreground">عن دليلي</h2>
+          <button
+            type="button"
+            onClick={onClose}
+            autoFocus
+            aria-label="إغلاق"
+            className="grid h-10 w-10 place-items-center rounded-full border border-border text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            <X className="h-4 w-4" aria-hidden />
+          </button>
         </div>
 
-        <Link
-          to="/activities/level"
-          className="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-gold p-4 text-base font-bold text-primary shadow-elegant transition-transform hover:-translate-y-0.5"
-        >
-          ابدأ الآن
-          <ChevronLeft className="h-5 w-5" />
-        </Link>
+        <section className="rounded-2xl border border-border/70 bg-card p-4">
+          <h3 className="text-base font-bold text-foreground">ما هو دليلي؟</h3>
+          <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground">
+            دليلي مساحة تساعد الأسرة على استثمار أحداث حياتها اليومية كما هي،
+            وتحويل جزء منها إلى مشاركة حقيقية للشاب أو الشابة — دون إضافة مهام
+            جديدة إلى اليوم ودون جلسات منفصلة.
+          </p>
+          <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground">
+            لا نبحث عمّا يستطيع أن يتقنه لاحقًا، بل عمّا يستطيع أن يشارك فيه اليوم.
+          </p>
+        </section>
+
+        <div className="mt-3 space-y-2">
+          <AboutLink
+            tab="guide"
+            icon={BookOpen}
+            title="دليل الاستخدام"
+            description="من الحدث اليومي إلى بطاقة المشاركة."
+          />
+          <AboutLink
+            tab="considerations"
+            icon={ShieldCheck}
+            title="اعتبارات الاستخدام"
+            description="اعتبارات عملية أثناء إعداد المشاركة، ومتى نتوقف."
+          />
+        </div>
+
+        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+          قراءة هذه المداخل اختيارية، ويمكنكم البدء مباشرة في أي وقت.
+        </p>
       </div>
-    </PageShell>
+    </div>
+  );
+}
+
+function AboutLink({
+  tab,
+  icon: Icon,
+  title,
+  description,
+}: {
+  tab: "guide" | "considerations";
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  description: string;
+}) {
+  return (
+    <Link
+      to="/participation-guide"
+      search={{ tab }}
+      className="flex items-start gap-3 rounded-2xl border border-border bg-card p-4 transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+    >
+      <Icon className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
+      <span className="min-w-0 flex-1">
+        <span className="block text-sm font-bold text-foreground">{title}</span>
+        <span className="mt-0.5 block text-xs leading-relaxed text-muted-foreground">
+          {description}
+        </span>
+      </span>
+      <ChevronLeft className="mt-1 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden />
+    </Link>
   );
 }
