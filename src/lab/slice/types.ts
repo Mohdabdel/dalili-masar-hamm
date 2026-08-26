@@ -66,6 +66,13 @@ export interface LabCardSnapshot {
   title_ar: string;
   frames: LabCardFrame[];
   supportTools: string[];
+  /** مرجع الحدث والمشاركة الأصلية — منسوخ وقت الاعتماد. */
+  eventId?: string;
+  eventTitle_ar?: string;
+  participationTitle_ar?: string;
+  date?: string;
+  startText_ar?: string;
+  endText_ar?: string;
 }
 
 export type SliceTone = "comfortable" | "usual" | "difficult_today";
