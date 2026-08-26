@@ -226,7 +226,9 @@ function SliceWorkspace() {
           <ol className="grid grid-cols-2 gap-3 sm:grid-cols-3">
             {previewFrames.map((step, i) => {
               const optionId = selection.chosenExecutionOptionByStepId[step.id];
-              const option = step.executionOptions?.find((o) => o.id === optionId);
+              const option = ("executionOptions" in step ? step.executionOptions : undefined)?.find(
+                (o) => o.id === optionId,
+              );
               return (
                 <li key={step.id} className="rounded-2xl border border-border bg-card p-2">
                   <StepFrame asset={step.visual_asset} label={step.instruction_short_ar} />
