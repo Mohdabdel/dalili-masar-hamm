@@ -68,7 +68,7 @@ function toSpaceEvent(ctx: FlatEvent): SpaceEvent {
   return {
     id: ctx.event.id,
     title: ctx.event.name,
-    hint: ctx.event.description || ctx.domain.name,
+    hint: ctx.domain.name,
     domainName: ctx.domain.name,
     contexts: contextsOf(ctx.domain.id),
     participationCount: ctx.event.opportunities.length,
