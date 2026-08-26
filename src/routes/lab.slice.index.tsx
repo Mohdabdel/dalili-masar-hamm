@@ -89,7 +89,7 @@ function SliceStart() {
       <LabSection title="لم تجدوا الحدث؟">
         <Link
           to="/lab/slice/library"
-          search={{ context }}
+          
           className="flex min-h-[64px] w-full items-center gap-3 rounded-2xl border border-primary/40 bg-primary/5 p-4 text-start font-bold text-foreground hover:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           <Library className="h-5 w-5 text-primary" aria-hidden />
