@@ -2,8 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ChevronLeft,
   HeartHandshake,
-  MapPinned,
-  GraduationCap,
   CalendarClock,
   Sparkles,
   ListChecks,
@@ -14,52 +12,24 @@ import { PageShell } from "@/components/PageShell";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "دليلي — دعم وتمكين أسر ذوي الإعاقة" },
+      { title: "دليلي — المشاركة هي الحياة نفسها" },
       {
         name: "description",
         content:
-          "دليلي: منصة واحدة بثلاث خدمات — المشاركة الحياتية اليومية، مصادر الدعم المجتمعي، ومصادر الدعم التعليمي والتأهيلي.",
+          "دليلي: مساحة الأسرة لتحويل أحداث الحياة اليومية إلى مشاركة حقيقية. الفرصة الموجودة تكفي — ابدأوا من حدث معتاد في يومكم.",
       },
-      { property: "og:title", content: "دليلي — دعم وتمكين أسر ذوي الإعاقة" },
+      { property: "og:title", content: "دليلي — المشاركة هي الحياة نفسها" },
       {
         property: "og:description",
         content:
-          "ثلاث خدمات مستقلة: المشاركة الحياتية، الدعم المجتمعي، والدعم التعليمي.",
+          "الفرصة الموجودة تكفي: جزء صغير من حدث معتاد يكفي لتبدأ المشاركة.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: LandingPage,
 });
-
-const SERVICES = [
-  {
-    title: "دليلي للمشاركة الحياتية",
-    description:
-      "حوّل أحداث اليوم العادية إلى فرص مشاركة متدرجة، مع بطاقات عملية ودعم أثناء التطبيق.",
-    icon: HeartHandshake,
-    to: "/activities" as const,
-    accent: "bg-gradient-primary text-primary-foreground",
-    tint: "border-primary/30",
-  },
-  {
-    title: "مصادر الدعم المجتمعي",
-    description:
-      "دليل وصول للمرافق والفعاليات والتسهيلات والنقل والمبادرات المجتمعية.",
-    icon: MapPinned,
-    to: "/community-support" as const,
-    accent: "bg-gradient-sage text-primary-foreground",
-    tint: "border-sage/40",
-  },
-  {
-    title: "مصادر الدعم التعليمي",
-    description:
-      "دليل وصول لمزودي الخدمات التعليمية والتأهيلية: تربية خاصة، نطق، علاج وظيفي وطبيعي، وتدريب مهني.",
-    icon: GraduationCap,
-    to: "/education-support" as const,
-    accent: "bg-gradient-gold text-primary",
-    tint: "border-gold/50",
-  },
-];
 
 const FAMILY_TOOLS = [
   {
@@ -86,49 +56,40 @@ function LandingPage() {
   return (
     <PageShell
       title="دليلي"
-      description="دليل دعم وتمكين أسر الأشخاص من ذوي الإعاقة"
+      description="مساحة مشاركات الأسرة داخل الحياة اليومية"
     >
       <section className="mt-1 rounded-3xl bg-gradient-primary p-6 text-primary-foreground shadow-elegant sm:p-8">
-
-
-        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
-          منصة واحدة · ثلاث خدمات
-        </p>
-        <h2 className="mt-3 font-display text-2xl font-bold leading-snug sm:text-3xl">
-          كل ما تحتاجه الأسرة في مكان واحد
+        <h2 className="font-display text-2xl font-bold leading-snug sm:text-3xl">
+          المشاركة ليست تدريبًا على الحياة… المشاركة هي الحياة نفسها.
         </h2>
-        <p className="mt-2 text-base leading-relaxed text-primary-foreground/90">
-          مشاركة حياتية يومية، ودليل وصول للخدمات المجتمعية والتعليمية.
+        <p className="mt-3 text-base font-bold text-gold">الفرصة الموجودة تكفي.</p>
+        <p className="mt-2 max-w-[52ch] text-[0.95rem] leading-relaxed text-primary-foreground/90">
+          لا تحتاجون إلى تخصيص وقت للمشاركة. عندما يحدث شيء معتاد في يومكم، يمكن
+          إتاحة جزء صغير منه للمشاركة — ولو للحظات، وبالقدر الذي يناسب الموقف
+          والأسرة.
         </p>
       </section>
 
-      <section id="services" className="mt-6 space-y-3">
-        <h2 className="px-1 font-display text-lg font-bold text-foreground">
-          الخدمات
-        </h2>
-        {SERVICES.map(({ title, description, icon: Icon, to, accent, tint }) => (
-          <Link
-            key={title}
-            to={to}
-            className={`group flex items-start gap-4 rounded-2xl border-2 bg-card p-5 shadow-card-soft transition-all hover:-translate-y-0.5 hover:shadow-elegant ${tint}`}
-          >
-            <span
-              className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl shadow-card-soft ${accent}`}
-            >
-              <Icon className="h-6 w-6" strokeWidth={2} />
+      <section className="mt-6">
+        <Link
+          to="/activities"
+          className="group flex items-start gap-4 rounded-2xl border-2 border-primary/30 bg-card p-5 shadow-card-soft transition-all hover:-translate-y-0.5 hover:shadow-elegant"
+        >
+          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground shadow-card-soft">
+            <HeartHandshake className="h-6 w-6" strokeWidth={2} />
+          </span>
+          <span className="min-w-0 flex-1 text-right">
+            <span className="block font-display text-lg font-bold text-foreground">
+              مساحة مشاركاتنا
             </span>
-            <span className="min-w-0 flex-1 text-right">
-              <span className="block font-display text-lg font-bold text-foreground">
-                {title}
-              </span>
-              <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
-                {description}
-              </span>
+            <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
+              ابدأوا من حدث داخل المنزل أو خارجه، واصنعوا بطاقة مشاركة تناسب أسرتكم.
             </span>
-            <ChevronLeft className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
-          </Link>
-        ))}
+          </span>
+          <ChevronLeft className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
+        </Link>
       </section>
+
 
       <section id="family-tools" className="mt-6 space-y-3">
         <h2 className="px-1 font-display text-lg font-bold text-foreground">

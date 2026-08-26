@@ -79,10 +79,13 @@ function collectServices(): SearchItem[] {
   return items;
 }
 
+// ملاحظة: خدمات الدعم التعليمي والمجتمعي لم تعد جزءًا من دليلي،
+// لذلك لا تدخل فهرس البحث. collectServices محفوظة للمشروع المستقل.
+void collectServices;
+
 export const searchIndex: SearchItem[] = [
   ...collectParticipation("home", getHomeDomains()),
   ...collectParticipation("community", getCommunityDomains()),
-  ...collectServices(),
 ];
 
 export const kindLabel: Record<SearchKind, string> = {
@@ -90,3 +93,4 @@ export const kindLabel: Record<SearchKind, string> = {
   community: "مجتمعي",
   services: "دعم وخدمات",
 };
+

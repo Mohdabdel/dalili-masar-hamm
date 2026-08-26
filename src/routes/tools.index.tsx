@@ -41,7 +41,7 @@ function ToolsHomePage() {
       title="أدوات ووسائل داعمة"
       description="أدوات بصرية تصنعها الأسرة بنفسها، وتبقى محفوظة على جهازها فقط"
       breadcrumbs={[
-        { label: "مصادر الدعم التعليمي", to: "/education-support" },
+        { label: "دليلي", to: "/activities" },
         { label: "أدوات ووسائل داعمة" },
       ]}
     >

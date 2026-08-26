@@ -99,7 +99,7 @@ function SearchPage() {
 
       <div className="mb-4 space-y-3 rounded-2xl border border-border/60 bg-card p-3 shadow-card-soft">
         <FilterGroup label="النوع">
-          {(["home", "community", "services"] as SearchKind[]).map((k) => (
+          {(["home", "community"] as SearchKind[]).map((k) => (
             <Chip key={k} active={f.kinds.includes(k)} onClick={() => toggleKind(k)}>
               {kindLabel[k]}
             </Chip>
