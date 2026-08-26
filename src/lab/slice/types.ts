@@ -91,3 +91,32 @@ export type SliceLifecycleChoice =
   | "make_routine"
   | "not_now"
   | "close_card";
+
+/**
+ * DALILI-FINAL-PATCH — طبقات إضافية فوق النموذج الحالي.
+ * لا تغيّر المسار الأساسي: حدث → مستوى → مشاركة → مساحة الأسرة → بطاقة مجمّدة.
+ */
+
+/** حالة الدعم البصري لخطوة — جاهزية تكييف، وليست وصفًا لأي شخص. */
+export type LabVisualStatus =
+  | "exact"
+  | "functional"
+  | "object"
+  | "sequence"
+  | "communication"
+  | "schedule"
+  | "needed"
+  | "not_required";
+
+export type LabSupportAssetType = "communication" | "time" | "schedule";
+
+/** مخرج دعم مستقل — لا يُدمج داخل بطاقة المشارك. */
+export interface LabSupportAsset {
+  id: string;
+  type: LabSupportAssetType;
+  label_ar: string;
+  specId: string;
+  snapshotId?: string;
+  createdAt: string;
+  items: string[];
+}
