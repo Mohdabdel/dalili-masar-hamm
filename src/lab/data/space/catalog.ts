@@ -121,7 +121,7 @@ export function defaultStations(context: SpaceContext): SpaceEvent[] {
   // بعض الأحداث المفضلة قد لا تكون جاهزة في المكتبة بعد؛ نكمل بمحطات مألوفة أخرى من نفس السياق.
   if (picked.length < 8) {
     const seen = new Set(picked.map((e) => e.id));
-    for (const e of allSpaceEvents(context)) {
+    for (const e of allSpaceEvents().filter((e) => e.contexts.includes(context))) {
       if (picked.length >= 8) break;
       if (seen.has(e.id)) continue;
       seen.add(e.id);
