@@ -89,4 +89,5 @@ export type SliceLifecycleChoice =
   | "adjust"
   | "expand"
   | "make_routine"
-  | "not_now";
+  | "not_now"
+  | "close_card";
