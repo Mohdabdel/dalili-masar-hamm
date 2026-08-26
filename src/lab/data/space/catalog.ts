@@ -17,6 +17,8 @@ import type {
   LabThisTimeSelection,
   LabVisualStatus,
   SliceLevel,
+  StepBlockOrder,
+  StepPresentationMode,
 } from "@/lab/slice/types";
 import { suggestVisual } from "@/lab/data/space/coverage";
 
@@ -271,6 +273,8 @@ export function buildSpaceSnapshot(input: {
       sourceText_ar: step.instruction_family_ar,
       assetRef: visualFor(spec, selection, step.id),
       executionOptionLabel_ar: option?.label_ar,
+      presentation: presentationFor(selection, step.id),
+      blockOrder: blockOrderFor(selection, step.id),
     });
   });
   frames.push({
@@ -279,6 +283,8 @@ export function buildSpaceSnapshot(input: {
     text_short_ar: "انتهينا",
     sourceText_ar: "انتهينا",
     assetRef: null,
+    presentation: "text",
+    blockOrder: "visual-text",
   });
 
   return {
@@ -326,7 +332,7 @@ export function visualFor(
   selection: LabThisTimeSelection,
   stepId: string,
 ): string | null {
-  if (selection.textOnlyStepIds?.includes(stepId)) return null;
+  if (presentationFor(selection, stepId) === "text") return null;
   const chosen = selection.visualByStepId?.[stepId];
   if (chosen) return chosen;
   const step = findSpaceStep(spec, stepId);
@@ -334,12 +340,30 @@ export function visualFor(
   return suggestVisual(step.instruction_family_ar, step.visual_asset ?? null).src;
 }
 
+/** كيف تُعرض الخطوة للمشارك — الافتراضي صورة وجملة. */
+export function presentationFor(
+  selection: LabThisTimeSelection,
+  stepId: string,
+): StepPresentationMode {
+  const mode = selection.presentationByStepId?.[stepId];
+  if (mode) return mode;
+  return selection.textOnlyStepIds?.includes(stepId) ? "text" : "both";
+}
+
+/** ترتيب الصورة والجملة — الافتراضي الصورة ثم الجملة. */
+export function blockOrderFor(
+  selection: LabThisTimeSelection,
+  stepId: string,
+): StepBlockOrder {
+  return selection.blockOrderByStepId?.[stepId] ?? "visual-text";
+}
+
 export function visualStatusFor(
   spec: LabParticipationSpec,
   selection: LabThisTimeSelection,
   stepId: string,
 ): LabVisualStatus {
-  if (selection.textOnlyStepIds?.includes(stepId)) return "not_required";
+  if (presentationFor(selection, stepId) === "text") return "not_required";
   const step = findSpaceStep(spec, stepId);
   if (!step) return "needed";
   if (selection.visualByStepId?.[stepId]) return "exact";
@@ -362,6 +386,8 @@ export function buildDraftSelection(spec: LabParticipationSpec): LabThisTimeSele
     familyTextByStepId: {},
     visualByStepId: {},
     textOnlyStepIds: [],
+    presentationByStepId: {},
+    blockOrderByStepId: {},
     drafted: true,
   };
 }
