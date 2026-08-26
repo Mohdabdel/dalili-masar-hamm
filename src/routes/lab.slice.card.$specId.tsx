@@ -48,7 +48,7 @@ function SliceCardBlock() {
                 .map((id) => SPACE_SUPPORT_TOOLS.find((t) => t.id === id)?.label)
                 .filter(Boolean);
               return (
-                <li key={snap.id} className="rounded-2xl border border-border bg-card p-4">
+                <li key={snap.id} className="rounded-2xl border border-border bg-card p-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                   <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
                     <div>
                       <h3 className="text-lg font-bold">{snap.title_ar}</h3>
