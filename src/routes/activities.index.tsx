@@ -158,7 +158,7 @@ function ContextCard({
   description,
 }: {
   to: "/activities/$category";
-  params: { category: string };
+  params: { category: "home" | "community" };
   icon: React.ComponentType<{ className?: string }>;
   title: string;
   description: string;
