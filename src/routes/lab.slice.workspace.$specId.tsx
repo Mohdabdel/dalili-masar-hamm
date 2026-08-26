@@ -109,7 +109,7 @@ function SliceWorkspace() {
     });
 
   const rows: FrameEditRow[] = orderedIds
-    .map((stepId) => {
+    .map((stepId): FrameEditRow | null => {
       const step = findSpaceStep(spec, stepId);
       if (!step) return null;
       const optionId = selection.chosenExecutionOptionByStepId[stepId];
@@ -124,7 +124,7 @@ function SliceWorkspace() {
         status: visualStatusFor(spec, selection, stepId),
         textOnly: selection.textOnlyStepIds?.includes(stepId) ?? false,
         optionLabel: option?.label_ar,
-      } satisfies FrameEditRow;
+      };
     })
     .filter((r): r is FrameEditRow => Boolean(r));
 
