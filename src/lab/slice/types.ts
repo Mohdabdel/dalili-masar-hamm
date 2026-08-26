@@ -57,8 +57,12 @@ export interface LabThisTimeSelection {
   familyTextByStepId?: Record<string, string>;
   /** الصورة التي اختارتها الأسرة لكل خطوة ("" = بلا صورة). */
   visualByStepId?: Record<string, string>;
-  /** خطوات اختارت الأسرة إبقاءها نصًا فقط. */
+  /** خطوات اختارت الأسرة إبقاءها نصًا فقط (توافق قديم مع presentationByStepId). */
   textOnlyStepIds?: string[];
+  /** كيف تُعرض كل خطوة: صورة وجملة / صورة فقط / جملة فقط. */
+  presentationByStepId?: Record<string, StepPresentationMode>;
+  /** ترتيب الصورة والجملة داخل بطاقة الخطوة. */
+  blockOrderByStepId?: Record<string, StepBlockOrder>;
   /** بدأنا من مسودة مولّدة تلقائيًا؟ */
   drafted?: boolean;
 }
