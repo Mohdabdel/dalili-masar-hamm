@@ -11,7 +11,6 @@ import {
 } from "@/lab/components/lab-ui";
 import { useLab } from "@/lab/state/lab-state";
 import { getStations } from "@/lab/data/knowledge-read";
-import { getCommunityServices, withProviders } from "@/lib/service-directories";
 import { safeText } from "@/lab/data/lexicon";
 
 export const Route = createFileRoute("/lab/community")({
@@ -22,7 +21,6 @@ export const Route = createFileRoute("/lab/community")({
 function LabCommunity() {
   const { dispatch } = useLab();
   const stations = useMemo(() => getStations("community").slice(0, 10), []);
-  const services = useMemo(() => withProviders(getCommunityServices()).slice(0, 6), []);
 
   return (
     <LabPage
@@ -49,27 +47,6 @@ function LabCommunity() {
           )}
         </LabSection>
 
-        <LabSection
-          title="دعم مساند عند الحاجة"
-          description="مسار منفصل عن المشاركة اليومية — جهات وخدمات، وليس جزءاً من الروتين."
-        >
-          {services.length === 0 ? (
-            <LabNote>لا توجد خدمات معروضة الآن.</LabNote>
-          ) : (
-            <ul className="space-y-2">
-              {services.map((s) => (
-                <li key={s.service.id} className="rounded-2xl border border-border bg-card p-4">
-                  <h3 className="text-base font-bold">{s.service.nameAr}</h3>
-                  {s.provider && (
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      {s.provider.nameAr}
-                    </p>
-                  )}
-                </li>
-              ))}
-            </ul>
-          )}
-        </LabSection>
       </LabStateBoundary>
     </LabPage>
   );

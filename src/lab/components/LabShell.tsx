@@ -32,6 +32,11 @@ export function LabShell({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
+  // شاشة دليلي المبسّطة: بلا شريط أدوات المختبر.
+  if (pathname.startsWith("/lab/slice")) {
+    return <div className="min-h-screen bg-background">{children}</div>;
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <a
