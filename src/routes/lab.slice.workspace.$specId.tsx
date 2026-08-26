@@ -1,17 +1,27 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { createFileRoute, useNavigate, useParams } from "@tanstack/react-router";
 import { LabPage, LabSection, LabNote, LabButton, LabLinkButton, labHead } from "@/lab/components/lab-ui";
 import { WorkspaceSteps } from "@/lab/components/space/WorkspaceSteps";
+import { FrameEditor, type FrameEditRow } from "@/lab/components/space/FrameEditor";
+import { SpaceDrawer } from "@/lab/components/space/SpaceDrawer";
 import { StepFrame } from "@/lab/components/StepFrame";
 import {
+  buildDraftSelection,
   buildSpaceSnapshot,
+  familyTextFor,
   findSpaceStep,
   flatSteps,
   getSpaceSpec,
+  sourceTextFor,
   spaceLevelLabel,
-  SPACE_SUPPORT_TOOLS,
+  visualFor,
+  visualStatusFor,
+  SPACE_SUPPORT_ASSET_TYPES,
 } from "@/lab/data/space/catalog";
+import { coverageSummary, visualStatusLabel } from "@/lab/data/space/coverage";
+import { considerationsFor } from "@/lab/data/space/considerations";
 import { useSlice, useSliceHelpers } from "@/lab/slice/state";
+import type { LabSupportAssetType } from "@/lab/slice/types";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/lab/slice/workspace/$specId")({
@@ -22,18 +32,26 @@ export const Route = createFileRoute("/lab/slice/workspace/$specId")({
 function SliceWorkspace() {
   const { specId } = useParams({ from: "/lab/slice/workspace/$specId" });
   const spec = getSpaceSpec(specId);
-  const { dispatch } = useSlice();
-  const { selectionFor, snapshotsFor } = useSliceHelpers();
+  const { state, dispatch } = useSlice();
+  const { selectionFor, snapshotsFor, supportAssetsFor } = useSliceHelpers();
   const navigate = useNavigate();
 
   const selection = selectionFor(specId);
   const versions = snapshotsFor(specId);
+  const assets = supportAssetsFor(specId);
   const [label, setLabel] = useState("");
   const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10));
+  const [drawer, setDrawer] = useState<null | "considerations" | "coverage">(null);
+
+  // مسودة تلقائية: لا تبدأ الأسرة من صفحة فارغة.
+  useEffect(() => {
+    if (spec && !state.selections[specId]) {
+      dispatch({ type: "selection", value: buildDraftSelection(spec) });
+    }
+  }, [spec, specId, state.selections, dispatch]);
 
   const leaves = useMemo(() => {
     if (!spec) return [];
-    // الخطوة القابلة للتنفيذ: التفصيل إن وُجد، وإلا الخطوة الرئيسية.
     return flatSteps(spec).filter(
       (e) => !e.isMajor || spec.majorSteps.find((m) => m.id === e.step.id)?.substeps.length === 0,
     );
@@ -52,9 +70,7 @@ function SliceWorkspace() {
 
   const renumber = (ids: string[]) => ids.map((stepId, i) => ({ stepId, order: i + 1 }));
 
-  const orderedIds = [...selection.selected]
-    .sort((a, b) => a.order - b.order)
-    .map((s) => s.stepId);
+  const orderedIds = [...selection.selected].sort((a, b) => a.order - b.order).map((s) => s.stepId);
 
   const toggle = (stepId: string) => {
     const next = orderedIds.includes(stepId)
@@ -92,12 +108,59 @@ function SliceWorkspace() {
       },
     });
 
-  const toggleTool = (id: string) =>
+  const rows: FrameEditRow[] = orderedIds
+    .map((stepId) => {
+      const step = findSpaceStep(spec, stepId);
+      if (!step) return null;
+      const optionId = selection.chosenExecutionOptionByStepId[stepId];
+      const option = ("executionOptions" in step ? step.executionOptions : undefined)?.find(
+        (o) => o.id === optionId,
+      );
+      return {
+        stepId,
+        sourceText: sourceTextFor(spec, stepId),
+        familyText: familyTextFor(spec, selection, stepId),
+        visual: visualFor(spec, selection, stepId),
+        status: visualStatusFor(spec, selection, stepId),
+        textOnly: selection.textOnlyStepIds?.includes(stepId) ?? false,
+        optionLabel: option?.label_ar,
+      } satisfies FrameEditRow;
+    })
+    .filter((r): r is FrameEditRow => Boolean(r));
+
+  const coverage = coverageSummary(rows.map((r) => r.status));
+
+  const setText = (stepId: string, text: string) =>
     setSelection({
-      supportTools: selection.supportTools.includes(id)
-        ? selection.supportTools.filter((t) => t !== id)
-        : [...selection.supportTools, id],
+      familyTextByStepId: { ...(selection.familyTextByStepId ?? {}), [stepId]: text },
     });
+
+  const setVisual = (stepId: string, src: string | null) =>
+    setSelection({
+      visualByStepId: { ...(selection.visualByStepId ?? {}), [stepId]: src ?? "" },
+      textOnlyStepIds: (selection.textOnlyStepIds ?? []).filter((id) => id !== stepId),
+    });
+
+  const setTextOnly = (stepId: string, value: boolean) =>
+    setSelection({
+      textOnlyStepIds: value
+        ? [...(selection.textOnlyStepIds ?? []), stepId]
+        : (selection.textOnlyStepIds ?? []).filter((id) => id !== stepId),
+    });
+
+  const addSupportAsset = (type: LabSupportAssetType, labelAr: string) => {
+    dispatch({
+      type: "support.add",
+      value: {
+        id: `sup-${type}-${Date.now()}`,
+        type,
+        label_ar: `${labelAr} — ${spec.title_ar}`,
+        specId,
+        createdAt: new Date().toISOString().slice(0, 10),
+        items: rows.map((r) => r.familyText),
+      },
+    });
+  };
 
   const approve = () => {
     if (orderedIds.length === 0) return;
@@ -107,23 +170,29 @@ function SliceWorkspace() {
       version: versions.length + 1,
       label_ar: label.trim() || `${spec.title_ar} — بطاقة ${versions.length + 1}`,
       date,
+      supportAssetIds: assets.map((a) => a.id),
     });
     dispatch({ type: "snapshot", value: snapshot });
     navigate({ to: "/lab/slice/card/$specId", params: { specId } });
   };
-
-  const previewFrames = orderedIds
-    .map((id) => findSpaceStep(spec, id))
-    .filter((s): s is NonNullable<typeof s> => Boolean(s));
 
   return (
     <LabPage
       title={spec.title_ar}
       intro={`${spec.eventTitle_ar} — مستوى ${spaceLevelLabel[spec.level]}. ما الذي تريدون أن تشمله المشاركة هذه المرة؟`}
     >
+      <div className="flex flex-wrap gap-2">
+        <LabButton variant="ghost" onClick={() => setDrawer("considerations")}>
+          اعتبارات المشاركة
+        </LabButton>
+        <LabButton variant="ghost" onClick={() => setDrawer("coverage")}>
+          التغطية البصرية: {coverage}
+        </LabButton>
+      </div>
+
       <LabSection
         title="المسار الكامل للمشاركة"
-        description="اختاروا الجزء الذي يناسبكم اليوم — جزءاً منه أو كله. التالي داخل البطاقة يعني الخطوة التالية في نفس المشاركة."
+        description="بدأنا ببطاقة جاهزة تشمل كل الخطوات — أزيلوا ما لا يناسب اليوم أو أعيدوا ترتيبه."
       >
         <WorkspaceSteps
           spec={spec}
@@ -168,31 +237,67 @@ function SliceWorkspace() {
             </select>
           </label>
         </div>
-        <p className="mt-2 text-sm text-muted-foreground">
-          يمكنكم بعد ذلك إضافة أو إزالة خطوة بعينها من القائمة أعلاه.
-        </p>
       </LabSection>
 
-      <LabSection title="ما الذي قد يساعد؟" description="اختياري تماماً، ولا يدخل بطاقة المشارك.">
+      <LabSection
+        title="نصوصكم وصوركم"
+        description="النص والصورة منفصلان: غيّروا أحدهما دون الآخر. لا يتغير شيء في مكتبة الحياة."
+      >
+        {rows.length === 0 ? (
+          <LabNote>اختاروا خطوة واحدة على الأقل من المسار أعلاه.</LabNote>
+        ) : (
+          <FrameEditor
+            rows={rows}
+            onText={setText}
+            onVisual={setVisual}
+            onTextOnly={setTextOnly}
+            onMove={move}
+            onRemove={toggle}
+          />
+        )}
+      </LabSection>
+
+      <LabSection
+        title="هل تحتاجون دعماً إضافياً؟"
+        description="استعرضوا ما قد يجعل المشاركة أسهل. كل واحد منها مخرج مستقل، ولا يدخل بطاقة المشارك."
+      >
         <div className="flex flex-wrap gap-2">
-          {SPACE_SUPPORT_TOOLS.map((t) => {
-            const on = selection.supportTools.includes(t.id);
-            return (
-              <button
-                key={t.id}
-                type="button"
-                aria-pressed={on}
-                onClick={() => toggleTool(t.id)}
-                className={cn(
-                  "min-h-11 rounded-xl border px-4 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-                  on ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card",
-                )}
-              >
-                {t.label}
-              </button>
-            );
-          })}
+          {SPACE_SUPPORT_ASSET_TYPES.map((t) => (
+            <button
+              key={t.type}
+              type="button"
+              title={t.hint}
+              onClick={() => addSupportAsset(t.type, t.label)}
+              className="min-h-11 rounded-xl border border-border bg-card px-4 text-sm font-bold hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              {t.label}
+            </button>
+          ))}
         </div>
+        {assets.length > 0 && (
+          <ul className="mt-3 space-y-2">
+            {assets.map((a) => (
+              <li
+                key={a.id}
+                className="flex items-center justify-between gap-3 rounded-xl border border-border bg-card p-3"
+              >
+                <span className="min-w-0">
+                  <span className="block truncate text-sm font-bold">{a.label_ar}</span>
+                  <span className="block text-xs text-muted-foreground">
+                    مخرج دعم مستقل — {a.items.length} عنصر
+                  </span>
+                </span>
+                <button
+                  type="button"
+                  onClick={() => dispatch({ type: "support.remove", id: a.id })}
+                  className="min-h-10 shrink-0 rounded-xl border border-border px-3 text-xs font-bold text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  إزالة
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
       </LabSection>
 
       <LabSection title="بيانات البطاقة" description="تبقى في مساحة الأسرة فقط.">
@@ -220,27 +325,27 @@ function SliceWorkspace() {
       </LabSection>
 
       <LabSection title="معاينة البطاقة" description="هذا ما سيراه المشارك، بلا أي إعدادات.">
-        {previewFrames.length === 0 ? (
+        {rows.length === 0 ? (
           <LabNote>اختاروا خطوة واحدة على الأقل لتظهر المعاينة.</LabNote>
         ) : (
           <ol className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {previewFrames.map((step, i) => {
-              const optionId = selection.chosenExecutionOptionByStepId[step.id];
-              const option = ("executionOptions" in step ? step.executionOptions : undefined)?.find(
-                (o) => o.id === optionId,
-              );
-              return (
-                <li key={step.id} className="rounded-2xl border border-border bg-card p-2">
-                  <StepFrame asset={step.visual_asset} label={step.instruction_short_ar} />
-                  <p className="mt-2 text-center text-base font-bold leading-snug">
-                    {i + 1}. {step.instruction_short_ar}
-                  </p>
-                  {option && (
-                    <p className="text-center text-sm text-muted-foreground">{option.label_ar}</p>
-                  )}
-                </li>
-              );
-            })}
+            {rows.map((row, i) => (
+              <li key={row.stepId} className="rounded-2xl border border-border bg-card p-2">
+                {row.textOnly ? (
+                  <div className="grid aspect-[4/3] place-items-center rounded-2xl border border-dashed border-border px-2 text-center text-base font-bold">
+                    {row.familyText}
+                  </div>
+                ) : (
+                  <StepFrame asset={row.visual} label={row.familyText} />
+                )}
+                <p className="mt-2 text-center text-base font-bold leading-snug">
+                  {i + 1}. {row.familyText}
+                </p>
+                {row.optionLabel && (
+                  <p className="text-center text-sm text-muted-foreground">{row.optionLabel}</p>
+                )}
+              </li>
+            ))}
             <li className="grid place-items-center rounded-2xl border border-dashed border-border p-4 text-lg font-bold text-muted-foreground">
               انتهينا
             </li>
@@ -249,7 +354,7 @@ function SliceWorkspace() {
       </LabSection>
 
       <div className="flex flex-wrap items-center gap-3">
-        <LabButton onClick={approve} disabled={previewFrames.length === 0}>
+        <LabButton onClick={approve} disabled={rows.length === 0}>
           {versions.length === 0 ? "نعتمد البطاقة" : "نعتمد بطاقة جديدة"}
         </LabButton>
         {versions.length > 0 && (
@@ -261,10 +366,70 @@ function SliceWorkspace() {
 
       <div className="mt-6">
         <LabNote>
-          الاعتماد يصنع نسخة مجمّدة: النصوص والصور تُنسخ الآن، وأي تعديل لاحق ينشئ بطاقة جديدة ولا
+          الاعتماد يصنع نسخة مجمّدة: نصوصكم وصوركم تُنسخ الآن، وأي تعديل لاحق ينشئ بطاقة جديدة ولا
           يغيّر بطاقة سابقة.
         </LabNote>
       </div>
+
+      {drawer === "considerations" && (
+        <SpaceDrawer title="اعتبارات المشاركة" onClose={() => setDrawer(null)}>
+          <p className="mb-3 text-sm text-muted-foreground">
+            هذه ملاحظات للأسرة فقط، ولا تظهر للمشارك في أي شاشة.
+          </p>
+          {considerationsFor(spec, selection.supportTools, rows.length).map((block) => (
+            <section key={block.title} className="mb-4">
+              <h3 className="mb-1 text-base font-bold text-foreground">{block.title}</h3>
+              <ul className="list-disc space-y-1 pe-5 text-sm leading-relaxed text-muted-foreground">
+                {block.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </SpaceDrawer>
+      )}
+
+      {drawer === "coverage" && (
+        <SpaceDrawer title="تغطية المشاركة" onClose={() => setDrawer(null)}>
+          <p className="mb-3 text-sm text-muted-foreground">
+            جاهزية الدعم لهذه المشاركة فقط — لا تصف أداء أحد.
+          </p>
+          <ul className="divide-y divide-border border-y border-border">
+            {rows.map((row) => (
+              <li key={row.stepId} className="flex items-center justify-between gap-3 py-2">
+                <span className="min-w-0 truncate text-sm font-bold">{row.familyText}</span>
+                <span className="shrink-0 text-xs text-muted-foreground">
+                  {visualStatusLabel[row.status]}
+                </span>
+                <span
+                  className={cn(
+                    "shrink-0 rounded-full px-2 py-0.5 text-xs font-bold",
+                    row.status === "needed"
+                      ? "bg-muted text-muted-foreground"
+                      : "bg-primary/10 text-primary",
+                  )}
+                >
+                  {row.status === "needed" ? "يحتاج إعداد" : "جاهز"}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-4 flex flex-wrap gap-2">
+            <LabLinkButton to="/lab/visual" variant="ghost">
+              أنشئوا معينًا بصريًا
+            </LabLinkButton>
+            <LabButton variant="ghost" onClick={() => addSupportAsset("schedule", "جدول مصور")}>
+              أنشئوا جدولًا بصريًا
+            </LabButton>
+            <LabButton
+              variant="ghost"
+              onClick={() => addSupportAsset("communication", "وسيلة تواصل")}
+            >
+              أنشئوا وسيلة تواصل
+            </LabButton>
+          </div>
+        </SpaceDrawer>
+      )}
     </LabPage>
   );
 }
