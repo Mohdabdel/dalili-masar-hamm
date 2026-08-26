@@ -11,6 +11,7 @@ import {
 } from "react";
 import type {
   LabCardSnapshot,
+  LabSupportAsset,
   LabThisTimeSelection,
   SliceFeedback,
   SliceLevel,
@@ -33,6 +34,8 @@ export interface SliceState {
   closedCards: string[];
   /** سجل التنفيذ: متى فُتحت البطاقة للتنفيذ. */
   runs: { snapshotId: string; date: string }[];
+  /** مخرجات دعم مستقلة (وسيلة تواصل / تنظيم زمني / جدول مصور). */
+  supportAssets: LabSupportAsset[];
 }
 
 const initial: SliceState = {
@@ -45,6 +48,7 @@ const initial: SliceState = {
   removedStations: [],
   closedCards: [],
   runs: [],
+  supportAssets: [],
 };
 
 type Action =
@@ -59,6 +63,8 @@ type Action =
   | { type: "card.close"; snapshotId: string }
   | { type: "card.reopen"; snapshotId: string }
   | { type: "run"; snapshotId: string }
+  | { type: "support.add"; value: LabSupportAsset }
+  | { type: "support.remove"; id: string }
   | { type: "reset" };
 
 function reducer(state: SliceState, action: Action): SliceState {
@@ -98,6 +104,10 @@ function reducer(state: SliceState, action: Action): SliceState {
           ...state.runs,
         ],
       };
+    case "support.add":
+      return { ...state, supportAssets: [action.value, ...state.supportAssets] };
+    case "support.remove":
+      return { ...state, supportAssets: state.supportAssets.filter((a) => a.id !== action.id) };
     case "level":
       return { ...state, levelByEvent: { ...state.levelByEvent, [action.eventId]: action.value } };
     case "selection":
@@ -172,6 +182,10 @@ export function useSliceHelpers() {
         selected: [],
         chosenExecutionOptionByStepId: {},
         supportTools: [],
+        familyTextByStepId: {},
+        visualByStepId: {},
+        textOnlyStepIds: [],
+        drafted: false,
       },
     [state.selections],
   );
@@ -186,5 +200,10 @@ export function useSliceHelpers() {
     [state.snapshots],
   );
 
-  return { state, dispatch, selectionFor, snapshotById, snapshotsFor };
+  const supportAssetsFor = useCallback(
+    (specId: string) => state.supportAssets.filter((a) => a.specId === specId),
+    [state.supportAssets],
+  );
+
+  return { state, dispatch, selectionFor, snapshotById, snapshotsFor, supportAssetsFor };
 }
