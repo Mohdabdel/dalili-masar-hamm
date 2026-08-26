@@ -1,4 +1,5 @@
-import { createFileRoute, useNavigate, useParams } from "@tanstack/react-router";
+import { createFileRoute, useParams } from "@tanstack/react-router";
+import { Lock, Unlock } from "lucide-react";
 import {
   LabPage,
   LabSection,
@@ -8,86 +9,128 @@ import {
   labHead,
 } from "@/lab/components/lab-ui";
 import { StepFrame } from "@/lab/components/StepFrame";
-import { buildSnapshot, findStep, getSpec } from "@/lab/data/slice";
+import { getSpaceSpec, SPACE_SUPPORT_TOOLS } from "@/lab/data/space/catalog";
 import { useSlice, useSliceHelpers } from "@/lab/slice/state";
 
 export const Route = createFileRoute("/lab/slice/card/$specId")({
-  component: SliceCardPreview,
-  head: labHead("معاينة البطاقة", "شاهدوا البطاقة قبل اعتمادها."),
+  component: SliceCardBlock,
+  head: labHead("بطاقات المشاركة", "كل البطاقات المعتمدة داخل نفس المشاركة الوظيفية."),
 });
 
-function SliceCardPreview() {
+function SliceCardBlock() {
   const { specId } = useParams({ from: "/lab/slice/card/$specId" });
-  const spec = getSpec(specId);
-  const { dispatch } = useSlice();
-  const { selectionFor, snapshotsFor } = useSliceHelpers();
-  const navigate = useNavigate();
+  const spec = getSpaceSpec(specId);
+  const { state, dispatch } = useSlice();
+  const { snapshotsFor } = useSliceHelpers();
+  const snapshots = [...snapshotsFor(specId)].sort((a, b) => b.version - a.version);
 
   if (!spec) {
     return (
-      <LabPage title="مشاركة غير موجودة" intro="هذه المشاركة ليست ضمن النموذج.">
-        <LabLinkButton to="/lab/slice">رجوع</LabLinkButton>
+      <LabPage title="هذه المشاركة غير متاحة">
+        <LabLinkButton to="/lab/slice">رجوع إلى المحطات</LabLinkButton>
       </LabPage>
     );
   }
 
-  const selection = selectionFor(specId);
-  const previous = snapshotsFor(specId);
-  const ordered = [...selection.selected].sort((a, b) => a.order - b.order);
-
-  const approve = () => {
-    const snap = buildSnapshot(spec, selection, previous.length + 1);
-    dispatch({ type: "snapshot", value: snap });
-    navigate({ to: "/lab/slice/learner/$snapshotId", params: { snapshotId: snap.id } });
-  };
-
   return (
     <LabPage
-      title={`معاينة: ${spec.title_ar}`}
-      intro="هذه معاينة للأسرة. عند الاعتماد تُجمَّد نسخة ثابتة لا تتأثر بأي تعديل لاحق."
+      title={spec.title_ar}
+      intro={`${spec.eventTitle_ar} — كل البطاقات هنا تنتمي إلى هذه المشاركة، حتى لو غطّت أجزاء مختلفة منها.`}
     >
-      <LabSection title="ما سيظهر للمشارك">
-        {ordered.length === 0 ? (
-          <LabNote>لم تختاروا أي جزء بعد.</LabNote>
-        ) : (
-          <ol className="grid gap-3 sm:grid-cols-2">
-            {ordered.map((sel, i) => {
-              const step = findStep(spec, sel.stepId);
-              if (!step) return null;
-              const optId = selection.chosenExecutionOptionByStepId[sel.stepId];
-              const opt = ("executionOptions" in step ? step.executionOptions : undefined)?.find(
-                (o) => o.id === optId,
-              );
+      {snapshots.length === 0 ? (
+        <LabNote>لا توجد بطاقة معتمدة بعد لهذه المشاركة.</LabNote>
+      ) : (
+        <LabSection title={`بطاقات معتمدة (${snapshots.length})`}>
+          <ul className="space-y-4">
+            {snapshots.map((snap) => {
+              const closed = state.closedCards.includes(snap.id);
+              const tools = snap.supportTools
+                .map((id) => SPACE_SUPPORT_TOOLS.find((t) => t.id === id)?.label)
+                .filter(Boolean);
               return (
-                <li key={sel.stepId} className="rounded-2xl border border-border bg-card p-3">
-                  <StepFrame asset={step.visual_asset} label={step.instruction_short_ar} />
-                  <p className="mt-2 text-lg font-bold text-foreground">
-                    {i + 1}. {step.instruction_short_ar}
-                  </p>
-                  {opt && <p className="text-sm text-muted-foreground">{opt.label_ar}</p>}
+                <li key={snap.id} className="rounded-2xl border border-border bg-card p-4">
+                  <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+                    <div>
+                      <h3 className="text-lg font-bold">{snap.title_ar}</h3>
+                      <p className="text-sm text-muted-foreground">
+                        نسخة {snap.version} — {snap.date ?? snap.createdAt} —{" "}
+                        {snap.frames.length - 1} خطوة
+                      </p>
+                    </div>
+                    {closed && (
+                      <span className="rounded-full bg-muted px-3 py-1 text-xs font-bold text-muted-foreground">
+                        بطاقة مغلقة
+                      </span>
+                    )}
+                  </div>
+
+                  <ol className="mb-3 grid grid-cols-3 gap-2 sm:grid-cols-4">
+                    {snap.frames.map((f) => (
+                      <li key={`${snap.id}-${f.order}`}>
+                        <StepFrame asset={f.assetRef} label={f.text_short_ar} size="md" />
+                        <p className="mt-1 text-center text-sm font-semibold leading-snug">
+                          {f.text_short_ar}
+                        </p>
+                      </li>
+                    ))}
+                  </ol>
+
+                  {tools.length > 0 && (
+                    <p className="mb-3 text-sm text-muted-foreground">
+                      ما قد يساعد: {tools.join("، ")} — خارج بطاقة المشارك.
+                    </p>
+                  )}
+
+                  <div className="flex flex-wrap gap-2">
+                    <LabLinkButton
+                      to="/lab/slice/learner/$snapshotId"
+                      params={{ snapshotId: snap.id }}
+                    >
+                      بطاقة المشارك
+                    </LabLinkButton>
+                    <LabButton
+                      variant="ghost"
+                      onClick={() =>
+                        dispatch(
+                          closed
+                            ? { type: "card.reopen", snapshotId: snap.id }
+                            : { type: "card.close", snapshotId: snap.id },
+                        )
+                      }
+                    >
+                      {closed ? (
+                        <>
+                          <Unlock className="h-4 w-4" aria-hidden />
+                          إعادة فتح البطاقة
+                        </>
+                      ) : (
+                        <>
+                          <Lock className="h-4 w-4" aria-hidden />
+                          إغلاق البطاقة
+                        </>
+                      )}
+                    </LabButton>
+                  </div>
                 </li>
               );
             })}
-            <li className="rounded-2xl border border-dashed border-border bg-muted/40 p-6 text-center text-lg font-bold">
-              انتهينا
-            </li>
-          </ol>
-        )}
-      </LabSection>
-
-      {previous.length > 0 && (
-        <LabNote>
-          لهذه المشاركة {previous.length} نسخة معتمدة سابقاً. الاعتماد الآن ينشئ نسخة جديدة دون تغيير السابقة.
-        </LabNote>
+          </ul>
+        </LabSection>
       )}
 
-      <div className="mt-6 flex flex-wrap gap-3">
-        <LabButton onClick={approve} disabled={ordered.length === 0}>
-          اعتماد البطاقة
-        </LabButton>
+      <div className="flex flex-wrap gap-3">
         <LabLinkButton to="/lab/slice/workspace/$specId" params={{ specId }} variant="ghost">
-          تعديل الاختيار
+          بطاقة جديدة لجزء آخر من نفس المشاركة
         </LabLinkButton>
+        <LabLinkButton to="/lab/slice/participations" variant="ghost">
+          كل بطاقاتنا
+        </LabLinkButton>
+      </div>
+
+      <div className="mt-6">
+        <LabNote>
+          إغلاق بطاقة يخصّ هذه البطاقة فقط، ولا يعني أن المشاركة كلها انتهت.
+        </LabNote>
       </div>
     </LabPage>
   );

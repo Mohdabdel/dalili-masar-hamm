@@ -25,6 +25,14 @@ export interface SliceState {
   snapshots: LabCardSnapshot[];
   feedback: SliceFeedback[];
   lifecycleBySpec: Record<string, SliceLifecycleChoice>;
+  /** محطات هذه الأسرة (معرفات أحداث من مكتبة الحياة). */
+  stations: string[];
+  /** محطات افتراضية أزالتها الأسرة. */
+  removedStations: string[];
+  /** بطاقات أُغلقت — لا تعني اكتمال المشاركة كلها. */
+  closedCards: string[];
+  /** سجل التنفيذ: متى فُتحت البطاقة للتنفيذ. */
+  runs: { snapshotId: string; date: string }[];
 }
 
 const initial: SliceState = {
@@ -33,6 +41,10 @@ const initial: SliceState = {
   snapshots: [],
   feedback: [],
   lifecycleBySpec: {},
+  stations: [],
+  removedStations: [],
+  closedCards: [],
+  runs: [],
 };
 
 type Action =
@@ -42,12 +54,50 @@ type Action =
   | { type: "snapshot"; value: LabCardSnapshot }
   | { type: "feedback"; value: SliceFeedback }
   | { type: "lifecycle"; specId: string; value: SliceLifecycleChoice }
+  | { type: "station.add"; eventId: string }
+  | { type: "station.remove"; eventId: string }
+  | { type: "card.close"; snapshotId: string }
+  | { type: "card.reopen"; snapshotId: string }
+  | { type: "run"; snapshotId: string }
   | { type: "reset" };
 
 function reducer(state: SliceState, action: Action): SliceState {
   switch (action.type) {
     case "hydrate":
       return { ...initial, ...action.value };
+    case "station.add":
+      return {
+        ...state,
+        stations: state.stations.includes(action.eventId)
+          ? state.stations
+          : [...state.stations, action.eventId],
+        removedStations: state.removedStations.filter((id) => id !== action.eventId),
+      };
+    case "station.remove":
+      return {
+        ...state,
+        stations: state.stations.filter((id) => id !== action.eventId),
+        removedStations: state.removedStations.includes(action.eventId)
+          ? state.removedStations
+          : [...state.removedStations, action.eventId],
+      };
+    case "card.close":
+      return {
+        ...state,
+        closedCards: state.closedCards.includes(action.snapshotId)
+          ? state.closedCards
+          : [...state.closedCards, action.snapshotId],
+      };
+    case "card.reopen":
+      return { ...state, closedCards: state.closedCards.filter((id) => id !== action.snapshotId) };
+    case "run":
+      return {
+        ...state,
+        runs: [
+          { snapshotId: action.snapshotId, date: new Date().toISOString().slice(0, 10) },
+          ...state.runs,
+        ],
+      };
     case "level":
       return { ...state, levelByEvent: { ...state.levelByEvent, [action.eventId]: action.value } };
     case "selection":
