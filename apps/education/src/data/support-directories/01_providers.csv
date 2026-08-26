@@ -1,0 +1,37 @@
+provider_id,name_ar,name_en,provider_type,emirate,website,is_active,featured,display_order,last_verified,verification_status,updated_at
+P_001,مؤسسة زايد العليا لأصحاب الهمم,Zayed Higher Organization,Government,Abu Dhabi,https://www.za.gov.ae,true,true,1,2026-08-09,VERIFIED,2026-08-09
+P_002,دائرة التعليم والمعرفة,ADEK,Government,Abu Dhabi,https://www.adek.gov.ae,true,true,2,2026-08-09,VERIFIED,2026-08-09
+P_003,أبوظبي للتنقل,Abu Dhabi Mobility,Government,Abu Dhabi,https://admobility.gov.ae,true,true,3,2026-08-09,VERIFIED,2026-08-09
+P_004,مجلس أبوظبي الرياضي,Abu Dhabi Sports Council,Government,Abu Dhabi,https://adsc.gov.ae,true,false,4,2026-08-09,VERIFIED,2026-08-09
+P_005,مطارات دبي,Dubai Airports,Government,Dubai,https://www.dubai.ae,true,false,5,2026-08-09,UNVERIFIED,2026-08-09
+P_006,هيئة الطرق والمواصلات بدبي,RTA Dubai,Government,Dubai,https://www.rta.ae,true,true,6,2026-08-09,VERIFIED,2026-08-09
+P_007,هيئة تنمية المجتمع بدبي,CDA Dubai,Government,Dubai,https://www.cda.gov.ae,true,true,7,2026-08-09,VERIFIED,2026-08-09
+P_008,دائرة التشريفات والضيافة - دبي,Dubai Protocol Department,Government,Dubai,https://www.protocol.dubai.ae,true,true,8,2026-08-09,VERIFIED,2026-08-09
+P_009,دائرة الشؤون القانونية لحكومة دبي,Legal Affairs Department,Government,Dubai,https://legal.dubai.gov.ae,true,false,9,2026-08-09,VERIFIED,2026-08-09
+P_010,نادي دبي لأصحاب الهمم,Dubai Club for PoD,Nonprofit,Dubai,https://dcd.org.ae,true,true,10,2026-08-09,VERIFIED,2026-08-09
+P_011,أكاديمية ماي ماكسيموس للتدريب,MyMaximus Training Academy,Private,Dubai,https://mymaximusglobal.com,true,true,11,2026-08-09,VERIFIED,2026-08-09
+P_012,مركز راشد لأصحاب الهمم,Rashid Centre for PoD,Nonprofit,Dubai,https://rashidc.ae,true,false,12,2026-08-09,VERIFIED,2026-08-09
+P_013,مدينة الشارقة للخدمات الإنسانية,SCHS,Nonprofit,Sharjah,https://schsuae.schs.sharjah.ae,true,true,13,2026-08-09,VERIFIED,2026-08-09
+P_014,نادي الثقة للمعاقين,Al Thiqah Club for Disabled,Nonprofit,Sharjah,https://www.althiqahclub.com,true,false,14,2026-08-09,VERIFIED,2026-08-09
+P_015,دائرة عجمان الرقمية,Ajman Digital Department,Government,Ajman,https://www.ajman.ae,true,true,15,2026-08-09,VERIFIED,2026-08-09
+P_016,نادي الشرطة للرياضة والرماية بعجمان,Ajman Police Sports Club,Government,Ajman,https://www.ajmanpolice.gov.ae,true,false,16,2026-08-09,VERIFIED,2026-08-09
+P_017,مركز عجمان لرعاية وتأهيل أصحاب الهمم,Ajman Rehab Center (MoCD),Government,Ajman,https://www.mocd.gov.ae,true,false,17,2026-08-09,UNVERIFIED,2026-08-09
+P_018,جامعة عجمان,Ajman University,University,Ajman,https://www.ajman.ac.ae,true,true,18,2026-08-09,VERIFIED,2026-08-09
+P_019,مركز أم القيوين للتوحد,UAQ Autism Center (MoCD),Government,Umm Al Quwain,https://www.mocd.gov.ae,true,false,19,2026-08-09,VERIFIED,2026-08-09
+P_020,مركز رأس الخيمة لرعاية وتأهيل أصحاب الهمم,RAK Center for PoD (MoCD),Government,Ras Al Khaimah,https://www.mocd.gov.ae,true,false,20,2026-08-09,UNVERIFIED,2026-08-09
+P_021,مركز الفجيرة لرعاية وتأهيل أصحاب الهمم,Fujairah Center for PoD (MoCD),Government,Fujairah,https://www.mocd.gov.ae,true,false,21,2026-08-09,UNVERIFIED,2026-08-09
+P_022,جامعة الإمارات العربية المتحدة,UAEU,University,Abu Dhabi,https://www.uaeu.ac.ae,true,true,22,2026-08-09,VERIFIED,2026-08-09
+P_023,جامعة زايد,Zayed University,University,Federal,https://www.zu.ac.ae,true,true,23,2026-08-09,VERIFIED,2026-08-09
+P_024,كليات التقنية العليا,HCT,University,Federal,https://hct.ac.ae,true,true,24,2026-08-09,VERIFIED,2026-08-09
+P_025,جامعة الشارقة,University of Sharjah,University,Sharjah,https://www.sharjah.ac.ae,true,true,25,2026-08-09,VERIFIED,2026-08-09
+P_026,وزارة تنمية المجتمع,MoCD,Government,Federal,https://www.mocd.gov.ae,true,true,26,2026-08-09,VERIFIED,2026-08-09
+P_027,مؤسسة سدرة,SEDRA Foundation,Nonprofit,Abu Dhabi,https://sedra.org,true,true,27,2026-08-09,VERIFIED,2026-08-09
+P_028,إم إنكلوسيف (منصة توظيف),ImInclusive,Private,Federal,https://iminclusive.com,true,true,28,2026-08-09,VERIFIED,2026-08-09
+P_029,نادي رأس الخيمة لأصحاب الهمم,RAK Club for PoD,Nonprofit,Ras Al Khaimah,https://rakclub.ae,true,false,29,2026-08-09,VERIFIED,2026-08-09
+P_030,نادي خورفكان للمعاقين,Khorfakkan Club for Disabled,Nonprofit,Sharjah,https://www.khorfakkanclub.ae,true,false,30,2026-08-09,VERIFIED,2026-08-09
+P_031,ذا باترفلاي للمناصرة,The Butterfly,Private,Abu Dhabi,https://thebutterfly.ae,true,true,31,2026-08-09,VERIFIED,2026-08-09
+P_032,جمعية الإمارات للتوحد,Emirates Autism Society,Nonprofit,Federal,https://emiratesautism.ae,true,true,32,2026-08-09,VERIFIED,2026-08-09
+P_033,جمعية الإمارات لمتلازمة داون,Emirates Down Syndrome Association,Nonprofit,Dubai,https://edsa.ae,true,true,33,2026-08-09,VERIFIED,2026-08-09
+P_034,متحف اللوفر أبوظبي,Louvre Abu Dhabi,Government,Abu Dhabi,https://www.louvreabudhabi.ae,true,false,34,2026-08-09,VERIFIED,2026-08-09
+P_035,منصة تمكين (Enable) / ديزرت جروب,Enable (Desert Group),Private,Dubai,https://enable.ae,true,true,35,2026-08-09,VERIFIED,2026-08-09
+P_036,مركز النور لتدريب وتأهيل أصحاب الهمم,Al Noor Training Centre,Nonprofit,Dubai,https://alnoorspneeds.ae,true,true,36,2026-08-09,VERIFIED,2026-08-09
