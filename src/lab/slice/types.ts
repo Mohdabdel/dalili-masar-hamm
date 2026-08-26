@@ -41,6 +41,12 @@ export interface LabParticipationSpec {
   majorSteps: LabMajorStep[];
 }
 
+/** كيف تُعرض الخطوة للمشارك: صورة وجملة، صورة فقط، أو جملة فقط. */
+export type StepPresentationMode = "both" | "visual" | "text";
+
+/** ترتيب الكتلتين داخل بطاقة الخطوة. */
+export type StepBlockOrder = "visual-text" | "text-visual";
+
 /** اختيار الأسرة لهذه المرة — بترتيب تنفيذ صريح. */
 export interface LabThisTimeSelection {
   specId: string;
@@ -51,8 +57,12 @@ export interface LabThisTimeSelection {
   familyTextByStepId?: Record<string, string>;
   /** الصورة التي اختارتها الأسرة لكل خطوة ("" = بلا صورة). */
   visualByStepId?: Record<string, string>;
-  /** خطوات اختارت الأسرة إبقاءها نصًا فقط. */
+  /** خطوات اختارت الأسرة إبقاءها نصًا فقط (توافق قديم مع presentationByStepId). */
   textOnlyStepIds?: string[];
+  /** كيف تُعرض كل خطوة: صورة وجملة / صورة فقط / جملة فقط. */
+  presentationByStepId?: Record<string, StepPresentationMode>;
+  /** ترتيب الصورة والجملة داخل بطاقة الخطوة. */
+  blockOrderByStepId?: Record<string, StepBlockOrder>;
   /** بدأنا من مسودة مولّدة تلقائيًا؟ */
   drafted?: boolean;
 }
@@ -67,6 +77,10 @@ export interface LabCardFrame {
   sourceText_ar?: string;
   assetRef: string | null;
   executionOptionLabel_ar?: string;
+  /** كيف اعتمدت الأسرة عرض هذه الخطوة. */
+  presentation?: StepPresentationMode;
+  /** ترتيب الصورة/الجملة كما اعتمدته الأسرة. */
+  blockOrder?: StepBlockOrder;
 }
 
 export interface LabCardSnapshot {
