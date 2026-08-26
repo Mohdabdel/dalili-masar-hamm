@@ -54,6 +54,7 @@ import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]
 import { Route as LabSliceIndexRouteImport } from './routes/lab.slice.index'
 import { Route as LabWorkspaceParticipationIdRouteImport } from './routes/lab.workspace.$participationId'
 import { Route as LabSliceParticipationsRouteImport } from './routes/lab.slice.participations'
+import { Route as LabSliceLibraryRouteImport } from './routes/lab.slice.library'
 import { Route as LabRunParticipationIdRouteImport } from './routes/lab.run.$participationId'
 import { Route as LabPrintParticipationIdRouteImport } from './routes/lab.print.$participationId'
 import { Route as LabMatchOpportunityIdRouteImport } from './routes/lab.match.$opportunityId'
@@ -297,6 +298,11 @@ const LabSliceParticipationsRoute = LabSliceParticipationsRouteImport.update({
   path: '/participations',
   getParentRoute: () => LabSliceRoute,
 } as any)
+const LabSliceLibraryRoute = LabSliceLibraryRouteImport.update({
+  id: '/library',
+  path: '/library',
+  getParentRoute: () => LabSliceRoute,
+} as any)
 const LabRunParticipationIdRoute = LabRunParticipationIdRouteImport.update({
   id: '/run/$participationId',
   path: '/run/$participationId',
@@ -424,6 +430,7 @@ export interface FileRoutesByFullPath {
   '/lab/match/$opportunityId': typeof LabMatchOpportunityIdRoute
   '/lab/print/$participationId': typeof LabPrintParticipationIdRoute
   '/lab/run/$participationId': typeof LabRunParticipationIdRoute
+  '/lab/slice/library': typeof LabSliceLibraryRoute
   '/lab/slice/participations': typeof LabSliceParticipationsRoute
   '/lab/workspace/$participationId': typeof LabWorkspaceParticipationIdRoute
   '/lab/slice/': typeof LabSliceIndexRoute
@@ -482,6 +489,7 @@ export interface FileRoutesByTo {
   '/lab/match/$opportunityId': typeof LabMatchOpportunityIdRoute
   '/lab/print/$participationId': typeof LabPrintParticipationIdRoute
   '/lab/run/$participationId': typeof LabRunParticipationIdRoute
+  '/lab/slice/library': typeof LabSliceLibraryRoute
   '/lab/slice/participations': typeof LabSliceParticipationsRoute
   '/lab/workspace/$participationId': typeof LabWorkspaceParticipationIdRoute
   '/lab/slice': typeof LabSliceIndexRoute
@@ -544,6 +552,7 @@ export interface FileRoutesById {
   '/lab/match/$opportunityId': typeof LabMatchOpportunityIdRoute
   '/lab/print/$participationId': typeof LabPrintParticipationIdRoute
   '/lab/run/$participationId': typeof LabRunParticipationIdRoute
+  '/lab/slice/library': typeof LabSliceLibraryRoute
   '/lab/slice/participations': typeof LabSliceParticipationsRoute
   '/lab/workspace/$participationId': typeof LabWorkspaceParticipationIdRoute
   '/lab/slice/': typeof LabSliceIndexRoute
@@ -606,6 +615,7 @@ export interface FileRouteTypes {
     | '/lab/match/$opportunityId'
     | '/lab/print/$participationId'
     | '/lab/run/$participationId'
+    | '/lab/slice/library'
     | '/lab/slice/participations'
     | '/lab/workspace/$participationId'
     | '/lab/slice/'
@@ -664,6 +674,7 @@ export interface FileRouteTypes {
     | '/lab/match/$opportunityId'
     | '/lab/print/$participationId'
     | '/lab/run/$participationId'
+    | '/lab/slice/library'
     | '/lab/slice/participations'
     | '/lab/workspace/$participationId'
     | '/lab/slice'
@@ -725,6 +736,7 @@ export interface FileRouteTypes {
     | '/lab/match/$opportunityId'
     | '/lab/print/$participationId'
     | '/lab/run/$participationId'
+    | '/lab/slice/library'
     | '/lab/slice/participations'
     | '/lab/workspace/$participationId'
     | '/lab/slice/'
@@ -1083,6 +1095,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LabSliceParticipationsRouteImport
       parentRoute: typeof LabSliceRoute
     }
+    '/lab/slice/library': {
+      id: '/lab/slice/library'
+      path: '/library'
+      fullPath: '/lab/slice/library'
+      preLoaderRoute: typeof LabSliceLibraryRouteImport
+      parentRoute: typeof LabSliceRoute
+    }
     '/lab/run/$participationId': {
       id: '/lab/run/$participationId'
       path: '/run/$participationId'
@@ -1201,6 +1220,7 @@ const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
 interface LabSliceRouteChildren {
+  LabSliceLibraryRoute: typeof LabSliceLibraryRoute
   LabSliceParticipationsRoute: typeof LabSliceParticipationsRoute
   LabSliceIndexRoute: typeof LabSliceIndexRoute
   LabSliceEventIdLevelRoute: typeof LabSliceEventIdLevelRoute
@@ -1212,6 +1232,7 @@ interface LabSliceRouteChildren {
 }
 
 const LabSliceRouteChildren: LabSliceRouteChildren = {
+  LabSliceLibraryRoute: LabSliceLibraryRoute,
   LabSliceParticipationsRoute: LabSliceParticipationsRoute,
   LabSliceIndexRoute: LabSliceIndexRoute,
   LabSliceEventIdLevelRoute: LabSliceEventIdLevelRoute,
