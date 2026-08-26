@@ -15,8 +15,10 @@ import type {
   LabParticipationSpec,
   LabSubstep,
   LabThisTimeSelection,
+  LabVisualStatus,
   SliceLevel,
 } from "@/lab/slice/types";
+import { suggestVisual } from "@/lab/data/space/coverage";
 
 export type SpaceContext = "home" | "community";
 
@@ -252,6 +254,7 @@ export function buildSpaceSnapshot(input: {
   version: number;
   label_ar: string;
   date: string;
+  supportAssetIds?: string[];
 }): LabCardSnapshot {
   const { spec, selection, version, label_ar, date } = input;
   const ordered = [...selection.selected].sort((a, b) => a.order - b.order);
@@ -264,8 +267,9 @@ export function buildSpaceSnapshot(input: {
     frames.push({
       sourceStepId: step.id,
       order: frames.length + 1,
-      text_short_ar: step.instruction_short_ar,
-      assetRef: step.visual_asset ?? null,
+      text_short_ar: familyTextFor(spec, selection, step.id),
+      sourceText_ar: step.instruction_family_ar,
+      assetRef: visualFor(spec, selection, step.id),
       executionOptionLabel_ar: option?.label_ar,
     });
   });
@@ -273,6 +277,7 @@ export function buildSpaceSnapshot(input: {
     sourceStepId: "__done__",
     order: frames.length + 1,
     text_short_ar: "انتهينا",
+    sourceText_ar: "انتهينا",
     assetRef: null,
   });
 
@@ -287,9 +292,77 @@ export function buildSpaceSnapshot(input: {
     eventId: spec.eventId,
     eventTitle_ar: spec.eventTitle_ar,
     participationTitle_ar: spec.title_ar,
+    level: spec.level,
+    context: spec.context,
+    domainName_ar: getSpaceEvent(spec.eventId)?.domainName,
     date,
     startText_ar: frames[0]?.text_short_ar,
     endText_ar: frames.length > 1 ? frames[frames.length - 2]?.text_short_ar : undefined,
+    supportAssetIds: input.supportAssetIds ? [...input.supportAssetIds] : [],
+  };
+}
+
+// ---------- النص المحلي والصورة ----------
+
+/** النص المرجعي من مكتبة الحياة — لا يتغير أبداً بتعديل الأسرة. */
+export function sourceTextFor(spec: LabParticipationSpec, stepId: string): string {
+  return findSpaceStep(spec, stepId)?.instruction_family_ar ?? "";
+}
+
+/** نص الأسرة: المخصص إن وُجد، وإلا النص المختصر من المصدر. */
+export function familyTextFor(
+  spec: LabParticipationSpec,
+  selection: LabThisTimeSelection,
+  stepId: string,
+): string {
+  const custom = selection.familyTextByStepId?.[stepId];
+  if (custom && custom.trim()) return custom.trim();
+  return findSpaceStep(spec, stepId)?.instruction_short_ar ?? "";
+}
+
+/** الصورة المعتمدة للخطوة: اختيار الأسرة، أو أفضل صورة متاحة، أو بلا صورة. */
+export function visualFor(
+  spec: LabParticipationSpec,
+  selection: LabThisTimeSelection,
+  stepId: string,
+): string | null {
+  if (selection.textOnlyStepIds?.includes(stepId)) return null;
+  const chosen = selection.visualByStepId?.[stepId];
+  if (chosen) return chosen;
+  const step = findSpaceStep(spec, stepId);
+  if (!step) return null;
+  return suggestVisual(step.instruction_family_ar, step.visual_asset ?? null).src;
+}
+
+export function visualStatusFor(
+  spec: LabParticipationSpec,
+  selection: LabThisTimeSelection,
+  stepId: string,
+): LabVisualStatus {
+  if (selection.textOnlyStepIds?.includes(stepId)) return "not_required";
+  const step = findSpaceStep(spec, stepId);
+  if (!step) return "needed";
+  if (selection.visualByStepId?.[stepId]) return "exact";
+  return suggestVisual(step.instruction_family_ar, step.visual_asset ?? null).status;
+}
+
+/**
+ * مسودة تلقائية: الأسرة لا تبدأ من صفحة فارغة.
+ * كل الخطوات القابلة للتنفيذ مختارة بالترتيب، بنصها المختصر وأفضل صورة متاحة.
+ */
+export function buildDraftSelection(spec: LabParticipationSpec): LabThisTimeSelection {
+  const leaves = flatSteps(spec).filter(
+    (e) => !e.isMajor || spec.majorSteps.find((m) => m.id === e.step.id)?.substeps.length === 0,
+  );
+  return {
+    specId: spec.id,
+    selected: leaves.map((l, i) => ({ stepId: l.step.id, order: i + 1 })),
+    chosenExecutionOptionByStepId: {},
+    supportTools: [],
+    familyTextByStepId: {},
+    visualByStepId: {},
+    textOnlyStepIds: [],
+    drafted: true,
   };
 }
 
@@ -313,4 +386,15 @@ export const SPACE_SUPPORT_TOOLS = [
   { id: "tell-before", label: "أخبره مسبقاً" },
   { id: "picture-list", label: "قائمة مصورة" },
   { id: "builder", label: "أدوات بصرية جاهزة" },
+];
+
+/** الدعم الإضافي الأساسي — كل واحد ينتج مخرجًا مستقلاً خارج بطاقة المشارك. */
+export const SPACE_SUPPORT_ASSET_TYPES = [
+  {
+    type: "communication" as const,
+    label: "وسيلة تواصل",
+    hint: "كيف أطلب أو أختار أو أخبر؟",
+  },
+  { type: "time" as const, label: "تنظيم زمني", hint: "ما الذي يساعد على فهم الوقت؟" },
+  { type: "schedule" as const, label: "جدول مصور", hint: "بأي ترتيب؟" },
 ];

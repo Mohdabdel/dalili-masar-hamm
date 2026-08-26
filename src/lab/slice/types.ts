@@ -47,13 +47,24 @@ export interface LabThisTimeSelection {
   selected: { stepId: string; order: number }[];
   chosenExecutionOptionByStepId: Record<string, string>;
   supportTools: string[];
+  /** نص الأسرة المحلي لكل خطوة — لا يعدّل مكتبة الحياة. */
+  familyTextByStepId?: Record<string, string>;
+  /** الصورة التي اختارتها الأسرة لكل خطوة ("" = بلا صورة). */
+  visualByStepId?: Record<string, string>;
+  /** خطوات اختارت الأسرة إبقاءها نصًا فقط. */
+  textOnlyStepIds?: string[];
+  /** بدأنا من مسودة مولّدة تلقائيًا؟ */
+  drafted?: boolean;
 }
 
 /** إطار مجمّد داخل البطاقة: نص وصورة منسوخان وقت الاعتماد. */
 export interface LabCardFrame {
   sourceStepId: string;
   order: number;
+  /** النص المعتمد للعرض = نص الأسرة. */
   text_short_ar: string;
+  /** النص المرجعي من مكتبة الحياة — للمرجع فقط. */
+  sourceText_ar?: string;
   assetRef: string | null;
   executionOptionLabel_ar?: string;
 }
@@ -70,9 +81,14 @@ export interface LabCardSnapshot {
   eventId?: string;
   eventTitle_ar?: string;
   participationTitle_ar?: string;
+  level?: SliceLevel;
+  context?: SliceContext;
+  domainName_ar?: string;
   date?: string;
   startText_ar?: string;
   endText_ar?: string;
+  /** مراجع مخرجات الدعم المستقلة — ليست جزءًا من بطاقة المشارك. */
+  supportAssetIds?: string[];
 }
 
 export type SliceTone = "comfortable" | "usual" | "difficult_today";
@@ -91,3 +107,32 @@ export type SliceLifecycleChoice =
   | "make_routine"
   | "not_now"
   | "close_card";
+
+/**
+ * DALILI-FINAL-PATCH — طبقات إضافية فوق النموذج الحالي.
+ * لا تغيّر المسار الأساسي: حدث → مستوى → مشاركة → مساحة الأسرة → بطاقة مجمّدة.
+ */
+
+/** حالة الدعم البصري لخطوة — جاهزية تكييف، وليست وصفًا لأي شخص. */
+export type LabVisualStatus =
+  | "exact"
+  | "functional"
+  | "object"
+  | "sequence"
+  | "communication"
+  | "schedule"
+  | "needed"
+  | "not_required";
+
+export type LabSupportAssetType = "communication" | "time" | "schedule";
+
+/** مخرج دعم مستقل — لا يُدمج داخل بطاقة المشارك. */
+export interface LabSupportAsset {
+  id: string;
+  type: LabSupportAssetType;
+  label_ar: string;
+  specId: string;
+  snapshotId?: string;
+  createdAt: string;
+  items: string[];
+}

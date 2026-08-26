@@ -21,7 +21,8 @@ function SliceCardBlock() {
   const { specId } = useParams({ from: "/lab/slice/card/$specId" });
   const spec = getSpaceSpec(specId);
   const { state, dispatch } = useSlice();
-  const { snapshotsFor } = useSliceHelpers();
+  const { snapshotsFor, supportAssetsFor } = useSliceHelpers();
+  const assets = supportAssetsFor(specId);
   const snapshots = [...snapshotsFor(specId)].sort((a, b) => b.version - a.version);
 
   if (!spec) {
@@ -74,6 +75,20 @@ function SliceCardBlock() {
                       </li>
                     ))}
                   </ol>
+
+                  {(snap.supportAssetIds ?? []).length > 0 && (
+                    <div className="mb-3 rounded-xl border border-border bg-muted/40 p-3">
+                      <p className="text-sm font-bold">مخرجات دعم مستقلة</p>
+                      <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
+                        {(snap.supportAssetIds ?? []).map((id) => (
+                          <li key={id}>
+                            {assets.find((a) => a.id === id)?.label_ar ?? "مخرج دعم"} — خارج بطاقة
+                            المشارك
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
                   {tools.length > 0 && (
                     <p className="mb-3 text-sm text-muted-foreground">
