@@ -41,11 +41,11 @@ export const DEFAULT_HOME_STATION_IDS = [
   "FOOD-001",
   "FOOD-002",
   "FOOD-003",
-  "HOME-001",
+  "CLO-004",
   "CLO-011",
   "CLO-012",
-  "HOME-013",
-  "HOME-003",
+  "HOME-052",
+  "FOOD-017",
 ];
 
 /** محطات مألوفة خارج المنزل. */
@@ -55,6 +55,9 @@ export const DEFAULT_COMMUNITY_STATION_IDS = [
   "COMM-019",
   "COMM-054",
   "COMM-040",
+  "COMM-001",
+  "COMM-003",
+  "SHOP-001",
 ];
 
 function contextsOf(domainId: string): SpaceContext[] {
