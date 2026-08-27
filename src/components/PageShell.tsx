@@ -56,6 +56,7 @@ export function PageShell({ title, subtitle, description, breadcrumbs, headerExt
               <span className="text-lg font-bold">د</span>
             </div>
           </div>
+          {headerExtra && <div className="mt-3">{headerExtra}</div>}
         </div>
       </header>
       <main className="mx-auto max-w-2xl px-4 pt-5">{children}</main>
