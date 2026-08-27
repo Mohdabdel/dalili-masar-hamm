@@ -9,10 +9,11 @@ interface PageShellProps {
   subtitle?: string;
   description?: string;
   breadcrumbs?: Crumb[];
+  headerExtra?: ReactNode;
   children: ReactNode;
 }
 
-export function PageShell({ title, subtitle, description, breadcrumbs, children }: PageShellProps) {
+export function PageShell({ title, subtitle, description, breadcrumbs, headerExtra, children }: PageShellProps) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const isHome = pathname === "/";
   return (
@@ -55,6 +56,7 @@ export function PageShell({ title, subtitle, description, breadcrumbs, children 
               <span className="text-lg font-bold">د</span>
             </div>
           </div>
+          {headerExtra && <div className="mt-3">{headerExtra}</div>}
         </div>
       </header>
       <main className="mx-auto max-w-2xl px-4 pt-5">{children}</main>

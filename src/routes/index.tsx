@@ -90,6 +90,41 @@ function LandingPage() {
     <PageShell
       title="دليلي"
       description="مساحة مشاركات الأسرة داخل الحياة اليومية"
+      headerExtra={
+        <Accordion type="single" collapsible className="space-y-2">
+          {INFO_TABS.map((item) => (
+            <AccordionItem
+              key={item.id}
+              value={item.id}
+              className="overflow-hidden rounded-xl border border-primary-foreground/20 bg-primary-foreground/10 px-3"
+            >
+              <AccordionTrigger className="py-2.5 text-sm font-bold text-primary-foreground hover:no-underline">
+                {item.title}
+              </AccordionTrigger>
+              <AccordionContent className="pb-3">
+                {item.body.map((p) => (
+                  <p
+                    key={p}
+                    className="mt-1 text-sm leading-relaxed text-primary-foreground/80"
+                  >
+                    {p}
+                  </p>
+                ))}
+                {item.link && (
+                  <Link
+                    to="/participation-guide"
+                    search={{ tab: "guide" as const }}
+                    className="mt-3 inline-flex min-h-11 items-center gap-1 text-sm font-bold text-gold"
+                  >
+                    افتحوا دليل المشاركة
+                    <ChevronLeft className="h-4 w-4" aria-hidden />
+                  </Link>
+                )}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      }
     >
       {/* مقدمة مختصرة */}
       <section className="mt-1 rounded-2xl border border-border bg-card p-5 shadow-card-soft">
@@ -103,42 +138,6 @@ function LandingPage() {
         <p className="mt-1 text-sm font-bold text-gold">الفرصة الموجودة تكفي.</p>
       </section>
 
-      {/* معلومات خفيفة */}
-      <section className="mt-4">
-        <Accordion type="single" collapsible className="space-y-2">
-          {INFO_TABS.map((item) => (
-            <AccordionItem
-              key={item.id}
-              value={item.id}
-              className="overflow-hidden rounded-xl border border-border bg-card px-4"
-            >
-              <AccordionTrigger className="py-3 text-sm font-bold text-foreground hover:no-underline">
-                {item.title}
-              </AccordionTrigger>
-              <AccordionContent className="pb-4">
-                {item.body.map((p) => (
-                  <p
-                    key={p}
-                    className="mt-1 text-sm leading-relaxed text-muted-foreground"
-                  >
-                    {p}
-                  </p>
-                ))}
-                {item.link && (
-                  <Link
-                    to="/participation-guide"
-                    search={{ tab: "guide" as const }}
-                    className="mt-3 inline-flex min-h-11 items-center gap-1 text-sm font-bold text-primary"
-                  >
-                    افتحوا دليل المشاركة
-                    <ChevronLeft className="h-4 w-4" aria-hidden />
-                  </Link>
-                )}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </section>
 
       {/* دعوة الاكتشاف */}
       <section className="mt-7">
