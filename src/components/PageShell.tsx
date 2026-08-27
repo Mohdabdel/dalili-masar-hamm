@@ -9,10 +9,11 @@ interface PageShellProps {
   subtitle?: string;
   description?: string;
   breadcrumbs?: Crumb[];
+  headerExtra?: ReactNode;
   children: ReactNode;
 }
 
-export function PageShell({ title, subtitle, description, breadcrumbs, children }: PageShellProps) {
+export function PageShell({ title, subtitle, description, breadcrumbs, headerExtra, children }: PageShellProps) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const isHome = pathname === "/";
   return (
