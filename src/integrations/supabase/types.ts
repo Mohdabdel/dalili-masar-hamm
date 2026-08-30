@@ -275,6 +275,50 @@ export type Database = {
           },
         ]
       }
+      participation_snapshots: {
+        Row: {
+          approved_at: string
+          created_at: string
+          created_by: string | null
+          family_participation_id: string
+          id: string
+          schema_version: number
+          snapshot_data: Json
+          user_id: string
+          version_number: number
+        }
+        Insert: {
+          approved_at?: string
+          created_at?: string
+          created_by?: string | null
+          family_participation_id: string
+          id?: string
+          schema_version?: number
+          snapshot_data: Json
+          user_id?: string
+          version_number: number
+        }
+        Update: {
+          approved_at?: string
+          created_at?: string
+          created_by?: string | null
+          family_participation_id?: string
+          id?: string
+          schema_version?: number
+          snapshot_data?: Json
+          user_id?: string
+          version_number?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "participation_snapshots_family_participation_id_fkey"
+            columns: ["family_participation_id"]
+            isOneToOne: false
+            referencedRelation: "active_participations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       resource_attachments: {
         Row: {
           created_at: string

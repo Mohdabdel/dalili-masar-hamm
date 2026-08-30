@@ -93,8 +93,39 @@ Lab v1: `lab.workspace.*`, `lab.card.*`, `lab.run.*`, `lab.learner.*`, `lab.feed
 - ضياع حالة Lab الحالية في sessionStorage عند التبديل (لا ترحيل — بيانات تجريبية).
 - Prerender/SSR: كل قراءات الأسرة يجب أن تبقى تحت `_authenticated`.
 
-## 13) القرارات المطلوبة قبل M1
+## 13) القرارات
 
-1. تجميد الـframes كـ jsonb داخل `participation_snapshots` (موصى) أم جدول `snapshot_frames`؟
-2. توسيع `active_participations` لتكون FamilyParticipation (موصى) أم جدول جديد `family_participations`؟
-3. الإبقاء على `participation_daily_logs` للقراءة فقط (موصى) أم إيقافها نهائياً؟
+1. **مُعتمد**: التجميد كـ `jsonb` داخل `participation_snapshots` — بلا جدول frames في هذه المرحلة. (مطبَّق)
+2. قيد الانتظار: توسيع `active_participations` لتكون FamilyParticipation (موصى) أم جدول جديد `family_participations`؟
+3. قيد الانتظار: الإبقاء على `participation_daily_logs` للقراءة فقط (موصى) أم إيقافها نهائياً؟
+
+## 14) participation_snapshots (مطبَّق)
+
+الأعمدة: `id`, `user_id` (= هوية الأسرة، افتراضي `auth.uid()`), `family_participation_id` → `active_participations(id)`, `version_number`, `snapshot_data jsonb`, `schema_version` (افتراضي 1), `approved_at`, `created_at`, `created_by`، مع `UNIQUE(family_participation_id, version_number)` وفهرس تنازلي على النسخ.
+
+الصلاحيات: `SELECT, INSERT` فقط للـ authenticated (سياستان بمالك `auth.uid()`), و`ALL` لـ service_role. **لا UPDATE ولا DELETE** من مسارات التطبيق ⇒ التجميد مضمون على مستوى قاعدة البيانات (AC04/AC07/AC08).
+
+عقد `snapshot_data` (schema_version = 1):
+
+```json
+{
+  "title_ar": "…",
+  "opportunity_id": "…",
+  "event_id": "…", "event_title_ar": "…",
+  "level": "simple|moderate|advanced", "context": "home|community",
+  "start_step_id": "…", "end_step_id": "…",
+  "steps": [{
+    "source_step_id": "…", "order": 1,
+    "text_ar": "نص الأسرة", "source_text_ar": "نص المكتبة",
+    "asset_ref": "path|null",
+    "execution_option_label_ar": "…",
+    "presentation": "both|visual|text",
+    "block_order": "visual-text|text-visual"
+  }],
+  "support_tools": ["…"],
+  "support_asset_refs": [{ "id": "…", "type": "communication|time|schedule", "label_ar": "…" }],
+  "meta": { "approved_from": "family_workspace", "app_version": "phase1" }
+}
+```
+
+القاعدة: أي تعديل بعد الاعتماد ⇒ صف جديد بـ `version_number + 1`. `participation_runs` (M3) سترتبط بـ `snapshot_id` فقط، وبطاقة المشارك تقرأ من `snapshot_data` حصراً.
