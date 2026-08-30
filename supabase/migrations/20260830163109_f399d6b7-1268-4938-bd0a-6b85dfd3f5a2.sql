@@ -1,0 +1,2 @@
+ALTER TABLE public.active_participations DROP CONSTRAINT active_participations_source_check;
+ALTER TABLE public.active_participations ADD CONSTRAINT active_participations_source_check CHECK (source = ANY (ARRAY['browse'::text,'routine_station'::text,'search'::text,'my_day'::text,'family_workspace'::text]));
