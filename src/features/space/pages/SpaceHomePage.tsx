@@ -508,7 +508,6 @@ function ToolLink({
   icon: React.ReactNode;
   label: string;
 }) {
-  const base = useSpaceBase();
   return (
     <li>
       <Link
