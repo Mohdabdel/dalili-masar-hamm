@@ -503,7 +503,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
             ))}
           </ul>
           <div className="mt-4 flex flex-wrap gap-2">
-            <LabLinkButton to="/lab/visual" variant="ghost">
+            <LabLinkButton to="/tools" variant="ghost">
               أنشئوا معينًا بصريًا
             </LabLinkButton>
             <LabButton variant="ghost" onClick={() => addSupportAsset("schedule", "جدول مصور")}>

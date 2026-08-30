@@ -166,7 +166,7 @@ export function SpaceHomePage() {
       <section className="mt-9">
         <h2 className="text-lg font-bold text-foreground">أدوات دليلي</h2>
         <ul className="mt-3 grid gap-2 sm:grid-cols-3">
-          <ToolLink to="/lab/visual" icon={<Images className="h-4 w-4" aria-hidden />} label="المعينات البصرية" />
+          <ToolLink to="/tools" icon={<Images className="h-4 w-4" aria-hidden />} label="المعينات البصرية" />
           <ToolLink to="/tools" icon={<CalendarRange className="h-4 w-4" aria-hidden />} label="الجداول البصرية" />
           <ToolLink to="/tools" icon={<MessageSquare className="h-4 w-4" aria-hidden />} label="وسيلة التواصل" />
         </ul>
