@@ -78,6 +78,7 @@ async function ensureRoutineId(refs: Refs): Promise<string | null> {
 
 export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
   const [state, rawDispatch] = useReducer(sliceReducer, initialSliceState);
+  const [hydrated, markHydrated] = useReducer(() => true, false);
   const refs = useRef<Refs>({
     participationBySpec: {},
     participationBySnapshot: {},
@@ -176,8 +177,15 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
         log("loadStations")(error);
       }
 
-      if (!cancelled) rawDispatch({ type: "hydrate", value: next });
-    })().catch(log("load"));
+      if (!cancelled) {
+        rawDispatch({ type: "hydrate", value: next });
+        markHydrated();
+      }
+    })()
+      .catch(log("load"))
+      .finally(() => {
+        if (!cancelled) markHydrated();
+      });
 
     return () => {
       cancelled = true;
@@ -355,5 +363,20 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
   );
 
   const value = useMemo(() => ({ state, dispatch }), [state, dispatch]);
+
+  // لا نعرض المساحة قبل استرجاع بيانات الأسرة، حتى لا تُستبدل مسودة محفوظة بمسودة جديدة.
+  if (!hydrated) {
+    return (
+      <div className="mx-auto w-full max-w-3xl px-4 py-10" role="status" aria-live="polite">
+        <span className="sr-only">جارٍ فتح مساحة الأسرة</span>
+        <div className="space-y-3">
+          {[0, 1, 2].map((i) => (
+            <div key={i} className="h-20 animate-pulse rounded-2xl bg-muted" />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return <SliceCtx.Provider value={value}>{children}</SliceCtx.Provider>;
 }
