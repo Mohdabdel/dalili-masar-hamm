@@ -66,6 +66,12 @@ const INFO_TABS = [
 
 const DISCOVERY_PATHS = [
   {
+    title: "مساحة مشاركة الأسرة",
+    description: "جهّزوا بطاقة مشاركة بلغتكم وصوركم، واعتمدوها كنسخة ثابتة محفوظة.",
+    icon: Sparkles,
+    to: "/space" as const,
+  },
+  {
     title: "مشاركات الروتين اليومي",
     description: "رتّبوا محطات يومكم واربطوا بها مشاركات مناسبة.",
     icon: CalendarClock,
