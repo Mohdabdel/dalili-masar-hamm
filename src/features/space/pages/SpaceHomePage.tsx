@@ -244,6 +244,7 @@ function TaskBlock({
   closedIds: string[];
   historyView?: boolean;
 }) {
+  const base = useSpaceBase();
   const cards = historyView ? block.closed : block.open;
   return (
     <li className="py-3">
@@ -316,6 +317,7 @@ function Stations({
   state: ReturnType<typeof useSlice>["state"];
   dispatch: ReturnType<typeof useSlice>["dispatch"];
 }) {
+  const base = useSpaceBase();
   const defaults = defaultStations(context).filter((e) => !state.removedStations.includes(e.id));
   const added = state.stations
     .map(getSpaceEvent)
@@ -506,6 +508,7 @@ function ToolLink({
   icon: React.ReactNode;
   label: string;
 }) {
+  const base = useSpaceBase();
   return (
     <li>
       <Link
