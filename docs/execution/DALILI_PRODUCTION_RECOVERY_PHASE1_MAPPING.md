@@ -58,6 +58,19 @@
 
 M1 أعمدة إضافية (additive) → M2 الجدول الرابط + backfill من `active_participations.routine_station_id` → M3 snapshots/runs/feedback + GRANT + RLS → M4 Repository layer (`ParticipationRepository`) بلا تغيير UI → M5 توصيل Workspace/Learner على Repository خلف مسارات جديدة → M6 تبديل مسارات الإنتاج بعد Regression. كل خطوة قابلة للتراجع (DROP للأعمدة/الجداول المضافة فقط).
 
+### قرارات معتمدة (قبل M1)
+
+1. **هوية FamilyParticipation**: كيان مستقل بـUUID خاص — ليست `opportunity_id` ولا `routine_station_id`، وبلا `unique(user_id, opportunity_id)`؛ يُسمح بأكثر من مشاركة من نفس الفرصة عند الطلب الصريح، ومنع التكرار العرضي يتم في طبقة الخدمة/الواجهة. العلاقة: Opportunity → FamilyParticipation → Snapshot → Run، وعلاقة المحطات N:M منفصلة. `active_participations` تبقى هي الجدول الحامل لهذا الكيان (بلا إعادة تسمية تكسر الإنتاج).
+2. **Runs مقابل Daily Logs**: `participation_daily_logs` = Legacy تاريخي فقط، ولا يتحوّل تلقائياً. Runs الجديدة تُسجَّل في `participation_runs` وتشير دائماً إلى `family_participation_id` + `snapshot_id` + المالك، بلا إتقان/درجة/تتابع/إلزام إكمال.
+
+### M1 — منفَّذ
+
+- `participation_station_links(user_id, family_participation_id, routine_station_id, position)` مع UNIQUE(participation, station) وفهارس، RLS بمالك واحد، وGRANT للـauthenticated/service_role، وbackfill من `active_participations.routine_station_id` (العمود القديم يبقى للتوافق ومعلَّم Legacy).
+- `participation_runs(user_id, family_participation_id, snapshot_id, started_at, ended_at, note)` مع RESTRICT على حذف الـSnapshot (حفاظ على التجميد)، فهارس على المشاركة/الـSnapshot، RLS بمالك واحد.
+- `participation_daily_logs` معلَّم Legacy بتعليق على مستوى الجدول.
+
+الخطوة التالية (M2/M4): طبقة `ParticipationRepository` تقرأ/تكتب عبر الجداول الجديدة بلا تغيير في الواجهة.
+
 ## 6) RLS impact
 
 كل جدول جديد: GRANT للـ authenticated + service_role، سياسة مالك واحدة `user_id = auth.uid()`، و`participation_snapshots` بلا UPDATE/DELETE للحفاظ على التجميد. لا تغيير على السياسات القائمة.
