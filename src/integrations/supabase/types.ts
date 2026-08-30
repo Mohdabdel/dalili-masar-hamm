@@ -22,6 +22,7 @@ export type Database = {
           created_at: string
           daily_event_id: string | null
           id: string
+          lifecycle_choice: string | null
           notes: string | null
           opportunity_id: string
           routine_station_id: string | null
@@ -38,6 +39,7 @@ export type Database = {
           created_at?: string
           daily_event_id?: string | null
           id?: string
+          lifecycle_choice?: string | null
           notes?: string | null
           opportunity_id: string
           routine_station_id?: string | null
@@ -54,6 +56,7 @@ export type Database = {
           created_at?: string
           daily_event_id?: string | null
           id?: string
+          lifecycle_choice?: string | null
           notes?: string | null
           opportunity_id?: string
           routine_station_id?: string | null
@@ -102,6 +105,50 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      family_support_assets: {
+        Row: {
+          created_at: string
+          id: string
+          items: Json
+          label: string
+          snapshot_id: string | null
+          spec_id: string
+          type: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          items?: Json
+          label: string
+          snapshot_id?: string | null
+          spec_id: string
+          type: string
+          updated_at?: string
+          user_id?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          items?: Json
+          label?: string
+          snapshot_id?: string | null
+          spec_id?: string
+          type?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "family_support_assets_snapshot_id_fkey"
+            columns: ["snapshot_id"]
+            isOneToOne: false
+            referencedRelation: "participation_snapshots"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       learner_card_customizations: {
         Row: {
@@ -234,6 +281,41 @@ export type Database = {
           },
         ]
       }
+      participation_card_states: {
+        Row: {
+          closed: boolean
+          created_at: string
+          id: string
+          snapshot_id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          closed?: boolean
+          created_at?: string
+          id?: string
+          snapshot_id: string
+          updated_at?: string
+          user_id?: string
+        }
+        Update: {
+          closed?: boolean
+          created_at?: string
+          id?: string
+          snapshot_id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "participation_card_states_snapshot_id_fkey"
+            columns: ["snapshot_id"]
+            isOneToOne: false
+            referencedRelation: "participation_snapshots"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       participation_daily_logs: {
         Row: {
           active_participation_id: string
@@ -271,6 +353,74 @@ export type Database = {
             columns: ["active_participation_id"]
             isOneToOne: false
             referencedRelation: "active_participations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      participation_drafts: {
+        Row: {
+          created_at: string
+          event_id: string | null
+          id: string
+          selection: Json
+          spec_id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          event_id?: string | null
+          id?: string
+          selection?: Json
+          spec_id: string
+          updated_at?: string
+          user_id?: string
+        }
+        Update: {
+          created_at?: string
+          event_id?: string | null
+          id?: string
+          selection?: Json
+          spec_id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      participation_feedback: {
+        Row: {
+          created_at: string
+          id: string
+          log_date: string
+          reasons: Json
+          snapshot_id: string
+          tone: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          log_date?: string
+          reasons?: Json
+          snapshot_id: string
+          tone: string
+          user_id?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          log_date?: string
+          reasons?: Json
+          snapshot_id?: string
+          tone?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "participation_feedback_snapshot_id_fkey"
+            columns: ["snapshot_id"]
+            isOneToOne: false
+            referencedRelation: "participation_snapshots"
             referencedColumns: ["id"]
           },
         ]

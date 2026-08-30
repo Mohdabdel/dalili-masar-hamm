@@ -46,12 +46,14 @@ import { Route as ActivitiesMyDayRouteImport } from './routes/activities.my-day'
 import { Route as ActivitiesLevelRouteImport } from './routes/activities.level'
 import { Route as ActivitiesBrowseRouteImport } from './routes/activities.browse'
 import { Route as ActivitiesCategoryRouteImport } from './routes/activities.$category'
+import { Route as AuthenticatedSpaceRouteImport } from './routes/_authenticated/space'
 import { Route as AuthenticatedMyRoutineRouteImport } from './routes/_authenticated/my-routine'
 import { Route as AuthenticatedActiveParticipationsRouteImport } from './routes/_authenticated/active-participations'
 import { Route as AuthenticatedAccountRouteImport } from './routes/_authenticated/account'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
 import { Route as LabSliceIndexRouteImport } from './routes/lab.slice.index'
+import { Route as AuthenticatedSpaceIndexRouteImport } from './routes/_authenticated/space.index'
 import { Route as LabWorkspaceParticipationIdRouteImport } from './routes/lab.workspace.$participationId'
 import { Route as LabSliceParticipationsRouteImport } from './routes/lab.slice.participations'
 import { Route as LabSliceLibraryRouteImport } from './routes/lab.slice.library'
@@ -62,6 +64,8 @@ import { Route as LabLearnerParticipationIdRouteImport } from './routes/lab.lear
 import { Route as LabFeedbackParticipationIdRouteImport } from './routes/lab.feedback.$participationId'
 import { Route as LabEventEventIdRouteImport } from './routes/lab.event.$eventId'
 import { Route as LabCardParticipationIdRouteImport } from './routes/lab.card.$participationId'
+import { Route as AuthenticatedSpaceParticipationsRouteImport } from './routes/_authenticated/space.participations'
+import { Route as AuthenticatedSpaceLibraryRouteImport } from './routes/_authenticated/space.library'
 import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
 import { Route as LabSliceWorkspaceSpecIdRouteImport } from './routes/lab.slice.workspace.$specId'
 import { Route as LabSliceLearnerSnapshotIdRouteImport } from './routes/lab.slice.learner.$snapshotId'
@@ -69,6 +73,12 @@ import { Route as LabSliceFeedbackSnapshotIdRouteImport } from './routes/lab.sli
 import { Route as LabSliceCardSpecIdRouteImport } from './routes/lab.slice.card.$specId'
 import { Route as LabSliceEventIdParticipationsRouteImport } from './routes/lab.slice.$eventId.participations'
 import { Route as LabSliceEventIdLevelRouteImport } from './routes/lab.slice.$eventId.level'
+import { Route as AuthenticatedSpaceWorkspaceSpecIdRouteImport } from './routes/_authenticated/space.workspace.$specId'
+import { Route as AuthenticatedSpaceLearnerSnapshotIdRouteImport } from './routes/_authenticated/space.learner.$snapshotId'
+import { Route as AuthenticatedSpaceFeedbackSnapshotIdRouteImport } from './routes/_authenticated/space.feedback.$snapshotId'
+import { Route as AuthenticatedSpaceCardSpecIdRouteImport } from './routes/_authenticated/space.card.$specId'
+import { Route as AuthenticatedSpaceEventIdParticipationsRouteImport } from './routes/_authenticated/space.$eventId.participations'
+import { Route as AuthenticatedSpaceEventIdLevelRouteImport } from './routes/_authenticated/space.$eventId.level'
 
 const SettingsRoute = SettingsRouteImport.update({
   id: '/settings',
@@ -254,6 +264,11 @@ const ActivitiesCategoryRoute = ActivitiesCategoryRouteImport.update({
   path: '/activities/$category',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedSpaceRoute = AuthenticatedSpaceRouteImport.update({
+  id: '/space',
+  path: '/space',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const AuthenticatedMyRoutineRoute = AuthenticatedMyRoutineRouteImport.update({
   id: '/my-routine',
   path: '/my-routine',
@@ -286,6 +301,11 @@ const LabSliceIndexRoute = LabSliceIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => LabSliceRoute,
+} as any)
+const AuthenticatedSpaceIndexRoute = AuthenticatedSpaceIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AuthenticatedSpaceRoute,
 } as any)
 const LabWorkspaceParticipationIdRoute =
   LabWorkspaceParticipationIdRouteImport.update({
@@ -340,6 +360,18 @@ const LabCardParticipationIdRoute = LabCardParticipationIdRouteImport.update({
   path: '/card/$participationId',
   getParentRoute: () => LabRoute,
 } as any)
+const AuthenticatedSpaceParticipationsRoute =
+  AuthenticatedSpaceParticipationsRouteImport.update({
+    id: '/participations',
+    path: '/participations',
+    getParentRoute: () => AuthenticatedSpaceRoute,
+  } as any)
+const AuthenticatedSpaceLibraryRoute =
+  AuthenticatedSpaceLibraryRouteImport.update({
+    id: '/library',
+    path: '/library',
+    getParentRoute: () => AuthenticatedSpaceRoute,
+  } as any)
 const Char91DotmcpChar93InvokeToolToolRoute =
   Char91DotmcpChar93InvokeToolToolRouteImport.update({
     id: '/.mcp/invoke-tool/$tool',
@@ -379,6 +411,42 @@ const LabSliceEventIdLevelRoute = LabSliceEventIdLevelRouteImport.update({
   path: '/$eventId/level',
   getParentRoute: () => LabSliceRoute,
 } as any)
+const AuthenticatedSpaceWorkspaceSpecIdRoute =
+  AuthenticatedSpaceWorkspaceSpecIdRouteImport.update({
+    id: '/workspace/$specId',
+    path: '/workspace/$specId',
+    getParentRoute: () => AuthenticatedSpaceRoute,
+  } as any)
+const AuthenticatedSpaceLearnerSnapshotIdRoute =
+  AuthenticatedSpaceLearnerSnapshotIdRouteImport.update({
+    id: '/learner/$snapshotId',
+    path: '/learner/$snapshotId',
+    getParentRoute: () => AuthenticatedSpaceRoute,
+  } as any)
+const AuthenticatedSpaceFeedbackSnapshotIdRoute =
+  AuthenticatedSpaceFeedbackSnapshotIdRouteImport.update({
+    id: '/feedback/$snapshotId',
+    path: '/feedback/$snapshotId',
+    getParentRoute: () => AuthenticatedSpaceRoute,
+  } as any)
+const AuthenticatedSpaceCardSpecIdRoute =
+  AuthenticatedSpaceCardSpecIdRouteImport.update({
+    id: '/card/$specId',
+    path: '/card/$specId',
+    getParentRoute: () => AuthenticatedSpaceRoute,
+  } as any)
+const AuthenticatedSpaceEventIdParticipationsRoute =
+  AuthenticatedSpaceEventIdParticipationsRouteImport.update({
+    id: '/$eventId/participations',
+    path: '/$eventId/participations',
+    getParentRoute: () => AuthenticatedSpaceRoute,
+  } as any)
+const AuthenticatedSpaceEventIdLevelRoute =
+  AuthenticatedSpaceEventIdLevelRouteImport.update({
+    id: '/$eventId/level',
+    path: '/$eventId/level',
+    getParentRoute: () => AuthenticatedSpaceRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -400,6 +468,7 @@ export interface FileRoutesByFullPath {
   '/account': typeof AuthenticatedAccountRoute
   '/active-participations': typeof AuthenticatedActiveParticipationsRoute
   '/my-routine': typeof AuthenticatedMyRoutineRoute
+  '/space': typeof AuthenticatedSpaceRouteWithChildren
   '/activities/$category': typeof ActivitiesCategoryRoute
   '/activities/browse': typeof ActivitiesBrowseRoute
   '/activities/level': typeof ActivitiesLevelRoute
@@ -423,6 +492,8 @@ export interface FileRoutesByFullPath {
   '/lab/': typeof LabIndexRoute
   '/tools/': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/space/library': typeof AuthenticatedSpaceLibraryRoute
+  '/space/participations': typeof AuthenticatedSpaceParticipationsRoute
   '/lab/card/$participationId': typeof LabCardParticipationIdRoute
   '/lab/event/$eventId': typeof LabEventEventIdRoute
   '/lab/feedback/$participationId': typeof LabFeedbackParticipationIdRoute
@@ -433,7 +504,14 @@ export interface FileRoutesByFullPath {
   '/lab/slice/library': typeof LabSliceLibraryRoute
   '/lab/slice/participations': typeof LabSliceParticipationsRoute
   '/lab/workspace/$participationId': typeof LabWorkspaceParticipationIdRoute
+  '/space/': typeof AuthenticatedSpaceIndexRoute
   '/lab/slice/': typeof LabSliceIndexRoute
+  '/space/$eventId/level': typeof AuthenticatedSpaceEventIdLevelRoute
+  '/space/$eventId/participations': typeof AuthenticatedSpaceEventIdParticipationsRoute
+  '/space/card/$specId': typeof AuthenticatedSpaceCardSpecIdRoute
+  '/space/feedback/$snapshotId': typeof AuthenticatedSpaceFeedbackSnapshotIdRoute
+  '/space/learner/$snapshotId': typeof AuthenticatedSpaceLearnerSnapshotIdRoute
+  '/space/workspace/$specId': typeof AuthenticatedSpaceWorkspaceSpecIdRoute
   '/lab/slice/$eventId/level': typeof LabSliceEventIdLevelRoute
   '/lab/slice/$eventId/participations': typeof LabSliceEventIdParticipationsRoute
   '/lab/slice/card/$specId': typeof LabSliceCardSpecIdRoute
@@ -482,6 +560,8 @@ export interface FileRoutesByTo {
   '/lab': typeof LabIndexRoute
   '/tools': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/space/library': typeof AuthenticatedSpaceLibraryRoute
+  '/space/participations': typeof AuthenticatedSpaceParticipationsRoute
   '/lab/card/$participationId': typeof LabCardParticipationIdRoute
   '/lab/event/$eventId': typeof LabEventEventIdRoute
   '/lab/feedback/$participationId': typeof LabFeedbackParticipationIdRoute
@@ -492,7 +572,14 @@ export interface FileRoutesByTo {
   '/lab/slice/library': typeof LabSliceLibraryRoute
   '/lab/slice/participations': typeof LabSliceParticipationsRoute
   '/lab/workspace/$participationId': typeof LabWorkspaceParticipationIdRoute
+  '/space': typeof AuthenticatedSpaceIndexRoute
   '/lab/slice': typeof LabSliceIndexRoute
+  '/space/$eventId/level': typeof AuthenticatedSpaceEventIdLevelRoute
+  '/space/$eventId/participations': typeof AuthenticatedSpaceEventIdParticipationsRoute
+  '/space/card/$specId': typeof AuthenticatedSpaceCardSpecIdRoute
+  '/space/feedback/$snapshotId': typeof AuthenticatedSpaceFeedbackSnapshotIdRoute
+  '/space/learner/$snapshotId': typeof AuthenticatedSpaceLearnerSnapshotIdRoute
+  '/space/workspace/$specId': typeof AuthenticatedSpaceWorkspaceSpecIdRoute
   '/lab/slice/$eventId/level': typeof LabSliceEventIdLevelRoute
   '/lab/slice/$eventId/participations': typeof LabSliceEventIdParticipationsRoute
   '/lab/slice/card/$specId': typeof LabSliceCardSpecIdRoute
@@ -522,6 +609,7 @@ export interface FileRoutesById {
   '/_authenticated/account': typeof AuthenticatedAccountRoute
   '/_authenticated/active-participations': typeof AuthenticatedActiveParticipationsRoute
   '/_authenticated/my-routine': typeof AuthenticatedMyRoutineRoute
+  '/_authenticated/space': typeof AuthenticatedSpaceRouteWithChildren
   '/activities/$category': typeof ActivitiesCategoryRoute
   '/activities/browse': typeof ActivitiesBrowseRoute
   '/activities/level': typeof ActivitiesLevelRoute
@@ -545,6 +633,8 @@ export interface FileRoutesById {
   '/lab/': typeof LabIndexRoute
   '/tools/': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/_authenticated/space/library': typeof AuthenticatedSpaceLibraryRoute
+  '/_authenticated/space/participations': typeof AuthenticatedSpaceParticipationsRoute
   '/lab/card/$participationId': typeof LabCardParticipationIdRoute
   '/lab/event/$eventId': typeof LabEventEventIdRoute
   '/lab/feedback/$participationId': typeof LabFeedbackParticipationIdRoute
@@ -555,7 +645,14 @@ export interface FileRoutesById {
   '/lab/slice/library': typeof LabSliceLibraryRoute
   '/lab/slice/participations': typeof LabSliceParticipationsRoute
   '/lab/workspace/$participationId': typeof LabWorkspaceParticipationIdRoute
+  '/_authenticated/space/': typeof AuthenticatedSpaceIndexRoute
   '/lab/slice/': typeof LabSliceIndexRoute
+  '/_authenticated/space/$eventId/level': typeof AuthenticatedSpaceEventIdLevelRoute
+  '/_authenticated/space/$eventId/participations': typeof AuthenticatedSpaceEventIdParticipationsRoute
+  '/_authenticated/space/card/$specId': typeof AuthenticatedSpaceCardSpecIdRoute
+  '/_authenticated/space/feedback/$snapshotId': typeof AuthenticatedSpaceFeedbackSnapshotIdRoute
+  '/_authenticated/space/learner/$snapshotId': typeof AuthenticatedSpaceLearnerSnapshotIdRoute
+  '/_authenticated/space/workspace/$specId': typeof AuthenticatedSpaceWorkspaceSpecIdRoute
   '/lab/slice/$eventId/level': typeof LabSliceEventIdLevelRoute
   '/lab/slice/$eventId/participations': typeof LabSliceEventIdParticipationsRoute
   '/lab/slice/card/$specId': typeof LabSliceCardSpecIdRoute
@@ -585,6 +682,7 @@ export interface FileRouteTypes {
     | '/account'
     | '/active-participations'
     | '/my-routine'
+    | '/space'
     | '/activities/$category'
     | '/activities/browse'
     | '/activities/level'
@@ -608,6 +706,8 @@ export interface FileRouteTypes {
     | '/lab/'
     | '/tools/'
     | '/.mcp/invoke-tool/$tool'
+    | '/space/library'
+    | '/space/participations'
     | '/lab/card/$participationId'
     | '/lab/event/$eventId'
     | '/lab/feedback/$participationId'
@@ -618,7 +718,14 @@ export interface FileRouteTypes {
     | '/lab/slice/library'
     | '/lab/slice/participations'
     | '/lab/workspace/$participationId'
+    | '/space/'
     | '/lab/slice/'
+    | '/space/$eventId/level'
+    | '/space/$eventId/participations'
+    | '/space/card/$specId'
+    | '/space/feedback/$snapshotId'
+    | '/space/learner/$snapshotId'
+    | '/space/workspace/$specId'
     | '/lab/slice/$eventId/level'
     | '/lab/slice/$eventId/participations'
     | '/lab/slice/card/$specId'
@@ -667,6 +774,8 @@ export interface FileRouteTypes {
     | '/lab'
     | '/tools'
     | '/.mcp/invoke-tool/$tool'
+    | '/space/library'
+    | '/space/participations'
     | '/lab/card/$participationId'
     | '/lab/event/$eventId'
     | '/lab/feedback/$participationId'
@@ -677,7 +786,14 @@ export interface FileRouteTypes {
     | '/lab/slice/library'
     | '/lab/slice/participations'
     | '/lab/workspace/$participationId'
+    | '/space'
     | '/lab/slice'
+    | '/space/$eventId/level'
+    | '/space/$eventId/participations'
+    | '/space/card/$specId'
+    | '/space/feedback/$snapshotId'
+    | '/space/learner/$snapshotId'
+    | '/space/workspace/$specId'
     | '/lab/slice/$eventId/level'
     | '/lab/slice/$eventId/participations'
     | '/lab/slice/card/$specId'
@@ -706,6 +822,7 @@ export interface FileRouteTypes {
     | '/_authenticated/account'
     | '/_authenticated/active-participations'
     | '/_authenticated/my-routine'
+    | '/_authenticated/space'
     | '/activities/$category'
     | '/activities/browse'
     | '/activities/level'
@@ -729,6 +846,8 @@ export interface FileRouteTypes {
     | '/lab/'
     | '/tools/'
     | '/.mcp/invoke-tool/$tool'
+    | '/_authenticated/space/library'
+    | '/_authenticated/space/participations'
     | '/lab/card/$participationId'
     | '/lab/event/$eventId'
     | '/lab/feedback/$participationId'
@@ -739,7 +858,14 @@ export interface FileRouteTypes {
     | '/lab/slice/library'
     | '/lab/slice/participations'
     | '/lab/workspace/$participationId'
+    | '/_authenticated/space/'
     | '/lab/slice/'
+    | '/_authenticated/space/$eventId/level'
+    | '/_authenticated/space/$eventId/participations'
+    | '/_authenticated/space/card/$specId'
+    | '/_authenticated/space/feedback/$snapshotId'
+    | '/_authenticated/space/learner/$snapshotId'
+    | '/_authenticated/space/workspace/$specId'
     | '/lab/slice/$eventId/level'
     | '/lab/slice/$eventId/participations'
     | '/lab/slice/card/$specId'
@@ -1039,6 +1165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ActivitiesCategoryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/space': {
+      id: '/_authenticated/space'
+      path: '/space'
+      fullPath: '/space'
+      preLoaderRoute: typeof AuthenticatedSpaceRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/my-routine': {
       id: '/_authenticated/my-routine'
       path: '/my-routine'
@@ -1080,6 +1213,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/lab/slice/'
       preLoaderRoute: typeof LabSliceIndexRouteImport
       parentRoute: typeof LabSliceRoute
+    }
+    '/_authenticated/space/': {
+      id: '/_authenticated/space/'
+      path: '/'
+      fullPath: '/space/'
+      preLoaderRoute: typeof AuthenticatedSpaceIndexRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
     }
     '/lab/workspace/$participationId': {
       id: '/lab/workspace/$participationId'
@@ -1151,6 +1291,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LabCardParticipationIdRouteImport
       parentRoute: typeof LabRoute
     }
+    '/_authenticated/space/participations': {
+      id: '/_authenticated/space/participations'
+      path: '/participations'
+      fullPath: '/space/participations'
+      preLoaderRoute: typeof AuthenticatedSpaceParticipationsRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
+    '/_authenticated/space/library': {
+      id: '/_authenticated/space/library'
+      path: '/library'
+      fullPath: '/space/library'
+      preLoaderRoute: typeof AuthenticatedSpaceLibraryRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
     '/.mcp/invoke-tool/$tool': {
       id: '/.mcp/invoke-tool/$tool'
       path: '/.mcp/invoke-tool/$tool'
@@ -1200,13 +1354,87 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LabSliceEventIdLevelRouteImport
       parentRoute: typeof LabSliceRoute
     }
+    '/_authenticated/space/workspace/$specId': {
+      id: '/_authenticated/space/workspace/$specId'
+      path: '/workspace/$specId'
+      fullPath: '/space/workspace/$specId'
+      preLoaderRoute: typeof AuthenticatedSpaceWorkspaceSpecIdRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
+    '/_authenticated/space/learner/$snapshotId': {
+      id: '/_authenticated/space/learner/$snapshotId'
+      path: '/learner/$snapshotId'
+      fullPath: '/space/learner/$snapshotId'
+      preLoaderRoute: typeof AuthenticatedSpaceLearnerSnapshotIdRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
+    '/_authenticated/space/feedback/$snapshotId': {
+      id: '/_authenticated/space/feedback/$snapshotId'
+      path: '/feedback/$snapshotId'
+      fullPath: '/space/feedback/$snapshotId'
+      preLoaderRoute: typeof AuthenticatedSpaceFeedbackSnapshotIdRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
+    '/_authenticated/space/card/$specId': {
+      id: '/_authenticated/space/card/$specId'
+      path: '/card/$specId'
+      fullPath: '/space/card/$specId'
+      preLoaderRoute: typeof AuthenticatedSpaceCardSpecIdRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
+    '/_authenticated/space/$eventId/participations': {
+      id: '/_authenticated/space/$eventId/participations'
+      path: '/$eventId/participations'
+      fullPath: '/space/$eventId/participations'
+      preLoaderRoute: typeof AuthenticatedSpaceEventIdParticipationsRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
+    '/_authenticated/space/$eventId/level': {
+      id: '/_authenticated/space/$eventId/level'
+      path: '/$eventId/level'
+      fullPath: '/space/$eventId/level'
+      preLoaderRoute: typeof AuthenticatedSpaceEventIdLevelRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
   }
 }
+
+interface AuthenticatedSpaceRouteChildren {
+  AuthenticatedSpaceLibraryRoute: typeof AuthenticatedSpaceLibraryRoute
+  AuthenticatedSpaceParticipationsRoute: typeof AuthenticatedSpaceParticipationsRoute
+  AuthenticatedSpaceIndexRoute: typeof AuthenticatedSpaceIndexRoute
+  AuthenticatedSpaceEventIdLevelRoute: typeof AuthenticatedSpaceEventIdLevelRoute
+  AuthenticatedSpaceEventIdParticipationsRoute: typeof AuthenticatedSpaceEventIdParticipationsRoute
+  AuthenticatedSpaceCardSpecIdRoute: typeof AuthenticatedSpaceCardSpecIdRoute
+  AuthenticatedSpaceFeedbackSnapshotIdRoute: typeof AuthenticatedSpaceFeedbackSnapshotIdRoute
+  AuthenticatedSpaceLearnerSnapshotIdRoute: typeof AuthenticatedSpaceLearnerSnapshotIdRoute
+  AuthenticatedSpaceWorkspaceSpecIdRoute: typeof AuthenticatedSpaceWorkspaceSpecIdRoute
+}
+
+const AuthenticatedSpaceRouteChildren: AuthenticatedSpaceRouteChildren = {
+  AuthenticatedSpaceLibraryRoute: AuthenticatedSpaceLibraryRoute,
+  AuthenticatedSpaceParticipationsRoute: AuthenticatedSpaceParticipationsRoute,
+  AuthenticatedSpaceIndexRoute: AuthenticatedSpaceIndexRoute,
+  AuthenticatedSpaceEventIdLevelRoute: AuthenticatedSpaceEventIdLevelRoute,
+  AuthenticatedSpaceEventIdParticipationsRoute:
+    AuthenticatedSpaceEventIdParticipationsRoute,
+  AuthenticatedSpaceCardSpecIdRoute: AuthenticatedSpaceCardSpecIdRoute,
+  AuthenticatedSpaceFeedbackSnapshotIdRoute:
+    AuthenticatedSpaceFeedbackSnapshotIdRoute,
+  AuthenticatedSpaceLearnerSnapshotIdRoute:
+    AuthenticatedSpaceLearnerSnapshotIdRoute,
+  AuthenticatedSpaceWorkspaceSpecIdRoute:
+    AuthenticatedSpaceWorkspaceSpecIdRoute,
+}
+
+const AuthenticatedSpaceRouteWithChildren =
+  AuthenticatedSpaceRoute._addFileChildren(AuthenticatedSpaceRouteChildren)
 
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedAccountRoute: typeof AuthenticatedAccountRoute
   AuthenticatedActiveParticipationsRoute: typeof AuthenticatedActiveParticipationsRoute
   AuthenticatedMyRoutineRoute: typeof AuthenticatedMyRoutineRoute
+  AuthenticatedSpaceRoute: typeof AuthenticatedSpaceRouteWithChildren
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
@@ -1214,6 +1442,7 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedActiveParticipationsRoute:
     AuthenticatedActiveParticipationsRoute,
   AuthenticatedMyRoutineRoute: AuthenticatedMyRoutineRoute,
+  AuthenticatedSpaceRoute: AuthenticatedSpaceRouteWithChildren,
 }
 
 const AuthenticatedRouteRouteWithChildren =
