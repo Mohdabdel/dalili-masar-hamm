@@ -275,6 +275,57 @@ export type Database = {
           },
         ]
       }
+      participation_runs: {
+        Row: {
+          created_at: string
+          ended_at: string | null
+          family_participation_id: string
+          id: string
+          note: string | null
+          snapshot_id: string
+          started_at: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          ended_at?: string | null
+          family_participation_id: string
+          id?: string
+          note?: string | null
+          snapshot_id: string
+          started_at?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Update: {
+          created_at?: string
+          ended_at?: string | null
+          family_participation_id?: string
+          id?: string
+          note?: string | null
+          snapshot_id?: string
+          started_at?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "participation_runs_family_participation_id_fkey"
+            columns: ["family_participation_id"]
+            isOneToOne: false
+            referencedRelation: "active_participations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "participation_runs_snapshot_id_fkey"
+            columns: ["snapshot_id"]
+            isOneToOne: false
+            referencedRelation: "participation_snapshots"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       participation_snapshots: {
         Row: {
           approved_at: string
@@ -315,6 +366,51 @@ export type Database = {
             columns: ["family_participation_id"]
             isOneToOne: false
             referencedRelation: "active_participations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      participation_station_links: {
+        Row: {
+          created_at: string
+          family_participation_id: string
+          id: string
+          position: number
+          routine_station_id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          family_participation_id: string
+          id?: string
+          position?: number
+          routine_station_id: string
+          updated_at?: string
+          user_id?: string
+        }
+        Update: {
+          created_at?: string
+          family_participation_id?: string
+          id?: string
+          position?: number
+          routine_station_id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "participation_station_links_family_participation_id_fkey"
+            columns: ["family_participation_id"]
+            isOneToOne: false
+            referencedRelation: "active_participations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "participation_station_links_routine_station_id_fkey"
+            columns: ["routine_station_id"]
+            isOneToOne: false
+            referencedRelation: "routine_stations"
             referencedColumns: ["id"]
           },
         ]
