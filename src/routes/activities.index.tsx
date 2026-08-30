@@ -97,7 +97,7 @@ function DaliliHome() {
           <div className="flex items-center justify-between gap-3 px-1">
             <h2 className="text-lg font-bold text-foreground">مشاركاتنا</h2>
             <Link
-              to="/lab/slice"
+              to="/space"
               className="inline-flex min-h-11 items-center rounded-xl bg-gradient-gold px-4 text-sm font-bold text-primary shadow-card-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               مساحة الأسرة
