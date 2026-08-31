@@ -35,6 +35,9 @@ const LIFECYCLE: { id: SliceLifecycleChoice; label: string; hint: string }[] = [
   { id: "close_card", label: "نغلق هذه البطاقة", hint: "هذه البطاقة فقط، لا المشاركة كلها." },
 ];
 
+/** إغلاق المشاركة الأسرية كلها — خيار منفصل عن إغلاق البطاقة. */
+const CLOSE_PARTICIPATION = "close_participation" as const;
+
 export function FeedbackPage({ snapshotId }: { snapshotId: string }) {
   const base = useSpaceBase();
   const { snapshotById } = useSliceHelpers();
@@ -45,7 +48,9 @@ export function FeedbackPage({ snapshotId }: { snapshotId: string }) {
 
   const [tone, setTone] = useState<SliceTone | null>(null);
   const [reasons, setReasons] = useState<string[]>([]);
-  const [lifecycle, setLifecycle] = useState<SliceLifecycleChoice | null>(null);
+  const [lifecycle, setLifecycle] = useState<
+    SliceLifecycleChoice | typeof CLOSE_PARTICIPATION | null
+  >(null);
 
   if (!snap) {
     return (
@@ -56,14 +61,18 @@ export function FeedbackPage({ snapshotId }: { snapshotId: string }) {
   }
 
   const save = () => {
-    if (!tone || !lifecycle) return;
-    dispatch({
-      type: "feedback",
-      value: { snapshotId, date: new Date().toISOString().slice(0, 10), tone, reasons },
-    });
+    // الانطباع اختياري تماماً؛ يُحفظ فقط إن اختارته الأسرة.
+    if (tone) {
+      dispatch({
+        type: "feedback",
+        value: { snapshotId, date: new Date().toISOString().slice(0, 10), tone, reasons },
+      });
+    }
     if (lifecycle === "close_card") {
       dispatch({ type: "card.close", snapshotId });
-    } else {
+    } else if (lifecycle === CLOSE_PARTICIPATION) {
+      dispatch({ type: "participation.close", specId: snap.participationSpecId });
+    } else if (lifecycle) {
       dispatch({ type: "lifecycle", specId: snap.participationSpecId, value: lifecycle });
     }
     if (lifecycle === "make_routine" && snap.eventId) {
@@ -82,9 +91,9 @@ export function FeedbackPage({ snapshotId }: { snapshotId: string }) {
   return (
     <LabPage
       title={`كيف كانت ${snap.title_ar} اليوم؟`}
-      intro="انطباع الأسرة فقط. لا تقييم ولا درجات ولا نِسَب."
+      intro="أغلقنا هذه المرة. ما يلي اختياري بالكامل: انطباع الأسرة فقط، لا تقييم ولا درجات ولا نِسَب."
     >
-      <LabSection title="انطباع اليوم">
+      <LabSection title="انطباع اليوم" description="اختياري.">
         <div className="flex flex-wrap gap-2">
           {TONES.map((t) => (
             <Chip key={t.id} on={tone === t.id} onClick={() => setTone(t.id)} label={t.label} />
@@ -112,9 +121,16 @@ export function FeedbackPage({ snapshotId }: { snapshotId: string }) {
         </LabSection>
       )}
 
-      <LabSection title="ماذا بعد؟">
+      <LabSection title="ماذا بعد؟" description="اختياري — يمكنكم تخطّيه.">
         <ul className="space-y-2">
-          {LIFECYCLE.map((l) => (
+          {[
+            ...LIFECYCLE,
+            {
+              id: CLOSE_PARTICIPATION,
+              label: "نغلق هذه المشاركة كلها",
+              hint: "تُحفظ كل البطاقات والمرات السابقة، ويمكن إعادة فتحها لاحقاً.",
+            },
+          ].map((l) => (
             <li key={l.id}>
               <button
                 type="button"
@@ -133,9 +149,23 @@ export function FeedbackPage({ snapshotId }: { snapshotId: string }) {
         </ul>
       </LabSection>
 
-      <LabButton onClick={save} disabled={!tone || !lifecycle}>
-        حفظ وإغلاق اليوم
-      </LabButton>
+      <div className="flex flex-wrap gap-3">
+        <LabButton onClick={save}>حفظ</LabButton>
+        <LabButton
+          variant="ghost"
+          onClick={() =>
+            navigate({ to: `${base}/card/$specId`, params: { specId: snap.participationSpecId } })
+          }
+        >
+          تخطّي الآن
+        </LabButton>
+      </div>
+
+      <div className="mt-4">
+        <LabNote>
+          إغلاق البطاقة أو المشاركة لا يحذف شيئاً — سجل المرات السابقة يبقى محفوظاً.
+        </LabNote>
+      </div>
     </LabPage>
   );
 }

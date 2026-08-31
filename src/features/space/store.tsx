@@ -29,8 +29,10 @@ export interface SliceState {
   removedStations: string[];
   /** بطاقات أُغلقت — لا تعني اكتمال المشاركة كلها. */
   closedCards: string[];
-  /** سجل التنفيذ: متى فُتحت البطاقة للتنفيذ. */
-  runs: { snapshotId: string; date: string }[];
+  /** سجل التنفيذ: كل مرة فُتحت فيها البطاقة للتنفيذ (Run). بلا إتقان ولا تقدّم. */
+  runs: { id: string; snapshotId: string; date: string; startedAt: string; endedAt?: string }[];
+  /** مشاركات أسرية أُغلقت — السجل يبقى محفوظاً. */
+  closedSpecs: string[];
   /** مخرجات دعم مستقلة. */
   supportAssets: LabSupportAsset[];
 }
@@ -44,8 +46,10 @@ export const initialSliceState: SliceState = {
   stations: [],
   removedStations: [],
   closedCards: [],
+  closedSpecs: [],
   runs: [],
   supportAssets: [],
+
 };
 
 export type SliceAction =
@@ -59,7 +63,11 @@ export type SliceAction =
   | { type: "station.remove"; eventId: string }
   | { type: "card.close"; snapshotId: string }
   | { type: "card.reopen"; snapshotId: string }
-  | { type: "run"; snapshotId: string }
+  | { type: "run.start"; runId: string; snapshotId: string }
+  | { type: "run.end"; runId: string }
+  | { type: "participation.close"; specId: string }
+  | { type: "participation.reopen"; specId: string }
+
   | { type: "support.add"; value: LabSupportAsset }
   | { type: "support.remove"; id: string }
   | { type: "reset" };
@@ -93,14 +101,39 @@ export function sliceReducer(state: SliceState, action: SliceAction): SliceState
       };
     case "card.reopen":
       return { ...state, closedCards: state.closedCards.filter((id) => id !== action.snapshotId) };
-    case "run":
+    case "run.start": {
+      if (state.runs.some((r) => r.id === action.runId)) return state;
+      const now = new Date().toISOString();
       return {
         ...state,
         runs: [
-          { snapshotId: action.snapshotId, date: new Date().toISOString().slice(0, 10) },
+          {
+            id: action.runId,
+            snapshotId: action.snapshotId,
+            date: now.slice(0, 10),
+            startedAt: now,
+          },
           ...state.runs,
         ],
       };
+    }
+    case "run.end":
+      return {
+        ...state,
+        runs: state.runs.map((r) =>
+          r.id === action.runId && !r.endedAt ? { ...r, endedAt: new Date().toISOString() } : r,
+        ),
+      };
+    case "participation.close":
+      return {
+        ...state,
+        closedSpecs: state.closedSpecs.includes(action.specId)
+          ? state.closedSpecs
+          : [...state.closedSpecs, action.specId],
+      };
+    case "participation.reopen":
+      return { ...state, closedSpecs: state.closedSpecs.filter((id) => id !== action.specId) };
+
     case "support.add":
       return { ...state, supportAssets: [action.value, ...state.supportAssets] };
     case "support.remove":

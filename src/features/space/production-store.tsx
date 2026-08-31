@@ -96,7 +96,10 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
 
       const [participations, snapshots, drafts, cardStates, runs, feedback, assets] =
         await Promise.all([
-          supabase.from("active_participations").select("id, opportunity_id, lifecycle_choice"),
+          supabase
+            .from("active_participations")
+            .select("id, opportunity_id, lifecycle_choice, status"),
+
           supabase
             .from("participation_snapshots")
             .select("id, family_participation_id, snapshot_data, version_number, approved_at")
@@ -105,8 +108,9 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           supabase.from("participation_card_states").select("snapshot_id, closed"),
           supabase
             .from("participation_runs")
-            .select("snapshot_id, started_at")
+            .select("id, snapshot_id, started_at, ended_at")
             .order("started_at", { ascending: false }),
+
           supabase
             .from("participation_feedback")
             .select("snapshot_id, log_date, tone, reasons")
@@ -126,7 +130,9 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
         if (row.lifecycle_choice) {
           next.lifecycleBySpec[row.opportunity_id] = row.lifecycle_choice as SliceLifecycleChoice;
         }
+        if (row.status === "closed") next.closedSpecs.push(row.opportunity_id);
       }
+
 
       next.snapshots = (snapshots.data ?? []).map((row) => {
         refs.current.participationBySnapshot[row.id] = row.family_participation_id;
@@ -143,9 +149,13 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
         .map((r) => r.snapshot_id);
 
       next.runs = (runs.data ?? []).map((r) => ({
+        id: r.id,
         snapshotId: r.snapshot_id,
         date: String(r.started_at).slice(0, 10),
+        startedAt: String(r.started_at),
+        endedAt: r.ended_at ? String(r.ended_at) : undefined,
       }));
+
 
       next.feedback = (feedback.data ?? []).map((r) => ({
         snapshotId: r.snapshot_id,
@@ -228,19 +238,60 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
         r.participationBySnapshot[snap.id] = participationId;
         break;
       }
-      case "run": {
+      case "run.start": {
+        // بدء التنفيذ يفتح Run جديدة فقط — لا يُنشئ مشاركة أسرية جديدة أبداً.
         const snap = snapshotState.snapshots.find((s) => s.id === action.snapshotId);
-        const participationId =
-          r.participationBySnapshot[action.snapshotId] ??
-          (snap ? await ensureParticipation(r, snap.participationSpecId, snap.eventId) : null);
+        let participationId = r.participationBySnapshot[action.snapshotId] ?? null;
+        if (!participationId && snap) {
+          participationId = r.participationBySpec[snap.participationSpecId] ?? null;
+          if (!participationId) {
+            const { data } = await supabase
+              .from("active_participations")
+              .select("id")
+              .eq("opportunity_id", snap.participationSpecId)
+              .maybeSingle();
+            if (data) {
+              participationId = data.id;
+              r.participationBySpec[snap.participationSpecId] = data.id;
+            }
+          }
+          if (participationId) r.participationBySnapshot[action.snapshotId] = participationId;
+        }
         if (!participationId) return;
         const { error } = await supabase.from("participation_runs").insert({
+          id: action.runId,
           family_participation_id: participationId,
           snapshot_id: action.snapshotId,
         });
-        log("run")(error);
+        log("runStart")(error);
         break;
       }
+      case "run.end": {
+        // «انتهينا» تُغلق هذه المرة فقط — البطاقة والمشاركة تبقيان كما هما.
+        const { error } = await supabase
+          .from("participation_runs")
+          .update({ ended_at: new Date().toISOString() })
+          .eq("id", action.runId)
+          .is("ended_at", null);
+        log("runEnd")(error);
+        break;
+      }
+      case "participation.close":
+      case "participation.reopen": {
+        const participationId = r.participationBySpec[action.specId];
+        if (!participationId) return;
+        const closing = action.type === "participation.close";
+        const { error } = await supabase
+          .from("active_participations")
+          .update({
+            status: closing ? "closed" : "active",
+            closed_at: closing ? new Date().toISOString() : null,
+          })
+          .eq("id", participationId);
+        log("participationState")(error);
+        break;
+      }
+
       case "card.close":
       case "card.reopen": {
         const { error } = await supabase.from("participation_card_states").upsert(
