@@ -35,7 +35,7 @@ export interface SliceState {
   closedSpecs: string[];
   /** مخرجات دعم مستقلة. */
   supportAssets: LabSupportAsset[];
-
+}
 
 export const initialSliceState: SliceState = {
   levelByEvent: {},
@@ -46,8 +46,10 @@ export const initialSliceState: SliceState = {
   stations: [],
   removedStations: [],
   closedCards: [],
+  closedSpecs: [],
   runs: [],
   supportAssets: [],
+
 };
 
 export type SliceAction =
