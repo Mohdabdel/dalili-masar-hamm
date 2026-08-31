@@ -332,60 +332,43 @@ export function WorkspacePage({ specId }: { specId: string }) {
         </details>
       )}
 
-      <details className="rounded-2xl border border-border bg-card p-3">
-        <summary className="cursor-pointer text-sm font-bold">
-          كيف ستظهر البطاقة، واسمها
-        </summary>
-        <div className="mt-3 space-y-4">
-          {rows.length === 0 ? (
-            <LabNote>أضيفوا خطوة واحدة على الأقل.</LabNote>
-          ) : (
-            <ol className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {previewItems.map((item, i) => (
-                <li key={item.stepId} className="rounded-2xl border border-border bg-card p-2">
-                  <StepBlocks item={item} index={i + 1} />
-                </li>
-              ))}
-              <li className="grid place-items-center rounded-2xl border border-dashed border-border p-4 text-lg font-bold text-muted-foreground">
-                انتهينا
+      <LabSection
+        title="كيف ستظهر البطاقة"
+        description="لمحة سريعة. المعاينة الكاملة والاعتماد في الخطوة التالية."
+      >
+        {rows.length === 0 ? (
+          <LabNote>أضيفوا خطوة واحدة على الأقل.</LabNote>
+        ) : (
+          <ol className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {previewItems.map((item, i) => (
+              <li key={item.stepId} className="rounded-2xl border border-border bg-card p-2">
+                <StepBlocks item={item} index={i + 1} />
               </li>
-            </ol>
+            ))}
+            <li className="grid place-items-center rounded-2xl border border-dashed border-border p-4 text-lg font-bold text-muted-foreground">
+              انتهينا
+            </li>
+          </ol>
+        )}
+
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          <LabLinkButton to={`${base}/preview/$specId`} params={{ specId }}>
+            صمّم بطاقة المشاركة
+          </LabLinkButton>
+          {versions.length > 0 && (
+            <LabLinkButton to={`${base}/card/$specId`} params={{ specId }} variant="ghost">
+              بطاقات هذه المشاركة ({versions.length})
+            </LabLinkButton>
           )}
-
-          <div className="grid gap-3 sm:grid-cols-2">
-            <label className="block">
-              <span className="mb-1 block text-sm font-bold">اسم البطاقة</span>
-              <input
-                type="text"
-                value={label}
-                onChange={(e) => setLabel(e.target.value)}
-                placeholder={`${spec.title_ar} — بطاقة ${versions.length + 1}`}
-                className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              />
-            </label>
-            <label className="block">
-              <span className="mb-1 block text-sm font-bold">التاريخ (اختياري)</span>
-              <input
-                type="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-                className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              />
-            </label>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <LabButton onClick={approve} disabled={rows.length === 0}>
-              {versions.length === 0 ? "نعتمد البطاقة" : "نعتمد بطاقة جديدة"}
-            </LabButton>
-            {versions.length > 0 && (
-              <LabLinkButton to={`${base}/card/$specId`} params={{ specId }} variant="ghost">
-                بطاقات هذه المشاركة ({versions.length})
-              </LabLinkButton>
-            )}
-          </div>
         </div>
-      </details>
+        {versions.length > 0 && (
+          <LabNote>
+            بطاقتكم المعتمدة الحالية تبقى كما هي. أي تعديل هنا لا يغيّرها، وعند الاعتماد تُضاف بطاقة
+            جديدة.
+          </LabNote>
+        )}
+      </LabSection>
+
 
       <ConsiderationsPanel
         spec={spec}
