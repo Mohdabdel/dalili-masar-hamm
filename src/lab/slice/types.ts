@@ -82,6 +82,8 @@ export interface LabThisTimeSelection {
   /** نبدأ من / نتوقف عند كما اختارتهما الأسرة. */
   startStepId?: string;
   endStepId?: string;
+  /** اعتبارات اختارتها الأسرة للاحتفاظ بها مع هذه المشاركة (اختيارية تماماً). */
+  considerationIds?: string[];
   /** بدأنا من مسودة مولّدة تلقائيًا؟ */
   drafted?: boolean;
 }
@@ -159,6 +161,28 @@ export type LabVisualStatus =
 
 export type LabSupportAssetType = "communication" | "time" | "schedule";
 
+/** شكل الوسيلة البصرية المولّدة من مسودّة الأسرة. */
+export type LabSupportAssetKind = "schedule" | "now-next" | "choice-board" | "sequence";
+
+/** عنصر واحد داخل الوسيلة — منسوخ من المسودة وقت التوليد. */
+export interface LabSupportAssetEntry {
+  stepId: string;
+  /** عبارة الأسرة كما هي في المسودة وقت التوليد. */
+  text: string;
+  /** رمز الأصل البصري المستخدم (مشتق أو مفرد)، أو null. */
+  assetCode: string | null;
+  src: string | null;
+}
+
+/** تكوين الوسيلة البصرية — يوثّق مصدرها من مسودة الأسرة. */
+export interface LabSupportAssetConfig {
+  kind: LabSupportAssetKind;
+  entries: LabSupportAssetEntry[];
+  /** الخطوات التي كانت في المسودة وقت التوليد (بعد الحذف والترتيب). */
+  sourceStepIds: string[];
+  generatedFrom: "family_draft";
+}
+
 /** مخرج دعم مستقل — لا يُدمج داخل بطاقة المشارك. */
 export interface LabSupportAsset {
   id: string;
@@ -168,4 +192,5 @@ export interface LabSupportAsset {
   snapshotId?: string;
   createdAt: string;
   items: string[];
+  config?: LabSupportAssetConfig;
 }
