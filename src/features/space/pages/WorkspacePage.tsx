@@ -244,19 +244,6 @@ export function WorkspacePage({ specId }: { specId: string }) {
     });
   };
 
-  const approve = () => {
-    if (rows.length === 0) return;
-    const snapshot = buildSpaceSnapshot({
-      spec,
-      selection,
-      version: versions.length + 1,
-      label_ar: label.trim() || `${spec.title_ar} — بطاقة ${versions.length + 1}`,
-      date,
-      supportAssetIds: assets.map((a) => a.id),
-    });
-    dispatch({ type: "snapshot", value: snapshot });
-    navigate({ to: `${base}/card/$specId`, params: { specId } });
-  };
 
   return (
     <LabPage title={spec.title_ar} intro={spec.eventTitle_ar}>
