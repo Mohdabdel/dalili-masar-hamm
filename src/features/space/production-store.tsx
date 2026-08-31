@@ -113,7 +113,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
             .order("created_at", { ascending: false }),
           supabase
             .from("family_support_assets")
-            .select("id, spec_id, snapshot_id, type, label, items, created_at")
+            .select("id, spec_id, snapshot_id, type, label, items, config, created_at")
             .order("created_at", { ascending: false }),
         ]);
 
@@ -162,6 +162,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
         snapshotId: r.snapshot_id ?? undefined,
         createdAt: String(r.created_at).slice(0, 10),
         items: (r.items as unknown as string[]) ?? [],
+        config: (r.config as unknown as LabSupportAsset["config"]) ?? undefined,
       })) as LabSupportAsset[];
 
       // محطات الأسرة من الروتين الفعلي
@@ -280,6 +281,8 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           type: a.type,
           label: a.label_ar,
           items: a.items,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          config: (a.config ?? {}) as any,
         });
         log("supportAdd")(error);
         break;
