@@ -74,6 +74,7 @@ import { Route as LabSliceCardSpecIdRouteImport } from './routes/lab.slice.card.
 import { Route as LabSliceEventIdParticipationsRouteImport } from './routes/lab.slice.$eventId.participations'
 import { Route as LabSliceEventIdLevelRouteImport } from './routes/lab.slice.$eventId.level'
 import { Route as AuthenticatedSpaceWorkspaceSpecIdRouteImport } from './routes/_authenticated/space.workspace.$specId'
+import { Route as AuthenticatedSpacePreviewSpecIdRouteImport } from './routes/_authenticated/space.preview.$specId'
 import { Route as AuthenticatedSpaceLearnerSnapshotIdRouteImport } from './routes/_authenticated/space.learner.$snapshotId'
 import { Route as AuthenticatedSpaceFeedbackSnapshotIdRouteImport } from './routes/_authenticated/space.feedback.$snapshotId'
 import { Route as AuthenticatedSpaceCardSpecIdRouteImport } from './routes/_authenticated/space.card.$specId'
@@ -417,6 +418,12 @@ const AuthenticatedSpaceWorkspaceSpecIdRoute =
     path: '/workspace/$specId',
     getParentRoute: () => AuthenticatedSpaceRoute,
   } as any)
+const AuthenticatedSpacePreviewSpecIdRoute =
+  AuthenticatedSpacePreviewSpecIdRouteImport.update({
+    id: '/preview/$specId',
+    path: '/preview/$specId',
+    getParentRoute: () => AuthenticatedSpaceRoute,
+  } as any)
 const AuthenticatedSpaceLearnerSnapshotIdRoute =
   AuthenticatedSpaceLearnerSnapshotIdRouteImport.update({
     id: '/learner/$snapshotId',
@@ -511,6 +518,7 @@ export interface FileRoutesByFullPath {
   '/space/card/$specId': typeof AuthenticatedSpaceCardSpecIdRoute
   '/space/feedback/$snapshotId': typeof AuthenticatedSpaceFeedbackSnapshotIdRoute
   '/space/learner/$snapshotId': typeof AuthenticatedSpaceLearnerSnapshotIdRoute
+  '/space/preview/$specId': typeof AuthenticatedSpacePreviewSpecIdRoute
   '/space/workspace/$specId': typeof AuthenticatedSpaceWorkspaceSpecIdRoute
   '/lab/slice/$eventId/level': typeof LabSliceEventIdLevelRoute
   '/lab/slice/$eventId/participations': typeof LabSliceEventIdParticipationsRoute
@@ -579,6 +587,7 @@ export interface FileRoutesByTo {
   '/space/card/$specId': typeof AuthenticatedSpaceCardSpecIdRoute
   '/space/feedback/$snapshotId': typeof AuthenticatedSpaceFeedbackSnapshotIdRoute
   '/space/learner/$snapshotId': typeof AuthenticatedSpaceLearnerSnapshotIdRoute
+  '/space/preview/$specId': typeof AuthenticatedSpacePreviewSpecIdRoute
   '/space/workspace/$specId': typeof AuthenticatedSpaceWorkspaceSpecIdRoute
   '/lab/slice/$eventId/level': typeof LabSliceEventIdLevelRoute
   '/lab/slice/$eventId/participations': typeof LabSliceEventIdParticipationsRoute
@@ -652,6 +661,7 @@ export interface FileRoutesById {
   '/_authenticated/space/card/$specId': typeof AuthenticatedSpaceCardSpecIdRoute
   '/_authenticated/space/feedback/$snapshotId': typeof AuthenticatedSpaceFeedbackSnapshotIdRoute
   '/_authenticated/space/learner/$snapshotId': typeof AuthenticatedSpaceLearnerSnapshotIdRoute
+  '/_authenticated/space/preview/$specId': typeof AuthenticatedSpacePreviewSpecIdRoute
   '/_authenticated/space/workspace/$specId': typeof AuthenticatedSpaceWorkspaceSpecIdRoute
   '/lab/slice/$eventId/level': typeof LabSliceEventIdLevelRoute
   '/lab/slice/$eventId/participations': typeof LabSliceEventIdParticipationsRoute
@@ -725,6 +735,7 @@ export interface FileRouteTypes {
     | '/space/card/$specId'
     | '/space/feedback/$snapshotId'
     | '/space/learner/$snapshotId'
+    | '/space/preview/$specId'
     | '/space/workspace/$specId'
     | '/lab/slice/$eventId/level'
     | '/lab/slice/$eventId/participations'
@@ -793,6 +804,7 @@ export interface FileRouteTypes {
     | '/space/card/$specId'
     | '/space/feedback/$snapshotId'
     | '/space/learner/$snapshotId'
+    | '/space/preview/$specId'
     | '/space/workspace/$specId'
     | '/lab/slice/$eventId/level'
     | '/lab/slice/$eventId/participations'
@@ -865,6 +877,7 @@ export interface FileRouteTypes {
     | '/_authenticated/space/card/$specId'
     | '/_authenticated/space/feedback/$snapshotId'
     | '/_authenticated/space/learner/$snapshotId'
+    | '/_authenticated/space/preview/$specId'
     | '/_authenticated/space/workspace/$specId'
     | '/lab/slice/$eventId/level'
     | '/lab/slice/$eventId/participations'
@@ -1361,6 +1374,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedSpaceWorkspaceSpecIdRouteImport
       parentRoute: typeof AuthenticatedSpaceRoute
     }
+    '/_authenticated/space/preview/$specId': {
+      id: '/_authenticated/space/preview/$specId'
+      path: '/preview/$specId'
+      fullPath: '/space/preview/$specId'
+      preLoaderRoute: typeof AuthenticatedSpacePreviewSpecIdRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
     '/_authenticated/space/learner/$snapshotId': {
       id: '/_authenticated/space/learner/$snapshotId'
       path: '/learner/$snapshotId'
@@ -1408,6 +1428,7 @@ interface AuthenticatedSpaceRouteChildren {
   AuthenticatedSpaceCardSpecIdRoute: typeof AuthenticatedSpaceCardSpecIdRoute
   AuthenticatedSpaceFeedbackSnapshotIdRoute: typeof AuthenticatedSpaceFeedbackSnapshotIdRoute
   AuthenticatedSpaceLearnerSnapshotIdRoute: typeof AuthenticatedSpaceLearnerSnapshotIdRoute
+  AuthenticatedSpacePreviewSpecIdRoute: typeof AuthenticatedSpacePreviewSpecIdRoute
   AuthenticatedSpaceWorkspaceSpecIdRoute: typeof AuthenticatedSpaceWorkspaceSpecIdRoute
 }
 
@@ -1423,6 +1444,7 @@ const AuthenticatedSpaceRouteChildren: AuthenticatedSpaceRouteChildren = {
     AuthenticatedSpaceFeedbackSnapshotIdRoute,
   AuthenticatedSpaceLearnerSnapshotIdRoute:
     AuthenticatedSpaceLearnerSnapshotIdRoute,
+  AuthenticatedSpacePreviewSpecIdRoute: AuthenticatedSpacePreviewSpecIdRoute,
   AuthenticatedSpaceWorkspaceSpecIdRoute:
     AuthenticatedSpaceWorkspaceSpecIdRoute,
 }
