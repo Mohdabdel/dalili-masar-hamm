@@ -48,29 +48,92 @@ interface Refs {
   routineId: string | null;
 }
 
+async function findParticipation(specId: string): Promise<string | null> {
+  const { data } = await supabase
+    .from("active_participations")
+    .select("id")
+    .eq("opportunity_id", specId)
+    .order("created_at", { ascending: true })
+    .limit(1)
+    .maybeSingle();
+  return data?.id ?? null;
+}
+
+/**
+ * مشاركة أسرية واحدة لكل فرصة — لا تكرار.
+ * البحث أولاً، ثم الإنشاء، ثم البحث مجدداً عند تعارض الفهرس الفريد.
+ */
 async function ensureParticipation(
   refs: Refs,
   specId: string,
   eventId?: string,
 ): Promise<string | null> {
-  const existing = refs.participationBySpec[specId];
-  if (existing) return existing;
+  const cached = refs.participationBySpec[specId];
+  if (cached) return cached;
+
+  const found = await findParticipation(specId);
+  if (found) {
+    refs.participationBySpec[specId] = found;
+    await linkParticipationToStation(refs, found, eventId);
+    return found;
+  }
+
+  const stationId = eventId ? (refs.stationRowByEvent[eventId] ?? null) : null;
   const { data, error } = await supabase
     .from("active_participations")
     .insert({
       opportunity_id: specId,
       daily_event_id: eventId ?? null,
+      routine_station_id: stationId,
       source: "family_workspace",
       status: "active",
     })
     .select("id")
     .single();
+
   if (error || !data) {
+    // تعارض الفهرس الفريد يعني أن المشاركة موجودة فعلاً — نستعيدها بدل إنشاء نسخة ثانية.
+    const retry = await findParticipation(specId);
+    if (retry) {
+      refs.participationBySpec[specId] = retry;
+      await linkParticipationToStation(refs, retry, eventId);
+      return retry;
+    }
     log("ensureParticipation")(error);
+    toast.error("تعذّر فتح مشاركة الأسرة — حاولوا مرة أخرى");
     return null;
   }
   refs.participationBySpec[specId] = data.id;
+  await linkParticipationToStation(refs, data.id, eventId);
   return data.id;
+}
+
+/** ربط المشاركة بمحطة الروتين — صف واحد فقط لكل (مشاركة، محطة). */
+async function linkParticipationToStation(
+  refs: Refs,
+  participationId: string,
+  eventId?: string,
+): Promise<void> {
+  if (!eventId) return;
+  const stationId = refs.stationRowByEvent[eventId];
+  if (!stationId) return;
+  const { data: existing } = await supabase
+    .from("participation_station_links")
+    .select("id")
+    .eq("family_participation_id", participationId)
+    .eq("routine_station_id", stationId)
+    .maybeSingle();
+  if (existing) return;
+  const { error } = await supabase.from("participation_station_links").insert({
+    family_participation_id: participationId,
+    routine_station_id: stationId,
+  });
+  log("stationLink")(error);
+  await supabase
+    .from("active_participations")
+    .update({ routine_station_id: stationId })
+    .eq("id", participationId)
+    .is("routine_station_id", null);
 }
 
 async function ensureRoutineId(refs: Refs): Promise<string | null> {
