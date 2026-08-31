@@ -1,4 +1,4 @@
-import { Lock, Unlock } from "lucide-react";
+import { Lock, Unlock, History } from "lucide-react";
 import {
   LabPage,
   LabSection,
@@ -18,6 +18,8 @@ export function CardsPage({ specId }: { specId: string }) {
   const { snapshotsFor, supportAssetsFor } = useSliceHelpers();
   const assets = supportAssetsFor(specId);
   const snapshots = [...snapshotsFor(specId)].sort((a, b) => b.version - a.version);
+  const participationClosed = state.closedSpecs.includes(specId);
+  const specRuns = state.runs.filter((r) => snapshots.some((s) => s.id === r.snapshotId));
 
   if (!spec) {
     return (
@@ -88,6 +90,10 @@ export function CardsPage({ specId }: { specId: string }) {
                     </div>
                   )}
 
+                  <SnapshotHistory
+                    runs={state.runs.filter((r) => r.snapshotId === snap.id)}
+                  />
+
                   {tools.length > 0 && (
                     <p className="mb-3 text-sm text-muted-foreground">
                       ما قد يساعد: {tools.join("، ")} — خارج بطاقة المشارك.
@@ -131,6 +137,39 @@ export function CardsPage({ specId }: { specId: string }) {
         </LabSection>
       )}
 
+      <LabSection
+        title="سجل مرّات المشاركة"
+        description="تكرار وسجل فقط — بلا إتقان ولا نسب ولا تقدّم."
+      >
+        {specRuns.length === 0 ? (
+          <LabNote>لم تُفتح بطاقة هذه المشاركة للتنفيذ بعد.</LabNote>
+        ) : (
+          <p className="text-base font-semibold">
+            شاركنا {specRuns.length} مرة — آخر مرة: {specRuns[0]?.date}
+          </p>
+        )}
+      </LabSection>
+
+      <LabSection title="حالة هذه المشاركة">
+        <p className="mb-3 text-sm text-muted-foreground">
+          {participationClosed
+            ? "هذه المشاركة مغلقة الآن. كل البطاقات والمرات السابقة محفوظة كما هي."
+            : "المشاركة مفتوحة. يمكنكم إغلاقها في أي وقت دون فقدان أي سجل."}
+        </p>
+        <LabButton
+          variant="ghost"
+          onClick={() =>
+            dispatch(
+              participationClosed
+                ? { type: "participation.reopen", specId }
+                : { type: "participation.close", specId },
+            )
+          }
+        >
+          {participationClosed ? "إعادة فتح المشاركة" : "إغلاق هذه المشاركة"}
+        </LabButton>
+      </LabSection>
+
       <div className="flex flex-wrap gap-3">
         <LabLinkButton to={`${base}/workspace/$specId`} params={{ specId }} variant="ghost">
           بطاقة جديدة لجزء آخر من نفس المشاركة
@@ -146,5 +185,21 @@ export function CardsPage({ specId }: { specId: string }) {
         </LabNote>
       </div>
     </LabPage>
+  );
+}
+
+function SnapshotHistory({
+  runs,
+}: {
+  runs: { id: string; date: string; endedAt?: string }[];
+}) {
+  if (runs.length === 0) return null;
+  return (
+    <div className="mb-3 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+      <History className="h-4 w-4" aria-hidden />
+      <span>
+        استُخدمت {runs.length} مرة — آخرها {runs[0]?.date}
+      </span>
+    </div>
   );
 }
