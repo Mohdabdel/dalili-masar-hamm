@@ -2,6 +2,7 @@
 // مع RLS وملكية المستخدم. لا sessionStorage ولا بيانات مؤقتة.
 
 import { useCallback, useEffect, useMemo, useReducer, useRef, type ReactNode } from "react";
+import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import {
   SliceCtx,
