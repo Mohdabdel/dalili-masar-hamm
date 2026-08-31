@@ -130,7 +130,9 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
         if (row.lifecycle_choice) {
           next.lifecycleBySpec[row.opportunity_id] = row.lifecycle_choice as SliceLifecycleChoice;
         }
+        if (row.status === "closed") next.closedSpecs.push(row.opportunity_id);
       }
+
 
       next.snapshots = (snapshots.data ?? []).map((row) => {
         refs.current.participationBySnapshot[row.id] = row.family_participation_id;
