@@ -63,7 +63,11 @@ export type SliceAction =
   | { type: "station.remove"; eventId: string }
   | { type: "card.close"; snapshotId: string }
   | { type: "card.reopen"; snapshotId: string }
-  | { type: "run"; snapshotId: string }
+  | { type: "run.start"; runId: string; snapshotId: string }
+  | { type: "run.end"; runId: string }
+  | { type: "participation.close"; specId: string }
+  | { type: "participation.reopen"; specId: string }
+
   | { type: "support.add"; value: LabSupportAsset }
   | { type: "support.remove"; id: string }
   | { type: "reset" };
