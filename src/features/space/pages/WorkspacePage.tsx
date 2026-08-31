@@ -1,64 +1,58 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { LabPage, LabSection, LabNote, LabButton, LabLinkButton } from "@/lab/components/lab-ui";
-import { WorkspaceSteps } from "@/lab/components/space/WorkspaceSteps";
-import { FrameEditor, type FrameEditRow } from "@/lab/components/space/FrameEditor";
-import { FamilyComposer, StepBlocks, type ComposerItem } from "@/lab/components/space/FamilyComposer";
 import { SpaceDrawer } from "@/lab/components/space/SpaceDrawer";
+import { StepBlocks, type ComposerItem } from "@/lab/components/space/FamilyComposer";
+import { StepComposer, type ComposerStepRow } from "@/features/space/components/StepComposer";
 import {
-  blockOrderFor,
   buildDraftSelection,
   buildSpaceSnapshot,
   findSpaceStep,
   flatSteps,
   getSpaceSpec,
-  presentationFor,
   sourceTextFor,
-  visualFor,
-  visualStatusFor,
   SPACE_SUPPORT_ASSET_TYPES,
 } from "@/lab/data/space/catalog";
-import { coverageSummary, visualStatusLabel } from "@/lab/data/space/coverage";
 import { considerationsFor } from "@/lab/data/space/considerations";
+import {
+  refFromLegacySrc,
+  resolveStepImage,
+  suggestStepImage,
+} from "@/features/space/step-image";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 import type {
+  LabStepImageRef,
   LabSupportAssetType,
-  StepBlockOrder,
-  StepPresentationMode,
+  LabThisTimeSelection,
 } from "@/lab/slice/types";
-import { cn } from "@/lib/utils";
-
-
-const STAGES = [
-  { id: "select", label: "اختيار" },
-  { id: "prepare", label: "تجهيز" },
-  { id: "compose", label: "تركيب" },
-  { id: "preview", label: "معاينة" },
-] as const;
-type Stage = (typeof STAGES)[number]["id"];
 
 export function WorkspacePage({ specId }: { specId: string }) {
   const base = useSpaceBase();
   const spec = getSpaceSpec(specId);
   const { state, dispatch } = useSlice();
-  const { selectionFor, snapshotsFor, supportAssetsFor } = useSliceHelpers();
+  const { snapshotsFor, supportAssetsFor } = useSliceHelpers();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const navigate = useNavigate() as any;
 
-  const selection = selectionFor(specId);
   const versions = snapshotsFor(specId);
   const assets = supportAssetsFor(specId);
   const [label, setLabel] = useState("");
   const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10));
-  const [drawer, setDrawer] = useState<null | "considerations" | "coverage">(null);
-  const [stage, setStage] = useState<Stage>("select");
+  const [drawer, setDrawer] = useState<null | "considerations">(null);
 
-  // مسودة تلقائية: لا تبدأ الأسرة من صفحة فارغة.
-  useEffect(() => {
-    if (spec && !state.selections[specId]) {
-      dispatch({ type: "selection", value: buildDraftSelection(spec) });
-    }
-  }, [spec, specId, state.selections, dispatch]);
+  // المسودة الفعلية تُحسب في نفس دورة العرض الأولى:
+  // إمّا مسودة الأسرة المحفوظة، أو المسودة المرجعية الجاهزة — بلا استبدال بعد التركيب.
+  const selection: LabThisTimeSelection = useMemo(() => {
+    const saved = state.selections[specId];
+    if (saved) return saved;
+    if (spec) return buildDraftSelection(spec);
+    return {
+      specId,
+      selected: [],
+      chosenExecutionOptionByStepId: {},
+      supportTools: [],
+    };
+  }, [state.selections, spec, specId]);
 
   const leaves = useMemo(() => {
     if (!spec) return [];
@@ -83,17 +77,31 @@ export function WorkspacePage({ specId }: { specId: string }) {
     );
   }
 
-  const setSelection = (next: Partial<typeof selection>) =>
-    dispatch({ type: "selection", value: { ...selection, ...next } });
+  const setSelection = (next: Partial<LabThisTimeSelection>) =>
+    dispatch({ type: "selection", value: { ...selection, ...next, specId } });
 
   const renumber = (ids: string[]) => ids.map((stepId, i) => ({ stepId, order: i + 1 }));
   const orderedIds = [...selection.selected].sort((a, b) => a.order - b.order).map((s) => s.stepId);
 
-  const toggle = (stepId: string) => {
-    const next = orderedIds.includes(stepId)
-      ? orderedIds.filter((id) => id !== stepId)
-      : [...orderedIds, stepId];
-    setSelection({ selected: renumber(next) });
+  const startId = orderedIds[0] ?? "";
+  const endId = orderedIds[orderedIds.length - 1] ?? "";
+
+  const withRange = (ids: string[]) => ({
+    selected: renumber(ids),
+    startStepId: ids[0],
+    endStepId: ids[ids.length - 1],
+  });
+
+  const addStep = (stepId: string) => {
+    // الترتيب المرجعي هو المرجع الوحيد لموضع الخطوة المُعادة.
+    const reference = leaves.map((l) => l.step.id);
+    const next = reference.filter((id) => orderedIds.includes(id) || id === stepId);
+    setSelection(withRange(next));
+  };
+
+  const removeStep = (stepId: string) => {
+    if (orderedIds.length <= 1) return;
+    setSelection(withRange(orderedIds.filter((id) => id !== stepId)));
   };
 
   const move = (stepId: string, direction: -1 | 1) => {
@@ -102,101 +110,110 @@ export function WorkspacePage({ specId }: { specId: string }) {
     if (i < 0 || j < 0 || j >= orderedIds.length) return;
     const next = [...orderedIds];
     [next[i], next[j]] = [next[j], next[i]];
-    setSelection({ selected: renumber(next) });
+    setSelection(withRange(next));
   };
 
-  const reorder = (fromId: string, toId: string) => {
-    const next = orderedIds.filter((id) => id !== fromId);
-    const at = next.indexOf(toId);
-    if (at < 0) return;
-    next.splice(at, 0, fromId);
-    setSelection({ selected: renumber(next) });
-  };
-
-  const applyRange = (startId: string, endId: string) => {
+  const applyRange = (nextStartId: string, nextEndId: string) => {
     const ids = leaves.map((l) => l.step.id);
-    const a = ids.indexOf(startId);
-    const b = ids.indexOf(endId);
+    const a = ids.indexOf(nextStartId);
+    const b = ids.indexOf(nextEndId);
     if (a < 0 || b < 0) return;
     const [from, to] = a <= b ? [a, b] : [b, a];
-    setSelection({ selected: renumber(ids.slice(from, to + 1)) });
+    setSelection(withRange(ids.slice(from, to + 1)));
   };
 
-  const startId = orderedIds[0] ?? "";
-  const endId = orderedIds[orderedIds.length - 1] ?? "";
+  // ---------- كتلة الصورة وكتلة العبارة: حالتان مستقلتان ----------
 
-  const chooseOption = (stepId: string, optionId: string) =>
+  const imageRefFor = (stepId: string): LabStepImageRef | null => {
+    const map = selection.imageRefByStepId;
+    if (map && stepId in map) return map[stepId] ?? null;
+    const legacy = refFromLegacySrc(selection.visualByStepId?.[stepId]);
+    if (legacy) return legacy;
+    return suggestStepImage(sourceTextFor(spec, stepId));
+  };
+
+  const imageVisibleFor = (stepId: string) =>
+    selection.imageVisibleByStepId?.[stepId] ??
+    (selection.presentationByStepId?.[stepId] ?? "both") !== "text";
+
+  const textVisibleFor = (stepId: string) =>
+    selection.textVisibleByStepId?.[stepId] ??
+    (selection.presentationByStepId?.[stepId] ?? "both") !== "visual";
+
+  /** يحافظ على توافق الحقول القديمة (presentation/visual) دون ربط الحالتين ببعضهما. */
+  const syncLegacy = (
+    stepId: string,
+    imageVisible: boolean,
+    textVisible: boolean,
+    src: string | null,
+  ) => ({
+    presentationByStepId: {
+      ...(selection.presentationByStepId ?? {}),
+      [stepId]: imageVisible && textVisible ? ("both" as const) : imageVisible ? ("visual" as const) : ("text" as const),
+    },
+    visualByStepId: { ...(selection.visualByStepId ?? {}), [stepId]: src ?? "" },
+  });
+
+  const toggleImage = (stepId: string, visible: boolean) => {
+    const src = resolveStepImage(imageRefFor(stepId)).src;
     setSelection({
-      chosenExecutionOptionByStepId: {
-        ...selection.chosenExecutionOptionByStepId,
-        [stepId]: selection.chosenExecutionOptionByStepId[stepId] === optionId ? "" : optionId,
-      },
+      imageVisibleByStepId: { ...(selection.imageVisibleByStepId ?? {}), [stepId]: visible },
+      ...syncLegacy(stepId, visible, textVisibleFor(stepId), src),
     });
+  };
 
-  const rows: FrameEditRow[] = orderedIds
-    .map((stepId): FrameEditRow | null => {
-      const step = findSpaceStep(spec, stepId);
-      if (!step) return null;
-      const optionId = selection.chosenExecutionOptionByStepId[stepId];
-      const option = ("executionOptions" in step ? step.executionOptions : undefined)?.find(
-        (o) => o.id === optionId,
-      );
-      // النص المرجعي ثابت لا يتغير؛ نص الأسرة يبدأ منه ويُحفظ مستقلاً.
-      const sourceText = sourceTextFor(spec, stepId);
-      const custom = selection.familyTextByStepId?.[stepId];
-      return {
-        stepId,
-        sourceText,
-        suggestedText: sourceText,
-        familyText: custom !== undefined && custom.trim() ? custom : sourceText,
-        visual: visualFor(spec, selection, stepId),
-        status: visualStatusFor(spec, selection, stepId),
-        presentation: presentationFor(selection, stepId),
-        blockOrder: blockOrderFor(selection, stepId),
-        optionLabel: option?.label_ar,
-      };
-    })
-    .filter((r): r is FrameEditRow => Boolean(r));
+  const toggleText = (stepId: string, visible: boolean) => {
+    const src = resolveStepImage(imageRefFor(stepId)).src;
+    setSelection({
+      textVisibleByStepId: { ...(selection.textVisibleByStepId ?? {}), [stepId]: visible },
+      ...syncLegacy(stepId, imageVisibleFor(stepId), visible, src),
+    });
+  };
 
-  const items: ComposerItem[] = rows.map((r) => ({
-    stepId: r.stepId,
-    familyText: r.familyText,
-    visual: r.visual,
-    presentation: r.presentation,
-    blockOrder: r.blockOrder,
-  }));
-
-  const spares = leaves
-    .filter((l) => !orderedIds.includes(l.step.id))
-    .map((l) => ({ stepId: l.step.id, label: l.step.instruction_short_ar }));
-
-  const coverage = coverageSummary(rows.map((r) => r.status));
-  const needsVisual = rows.filter((r) => r.presentation !== "text" && r.status === "needed");
+  const pickImage = (stepId: string, assetCode: string | null) => {
+    const ref: LabStepImageRef | null = assetCode ? { sourceAssetCode: assetCode } : null;
+    const src = resolveStepImage(ref).src;
+    setSelection({
+      imageRefByStepId: { ...(selection.imageRefByStepId ?? {}), [stepId]: ref },
+      ...syncLegacy(stepId, imageVisibleFor(stepId), textVisibleFor(stepId), src),
+    });
+  };
 
   const setText = (stepId: string, text: string) =>
     setSelection({
       familyTextByStepId: { ...(selection.familyTextByStepId ?? {}), [stepId]: text },
     });
 
-  const setVisual = (stepId: string, src: string | null) =>
-    setSelection({
-      visualByStepId: { ...(selection.visualByStepId ?? {}), [stepId]: src ?? "" },
-      presentationByStepId: {
-        ...(selection.presentationByStepId ?? {}),
-        [stepId]: src ? presentationFor(selection, stepId) : "text",
-      },
-    });
+  const resetText = (stepId: string) => setText(stepId, sourceTextFor(spec, stepId));
 
-  const setPresentation = (stepId: string, mode: StepPresentationMode) =>
-    setSelection({
-      presentationByStepId: { ...(selection.presentationByStepId ?? {}), [stepId]: mode },
-      textOnlyStepIds: (selection.textOnlyStepIds ?? []).filter((id) => id !== stepId),
-    });
+  const rows: ComposerStepRow[] = orderedIds
+    .map((stepId): ComposerStepRow | null => {
+      const step = findSpaceStep(spec, stepId);
+      if (!step) return null;
+      const sourceText = sourceTextFor(spec, stepId);
+      const custom = selection.familyTextByStepId?.[stepId];
+      return {
+        stepId,
+        sourceText,
+        familyText: custom !== undefined ? custom : sourceText,
+        image: resolveStepImage(imageRefFor(stepId)),
+        imageVisible: imageVisibleFor(stepId),
+        textVisible: textVisibleFor(stepId),
+      };
+    })
+    .filter((r): r is ComposerStepRow => Boolean(r));
 
-  const setBlockOrder = (stepId: string, order: StepBlockOrder) =>
-    setSelection({
-      blockOrderByStepId: { ...(selection.blockOrderByStepId ?? {}), [stepId]: order },
-    });
+  const previewItems: ComposerItem[] = rows.map((r) => ({
+    stepId: r.stepId,
+    familyText: r.textVisible ? r.familyText : "",
+    visual: r.imageVisible ? r.image.src : null,
+    presentation: r.imageVisible ? (r.textVisible ? "both" : "visual") : "text",
+    blockOrder: selection.blockOrderByStepId?.[r.stepId] ?? "visual-text",
+  }));
+
+  const spares = leaves
+    .filter((l) => !orderedIds.includes(l.step.id))
+    .map((l) => ({ stepId: l.step.id, label: l.step.instruction_family_ar }));
 
   const addSupportAsset = (type: LabSupportAssetType, labelAr: string) => {
     dispatch({
@@ -226,175 +243,124 @@ export function WorkspacePage({ specId }: { specId: string }) {
     navigate({ to: `${base}/card/$specId`, params: { specId } });
   };
 
-  const stageIndex = STAGES.findIndex((s) => s.id === stage);
-
   return (
     <LabPage title={spec.title_ar} intro={spec.eventTitle_ar}>
-      {/* شريط المراحل */}
-      <nav aria-label="مراحل التجهيز" className="flex flex-wrap gap-1.5">
-        {STAGES.map((s, i) => (
-          <button
-            key={s.id}
-            type="button"
-            aria-current={stage === s.id ? "step" : undefined}
-            onClick={() => setStage(s.id)}
-            className={cn(
-              "min-h-11 rounded-full px-4 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-              stage === s.id
-                ? "bg-primary text-primary-foreground"
-                : i < stageIndex
-                  ? "bg-primary/10 text-primary"
-                  : "text-muted-foreground hover:bg-accent",
-            )}
-          >
-            {i + 1}. {s.label}
-          </button>
-        ))}
-      </nav>
+      <LabSection
+        title="مسودّتنا"
+        description="هذه خطوات المشاركة كما اقترحتها دليلي. أبقوا ما يناسبكم، واحذفوا ما لا تحتاجونه."
+      >
+        <StepComposer
+          rows={rows}
+          onText={setText}
+          onResetText={resetText}
+          onToggleImage={toggleImage}
+          onToggleText={toggleText}
+          onPickImage={pickImage}
+          onMove={move}
+          onRemove={removeStep}
+        />
+        {rows.length <= 1 && <LabNote>تبقى خطوة واحدة على الأقل في مسودّتكم.</LabNote>}
+      </LabSection>
 
-      {stage === "select" && (
-        <>
-          <LabSection
-            title="اختاروا ما ستشاركون فيه"
-            description="اختاروا الجزء المناسب لهذه المشاركة. ليس مطلوباً تنفيذ كل الخطوات."
-          >
-            <WorkspaceSteps
-              spec={spec}
-              selected={selection.selected}
-              onToggle={toggle}
-              onMove={move}
-              chosenOptions={selection.chosenExecutionOptionByStepId}
-              onChooseOption={chooseOption}
-            />
-          </LabSection>
+      <LabSection title="نبدأ من… ونتوقف عند…">
+        <div className="grid gap-3 sm:grid-cols-2">
+          <label className="block">
+            <span className="mb-1 block text-sm font-bold">نبدأ من</span>
+            <select
+              value={startId}
+              onChange={(e) => applyRange(e.target.value, endId || e.target.value)}
+              className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              {leaves.map((l) => (
+                <option key={l.step.id} value={l.step.id}>
+                  {l.step.instruction_family_ar}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="block">
+            <span className="mb-1 block text-sm font-bold">نتوقف عند</span>
+            <select
+              value={endId}
+              onChange={(e) => applyRange(startId || e.target.value, e.target.value)}
+              className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              {leaves.map((l) => (
+                <option key={l.step.id} value={l.step.id}>
+                  {l.step.instruction_family_ar}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+      </LabSection>
 
-          <LabSection title="نبدأ من… ونتوقف عند…">
-            <div className="grid gap-3 sm:grid-cols-2">
-              <label className="block">
-                <span className="mb-1 block text-sm font-bold">نبدأ من</span>
-                <select
-                  value={startId}
-                  onChange={(e) => applyRange(e.target.value, endId || e.target.value)}
-                  className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      {spares.length > 0 && (
+        <details className="rounded-2xl border border-border bg-card p-3">
+          <summary className="cursor-pointer text-sm font-bold">
+            خطوات أخرى يمكن إضافتها ({spares.length})
+          </summary>
+          <ul className="mt-3 space-y-2">
+            {spares.map((s) => (
+              <li key={s.stepId} className="flex items-center gap-2">
+                <span className="min-w-0 flex-1 text-sm font-semibold">{s.label}</span>
+                <button
+                  type="button"
+                  onClick={() => addStep(s.stepId)}
+                  className="min-h-11 shrink-0 rounded-xl border border-border px-3 text-sm font-bold hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
-                  <option value="">اختاروا نقطة البداية</option>
-                  {leaves.map((l) => (
-                    <option key={l.step.id} value={l.step.id}>
-                      {l.step.instruction_family_ar}
-                    </option>
-                  ))}
-                </select>
-              </label>
-              <label className="block">
-                <span className="mb-1 block text-sm font-bold">نتوقف عند</span>
-                <select
-                  value={endId}
-                  onChange={(e) => applyRange(startId || e.target.value, e.target.value)}
-                  className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                >
-                  <option value="">اختاروا نقطة التوقف</option>
-                  {leaves.map((l) => (
-                    <option key={l.step.id} value={l.step.id}>
-                      {l.step.instruction_family_ar}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            </div>
-          </LabSection>
-        </>
+                  أضيفوها
+                </button>
+              </li>
+            ))}
+          </ul>
+        </details>
       )}
 
-      {stage === "prepare" && (
-        <LabSection
-          title="جهّزوا كل خطوة"
-          description="الصورة والجملة منفصلتان: غيّروا إحداهما دون الأخرى. لا يتغير شيء في المكتبة."
-        >
+      <details className="rounded-2xl border border-border bg-card p-3">
+        <summary className="cursor-pointer text-sm font-bold">
+          كيف ستظهر البطاقة، واسمها
+        </summary>
+        <div className="mt-3 space-y-4">
           {rows.length === 0 ? (
-            <LabNote>اختاروا خطوة واحدة على الأقل أولاً.</LabNote>
+            <LabNote>أضيفوا خطوة واحدة على الأقل.</LabNote>
           ) : (
-            <FrameEditor
-              rows={rows}
-              onText={setText}
-              onVisual={setVisual}
-              onPresentation={setPresentation}
-              onBlockOrder={setBlockOrder}
-              onMove={move}
-              onRemove={toggle}
-            />
-          )}
-        </LabSection>
-      )}
-
-      {stage === "compose" && (
-        <LabSection
-          title="ركّبوا البطاقة"
-          description="انقلوا المكونات إلى البطاقة، أو استخدموا الأزرار للترتيب والإزالة."
-        >
-          <FamilyComposer
-            items={items}
-            spares={spares}
-            onAdd={toggle}
-            onRemove={toggle}
-            onMove={move}
-            onReorder={reorder}
-          />
-        </LabSection>
-      )}
-
-      {stage === "preview" && (
-        <>
-          <LabSection title="معاينة البطاقة" description="هذا ما سيراه المشارك، بلا أي إعدادات.">
-            {rows.length === 0 ? (
-              <LabNote>اختاروا خطوة واحدة على الأقل لتظهر المعاينة.</LabNote>
-            ) : (
-              <ol className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                {items.map((item, i) => (
-                  <li key={item.stepId} className="rounded-2xl border border-border bg-card p-2">
-                    <StepBlocks item={item} index={i + 1} />
-                  </li>
-                ))}
-                <li className="grid place-items-center rounded-2xl border border-dashed border-border p-4 text-lg font-bold text-muted-foreground">
-                  انتهينا
+            <ol className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {previewItems.map((item, i) => (
+                <li key={item.stepId} className="rounded-2xl border border-border bg-card p-2">
+                  <StepBlocks item={item} index={i + 1} />
                 </li>
-              </ol>
-            )}
-          </LabSection>
-
-          <LabSection title="اسم البطاقة والتاريخ" description="تبقى في مساحة الأسرة فقط.">
-            <div className="grid gap-3 sm:grid-cols-2">
-              <label className="block">
-                <span className="mb-1 block text-sm font-bold">اسم البطاقة</span>
-                <input
-                  type="text"
-                  value={label}
-                  onChange={(e) => setLabel(e.target.value)}
-                  placeholder={`${spec.title_ar} — بطاقة ${versions.length + 1}`}
-                  className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                />
-              </label>
-              <label className="block">
-                <span className="mb-1 block text-sm font-bold">التاريخ (اختياري)</span>
-                <input
-                  type="date"
-                  value={date}
-                  onChange={(e) => setDate(e.target.value)}
-                  className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                />
-              </label>
-            </div>
-          </LabSection>
-
-          {needsVisual.length > 0 && (
-            <LabNote>
-              {needsVisual.length === 1
-                ? "خطوة واحدة تحتاج دعماً بصرياً — اختاروا لها صورة أو اجعلوها جملة فقط."
-                : `${needsVisual.length} خطوات تحتاج دعماً بصرياً — اختاروا لها صوراً أو اجعلوها جملاً فقط.`}
-            </LabNote>
+              ))}
+              <li className="grid place-items-center rounded-2xl border border-dashed border-border p-4 text-lg font-bold text-muted-foreground">
+                انتهينا
+              </li>
+            </ol>
           )}
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            <label className="block">
+              <span className="mb-1 block text-sm font-bold">اسم البطاقة</span>
+              <input
+                type="text"
+                value={label}
+                onChange={(e) => setLabel(e.target.value)}
+                placeholder={`${spec.title_ar} — بطاقة ${versions.length + 1}`}
+                className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              />
+            </label>
+            <label className="block">
+              <span className="mb-1 block text-sm font-bold">التاريخ (اختياري)</span>
+              <input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              />
+            </label>
+          </div>
 
           <div className="flex flex-wrap items-center gap-3">
-            <LabButton onClick={approve} disabled={rows.length === 0 || needsVisual.length > 0}>
+            <LabButton onClick={approve} disabled={rows.length === 0}>
               {versions.length === 0 ? "نعتمد البطاقة" : "نعتمد بطاقة جديدة"}
             </LabButton>
             {versions.length > 0 && (
@@ -403,34 +369,23 @@ export function WorkspacePage({ specId }: { specId: string }) {
               </LabLinkButton>
             )}
           </div>
+        </div>
+      </details>
 
-          <LabNote>
-            الاعتماد يصنع نسخة ثابتة: جُملكم وصوركم تُنسخ الآن، وأي تعديل لاحق ينشئ بطاقة جديدة ولا
-            يغيّر بطاقة سابقة.
-          </LabNote>
-        </>
-      )}
-
-      {/* أدوات جانبية في كل المراحل */}
       <div className="mt-2 flex flex-wrap gap-2">
         <LabButton variant="ghost" onClick={() => setDrawer("considerations")}>
           اعتبارات المشاركة
         </LabButton>
-        <LabButton variant="ghost" onClick={() => setDrawer("coverage")}>
-          الدعم البصري: {coverage}
-        </LabButton>
-        {stageIndex < STAGES.length - 1 && (
-          <LabButton onClick={() => setStage(STAGES[stageIndex + 1].id)}>
-            التالي: {STAGES[stageIndex + 1].label}
-          </LabButton>
-        )}
+        <LabLinkButton to="/tools" variant="ghost">
+          أدوات المساندة
+        </LabLinkButton>
       </div>
 
-      <LabSection
-        title="هل هناك شيء قد يجعل المشاركة أسهل؟"
-        description="اختياري. كل واحد منها مخرج مستقل، ولا يدخل بطاقة المشارك."
-      >
-        <div className="flex flex-wrap gap-2">
+      <details className="rounded-2xl border border-border bg-card p-3">
+        <summary className="cursor-pointer text-sm font-bold">
+          هل هناك شيء قد يجعل المشاركة أسهل؟
+        </summary>
+        <div className="mt-3 flex flex-wrap gap-2">
           {SPACE_SUPPORT_ASSET_TYPES.map((t) => (
             <button
               key={t.type}
@@ -467,7 +422,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
             ))}
           </ul>
         )}
-      </LabSection>
+      </details>
 
       {drawer === "considerations" && (
         <SpaceDrawer title="اعتبارات المشاركة" onClose={() => setDrawer(null)}>
@@ -484,42 +439,6 @@ export function WorkspacePage({ specId }: { specId: string }) {
               </ul>
             </section>
           ))}
-        </SpaceDrawer>
-      )}
-
-      {drawer === "coverage" && (
-        <SpaceDrawer title="الدعم البصري" onClose={() => setDrawer(null)}>
-          <p className="mb-3 text-sm text-muted-foreground">
-            جاهزية الدعم لهذه المشاركة فقط — لا تصف أحداً.
-          </p>
-          <ul className="divide-y divide-border border-y border-border">
-            {rows.map((row) => (
-              <li key={row.stepId} className="flex items-center justify-between gap-3 py-2">
-                <span className="min-w-0 truncate text-sm font-bold">{row.familyText}</span>
-                <span className="shrink-0 text-xs text-muted-foreground">
-                  {visualStatusLabel[row.status]}
-                </span>
-                <span
-                  className={cn(
-                    "shrink-0 rounded-full px-2 py-0.5 text-xs font-bold",
-                    row.presentation !== "text" && row.status === "needed"
-                      ? "bg-muted text-muted-foreground"
-                      : "bg-primary/10 text-primary",
-                  )}
-                >
-                  {row.presentation !== "text" && row.status === "needed" ? "يحتاج إعداد" : "جاهز"}
-                </span>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-4 flex flex-wrap gap-2">
-            <LabLinkButton to="/tools" variant="ghost">
-              أنشئوا معينًا بصريًا
-            </LabLinkButton>
-            <LabButton variant="ghost" onClick={() => addSupportAsset("schedule", "جدول مصور")}>
-              أنشئوا جدولًا مصورًا
-            </LabButton>
-          </div>
         </SpaceDrawer>
       )}
     </LabPage>

@@ -47,6 +47,16 @@ export type StepPresentationMode = "both" | "visual" | "text";
 /** ترتيب الكتلتين داخل بطاقة الخطوة. */
 export type StepBlockOrder = "visual-text" | "text-visual";
 
+/**
+ * مرجع صورة الخطوة: أصل مصدر، وأصل مشتق (مقصوص) اختياري.
+ * المصدر لا يُعدَّل أبداً؛ الاشتقاق يُسجَّل هنا فقط.
+ */
+export interface LabStepImageRef {
+  sourceAssetCode: string;
+  derivedAssetCode?: string | null;
+}
+
+
 /** اختيار الأسرة لهذه المرة — بترتيب تنفيذ صريح. */
 export interface LabThisTimeSelection {
   specId: string;
@@ -63,6 +73,15 @@ export interface LabThisTimeSelection {
   presentationByStepId?: Record<string, StepPresentationMode>;
   /** ترتيب الصورة والجملة داخل بطاقة الخطوة. */
   blockOrderByStepId?: Record<string, StepBlockOrder>;
+  /** مرجع صورة كل خطوة: مصدر ← مشتق. مستقل تماماً عن نص الأسرة. */
+  imageRefByStepId?: Record<string, LabStepImageRef | null>;
+  /** ظهور الصورة لكل خطوة — مستقل عن ظهور النص. */
+  imageVisibleByStepId?: Record<string, boolean>;
+  /** ظهور العبارة لكل خطوة — مستقل عن الصورة. */
+  textVisibleByStepId?: Record<string, boolean>;
+  /** نبدأ من / نتوقف عند كما اختارتهما الأسرة. */
+  startStepId?: string;
+  endStepId?: string;
   /** بدأنا من مسودة مولّدة تلقائيًا؟ */
   drafted?: boolean;
 }
