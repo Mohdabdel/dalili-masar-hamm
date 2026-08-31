@@ -29,11 +29,13 @@ export interface SliceState {
   removedStations: string[];
   /** بطاقات أُغلقت — لا تعني اكتمال المشاركة كلها. */
   closedCards: string[];
-  /** سجل التنفيذ: متى فُتحت البطاقة للتنفيذ. */
-  runs: { snapshotId: string; date: string }[];
+  /** سجل التنفيذ: كل مرة فُتحت فيها البطاقة للتنفيذ (Run). بلا إتقان ولا تقدّم. */
+  runs: { id: string; snapshotId: string; date: string; startedAt: string; endedAt?: string }[];
+  /** مشاركات أسرية أُغلقت — السجل يبقى محفوظاً. */
+  closedSpecs: string[];
   /** مخرجات دعم مستقلة. */
   supportAssets: LabSupportAsset[];
-}
+
 
 export const initialSliceState: SliceState = {
   levelByEvent: {},
