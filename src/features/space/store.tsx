@@ -152,6 +152,18 @@ export function sliceReducer(state: SliceState, action: SliceAction): SliceState
     case "snapshot":
       // البطاقات السابقة تبقى كما هي؛ الاعتماد الجديد يضيف نسخة أعلى فقط.
       return { ...state, snapshots: [...state.snapshots, action.value] };
+    case "snapshot.version":
+      return {
+        ...state,
+        snapshots: state.snapshots.map((s) =>
+          s.id === action.snapshotId ? { ...s, version: action.version } : s,
+        ),
+      };
+    case "snapshot.revert":
+      return {
+        ...state,
+        snapshots: state.snapshots.filter((s) => s.id !== action.snapshotId),
+      };
     case "feedback":
       return { ...state, feedback: [action.value, ...state.feedback] };
     case "lifecycle":
