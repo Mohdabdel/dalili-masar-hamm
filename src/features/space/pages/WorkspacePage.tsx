@@ -128,21 +128,13 @@ export function WorkspacePage({ specId }: { specId: string }) {
 
   // ---------- كتلة الصورة وكتلة العبارة: حالتان مستقلتان ----------
 
-  const imageRefFor = (stepId: string): LabStepImageRef | null => {
-    const map = selection.imageRefByStepId;
-    if (map && stepId in map) return map[stepId] ?? null;
-    const legacy = refFromLegacySrc(selection.visualByStepId?.[stepId]);
-    if (legacy) return legacy;
-    return suggestStepImage(sourceTextFor(spec, stepId));
-  };
+  const imageRefFor = (stepId: string): LabStepImageRef | null =>
+    composeImageRefFor(spec, selection, stepId);
 
-  const imageVisibleFor = (stepId: string) =>
-    selection.imageVisibleByStepId?.[stepId] ??
-    (selection.presentationByStepId?.[stepId] ?? "both") !== "text";
+  const imageVisibleFor = (stepId: string) => composeImageVisibleFor(selection, stepId);
 
-  const textVisibleFor = (stepId: string) =>
-    selection.textVisibleByStepId?.[stepId] ??
-    (selection.presentationByStepId?.[stepId] ?? "both") !== "visual";
+  const textVisibleFor = (stepId: string) => composeTextVisibleFor(selection, stepId);
+
 
   /** يحافظ على توافق الحقول القديمة (presentation/visual) دون ربط الحالتين ببعضهما. */
   const syncLegacy = (
