@@ -9,7 +9,6 @@ import {
   blockOrderFor,
   buildDraftSelection,
   buildSpaceSnapshot,
-  familyTextFor,
   findSpaceStep,
   flatSteps,
   getSpaceSpec,
@@ -142,11 +141,14 @@ export function WorkspacePage({ specId }: { specId: string }) {
       const option = ("executionOptions" in step ? step.executionOptions : undefined)?.find(
         (o) => o.id === optionId,
       );
+      // النص المرجعي ثابت لا يتغير؛ نص الأسرة يبدأ منه ويُحفظ مستقلاً.
+      const sourceText = sourceTextFor(spec, stepId);
+      const custom = selection.familyTextByStepId?.[stepId];
       return {
         stepId,
-        sourceText: sourceTextFor(spec, stepId),
-        suggestedText: step.instruction_short_ar,
-        familyText: familyTextFor(spec, selection, stepId),
+        sourceText,
+        suggestedText: sourceText,
+        familyText: custom !== undefined && custom.trim() ? custom : sourceText,
         visual: visualFor(spec, selection, stepId),
         status: visualStatusFor(spec, selection, stepId),
         presentation: presentationFor(selection, stepId),
