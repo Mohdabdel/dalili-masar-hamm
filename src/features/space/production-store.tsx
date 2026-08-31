@@ -144,9 +144,13 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
         .map((r) => r.snapshot_id);
 
       next.runs = (runs.data ?? []).map((r) => ({
+        id: r.id,
         snapshotId: r.snapshot_id,
         date: String(r.started_at).slice(0, 10),
+        startedAt: String(r.started_at),
+        endedAt: r.ended_at ? String(r.ended_at) : undefined,
       }));
+
 
       next.feedback = (feedback.data ?? []).map((r) => ({
         snapshotId: r.snapshot_id,
