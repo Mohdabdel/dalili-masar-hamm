@@ -20,8 +20,15 @@ export function LearnerPage({ snapshotId }: { snapshotId: string }) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const navigate = useNavigate() as any;
 
+  // بدء التنفيذ = فتح «مرة» جديدة (Run) على نفس المشاركة الأسرية — بلا مشاركة جديدة.
+  const [runId] = useState(() =>
+    typeof crypto !== "undefined" && "randomUUID" in crypto
+      ? crypto.randomUUID()
+      : `run-${Date.now()}`,
+  );
+
   useEffect(() => {
-    if (snap) dispatch({ type: "run", snapshotId });
+    if (snap) dispatch({ type: "run.start", runId, snapshotId });
     // تسجيل مرة واحدة لكل فتح تنفيذ
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [snapshotId]);
@@ -98,9 +105,11 @@ export function LearnerPage({ snapshotId }: { snapshotId: string }) {
         {isDone ? (
           <button
             type="button"
-            onClick={() =>
-              navigate({ to: `${base}/feedback/$snapshotId`, params: { snapshotId } })
-            }
+            onClick={() => {
+              // «انتهينا» تُغلق هذه المرة فقط.
+              dispatch({ type: "run.end", runId });
+              navigate({ to: `${base}/feedback/$snapshotId`, params: { snapshotId } });
+            }}
             className="inline-flex min-h-[64px] flex-1 items-center justify-center rounded-2xl bg-primary text-xl font-bold text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             انتهينا
