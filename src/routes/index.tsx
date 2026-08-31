@@ -5,8 +5,12 @@ import {
   Sparkles,
   ListChecks,
   Library,
+  PenLine,
+  BadgeCheck,
+  LogIn,
 } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
+import { useFamilySpaceStatus } from "@/features/space/home-status";
 import {
   Accordion,
   AccordionContent,
@@ -66,8 +70,8 @@ const INFO_TABS = [
 
 const DISCOVERY_PATHS = [
   {
-    title: "مساحة مشاركة الأسرة",
-    description: "جهّزوا بطاقة مشاركة بلغتكم وصوركم، واعتمدوها كنسخة ثابتة محفوظة.",
+    title: "مساحة عمل الأسرة",
+    description: "اختاروا فرصة مشاركة، جهّزوا بطاقتها بلغتكم وصوركم، ثم اعتمدوها كنسخة ثابتة محفوظة.",
     icon: Sparkles,
     to: "/space" as const,
   },
@@ -90,6 +94,106 @@ const DISCOVERY_PATHS = [
     to: "/activities/browse" as const,
   },
 ];
+
+const JOURNEY_STEPS = ["اختيار", "تجهيز", "تركيب", "معاينة", "اعتماد"] as const;
+
+function FamilySpaceSection() {
+  const status = useFamilySpaceStatus();
+
+  if (status.loading) {
+    return (
+      <div className="mt-3 space-y-2" role="status" aria-live="polite">
+        <span className="sr-only">جارٍ تحميل حالة مساحة الأسرة</span>
+        <div className="h-16 animate-pulse rounded-2xl bg-muted" />
+      </div>
+    );
+  }
+
+  if (!status.signedIn) {
+    return (
+      <Link
+        to="/auth"
+        className="mt-3 flex items-center justify-between gap-3 rounded-2xl border-2 border-dashed border-border bg-card p-4 transition-all hover:border-gold"
+      >
+        <span className="flex items-center gap-3">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-muted text-muted-foreground">
+            <LogIn className="h-5 w-5" strokeWidth={2} />
+          </span>
+          <span className="text-right">
+            <span className="block text-base font-bold text-foreground">
+              سجّلوا الدخول لفتح مساحة عمل أسرتكم
+            </span>
+            <span className="mt-0.5 block text-sm text-muted-foreground">
+              مسوداتكم وبطاقاتكم المعتمدة محفوظة هناك.
+            </span>
+          </span>
+        </span>
+        <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground" />
+      </Link>
+    );
+  }
+
+  const empty = status.drafts.length === 0 && status.approved.length === 0;
+
+  return (
+    <div className="mt-3 space-y-3">
+      {empty && (
+        <p className="rounded-2xl border border-border bg-card p-4 text-sm leading-relaxed text-muted-foreground">
+          لم تبدأ مساحة عمل أسرتكم بعد. اختاروا فرصة مشاركة من المسارات أدناه
+          لتجهيز أول بطاقة.
+        </p>
+      )}
+
+      {status.drafts.map((draft) => (
+        <Link
+          key={draft.specId}
+          to="/space/workspace/$specId"
+          params={{ specId: draft.specId }}
+          className="group flex items-center justify-between gap-3 rounded-2xl border-2 border-gold/50 bg-card p-4 shadow-card-soft transition-all hover:-translate-y-0.5 hover:border-gold hover:shadow-elegant"
+        >
+          <span className="flex min-w-0 items-center gap-3">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-gold text-primary">
+              <PenLine className="h-5 w-5" strokeWidth={2} />
+            </span>
+            <span className="min-w-0 text-right">
+              <span className="block truncate text-base font-bold text-foreground">
+                {draft.title}
+              </span>
+              <span className="mt-0.5 block text-sm text-muted-foreground">
+                مسودة قيد التجهيز — أكملوا من حيث توقفتم
+              </span>
+            </span>
+          </span>
+          <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
+        </Link>
+      ))}
+
+      {status.approved.map((card) => (
+        <Link
+          key={card.specId}
+          to="/space/card/$specId"
+          params={{ specId: card.specId }}
+          className="group flex items-center justify-between gap-3 rounded-2xl border-2 border-primary/30 bg-card p-4 shadow-card-soft transition-all hover:-translate-y-0.5 hover:shadow-elegant"
+        >
+          <span className="flex min-w-0 items-center gap-3">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground">
+              <BadgeCheck className="h-5 w-5" strokeWidth={2} />
+            </span>
+            <span className="min-w-0 text-right">
+              <span className="block truncate text-base font-bold text-foreground">
+                {card.title}
+              </span>
+              <span className="mt-0.5 block text-sm text-muted-foreground">
+                بطاقة معتمدة — النسخة {card.latestVersion}
+              </span>
+            </span>
+          </span>
+          <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
+        </Link>
+      ))}
+    </div>
+  );
+}
 
 function LandingPage() {
   return (
@@ -144,6 +248,17 @@ function LandingPage() {
         <p className="mt-1 text-sm font-bold text-gold">الفرصة الموجودة تكفي.</p>
       </section>
 
+      {/* مساحة عمل الأسرة — حالة الإنتاج الفعلية */}
+      <section className="mt-7">
+        <h2 className="px-1 font-display text-lg font-bold text-foreground">
+          مساحة عمل أسرتكم
+        </h2>
+        <p className="mt-1 px-1 text-sm leading-relaxed text-muted-foreground">
+          كل بطاقة تمرّ برحلة واحدة: {JOURNEY_STEPS.join(" ← ")} — وتبقى
+          محفوظة لأسرتكم.
+        </p>
+        <FamilySpaceSection />
+      </section>
 
       {/* دعوة الاكتشاف */}
       <section className="mt-7">
