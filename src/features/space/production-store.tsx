@@ -105,8 +105,9 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           supabase.from("participation_card_states").select("snapshot_id, closed"),
           supabase
             .from("participation_runs")
-            .select("snapshot_id, started_at")
+            .select("id, snapshot_id, started_at, ended_at")
             .order("started_at", { ascending: false }),
+
           supabase
             .from("participation_feedback")
             .select("snapshot_id, log_date, tone, reasons")
