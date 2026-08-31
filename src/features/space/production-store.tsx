@@ -96,7 +96,10 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
 
       const [participations, snapshots, drafts, cardStates, runs, feedback, assets] =
         await Promise.all([
-          supabase.from("active_participations").select("id, opportunity_id, lifecycle_choice"),
+          supabase
+            .from("active_participations")
+            .select("id, opportunity_id, lifecycle_choice, status"),
+
           supabase
             .from("participation_snapshots")
             .select("id, family_participation_id, snapshot_data, version_number, approved_at")
