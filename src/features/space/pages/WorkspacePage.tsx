@@ -219,16 +219,40 @@ export function WorkspacePage({ specId }: { specId: string }) {
     .filter((l) => !orderedIds.includes(l.step.id))
     .map((l) => ({ stepId: l.step.id, label: l.step.instruction_family_ar }));
 
-  const addSupportAsset = (type: LabSupportAssetType, labelAr: string) => {
+  /** اعتبار تحتفظ به الأسرة مع هذه المشاركة — اختياري ولا يظهر للمشارك. */
+  const toggleConsideration = (id: string, next: boolean) => {
+    const current = selection.considerationIds ?? [];
+    setSelection({
+      considerationIds: next ? [...new Set([...current, id])] : current.filter((c) => c !== id),
+    });
+  };
+
+  /** مصدر توليد الوسائل: الخطوات الباقية في مسودّتنا بعباراتها وصورها. */
+  const supportRows: SupportSourceRow[] = rows
+    .filter((r) => r.textVisible || r.imageVisible)
+    .map((r) => ({
+      stepId: r.stepId,
+      text: r.textVisible ? r.familyText : "",
+      assetCode: r.imageVisible ? resolvedAssetCode(imageRefFor(r.stepId)) : null,
+      src: r.imageVisible ? r.image.src : null,
+    }));
+
+  const addSupportAsset = (input: {
+    type: LabSupportAssetType;
+    label: string;
+    items: string[];
+    config: LabSupportAssetConfig;
+  }) => {
     dispatch({
       type: "support.add",
       value: {
-        id: `sup-${type}-${Date.now()}`,
-        type,
-        label_ar: `${labelAr} — ${spec.title_ar}`,
+        id: crypto.randomUUID(),
+        type: input.type,
+        label_ar: `${input.label} — ${spec.title_ar}`,
         specId,
         createdAt: new Date().toISOString().slice(0, 10),
-        items: rows.map((r) => r.familyText),
+        items: input.items,
+        config: input.config,
       },
     });
   };
