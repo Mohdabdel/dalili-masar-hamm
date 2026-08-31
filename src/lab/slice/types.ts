@@ -47,6 +47,16 @@ export type StepPresentationMode = "both" | "visual" | "text";
 /** ترتيب الكتلتين داخل بطاقة الخطوة. */
 export type StepBlockOrder = "visual-text" | "text-visual";
 
+/**
+ * مرجع صورة الخطوة: أصل مصدر، وأصل مشتق (مقصوص) اختياري.
+ * المصدر لا يُعدَّل أبداً؛ الاشتقاق يُسجَّل هنا فقط.
+ */
+export interface LabStepImageRef {
+  sourceAssetCode: string;
+  derivedAssetCode?: string | null;
+}
+
+
 /** اختيار الأسرة لهذه المرة — بترتيب تنفيذ صريح. */
 export interface LabThisTimeSelection {
   specId: string;
