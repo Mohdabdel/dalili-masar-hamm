@@ -30,6 +30,7 @@ import {
   setTodayLog,
 } from "@/lib/active-participations";
 import type { ParticipationLevelKey } from "@/lib/home-hierarchy";
+import { workspaceSpecIdFor } from "@/features/space/participation-link";
 
 export interface ParticipationLevelsInput {
   guided: string;
