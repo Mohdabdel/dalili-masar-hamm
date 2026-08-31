@@ -248,6 +248,17 @@ function LandingPage() {
         <p className="mt-1 text-sm font-bold text-gold">الفرصة الموجودة تكفي.</p>
       </section>
 
+      {/* مساحة عمل الأسرة — حالة الإنتاج الفعلية */}
+      <section className="mt-7">
+        <h2 className="px-1 font-display text-lg font-bold text-foreground">
+          مساحة عمل أسرتكم
+        </h2>
+        <p className="mt-1 px-1 text-sm leading-relaxed text-muted-foreground">
+          كل بطاقة تمرّ برحلة واحدة: {JOURNEY_STEPS.join(" ← ")} — وتبقى
+          محفوظة لأسرتكم.
+        </p>
+        <FamilySpaceSection />
+      </section>
 
       {/* دعوة الاكتشاف */}
       <section className="mt-7">
