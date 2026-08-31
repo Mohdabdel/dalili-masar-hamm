@@ -97,6 +97,14 @@ export interface LabCardFrame {
   /** النص المرجعي من مكتبة الحياة — للمرجع فقط. */
   sourceText_ar?: string;
   assetRef: string | null;
+  /** عبارة الأسرة كما اعتُمدت (حتى لو أُخفي النص). */
+  familyText_ar?: string;
+  /** الأصل المصدر والأصل المشتق المستخدم فعلياً وقت الاعتماد. */
+  sourceAssetCode?: string | null;
+  derivedAssetCode?: string | null;
+  /** ظهور الصورة/النص كما اعتمدته الأسرة. */
+  imageVisible?: boolean;
+  textVisible?: boolean;
   executionOptionLabel_ar?: string;
   /** كيف اعتمدت الأسرة عرض هذه الخطوة. */
   presentation?: StepPresentationMode;
@@ -104,11 +112,22 @@ export interface LabCardFrame {
   blockOrder?: StepBlockOrder;
 }
 
+/** مخرج دعم مجمّد داخل النسخة المعتمدة — نسخة وقت الاعتماد. */
+export interface LabFrozenSupportAsset {
+  id: string;
+  type: string;
+  label_ar: string;
+  items: string[];
+  config?: unknown;
+}
+
 export interface LabCardSnapshot {
   id: string;
   participationSpecId: string;
   version: number;
   createdAt: string;
+  /** لحظة الاعتماد الدقيقة. */
+  approvedAt?: string;
   title_ar: string;
   frames: LabCardFrame[];
   supportTools: string[];
@@ -120,11 +139,20 @@ export interface LabCardSnapshot {
   context?: SliceContext;
   domainName_ar?: string;
   date?: string;
+  /** الخطوات المعتمدة بترتيبها الفعلي، ونقطتا البداية والنهاية. */
+  selectedStepIds?: string[];
+  startStepId?: string;
+  endStepId?: string;
   startText_ar?: string;
   endText_ar?: string;
+  /** الاعتبارات التي احتفظت بها الأسرة وقت الاعتماد. */
+  considerationIds?: string[];
   /** مراجع مخرجات الدعم المستقلة — ليست جزءًا من بطاقة المشارك. */
   supportAssetIds?: string[];
+  /** نسخة مجمّدة من مخرجات الدعم المعتمدة. */
+  supportAssetsFrozen?: LabFrozenSupportAsset[];
 }
+
 
 export type SliceTone = "comfortable" | "usual" | "difficult_today";
 

@@ -1,6 +1,5 @@
-import { useMemo, useState } from "react";
-import { useNavigate } from "@tanstack/react-router";
-import { LabPage, LabSection, LabNote, LabButton, LabLinkButton } from "@/lab/components/lab-ui";
+import { useMemo } from "react";
+import { LabPage, LabSection, LabNote, LabLinkButton } from "@/lab/components/lab-ui";
 import { StepBlocks, type ComposerItem } from "@/lab/components/space/FamilyComposer";
 import { StepComposer, type ComposerStepRow } from "@/features/space/components/StepComposer";
 import { ConsiderationsPanel } from "@/features/space/components/ConsiderationsPanel";
@@ -10,18 +9,17 @@ import {
 } from "@/features/space/components/SupportGenerator";
 import {
   buildDraftSelection,
-  buildSpaceSnapshot,
-  findSpaceStep,
   flatSteps,
   getSpaceSpec,
   sourceTextFor,
 } from "@/lab/data/space/catalog";
+import { resolveStepImage, resolvedAssetCode } from "@/features/space/step-image";
 import {
-  refFromLegacySrc,
-  resolveStepImage,
-  resolvedAssetCode,
-  suggestStepImage,
-} from "@/features/space/step-image";
+  composeDraft,
+  imageRefFor as composeImageRefFor,
+  imageVisibleFor as composeImageVisibleFor,
+  textVisibleFor as composeTextVisibleFor,
+} from "@/features/space/compose";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 import type {
   LabStepImageRef,
@@ -35,13 +33,10 @@ export function WorkspacePage({ specId }: { specId: string }) {
   const spec = getSpaceSpec(specId);
   const { state, dispatch } = useSlice();
   const { snapshotsFor, supportAssetsFor } = useSliceHelpers();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const navigate = useNavigate() as any;
 
   const versions = snapshotsFor(specId);
   const assets = supportAssetsFor(specId);
-  const [label, setLabel] = useState("");
-  const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10));
+
   
 
   // المسودة الفعلية تُحسب في نفس دورة العرض الأولى:
@@ -128,21 +123,13 @@ export function WorkspacePage({ specId }: { specId: string }) {
 
   // ---------- كتلة الصورة وكتلة العبارة: حالتان مستقلتان ----------
 
-  const imageRefFor = (stepId: string): LabStepImageRef | null => {
-    const map = selection.imageRefByStepId;
-    if (map && stepId in map) return map[stepId] ?? null;
-    const legacy = refFromLegacySrc(selection.visualByStepId?.[stepId]);
-    if (legacy) return legacy;
-    return suggestStepImage(sourceTextFor(spec, stepId));
-  };
+  const imageRefFor = (stepId: string): LabStepImageRef | null =>
+    composeImageRefFor(spec, selection, stepId);
 
-  const imageVisibleFor = (stepId: string) =>
-    selection.imageVisibleByStepId?.[stepId] ??
-    (selection.presentationByStepId?.[stepId] ?? "both") !== "text";
+  const imageVisibleFor = (stepId: string) => composeImageVisibleFor(selection, stepId);
 
-  const textVisibleFor = (stepId: string) =>
-    selection.textVisibleByStepId?.[stepId] ??
-    (selection.presentationByStepId?.[stepId] ?? "both") !== "visual";
+  const textVisibleFor = (stepId: string) => composeTextVisibleFor(selection, stepId);
+
 
   /** يحافظ على توافق الحقول القديمة (presentation/visual) دون ربط الحالتين ببعضهما. */
   const syncLegacy = (
@@ -190,30 +177,25 @@ export function WorkspacePage({ specId }: { specId: string }) {
 
   const resetText = (stepId: string) => setText(stepId, sourceTextFor(spec, stepId));
 
-  const rows: ComposerStepRow[] = orderedIds
-    .map((stepId): ComposerStepRow | null => {
-      const step = findSpaceStep(spec, stepId);
-      if (!step) return null;
-      const sourceText = sourceTextFor(spec, stepId);
-      const custom = selection.familyTextByStepId?.[stepId];
-      return {
-        stepId,
-        sourceText,
-        familyText: custom !== undefined ? custom : sourceText,
-        image: resolveStepImage(imageRefFor(stepId)),
-        imageVisible: imageVisibleFor(stepId),
-        textVisible: textVisibleFor(stepId),
-      };
-    })
-    .filter((r): r is ComposerStepRow => Boolean(r));
+  const composed = composeDraft(spec, selection);
 
-  const previewItems: ComposerItem[] = rows.map((r) => ({
+  const rows: ComposerStepRow[] = composed.map((r) => ({
+    stepId: r.stepId,
+    sourceText: r.sourceText,
+    familyText: r.familyText,
+    image: r.image,
+    imageVisible: r.imageVisible,
+    textVisible: r.textVisible,
+  }));
+
+  const previewItems: ComposerItem[] = composed.map((r) => ({
     stepId: r.stepId,
     familyText: r.textVisible ? r.familyText : "",
     visual: r.imageVisible ? r.image.src : null,
     presentation: r.imageVisible ? (r.textVisible ? "both" : "visual") : "text",
-    blockOrder: selection.blockOrderByStepId?.[r.stepId] ?? "visual-text",
+    blockOrder: r.blockOrder,
   }));
+
 
   const spares = leaves
     .filter((l) => !orderedIds.includes(l.step.id))
@@ -257,19 +239,6 @@ export function WorkspacePage({ specId }: { specId: string }) {
     });
   };
 
-  const approve = () => {
-    if (rows.length === 0) return;
-    const snapshot = buildSpaceSnapshot({
-      spec,
-      selection,
-      version: versions.length + 1,
-      label_ar: label.trim() || `${spec.title_ar} — بطاقة ${versions.length + 1}`,
-      date,
-      supportAssetIds: assets.map((a) => a.id),
-    });
-    dispatch({ type: "snapshot", value: snapshot });
-    navigate({ to: `${base}/card/$specId`, params: { specId } });
-  };
 
   return (
     <LabPage title={spec.title_ar} intro={spec.eventTitle_ar}>
@@ -345,60 +314,43 @@ export function WorkspacePage({ specId }: { specId: string }) {
         </details>
       )}
 
-      <details className="rounded-2xl border border-border bg-card p-3">
-        <summary className="cursor-pointer text-sm font-bold">
-          كيف ستظهر البطاقة، واسمها
-        </summary>
-        <div className="mt-3 space-y-4">
-          {rows.length === 0 ? (
-            <LabNote>أضيفوا خطوة واحدة على الأقل.</LabNote>
-          ) : (
-            <ol className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {previewItems.map((item, i) => (
-                <li key={item.stepId} className="rounded-2xl border border-border bg-card p-2">
-                  <StepBlocks item={item} index={i + 1} />
-                </li>
-              ))}
-              <li className="grid place-items-center rounded-2xl border border-dashed border-border p-4 text-lg font-bold text-muted-foreground">
-                انتهينا
+      <LabSection
+        title="كيف ستظهر البطاقة"
+        description="لمحة سريعة. المعاينة الكاملة والاعتماد في الخطوة التالية."
+      >
+        {rows.length === 0 ? (
+          <LabNote>أضيفوا خطوة واحدة على الأقل.</LabNote>
+        ) : (
+          <ol className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {previewItems.map((item, i) => (
+              <li key={item.stepId} className="rounded-2xl border border-border bg-card p-2">
+                <StepBlocks item={item} index={i + 1} />
               </li>
-            </ol>
+            ))}
+            <li className="grid place-items-center rounded-2xl border border-dashed border-border p-4 text-lg font-bold text-muted-foreground">
+              انتهينا
+            </li>
+          </ol>
+        )}
+
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          <LabLinkButton to={`${base}/preview/$specId`} params={{ specId }}>
+            صمّم بطاقة المشاركة
+          </LabLinkButton>
+          {versions.length > 0 && (
+            <LabLinkButton to={`${base}/card/$specId`} params={{ specId }} variant="ghost">
+              بطاقات هذه المشاركة ({versions.length})
+            </LabLinkButton>
           )}
-
-          <div className="grid gap-3 sm:grid-cols-2">
-            <label className="block">
-              <span className="mb-1 block text-sm font-bold">اسم البطاقة</span>
-              <input
-                type="text"
-                value={label}
-                onChange={(e) => setLabel(e.target.value)}
-                placeholder={`${spec.title_ar} — بطاقة ${versions.length + 1}`}
-                className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              />
-            </label>
-            <label className="block">
-              <span className="mb-1 block text-sm font-bold">التاريخ (اختياري)</span>
-              <input
-                type="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-                className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              />
-            </label>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <LabButton onClick={approve} disabled={rows.length === 0}>
-              {versions.length === 0 ? "نعتمد البطاقة" : "نعتمد بطاقة جديدة"}
-            </LabButton>
-            {versions.length > 0 && (
-              <LabLinkButton to={`${base}/card/$specId`} params={{ specId }} variant="ghost">
-                بطاقات هذه المشاركة ({versions.length})
-              </LabLinkButton>
-            )}
-          </div>
         </div>
-      </details>
+        {versions.length > 0 && (
+          <LabNote>
+            بطاقتكم المعتمدة الحالية تبقى كما هي. أي تعديل هنا لا يغيّرها، وعند الاعتماد تُضاف بطاقة
+            جديدة.
+          </LabNote>
+        )}
+      </LabSection>
+
 
       <ConsiderationsPanel
         spec={spec}
