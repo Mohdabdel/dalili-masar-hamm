@@ -288,7 +288,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
             { spec_id: sel.specId, selection: sel as any },
             { onConflict: "user_id,spec_id" },
           )
-          .then(({ error }) => log("draft")(error));
+          .then(({ error }) => failed("draft", "تعذّر حفظ التعديل")(error));
         break;
       }
       case "snapshot": {
@@ -371,7 +371,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           family_participation_id: participationId,
           snapshot_id: action.snapshotId,
         });
-        log("runStart")(error);
+        failed("runStart", "تعذّر بدء هذه المرة")(error);
         break;
       }
       case "run.end": {
@@ -381,7 +381,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           .update({ ended_at: new Date().toISOString() })
           .eq("id", action.runId)
           .is("ended_at", null);
-        log("runEnd")(error);
+        failed("runEnd", "تعذّر إغلاق هذه المرة")(error);
         break;
       }
       case "participation.close":
@@ -396,7 +396,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
             closed_at: closing ? new Date().toISOString() : null,
           })
           .eq("id", participationId);
-        log("participationState")(error);
+        failed("participationState", "تعذّر تحديث حالة المشاركة")(error);
         break;
       }
 
@@ -409,7 +409,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           },
           { onConflict: "user_id,snapshot_id" },
         );
-        log("cardState")(error);
+        failed("cardState", "تعذّر تحديث حالة البطاقة")(error);
         break;
       }
       case "feedback": {
@@ -419,7 +419,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           tone: action.value.tone,
           reasons: action.value.reasons,
         });
-        log("feedback")(error);
+        failed("feedback", "تعذّر حفظ الانطباع")(error);
         break;
       }
       case "lifecycle": {
@@ -429,7 +429,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           .from("active_participations")
           .update({ lifecycle_choice: action.value })
           .eq("id", participationId);
-        log("lifecycle")(error);
+        failed("lifecycle", "تعذّر حفظ اختياركم")(error);
         break;
       }
       case "support.add": {
@@ -443,7 +443,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           config: (a.config ?? {}) as any,
         });
-        log("supportAdd")(error);
+        failed("supportAdd", "تعذّر حفظ وسيلة الدعم")(error);
         break;
       }
       case "support.remove": {
@@ -451,7 +451,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           .from("family_support_assets")
           .delete()
           .eq("id", action.id);
-        log("supportRemove")(error);
+        failed("supportRemove", "تعذّر حذف وسيلة الدعم")(error);
         break;
       }
       case "station.add": {
@@ -462,7 +462,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
             routineId,
             dailyEventId: action.eventId,
             partOfDay: "morning",
-            position: Object.keys(r.stationRowByEvent).length,
+            position: (await getStations(routineId)).length,
           });
           const stations = await getStations(routineId);
           for (const s of stations) r.stationRowByEvent[s.daily_event_id] = s.id;
