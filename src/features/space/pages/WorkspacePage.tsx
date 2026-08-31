@@ -42,7 +42,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
   const assets = supportAssetsFor(specId);
   const [label, setLabel] = useState("");
   const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10));
-  const [drawer, setDrawer] = useState<null | "considerations">(null);
+  
 
   // المسودة الفعلية تُحسب في نفس دورة العرض الأولى:
   // إمّا مسودة الأسرة المحفوظة، أو المسودة المرجعية الجاهزة — بلا استبدال بعد التركيب.
