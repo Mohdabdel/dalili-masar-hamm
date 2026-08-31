@@ -1,6 +1,5 @@
-import { useMemo, useState } from "react";
-import { useNavigate } from "@tanstack/react-router";
-import { LabPage, LabSection, LabNote, LabButton, LabLinkButton } from "@/lab/components/lab-ui";
+import { useMemo } from "react";
+import { LabPage, LabSection, LabNote, LabLinkButton } from "@/lab/components/lab-ui";
 import { StepBlocks, type ComposerItem } from "@/lab/components/space/FamilyComposer";
 import { StepComposer, type ComposerStepRow } from "@/features/space/components/StepComposer";
 import { ConsiderationsPanel } from "@/features/space/components/ConsiderationsPanel";
@@ -10,18 +9,17 @@ import {
 } from "@/features/space/components/SupportGenerator";
 import {
   buildDraftSelection,
-  buildSpaceSnapshot,
-  findSpaceStep,
   flatSteps,
   getSpaceSpec,
   sourceTextFor,
 } from "@/lab/data/space/catalog";
+import { resolveStepImage, resolvedAssetCode } from "@/features/space/step-image";
 import {
-  refFromLegacySrc,
-  resolveStepImage,
-  resolvedAssetCode,
-  suggestStepImage,
-} from "@/features/space/step-image";
+  composeDraft,
+  imageRefFor as composeImageRefFor,
+  imageVisibleFor as composeImageVisibleFor,
+  textVisibleFor as composeTextVisibleFor,
+} from "@/features/space/compose";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 import type {
   LabStepImageRef,
@@ -35,13 +33,10 @@ export function WorkspacePage({ specId }: { specId: string }) {
   const spec = getSpaceSpec(specId);
   const { state, dispatch } = useSlice();
   const { snapshotsFor, supportAssetsFor } = useSliceHelpers();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const navigate = useNavigate() as any;
 
   const versions = snapshotsFor(specId);
   const assets = supportAssetsFor(specId);
-  const [label, setLabel] = useState("");
-  const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10));
+
   
 
   // المسودة الفعلية تُحسب في نفس دورة العرض الأولى:
