@@ -48,10 +48,14 @@ export function CardsPage({ specId }: { specId: string }) {
                     <div>
                       <h3 className="text-lg font-bold">{snap.title_ar}</h3>
                       <p className="text-sm text-muted-foreground">
-                        نسخة {snap.version} — {snap.date ?? snap.createdAt} —{" "}
+                        {snap.version === snapshots[0]?.version
+                          ? "البطاقة المعتمدة الحالية"
+                          : "بطاقة سابقة"}{" "}
+                        — نسخة {snap.version} — {snap.date ?? snap.createdAt} —{" "}
                         {snap.frames.length - 1} خطوة
                       </p>
                     </div>
+
                     {closed && (
                       <span className="rounded-full bg-muted px-3 py-1 text-xs font-bold text-muted-foreground">
                         بطاقة مغلقة
