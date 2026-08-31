@@ -70,8 +70,16 @@ export function WorkspacePage({ specId }: { specId: string }) {
 
   if (!spec) {
     return (
-      <LabPage title="هذه المشاركة غير متاحة" intro="ربما تغيّر الرابط.">
-        <LabLinkButton to={`${base}`}>رجوع إلى الرئيسية</LabLinkButton>
+      <LabPage
+        title="هذه المشاركة غير متاحة"
+        intro="لم نجد المشاركة المرجعية لهذا الرابط. اختاروا مشاركة من قوائم دليلي ثم افتحوا مساحة العمل."
+      >
+        <div className="flex flex-wrap gap-3">
+          <LabLinkButton to={`${base}`}>رجوع إلى مساحة الأسرة</LabLinkButton>
+          <LabLinkButton to="/activities/level" variant="ghost">
+            اختيار مشاركة جديدة
+          </LabLinkButton>
+        </div>
       </LabPage>
     );
   }

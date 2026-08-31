@@ -30,6 +30,7 @@ import {
   setTodayLog,
 } from "@/lib/active-participations";
 import type { ParticipationLevelKey } from "@/lib/home-hierarchy";
+import { workspaceSpecIdFor } from "@/features/space/participation-link";
 
 export interface ParticipationLevelsInput {
   guided: string;
@@ -217,6 +218,18 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
           </div>
         </SheetHeader>
 
+        <div className="px-5 pb-1">
+          <Link
+            to="/space/workspace/$specId"
+            params={{ specId: workspaceSpecIdFor(data.id) }}
+            className="flex min-h-[52px] w-full items-center justify-center rounded-2xl bg-gradient-gold px-4 text-base font-bold text-primary shadow-card-soft transition-transform hover:-translate-y-0.5"
+          >
+            افتحوا مساحة عمل الأسرة
+          </Link>
+          <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+            تفتح المساحة بمسودة جاهزة مبنية على خطوات هذه المشاركة المرجعية — يمكنكم تعديلها لاحقاً دون تغيير المرجع.
+          </p>
+        </div>
 
         <div className="space-y-4 px-5 pb-6">
           {/* ما نحتاجه */}
