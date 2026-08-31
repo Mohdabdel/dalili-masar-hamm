@@ -70,6 +70,10 @@ export type SliceAction =
 
   | { type: "support.add"; value: LabSupportAsset }
   | { type: "support.remove"; id: string }
+  /** تصحيح رقم النسخة بعد الحفظ الفعلي (المصدر النهائي لرقم النسخة هو قاعدة البيانات). */
+  | { type: "snapshot.version"; snapshotId: string; version: number }
+  /** تراجع محلي عن اعتماد لم يُحفظ فعلياً. */
+  | { type: "snapshot.revert"; snapshotId: string }
   | { type: "reset" };
 
 export function sliceReducer(state: SliceState, action: SliceAction): SliceState {
