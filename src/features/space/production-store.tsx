@@ -29,6 +29,14 @@ const log = (context: string) => (error: unknown) => {
   if (error) console.error(`[space:${context}]`, error);
 };
 
+/** فشل حفظ لا يُبتلع: الأسرة تُخبَر أن التعديل لم يُحفظ. */
+const failed = (context: string, message: string) => (error: unknown) => {
+  if (!error) return false;
+  log(context)(error);
+  toast.error(message);
+  return true;
+};
+
 interface Refs {
   /** specId → active_participations.id */
   participationBySpec: Record<string, string>;
