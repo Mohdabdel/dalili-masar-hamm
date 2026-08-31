@@ -182,30 +182,25 @@ export function WorkspacePage({ specId }: { specId: string }) {
 
   const resetText = (stepId: string) => setText(stepId, sourceTextFor(spec, stepId));
 
-  const rows: ComposerStepRow[] = orderedIds
-    .map((stepId): ComposerStepRow | null => {
-      const step = findSpaceStep(spec, stepId);
-      if (!step) return null;
-      const sourceText = sourceTextFor(spec, stepId);
-      const custom = selection.familyTextByStepId?.[stepId];
-      return {
-        stepId,
-        sourceText,
-        familyText: custom !== undefined ? custom : sourceText,
-        image: resolveStepImage(imageRefFor(stepId)),
-        imageVisible: imageVisibleFor(stepId),
-        textVisible: textVisibleFor(stepId),
-      };
-    })
-    .filter((r): r is ComposerStepRow => Boolean(r));
+  const composed = composeDraft(spec, selection);
 
-  const previewItems: ComposerItem[] = rows.map((r) => ({
+  const rows: ComposerStepRow[] = composed.map((r) => ({
+    stepId: r.stepId,
+    sourceText: r.sourceText,
+    familyText: r.familyText,
+    image: r.image,
+    imageVisible: r.imageVisible,
+    textVisible: r.textVisible,
+  }));
+
+  const previewItems: ComposerItem[] = composed.map((r) => ({
     stepId: r.stepId,
     familyText: r.textVisible ? r.familyText : "",
     visual: r.imageVisible ? r.image.src : null,
     presentation: r.imageVisible ? (r.textVisible ? "both" : "visual") : "text",
-    blockOrder: selection.blockOrderByStepId?.[r.stepId] ?? "visual-text",
+    blockOrder: r.blockOrder,
   }));
+
 
   const spares = leaves
     .filter((l) => !orderedIds.includes(l.step.id))
