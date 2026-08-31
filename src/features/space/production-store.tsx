@@ -298,15 +298,51 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           snap.participationSpecId,
           snap.eventId,
         );
-        if (!participationId) return;
-        const { error } = await supabase.from("participation_snapshots").insert({
-          id: snap.id,
-          family_participation_id: participationId,
-          version_number: snap.version,
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          snapshot_data: snap as any,
-        });
-        log("snapshot")(error);
+        if (!participationId) {
+          rawDispatch({ type: "snapshot.revert", snapshotId: snap.id });
+          return;
+        }
+
+        // رقم النسخة يُحسم من قاعدة البيانات لا من الحالة المحلية (تبويبان أو نقر مزدوج).
+        const nextVersion = async () => {
+          const { data } = await supabase
+            .from("participation_snapshots")
+            .select("version_number")
+            .eq("family_participation_id", participationId)
+            .order("version_number", { ascending: false })
+            .limit(1)
+            .maybeSingle();
+          return (data?.version_number ?? 0) + 1;
+        };
+
+        let version = await nextVersion();
+        let lastError: unknown = null;
+        for (let attempt = 0; attempt < 3; attempt += 1) {
+          const { error } = await supabase.from("participation_snapshots").insert({
+            id: snap.id,
+            family_participation_id: participationId,
+            version_number: version,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            snapshot_data: { ...snap, version } as any,
+          });
+          if (!error) {
+            lastError = null;
+            break;
+          }
+          lastError = error;
+          version = await nextVersion();
+        }
+
+        if (lastError) {
+          log("snapshot")(lastError);
+          toast.error("تعذّر اعتماد البطاقة — لم تُحفظ بعد");
+          rawDispatch({ type: "snapshot.revert", snapshotId: snap.id });
+          return;
+        }
+
+        if (version !== snap.version) {
+          rawDispatch({ type: "snapshot.version", snapshotId: snap.id, version });
+        }
         r.participationBySnapshot[snap.id] = participationId;
         break;
       }
