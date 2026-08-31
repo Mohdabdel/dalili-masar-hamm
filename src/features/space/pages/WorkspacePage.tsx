@@ -417,23 +417,11 @@ export function WorkspacePage({ specId }: { specId: string }) {
         )}
       </details>
 
-      {drawer === "considerations" && (
-        <SpaceDrawer title="اعتبارات المشاركة" onClose={() => setDrawer(null)}>
-          <p className="mb-3 text-sm text-muted-foreground">
-            أشياء بسيطة قد تساعد قبل المشاركة وأثناءها. للأسرة فقط، ولا تظهر للمشارك.
-          </p>
-          {considerationsFor(spec, selection.supportTools, rows.length).map((block) => (
-            <section key={block.title} className="mb-4">
-              <h3 className="mb-1 text-base font-bold text-foreground">{block.title}</h3>
-              <ul className="list-disc space-y-1 pe-5 text-sm leading-relaxed text-muted-foreground">
-                {block.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </section>
-          ))}
-        </SpaceDrawer>
-      )}
+      <div className="mt-2">
+        <LabLinkButton to="/tools" variant="ghost">
+          أدوات المساندة
+        </LabLinkButton>
+      </div>
     </LabPage>
   );
 }
