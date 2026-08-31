@@ -1,11 +1,15 @@
-import { useEffect, useState } from "react";
+// بطاقة المشارك — وضع التركيز.
+// المصدر الوحيد: النسخة المعتمدة المجمّدة (Frozen Snapshot).
+// خطوة واحدة في كل شاشة، بلا أي بيانات إدارة أسرية، وتنتهي بـ«انتهينا».
+
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
-import { ChevronRight, ChevronLeft, LifeBuoy } from "lucide-react";
+import { ChevronRight, ChevronLeft, CheckCircle2 } from "lucide-react";
 import { StepFrame } from "@/lab/components/StepFrame";
 import { LabPage, LabLinkButton } from "@/lab/components/lab-ui";
-import { SPACE_SUPPORT_TOOLS } from "@/lab/data/space/catalog";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 
+const DONE_STEP_ID = "__done__";
 
 export function LearnerPage({ snapshotId }: { snapshotId: string }) {
   const base = useSpaceBase();
@@ -13,7 +17,6 @@ export function LearnerPage({ snapshotId }: { snapshotId: string }) {
   const { dispatch } = useSlice();
   const snap = snapshotById(snapshotId);
   const [i, setI] = useState(0);
-  const [showSupport, setShowSupport] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const navigate = useNavigate() as any;
 
@@ -23,57 +26,64 @@ export function LearnerPage({ snapshotId }: { snapshotId: string }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [snapshotId]);
 
+  // الإطارات كما جُمّدت وقت الاعتماد — بلا أي إعادة تركيب من المسودة.
+  const frames = useMemo(
+    () => (snap ? [...snap.frames].sort((a, b) => a.order - b.order) : []),
+    [snap],
+  );
+
   if (!snap) {
     return (
-      <LabPage title="لا توجد بطاقة" intro="لم تُعتمد بطاقة بهذا الرقم في هذه الجلسة.">
-        <LabLinkButton to={`${base}`}>رجوع إلى المحطات</LabLinkButton>
+      <LabPage title="لا توجد بطاقة" intro="لم تُعتمد بطاقة بهذا الرقم.">
+        <LabLinkButton to={`${base}`}>رجوع</LabLinkButton>
       </LabPage>
     );
   }
 
-  const frames = [...snap.frames].sort((a, b) => a.order - b.order);
   const frame = frames[i];
-  const isLast = i === frames.length - 1;
-  const tools = snap.supportTools
-    .map((id) => SPACE_SUPPORT_TOOLS.find((t) => t.id === id)?.label)
-    .filter(Boolean);
+  const isDone = !frame || frame.sourceStepId === DONE_STEP_ID;
+  const stepFrames = frames.filter((f) => f.sourceStepId !== DONE_STEP_ID);
+  const showImage = frame ? (frame.imageVisible ?? Boolean(frame.assetRef)) : false;
+  const showText = frame ? (frame.textVisible ?? Boolean(frame.text_short_ar)) : false;
+  const text = frame?.text_short_ar || frame?.familyText_ar || "";
+  const textFirst = frame?.blockOrder === "text-visual";
+
+  const TextBlock = showText && text ? (
+    <p className="text-4xl font-extrabold leading-tight text-foreground">{text}</p>
+  ) : null;
+
+  const ImageBlock = showImage ? (
+    <div className="w-full max-w-sm">
+      <StepFrame asset={frame?.assetRef ?? null} label={text} size="lg" />
+    </div>
+  ) : null;
 
   return (
-    <div className="mx-auto flex min-h-[80dvh] w-full max-w-xl flex-col justify-between px-4 py-6">
-      <div className="mb-4 flex items-center justify-between text-sm font-semibold text-muted-foreground">
-        <span aria-live="polite">
-          {i + 1} / {frames.length}
-        </span>
-        {tools.length > 0 && (
-          <button
-            type="button"
-            aria-expanded={showSupport}
-            onClick={() => setShowSupport((v) => !v)}
-            className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-border px-3 font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-          >
-            <LifeBuoy className="h-4 w-4" aria-hidden />
-            مساعدة
-          </button>
-        )}
+    <div className="mx-auto flex min-h-[85dvh] w-full max-w-xl flex-col justify-between px-4 py-6">
+      <div className="mb-4 text-center text-base font-bold text-muted-foreground" aria-live="polite">
+        {isDone ? "النهاية" : `${i + 1} / ${stepFrames.length}`}
       </div>
 
-      {showSupport && tools.length > 0 && (
-        <p className="mb-4 rounded-xl border border-border bg-muted/40 p-3 text-center text-base">
-          {tools.join(" — ")}
-        </p>
-      )}
-
-      <div className="flex flex-1 flex-col items-center justify-center gap-6 text-center">
-        <div className="w-full max-w-sm">
-          <StepFrame asset={frame.assetRef} label={frame.text_short_ar} size="lg" />
+      {isDone ? (
+        <div className="flex flex-1 flex-col items-center justify-center gap-6 text-center">
+          <CheckCircle2 className="h-20 w-20 text-primary" aria-hidden />
+          <p className="text-5xl font-extrabold text-foreground">انتهينا</p>
         </div>
-        <p className="text-4xl font-extrabold leading-tight text-foreground">
-          {frame.text_short_ar}
-        </p>
-        {frame.executionOptionLabel_ar && (
-          <p className="text-xl font-bold text-muted-foreground">{frame.executionOptionLabel_ar}</p>
-        )}
-      </div>
+      ) : (
+        <div className="flex flex-1 flex-col items-center justify-center gap-6 text-center">
+          {textFirst ? (
+            <>
+              {TextBlock}
+              {ImageBlock}
+            </>
+          ) : (
+            <>
+              {ImageBlock}
+              {TextBlock}
+            </>
+          )}
+        </div>
+      )}
 
       <div className="mt-8 flex items-center gap-3">
         <button
@@ -85,7 +95,7 @@ export function LearnerPage({ snapshotId }: { snapshotId: string }) {
           <ChevronRight className="h-6 w-6" aria-hidden />
           السابق
         </button>
-        {isLast ? (
+        {isDone ? (
           <button
             type="button"
             onClick={() =>
