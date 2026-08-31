@@ -238,19 +238,60 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
         r.participationBySnapshot[snap.id] = participationId;
         break;
       }
-      case "run": {
+      case "run.start": {
+        // بدء التنفيذ يفتح Run جديدة فقط — لا يُنشئ مشاركة أسرية جديدة أبداً.
         const snap = snapshotState.snapshots.find((s) => s.id === action.snapshotId);
-        const participationId =
-          r.participationBySnapshot[action.snapshotId] ??
-          (snap ? await ensureParticipation(r, snap.participationSpecId, snap.eventId) : null);
+        let participationId = r.participationBySnapshot[action.snapshotId] ?? null;
+        if (!participationId && snap) {
+          participationId = r.participationBySpec[snap.participationSpecId] ?? null;
+          if (!participationId) {
+            const { data } = await supabase
+              .from("active_participations")
+              .select("id")
+              .eq("opportunity_id", snap.participationSpecId)
+              .maybeSingle();
+            if (data) {
+              participationId = data.id;
+              r.participationBySpec[snap.participationSpecId] = data.id;
+            }
+          }
+          if (participationId) r.participationBySnapshot[action.snapshotId] = participationId;
+        }
         if (!participationId) return;
         const { error } = await supabase.from("participation_runs").insert({
+          id: action.runId,
           family_participation_id: participationId,
           snapshot_id: action.snapshotId,
         });
-        log("run")(error);
+        log("runStart")(error);
         break;
       }
+      case "run.end": {
+        // «انتهينا» تُغلق هذه المرة فقط — البطاقة والمشاركة تبقيان كما هما.
+        const { error } = await supabase
+          .from("participation_runs")
+          .update({ ended_at: new Date().toISOString() })
+          .eq("id", action.runId)
+          .is("ended_at", null);
+        log("runEnd")(error);
+        break;
+      }
+      case "participation.close":
+      case "participation.reopen": {
+        const participationId = r.participationBySpec[action.specId];
+        if (!participationId) return;
+        const closing = action.type === "participation.close";
+        const { error } = await supabase
+          .from("active_participations")
+          .update({
+            status: closing ? "closed" : "active",
+            closed_at: closing ? new Date().toISOString() : null,
+          })
+          .eq("id", participationId);
+        log("participationState")(error);
+        break;
+      }
+
       case "card.close":
       case "card.reopen": {
         const { error } = await supabase.from("participation_card_states").upsert(
