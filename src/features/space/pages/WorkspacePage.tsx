@@ -1,9 +1,13 @@
 import { useMemo, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { LabPage, LabSection, LabNote, LabButton, LabLinkButton } from "@/lab/components/lab-ui";
-import { SpaceDrawer } from "@/lab/components/space/SpaceDrawer";
 import { StepBlocks, type ComposerItem } from "@/lab/components/space/FamilyComposer";
 import { StepComposer, type ComposerStepRow } from "@/features/space/components/StepComposer";
+import { ConsiderationsPanel } from "@/features/space/components/ConsiderationsPanel";
+import {
+  SupportGenerator,
+  type SupportSourceRow,
+} from "@/features/space/components/SupportGenerator";
 import {
   buildDraftSelection,
   buildSpaceSnapshot,
@@ -11,17 +15,17 @@ import {
   flatSteps,
   getSpaceSpec,
   sourceTextFor,
-  SPACE_SUPPORT_ASSET_TYPES,
 } from "@/lab/data/space/catalog";
-import { considerationsFor } from "@/lab/data/space/considerations";
 import {
   refFromLegacySrc,
   resolveStepImage,
+  resolvedAssetCode,
   suggestStepImage,
 } from "@/features/space/step-image";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 import type {
   LabStepImageRef,
+  LabSupportAssetConfig,
   LabSupportAssetType,
   LabThisTimeSelection,
 } from "@/lab/slice/types";
