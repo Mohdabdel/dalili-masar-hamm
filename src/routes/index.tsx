@@ -5,8 +5,12 @@ import {
   Sparkles,
   ListChecks,
   Library,
+  PenLine,
+  BadgeCheck,
+  LogIn,
 } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
+import { useFamilySpaceStatus } from "@/features/space/home-status";
 import {
   Accordion,
   AccordionContent,
