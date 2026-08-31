@@ -70,8 +70,8 @@ const INFO_TABS = [
 
 const DISCOVERY_PATHS = [
   {
-    title: "مساحة مشاركة الأسرة",
-    description: "جهّزوا بطاقة مشاركة بلغتكم وصوركم، واعتمدوها كنسخة ثابتة محفوظة.",
+    title: "مساحة عمل الأسرة",
+    description: "اختاروا فرصة مشاركة، جهّزوا بطاقتها بلغتكم وصوركم، ثم اعتمدوها كنسخة ثابتة محفوظة.",
     icon: Sparkles,
     to: "/space" as const,
   },
@@ -94,6 +94,8 @@ const DISCOVERY_PATHS = [
     to: "/activities/browse" as const,
   },
 ];
+
+const JOURNEY_STEPS = ["اختيار", "تجهيز", "تركيب", "معاينة", "اعتماد"] as const;
 
 function LandingPage() {
   return (
