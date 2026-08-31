@@ -1,0 +1,1 @@
+ALTER TABLE public.family_support_assets ADD COLUMN IF NOT EXISTS config jsonb NOT NULL DEFAULT '{}'::jsonb;
