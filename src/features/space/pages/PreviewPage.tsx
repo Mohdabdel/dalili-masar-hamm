@@ -35,6 +35,18 @@ export function PreviewPage({ specId }: { specId: string }) {
 
   const rows = useMemo(() => (spec ? composeDraft(spec, selection) : []), [spec, selection]);
 
+  // خطوة صالحة للاعتماد: تعرض صورة، أو نصاً غير فارغ. الخطوة الفارغة لا تُعتمد.
+  const validRows = useMemo(
+    () =>
+      rows.filter(
+        (r) =>
+          (r.imageVisible && Boolean(r.image.src)) ||
+          (r.textVisible && r.familyText.trim().length > 0),
+      ),
+    [rows],
+  );
+  const blankRows = rows.length - validRows.length;
+
   if (!spec) {
     return (
       <LabPage title="هذه المشاركة غير متاحة">
@@ -52,11 +64,11 @@ export function PreviewPage({ specId }: { specId: string }) {
   }));
 
   const approve = () => {
-    if (rows.length === 0) return;
+    if (validRows.length === 0) return;
     const snapshot = buildFrozenSnapshot({
       spec,
       selection,
-      rows,
+      rows: validRows.map((r, i) => ({ ...r, order: i + 1 })),
       version: versions.length + 1,
       label_ar: label.trim() || `${spec.title_ar} — بطاقة ${versions.length + 1}`,
       date,
@@ -130,6 +142,19 @@ export function PreviewPage({ specId }: { specId: string }) {
         </div>
       </LabSection>
 
+      {blankRows > 0 && (
+        <LabNote>
+          {blankRows === 1
+            ? "خطوة واحدة بلا صورة ولا عبارة ظاهرة — لن تدخل البطاقة المعتمدة."
+            : `${blankRows} خطوات بلا صورة ولا عبارة ظاهرة — لن تدخل البطاقة المعتمدة.`}{" "}
+          أعيدوا إظهار الصورة أو اكتبوا عبارة قبل الاعتماد.
+        </LabNote>
+      )}
+
+      {validRows.length === 0 && rows.length > 0 && (
+        <LabNote>لا توجد خطوة واحدة قابلة للعرض — الاعتماد غير متاح الآن.</LabNote>
+      )}
+
       {latest && (
         <LabNote>
           لديكم بطاقة معتمدة حالياً: «{latest.title_ar}». اعتماد هذه المعاينة يضيف بطاقة جديدة، ولا
@@ -138,7 +163,7 @@ export function PreviewPage({ specId }: { specId: string }) {
       )}
 
       <div className="flex flex-wrap items-center gap-3">
-        <LabButton onClick={approve} disabled={rows.length === 0}>
+        <LabButton onClick={approve} disabled={validRows.length === 0}>
           اعتماد بطاقة المشاركة
         </LabButton>
         <LabLinkButton

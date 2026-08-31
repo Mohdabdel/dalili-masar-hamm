@@ -70,6 +70,10 @@ export type SliceAction =
 
   | { type: "support.add"; value: LabSupportAsset }
   | { type: "support.remove"; id: string }
+  /** تصحيح رقم النسخة بعد الحفظ الفعلي (المصدر النهائي لرقم النسخة هو قاعدة البيانات). */
+  | { type: "snapshot.version"; snapshotId: string; version: number }
+  /** تراجع محلي عن اعتماد لم يُحفظ فعلياً. */
+  | { type: "snapshot.revert"; snapshotId: string }
   | { type: "reset" };
 
 export function sliceReducer(state: SliceState, action: SliceAction): SliceState {
@@ -148,6 +152,18 @@ export function sliceReducer(state: SliceState, action: SliceAction): SliceState
     case "snapshot":
       // البطاقات السابقة تبقى كما هي؛ الاعتماد الجديد يضيف نسخة أعلى فقط.
       return { ...state, snapshots: [...state.snapshots, action.value] };
+    case "snapshot.version":
+      return {
+        ...state,
+        snapshots: state.snapshots.map((s) =>
+          s.id === action.snapshotId ? { ...s, version: action.version } : s,
+        ),
+      };
+    case "snapshot.revert":
+      return {
+        ...state,
+        snapshots: state.snapshots.filter((s) => s.id !== action.snapshotId),
+      };
     case "feedback":
       return { ...state, feedback: [action.value, ...state.feedback] };
     case "lifecycle":

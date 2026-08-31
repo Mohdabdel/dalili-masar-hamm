@@ -2,6 +2,7 @@
 // مع RLS وملكية المستخدم. لا sessionStorage ولا بيانات مؤقتة.
 
 import { useCallback, useEffect, useMemo, useReducer, useRef, type ReactNode } from "react";
+import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import {
   SliceCtx,
@@ -29,6 +30,14 @@ const log = (context: string) => (error: unknown) => {
   if (error) console.error(`[space:${context}]`, error);
 };
 
+/** فشل حفظ لا يُبتلع: الأسرة تُخبَر أن التعديل لم يُحفظ. */
+const failed = (context: string, message: string) => (error: unknown) => {
+  if (!error) return false;
+  log(context)(error);
+  toast.error(message);
+  return true;
+};
+
 interface Refs {
   /** specId → active_participations.id */
   participationBySpec: Record<string, string>;
@@ -39,29 +48,92 @@ interface Refs {
   routineId: string | null;
 }
 
+async function findParticipation(specId: string): Promise<string | null> {
+  const { data } = await supabase
+    .from("active_participations")
+    .select("id")
+    .eq("opportunity_id", specId)
+    .order("created_at", { ascending: true })
+    .limit(1)
+    .maybeSingle();
+  return data?.id ?? null;
+}
+
+/**
+ * مشاركة أسرية واحدة لكل فرصة — لا تكرار.
+ * البحث أولاً، ثم الإنشاء، ثم البحث مجدداً عند تعارض الفهرس الفريد.
+ */
 async function ensureParticipation(
   refs: Refs,
   specId: string,
   eventId?: string,
 ): Promise<string | null> {
-  const existing = refs.participationBySpec[specId];
-  if (existing) return existing;
+  const cached = refs.participationBySpec[specId];
+  if (cached) return cached;
+
+  const found = await findParticipation(specId);
+  if (found) {
+    refs.participationBySpec[specId] = found;
+    await linkParticipationToStation(refs, found, eventId);
+    return found;
+  }
+
+  const stationId = eventId ? (refs.stationRowByEvent[eventId] ?? null) : null;
   const { data, error } = await supabase
     .from("active_participations")
     .insert({
       opportunity_id: specId,
       daily_event_id: eventId ?? null,
+      routine_station_id: stationId,
       source: "family_workspace",
       status: "active",
     })
     .select("id")
     .single();
+
   if (error || !data) {
+    // تعارض الفهرس الفريد يعني أن المشاركة موجودة فعلاً — نستعيدها بدل إنشاء نسخة ثانية.
+    const retry = await findParticipation(specId);
+    if (retry) {
+      refs.participationBySpec[specId] = retry;
+      await linkParticipationToStation(refs, retry, eventId);
+      return retry;
+    }
     log("ensureParticipation")(error);
+    toast.error("تعذّر فتح مشاركة الأسرة — حاولوا مرة أخرى");
     return null;
   }
   refs.participationBySpec[specId] = data.id;
+  await linkParticipationToStation(refs, data.id, eventId);
   return data.id;
+}
+
+/** ربط المشاركة بمحطة الروتين — صف واحد فقط لكل (مشاركة، محطة). */
+async function linkParticipationToStation(
+  refs: Refs,
+  participationId: string,
+  eventId?: string,
+): Promise<void> {
+  if (!eventId) return;
+  const stationId = refs.stationRowByEvent[eventId];
+  if (!stationId) return;
+  const { data: existing } = await supabase
+    .from("participation_station_links")
+    .select("id")
+    .eq("family_participation_id", participationId)
+    .eq("routine_station_id", stationId)
+    .maybeSingle();
+  if (existing) return;
+  const { error } = await supabase.from("participation_station_links").insert({
+    family_participation_id: participationId,
+    routine_station_id: stationId,
+  });
+  log("stationLink")(error);
+  await supabase
+    .from("active_participations")
+    .update({ routine_station_id: stationId })
+    .eq("id", participationId)
+    .is("routine_station_id", null);
 }
 
 async function ensureRoutineId(refs: Refs): Promise<string | null> {
@@ -216,7 +288,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
             { spec_id: sel.specId, selection: sel as any },
             { onConflict: "user_id,spec_id" },
           )
-          .then(({ error }) => log("draft")(error));
+          .then(({ error }) => failed("draft", "تعذّر حفظ التعديل")(error));
         break;
       }
       case "snapshot": {
@@ -226,15 +298,51 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           snap.participationSpecId,
           snap.eventId,
         );
-        if (!participationId) return;
-        const { error } = await supabase.from("participation_snapshots").insert({
-          id: snap.id,
-          family_participation_id: participationId,
-          version_number: snap.version,
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          snapshot_data: snap as any,
-        });
-        log("snapshot")(error);
+        if (!participationId) {
+          rawDispatch({ type: "snapshot.revert", snapshotId: snap.id });
+          return;
+        }
+
+        // رقم النسخة يُحسم من قاعدة البيانات لا من الحالة المحلية (تبويبان أو نقر مزدوج).
+        const nextVersion = async () => {
+          const { data } = await supabase
+            .from("participation_snapshots")
+            .select("version_number")
+            .eq("family_participation_id", participationId)
+            .order("version_number", { ascending: false })
+            .limit(1)
+            .maybeSingle();
+          return (data?.version_number ?? 0) + 1;
+        };
+
+        let version = await nextVersion();
+        let lastError: unknown = null;
+        for (let attempt = 0; attempt < 3; attempt += 1) {
+          const { error } = await supabase.from("participation_snapshots").insert({
+            id: snap.id,
+            family_participation_id: participationId,
+            version_number: version,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            snapshot_data: { ...snap, version } as any,
+          });
+          if (!error) {
+            lastError = null;
+            break;
+          }
+          lastError = error;
+          version = await nextVersion();
+        }
+
+        if (lastError) {
+          log("snapshot")(lastError);
+          toast.error("تعذّر اعتماد البطاقة — لم تُحفظ بعد");
+          rawDispatch({ type: "snapshot.revert", snapshotId: snap.id });
+          return;
+        }
+
+        if (version !== snap.version) {
+          rawDispatch({ type: "snapshot.version", snapshotId: snap.id, version });
+        }
         r.participationBySnapshot[snap.id] = participationId;
         break;
       }
@@ -263,7 +371,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           family_participation_id: participationId,
           snapshot_id: action.snapshotId,
         });
-        log("runStart")(error);
+        failed("runStart", "تعذّر بدء هذه المرة")(error);
         break;
       }
       case "run.end": {
@@ -273,7 +381,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           .update({ ended_at: new Date().toISOString() })
           .eq("id", action.runId)
           .is("ended_at", null);
-        log("runEnd")(error);
+        failed("runEnd", "تعذّر إغلاق هذه المرة")(error);
         break;
       }
       case "participation.close":
@@ -288,7 +396,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
             closed_at: closing ? new Date().toISOString() : null,
           })
           .eq("id", participationId);
-        log("participationState")(error);
+        failed("participationState", "تعذّر تحديث حالة المشاركة")(error);
         break;
       }
 
@@ -301,7 +409,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           },
           { onConflict: "user_id,snapshot_id" },
         );
-        log("cardState")(error);
+        failed("cardState", "تعذّر تحديث حالة البطاقة")(error);
         break;
       }
       case "feedback": {
@@ -311,7 +419,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           tone: action.value.tone,
           reasons: action.value.reasons,
         });
-        log("feedback")(error);
+        failed("feedback", "تعذّر حفظ الانطباع")(error);
         break;
       }
       case "lifecycle": {
@@ -321,7 +429,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           .from("active_participations")
           .update({ lifecycle_choice: action.value })
           .eq("id", participationId);
-        log("lifecycle")(error);
+        failed("lifecycle", "تعذّر حفظ اختياركم")(error);
         break;
       }
       case "support.add": {
@@ -335,7 +443,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           config: (a.config ?? {}) as any,
         });
-        log("supportAdd")(error);
+        failed("supportAdd", "تعذّر حفظ وسيلة الدعم")(error);
         break;
       }
       case "support.remove": {
@@ -343,7 +451,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           .from("family_support_assets")
           .delete()
           .eq("id", action.id);
-        log("supportRemove")(error);
+        failed("supportRemove", "تعذّر حذف وسيلة الدعم")(error);
         break;
       }
       case "station.add": {
@@ -354,7 +462,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
             routineId,
             dailyEventId: action.eventId,
             partOfDay: "morning",
-            position: Object.keys(r.stationRowByEvent).length,
+            position: (await getStations(routineId)).length,
           });
           const stations = await getStations(routineId);
           for (const s of stations) r.stationRowByEvent[s.daily_event_id] = s.id;
