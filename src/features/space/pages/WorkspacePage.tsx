@@ -9,7 +9,6 @@ import {
   blockOrderFor,
   buildDraftSelection,
   buildSpaceSnapshot,
-  familyTextFor,
   findSpaceStep,
   flatSteps,
   getSpaceSpec,
