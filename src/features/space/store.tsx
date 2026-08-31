@@ -101,14 +101,39 @@ export function sliceReducer(state: SliceState, action: SliceAction): SliceState
       };
     case "card.reopen":
       return { ...state, closedCards: state.closedCards.filter((id) => id !== action.snapshotId) };
-    case "run":
+    case "run.start": {
+      if (state.runs.some((r) => r.id === action.runId)) return state;
+      const now = new Date().toISOString();
       return {
         ...state,
         runs: [
-          { snapshotId: action.snapshotId, date: new Date().toISOString().slice(0, 10) },
+          {
+            id: action.runId,
+            snapshotId: action.snapshotId,
+            date: now.slice(0, 10),
+            startedAt: now,
+          },
           ...state.runs,
         ],
       };
+    }
+    case "run.end":
+      return {
+        ...state,
+        runs: state.runs.map((r) =>
+          r.id === action.runId && !r.endedAt ? { ...r, endedAt: new Date().toISOString() } : r,
+        ),
+      };
+    case "participation.close":
+      return {
+        ...state,
+        closedSpecs: state.closedSpecs.includes(action.specId)
+          ? state.closedSpecs
+          : [...state.closedSpecs, action.specId],
+      };
+    case "participation.reopen":
+      return { ...state, closedSpecs: state.closedSpecs.filter((id) => id !== action.specId) };
+
     case "support.add":
       return { ...state, supportAssets: [action.value, ...state.supportAssets] };
     case "support.remove":
