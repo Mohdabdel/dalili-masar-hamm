@@ -73,6 +73,15 @@ export interface LabThisTimeSelection {
   presentationByStepId?: Record<string, StepPresentationMode>;
   /** ترتيب الصورة والجملة داخل بطاقة الخطوة. */
   blockOrderByStepId?: Record<string, StepBlockOrder>;
+  /** مرجع صورة كل خطوة: مصدر ← مشتق. مستقل تماماً عن نص الأسرة. */
+  imageRefByStepId?: Record<string, LabStepImageRef | null>;
+  /** ظهور الصورة لكل خطوة — مستقل عن ظهور النص. */
+  imageVisibleByStepId?: Record<string, boolean>;
+  /** ظهور العبارة لكل خطوة — مستقل عن الصورة. */
+  textVisibleByStepId?: Record<string, boolean>;
+  /** نبدأ من / نتوقف عند كما اختارتهما الأسرة. */
+  startStepId?: string;
+  endStepId?: string;
   /** بدأنا من مسودة مولّدة تلقائيًا؟ */
   drafted?: boolean;
 }
