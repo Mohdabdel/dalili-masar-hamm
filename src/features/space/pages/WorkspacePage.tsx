@@ -1,9 +1,13 @@
 import { useMemo, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { LabPage, LabSection, LabNote, LabButton, LabLinkButton } from "@/lab/components/lab-ui";
-import { SpaceDrawer } from "@/lab/components/space/SpaceDrawer";
 import { StepBlocks, type ComposerItem } from "@/lab/components/space/FamilyComposer";
 import { StepComposer, type ComposerStepRow } from "@/features/space/components/StepComposer";
+import { ConsiderationsPanel } from "@/features/space/components/ConsiderationsPanel";
+import {
+  SupportGenerator,
+  type SupportSourceRow,
+} from "@/features/space/components/SupportGenerator";
 import {
   buildDraftSelection,
   buildSpaceSnapshot,
@@ -11,17 +15,17 @@ import {
   flatSteps,
   getSpaceSpec,
   sourceTextFor,
-  SPACE_SUPPORT_ASSET_TYPES,
 } from "@/lab/data/space/catalog";
-import { considerationsFor } from "@/lab/data/space/considerations";
 import {
   refFromLegacySrc,
   resolveStepImage,
+  resolvedAssetCode,
   suggestStepImage,
 } from "@/features/space/step-image";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 import type {
   LabStepImageRef,
+  LabSupportAssetConfig,
   LabSupportAssetType,
   LabThisTimeSelection,
 } from "@/lab/slice/types";
@@ -38,7 +42,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
   const assets = supportAssetsFor(specId);
   const [label, setLabel] = useState("");
   const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10));
-  const [drawer, setDrawer] = useState<null | "considerations">(null);
+  
 
   // المسودة الفعلية تُحسب في نفس دورة العرض الأولى:
   // إمّا مسودة الأسرة المحفوظة، أو المسودة المرجعية الجاهزة — بلا استبدال بعد التركيب.
@@ -215,16 +219,40 @@ export function WorkspacePage({ specId }: { specId: string }) {
     .filter((l) => !orderedIds.includes(l.step.id))
     .map((l) => ({ stepId: l.step.id, label: l.step.instruction_family_ar }));
 
-  const addSupportAsset = (type: LabSupportAssetType, labelAr: string) => {
+  /** اعتبار تحتفظ به الأسرة مع هذه المشاركة — اختياري ولا يظهر للمشارك. */
+  const toggleConsideration = (id: string, next: boolean) => {
+    const current = selection.considerationIds ?? [];
+    setSelection({
+      considerationIds: next ? [...new Set([...current, id])] : current.filter((c) => c !== id),
+    });
+  };
+
+  /** مصدر توليد الوسائل: الخطوات الباقية في مسودّتنا بعباراتها وصورها. */
+  const supportRows: SupportSourceRow[] = rows
+    .filter((r) => r.textVisible || r.imageVisible)
+    .map((r) => ({
+      stepId: r.stepId,
+      text: r.textVisible ? r.familyText : "",
+      assetCode: r.imageVisible ? resolvedAssetCode(imageRefFor(r.stepId)) : null,
+      src: r.imageVisible ? r.image.src : null,
+    }));
+
+  const addSupportAsset = (input: {
+    type: LabSupportAssetType;
+    label: string;
+    items: string[];
+    config: LabSupportAssetConfig;
+  }) => {
     dispatch({
       type: "support.add",
       value: {
-        id: `sup-${type}-${Date.now()}`,
-        type,
-        label_ar: `${labelAr} — ${spec.title_ar}`,
+        id: crypto.randomUUID(),
+        type: input.type,
+        label_ar: `${input.label} — ${spec.title_ar}`,
         specId,
         createdAt: new Date().toISOString().slice(0, 10),
-        items: rows.map((r) => r.familyText),
+        items: input.items,
+        config: input.config,
       },
     });
   };
@@ -372,31 +400,20 @@ export function WorkspacePage({ specId }: { specId: string }) {
         </div>
       </details>
 
-      <div className="mt-2 flex flex-wrap gap-2">
-        <LabButton variant="ghost" onClick={() => setDrawer("considerations")}>
-          اعتبارات المشاركة
-        </LabButton>
-        <LabLinkButton to="/tools" variant="ghost">
-          أدوات المساندة
-        </LabLinkButton>
-      </div>
+      <ConsiderationsPanel
+        spec={spec}
+        texts={rows.map((r) => r.familyText)}
+        stepCount={rows.length}
+        selectedIds={selection.considerationIds ?? []}
+        onToggle={toggleConsideration}
+      />
 
       <details className="rounded-2xl border border-border bg-card p-3">
         <summary className="cursor-pointer text-sm font-bold">
           هل هناك شيء قد يجعل المشاركة أسهل؟
         </summary>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {SPACE_SUPPORT_ASSET_TYPES.map((t) => (
-            <button
-              key={t.type}
-              type="button"
-              title={t.hint}
-              onClick={() => addSupportAsset(t.type, t.label)}
-              className="min-h-11 rounded-xl border border-border bg-card px-4 text-sm font-bold hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              {t.label}
-            </button>
-          ))}
+        <div className="mt-3">
+          <SupportGenerator rows={supportRows} onGenerate={addSupportAsset} />
         </div>
         {assets.length > 0 && (
           <ul className="mt-3 space-y-2">
@@ -424,23 +441,11 @@ export function WorkspacePage({ specId }: { specId: string }) {
         )}
       </details>
 
-      {drawer === "considerations" && (
-        <SpaceDrawer title="اعتبارات المشاركة" onClose={() => setDrawer(null)}>
-          <p className="mb-3 text-sm text-muted-foreground">
-            أشياء بسيطة قد تساعد قبل المشاركة وأثناءها. للأسرة فقط، ولا تظهر للمشارك.
-          </p>
-          {considerationsFor(spec, selection.supportTools, rows.length).map((block) => (
-            <section key={block.title} className="mb-4">
-              <h3 className="mb-1 text-base font-bold text-foreground">{block.title}</h3>
-              <ul className="list-disc space-y-1 pe-5 text-sm leading-relaxed text-muted-foreground">
-                {block.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </section>
-          ))}
-        </SpaceDrawer>
-      )}
+      <div className="mt-2">
+        <LabLinkButton to="/tools" variant="ghost">
+          أدوات المساندة
+        </LabLinkButton>
+      </div>
     </LabPage>
   );
 }

@@ -108,6 +108,7 @@ export type Database = {
       }
       family_support_assets: {
         Row: {
+          config: Json
           created_at: string
           id: string
           items: Json
@@ -119,6 +120,7 @@ export type Database = {
           user_id: string
         }
         Insert: {
+          config?: Json
           created_at?: string
           id?: string
           items?: Json
@@ -130,6 +132,7 @@ export type Database = {
           user_id?: string
         }
         Update: {
+          config?: Json
           created_at?: string
           id?: string
           items?: Json
