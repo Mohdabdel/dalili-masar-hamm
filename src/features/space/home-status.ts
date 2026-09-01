@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { resolveSession } from "@/lib/auth-session";
 import { getSpaceSpec } from "@/lab/data/space/catalog";
 import type { LabCardSnapshot } from "@/lab/slice/types";
 
