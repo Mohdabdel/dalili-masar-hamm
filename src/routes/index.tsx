@@ -210,7 +210,7 @@ function InfoTabs() {
               type="button"
               role="tab"
               aria-selected={on}
-              onClick={() => setActive(item.id)}
+              onClick={() => setActive(on ? null : item.id)}
               className={cn(
                 "min-h-[44px] rounded-xl border px-2 text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                 on
@@ -223,29 +223,31 @@ function InfoTabs() {
           );
         })}
       </div>
-      <div
-        role="tabpanel"
-        className="mt-2 rounded-xl border border-primary-foreground/20 bg-primary-foreground/10 p-3"
-      >
-        {current.body.map((p) => (
-          <p
-            key={p}
-            className="mt-1 text-sm leading-relaxed text-primary-foreground/80"
-          >
-            {p}
-          </p>
-        ))}
-        {current.link && (
-          <Link
-            to="/participation-guide"
-            search={{ tab: "guide" as const }}
-            className="mt-3 inline-flex min-h-11 items-center gap-1 text-sm font-bold text-gold"
-          >
-            افتحوا دليل المشاركة
-            <ChevronLeft className="h-4 w-4" aria-hidden />
-          </Link>
-        )}
-      </div>
+      {current && (
+        <div
+          role="tabpanel"
+          className="mt-2 rounded-xl border border-primary-foreground/20 bg-primary-foreground/10 p-3"
+        >
+          {current.body.map((p) => (
+            <p
+              key={p}
+              className="mt-1 text-sm leading-relaxed text-primary-foreground/80"
+            >
+              {p}
+            </p>
+          ))}
+          {current.link && (
+            <Link
+              to="/participation-guide"
+              search={{ tab: "guide" as const }}
+              className="mt-3 inline-flex min-h-11 items-center gap-1 text-sm font-bold text-gold"
+            >
+              افتحوا دليل المشاركة
+              <ChevronLeft className="h-4 w-4" aria-hidden />
+            </Link>
+          )}
+        </div>
+      )}
     </div>
   );
 }
