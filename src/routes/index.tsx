@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ChevronLeft,
@@ -11,12 +12,7 @@ import {
 } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { useFamilySpaceStatus } from "@/features/space/home-status";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -195,46 +191,71 @@ function FamilySpaceSection() {
   );
 }
 
+function InfoTabs() {
+  const [active, setActive] = useState(INFO_TABS[0]!.id);
+  const current = INFO_TABS.find((t) => t.id === active) ?? INFO_TABS[0]!;
+
+  return (
+    <div>
+      <div
+        role="tablist"
+        aria-label="تعرّف على دليلي"
+        className="grid grid-cols-3 gap-1.5"
+      >
+        {INFO_TABS.map((item) => {
+          const on = item.id === active;
+          return (
+            <button
+              key={item.id}
+              type="button"
+              role="tab"
+              aria-selected={on}
+              onClick={() => setActive(item.id)}
+              className={cn(
+                "min-h-[44px] rounded-xl border px-2 text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                on
+                  ? "border-gold bg-gold/15 text-gold"
+                  : "border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground/80 hover:text-primary-foreground",
+              )}
+            >
+              {item.title}
+            </button>
+          );
+        })}
+      </div>
+      <div
+        role="tabpanel"
+        className="mt-2 rounded-xl border border-primary-foreground/20 bg-primary-foreground/10 p-3"
+      >
+        {current.body.map((p) => (
+          <p
+            key={p}
+            className="mt-1 text-sm leading-relaxed text-primary-foreground/80"
+          >
+            {p}
+          </p>
+        ))}
+        {current.link && (
+          <Link
+            to="/participation-guide"
+            search={{ tab: "guide" as const }}
+            className="mt-3 inline-flex min-h-11 items-center gap-1 text-sm font-bold text-gold"
+          >
+            افتحوا دليل المشاركة
+            <ChevronLeft className="h-4 w-4" aria-hidden />
+          </Link>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function LandingPage() {
   return (
     <PageShell
       title="دليلي"
       description="مساحة مشاركات الأسرة داخل الحياة اليومية"
-      headerExtra={
-        <Accordion type="single" collapsible className="space-y-2">
-          {INFO_TABS.map((item) => (
-            <AccordionItem
-              key={item.id}
-              value={item.id}
-              className="overflow-hidden rounded-xl border border-primary-foreground/20 bg-primary-foreground/10 px-3"
-            >
-              <AccordionTrigger className="py-2.5 text-sm font-bold text-primary-foreground hover:no-underline">
-                {item.title}
-              </AccordionTrigger>
-              <AccordionContent className="pb-3">
-                {item.body.map((p) => (
-                  <p
-                    key={p}
-                    className="mt-1 text-sm leading-relaxed text-primary-foreground/80"
-                  >
-                    {p}
-                  </p>
-                ))}
-                {item.link && (
-                  <Link
-                    to="/participation-guide"
-                    search={{ tab: "guide" as const }}
-                    className="mt-3 inline-flex min-h-11 items-center gap-1 text-sm font-bold text-gold"
-                  >
-                    افتحوا دليل المشاركة
-                    <ChevronLeft className="h-4 w-4" aria-hidden />
-                  </Link>
-                )}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      }
+      headerExtra={<InfoTabs />}
     >
       {/* مقدمة مختصرة */}
       <section className="mt-1 rounded-2xl border border-border bg-card p-5 shadow-card-soft">
