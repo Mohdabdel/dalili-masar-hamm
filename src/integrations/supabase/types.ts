@@ -396,6 +396,7 @@ export type Database = {
           id: string
           log_date: string
           reasons: Json
+          run_id: string | null
           snapshot_id: string
           tone: string
           user_id: string
@@ -405,6 +406,7 @@ export type Database = {
           id?: string
           log_date?: string
           reasons?: Json
+          run_id?: string | null
           snapshot_id: string
           tone: string
           user_id?: string
@@ -414,11 +416,19 @@ export type Database = {
           id?: string
           log_date?: string
           reasons?: Json
+          run_id?: string | null
           snapshot_id?: string
           tone?: string
           user_id?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "participation_feedback_run_id_fkey"
+            columns: ["run_id"]
+            isOneToOne: false
+            referencedRelation: "participation_runs"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "participation_feedback_snapshot_id_fkey"
             columns: ["snapshot_id"]
