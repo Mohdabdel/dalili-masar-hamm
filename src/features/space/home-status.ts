@@ -38,12 +38,25 @@ function specTitle(specId: string, fallback?: string): string {
 export function useFamilySpaceStatus(): FamilySpaceStatus {
   const [status, setStatus] = useState<FamilySpaceStatus>(EMPTY);
 
+  const [authTick, setAuthTick] = useState(0);
+
+  // إعادة القراءة عند تغيّر الهوية فقط (دخول/خروج/تحديث مستخدم).
+  useEffect(() => {
+    const { data } = supabase.auth.onAuthStateChange((event) => {
+      if (event === "SIGNED_IN" || event === "SIGNED_OUT" || event === "USER_UPDATED") {
+        setAuthTick((t) => t + 1);
+      }
+    });
+    return () => data.subscription.unsubscribe();
+  }, []);
+
   useEffect(() => {
     let cancelled = false;
 
     (async () => {
-      const { data: auth } = await supabase.auth.getUser();
-      if (!auth.user) {
+      // لا قراءة مملوكة للمستخدم قبل حسم الجلسة.
+      const session = await resolveSession();
+      if (!session) {
         if (!cancelled) setStatus({ ...EMPTY, loading: false });
         return;
       }
