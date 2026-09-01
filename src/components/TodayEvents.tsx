@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
@@ -226,9 +227,9 @@ export function TodayEvents({ level }: { level?: ParticipationLevelKey } = {}) {
             <SheetTitle className="text-right text-lg font-bold">
               {openEvent?.event.name}
             </SheetTitle>
-            <p className="text-xs text-muted-foreground">
+            <SheetDescription className="text-right text-xs text-muted-foreground">
               اختر فرصة مشاركة لبدء التنفيذ خطوة بخطوة.
-            </p>
+            </SheetDescription>
           </SheetHeader>
           <ul className="space-y-2 px-5 pb-6">
             {openEvent?.event.opportunities.map((op) => (

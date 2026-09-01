@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import {
   Accordion,
   AccordionContent,
@@ -99,9 +99,9 @@ export function ServiceCard({ open, onOpenChange, data, onNext }: ServiceCardPro
           <SheetTitle className="text-right text-xl font-bold leading-snug">
             {data.title}
           </SheetTitle>
-          <p className="text-[12px] text-muted-foreground">
+          <SheetDescription className="text-right text-[12px] text-muted-foreground">
             فرصة الاستفادة: <span className="font-semibold text-foreground">{data.opportunity}</span>
-          </p>
+          </SheetDescription>
         </SheetHeader>
 
         <div className="space-y-4 px-5 pb-6">

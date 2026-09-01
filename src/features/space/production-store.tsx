@@ -4,6 +4,7 @@
 import { useCallback, useEffect, useMemo, useReducer, useRef, type ReactNode } from "react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { resolveSession } from "@/lib/auth-session";
 import {
   SliceCtx,
   initialSliceState,
@@ -166,8 +167,9 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
     let cancelled = false;
 
     (async () => {
-      const { data: auth } = await supabase.auth.getUser();
-      if (!auth.user) return;
+      // لا قراءة مملوكة للمستخدم قبل حسم الجلسة (يمنع 401 عند إعادة التحميل).
+      const session = await resolveSession();
+      if (!session) return;
 
       const [participations, snapshots, drafts, cardStates, runs, feedback, assets] =
         await Promise.all([

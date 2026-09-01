@@ -128,7 +128,7 @@ function HelpMeChoosePage() {
         <div className="flex items-center gap-3 rounded-2xl border border-border/70 bg-secondary p-4">
           <Sparkles className="h-5 w-5 shrink-0 text-gold" />
           <p className="text-sm font-semibold text-foreground/90">
-            الخطوة {step} من 4
+            {step <= 3 ? `الخطوة ${step} من 3` : "نتيجة اختياراتكم الثلاثة"}
           </p>
           {step > 1 && (
             <button

@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import {
   Accordion,
   AccordionContent,
@@ -63,6 +63,9 @@ export function DetailSheet({
           <SheetTitle className="text-right text-xl font-bold leading-snug text-foreground">
             {title}
           </SheetTitle>
+          <SheetDescription className="text-right text-sm leading-relaxed text-muted-foreground">
+            {headline ?? "تفاصيل هذا العنصر داخل دليلي."}
+          </SheetDescription>
         </SheetHeader>
 
         <div className="space-y-5 px-5 pb-8">
