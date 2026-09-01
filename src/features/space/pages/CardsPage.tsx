@@ -20,6 +20,10 @@ export function CardsPage({ specId }: { specId: string }) {
   const snapshots = [...snapshotsFor(specId)].sort((a, b) => b.version - a.version);
   const participationClosed = state.closedSpecs.includes(specId);
   const specRuns = state.runs.filter((r) => snapshots.some((s) => s.id === r.snapshotId));
+  // مشاركة مكتملة = مرّة انتهت فعلاً (endedAt). المرات المفتوحة/الموروثة تبقى
+  // محفوظة في السجل ولا تُحتسب مشاركة مكتملة بلا دليل.
+  const completedSpecRuns = specRuns.filter((r) => r.endedAt);
+  const openSpecRuns = specRuns.length - completedSpecRuns.length;
 
   if (!spec) {
     return (
@@ -143,10 +147,21 @@ export function CardsPage({ specId }: { specId: string }) {
       >
         {specRuns.length === 0 ? (
           <LabNote>لم تُفتح بطاقة هذه المشاركة للتنفيذ بعد.</LabNote>
+        ) : completedSpecRuns.length === 0 ? (
+          <LabNote>
+            لا توجد مرة مكتملة بعد. هناك {openSpecRuns} مرة فُتحت ولم تُختم بـ«انتهينا».
+          </LabNote>
         ) : (
-          <p className="text-base font-semibold">
-            شاركنا {specRuns.length} مرة — آخر مرة: {specRuns[0]?.date}
-          </p>
+          <>
+            <p className="text-base font-semibold">
+              شاركنا {completedSpecRuns.length} مرة — آخر مرة: {completedSpecRuns[0]?.date}
+            </p>
+            {openSpecRuns > 0 && (
+              <p className="mt-1 text-sm text-muted-foreground">
+                وهناك {openSpecRuns} مرة فُتحت ولم تُختم بـ«انتهينا» — محفوظة في السجل دون احتسابها.
+              </p>
+            )}
+          </>
         )}
       </LabSection>
 
@@ -198,7 +213,9 @@ function SnapshotHistory({
     <div className="mb-3 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
       <History className="h-4 w-4" aria-hidden />
       <span>
-        استُخدمت {runs.length} مرة — آخرها {runs[0]?.date}
+        {runs.filter((r) => r.endedAt).length > 0
+          ? `استُخدمت ${runs.filter((r) => r.endedAt).length} مرة — آخرها ${runs.filter((r) => r.endedAt)[0]?.date}`
+          : `فُتحت ${runs.length} مرة دون ختام «انتهينا»`}
       </span>
     </div>
   );

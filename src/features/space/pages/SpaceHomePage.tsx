@@ -44,8 +44,13 @@ export function SpaceHomePage() {
     });
   }, [state.snapshots, state.closedCards]);
 
-  const activeBlocks = blocks.filter((b) => b.open.length > 0);
-  const pastBlocks = blocks.filter((b) => b.closed.length > 0);
+  // المشاركة الأسرية المغلقة لا تُحتسب ضمن المشاركات الفعالة، حتى لو بقيت بطاقاتها مفتوحة.
+  const activeBlocks = blocks.filter(
+    (b) => b.open.length > 0 && !state.closedSpecs.includes(b.specId),
+  );
+  const pastBlocks = blocks.filter(
+    (b) => b.closed.length > 0 || state.closedSpecs.includes(b.specId),
+  );
   const started = state.snapshots.length > 0;
 
   return (
@@ -195,7 +200,10 @@ export function SpaceHomePage() {
               label="بطاقات مفتوحة"
               value={state.snapshots.filter((s) => !state.closedCards.includes(s.id)).length}
             />
-            <SummaryRow label="مشاركات نُفّذت" value={state.runs.length} />
+            <SummaryRow
+              label="مشاركات نُفّذت"
+              value={state.runs.filter((r) => r.endedAt).length}
+            />
             <SummaryRow label="محطاتنا المضافة" value={state.stations.length} />
           </dl>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
