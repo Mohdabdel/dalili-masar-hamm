@@ -103,7 +103,7 @@ export function useFamilySpaceStatus(): FamilySpaceStatus {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [authTick]);
 
   return status;
 }
