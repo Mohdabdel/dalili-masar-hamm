@@ -2,7 +2,7 @@
 // المصدر الوحيد: النسخة المعتمدة المجمّدة (Frozen Snapshot).
 // خطوة واحدة في كل شاشة، بلا أي بيانات إدارة أسرية، وتنتهي بـ«انتهينا».
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { ChevronRight, ChevronLeft, CheckCircle2 } from "lucide-react";
 import { StepFrame } from "@/lab/components/StepFrame";
@@ -27,11 +27,15 @@ export function LearnerPage({ snapshotId }: { snapshotId: string }) {
       : `run-${Date.now()}`,
   );
 
+  // مرة واحدة فقط لكل فتح تنفيذ — حارس ثابت لا يتأثر بإعادة تنفيذ الـeffects.
+  const startedRunRef = useRef<string | null>(null);
   useEffect(() => {
-    if (snap) dispatch({ type: "run.start", runId, snapshotId });
-    // تسجيل مرة واحدة لكل فتح تنفيذ
+    if (!snap) return;
+    if (startedRunRef.current === runId) return;
+    startedRunRef.current = runId;
+    dispatch({ type: "run.start", runId, snapshotId });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [snapshotId]);
+  }, [snapshotId, Boolean(snap)]);
 
   // الإطارات كما جُمّدت وقت الاعتماد — بلا أي إعادة تركيب من المسودة.
   const frames = useMemo(
@@ -108,7 +112,11 @@ export function LearnerPage({ snapshotId }: { snapshotId: string }) {
             onClick={() => {
               // «انتهينا» تُغلق هذه المرة فقط.
               dispatch({ type: "run.end", runId });
-              navigate({ to: `${base}/feedback/$snapshotId`, params: { snapshotId } });
+              navigate({
+                to: `${base}/feedback/$snapshotId`,
+                params: { snapshotId },
+                search: { runId },
+              });
             }}
             className="inline-flex min-h-[64px] flex-1 items-center justify-center rounded-2xl bg-primary text-xl font-bold text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >

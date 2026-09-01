@@ -38,7 +38,13 @@ const LIFECYCLE: { id: SliceLifecycleChoice; label: string; hint: string }[] = [
 /** إغلاق المشاركة الأسرية كلها — خيار منفصل عن إغلاق البطاقة. */
 const CLOSE_PARTICIPATION = "close_participation" as const;
 
-export function FeedbackPage({ snapshotId }: { snapshotId: string }) {
+export function FeedbackPage({
+  snapshotId,
+  runId,
+}: {
+  snapshotId: string;
+  runId?: string;
+}) {
   const base = useSpaceBase();
   const { snapshotById } = useSliceHelpers();
   const { dispatch } = useSlice();
@@ -65,7 +71,13 @@ export function FeedbackPage({ snapshotId }: { snapshotId: string }) {
     if (tone) {
       dispatch({
         type: "feedback",
-        value: { snapshotId, date: new Date().toISOString().slice(0, 10), tone, reasons },
+        value: {
+          snapshotId,
+          runId,
+          date: new Date().toISOString().slice(0, 10),
+          tone,
+          reasons,
+        },
       });
     }
     if (lifecycle === "close_card") {
