@@ -46,6 +46,8 @@ interface Refs {
   /** eventId → routine_stations.id */
   stationRowByEvent: Record<string, string>;
   routineId: string | null;
+  /** مرات تنفيذ بدأت فعلاً في هذه الجلسة — تمنع أي إدراج مكرر لنفس runId. */
+  startedRuns: Set<string>;
 }
 
 async function findParticipation(specId: string): Promise<string | null> {
@@ -156,6 +158,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
     participationBySnapshot: {},
     stationRowByEvent: {},
     routineId: null,
+    startedRuns: new Set<string>(),
   });
 
   // ---------- تحميل حالة الأسرة من قاعدة البيانات ----------
@@ -185,7 +188,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
 
           supabase
             .from("participation_feedback")
-            .select("snapshot_id, log_date, tone, reasons")
+            .select("snapshot_id, run_id, log_date, tone, reasons")
             .order("created_at", { ascending: false }),
           supabase
             .from("family_support_assets")
@@ -231,6 +234,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
 
       next.feedback = (feedback.data ?? []).map((r) => ({
         snapshotId: r.snapshot_id,
+        runId: r.run_id ?? undefined,
         date: r.log_date,
         tone: r.tone,
         reasons: (r.reasons as unknown as string[]) ?? [],
@@ -366,11 +370,18 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           if (participationId) r.participationBySnapshot[action.snapshotId] = participationId;
         }
         if (!participationId) return;
-        const { error } = await supabase.from("participation_runs").insert({
-          id: action.runId,
-          family_participation_id: participationId,
-          snapshot_id: action.snapshotId,
-        });
+        // إدراج واحد فقط لكل runId مهما تكرر تنفيذ الـeffect.
+        if (r.startedRuns.has(action.runId)) return;
+        r.startedRuns.add(action.runId);
+        const { error } = await supabase.from("participation_runs").upsert(
+          {
+            id: action.runId,
+            family_participation_id: participationId,
+            snapshot_id: action.snapshotId,
+          },
+          { onConflict: "id", ignoreDuplicates: true },
+        );
+        if (error) r.startedRuns.delete(action.runId);
         failed("runStart", "تعذّر بدء هذه المرة")(error);
         break;
       }
@@ -415,6 +426,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
       case "feedback": {
         const { error } = await supabase.from("participation_feedback").insert({
           snapshot_id: action.value.snapshotId,
+          run_id: action.value.runId ?? null,
           log_date: action.value.date,
           tone: action.value.tone,
           reasons: action.value.reasons,
