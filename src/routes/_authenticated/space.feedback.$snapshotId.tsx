@@ -3,6 +3,9 @@ import { FeedbackPage } from "@/features/space/pages/FeedbackPage";
 
 export const Route = createFileRoute("/_authenticated/space/feedback/$snapshotId")({
   component: SpaceRoute,
+  validateSearch: (search: Record<string, unknown>) => ({
+    runId: typeof search['runId'] === "string" ? (search['runId'] as string) : undefined,
+  }),
   head: () => ({
     meta: [
       { title: "كيف كانت اليوم؟ — دليلي" },
@@ -17,5 +20,6 @@ export const Route = createFileRoute("/_authenticated/space/feedback/$snapshotId
 
 function SpaceRoute() {
   const { snapshotId } = useParams({ from: "/_authenticated/space/feedback/$snapshotId" });
-  return <FeedbackPage snapshotId={snapshotId} />;
+  const { runId } = Route.useSearch();
+  return <FeedbackPage snapshotId={snapshotId} runId={runId} />;
 }

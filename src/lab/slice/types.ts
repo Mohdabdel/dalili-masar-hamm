@@ -158,6 +158,8 @@ export type SliceTone = "comfortable" | "usual" | "difficult_today";
 
 export interface SliceFeedback {
   snapshotId: string;
+  /** مرة التنفيذ التي انتهت للتو — الانطباع يخصّها. */
+  runId?: string;
   date: string;
   tone: SliceTone;
   reasons: string[];
