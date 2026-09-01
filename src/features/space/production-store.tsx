@@ -4,6 +4,7 @@
 import { useCallback, useEffect, useMemo, useReducer, useRef, type ReactNode } from "react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { resolveSession } from "@/lib/auth-session";
 import {
   SliceCtx,
   initialSliceState,
