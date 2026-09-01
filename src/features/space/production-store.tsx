@@ -166,8 +166,9 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
     let cancelled = false;
 
     (async () => {
-      const { data: auth } = await supabase.auth.getUser();
-      if (!auth.user) return;
+      // لا قراءة مملوكة للمستخدم قبل حسم الجلسة (يمنع 401 عند إعادة التحميل).
+      const session = await resolveSession();
+      if (!session) return;
 
       const [participations, snapshots, drafts, cardStates, runs, feedback, assets] =
         await Promise.all([
