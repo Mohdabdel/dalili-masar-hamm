@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import {
   Accordion,
   AccordionContent,
@@ -199,11 +199,11 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
           <SheetTitle className="text-right text-xl font-bold leading-snug">
             {data.title}
           </SheetTitle>
-          {context && (
-            <p className="text-sm font-medium leading-relaxed text-muted-foreground">
-              ضمن: {context}
-            </p>
-          )}
+          <SheetDescription className="text-right text-sm font-medium leading-relaxed text-muted-foreground">
+            {context
+              ? `بطاقة مشاركة ضمن: ${context}`
+              : "بطاقة مشاركة أسرية: سبب المشاركة، التجهيز، الخطوات، وطرق المساندة."}
+          </SheetDescription>
           <div className="flex flex-wrap items-center gap-2 pt-1">
             <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary">
               بطاقة الداعم
