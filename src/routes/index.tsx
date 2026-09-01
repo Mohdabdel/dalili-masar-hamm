@@ -192,8 +192,8 @@ function FamilySpaceSection() {
 }
 
 function InfoTabs() {
-  const [active, setActive] = useState(INFO_TABS[0]!.id);
-  const current = INFO_TABS.find((t) => t.id === active) ?? INFO_TABS[0]!;
+  const [active, setActive] = useState<string | null>(null);
+  const current = INFO_TABS.find((t) => t.id === active) ?? null;
 
   return (
     <div>
