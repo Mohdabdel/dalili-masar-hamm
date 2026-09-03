@@ -279,6 +279,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
           onToggleImage={toggleImage}
           onToggleText={toggleText}
           onPickImage={pickImage}
+          onUploadImage={uploadImage}
           onMove={move}
           onRemove={removeStep}
         />
