@@ -174,6 +174,30 @@ export function StepComposer({
             <div className="mt-3 rounded-2xl border border-border p-2">
               <p className="mb-2 px-1 text-sm font-bold">اختاروا صورة لهذه الخطوة</p>
               <ul className="grid grid-cols-3 gap-2 sm:grid-cols-5">
+                {onUploadImage && (
+                  <li>
+                    <button
+                      type="button"
+                      disabled={uploadingFor === row.stepId}
+                      onClick={() => fileInputRef.current?.click()}
+                      className="grid h-20 w-full place-items-center gap-1 rounded-xl border border-dashed border-primary/60 bg-primary/5 px-1 text-xs font-bold text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50"
+                    >
+                      <Upload className="h-4 w-4" aria-hidden />
+                      {uploadingFor === row.stepId ? "جارٍ الرفع…" : "ارفعوا صورة"}
+                    </button>
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept="image/*"
+                      className="hidden"
+                      aria-label="رفع صورة من الجهاز"
+                      onChange={(e) => {
+                        void handleFile(row.stepId, e.target.files?.[0]);
+                        e.target.value = "";
+                      }}
+                    />
+                  </li>
+                )}
                 <li>
                   <button
                     type="button"
