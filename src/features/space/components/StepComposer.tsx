@@ -2,8 +2,8 @@
 // كل خطوة وحدة واحدة: مساحة الصورة + العبارة + أدوات تخصيص مختصرة.
 // كتلة الصورة وكتلة العبارة مستقلتان تماماً: تغيير إحداهما لا يمس الأخرى.
 
-import { useState } from "react";
-import { ArrowDown, ArrowUp, Eye, EyeOff, Image as ImageIcon, Repeat2, X } from "lucide-react";
+import { useRef, useState } from "react";
+import { ArrowDown, ArrowUp, Eye, EyeOff, Image as ImageIcon, Repeat2, Upload, X } from "lucide-react";
 import { stepImageOptions, type ResolvedStepImage } from "@/features/space/step-image";
 import { cn } from "@/lib/utils";
 
@@ -23,6 +23,7 @@ export function StepComposer({
   onToggleImage,
   onToggleText,
   onPickImage,
+  onUploadImage,
   onMove,
   onRemove,
 }: {
@@ -32,12 +33,27 @@ export function StepComposer({
   onToggleImage: (stepId: string, visible: boolean) => void;
   onToggleText: (stepId: string, visible: boolean) => void;
   onPickImage: (stepId: string, assetCode: string | null) => void;
+  /** يرفع صورة من جهاز الأسرة ويختارها لهذه الخطوة. */
+  onUploadImage?: (stepId: string, file: File) => Promise<void> | void;
   onMove: (stepId: string, direction: -1 | 1) => void;
   onRemove: (stepId: string) => void;
 }) {
   const [pickerFor, setPickerFor] = useState<string | null>(null);
+  const [uploadingFor, setUploadingFor] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
   const options = stepImageOptions();
   const canRemove = rows.length > 1;
+
+  const handleFile = async (stepId: string, file: File | undefined) => {
+    if (!file || !onUploadImage) return;
+    setUploadingFor(stepId);
+    try {
+      await onUploadImage(stepId, file);
+      setPickerFor(null);
+    } finally {
+      setUploadingFor(null);
+    }
+  };
 
   return (
     <ol className="space-y-3">
@@ -158,6 +174,30 @@ export function StepComposer({
             <div className="mt-3 rounded-2xl border border-border p-2">
               <p className="mb-2 px-1 text-sm font-bold">اختاروا صورة لهذه الخطوة</p>
               <ul className="grid grid-cols-3 gap-2 sm:grid-cols-5">
+                {onUploadImage && (
+                  <li>
+                    <button
+                      type="button"
+                      disabled={uploadingFor === row.stepId}
+                      onClick={() => fileInputRef.current?.click()}
+                      className="grid h-20 w-full place-items-center gap-1 rounded-xl border border-dashed border-primary/60 bg-primary/5 px-1 text-xs font-bold text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50"
+                    >
+                      <Upload className="h-4 w-4" aria-hidden />
+                      {uploadingFor === row.stepId ? "جارٍ الرفع…" : "ارفعوا صورة"}
+                    </button>
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept="image/*"
+                      className="hidden"
+                      aria-label="رفع صورة من الجهاز"
+                      onChange={(e) => {
+                        void handleFile(row.stepId, e.target.files?.[0]);
+                        e.target.value = "";
+                      }}
+                    />
+                  </li>
+                )}
                 <li>
                   <button
                     type="button"

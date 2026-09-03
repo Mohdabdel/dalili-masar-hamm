@@ -54,6 +54,8 @@ export type StepBlockOrder = "visual-text" | "text-visual";
 export interface LabStepImageRef {
   sourceAssetCode: string;
   derivedAssetCode?: string | null;
+  /** مسار صورة رفعتها الأسرة إلى مخزنها الخاص (family-visuals) — يسبق أي أصل مرجعي. */
+  uploadedPath?: string | null;
 }
 
 

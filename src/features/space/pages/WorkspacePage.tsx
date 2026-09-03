@@ -14,6 +14,7 @@ import {
   sourceTextFor,
 } from "@/lab/data/space/catalog";
 import { resolveStepImage, resolvedAssetCode } from "@/features/space/step-image";
+import { uploadFamilyImage, useUploadedUrls } from "@/features/space/family-uploads";
 import {
   composeDraft,
   imageRefFor as composeImageRefFor,
@@ -59,6 +60,16 @@ export function WorkspacePage({ specId }: { specId: string }) {
       (e) => !e.isMajor || spec.majorSteps.find((m) => m.id === e.step.id)?.substeps.length === 0,
     );
   }, [spec]);
+
+  // صور الأسرة المرفوعة محفوظة كمسارات تخزين — نشتق روابطها الموقّعة قبل العرض.
+  const uploadedPaths = useMemo(
+    () =>
+      Object.values(selection.imageRefByStepId ?? {})
+        .map((ref) => ref?.uploadedPath ?? "")
+        .filter((p): p is string => Boolean(p)),
+    [selection.imageRefByStepId],
+  );
+  useUploadedUrls(uploadedPaths);
 
   if (!spec) {
     return (
@@ -170,6 +181,21 @@ export function WorkspacePage({ specId }: { specId: string }) {
     });
   };
 
+  /** رفع صورة من جهاز الأسرة إلى مخزنها الخاص واختيارها للخطوة. */
+  const uploadImage = async (stepId: string, file: File) => {
+    try {
+      const path = await uploadFamilyImage(file);
+      const ref: LabStepImageRef = { sourceAssetCode: "", uploadedPath: path };
+      const src = resolveStepImage(ref).src;
+      setSelection({
+        imageRefByStepId: { ...(selection.imageRefByStepId ?? {}), [stepId]: ref },
+        ...syncLegacy(stepId, imageVisibleFor(stepId), textVisibleFor(stepId), src),
+      });
+    } catch {
+      window.alert("لم نستطع رفع الصورة. جرّبوا صورة أخرى أو أعيدوا المحاولة.");
+    }
+  };
+
   const setText = (stepId: string, text: string) =>
     setSelection({
       familyTextByStepId: { ...(selection.familyTextByStepId ?? {}), [stepId]: text },
@@ -253,6 +279,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
           onToggleImage={toggleImage}
           onToggleText={toggleText}
           onPickImage={pickImage}
+          onUploadImage={uploadImage}
           onMove={move}
           onRemove={removeStep}
         />

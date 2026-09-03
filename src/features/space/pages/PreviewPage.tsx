@@ -4,6 +4,7 @@ import { LabPage, LabSection, LabNote, LabButton, LabLinkButton } from "@/lab/co
 import { StepBlocks, type ComposerItem } from "@/lab/components/space/FamilyComposer";
 import { buildDraftSelection, getSpaceSpec } from "@/lab/data/space/catalog";
 import { buildFrozenSnapshot, composeDraft } from "@/features/space/compose";
+import { useUploadedUrls } from "@/features/space/family-uploads";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 import type { LabThisTimeSelection } from "@/lab/slice/types";
 
@@ -32,6 +33,16 @@ export function PreviewPage({ specId }: { specId: string }) {
     if (spec) return buildDraftSelection(spec);
     return { specId, selected: [], chosenExecutionOptionByStepId: {}, supportTools: [] };
   }, [state.selections, spec, specId]);
+
+  // روابط صور الأسرة المرفوعة تُشتق قبل العرض والاعتماد.
+  const uploadedPaths = useMemo(
+    () =>
+      Object.values(selection.imageRefByStepId ?? {})
+        .map((ref) => ref?.uploadedPath ?? "")
+        .filter((p): p is string => Boolean(p)),
+    [selection.imageRefByStepId],
+  );
+  useUploadedUrls(uploadedPaths);
 
   const rows = useMemo(() => (spec ? composeDraft(spec, selection) : []), [spec, selection]);
 
