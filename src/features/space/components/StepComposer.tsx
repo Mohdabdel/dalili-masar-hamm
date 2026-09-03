@@ -2,8 +2,8 @@
 // كل خطوة وحدة واحدة: مساحة الصورة + العبارة + أدوات تخصيص مختصرة.
 // كتلة الصورة وكتلة العبارة مستقلتان تماماً: تغيير إحداهما لا يمس الأخرى.
 
-import { useState } from "react";
-import { ArrowDown, ArrowUp, Eye, EyeOff, Image as ImageIcon, Repeat2, X } from "lucide-react";
+import { useRef, useState } from "react";
+import { ArrowDown, ArrowUp, Eye, EyeOff, Image as ImageIcon, Repeat2, Upload, X } from "lucide-react";
 import { stepImageOptions, type ResolvedStepImage } from "@/features/space/step-image";
 import { cn } from "@/lib/utils";
 
@@ -32,12 +32,27 @@ export function StepComposer({
   onToggleImage: (stepId: string, visible: boolean) => void;
   onToggleText: (stepId: string, visible: boolean) => void;
   onPickImage: (stepId: string, assetCode: string | null) => void;
+  /** يرفع صورة من جهاز الأسرة ويختارها لهذه الخطوة. */
+  onUploadImage?: (stepId: string, file: File) => Promise<void> | void;
   onMove: (stepId: string, direction: -1 | 1) => void;
   onRemove: (stepId: string) => void;
 }) {
   const [pickerFor, setPickerFor] = useState<string | null>(null);
+  const [uploadingFor, setUploadingFor] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
   const options = stepImageOptions();
   const canRemove = rows.length > 1;
+
+  const handleFile = async (stepId: string, file: File | undefined) => {
+    if (!file || !onUploadImage) return;
+    setUploadingFor(stepId);
+    try {
+      await onUploadImage(stepId, file);
+      setPickerFor(null);
+    } finally {
+      setUploadingFor(null);
+    }
+  };
 
   return (
     <ol className="space-y-3">
