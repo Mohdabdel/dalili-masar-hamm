@@ -23,6 +23,7 @@ export function StepComposer({
   onToggleImage,
   onToggleText,
   onPickImage,
+  onUploadImage,
   onMove,
   onRemove,
 }: {
