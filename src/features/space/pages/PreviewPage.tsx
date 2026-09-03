@@ -26,6 +26,8 @@ export function PreviewPage({ specId }: { specId: string }) {
 
   const [label, setLabel] = useState("");
   const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10));
+  // اتجاه معاينة بطاقة المشارك: رأسي (خطوة تحت خطوة) أو أفقي (خطوات متجاورة قابلة للتمرير).
+  const [layout, setLayout] = useState<"vertical" | "horizontal">("vertical");
 
   const selection: LabThisTimeSelection = useMemo(() => {
     const saved = state.selections[specId];
