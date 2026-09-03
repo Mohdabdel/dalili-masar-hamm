@@ -76,6 +76,14 @@ const EMPTY: ResolvedStepImage = { src: null, compositePending: false, title: nu
 /** يحلّ مرجع صورة الخطوة: المشتق أولاً، ثم المصدر إن لم يكن مركّباً. */
 export function resolveStepImage(ref: LabStepImageRef | null | undefined): ResolvedStepImage {
   if (!ref) return EMPTY;
+  // صورة رفعتها الأسرة من جهازها تسبق أي أصل مرجعي — تُحل من ذاكرة الروابط الموقّعة.
+  if (ref.uploadedPath) {
+    return {
+      src: peekUploadedUrl(ref.uploadedPath),
+      compositePending: false,
+      title: "صورة رفعتموها",
+    };
+  }
   if (ref.derivedAssetCode) {
     const derived = getCanonicalVisualAsset(ref.derivedAssetCode);
     if (derived && !derived.missingBinary && derived.assetPath) {
@@ -100,6 +108,7 @@ export function resolveStepImage(ref: LabStepImageRef | null | undefined): Resol
 /** رمز الأصل الفعلي المعروض لمرجع خطوة — لتوثيقه داخل وسائل الدعم. */
 export function resolvedAssetCode(ref: LabStepImageRef | null | undefined): string | null {
   if (!ref) return null;
+  if (ref.uploadedPath) return null; // صورة الأسرة الخاصة ليست أصلاً من المكتبة
   if (ref.derivedAssetCode) return ref.derivedAssetCode;
   if (!ref.sourceAssetCode) return null;
   const source = getCanonicalVisualAsset(ref.sourceAssetCode);
