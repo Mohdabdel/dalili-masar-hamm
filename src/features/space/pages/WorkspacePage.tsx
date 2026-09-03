@@ -61,6 +61,16 @@ export function WorkspacePage({ specId }: { specId: string }) {
     );
   }, [spec]);
 
+  // صور الأسرة المرفوعة محفوظة كمسارات تخزين — نشتق روابطها الموقّعة قبل العرض.
+  const uploadedPaths = useMemo(
+    () =>
+      Object.values(selection.imageRefByStepId ?? {})
+        .map((ref) => ref?.uploadedPath ?? "")
+        .filter((p): p is string => Boolean(p)),
+    [selection.imageRefByStepId],
+  );
+  useUploadedUrls(uploadedPaths);
+
   if (!spec) {
     return (
       <LabPage
