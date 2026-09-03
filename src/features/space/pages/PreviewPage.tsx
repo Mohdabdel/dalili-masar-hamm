@@ -26,6 +26,8 @@ export function PreviewPage({ specId }: { specId: string }) {
 
   const [label, setLabel] = useState("");
   const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10));
+  // اتجاه معاينة بطاقة المشارك: رأسي (خطوة تحت خطوة) أو أفقي (خطوات متجاورة قابلة للتمرير).
+  const [layout, setLayout] = useState<"vertical" | "horizontal">("vertical");
 
   const selection: LabThisTimeSelection = useMemo(() => {
     const saved = state.selections[specId];
@@ -98,16 +100,64 @@ export function PreviewPage({ specId }: { specId: string }) {
         {rows.length === 0 ? (
           <LabNote>لا توجد خطوات في مسودّتكم بعد.</LabNote>
         ) : (
-          <ol className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {items.map((item, i) => (
-              <li key={item.stepId} className="rounded-2xl border border-border bg-card p-2">
-                <StepBlocks item={item} index={i + 1} />
-              </li>
-            ))}
-            <li className="grid place-items-center rounded-2xl border border-dashed border-border p-4 text-lg font-bold text-muted-foreground">
-              انتهينا
-            </li>
-          </ol>
+          <>
+            <div
+              className="mb-3 inline-flex rounded-xl border border-border bg-card p-1"
+              role="group"
+              aria-label="اتجاه معاينة الخطوات"
+            >
+              {(
+                [
+                  { id: "vertical", label: "رأسي" },
+                  { id: "horizontal", label: "أفقي" },
+                ] as const
+              ).map((opt) => (
+                <button
+                  key={opt.id}
+                  type="button"
+                  onClick={() => setLayout(opt.id)}
+                  aria-pressed={layout === opt.id}
+                  className={`min-h-10 rounded-lg px-4 text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                    layout === opt.id
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:bg-accent"
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+
+            {layout === "vertical" ? (
+              <ol className="space-y-3">
+                {items.map((item, i) => (
+                  <li
+                    key={item.stepId}
+                    className="rounded-2xl border border-border bg-card p-2"
+                  >
+                    <StepBlocks item={item} index={i + 1} />
+                  </li>
+                ))}
+                <li className="grid place-items-center rounded-2xl border border-dashed border-border p-4 text-lg font-bold text-muted-foreground">
+                  انتهينا
+                </li>
+              </ol>
+            ) : (
+              <ol className="flex snap-x gap-3 overflow-x-auto pb-2">
+                {items.map((item, i) => (
+                  <li
+                    key={item.stepId}
+                    className="w-44 shrink-0 snap-start rounded-2xl border border-border bg-card p-2"
+                  >
+                    <StepBlocks item={item} index={i + 1} />
+                  </li>
+                ))}
+                <li className="grid w-44 shrink-0 snap-start place-items-center rounded-2xl border border-dashed border-border p-4 text-lg font-bold text-muted-foreground">
+                  انتهينا
+                </li>
+              </ol>
+            )}
+          </>
         )}
       </LabSection>
 
