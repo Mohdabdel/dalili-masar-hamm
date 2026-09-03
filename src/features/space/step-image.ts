@@ -8,6 +8,7 @@ import {
   type CanonicalVisualAsset,
 } from "@/lib/visual-asset-catalog";
 import { derivedFor, isDerivedAsset } from "@/features/space/derived-assets";
+import { peekUploadedUrl } from "@/features/space/family-uploads";
 import type { LabStepImageRef } from "@/lab/slice/types";
 
 /** دفعات أُنتجت كلوحات متعددة المشاهد — غير صالحة كصورة خطوة واحدة قبل الاشتقاق. */
