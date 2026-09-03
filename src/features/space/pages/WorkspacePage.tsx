@@ -14,6 +14,7 @@ import {
   sourceTextFor,
 } from "@/lab/data/space/catalog";
 import { resolveStepImage, resolvedAssetCode } from "@/features/space/step-image";
+import { uploadFamilyImage, useUploadedUrls } from "@/features/space/family-uploads";
 import {
   composeDraft,
   imageRefFor as composeImageRefFor,
@@ -168,6 +169,21 @@ export function WorkspacePage({ specId }: { specId: string }) {
       imageRefByStepId: { ...(selection.imageRefByStepId ?? {}), [stepId]: ref },
       ...syncLegacy(stepId, imageVisibleFor(stepId), textVisibleFor(stepId), src),
     });
+  };
+
+  /** رفع صورة من جهاز الأسرة إلى مخزنها الخاص واختيارها للخطوة. */
+  const uploadImage = async (stepId: string, file: File) => {
+    try {
+      const path = await uploadFamilyImage(file);
+      const ref: LabStepImageRef = { sourceAssetCode: "", uploadedPath: path };
+      const src = resolveStepImage(ref).src;
+      setSelection({
+        imageRefByStepId: { ...(selection.imageRefByStepId ?? {}), [stepId]: ref },
+        ...syncLegacy(stepId, imageVisibleFor(stepId), textVisibleFor(stepId), src),
+      });
+    } catch {
+      window.alert("لم نستطع رفع الصورة. جرّبوا صورة أخرى أو أعيدوا المحاولة.");
+    }
   };
 
   const setText = (stepId: string, text: string) =>
