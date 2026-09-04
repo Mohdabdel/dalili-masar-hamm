@@ -24,7 +24,10 @@ export type Database = {
           id: string
           lifecycle_choice: string | null
           notes: string | null
-          opportunity_id: string
+          opportunity_id: string | null
+          origin: string
+          reference_source: string | null
+          reference_spec_id: string | null
           routine_station_id: string | null
           source: string
           started_at: string
@@ -41,7 +44,10 @@ export type Database = {
           id?: string
           lifecycle_choice?: string | null
           notes?: string | null
-          opportunity_id: string
+          opportunity_id?: string | null
+          origin?: string
+          reference_source?: string | null
+          reference_spec_id?: string | null
           routine_station_id?: string | null
           source?: string
           started_at?: string
@@ -58,7 +64,10 @@ export type Database = {
           id?: string
           lifecycle_choice?: string | null
           notes?: string | null
-          opportunity_id?: string
+          opportunity_id?: string | null
+          origin?: string
+          reference_source?: string | null
+          reference_spec_id?: string | null
           routine_station_id?: string | null
           source?: string
           started_at?: string

@@ -2,10 +2,12 @@
 // تُخزَّن المعرفات فقط؛ كل محتوى العرض يُستخرج من مستودع المعرفة (CSV).
 
 import { supabase } from "@/integrations/supabase/client";
+import { buildFamilyParticipationRow } from "@/lib/family-participation";
 
 export interface ActiveParticipation {
   id: string;
-  opportunity_id: string;
+  /** مرجع المكتبة — قد يكون فارغاً لمشاركة أنشأتها الأسرة بنفسها. */
+  opportunity_id: string | null;
   routine_station_id: string | null;
   status: string;
   completion_source: string | null;
@@ -32,12 +34,14 @@ export async function startParticipation(input: {
   routineStationId?: string | null;
   source?: string;
 }): Promise<void> {
-  const { error } = await supabase.from("active_participations").insert({
-    opportunity_id: input.opportunityId,
-    routine_station_id: input.routineStationId ?? null,
-    source: input.source ?? "routine_station",
-    status: "active",
-  });
+  const { error } = await supabase.from("active_participations").insert(
+    buildFamilyParticipationRow({
+      origin: "reference",
+      reference: { specId: input.opportunityId, source: "legacy_master" },
+      routineStationId: input.routineStationId ?? null,
+      source: input.source ?? "routine_station",
+    }),
+  );
   if (error) throw error;
 }
 
