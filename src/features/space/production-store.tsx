@@ -203,11 +203,14 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
       const next: SliceState = { ...initialSliceState };
 
       for (const row of participations.data ?? []) {
-        refs.current.participationBySpec[row.opportunity_id] = row.id;
+        // الهوية القانونية هي row.id؛ specId مجرد مفتاح توافق للمشاركات المرجعية.
+        const specKey = row.opportunity_id;
+        if (!specKey) continue;
+        refs.current.participationBySpec[specKey] = row.id;
         if (row.lifecycle_choice) {
-          next.lifecycleBySpec[row.opportunity_id] = row.lifecycle_choice as SliceLifecycleChoice;
+          next.lifecycleBySpec[specKey] = row.lifecycle_choice as SliceLifecycleChoice;
         }
-        if (row.status === "closed") next.closedSpecs.push(row.opportunity_id);
+        if (row.status === "closed") next.closedSpecs.push(specKey);
       }
 
 

@@ -157,7 +157,7 @@ function ActiveParticipationsPage() {
                 </h2>
                 <ul className="space-y-2">
                   {list.map((item) => {
-                    const ctx = findOpportunityContextById(item.opportunity_id);
+                    const ctx = findOpportunityContextById(item.opportunity_id ?? "");
                     const log = logs.find(
                       (l) => l.active_participation_id === item.id,
                     );
@@ -213,7 +213,8 @@ function ActiveParticipationsPage() {
                               <Button
                                 size="sm"
                                 variant="secondary"
-                                onClick={() => openCard(item.opportunity_id)}
+                                onClick={() => openCard(item.opportunity_id ?? "")}
+                                disabled={!item.opportunity_id}
                               >
                                 فتح
                               </Button>
