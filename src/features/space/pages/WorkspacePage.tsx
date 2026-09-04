@@ -38,6 +38,9 @@ export function WorkspacePage({ specId }: { specId: string }) {
   const { state, dispatch } = useSlice();
   const spec = resolveSpaceSpec(specId, state.selections);
   const { snapshotsFor, supportAssetsFor } = useSliceHelpers();
+  const [newBlockText, setNewBlockText] = useState("");
+  const [showImagePicker, setShowImagePicker] = useState(false);
+  const participationFileRef = useRef<HTMLInputElement | null>(null);
 
   const versions = snapshotsFor(specId);
   const assets = supportAssetsFor(specId);
@@ -338,6 +341,108 @@ export function WorkspacePage({ specId }: { specId: string }) {
           showSourceText={hasReferenceWording(spec)}
         />
         {rows.length <= 1 && <LabNote>تبقى خطوة واحدة على الأقل في مسودّتكم.</LabNote>}
+
+        <div className="mt-3 rounded-2xl border border-dashed border-border bg-card p-3">
+          <label className="block">
+            <span className="mb-1 block text-sm font-bold">أضيفوا خطوة من كتابتكم</span>
+            <input
+              type="text"
+              value={newBlockText}
+              onChange={(e) => setNewBlockText(e.target.value)}
+              placeholder="مثال: يمسك الوعاء بكلتا يديه"
+              className="min-h-11 w-full rounded-xl border border-border bg-background px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            />
+          </label>
+          <button
+            type="button"
+            onClick={addFamilyBlock}
+            disabled={!newBlockText.trim()}
+            className="mt-2 min-h-11 rounded-xl border border-border px-4 text-sm font-bold hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-40"
+          >
+            أضيفوها إلى مسودّتنا
+          </button>
+          <p className="mt-1 text-xs text-muted-foreground">
+            خطوة تصف كيف تنفّذون هذه المشاركة معاً. لا تغيّر معنى المشاركة نفسها.
+          </p>
+        </div>
+      </LabSection>
+
+      <LabSection
+        title="صورة المشاركة كلها (اختيارية)"
+        description="صورة واحدة تمثّل المشاركة بكاملها — غير صور الخطوات، وغير وسائل الدعم."
+      >
+        <div className="flex flex-wrap items-start gap-3">
+          <div className="w-40">
+            {participationSrc ? (
+              <img
+                src={participationSrc}
+                alt="صورة المشاركة كلها"
+                className="aspect-[4/3] w-full rounded-2xl border border-border object-cover"
+              />
+            ) : (
+              <div className="grid aspect-[4/3] w-full place-items-center rounded-2xl border border-dashed border-border bg-muted/30 p-2 text-center text-xs font-bold text-muted-foreground">
+                بلا صورة للمشاركة
+              </div>
+            )}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => participationFileRef.current?.click()}
+              className="min-h-11 rounded-xl border border-border px-4 text-sm font-bold hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              {participationSrc ? "استبدلوا الصورة (رفع)" : "ارفعوا صورة للمشاركة"}
+            </button>
+            <input
+              ref={participationFileRef}
+              type="file"
+              accept="image/*"
+              className="hidden"
+              aria-label="رفع صورة المشاركة كلها"
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (file) void uploadParticipationImage(file);
+                e.target.value = "";
+              }}
+            />
+            <button
+              type="button"
+              onClick={() => setShowImagePicker((v) => !v)}
+              aria-expanded={showImagePicker}
+              className="min-h-11 rounded-xl border border-border px-4 text-sm font-bold hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              اختاروا من الصور الجاهزة
+            </button>
+            {participationImage && (
+              <button
+                type="button"
+                onClick={() => setParticipationImage(null)}
+                className="min-h-11 rounded-xl border border-border px-4 text-sm font-bold text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                أزيلوا صورة المشاركة
+              </button>
+            )}
+          </div>
+        </div>
+        {showImagePicker && (
+          <ul className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-5">
+            {stepImageOptions().map((option) => (
+              <li key={option.code}>
+                <button
+                  type="button"
+                  title={option.title}
+                  onClick={() => {
+                    setParticipationImage({ source: "family_library", assetCode: option.code });
+                    setShowImagePicker(false);
+                  }}
+                  className="block h-20 w-full overflow-hidden rounded-xl border border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <img src={option.src} alt={option.title} loading="lazy" className="h-full w-full object-cover" />
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
       </LabSection>
 
       <LabSection title="نبدأ من… ونتوقف عند…">
