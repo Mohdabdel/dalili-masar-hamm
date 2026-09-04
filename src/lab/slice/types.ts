@@ -65,6 +65,28 @@ export interface LabStepImageRef {
 }
 
 
+/**
+ * كتلة تنفيذ أنشأتها الأسرة داخل تركيب مشاركتها.
+ * ليست مشاركة وظيفية، ولا خطوة مرجعية: لا نص مصدر لها ولا يُختلق لها واحد.
+ * الهوية ثابتة (FBLK-*) ولا تتغير بالترتيب ولا بتعديل النص.
+ */
+export interface LabFamilyBlock {
+  id: string;
+  familyText: string;
+  createdAt: string;
+  source: "family";
+}
+
+/**
+ * صورة المشاركة ككل — مستوى المشاركة الأسرية لا مستوى الكتلة ولا الدعم.
+ * تُخزَّن بمفتاح هوية المشاركة الأسرية (active_participations.id).
+ */
+export interface LabParticipationImage {
+  source: "family_upload" | "family_library";
+  uploadedPath?: string | null;
+  assetCode?: string | null;
+}
+
 /** اختيار الأسرة لهذه المرة — بترتيب تنفيذ صريح. */
 export interface LabThisTimeSelection {
   specId: string;
@@ -108,6 +130,8 @@ export interface LabThisTimeSelection {
   };
   /** كيف نشأت المشاركة — للعرض فقط؛ الهوية القانونية في قاعدة البيانات. */
   origin?: "reference" | "easy_beginning" | "family_free";
+  /** كتل تنفيذ أنشأتها الأسرة — تشارك نفس قائمة الترتيب مع الكتل المرجعية. */
+  familyBlocks?: LabFamilyBlock[];
 }
 
 /** إطار مجمّد داخل البطاقة: نص وصورة منسوخان وقت الاعتماد. */
@@ -124,6 +148,8 @@ export interface LabCardFrame {
   /** الأصل المصدر والأصل المشتق المستخدم فعلياً وقت الاعتماد. */
   sourceAssetCode?: string | null;
   derivedAssetCode?: string | null;
+  /** كتلة أنشأتها الأسرة (لا نص مرجعي لها). */
+  familyAuthored?: boolean;
   /** ظهور الصورة/النص كما اعتمدته الأسرة. */
   imageVisible?: boolean;
   textVisible?: boolean;
@@ -173,6 +199,13 @@ export interface LabCardSnapshot {
   supportAssetIds?: string[];
   /** نسخة مجمّدة من مخرجات الدعم المعتمدة. */
   supportAssetsFrozen?: LabFrozenSupportAsset[];
+  /** صورة المشاركة ككل كما كانت وقت الاعتماد (اختيارية). */
+  participationImage?: {
+    source: "family_upload" | "family_library";
+    assetCode?: string | null;
+    uploadedPath?: string | null;
+    src: string | null;
+  } | null;
 }
 
 
