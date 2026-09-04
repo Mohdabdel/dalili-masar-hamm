@@ -26,6 +26,7 @@ export function StepComposer({
   onUploadImage,
   onMove,
   onRemove,
+  showSourceText = true,
 }: {
   rows: ComposerStepRow[];
   onText: (stepId: string, text: string) => void;
@@ -37,6 +38,8 @@ export function StepComposer({
   onUploadImage?: (stepId: string, file: File) => Promise<void> | void;
   onMove: (stepId: string, direction: -1 | 1) => void;
   onRemove: (stepId: string) => void;
+  /** العبارة المرجعية تُعرض فقط حين يكون للمشاركة مصدر مرجعي ثابت. */
+  showSourceText?: boolean;
 }) {
   const [pickerFor, setPickerFor] = useState<string | null>(null);
   const [uploadingFor, setUploadingFor] = useState<string | null>(null);
@@ -144,9 +147,11 @@ export function StepComposer({
                 </p>
               )}
 
-              <p className="mt-1 text-xs text-muted-foreground">
-                العبارة المقترحة: {row.sourceText}
-              </p>
+              {showSourceText && (
+                <p className="mt-1 text-xs text-muted-foreground">
+                  العبارة المقترحة: {row.sourceText}
+                </p>
+              )}
 
               <div className="mt-2 flex flex-wrap gap-1">
                 <Mini
@@ -160,7 +165,7 @@ export function StepComposer({
                   )}
                   {row.textVisible ? "إخفاء العبارة" : "إظهار العبارة"}
                 </Mini>
-                {row.textVisible && (
+                {row.textVisible && showSourceText && (
                   <Mini onClick={() => onResetText(row.stepId)}>
                     <Repeat2 className="h-4 w-4" aria-hidden />
                     استخدموا العبارة المقترحة

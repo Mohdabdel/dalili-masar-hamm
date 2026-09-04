@@ -20,6 +20,7 @@ import type {
   SliceLifecycleChoice,
 } from "@/lab/slice/types";
 import { buildFamilyParticipationRow } from "@/lib/family-participation";
+import { familySpecId, isFamilySpecId, participationIdFromFamilySpecId } from "@/lib/entry/family-spec";
 import {
   addStation as addRoutineStation,
   createRoutine,
@@ -53,6 +54,16 @@ interface Refs {
 }
 
 async function findParticipation(specId: string): Promise<string | null> {
+  // مشاركة تملكها الأسرة: المعرّف نفسه محفور في مفتاح المواصفة — لا بحث بمرجع.
+  const owned = participationIdFromFamilySpecId(specId);
+  if (owned) {
+    const { data } = await supabase
+      .from("active_participations")
+      .select("id")
+      .eq("id", owned)
+      .maybeSingle();
+    return data?.id ?? null;
+  }
   const { data } = await supabase
     .from("active_participations")
     .select("id")
@@ -81,6 +92,9 @@ async function ensureParticipation(
     await linkParticipationToStation(refs, found, eventId);
     return found;
   }
+
+  // لا تُنشأ مشاركة مرجعية بديلة لمشاركة تملكها الأسرة (بداية سهلة / أخطط بنفسي).
+  if (isFamilySpecId(specId)) return null;
 
   const stationId = eventId ? (refs.stationRowByEvent[eventId] ?? null) : null;
   // هوية المشاركة تُولَّد للأسرة؛ specId يُخزَّن كإثبات مصدر مرجعي فقط.
@@ -178,7 +192,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
         await Promise.all([
           supabase
             .from("active_participations")
-            .select("id, opportunity_id, lifecycle_choice, status"),
+            .select("id, opportunity_id, origin, reference_spec_id, lifecycle_choice, status"),
 
           supabase
             .from("participation_snapshots")
@@ -207,7 +221,10 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
 
       for (const row of participations.data ?? []) {
         // الهوية القانونية هي row.id؛ specId مجرد مفتاح توافق للمشاركات المرجعية.
-        const specKey = row.opportunity_id;
+        const specKey =
+          row.origin === "reference"
+            ? (row.reference_spec_id ?? row.opportunity_id)
+            : familySpecId(row.id);
         if (!specKey) continue;
         refs.current.participationBySpec[specKey] = row.id;
         if (row.lifecycle_choice) {
@@ -365,14 +382,10 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
         if (!participationId && snap) {
           participationId = r.participationBySpec[snap.participationSpecId] ?? null;
           if (!participationId) {
-            const { data } = await supabase
-              .from("active_participations")
-              .select("id")
-              .eq("reference_spec_id", snap.participationSpecId)
-              .maybeSingle();
-            if (data) {
-              participationId = data.id;
-              r.participationBySpec[snap.participationSpecId] = data.id;
+            const found = await findParticipation(snap.participationSpecId);
+            if (found) {
+              participationId = found;
+              r.participationBySpec[snap.participationSpecId] = found;
             }
           }
           if (participationId) r.participationBySnapshot[action.snapshotId] = participationId;

@@ -7,14 +7,15 @@ import {
   LabLinkButton,
 } from "@/lab/components/lab-ui";
 import { StepFrame } from "@/lab/components/StepFrame";
-import { getSpaceSpec, SPACE_SUPPORT_TOOLS } from "@/lab/data/space/catalog";
+import { SPACE_SUPPORT_TOOLS } from "@/lab/data/space/catalog";
+import { resolveSpaceSpec } from "@/features/space/spec-resolution";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 
 
 export function CardsPage({ specId }: { specId: string }) {
   const base = useSpaceBase();
-  const spec = getSpaceSpec(specId);
   const { state, dispatch } = useSlice();
+  const spec = resolveSpaceSpec(specId, state.selections);
   const { snapshotsFor, supportAssetsFor } = useSliceHelpers();
   const assets = supportAssetsFor(specId);
   const snapshots = [...snapshotsFor(specId)].sort((a, b) => b.version - a.version);

@@ -64,35 +64,36 @@ const INFO_TABS = [
   },
 ];
 
-const DISCOVERY_PATHS = [
+// ثلاث استراتيجيات دخول فقط (EN-01) — كلها تصنع نفس المشاركة الأسرية
+// وتدخل نفس المسار: مساحة العمل ← معاينة ← اعتماد ← بطاقة ← تنفيذ.
+const ENTRY_STRATEGIES = [
   {
-    title: "مساحة عمل الأسرة",
-    description: "اختاروا فرصة مشاركة، جهّزوا بطاقتها بلغتكم وصوركم، ثم اعتمدوها كنسخة ثابتة محفوظة.",
+    title: "بداية سهلة",
+    description: "نبدأ من شيء يحبه أو يطلبه أو يعود إليه، ونصنع له مكاناً معنا فيه.",
     icon: Sparkles,
-    to: "/space" as const,
+    to: "/space/easy" as const,
     tone: "teal" as const,
   },
   {
-    title: "مشاركات الروتين اليومي",
-    description: "رتّبوا محطات يومكم واربطوا بها مشاركات مناسبة.",
+    title: "أخطط المشاركة بنفسي",
+    description: "نصف مشاركة من حياتنا كما هي عندنا، بلا حاجة إلى قائمة جاهزة.",
     icon: CalendarClock,
-    to: "/my-routine" as const,
+    to: "/space/plan" as const,
     tone: "coral" as const,
   },
   {
-    title: "ساعدني في الاختيار",
-    description: "ثلاث خطوات قصيرة تقترح عليكم فرصة مشاركة مناسبة الآن.",
-    icon: Sparkles,
-    to: "/help-me-choose" as const,
+    title: "استكشف المشاركات الممكنة",
+    description: "نتصفح أحداث يومنا أو محطات روتيننا، ونختار مشاركة تشبه حياتنا.",
+    icon: Library,
+    to: "/space/explore" as const,
     tone: "navy" as const,
   },
-  {
-    title: "مكتبة المشاركات",
-    description: "تصفّحوا أحداث الحياة والمشاركات المتاحة داخل المنزل وخارجه.",
-    icon: Library,
-    to: "/activities/browse" as const,
-    tone: "coral" as const,
-  },
+];
+
+const SECONDARY_PATHS = [
+  { title: "مساحة عمل الأسرة", to: "/space" as const },
+  { title: "محطات روتيننا", to: "/my-routine" as const },
+  { title: "مكتبة المشاركات", to: "/activities/browse" as const },
 ];
 
 const JOURNEY_STEPS = ["اختيار", "تجهيز", "تركيب", "معاينة", "اعتماد"] as const;
@@ -303,11 +304,11 @@ function LandingPage() {
           هل تفكرون في مشاركة ابنكم أو ابنتكم في بعض أحداث حياتكم اليومية؟
         </h2>
         <p className="mt-1 px-1 text-sm leading-relaxed text-muted-foreground">
-          هل تبحثون عن مشاركة مناسبة لكم؟ جرّبوا أحد المسارات التالية.
+          ابدأوا من الطريقة التي تشبهكم — وكلها تصل إلى نفس مساحة عمل الأسرة.
         </p>
 
         <div className="mt-3 grid grid-cols-2 gap-3">
-          {DISCOVERY_PATHS.map(({ title, description, icon: Icon, to, tone }) => {
+          {ENTRY_STRATEGIES.map(({ title, description, icon: Icon, to, tone }) => {
             const filled = tone === "teal";
             return (
               <Link
@@ -315,6 +316,7 @@ function LandingPage() {
                 to={to}
                 className={cn(
                   "group flex min-h-40 flex-col justify-between gap-3 rounded-[2rem] border p-4 shadow-card-soft transition-all hover:-translate-y-0.5 hover:shadow-elegant",
+                  tone === "navy" && "col-span-2 min-h-32",
                   filled
                     ? "border-teal bg-teal text-teal-foreground"
                     : "border-border bg-card",
@@ -355,6 +357,18 @@ function LandingPage() {
               </Link>
             );
           })}
+        </div>
+
+        <div className="mt-3 flex flex-wrap gap-2 px-1">
+          {SECONDARY_PATHS.map((p) => (
+            <Link
+              key={p.title}
+              to={p.to}
+              className="inline-flex min-h-11 items-center rounded-xl border border-border bg-card px-4 text-sm font-bold text-foreground transition-colors hover:bg-accent"
+            >
+              {p.title}
+            </Link>
+          ))}
         </div>
       </section>
 

@@ -39,6 +39,12 @@ export interface LabParticipationSpec {
   context: SliceContext;
   title_ar: string;
   majorSteps: LabMajorStep[];
+  /**
+   * مصدر صياغة الخطوات:
+   * legacy_master/framework_reference = صياغة مرجعية ثابتة،
+   * family = صياغة الأسرة وحدها (لا يوجد نص مرجعي ولا يُختلق).
+   */
+  provenance?: "legacy_master" | "framework_reference" | "family";
 }
 
 /** كيف تُعرض الخطوة للمشارك: صورة وجملة، صورة فقط، أو جملة فقط. */
@@ -88,6 +94,20 @@ export interface LabThisTimeSelection {
   considerationIds?: string[];
   /** بدأنا من مسودة مولّدة تلقائيًا؟ */
   drafted?: boolean;
+  /**
+   * مواصفة المشاركة التي أنشأتها الأسرة (بداية سهلة / أخطط بنفسي).
+   * تُحفظ مع مسودّة الأسرة لأن لا مرجع مكتبة لها.
+   */
+  familySpec?: LabParticipationSpec;
+  /** السياق المفضّل الذي انطلقت منه المشاركة (عائلي أو مقترح مرجعي). */
+  preferredContext?: {
+    id: string;
+    source: "family" | "reference";
+    referenceText?: string;
+    familyText?: string;
+  };
+  /** كيف نشأت المشاركة — للعرض فقط؛ الهوية القانونية في قاعدة البيانات. */
+  origin?: "reference" | "easy_beginning" | "family_free";
 }
 
 /** إطار مجمّد داخل البطاقة: نص وصورة منسوخان وقت الاعتماد. */

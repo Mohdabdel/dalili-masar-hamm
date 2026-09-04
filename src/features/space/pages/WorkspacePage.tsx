@@ -10,9 +10,9 @@ import {
 import {
   buildDraftSelection,
   flatSteps,
-  getSpaceSpec,
   sourceTextFor,
 } from "@/lab/data/space/catalog";
+import { hasReferenceWording, resolveSpaceSpec } from "@/features/space/spec-resolution";
 import { resolveStepImage, resolvedAssetCode } from "@/features/space/step-image";
 import { uploadFamilyImage, useUploadedUrls } from "@/features/space/family-uploads";
 import {
@@ -31,8 +31,8 @@ import type {
 
 export function WorkspacePage({ specId }: { specId: string }) {
   const base = useSpaceBase();
-  const spec = getSpaceSpec(specId);
   const { state, dispatch } = useSlice();
+  const spec = resolveSpaceSpec(specId, state.selections);
   const { snapshotsFor, supportAssetsFor } = useSliceHelpers();
 
   const versions = snapshotsFor(specId);
@@ -282,6 +282,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
           onUploadImage={uploadImage}
           onMove={move}
           onRemove={removeStep}
+          showSourceText={hasReferenceWording(spec)}
         />
         {rows.length <= 1 && <LabNote>تبقى خطوة واحدة على الأقل في مسودّتكم.</LabNote>}
       </LabSection>
