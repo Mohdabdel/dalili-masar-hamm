@@ -5,7 +5,8 @@ import { supabase } from "@/integrations/supabase/client";
 
 export interface ActiveParticipation {
   id: string;
-  opportunity_id: string;
+  /** مرجع المكتبة — قد يكون فارغاً لمشاركة أنشأتها الأسرة بنفسها. */
+  opportunity_id: string | null;
   routine_station_id: string | null;
   status: string;
   completion_source: string | null;
