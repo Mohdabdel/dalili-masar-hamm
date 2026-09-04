@@ -19,6 +19,7 @@ import type {
   SliceFeedback,
   SliceLifecycleChoice,
 } from "@/lab/slice/types";
+import { buildFamilyParticipationRow } from "@/lib/family-participation";
 import {
   addStation as addRoutineStation,
   createRoutine,
@@ -55,7 +56,7 @@ async function findParticipation(specId: string): Promise<string | null> {
   const { data } = await supabase
     .from("active_participations")
     .select("id")
-    .eq("opportunity_id", specId)
+    .eq("reference_spec_id", specId)
     .order("created_at", { ascending: true })
     .limit(1)
     .maybeSingle();
@@ -82,15 +83,17 @@ async function ensureParticipation(
   }
 
   const stationId = eventId ? (refs.stationRowByEvent[eventId] ?? null) : null;
+  // هوية المشاركة تُولَّد للأسرة؛ specId يُخزَّن كإثبات مصدر مرجعي فقط.
   const { data, error } = await supabase
     .from("active_participations")
-    .insert({
-      opportunity_id: specId,
-      daily_event_id: eventId ?? null,
-      routine_station_id: stationId,
-      source: "family_workspace",
-      status: "active",
-    })
+    .insert(
+      buildFamilyParticipationRow({
+        origin: "reference",
+        reference: { specId, source: "legacy_master" },
+        dailyEventId: eventId ?? null,
+        routineStationId: stationId,
+      }),
+    )
     .select("id")
     .single();
 
@@ -365,7 +368,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
             const { data } = await supabase
               .from("active_participations")
               .select("id")
-              .eq("opportunity_id", snap.participationSpecId)
+              .eq("reference_spec_id", snap.participationSpecId)
               .maybeSingle();
             if (data) {
               participationId = data.id;
