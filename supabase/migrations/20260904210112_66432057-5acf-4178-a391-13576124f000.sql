@@ -1,0 +1,2 @@
+ALTER TABLE public.resource_attachments DROP CONSTRAINT resource_attachments_scope_check;
+ALTER TABLE public.resource_attachments ADD CONSTRAINT resource_attachments_scope_check CHECK (scope = ANY (ARRAY['participation'::text, 'participation_image'::text, 'routine_station'::text, 'service'::text, 'resource'::text, 'learner_card'::text]));
