@@ -1,0 +1,208 @@
+{
+  "baseline_id": "PRE-GOLDEN-01",
+  "generated_at": "2026-09-04T15:39:01.819Z",
+  "generator": "scripts/pre-golden-baseline.ts",
+  "scope": "Master/Legacy knowledge corpus (CSV) — read-only inventory",
+  "sources": [
+    {
+      "path": "src/data/knowledge/01_domains.csv",
+      "bytes": 607,
+      "file_sha256": "c11bb3892935e77c37cb920aa27f0b3cb8e6382e3ea68e6e065642497c66eee6",
+      "header": [
+        "domain_id",
+        "domain_name_ar",
+        "category",
+        "display_order",
+        "status"
+      ],
+      "row_count": 6
+    },
+    {
+      "path": "src/data/knowledge/02_events.csv",
+      "bytes": 150967,
+      "file_sha256": "103391bbb310b456df36a556274de855556a2c5100d08e791cfaac0a6f2a95d9",
+      "header": [
+        "event_id",
+        "domain_id",
+        "event_name",
+        "description",
+        "environment",
+        "frequency",
+        "related_domains",
+        "display_order",
+        "status",
+        "source_file"
+      ],
+      "row_count": 564
+    },
+    {
+      "path": "src/data/knowledge/03_participation_opportunities.csv",
+      "bytes": 503208,
+      "file_sha256": "1423fe239d9e06f15f20987c4911e83fd3d5906f307560c3b552ee40fbceedcb",
+      "header": [
+        "opportunity_id",
+        "event_id",
+        "opportunity_name_ar",
+        "display_order",
+        "future_participation_level",
+        "safety_mode",
+        "status",
+        "source_file",
+        "participation_level",
+        "role_scope",
+        "organization_demand",
+        "variation_demand",
+        "classification_reason",
+        "review_required"
+      ],
+      "row_count": 1413
+    },
+    {
+      "path": "src/data/knowledge/04_participation_cards.csv",
+      "bytes": 847766,
+      "file_sha256": "be3f18cd1022efed5118e900a0bb6d1c4919541ce4de97264d9fffb594f8d6d0",
+      "header": [
+        "card_id",
+        "opportunity_id",
+        "why",
+        "before_start",
+        "participation_steps",
+        "make_it_easier",
+        "participation_levels",
+        "indicators",
+        "whats_next",
+        "support_notes",
+        "status",
+        "source_file"
+      ],
+      "row_count": 1139
+    }
+  ],
+  "schema": {
+    "version": "HIMAM Repository v2.0 (unified CSV)",
+    "encoding": "UTF-8 with BOM",
+    "delimiter": ","
+  },
+  "counts": {
+    "domains": 6,
+    "events": 564,
+    "participation_opportunities": 1413,
+    "participation_cards": 1139,
+    "opportunities_with_cards": 1139,
+    "opportunities_without_cards": 274
+  },
+  "relationships": {
+    "events_per_domain": {
+      "DOM-CLO": 50,
+      "DOM-COMM": 80,
+      "DOM-FOOD": 90,
+      "DOM-HEALTH": 139,
+      "DOM-HOME": 100,
+      "DOM-SHOP": 105
+    },
+    "opportunities_per_domain": {
+      "DOM-CLO": 50,
+      "DOM-COMM": 254,
+      "DOM-FOOD": 293,
+      "DOM-HEALTH": 232,
+      "DOM-HOME": 277,
+      "DOM-SHOP": 307
+    },
+    "participation_level_distribution": {
+      "advanced": 146,
+      "moderate": 915,
+      "simple": 352
+    },
+    "opportunity_status_distribution": {
+      "معتمد مبدئيًا": 1139,
+      "بطاقة مشاركة مطلوبة": 274
+    },
+    "card_status_distribution": {
+      "معتمد مبدئيًا": 1139
+    }
+  },
+  "id_namespaces": {
+    "domain_prefixes": [
+      "DOM"
+    ],
+    "event_prefixes": [
+      "CLO",
+      "COMM",
+      "FOOD",
+      "HEALTH",
+      "HOME",
+      "SHOP"
+    ],
+    "opportunity_pattern": "<EVENT_ID>-OP<NNN>",
+    "card_pattern": "<EVENT_ID>-CARD<NNN>",
+    "sample_ids": {
+      "domains": [
+        "DOM-CLO",
+        "DOM-FOOD",
+        "DOM-HOME"
+      ],
+      "events": [
+        "CLO-001",
+        "CLO-002",
+        "CLO-003"
+      ],
+      "opportunities": [
+        "CLO-001-OP001",
+        "CLO-002-OP001",
+        "CLO-003-OP001"
+      ],
+      "cards": [
+        "CLO-001-CARD001",
+        "CLO-002-CARD001",
+        "CLO-003-CARD001"
+      ]
+    }
+  },
+  "anomalies": {
+    "duplicate_domain_ids": [],
+    "duplicate_event_ids": [],
+    "duplicate_opportunity_ids": [],
+    "duplicate_card_ids": [],
+    "orphan_events_missing_domain": [],
+    "orphan_opportunities_missing_event": [],
+    "orphan_cards_missing_opportunity": [],
+    "opportunities_with_multiple_cards": [],
+    "opportunities_without_cards_sample": [
+      "HOME-001-OP001",
+      "HOME-001-OP002",
+      "HOME-001-OP003",
+      "HOME-001-OP004",
+      "HOME-002-OP001",
+      "HOME-002-OP002",
+      "HOME-002-OP003",
+      "HOME-002-OP004",
+      "HOME-002-OP005",
+      "HOME-003-OP001",
+      "HOME-003-OP002",
+      "HOME-003-OP003",
+      "HOME-003-OP004",
+      "HOME-004-OP001",
+      "HOME-004-OP002",
+      "HOME-004-OP003",
+      "HOME-004-OP004",
+      "HOME-005-OP001",
+      "HOME-005-OP002",
+      "HOME-005-OP003"
+    ]
+  },
+  "integrity": {
+    "method": "sha256 over raw file bytes + order-independent sha256 over normalized rows",
+    "file_sha256": {
+      "domains": "c11bb3892935e77c37cb920aa27f0b3cb8e6382e3ea68e6e065642497c66eee6",
+      "events": "103391bbb310b456df36a556274de855556a2c5100d08e791cfaac0a6f2a95d9",
+      "opportunities": "1423fe239d9e06f15f20987c4911e83fd3d5906f307560c3b552ee40fbceedcb",
+      "cards": "be3f18cd1022efed5118e900a0bb6d1c4919541ce4de97264d9fffb594f8d6d0"
+    },
+    "content_digest": {
+      "domains": "f7d3fc8c0e6db2e1e1df785691153f731a32b1454c1b6f25104ca364d0d85994",
+      "events": "f0e43ccb2ef83585157128dac85654354b213c0782629aa0779962b5e361579c",
+      "opportunities": "560c5ba60cce219b8afecc42820c54b33d57a98fe841f240e724dbb75751d6f8",
+      "cards": "380f35b660a99da873458cdd037fdbaa1c3054279eff915350a8fbcc7cb02764"
+    }
+  }
+}
