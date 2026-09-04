@@ -313,6 +313,8 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
         createdAt: String(r.created_at).slice(0, 10),
         items: (r.items as unknown as string[]) ?? [],
         config: (r.config as unknown as LabSupportAsset["config"]) ?? undefined,
+        // الصفوف الأقدم لا تحمل فئة معلنة — تُحسم عند العرض عبر حدّ التوافق.
+        categoryId: (r.config as { categoryId?: string } | null)?.categoryId,
       })) as LabSupportAsset[];
 
       // محطات الأسرة من الروتين الفعلي
