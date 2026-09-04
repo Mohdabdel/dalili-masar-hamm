@@ -10,6 +10,7 @@ import {
 import { Link } from "@tanstack/react-router";
 import type {
   LabCardSnapshot,
+  LabParticipationImage,
   LabSupportAsset,
   LabThisTimeSelection,
   SliceFeedback,
@@ -35,6 +36,11 @@ export interface SliceState {
   closedSpecs: string[];
   /** مخرجات دعم مستقلة. */
   supportAssets: LabSupportAsset[];
+  /**
+   * صورة المشاركة ككل. المفتاح هنا مفتاح عرض (specId)،
+   * أما التخزين القانوني فبمعرّف المشاركة الأسرية نفسه (active_participations.id).
+   */
+  participationImages: Record<string, LabParticipationImage | null>;
 }
 
 export const initialSliceState: SliceState = {
@@ -49,6 +55,7 @@ export const initialSliceState: SliceState = {
   closedSpecs: [],
   runs: [],
   supportAssets: [],
+  participationImages: {},
 
 };
 
@@ -70,6 +77,7 @@ export type SliceAction =
 
   | { type: "support.add"; value: LabSupportAsset }
   | { type: "support.remove"; id: string }
+  | { type: "participationImage.set"; specId: string; value: LabParticipationImage | null }
   /** تصحيح رقم النسخة بعد الحفظ الفعلي (المصدر النهائي لرقم النسخة هو قاعدة البيانات). */
   | { type: "snapshot.version"; snapshotId: string; version: number }
   /** تراجع محلي عن اعتماد لم يُحفظ فعلياً. */
@@ -142,6 +150,11 @@ export function sliceReducer(state: SliceState, action: SliceAction): SliceState
       return { ...state, supportAssets: [action.value, ...state.supportAssets] };
     case "support.remove":
       return { ...state, supportAssets: state.supportAssets.filter((a) => a.id !== action.id) };
+    case "participationImage.set":
+      return {
+        ...state,
+        participationImages: { ...state.participationImages, [action.specId]: action.value },
+      };
     case "level":
       return { ...state, levelByEvent: { ...state.levelByEvent, [action.eventId]: action.value } };
     case "selection":

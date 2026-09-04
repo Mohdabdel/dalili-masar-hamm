@@ -14,6 +14,7 @@ import {
 } from "@/features/space/store";
 import type {
   LabCardSnapshot,
+  LabParticipationImage,
   LabSupportAsset,
   LabThisTimeSelection,
   SliceFeedback,
@@ -28,6 +29,26 @@ import {
   getStations,
   removeStation as removeRoutineStation,
 } from "@/lib/family-routine";
+
+/** نطاق مخصص لصورة المشاركة داخل مرفقات الأسرة — مفصول عن الدعم وعن صور الكتل. */
+const PARTICIPATION_IMAGE_SCOPE = "participation_image";
+
+function encodeParticipationImage(image: LabParticipationImage): string {
+  return image.source === "family_upload"
+    ? `upload:${image.uploadedPath ?? ""}`
+    : `asset:${image.assetCode ?? ""}`;
+}
+
+function decodeParticipationImage(raw: string | null): LabParticipationImage | null {
+  if (!raw) return null;
+  if (raw.startsWith("upload:")) {
+    return { source: "family_upload", uploadedPath: raw.slice(7) };
+  }
+  if (raw.startsWith("asset:")) {
+    return { source: "family_library", assetCode: raw.slice(6) };
+  }
+  return null;
+}
 
 const log = (context: string) => (error: unknown) => {
   if (error) console.error(`[space:${context}]`, error);
@@ -188,7 +209,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
       const session = await resolveSession();
       if (!session) return;
 
-      const [participations, snapshots, drafts, cardStates, runs, feedback, assets] =
+      const [participations, snapshots, drafts, cardStates, runs, feedback, assets, participationImages] =
         await Promise.all([
           supabase
             .from("active_participations")
@@ -212,6 +233,12 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           supabase
             .from("family_support_assets")
             .select("id, spec_id, snapshot_id, type, label, items, config, created_at")
+            .order("created_at", { ascending: false }),
+          // صورة المشاركة ككل — مخزّنة بمعرّف المشاركة الأسرية، بلا حاجة لأي معرّف مكتبة.
+          supabase
+            .from("resource_attachments")
+            .select("ref_id, external_url, label, created_at")
+            .eq("scope", PARTICIPATION_IMAGE_SCOPE)
             .order("created_at", { ascending: false }),
         ]);
 
@@ -242,6 +269,18 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
 
       for (const row of drafts.data ?? []) {
         next.selections[row.spec_id] = row.selection as unknown as LabThisTimeSelection;
+      }
+
+      // مفتاح العرض يُشتق من هوية المشاركة، لا العكس.
+      const specByParticipation: Record<string, string> = {};
+      for (const [specKey, id] of Object.entries(refs.current.participationBySpec)) {
+        specByParticipation[id] = specKey;
+      }
+      for (const row of participationImages.data ?? []) {
+        const specKey = specByParticipation[row.ref_id];
+        if (!specKey || specKey in next.participationImages) continue;
+        const image = decodeParticipationImage(row.external_url);
+        if (image) next.participationImages[specKey] = image;
       }
 
       next.closedCards = (cardStates.data ?? [])
@@ -477,6 +516,25 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           config: (a.config ?? {}) as any,
         });
         failed("supportAdd", "تعذّر حفظ وسيلة الدعم")(error);
+        break;
+      }
+      case "participationImage.set": {
+        // الهوية القانونية للصورة هي معرّف المشاركة الأسرية — لا specId ولا KB-*.
+        const participationId = await ensureParticipation(r, action.specId);
+        if (!participationId) return;
+        await supabase
+          .from("resource_attachments")
+          .delete()
+          .eq("scope", PARTICIPATION_IMAGE_SCOPE)
+          .eq("ref_id", participationId);
+        if (!action.value) break;
+        const { error } = await supabase.from("resource_attachments").insert({
+          scope: PARTICIPATION_IMAGE_SCOPE,
+          ref_id: participationId,
+          external_url: encodeParticipationImage(action.value),
+          label: "صورة المشاركة",
+        });
+        failed("participationImage", "تعذّر حفظ صورة المشاركة")(error);
         break;
       }
       case "support.remove": {

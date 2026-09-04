@@ -12,6 +12,7 @@ import {
   resolvedAssetCode,
   suggestStepImage,
 } from "@/features/space/step-image";
+import { findFamilyBlock, isFamilyBlockId } from "@/features/space/family-blocks";
 import type {
   LabCardFrame,
   LabCardSnapshot,
@@ -35,6 +36,8 @@ export interface ComposedRow {
   imageVisible: boolean;
   textVisible: boolean;
   blockOrder: StepBlockOrder;
+  /** كتلة أنشأتها الأسرة: لا نص مرجعي لها ولا إجراء «استرجاع العبارة المقترحة». */
+  familyAuthored: boolean;
 }
 
 /** مرجع صورة الخطوة كما هو في المسودة (مع توافق الحقول القديمة والاقتراح). */
@@ -47,6 +50,10 @@ export function imageRefFor(
   if (map && stepId in map) return map[stepId] ?? null;
   const legacy = refFromLegacySrc(selection.visualByStepId?.[stepId]);
   if (legacy) return legacy;
+  if (isFamilyBlockId(stepId)) {
+    // اقتراح الصورة يُشتق من عبارة الأسرة نفسها — لا من نص مرجعي لأنه غير موجود.
+    return suggestStepImage(findFamilyBlock(selection, stepId)?.familyText ?? "");
+  }
   return suggestStepImage(sourceTextFor(spec, stepId));
 }
 
@@ -72,22 +79,27 @@ export function composeDraft(
   return [...selection.selected]
     .sort((a, b) => a.order - b.order)
     .map((sel, index): ComposedRow | null => {
-      const step = findSpaceStep(spec, sel.stepId);
-      if (!step) return null;
-      const sourceText = sourceTextFor(spec, sel.stepId);
+      const familyBlock = isFamilyBlockId(sel.stepId)
+        ? findFamilyBlock(selection, sel.stepId)
+        : null;
+      const step = familyBlock ? null : findSpaceStep(spec, sel.stepId);
+      if (!step && !familyBlock) return null;
+      // كتلة الأسرة بلا نص مصدر — لا يُختلق لها نص مرجعي.
+      const sourceText = familyBlock ? "" : sourceTextFor(spec, sel.stepId);
       const custom = selection.familyTextByStepId?.[sel.stepId];
       const ref = imageRefFor(spec, selection, sel.stepId);
       return {
         stepId: sel.stepId,
         order: index + 1,
         sourceText,
-        familyText: custom !== undefined ? custom : sourceText,
+        familyText: custom !== undefined ? custom : (familyBlock?.familyText ?? sourceText),
         imageRef: ref,
         image: resolveStepImage(ref),
         assetCode: resolvedAssetCode(ref),
         imageVisible: imageVisibleFor(selection, sel.stepId),
         textVisible: textVisibleFor(selection, sel.stepId),
         blockOrder: selection.blockOrderByStepId?.[sel.stepId] ?? "visual-text",
+        familyAuthored: Boolean(familyBlock),
       };
     })
     .filter((r): r is ComposedRow => Boolean(r));
@@ -105,6 +117,8 @@ export function buildFrozenSnapshot(input: {
   label_ar: string;
   date: string;
   supportAssets: LabSupportAsset[];
+  /** صورة المشاركة ككل — تُجمَّد كما هي وقت الاعتماد، أو تبقى غائبة. */
+  participationImage?: LabCardSnapshot["participationImage"];
 }): LabCardSnapshot {
   const { spec, selection, rows, version, label_ar, date, supportAssets } = input;
 
@@ -113,7 +127,8 @@ export function buildFrozenSnapshot(input: {
     order: r.order,
     text_short_ar: r.textVisible ? r.familyText : "",
     familyText_ar: r.familyText,
-    sourceText_ar: r.sourceText,
+    // كتلة الأسرة: لا نص مرجعي مجمّد (غائب وليس منسوخاً من نص الأسرة).
+    ...(r.familyAuthored ? { familyAuthored: true } : { sourceText_ar: r.sourceText }),
     assetRef: r.imageVisible ? r.image.src : null,
     sourceAssetCode: r.imageRef?.sourceAssetCode ?? null,
     derivedAssetCode: r.assetCode,
@@ -158,6 +173,7 @@ export function buildFrozenSnapshot(input: {
     endText_ar: rows[rows.length - 1]?.familyText,
     considerationIds: [...(selection.considerationIds ?? [])],
     supportAssetIds: supportAssets.map((a) => a.id),
+    participationImage: input.participationImage ?? null,
     supportAssetsFrozen: supportAssets.map((a) => ({
       id: a.id,
       type: a.type,
