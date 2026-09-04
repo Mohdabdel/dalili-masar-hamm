@@ -14,6 +14,8 @@ export interface ComposerStepRow {
   image: ResolvedStepImage;
   imageVisible: boolean;
   textVisible: boolean;
+  /** كتلة أنشأتها الأسرة: لا عبارة مرجعية ولا إجراء استرجاع. */
+  familyAuthored?: boolean;
 }
 
 export function StepComposer({
@@ -60,7 +62,9 @@ export function StepComposer({
 
   return (
     <ol className="space-y-3">
-      {rows.map((row, i) => (
+      {rows.map((row, i) => {
+        const rowHasSource = showSourceText && !row.familyAuthored;
+        return (
         <li key={row.stepId} className="rounded-2xl border border-border bg-card p-3">
           <div className="flex items-start justify-between gap-2">
             <span className="text-sm font-bold text-muted-foreground">الخطوة {i + 1}</span>
@@ -147,7 +151,7 @@ export function StepComposer({
                 </p>
               )}
 
-              {showSourceText && (
+              {rowHasSource && (
                 <p className="mt-1 text-xs text-muted-foreground">
                   العبارة المقترحة: {row.sourceText}
                 </p>
@@ -165,7 +169,7 @@ export function StepComposer({
                   )}
                   {row.textVisible ? "إخفاء العبارة" : "إظهار العبارة"}
                 </Mini>
-                {row.textVisible && showSourceText && (
+                {row.textVisible && rowHasSource && (
                   <Mini onClick={() => onResetText(row.stepId)}>
                     <Repeat2 className="h-4 w-4" aria-hidden />
                     استخدموا العبارة المقترحة
@@ -249,7 +253,8 @@ export function StepComposer({
             </div>
           )}
         </li>
-      ))}
+        );
+      })}
     </ol>
   );
 }
