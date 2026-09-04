@@ -164,6 +164,8 @@ export interface LabCardFrame {
 export interface LabFrozenSupportAsset {
   id: string;
   type: string;
+  /** Foundation 08: فئة الدعم المعلنة وقت الاعتماد (اختيارية للنسخ الأقدم). */
+  categoryId?: string;
   label_ar: string;
   items: string[];
   config?: unknown;
@@ -272,6 +274,8 @@ export interface LabSupportAssetConfig {
 export interface LabSupportAsset {
   id: string;
   type: LabSupportAssetType;
+  /** Foundation 08: فئة الدعم المعلنة — مستقلة عن هوية الوسيلة نفسها. */
+  categoryId?: string;
   label_ar: string;
   specId: string;
   snapshotId?: string;
