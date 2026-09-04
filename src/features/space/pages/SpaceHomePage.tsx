@@ -2,7 +2,8 @@ import { useMemo, useState } from "react";
 import { Link as RouterLink } from "@tanstack/react-router";
 import { ChevronDown, ChevronLeft, Home, Trees, X, Menu, Info, Images, CalendarRange, MessageSquare } from "lucide-react";
 import { } from "@/lab/components/lab-ui";
-import { defaultStations, getSpaceEvent, getSpaceSpec, type SpaceContext } from "@/lab/data/space/catalog";
+import { defaultStations, getSpaceEvent, type SpaceContext } from "@/lab/data/space/catalog";
+import { resolveSpaceSpec } from "@/features/space/spec-resolution";
 import { useSlice, useSpaceBase } from "@/features/space/store";
 import { cn } from "@/lib/utils";
 
@@ -19,7 +20,7 @@ export function SpaceHomePage() {
   const blocks = useMemo(() => {
     const ids = [...new Set(state.snapshots.map((s) => s.participationSpecId))];
     return ids.map((specId) => {
-      const spec = getSpaceSpec(specId);
+      const spec = resolveSpaceSpec(specId, state.selections);
       const cards = state.snapshots.filter((s) => s.participationSpecId === specId);
       const open = cards.filter((c) => !state.closedCards.includes(c.id));
       const closed = cards.filter((c) => state.closedCards.includes(c.id));
@@ -42,7 +43,7 @@ export function SpaceHomePage() {
         coverage,
       };
     });
-  }, [state.snapshots, state.closedCards]);
+  }, [state.snapshots, state.closedCards, state.selections]);
 
   // المشاركة الأسرية المغلقة لا تُحتسب ضمن المشاركات الفعالة، حتى لو بقيت بطاقاتها مفتوحة.
   const activeBlocks = blocks.filter(

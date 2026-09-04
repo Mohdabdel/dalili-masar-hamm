@@ -32,6 +32,12 @@ const EMPTY: FamilySpaceStatus = {
   approved: [],
 };
 
+/** المشاركات المملوكة للأسرة تحمل عنوانها داخل مسودتها، لا في المكتبة المرجعية. */
+function familySpecTitle(selection: unknown): string | undefined {
+  const spec = (selection as { familySpec?: { title_ar?: string } } | null)?.familySpec;
+  return spec?.title_ar?.trim() || undefined;
+}
+
 function specTitle(specId: string, fallback?: string): string {
   return getSpaceSpec(specId)?.title_ar ?? fallback ?? "مشاركة";
 }
@@ -63,7 +69,7 @@ export function useFamilySpaceStatus(): FamilySpaceStatus {
       }
 
       const [draftsRes, snapshotsRes] = await Promise.all([
-        supabase.from("participation_drafts").select("spec_id"),
+        supabase.from("participation_drafts").select("spec_id, selection"),
         supabase
           .from("participation_snapshots")
           .select("version_number, snapshot_data")
@@ -74,7 +80,7 @@ export function useFamilySpaceStatus(): FamilySpaceStatus {
 
       const drafts: FamilyDraftItem[] = (draftsRes.data ?? []).map((row) => ({
         specId: row.spec_id,
-        title: specTitle(row.spec_id),
+        title: specTitle(row.spec_id, familySpecTitle(row.selection)),
       }));
 
       // آخر نسخة معتمدة لكل مشاركة (الإدراج تصاعدي، فالأخير هو الأحدث).

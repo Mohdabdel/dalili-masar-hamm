@@ -2,7 +2,8 @@ import { useMemo, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { LabPage, LabSection, LabNote, LabButton, LabLinkButton } from "@/lab/components/lab-ui";
 import { StepBlocks, type ComposerItem } from "@/lab/components/space/FamilyComposer";
-import { buildDraftSelection, getSpaceSpec } from "@/lab/data/space/catalog";
+import { buildDraftSelection } from "@/lab/data/space/catalog";
+import { resolveSpaceSpec } from "@/features/space/spec-resolution";
 import { buildFrozenSnapshot, composeDraft } from "@/features/space/compose";
 import { peekUploadedUrl, useUploadedUrls } from "@/features/space/family-uploads";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
@@ -14,8 +15,8 @@ import type { LabThisTimeSelection } from "@/lab/slice/types";
  */
 export function PreviewPage({ specId }: { specId: string }) {
   const base = useSpaceBase();
-  const spec = getSpaceSpec(specId);
   const { state, dispatch } = useSlice();
+  const spec = resolveSpaceSpec(specId, state.selections);
   const { snapshotsFor, supportAssetsFor } = useSliceHelpers();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const navigate = useNavigate() as any;

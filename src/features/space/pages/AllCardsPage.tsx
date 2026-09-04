@@ -1,5 +1,5 @@
 import { LabPage, LabSection, LabNote, LabLinkButton } from "@/lab/components/lab-ui";
-import { getSpaceSpec } from "@/lab/data/space/catalog";
+import { resolveSpaceSpec } from "@/features/space/spec-resolution";
 import { useSlice, useSpaceBase } from "@/features/space/store";
 
 
@@ -17,7 +17,7 @@ export function AllCardsPage() {
         <LabSection title={`مشاركات لها بطاقات (${specIds.length})`}>
           <ul className="space-y-3">
             {specIds.map((specId) => {
-              const spec = getSpaceSpec(specId);
+              const spec = resolveSpaceSpec(specId, state.selections);
               const cards = state.snapshots.filter((s) => s.participationSpecId === specId);
               const open = cards.filter((c) => !state.closedCards.includes(c.id)).length;
               const title = spec?.title_ar ?? cards[0]?.participationTitle_ar ?? "مشاركة";

@@ -64,8 +64,11 @@ import { Route as LabLearnerParticipationIdRouteImport } from './routes/lab.lear
 import { Route as LabFeedbackParticipationIdRouteImport } from './routes/lab.feedback.$participationId'
 import { Route as LabEventEventIdRouteImport } from './routes/lab.event.$eventId'
 import { Route as LabCardParticipationIdRouteImport } from './routes/lab.card.$participationId'
+import { Route as AuthenticatedSpacePlanRouteImport } from './routes/_authenticated/space.plan'
 import { Route as AuthenticatedSpaceParticipationsRouteImport } from './routes/_authenticated/space.participations'
 import { Route as AuthenticatedSpaceLibraryRouteImport } from './routes/_authenticated/space.library'
+import { Route as AuthenticatedSpaceExploreRouteImport } from './routes/_authenticated/space.explore'
+import { Route as AuthenticatedSpaceEasyRouteImport } from './routes/_authenticated/space.easy'
 import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
 import { Route as LabSliceWorkspaceSpecIdRouteImport } from './routes/lab.slice.workspace.$specId'
 import { Route as LabSliceLearnerSnapshotIdRouteImport } from './routes/lab.slice.learner.$snapshotId'
@@ -361,6 +364,11 @@ const LabCardParticipationIdRoute = LabCardParticipationIdRouteImport.update({
   path: '/card/$participationId',
   getParentRoute: () => LabRoute,
 } as any)
+const AuthenticatedSpacePlanRoute = AuthenticatedSpacePlanRouteImport.update({
+  id: '/plan',
+  path: '/plan',
+  getParentRoute: () => AuthenticatedSpaceRoute,
+} as any)
 const AuthenticatedSpaceParticipationsRoute =
   AuthenticatedSpaceParticipationsRouteImport.update({
     id: '/participations',
@@ -373,6 +381,17 @@ const AuthenticatedSpaceLibraryRoute =
     path: '/library',
     getParentRoute: () => AuthenticatedSpaceRoute,
   } as any)
+const AuthenticatedSpaceExploreRoute =
+  AuthenticatedSpaceExploreRouteImport.update({
+    id: '/explore',
+    path: '/explore',
+    getParentRoute: () => AuthenticatedSpaceRoute,
+  } as any)
+const AuthenticatedSpaceEasyRoute = AuthenticatedSpaceEasyRouteImport.update({
+  id: '/easy',
+  path: '/easy',
+  getParentRoute: () => AuthenticatedSpaceRoute,
+} as any)
 const Char91DotmcpChar93InvokeToolToolRoute =
   Char91DotmcpChar93InvokeToolToolRouteImport.update({
     id: '/.mcp/invoke-tool/$tool',
@@ -499,8 +518,11 @@ export interface FileRoutesByFullPath {
   '/lab/': typeof LabIndexRoute
   '/tools/': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/space/easy': typeof AuthenticatedSpaceEasyRoute
+  '/space/explore': typeof AuthenticatedSpaceExploreRoute
   '/space/library': typeof AuthenticatedSpaceLibraryRoute
   '/space/participations': typeof AuthenticatedSpaceParticipationsRoute
+  '/space/plan': typeof AuthenticatedSpacePlanRoute
   '/lab/card/$participationId': typeof LabCardParticipationIdRoute
   '/lab/event/$eventId': typeof LabEventEventIdRoute
   '/lab/feedback/$participationId': typeof LabFeedbackParticipationIdRoute
@@ -568,8 +590,11 @@ export interface FileRoutesByTo {
   '/lab': typeof LabIndexRoute
   '/tools': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/space/easy': typeof AuthenticatedSpaceEasyRoute
+  '/space/explore': typeof AuthenticatedSpaceExploreRoute
   '/space/library': typeof AuthenticatedSpaceLibraryRoute
   '/space/participations': typeof AuthenticatedSpaceParticipationsRoute
+  '/space/plan': typeof AuthenticatedSpacePlanRoute
   '/lab/card/$participationId': typeof LabCardParticipationIdRoute
   '/lab/event/$eventId': typeof LabEventEventIdRoute
   '/lab/feedback/$participationId': typeof LabFeedbackParticipationIdRoute
@@ -642,8 +667,11 @@ export interface FileRoutesById {
   '/lab/': typeof LabIndexRoute
   '/tools/': typeof ToolsIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/_authenticated/space/easy': typeof AuthenticatedSpaceEasyRoute
+  '/_authenticated/space/explore': typeof AuthenticatedSpaceExploreRoute
   '/_authenticated/space/library': typeof AuthenticatedSpaceLibraryRoute
   '/_authenticated/space/participations': typeof AuthenticatedSpaceParticipationsRoute
+  '/_authenticated/space/plan': typeof AuthenticatedSpacePlanRoute
   '/lab/card/$participationId': typeof LabCardParticipationIdRoute
   '/lab/event/$eventId': typeof LabEventEventIdRoute
   '/lab/feedback/$participationId': typeof LabFeedbackParticipationIdRoute
@@ -716,8 +744,11 @@ export interface FileRouteTypes {
     | '/lab/'
     | '/tools/'
     | '/.mcp/invoke-tool/$tool'
+    | '/space/easy'
+    | '/space/explore'
     | '/space/library'
     | '/space/participations'
+    | '/space/plan'
     | '/lab/card/$participationId'
     | '/lab/event/$eventId'
     | '/lab/feedback/$participationId'
@@ -785,8 +816,11 @@ export interface FileRouteTypes {
     | '/lab'
     | '/tools'
     | '/.mcp/invoke-tool/$tool'
+    | '/space/easy'
+    | '/space/explore'
     | '/space/library'
     | '/space/participations'
+    | '/space/plan'
     | '/lab/card/$participationId'
     | '/lab/event/$eventId'
     | '/lab/feedback/$participationId'
@@ -858,8 +892,11 @@ export interface FileRouteTypes {
     | '/lab/'
     | '/tools/'
     | '/.mcp/invoke-tool/$tool'
+    | '/_authenticated/space/easy'
+    | '/_authenticated/space/explore'
     | '/_authenticated/space/library'
     | '/_authenticated/space/participations'
+    | '/_authenticated/space/plan'
     | '/lab/card/$participationId'
     | '/lab/event/$eventId'
     | '/lab/feedback/$participationId'
@@ -1304,6 +1341,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LabCardParticipationIdRouteImport
       parentRoute: typeof LabRoute
     }
+    '/_authenticated/space/plan': {
+      id: '/_authenticated/space/plan'
+      path: '/plan'
+      fullPath: '/space/plan'
+      preLoaderRoute: typeof AuthenticatedSpacePlanRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
     '/_authenticated/space/participations': {
       id: '/_authenticated/space/participations'
       path: '/participations'
@@ -1316,6 +1360,20 @@ declare module '@tanstack/react-router' {
       path: '/library'
       fullPath: '/space/library'
       preLoaderRoute: typeof AuthenticatedSpaceLibraryRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
+    '/_authenticated/space/explore': {
+      id: '/_authenticated/space/explore'
+      path: '/explore'
+      fullPath: '/space/explore'
+      preLoaderRoute: typeof AuthenticatedSpaceExploreRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
+    '/_authenticated/space/easy': {
+      id: '/_authenticated/space/easy'
+      path: '/easy'
+      fullPath: '/space/easy'
+      preLoaderRoute: typeof AuthenticatedSpaceEasyRouteImport
       parentRoute: typeof AuthenticatedSpaceRoute
     }
     '/.mcp/invoke-tool/$tool': {
@@ -1420,8 +1478,11 @@ declare module '@tanstack/react-router' {
 }
 
 interface AuthenticatedSpaceRouteChildren {
+  AuthenticatedSpaceEasyRoute: typeof AuthenticatedSpaceEasyRoute
+  AuthenticatedSpaceExploreRoute: typeof AuthenticatedSpaceExploreRoute
   AuthenticatedSpaceLibraryRoute: typeof AuthenticatedSpaceLibraryRoute
   AuthenticatedSpaceParticipationsRoute: typeof AuthenticatedSpaceParticipationsRoute
+  AuthenticatedSpacePlanRoute: typeof AuthenticatedSpacePlanRoute
   AuthenticatedSpaceIndexRoute: typeof AuthenticatedSpaceIndexRoute
   AuthenticatedSpaceEventIdLevelRoute: typeof AuthenticatedSpaceEventIdLevelRoute
   AuthenticatedSpaceEventIdParticipationsRoute: typeof AuthenticatedSpaceEventIdParticipationsRoute
@@ -1433,8 +1494,11 @@ interface AuthenticatedSpaceRouteChildren {
 }
 
 const AuthenticatedSpaceRouteChildren: AuthenticatedSpaceRouteChildren = {
+  AuthenticatedSpaceEasyRoute: AuthenticatedSpaceEasyRoute,
+  AuthenticatedSpaceExploreRoute: AuthenticatedSpaceExploreRoute,
   AuthenticatedSpaceLibraryRoute: AuthenticatedSpaceLibraryRoute,
   AuthenticatedSpaceParticipationsRoute: AuthenticatedSpaceParticipationsRoute,
+  AuthenticatedSpacePlanRoute: AuthenticatedSpacePlanRoute,
   AuthenticatedSpaceIndexRoute: AuthenticatedSpaceIndexRoute,
   AuthenticatedSpaceEventIdLevelRoute: AuthenticatedSpaceEventIdLevelRoute,
   AuthenticatedSpaceEventIdParticipationsRoute:
