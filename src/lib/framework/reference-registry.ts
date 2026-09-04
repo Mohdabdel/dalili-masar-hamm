@@ -69,7 +69,7 @@ export function asLegacyReference(
     kind: "legacy_opportunity",
     provenance: "legacy_master",
     id,
-    title: legacy.title,
+    title: legacy.name,
     legacy,
   };
 }
