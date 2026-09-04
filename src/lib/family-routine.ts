@@ -16,10 +16,9 @@ export interface RoutineStation {
   daily_event_id: string;
   domain_id: string | null;
   label: string | null;
+  /** بيانات وصفية للاستكشاف فقط (صباح/ظهيرة/مساء) — ليست جدولاً ولا التزاماً. */
   part_of_day: string;
   position: number;
-  status: string;
-  completed_at: string | null;
 }
 
 export async function getActiveRoutine(): Promise<FamilyRoutine | null> {
@@ -48,7 +47,7 @@ export async function getStations(routineId: string): Promise<RoutineStation[]> 
   const { data, error } = await supabase
     .from("routine_stations")
     .select(
-      "id, routine_id, daily_event_id, domain_id, label, part_of_day, position, status, completed_at",
+      "id, routine_id, daily_event_id, domain_id, label, part_of_day, position",
     )
     .eq("routine_id", routineId)
     .order("position", { ascending: true });
@@ -94,19 +93,6 @@ export async function setStationPosition(
   if (error) throw error;
 }
 
-/** إكمال محطة — التريجر في قاعدة البيانات يكمل المشاركات المرتبطة تلقائياً. */
-export async function completeStation(stationId: string): Promise<void> {
-  const { error } = await supabase
-    .from("routine_stations")
-    .update({ status: "completed", completed_at: new Date().toISOString() })
-    .eq("id", stationId);
-  if (error) throw error;
-}
-
-export async function reopenStation(stationId: string): Promise<void> {
-  const { error } = await supabase
-    .from("routine_stations")
-    .update({ status: "planned", completed_at: null })
-    .eq("id", stationId);
-  if (error) throw error;
-}
+// محطة الروتين عدسة استكشاف وتنظيم فقط.
+// لا يوجد إكمال/إنجاز على مستوى المحطة: حدوث المشاركة يمثله participation_runs وحده.
+// حقلا status و completed_at بقيا في قاعدة البيانات كقيم تاريخية مهجورة ولا يكتبهما التطبيق.
