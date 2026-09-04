@@ -4,7 +4,7 @@ import { LabPage, LabSection, LabNote, LabButton, LabLinkButton } from "@/lab/co
 import { StepBlocks, type ComposerItem } from "@/lab/components/space/FamilyComposer";
 import { buildDraftSelection, getSpaceSpec } from "@/lab/data/space/catalog";
 import { buildFrozenSnapshot, composeDraft } from "@/features/space/compose";
-import { useUploadedUrls } from "@/features/space/family-uploads";
+import { peekUploadedUrl, useUploadedUrls } from "@/features/space/family-uploads";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 import type { LabThisTimeSelection } from "@/lab/slice/types";
 
