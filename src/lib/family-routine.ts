@@ -16,10 +16,9 @@ export interface RoutineStation {
   daily_event_id: string;
   domain_id: string | null;
   label: string | null;
+  /** بيانات وصفية للاستكشاف فقط (صباح/ظهيرة/مساء) — ليست جدولاً ولا التزاماً. */
   part_of_day: string;
   position: number;
-  status: string;
-  completed_at: string | null;
 }
 
 export async function getActiveRoutine(): Promise<FamilyRoutine | null> {
