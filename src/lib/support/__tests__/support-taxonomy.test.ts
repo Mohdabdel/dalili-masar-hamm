@@ -11,7 +11,7 @@ import {
   unregisterSupportCategory,
 } from "@/lib/support/taxonomy";
 import { evaluateFunctionalParticipation } from "@/lib/framework/fp-validity";
-import { compliantParticipation } from "@/lib/framework/__fixtures__/compliant-fixtures";
+import { FIXTURE_MODERATE } from "@/lib/framework/__fixtures__/compliant-fixtures";
 import type { LabSupportAsset } from "@/lab/slice/types";
 
 const asset = (over: Partial<LabSupportAsset> = {}): LabSupportAsset => ({
@@ -106,7 +106,7 @@ describe("قابلية التوسّع", () => {
 
 describe("ثوابت", () => {
   it("عدد الوسائل وفئتها لا يغيّران التعقيد", () => {
-    const fp = compliantParticipation();
+    const fp = FIXTURE_MODERATE;
     const before = JSON.stringify(fp.complexity);
     const supports = [
       asset({ id: "1", categoryId: "visual_schedule" }),
@@ -120,7 +120,7 @@ describe("ثوابت", () => {
   });
 
   it("الدعم لا يغيّر صلاحية المشاركة الوظيفية", () => {
-    const fp = compliantParticipation();
+    const fp = FIXTURE_MODERATE;
     const zero = evaluateFunctionalParticipation(fp);
     const withSupport = evaluateFunctionalParticipation(fp);
     expect(zero.valid).toBe(true);
