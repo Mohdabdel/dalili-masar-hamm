@@ -416,7 +416,7 @@ DECISION:
 Reconfirmed:
 - LIN-02 is a blocker before framework-compliant reference content/provenance work:
   `src/lab/data/space/catalog.ts` `FIXTURE_EVENT_MAP = { BREAKFAST: "FOOD-001",
-  LAUNDRY: "CLO-011", SHOP-004: "SHOP-004" }` merges Lab fixtures ahead of library specs for
+  LAUNDRY: "CLO-011", SHOPPING: "SHOP-004" }` merges Lab fixtures ahead of library specs for
   three mapped events, so block detail and `level` reaching the workspace for FOOD-001,
   CLO-011 and SHOP-004 are not provably Master-derived.
 - LIN-01 (Production importing pure UI/type/catalog modules physically under `src/lab/**`)
