@@ -67,7 +67,14 @@ export function StepComposer({
         return (
         <li key={row.stepId} className="rounded-2xl border border-border bg-card p-3">
           <div className="flex items-start justify-between gap-2">
-            <span className="text-sm font-bold text-muted-foreground">الخطوة {i + 1}</span>
+            <span className="text-sm font-bold text-muted-foreground">
+              الخطوة {i + 1}
+              {row.familyAuthored && (
+                <span className="ms-2 rounded-full bg-accent px-2 py-0.5 text-xs font-bold text-accent-foreground">
+                  من كتابتكم
+                </span>
+              )}
+            </span>
             <div className="flex shrink-0 gap-1">
               <Mini onClick={() => onMove(row.stepId, -1)} aria-label="تقديم الخطوة">
                 <ArrowUp className="h-4 w-4" aria-hidden />
