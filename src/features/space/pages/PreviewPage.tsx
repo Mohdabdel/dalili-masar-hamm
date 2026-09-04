@@ -4,7 +4,7 @@ import { LabPage, LabSection, LabNote, LabButton, LabLinkButton } from "@/lab/co
 import { StepBlocks, type ComposerItem } from "@/lab/components/space/FamilyComposer";
 import { buildDraftSelection, getSpaceSpec } from "@/lab/data/space/catalog";
 import { buildFrozenSnapshot, composeDraft } from "@/features/space/compose";
-import { useUploadedUrls } from "@/features/space/family-uploads";
+import { peekUploadedUrl, useUploadedUrls } from "@/features/space/family-uploads";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 import type { LabThisTimeSelection } from "@/lab/slice/types";
 
@@ -44,9 +44,10 @@ export function PreviewPage({ specId }: { specId: string }) {
         .filter((p): p is string => Boolean(p)),
     [selection.imageRefByStepId],
   );
-  useUploadedUrls(uploadedPaths);
+  const uploadsTick = useUploadedUrls(uploadedPaths);
 
-  const rows = useMemo(() => (spec ? composeDraft(spec, selection) : []), [spec, selection]);
+  // tick يضمن إعادة حساب الصفوف بعد اشتقاق روابط الصور المرفوعة — وإلا تبقى فارغة وتُجمّد بلا صور.
+  const rows = useMemo(() => (spec ? composeDraft(spec, selection) : []), [spec, selection, uploadsTick]);
 
   // خطوة صالحة للاعتماد: تعرض صورة، أو نصاً غير فارغ. الخطوة الفارغة لا تُعتمد.
   const validRows = useMemo(
@@ -59,6 +60,8 @@ export function PreviewPage({ specId }: { specId: string }) {
     [rows],
   );
   const blankRows = rows.length - validRows.length;
+  // لا اعتماد قبل اكتمال اشتقاق روابط صور الأسرة — وإلا تُجمّد البطاقة بلا صور.
+  const uploadsPending = uploadedPaths.some((p) => !peekUploadedUrl(p));
 
   if (!spec) {
     return (
@@ -224,7 +227,7 @@ export function PreviewPage({ specId }: { specId: string }) {
       )}
 
       <div className="flex flex-wrap items-center gap-3">
-        <LabButton onClick={approve} disabled={validRows.length === 0}>
+        <LabButton onClick={approve} disabled={validRows.length === 0 || uploadsPending}>
           اعتماد بطاقة المشاركة
         </LabButton>
         <LabLinkButton
