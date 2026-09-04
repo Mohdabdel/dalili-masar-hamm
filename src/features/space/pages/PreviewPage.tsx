@@ -6,6 +6,7 @@ import { buildDraftSelection } from "@/lab/data/space/catalog";
 import { resolveSpaceSpec } from "@/features/space/spec-resolution";
 import { buildFrozenSnapshot, composeDraft } from "@/features/space/compose";
 import { peekUploadedUrl, useUploadedUrls } from "@/features/space/family-uploads";
+import { participationImagePaths, participationImageSrc } from "@/features/space/participation-image";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 import type { LabThisTimeSelection } from "@/lab/slice/types";
 
@@ -38,12 +39,16 @@ export function PreviewPage({ specId }: { specId: string }) {
   }, [state.selections, spec, specId]);
 
   // روابط صور الأسرة المرفوعة تُشتق قبل العرض والاعتماد.
+  const participationImage = state.participationImages[specId] ?? null;
+
   const uploadedPaths = useMemo(
-    () =>
-      Object.values(selection.imageRefByStepId ?? {})
+    () => [
+      ...Object.values(selection.imageRefByStepId ?? {})
         .map((ref) => ref?.uploadedPath ?? "")
         .filter((p): p is string => Boolean(p)),
-    [selection.imageRefByStepId],
+      ...participationImagePaths(participationImage),
+    ],
+    [selection.imageRefByStepId, participationImage],
   );
   const uploadsTick = useUploadedUrls(uploadedPaths);
 
@@ -72,6 +77,8 @@ export function PreviewPage({ specId }: { specId: string }) {
     );
   }
 
+  const participationSrc = participationImageSrc(participationImage);
+
   const items: ComposerItem[] = rows.map((r) => ({
     stepId: r.stepId,
     familyText: r.textVisible ? r.familyText : "",
@@ -87,6 +94,14 @@ export function PreviewPage({ specId }: { specId: string }) {
       selection,
       rows: validRows.map((r, i) => ({ ...r, order: i + 1 })),
       version: versions.length + 1,
+      participationImage: participationImage
+        ? {
+            source: participationImage.source,
+            assetCode: participationImage.assetCode ?? null,
+            uploadedPath: participationImage.uploadedPath ?? null,
+            src: participationSrc,
+          }
+        : null,
       label_ar: label.trim() || `${spec.title_ar} — بطاقة ${versions.length + 1}`,
       date,
       supportAssets: assets,
@@ -100,6 +115,19 @@ export function PreviewPage({ specId }: { specId: string }) {
       title={`معاينة بطاقة: ${spec.title_ar}`}
       intro="هذه هي البطاقة كما ستظهر تماماً. لم تُعتمد بعد — يمكنكم الرجوع والتعديل، أو اعتمادها كما هي."
     >
+      {participationSrc && (
+        <LabSection
+          title="صورة المشاركة كلها"
+          description="تمثّل المشاركة بكاملها — ليست خطوة ولا وسيلة دعم."
+        >
+          <img
+            src={participationSrc}
+            alt="صورة المشاركة كلها"
+            className="aspect-[4/3] w-48 rounded-2xl border border-border object-cover"
+          />
+        </LabSection>
+      )}
+
       <LabSection title="ما ستراه الأسرة">
         {rows.length === 0 ? (
           <LabNote>لا توجد خطوات في مسودّتكم بعد.</LabNote>
