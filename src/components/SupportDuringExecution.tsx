@@ -5,6 +5,7 @@ import { VisualSupportAid } from "@/components/VisualSupportAid";
 import { VisualFramePilot } from "@/components/VisualFramePilot";
 import { ReminderCardPilot } from "@/components/ReminderCardPilot";
 import { getSupportAvailability } from "@/lib/execution-support";
+import { workspaceSpecIdFor } from "@/features/space/participation-link";
 
 /**
  * DALILI-MVP-INSTITUTIONAL-READINESS-01
