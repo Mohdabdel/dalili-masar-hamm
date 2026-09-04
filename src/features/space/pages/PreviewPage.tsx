@@ -44,9 +44,10 @@ export function PreviewPage({ specId }: { specId: string }) {
         .filter((p): p is string => Boolean(p)),
     [selection.imageRefByStepId],
   );
-  useUploadedUrls(uploadedPaths);
+  const uploadsTick = useUploadedUrls(uploadedPaths);
 
-  const rows = useMemo(() => (spec ? composeDraft(spec, selection) : []), [spec, selection]);
+  // tick يضمن إعادة حساب الصفوف بعد اشتقاق روابط الصور المرفوعة — وإلا تبقى فارغة وتُجمّد بلا صور.
+  const rows = useMemo(() => (spec ? composeDraft(spec, selection) : []), [spec, selection, uploadsTick]);
 
   // خطوة صالحة للاعتماد: تعرض صورة، أو نصاً غير فارغ. الخطوة الفارغة لا تُعتمد.
   const validRows = useMemo(
