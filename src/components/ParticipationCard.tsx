@@ -209,11 +209,11 @@ export function ParticipationCard({ open, onOpenChange, data, onNext }: Particip
               بطاقة الداعم
             </span>
             <Link
-              to="/learner/$id"
-              params={{ id: data.id }}
+              to="/space/workspace/$specId"
+              params={{ specId: workspaceSpecIdFor(data.id) }}
               className="rounded-full border border-gold/60 bg-gold/10 px-3 py-1 text-xs font-bold text-primary transition-colors hover:bg-gold/20"
             >
-              عرض نسخة المشارك
+              جهّزوا بطاقة المشارك
             </Link>
           </div>
         </SheetHeader>
