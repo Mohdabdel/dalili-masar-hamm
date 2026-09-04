@@ -47,7 +47,7 @@ export async function getStations(routineId: string): Promise<RoutineStation[]> 
   const { data, error } = await supabase
     .from("routine_stations")
     .select(
-      "id, routine_id, daily_event_id, domain_id, label, part_of_day, position, status, completed_at",
+      "id, routine_id, daily_event_id, domain_id, label, part_of_day, position",
     )
     .eq("routine_id", routineId)
     .order("position", { ascending: true });
