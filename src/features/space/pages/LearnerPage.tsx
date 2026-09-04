@@ -8,14 +8,23 @@ import { ChevronRight, ChevronLeft, CheckCircle2 } from "lucide-react";
 import { StepFrame } from "@/lab/components/StepFrame";
 import { LabPage, LabLinkButton } from "@/lab/components/lab-ui";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
+import {
+  LEARNER_BLOCK_TEXT,
+  resolveLearnerLaunch,
+} from "@/features/space/learner-resolution";
 
 const DONE_STEP_ID = "__done__";
 
 export function LearnerPage({ snapshotId }: { snapshotId: string }) {
   const base = useSpaceBase();
-  const { snapshotById } = useSliceHelpers();
+  const { state } = useSliceHelpers();
   const { dispatch } = useSlice();
-  const snap = snapshotById(snapshotId);
+  // نسخة معتمدة مُختارة صراحةً فقط — لا رجوع إلى «الأحدث» ولا إلى المسودة.
+  const resolution = resolveLearnerLaunch({
+    snapshotId,
+    approvedSnapshots: state.snapshots,
+  });
+  const snap = resolution.ok ? resolution.snapshot : null;
   const [i, setI] = useState(0);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const navigate = useNavigate() as any;
