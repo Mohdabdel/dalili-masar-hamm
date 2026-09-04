@@ -200,7 +200,7 @@ function InfoTabs() {
       <div
         role="tablist"
         aria-label="تعرّف على دليلي"
-        className="grid grid-cols-3 gap-1.5"
+        className="grid grid-cols-3 gap-1.5 rounded-2xl bg-primary-foreground/10 p-1.5"
       >
         {INFO_TABS.map((item) => {
           const on = item.id === active;
@@ -212,10 +212,10 @@ function InfoTabs() {
               aria-selected={on}
               onClick={() => setActive(on ? null : item.id)}
               className={cn(
-                "min-h-[44px] rounded-xl border px-2 text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                "min-h-[44px] rounded-xl px-2 text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                 on
-                  ? "border-gold bg-gold/15 text-gold"
-                  : "border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground/80 hover:text-primary-foreground",
+                  ? "bg-coral text-coral-foreground shadow-card-soft"
+                  : "text-primary-foreground/75 hover:bg-primary-foreground/10 hover:text-primary-foreground",
               )}
             >
               {item.title}
@@ -226,12 +226,12 @@ function InfoTabs() {
       {current && (
         <div
           role="tabpanel"
-          className="mt-2 rounded-xl border border-primary-foreground/20 bg-primary-foreground/10 p-3"
+          className="mt-2 rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 p-3"
         >
           {current.body.map((p) => (
             <p
               key={p}
-              className="mt-1 text-sm leading-relaxed text-primary-foreground/80"
+              className="mt-1 text-sm leading-relaxed text-primary-foreground/85"
             >
               {p}
             </p>
@@ -240,7 +240,7 @@ function InfoTabs() {
             <Link
               to="/participation-guide"
               search={{ tab: "guide" as const }}
-              className="mt-3 inline-flex min-h-11 items-center gap-1 text-sm font-bold text-gold"
+              className="mt-3 inline-flex min-h-11 items-center gap-1 text-sm font-bold text-coral"
             >
               افتحوا دليل المشاركة
               <ChevronLeft className="h-4 w-4" aria-hidden />
