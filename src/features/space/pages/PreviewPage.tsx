@@ -60,6 +60,8 @@ export function PreviewPage({ specId }: { specId: string }) {
     [rows],
   );
   const blankRows = rows.length - validRows.length;
+  // لا اعتماد قبل اكتمال اشتقاق روابط صور الأسرة — وإلا تُجمّد البطاقة بلا صور.
+  const uploadsPending = uploadedPaths.some((p) => !peekUploadedUrl(p));
 
   if (!spec) {
     return (
@@ -225,7 +227,7 @@ export function PreviewPage({ specId }: { specId: string }) {
       )}
 
       <div className="flex flex-wrap items-center gap-3">
-        <LabButton onClick={approve} disabled={validRows.length === 0}>
+        <LabButton onClick={approve} disabled={validRows.length === 0 || uploadsPending}>
           اعتماد بطاقة المشاركة
         </LabButton>
         <LabLinkButton
