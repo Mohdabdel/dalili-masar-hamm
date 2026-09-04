@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useRef, useState } from "react";
 import { LabPage, LabSection, LabNote, LabLinkButton } from "@/lab/components/lab-ui";
 import { StepBlocks, type ComposerItem } from "@/lab/components/space/FamilyComposer";
 import { StepComposer, type ComposerStepRow } from "@/features/space/components/StepComposer";
@@ -13,6 +13,9 @@ import {
   sourceTextFor,
 } from "@/lab/data/space/catalog";
 import { hasReferenceWording, resolveSpaceSpec } from "@/features/space/spec-resolution";
+import { createFamilyBlock, isFamilyBlockId } from "@/features/space/family-blocks";
+import { participationImagePaths, participationImageSrc } from "@/features/space/participation-image";
+import { stepImageOptions } from "@/features/space/step-image";
 import { resolveStepImage, resolvedAssetCode } from "@/features/space/step-image";
 import { uploadFamilyImage, useUploadedUrls } from "@/features/space/family-uploads";
 import {
@@ -23,6 +26,7 @@ import {
 } from "@/features/space/compose";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 import type {
+  LabParticipationImage,
   LabStepImageRef,
   LabSupportAssetConfig,
   LabSupportAssetType,
@@ -62,14 +66,18 @@ export function WorkspacePage({ specId }: { specId: string }) {
   }, [spec]);
 
   // صور الأسرة المرفوعة محفوظة كمسارات تخزين — نشتق روابطها الموقّعة قبل العرض.
+  const participationImage = state.participationImages[specId] ?? null;
+
   const uploadedPaths = useMemo(
-    () =>
-      Object.values(selection.imageRefByStepId ?? {})
+    () => [
+      ...Object.values(selection.imageRefByStepId ?? {})
         .map((ref) => ref?.uploadedPath ?? "")
         .filter((p): p is string => Boolean(p)),
-    [selection.imageRefByStepId],
+      ...participationImagePaths(participationImage),
+    ],
+    [selection.imageRefByStepId, participationImage],
   );
-  useUploadedUrls(uploadedPaths);
+  const uploadsTick = useUploadedUrls(uploadedPaths);
 
   if (!spec) {
     return (
@@ -103,10 +111,30 @@ export function WorkspacePage({ specId }: { specId: string }) {
   });
 
   const addStep = (stepId: string) => {
-    // الترتيب المرجعي هو المرجع الوحيد لموضع الخطوة المُعادة.
+    // الترتيب المرجعي يحدد موضع الخطوة المرجعية المُعادة، وكتل الأسرة تبقى في مواضعها.
     const reference = leaves.map((l) => l.step.id);
-    const next = reference.filter((id) => orderedIds.includes(id) || id === stepId);
+    const beforeIds = reference.slice(0, reference.indexOf(stepId));
+    const insertAt = (() => {
+      for (let i = orderedIds.length - 1; i >= 0; i -= 1) {
+        if (beforeIds.includes(orderedIds[i])) return i + 1;
+      }
+      return 0;
+    })();
+    const next = [...orderedIds];
+    next.splice(insertAt, 0, stepId);
     setSelection(withRange(next));
+  };
+
+  /** كتلة تنفيذ من كتابة الأسرة — هوية ثابتة خاصة بها، بلا نص مرجعي. */
+  const addFamilyBlock = () => {
+    const text = newBlockText.trim();
+    if (!text) return;
+    const block = createFamilyBlock(text);
+    setSelection({
+      familyBlocks: [...(selection.familyBlocks ?? []), block],
+      ...withRange([...orderedIds, block.id]),
+    });
+    setNewBlockText("");
   };
 
   const removeStep = (stepId: string) => {
@@ -129,7 +157,12 @@ export function WorkspacePage({ specId }: { specId: string }) {
     const b = ids.indexOf(nextEndId);
     if (a < 0 || b < 0) return;
     const [from, to] = a <= b ? [a, b] : [b, a];
-    setSelection(withRange(ids.slice(from, to + 1)));
+    // كتل الأسرة ليست جزءاً من الترتيب المرجعي — تبقى بمواضعها النسبية.
+    const next = ids.slice(from, to + 1);
+    orderedIds.forEach((id, index) => {
+      if (isFamilyBlockId(id)) next.splice(Math.min(index, next.length), 0, id);
+    });
+    setSelection(withRange(next));
   };
 
   // ---------- كتلة الصورة وكتلة العبارة: حالتان مستقلتان ----------
@@ -201,9 +234,28 @@ export function WorkspacePage({ specId }: { specId: string }) {
       familyTextByStepId: { ...(selection.familyTextByStepId ?? {}), [stepId]: text },
     });
 
-  const resetText = (stepId: string) => setText(stepId, sourceTextFor(spec, stepId));
+  const resetText = (stepId: string) => {
+    if (isFamilyBlockId(stepId)) return; // لا مرجع لاسترجاعه
+    setText(stepId, sourceTextFor(spec, stepId));
+  };
+
+  // ---------- صورة المشاركة ككل ----------
+
+  const setParticipationImage = (value: LabParticipationImage | null) =>
+    dispatch({ type: "participationImage.set", specId, value });
+
+  const uploadParticipationImage = async (file: File) => {
+    try {
+      const path = await uploadFamilyImage(file);
+      setParticipationImage({ source: "family_upload", uploadedPath: path });
+    } catch {
+      window.alert("لم نستطع رفع الصورة. جرّبوا صورة أخرى أو أعيدوا المحاولة.");
+    }
+  };
 
   const composed = composeDraft(spec, selection);
+  void uploadsTick;
+  const participationSrc = participationImageSrc(participationImage);
 
   const rows: ComposerStepRow[] = composed.map((r) => ({
     stepId: r.stepId,
@@ -212,6 +264,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
     image: r.image,
     imageVisible: r.imageVisible,
     textVisible: r.textVisible,
+    familyAuthored: r.familyAuthored,
   }));
 
   const previewItems: ComposerItem[] = composed.map((r) => ({
