@@ -178,15 +178,25 @@ function fixtureSpecsForEvent(eventId: string): LabParticipationSpec[] {
   }));
 }
 
-/** كل المشاركات الوظيفية داخل حدث (Fixtures أولاً ثم المكتبة). */
-export function participationsForEvent(eventId: string): LabParticipationSpec[] {
+/** مشاركات المكتبة القانونية لحدث (المصدر المعتمد في الإنتاج). */
+function librarySpecsForEvent(eventId: string): LabParticipationSpec[] {
   const ctx = findEventById(eventId);
-  const fromLibrary = ctx
-    ? ctx.event.opportunities
-        .map((o) => specFromLibrary(ctx, o.id))
-        .filter((s): s is LabParticipationSpec => Boolean(s))
-    : [];
-  return [...fixtureSpecsForEvent(eventId), ...fromLibrary];
+  if (!ctx) return [];
+  return ctx.event.opportunities
+    .map((o) => specFromLibrary(ctx, o.id))
+    .filter((s): s is LabParticipationSpec => Boolean(s));
+}
+
+/**
+ * كل المشاركات الوظيفية داخل حدث.
+ * قاعدة الأسبقية: مصدر المكتبة/الإنتاج هو المعتمد دائماً.
+ * Fixtures الخاصة بـ Lab تُستخدم فقط عندما لا يوجد أي مصدر مكتبة لهذا الحدث،
+ * فلا تسبق ولا تحجب محتوى الإنتاج.
+ */
+export function participationsForEvent(eventId: string): LabParticipationSpec[] {
+  const fromLibrary = librarySpecsForEvent(eventId);
+  if (fromLibrary.length > 0) return fromLibrary;
+  return fixtureSpecsForEvent(eventId);
 }
 
 export function participationsForLevel(
@@ -203,6 +213,15 @@ export function levelCounts(eventId: string): Record<SliceLevel, number> {
 }
 
 export function getSpaceSpec(specId: string): LabParticipationSpec | null {
+  // 1) المصدر المعتمد: المكتبة/الإنتاج.
+  if (specId.startsWith("KB-")) {
+    const oppId = specId.slice(3);
+    const eventId = oppId.split("-OP")[0];
+    const ctx = findEventById(eventId);
+    const fromLibrary = ctx ? specFromLibrary(ctx, oppId) : null;
+    if (fromLibrary) return fromLibrary;
+  }
+  // 2) احتياطي: fixture خاص بـ Lab، ولا يُستخدم إلا إذا لم يوجد مصدر مكتبة.
   const fixture = SLICE_SPECS.find((s) => s.id === specId);
   if (fixture) {
     const mapped = FIXTURE_EVENT_MAP[fixture.eventId];
@@ -214,14 +233,9 @@ export function getSpaceSpec(specId: string): LabParticipationSpec | null {
         }
       : fixture;
   }
-  if (specId.startsWith("KB-")) {
-    const oppId = specId.slice(3);
-    const eventId = oppId.split("-OP")[0];
-    const ctx = findEventById(eventId);
-    if (ctx) return specFromLibrary(ctx, oppId);
-  }
   return null;
 }
+
 
 /** الخطوات بترتيب العرض: رئيسية ثم تفاصيلها. */
 export function flatSteps(spec: LabParticipationSpec): Array<{
