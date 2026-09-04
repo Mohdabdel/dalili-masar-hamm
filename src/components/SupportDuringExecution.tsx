@@ -5,6 +5,7 @@ import { VisualSupportAid } from "@/components/VisualSupportAid";
 import { VisualFramePilot } from "@/components/VisualFramePilot";
 import { ReminderCardPilot } from "@/components/ReminderCardPilot";
 import { getSupportAvailability } from "@/lib/execution-support";
+import { workspaceSpecIdFor } from "@/features/space/participation-link";
 
 /**
  * DALILI-MVP-INSTITUTIONAL-READINESS-01
@@ -45,9 +46,12 @@ export function SupportDuringExecution({
 
       {hasSteps && (
         <Button variant="outline" className="min-h-11 w-full gap-2" asChild>
-          <Link to="/learner/$id" params={{ id: opportunityId }}>
+          <Link
+            to="/space/workspace/$specId"
+            params={{ specId: workspaceSpecIdFor(opportunityId) }}
+          >
             <Smartphone className="h-4 w-4" />
-            فتح نسخة المتعلم
+            جهّزوا بطاقة المشارك
           </Link>
         </Button>
       )}
