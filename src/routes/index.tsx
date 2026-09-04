@@ -263,8 +263,12 @@ function LandingPage() {
       description="مساحة مشاركات الأسرة داخل الحياة اليومية"
       headerExtra={<InfoTabs />}
     >
-      {/* مقدمة مختصرة */}
-      <section className="mt-1 rounded-2xl border border-border bg-card p-5 shadow-card-soft">
+      {/* مقدمة مختصرة — بطاقة التعريف */}
+      <section className="relative mt-1 overflow-hidden rounded-[2rem] border border-border bg-card p-5 shadow-card-soft">
+        <span
+          aria-hidden
+          className="absolute inset-y-0 start-0 w-1.5 rounded-s-[2rem] bg-coral"
+        />
         <p className="max-w-[52ch] text-[0.98rem] font-bold leading-relaxed text-foreground">
           دليلي يساعد الأسرة على تهيئة فرص مشاركة الأشخاص ذوي الإعاقة في أحداث
           حياتهم اليومية.
@@ -272,22 +276,28 @@ function LandingPage() {
         <p className="mt-3 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
           المشاركة ليست تدريبًا على الحياة… المشاركة هي الحياة نفسها.
         </p>
-        <p className="mt-1 text-sm font-bold text-gold">الفرصة الموجودة تكفي.</p>
+        <p className="mt-1 text-sm font-bold text-coral">الفرصة الموجودة تكفي.</p>
       </section>
 
-      {/* مساحة عمل الأسرة — حالة الإنتاج الفعلية */}
-      <section className="mt-7">
-        <h2 className="px-1 font-display text-lg font-bold text-foreground">
+      {/* مساحة عمل الأسرة — بطاقة بنتو داكنة بارزة */}
+      <section className="relative mt-5 overflow-hidden rounded-[2rem] bg-gradient-primary p-5 text-primary-foreground shadow-elegant">
+        <span
+          aria-hidden
+          className="absolute -bottom-8 -start-8 h-32 w-32 rounded-full bg-primary-foreground/10 blur-2xl"
+        />
+        <h2 className="relative font-display text-lg font-bold">
           مساحة عمل أسرتكم
         </h2>
-        <p className="mt-1 px-1 text-sm leading-relaxed text-muted-foreground">
+        <p className="relative mt-1 text-sm leading-relaxed text-primary-foreground/75">
           كل بطاقة تمرّ برحلة واحدة: {JOURNEY_STEPS.join(" ← ")} — وتبقى
           محفوظة لأسرتكم.
         </p>
-        <FamilySpaceSection />
+        <div className="relative">
+          <FamilySpaceSection />
+        </div>
       </section>
 
-      {/* دعوة الاكتشاف */}
+      {/* دعوة الاكتشاف — شبكة بنتو */}
       <section className="mt-7">
         <h2 className="px-1 font-display text-lg font-bold leading-snug text-foreground">
           هل تفكرون في مشاركة ابنكم أو ابنتكم في بعض أحداث حياتكم اليومية؟
@@ -296,51 +306,82 @@ function LandingPage() {
           هل تبحثون عن مشاركة مناسبة لكم؟ جرّبوا أحد المسارات التالية.
         </p>
 
-        <div className="mt-3 space-y-3">
-          {DISCOVERY_PATHS.map(({ title, description, icon: Icon, to }) => (
-            <Link
-              key={title}
-              to={to}
-              className="group flex items-start gap-4 rounded-2xl border-2 border-border bg-card p-4 shadow-card-soft transition-all hover:-translate-y-0.5 hover:border-gold hover:shadow-elegant"
-            >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-gold text-primary shadow-card-soft">
-                <Icon className="h-5 w-5" strokeWidth={2} />
-              </span>
-              <span className="min-w-0 flex-1 text-right">
-                <span className="block text-base font-bold text-foreground">
-                  {title}
+        <div className="mt-3 grid grid-cols-2 gap-3">
+          {DISCOVERY_PATHS.map(({ title, description, icon: Icon, to, tone }) => {
+            const filled = tone === "teal";
+            return (
+              <Link
+                key={title}
+                to={to}
+                className={cn(
+                  "group flex min-h-40 flex-col justify-between gap-3 rounded-[2rem] border p-4 shadow-card-soft transition-all hover:-translate-y-0.5 hover:shadow-elegant",
+                  filled
+                    ? "border-teal bg-teal text-teal-foreground"
+                    : "border-border bg-card",
+                )}
+              >
+                <span
+                  className={cn(
+                    "flex h-11 w-11 items-center justify-center rounded-2xl",
+                    filled
+                      ? "bg-teal-foreground/20 text-teal-foreground"
+                      : tone === "navy"
+                        ? "bg-primary/10 text-primary"
+                        : "bg-coral/10 text-coral",
+                  )}
+                >
+                  <Icon className="h-5 w-5" strokeWidth={2} />
                 </span>
-                <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
-                  {description}
+                <span className="text-right">
+                  <span
+                    className={cn(
+                      "block text-base font-bold",
+                      filled ? "text-teal-foreground" : "text-foreground",
+                    )}
+                  >
+                    {title}
+                  </span>
+                  <span
+                    className={cn(
+                      "mt-1 block text-sm leading-relaxed",
+                      filled
+                        ? "text-teal-foreground/80"
+                        : "text-muted-foreground",
+                    )}
+                  >
+                    {description}
+                  </span>
                 </span>
-              </span>
-              <ChevronLeft className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </section>
 
       {/* مشاركاتي النشطة */}
-      <section className="mt-8 border-t border-border pt-6">
-        <h2 className="px-1 font-display text-lg font-bold text-foreground">
-          مشاركاتي النشطة
-        </h2>
+      <section className="mt-5 rounded-[2rem] border border-border bg-card p-5 shadow-card-soft">
+        <div className="flex items-center justify-between gap-3 px-1">
+          <h2 className="font-display text-lg font-bold text-foreground">
+            مشاركاتي النشطة
+          </h2>
+          <span className="text-xs font-bold text-teal">عرض الكل</span>
+        </div>
         <p className="mt-1 px-1 text-sm leading-relaxed text-muted-foreground">
           تابعوا المشاركات الجارية وسجّلوا ما فعلتموه اليوم.
         </p>
         <Link
           to="/active-participations"
-          className="mt-3 flex items-center justify-between gap-3 rounded-2xl border-2 border-primary/30 bg-card p-4 shadow-card-soft transition-all hover:-translate-y-0.5 hover:shadow-elegant"
+          className="group mt-3 flex items-center justify-between gap-3 rounded-2xl border border-border bg-secondary p-4 transition-all hover:-translate-y-0.5 hover:shadow-elegant"
         >
           <span className="flex items-center gap-3">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
               <ListChecks className="h-5 w-5" strokeWidth={2} />
             </span>
             <span className="text-base font-bold text-foreground">
               افتحوا مشاركاتنا النشطة
             </span>
           </span>
-          <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground" />
+          <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
         </Link>
       </section>
     </PageShell>
