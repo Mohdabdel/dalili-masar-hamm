@@ -54,7 +54,10 @@ export function LearnerPage({ snapshotId }: { snapshotId: string }) {
 
   if (!snap) {
     return (
-      <LabPage title="لا توجد بطاقة" intro="لم تُعتمد بطاقة بهذا الرقم.">
+      <LabPage
+        title="لا يمكن فتح بطاقة المشارك"
+        intro={LEARNER_BLOCK_TEXT[resolution.reason ?? "not-found"]}
+      >
         <LabLinkButton to={`${base}`}>رجوع</LabLinkButton>
       </LabPage>
     );
