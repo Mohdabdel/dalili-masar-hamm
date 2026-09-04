@@ -70,24 +70,28 @@ const DISCOVERY_PATHS = [
     description: "اختاروا فرصة مشاركة، جهّزوا بطاقتها بلغتكم وصوركم، ثم اعتمدوها كنسخة ثابتة محفوظة.",
     icon: Sparkles,
     to: "/space" as const,
+    tone: "teal" as const,
   },
   {
     title: "مشاركات الروتين اليومي",
     description: "رتّبوا محطات يومكم واربطوا بها مشاركات مناسبة.",
     icon: CalendarClock,
     to: "/my-routine" as const,
+    tone: "coral" as const,
   },
   {
     title: "ساعدني في الاختيار",
     description: "ثلاث خطوات قصيرة تقترح عليكم فرصة مشاركة مناسبة الآن.",
     icon: Sparkles,
     to: "/help-me-choose" as const,
+    tone: "navy" as const,
   },
   {
     title: "مكتبة المشاركات",
     description: "تصفّحوا أحداث الحياة والمشاركات المتاحة داخل المنزل وخارجه.",
     icon: Library,
     to: "/activities/browse" as const,
+    tone: "coral" as const,
   },
 ];
 
