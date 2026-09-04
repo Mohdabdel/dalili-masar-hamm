@@ -313,6 +313,8 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
         createdAt: String(r.created_at).slice(0, 10),
         items: (r.items as unknown as string[]) ?? [],
         config: (r.config as unknown as LabSupportAsset["config"]) ?? undefined,
+        // الصفوف الأقدم لا تحمل فئة معلنة — تُحسم عند العرض عبر حدّ التوافق.
+        categoryId: (r.config as { categoryId?: string } | null)?.categoryId,
       })) as LabSupportAsset[];
 
       // محطات الأسرة من الروتين الفعلي
@@ -513,7 +515,9 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           label: a.label_ar,
           items: a.items,
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          config: (a.config ?? {}) as any,
+          // فئة الدعم تُحفظ داخل config — إضافة غير هادمة بلا تغيير مخطط.
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          config: { ...(a.config ?? {}), categoryId: a.categoryId } as any,
         });
         failed("supportAdd", "تعذّر حفظ وسيلة الدعم")(error);
         break;

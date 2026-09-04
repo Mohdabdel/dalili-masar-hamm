@@ -25,6 +25,7 @@ import {
   textVisibleFor as composeTextVisibleFor,
 } from "@/features/space/compose";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
+import { toSupportInstance } from "@/lib/support/taxonomy";
 import type {
   LabParticipationImage,
   LabStepImageRef,
@@ -302,6 +303,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
     }));
 
   const addSupportAsset = (input: {
+    categoryId: string;
     type: LabSupportAssetType;
     label: string;
     items: string[];
@@ -312,6 +314,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
       value: {
         id: crypto.randomUUID(),
         type: input.type,
+        categoryId: input.categoryId,
         label_ar: `${input.label} — ${spec.title_ar}`,
         specId,
         createdAt: new Date().toISOString().slice(0, 10),
@@ -563,7 +566,8 @@ export function WorkspacePage({ specId }: { specId: string }) {
                 <span className="min-w-0">
                   <span className="block truncate text-sm font-bold">{a.label_ar}</span>
                   <span className="block text-xs text-muted-foreground">
-                    مستقل عن بطاقة المشارك — {a.items.length} عنصر
+                    {toSupportInstance(a).categoryLabel_ar} · مستقل عن بطاقة المشارك —{" "}
+                    {a.items.length} عنصر
                   </span>
                 </span>
                 <button

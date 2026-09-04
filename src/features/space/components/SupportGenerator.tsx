@@ -9,6 +9,7 @@ import type {
   LabSupportAssetKind,
   LabSupportAssetType,
 } from "@/lab/slice/types";
+import { listSupportCategories, type SupportCategoryId } from "@/lib/support/taxonomy";
 import { cn } from "@/lib/utils";
 
 export interface SupportSourceRow {
@@ -18,7 +19,9 @@ export interface SupportSourceRow {
   src: string | null;
 }
 
+/** الفئات المعلنة في سجلّ الدعم — الواجهة لا تحمل قائمة خاصة بها. */
 interface KindDef {
+  categoryId: SupportCategoryId;
   kind: LabSupportAssetKind;
   type: LabSupportAssetType;
   label: string;
@@ -27,18 +30,15 @@ interface KindDef {
   take: number;
 }
 
-const KINDS: KindDef[] = [
-  { kind: "schedule", type: "schedule", label: "جدول مصور", hint: "كل الخطوات بترتيبها.", take: 0 },
-  { kind: "sequence", type: "schedule", label: "تسلسل مصوّر", hint: "الخطوات صورة بعد صورة.", take: 0 },
-  { kind: "now-next", type: "time", label: "الآن / بعد", hint: "خطوتان فقط في كل مرة.", take: 2 },
-  {
-    kind: "choice-board",
-    type: "communication",
-    label: "لوحة اختيارات",
-    hint: "خيارات مصوّرة للطلب أو الاختيار.",
-    take: 4,
-  },
-];
+const kindDefs = (): KindDef[] =>
+  listSupportCategories().map((c) => ({
+    categoryId: c.id,
+    kind: (c.legacyKind ?? "schedule") as LabSupportAssetKind,
+    type: c.legacyStorageType,
+    label: c.label_ar,
+    hint: c.hint_ar,
+    take: c.entriesTake,
+  }));
 
 export function SupportGenerator({
   rows,
@@ -46,14 +46,17 @@ export function SupportGenerator({
 }: {
   rows: SupportSourceRow[];
   onGenerate: (input: {
+    categoryId: SupportCategoryId;
     type: LabSupportAssetType;
     label: string;
     items: string[];
     config: LabSupportAssetConfig;
   }) => void;
 }) {
-  const [kind, setKind] = useState<LabSupportAssetKind>("schedule");
-  const def = KINDS.find((k) => k.kind === kind) as KindDef;
+  const KINDS = useMemo(() => kindDefs(), []);
+  const [categoryId, setCategoryId] = useState<SupportCategoryId>(KINDS[0]?.categoryId ?? "");
+  const def = (KINDS.find((k) => k.categoryId === categoryId) ?? KINDS[0]) as KindDef;
+  const kind = def?.kind;
 
   const entries: LabSupportAssetEntry[] = useMemo(() => {
     const base = rows.map((r) => ({
@@ -68,6 +71,7 @@ export function SupportGenerator({
   const generate = () => {
     if (entries.length === 0) return;
     onGenerate({
+      categoryId: def.categoryId,
       type: def.type,
       label: def.label,
       items: entries.map((e) => e.text),
@@ -85,14 +89,14 @@ export function SupportGenerator({
       <div className="flex flex-wrap gap-2">
         {KINDS.map((k) => (
           <button
-            key={k.kind}
+            key={k.categoryId}
             type="button"
             title={k.hint}
-            onClick={() => setKind(k.kind)}
-            aria-pressed={kind === k.kind}
+            onClick={() => setCategoryId(k.categoryId)}
+            aria-pressed={def?.categoryId === k.categoryId}
             className={cn(
               "min-h-11 rounded-xl border px-4 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-              kind === k.kind ? "border-primary bg-accent" : "border-border bg-card hover:bg-accent",
+              def?.categoryId === k.categoryId ? "border-primary bg-accent" : "border-border bg-card hover:bg-accent",
             )}
           >
             {k.label}
