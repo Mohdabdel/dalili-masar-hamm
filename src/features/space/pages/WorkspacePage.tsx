@@ -302,6 +302,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
     }));
 
   const addSupportAsset = (input: {
+    categoryId: string;
     type: LabSupportAssetType;
     label: string;
     items: string[];
@@ -312,6 +313,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
       value: {
         id: crypto.randomUUID(),
         type: input.type,
+        categoryId: input.categoryId,
         label_ar: `${input.label} — ${spec.title_ar}`,
         specId,
         createdAt: new Date().toISOString().slice(0, 10),

@@ -513,7 +513,9 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           label: a.label_ar,
           items: a.items,
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          config: (a.config ?? {}) as any,
+          // فئة الدعم تُحفظ داخل config — إضافة غير هادمة بلا تغيير مخطط.
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          config: { ...(a.config ?? {}), categoryId: a.categoryId } as any,
         });
         failed("supportAdd", "تعذّر حفظ وسيلة الدعم")(error);
         break;

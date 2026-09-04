@@ -1,6 +1,7 @@
 // تركيب مسودّة الأسرة — مصدر واحد يستخدمه مساحة العمل والمعاينة والاعتماد.
 // ضمان التطابق: ما تراه الأسرة في المعاينة هو نفسه ما يُجمَّد في النسخة المعتمدة.
 
+import { resolveSupportCategory } from "@/lib/support/taxonomy";
 import {
   findSpaceStep,
   getSpaceEvent,
@@ -177,6 +178,11 @@ export function buildFrozenSnapshot(input: {
     supportAssetsFrozen: supportAssets.map((a) => ({
       id: a.id,
       type: a.type,
+      categoryId: resolveSupportCategory({
+        categoryId: a.categoryId,
+        type: a.type,
+        config: a.config ?? null,
+      }).categoryId,
       label_ar: a.label_ar,
       items: [...a.items],
       config: a.config,
