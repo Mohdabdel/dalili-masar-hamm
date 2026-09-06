@@ -18,13 +18,23 @@ export type SourceClassification =
  * - غير موجودة → null.
  */
 export function classifyReferenceSource(id: string): SourceClassification {
-  if (getFrameworkParticipation(id)) {
-    return { source: "framework_reference", frameworkValidated: true };
+  for (const candidate of referenceIdVariants(id)) {
+    if (getFrameworkParticipation(candidate)) {
+      return { source: "framework_reference", frameworkValidated: true };
+    }
   }
-  if (findOpportunityById(id)) {
-    return { source: "legacy_master", frameworkValidated: false };
+  for (const candidate of referenceIdVariants(id)) {
+    if (findOpportunityById(candidate)) {
+      return { source: "legacy_master", frameworkValidated: false };
+    }
   }
   return null;
+}
+
+/** معرّف المواصفة قد يحمل بادئة توافقية (KB-) فوق معرّف الفرصة نفسه. */
+function referenceIdVariants(id: string): string[] {
+  const raw = id.trim();
+  return raw.startsWith("KB-") ? [raw, raw.slice(3)] : [raw];
 }
 
 /** هل يجوز التعامل مع هذا المعرّف كمشاركة وظيفية متحققة؟ */

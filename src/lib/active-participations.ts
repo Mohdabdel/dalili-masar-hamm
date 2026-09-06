@@ -3,6 +3,7 @@
 
 import { supabase } from "@/integrations/supabase/client";
 import { buildFamilyParticipationRow } from "@/lib/family-participation";
+import { classifyReferenceSource } from "@/lib/framework/source-boundary";
 
 export interface ActiveParticipation {
   id: string;
@@ -37,7 +38,13 @@ export async function startParticipation(input: {
   const { error } = await supabase.from("active_participations").insert(
     buildFamilyParticipationRow({
       origin: "reference",
-      reference: { specId: input.opportunityId, source: "legacy_master" },
+      reference: {
+        specId: input.opportunityId,
+        // المصدر يُشتق من حالة النموذج، ولا يُفترض توافقاً مع الإطار.
+        source:
+          classifyReferenceSource(input.opportunityId)?.source ??
+          "legacy_master",
+      },
       routineStationId: input.routineStationId ?? null,
       source: input.source ?? "routine_station",
     }),

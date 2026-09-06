@@ -21,6 +21,9 @@ import type {
   SliceLifecycleChoice,
 } from "@/lab/slice/types";
 import { buildFamilyParticipationRow } from "@/lib/family-participation";
+import { classifyReferenceSource } from "@/lib/framework/source-boundary";
+import { getFrameworkParticipation } from "@/lib/framework/reference-registry";
+import { identityFromFrameworkParticipation } from "@/lib/framework/participation-identity";
 import { familySpecId, isFamilySpecId, participationIdFromFamilySpecId } from "@/lib/entry/family-spec";
 import {
   addStation as addRoutineStation,
@@ -74,6 +77,13 @@ interface Refs {
   startedRuns: Set<string>;
 }
 
+/** هوية محفوظة فقط لمرجع متوافق مع الإطار؛ الصف القديم يبقى بلا هوية مُدّعاة. */
+function frameworkIdentityForSpec(specId: string) {
+  const id = specId.startsWith("KB-") ? specId.slice(3) : specId;
+  const fp = getFrameworkParticipation(specId) ?? getFrameworkParticipation(id);
+  return fp ? identityFromFrameworkParticipation(fp) : null;
+}
+
 async function findParticipation(specId: string): Promise<string | null> {
   // مشاركة تملكها الأسرة: المعرّف نفسه محفور في مفتاح المواصفة — لا بحث بمرجع.
   const owned = participationIdFromFamilySpecId(specId);
@@ -124,7 +134,11 @@ async function ensureParticipation(
     .insert(
       buildFamilyParticipationRow({
         origin: "reference",
-        reference: { specId, source: "legacy_master" },
+        reference: {
+          specId,
+          source: classifyReferenceSource(specId)?.source ?? "legacy_master",
+        },
+        identity: frameworkIdentityForSpec(specId),
         dailyEventId: eventId ?? null,
         routineStationId: stationId,
       }),
