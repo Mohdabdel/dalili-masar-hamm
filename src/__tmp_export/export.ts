@@ -78,8 +78,9 @@ const skipped: string[] = [];
 
 opps.forEach((o, idx) => {
   const cls = classifyReferenceSource(o.opportunity_id);
-  if (!cls || cls.source !== "legacy_master") { skipped.push(o.opportunity_id); return; }
+  if (cls && cls.source !== "legacy_master") { skipped.push(o.opportunity_id); return; }
   if (fwIds.has(o.opportunity_id)) { skipped.push(o.opportunity_id); return; }
+  const resolvable = Boolean(cls);
   const ev = eventById.get(o.event_id);
   const dom = ev ? domainById.get(ev.domain_id) : undefined;
   const card = (cardsByOpp.get(o.opportunity_id) ?? [])[0];
@@ -124,8 +125,10 @@ opps.forEach((o, idx) => {
     source_file_field: nz(o.source_file),
     source_file: DIR + FILES.opportunities,
     source_row_index: idx + 2,
-    reference_source: cls.source,
-    framework_validated: cls.frameworkValidated,
+    reference_source: "legacy_master",
+    framework_validated: false,
+    resolvable_in_production_boundary: resolvable,
+    card_pending: !resolvable,
     superseded_by_framework_reference:
       fwList.find((p) => getMigrationLineage(p.id)?.legacy_id === o.opportunity_id)?.id ?? null,
     normalized_title: norm(title),
@@ -210,6 +213,8 @@ const stats = {
   legacy_count: records.length,
   csv_rows: csv.trim().split("\n").length - 1,
   skipped: skipped.length,
+  resolvable: records.filter((r) => r.resolvable_in_production_boundary).length,
+  card_pending: records.filter((r) => r.card_pending).length,
   total_csv_rows: opps.length,
   fw_count: fwList.length,
   fw_in_legacy: records.filter((r) => fwIds.has(r.legacy_id as string)).length,
