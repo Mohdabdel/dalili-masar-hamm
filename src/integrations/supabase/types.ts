@@ -21,6 +21,7 @@ export type Database = {
           completion_source: string | null
           created_at: string
           daily_event_id: string | null
+          functional_identity: Json | null
           id: string
           lifecycle_choice: string | null
           notes: string | null
@@ -41,6 +42,7 @@ export type Database = {
           completion_source?: string | null
           created_at?: string
           daily_event_id?: string | null
+          functional_identity?: Json | null
           id?: string
           lifecycle_choice?: string | null
           notes?: string | null
@@ -61,6 +63,7 @@ export type Database = {
           completion_source?: string | null
           created_at?: string
           daily_event_id?: string | null
+          functional_identity?: Json | null
           id?: string
           lifecycle_choice?: string | null
           notes?: string | null
