@@ -1,0 +1,896 @@
+{
+ "batch": "BATCH_02",
+ "mode": "decision_pilot",
+ "generated_from": "src/data/knowledge/03_participation_opportunities.csv (immutable)",
+ "sampling_rule": "لكل مجال من المجالات الستة مرتبة أبجدياً: ترتيب فرصه بقيمة FNV-1a 32-bit لمعرّف الفرصة تصاعدياً (ثم المعرّف أبجدياً عند التساوي)، وأخذ أول ثلاث. 6×3=18.",
+ "legacy_master_mutated": false,
+ "max_framework_writes": 5,
+ "framework_writes": 5,
+ "records": [
+  {
+   "legacy_id": "CLO-009-OP001",
+   "legacy_title": "تغيير الملابس بعد اتساخها أو تبللها",
+   "event_id": "CLO-009",
+   "event_title": "تغيير الملابس بعد اتساخها أو تبللها",
+   "domain": "DOM-CLO",
+   "source_classification": "legacy_master",
+   "source_resolvable_in_production_reader": true,
+   "fp_gate_results": {
+    "raw_valid": false,
+    "failed_gates": [
+     "FP-02",
+     "FP-03",
+     "FP-04",
+     "FP-05",
+     "FP-06",
+     "FP-08"
+    ],
+    "codes": [
+     "MISSING_LIFE_CONTEXT",
+     "MISSING_FUNCTIONAL_INTENT",
+     "MISSING_OBSERVABLE_EFFECT",
+     "MISSING_NATURAL_COMPLETION",
+     "ROLE_NOT_INDEPENDENT",
+     "MISSING_PARTICIPATION_MODE"
+    ]
+   },
+   "proposed_identity": "none",
+   "participation_mode": "unknown",
+   "complexity_dimensions": "UNKNOWN",
+   "complexity_level": "UNKNOWN",
+   "legacy_leakage": {
+    "present": true,
+    "tokens": [
+     "المستقل",
+     "مستقل",
+     "المساعدة",
+     "بمساعدة",
+     "لتعلّم"
+    ],
+    "affects": "identity"
+   },
+   "event_duplication": "SEMANTIC_DUPLICATION",
+   "disposition": "RECLASSIFY",
+   "target_semantic_type": "EVENT",
+   "confidence": "HIGH",
+   "routing": "AMBER",
+   "evidence": "اسم الفرصة مطابق حرفياً لاسم الحدث CLO-009، وهي الفرصة الوحيدة فيه؛ فالصف يمثّل الحدث نفسه لا دوراً داخله (FP-10).",
+   "materialized": false,
+   "framework_reference_id": null,
+   "review_notes": "غرض الصف مصوغ كهدف تعلّمي («لتعلّم التعرف على الحاجة») — تسرّب على مستوى الهوية. لا يُرقّى الحدث إلى مشاركة وظيفية للحفاظ على الصف."
+  },
+  {
+   "legacy_id": "CLO-045-OP001",
+   "legacy_title": "تخزين وترتيب الإكسسوارات (أحزمة، أوشحة، ربطات)",
+   "event_id": "CLO-045",
+   "event_title": "تخزين وترتيب الإكسسوارات (أحزمة، أوشحة، ربطات)",
+   "domain": "DOM-CLO",
+   "source_classification": "legacy_master",
+   "source_resolvable_in_production_reader": true,
+   "fp_gate_results": {
+    "raw_valid": false,
+    "failed_gates": [
+     "FP-02",
+     "FP-03",
+     "FP-04",
+     "FP-05",
+     "FP-06",
+     "FP-08"
+    ],
+    "codes": [
+     "MISSING_LIFE_CONTEXT",
+     "MISSING_FUNCTIONAL_INTENT",
+     "MISSING_OBSERVABLE_EFFECT",
+     "MISSING_NATURAL_COMPLETION",
+     "ROLE_NOT_INDEPENDENT",
+     "MISSING_PARTICIPATION_MODE"
+    ]
+   },
+   "proposed_identity": "none",
+   "participation_mode": "unknown",
+   "complexity_dimensions": "UNKNOWN",
+   "complexity_level": "UNKNOWN",
+   "legacy_leakage": {
+    "present": true,
+    "tokens": [
+     "المستقل",
+     "مستقل",
+     "المساعدة",
+     "لتعلّم",
+     "مهارة"
+    ],
+    "affects": "identity"
+   },
+   "event_duplication": "SEMANTIC_DUPLICATION",
+   "disposition": "RECLASSIFY",
+   "target_semantic_type": "EVENT",
+   "confidence": "HIGH",
+   "routing": "AMBER",
+   "evidence": "اسم الفرصة مطابق حرفياً لاسم الحدث CLO-045.",
+   "materialized": false,
+   "framework_reference_id": null,
+   "review_notes": "غرض تعلّمي صريح («لتعلّم مهارة تنظيم»). الخطوات الداخلية قد تصلح لاحقاً كأدوار منفصلة، لكن ذلك قرار محتوى جديد لا استنتاج."
+  },
+  {
+   "legacy_id": "CLO-005-OP001",
+   "legacy_title": "اختيار ملابس النوم",
+   "event_id": "CLO-005",
+   "event_title": "اختيار ملابس النوم",
+   "domain": "DOM-CLO",
+   "source_classification": "legacy_master",
+   "source_resolvable_in_production_reader": true,
+   "fp_gate_results": {
+    "raw_valid": false,
+    "failed_gates": [
+     "FP-02",
+     "FP-03",
+     "FP-04",
+     "FP-05",
+     "FP-06",
+     "FP-08"
+    ],
+    "codes": [
+     "MISSING_LIFE_CONTEXT",
+     "MISSING_FUNCTIONAL_INTENT",
+     "MISSING_OBSERVABLE_EFFECT",
+     "MISSING_NATURAL_COMPLETION",
+     "ROLE_NOT_INDEPENDENT",
+     "MISSING_PARTICIPATION_MODE"
+    ]
+   },
+   "proposed_identity": "none",
+   "participation_mode": "unknown",
+   "complexity_dimensions": "UNKNOWN",
+   "complexity_level": "UNKNOWN",
+   "legacy_leakage": {
+    "present": true,
+    "tokens": [
+     "المستقل",
+     "مستقل",
+     "استقلالية"
+    ],
+    "affects": "identity"
+   },
+   "event_duplication": "SEMANTIC_DUPLICATION",
+   "disposition": "RECLASSIFY",
+   "target_semantic_type": "EVENT",
+   "confidence": "HIGH",
+   "routing": "AMBER",
+   "evidence": "اسم الفرصة مطابق حرفياً لاسم الحدث CLO-005.",
+   "materialized": false,
+   "framework_reference_id": null,
+   "review_notes": "«استقلالية» في الغرض تسرّب على مستوى الهوية."
+  },
+  {
+   "legacy_id": "COMM-005-OP001",
+   "legacy_title": "تحديد موعد ومكان اللقاء الأسري",
+   "event_id": "COMM-005",
+   "event_title": "لقاء أسري خارج المنزل",
+   "domain": "DOM-COMM",
+   "source_classification": "legacy_master",
+   "source_resolvable_in_production_reader": true,
+   "fp_gate_results": {
+    "raw_valid": false,
+    "failed_gates": [
+     "FP-02",
+     "FP-03",
+     "FP-04",
+     "FP-05",
+     "FP-06",
+     "FP-08"
+    ],
+    "codes": [
+     "MISSING_LIFE_CONTEXT",
+     "MISSING_FUNCTIONAL_INTENT",
+     "MISSING_OBSERVABLE_EFFECT",
+     "MISSING_NATURAL_COMPLETION",
+     "ROLE_NOT_INDEPENDENT",
+     "MISSING_PARTICIPATION_MODE"
+    ]
+   },
+   "proposed_identity": "complete",
+   "participation_mode": "shared",
+   "complexity_dimensions": "authored_in_framework_reference",
+   "complexity_level": "moderate",
+   "legacy_leakage": {
+    "present": true,
+    "tokens": [
+     "مستقلة",
+     "مستقل",
+     "إشراف"
+    ],
+    "affects": "presentation_only"
+   },
+   "event_duplication": "NONE",
+   "disposition": "EDIT",
+   "target_semantic_type": null,
+   "confidence": "HIGH",
+   "routing": "GREEN",
+   "evidence": "الغرض والخطوات والمؤشرات تصف قراراً أسرياً مشتركاً بموعد ومكان، متميّزاً عن الحدث «لقاء أسري خارج المنزل».",
+   "materialized": true,
+   "framework_reference_id": "FR-B02-COMM-005-OP001",
+   "review_notes": "تحرير محدود: صياغة الحقول الخمسة من الأدلة القائمة دون معنى جديد. سُلّم «شبه مستقلة» عرضٌ فقط ولم يدخل الهوية."
+  },
+  {
+   "legacy_id": "COMM-002-OP001",
+   "legacy_title": "تجهيز أغراض النزهة",
+   "event_id": "COMM-002",
+   "event_title": "زيارة الحديقة العامة",
+   "domain": "DOM-COMM",
+   "source_classification": "legacy_master",
+   "source_resolvable_in_production_reader": true,
+   "fp_gate_results": {
+    "raw_valid": false,
+    "failed_gates": [
+     "FP-02",
+     "FP-03",
+     "FP-04",
+     "FP-05",
+     "FP-06",
+     "FP-08"
+    ],
+    "codes": [
+     "MISSING_LIFE_CONTEXT",
+     "MISSING_FUNCTIONAL_INTENT",
+     "MISSING_OBSERVABLE_EFFECT",
+     "MISSING_NATURAL_COMPLETION",
+     "ROLE_NOT_INDEPENDENT",
+     "MISSING_PARTICIPATION_MODE"
+    ]
+   },
+   "proposed_identity": "complete",
+   "participation_mode": "individual",
+   "complexity_dimensions": "authored_in_framework_reference",
+   "complexity_level": "simple",
+   "legacy_leakage": {
+    "present": true,
+    "tokens": [
+     "مستقلة",
+     "مستقل",
+     "إشراف"
+    ],
+    "affects": "presentation_only"
+   },
+   "event_duplication": "NONE",
+   "disposition": "EDIT",
+   "target_semantic_type": null,
+   "confidence": "HIGH",
+   "routing": "GREEN",
+   "evidence": "أثر ملحوظ صريح (الحقيبة مجهّزة) ونهاية طبيعية (لم يبقَ غرض)، ومتميّز عن الحدث «زيارة الحديقة».",
+   "materialized": true,
+   "framework_reference_id": "FR-B02-COMM-002-OP001",
+   "review_notes": "تحرير محدود بلا معنى مضاف."
+  },
+  {
+   "legacy_id": "COMM-005-OP003",
+   "legacy_title": "اختيار مقعد للجلوس مع المجموعة",
+   "event_id": "COMM-005",
+   "event_title": "لقاء أسري خارج المنزل",
+   "domain": "DOM-COMM",
+   "source_classification": "legacy_master",
+   "source_resolvable_in_production_reader": true,
+   "fp_gate_results": {
+    "raw_valid": false,
+    "failed_gates": [
+     "FP-02",
+     "FP-03",
+     "FP-04",
+     "FP-05",
+     "FP-06",
+     "FP-08"
+    ],
+    "codes": [
+     "MISSING_LIFE_CONTEXT",
+     "MISSING_FUNCTIONAL_INTENT",
+     "MISSING_OBSERVABLE_EFFECT",
+     "MISSING_NATURAL_COMPLETION",
+     "ROLE_NOT_INDEPENDENT",
+     "MISSING_PARTICIPATION_MODE"
+    ]
+   },
+   "proposed_identity": "none",
+   "participation_mode": "individual",
+   "complexity_dimensions": "UNKNOWN",
+   "complexity_level": "UNKNOWN",
+   "legacy_leakage": {
+    "present": true,
+    "tokens": [
+     "مستقلة",
+     "مستقل",
+     "بمساعدة",
+     "إشراف"
+    ],
+    "affects": "presentation_only"
+   },
+   "event_duplication": "NONE",
+   "disposition": "EDIT",
+   "target_semantic_type": null,
+   "confidence": "MEDIUM",
+   "routing": "AMBER",
+   "evidence": "دور رفيع الحدود: قد يقرأ كخطوة تنفيذ داخل اللقاء لا كدور مستقل.",
+   "materialized": false,
+   "framework_reference_id": null,
+   "review_notes": "الأدلة تحتمل قراءتين؛ مراجعة دلالية بشرية قبل أي نشر. لم يُحسم مستوى التعقيد."
+  },
+  {
+   "legacy_id": "FOOD-029-OP004",
+   "legacy_title": "ترتيب القطع في صينية الخبز",
+   "event_id": "FOOD-029",
+   "event_title": "إعداد مخبوزات منزلية",
+   "domain": "DOM-FOOD",
+   "source_classification": "legacy_master",
+   "source_resolvable_in_production_reader": true,
+   "fp_gate_results": {
+    "raw_valid": false,
+    "failed_gates": [
+     "FP-02",
+     "FP-03",
+     "FP-04",
+     "FP-05",
+     "FP-06",
+     "FP-08"
+    ],
+    "codes": [
+     "MISSING_LIFE_CONTEXT",
+     "MISSING_FUNCTIONAL_INTENT",
+     "MISSING_OBSERVABLE_EFFECT",
+     "MISSING_NATURAL_COMPLETION",
+     "ROLE_NOT_INDEPENDENT",
+     "MISSING_PARTICIPATION_MODE"
+    ]
+   },
+   "proposed_identity": "none",
+   "participation_mode": "unknown",
+   "complexity_dimensions": "UNKNOWN",
+   "complexity_level": "UNKNOWN",
+   "legacy_leakage": {
+    "present": true,
+    "tokens": [
+     "المساعدة"
+    ],
+    "affects": "presentation_only"
+   },
+   "event_duplication": "NONE",
+   "disposition": "RECLASSIFY",
+   "target_semantic_type": "EXECUTION_BLOCK",
+   "confidence": "MEDIUM",
+   "routing": "AMBER",
+   "evidence": "الخطوة جزء متسلسل داخل «إعداد مخبوزات منزلية» وتنتهي بدخول الصينية للفرن ضمن الدور الأكبر.",
+   "materialized": false,
+   "framework_reference_id": null,
+   "review_notes": "محتوى نافع كخطوة تنفيذ، لا يُحذف."
+  },
+  {
+   "legacy_id": "FOOD-089-OP003",
+   "legacy_title": "وضع المريول في سلة الغسيل",
+   "event_id": "FOOD-089",
+   "event_title": "تنظيف مريول الطبخ",
+   "domain": "DOM-FOOD",
+   "source_classification": "legacy_master",
+   "source_resolvable_in_production_reader": true,
+   "fp_gate_results": {
+    "raw_valid": false,
+    "failed_gates": [
+     "FP-02",
+     "FP-03",
+     "FP-04",
+     "FP-05",
+     "FP-06",
+     "FP-08"
+    ],
+    "codes": [
+     "MISSING_LIFE_CONTEXT",
+     "MISSING_FUNCTIONAL_INTENT",
+     "MISSING_OBSERVABLE_EFFECT",
+     "MISSING_NATURAL_COMPLETION",
+     "ROLE_NOT_INDEPENDENT",
+     "MISSING_PARTICIPATION_MODE"
+    ]
+   },
+   "proposed_identity": "none",
+   "participation_mode": "unknown",
+   "complexity_dimensions": "UNKNOWN",
+   "complexity_level": "UNKNOWN",
+   "legacy_leakage": {
+    "present": true,
+    "tokens": [
+     "بمفرده",
+     "المساعدة"
+    ],
+    "affects": "presentation_only"
+   },
+   "event_duplication": "NONE",
+   "disposition": "RECLASSIFY",
+   "target_semantic_type": "EXECUTION_BLOCK",
+   "confidence": "HIGH",
+   "routing": "AMBER",
+   "evidence": "فعل واحد («حمل المريول، وضعه في السلة») يمثّل الخطوة الأخيرة من الحدث FOOD-089.",
+   "materialized": false,
+   "framework_reference_id": null,
+   "review_notes": "يُحفَظ كخطوة تنفيذ ضمن دور تنظيف المريول."
+  },
+  {
+   "legacy_id": "FOOD-089-OP002",
+   "legacy_title": "معالجة البقع الظاهرة بصابون مركز",
+   "event_id": "FOOD-089",
+   "event_title": "تنظيف مريول الطبخ",
+   "domain": "DOM-FOOD",
+   "source_classification": "legacy_master",
+   "source_resolvable_in_production_reader": true,
+   "fp_gate_results": {
+    "raw_valid": false,
+    "failed_gates": [
+     "FP-02",
+     "FP-03",
+     "FP-04",
+     "FP-05",
+     "FP-06",
+     "FP-08"
+    ],
+    "codes": [
+     "MISSING_LIFE_CONTEXT",
+     "MISSING_FUNCTIONAL_INTENT",
+     "MISSING_OBSERVABLE_EFFECT",
+     "MISSING_NATURAL_COMPLETION",
+     "ROLE_NOT_INDEPENDENT",
+     "MISSING_PARTICIPATION_MODE"
+    ]
+   },
+   "proposed_identity": "none",
+   "participation_mode": "unknown",
+   "complexity_dimensions": "UNKNOWN",
+   "complexity_level": "UNKNOWN",
+   "legacy_leakage": {
+    "present": true,
+    "tokens": [
+     "المساعدة",
+     "بثقة متزايدة"
+    ],
+    "affects": "presentation_only"
+   },
+   "event_duplication": "NONE",
+   "disposition": "RECLASSIFY",
+   "target_semantic_type": "EXECUTION_BLOCK",
+   "confidence": "MEDIUM",
+   "routing": "AMBER",
+   "evidence": "خطوة داخل الحدث نفسه، وغرضها مصوغ تعلّمياً («ليتعلّم خطوة بسيطة»).",
+   "materialized": false,
+   "framework_reference_id": null,
+   "review_notes": "التسرّب على مستوى الهوية يمنع أي ترقية مباشرة."
+  },
+  {
+   "legacy_id": "HEALTH-105-OP001",
+   "legacy_title": "ارتداء الضمادة الضاغطة أو الحمالة حسب التعليمات",
+   "event_id": "HEALTH-105",
+   "event_title": "استخدام حمالة أو جبيرة أو ضمادة ضغط",
+   "domain": "DOM-HEALTH",
+   "source_classification": "legacy_master",
+   "source_resolvable_in_production_reader": true,
+   "fp_gate_results": {
+    "raw_valid": false,
+    "failed_gates": [
+     "FP-02",
+     "FP-03",
+     "FP-04",
+     "FP-05",
+     "FP-06",
+     "FP-07",
+     "FP-08"
+    ],
+    "codes": [
+     "MISSING_LIFE_CONTEXT",
+     "MISSING_FUNCTIONAL_INTENT",
+     "MISSING_OBSERVABLE_EFFECT",
+     "MISSING_NATURAL_COMPLETION",
+     "ROLE_NOT_INDEPENDENT",
+     "PERFORMANCE_LANGUAGE",
+     "MISSING_PARTICIPATION_MODE"
+    ]
+   },
+   "proposed_identity": "none",
+   "participation_mode": "unknown",
+   "complexity_dimensions": "UNKNOWN",
+   "complexity_level": "UNKNOWN",
+   "legacy_leakage": {
+    "present": true,
+    "tokens": [
+     "إشراف",
+     "بثقة متزايدة"
+    ],
+    "affects": "identity"
+   },
+   "event_duplication": "NONE",
+   "disposition": "QUARANTINE",
+   "target_semantic_type": null,
+   "confidence": "HIGH",
+   "routing": "RED",
+   "evidence": "«ارتداء وفق التوجيه المباشر»، و«الطبيب أو الممرض هو من يحدد الطريقة»، والمشاركة مشروطة بإشراف طبي دائم.",
+   "materialized": false,
+   "framework_reference_id": null,
+   "review_notes": "غير صالح للنشر في المكتبة المرجعية بصيغته الحالية؛ يحتاج قرار محتوى موثوقاً لا تحريراً."
+  },
+  {
+   "legacy_id": "HEALTH-050-OP001",
+   "legacy_title": "التوجه لمركز العلاج",
+   "event_id": "HEALTH-050",
+   "event_title": "موعد جلسة علاج كيميائي أو إشعاعي",
+   "domain": "DOM-HEALTH",
+   "source_classification": "legacy_master",
+   "source_resolvable_in_production_reader": true,
+   "fp_gate_results": {
+    "raw_valid": false,
+    "failed_gates": [
+     "FP-02",
+     "FP-03",
+     "FP-04",
+     "FP-05",
+     "FP-06",
+     "FP-08"
+    ],
+    "codes": [
+     "MISSING_LIFE_CONTEXT",
+     "MISSING_FUNCTIONAL_INTENT",
+     "MISSING_OBSERVABLE_EFFECT",
+     "MISSING_NATURAL_COMPLETION",
+     "ROLE_NOT_INDEPENDENT",
+     "MISSING_PARTICIPATION_MODE"
+    ]
+   },
+   "proposed_identity": "none",
+   "participation_mode": "unknown",
+   "complexity_dimensions": "UNKNOWN",
+   "complexity_level": "UNKNOWN",
+   "legacy_leakage": {
+    "present": true,
+    "tokens": [
+     "بمفرده",
+     "بمساعدة"
+    ],
+    "affects": "presentation_only"
+   },
+   "event_duplication": "NONE",
+   "disposition": "NEEDS_CLARIFICATION",
+   "target_semantic_type": null,
+   "confidence": "LOW",
+   "routing": "AMBER",
+   "evidence": "«التوجه للمركز، الدخول» بلا أثر ملحوظ ولا نهاية طبيعية يمكن اشتقاقها دون تخمين.",
+   "materialized": false,
+   "framework_reference_id": null,
+   "review_notes": "لا يُخترع غرض وظيفي."
+  },
+  {
+   "legacy_id": "HEALTH-014-OP001",
+   "legacy_title": "ضبط منبه لموعد الدواء",
+   "event_id": "HEALTH-014",
+   "event_title": "متابعة مواعيد جرعات الدواء",
+   "domain": "DOM-HEALTH",
+   "source_classification": "legacy_master",
+   "source_resolvable_in_production_reader": true,
+   "fp_gate_results": {
+    "raw_valid": false,
+    "failed_gates": [
+     "FP-02",
+     "FP-03",
+     "FP-04",
+     "FP-05",
+     "FP-06",
+     "FP-08"
+    ],
+    "codes": [
+     "MISSING_LIFE_CONTEXT",
+     "MISSING_FUNCTIONAL_INTENT",
+     "MISSING_OBSERVABLE_EFFECT",
+     "MISSING_NATURAL_COMPLETION",
+     "ROLE_NOT_INDEPENDENT",
+     "MISSING_PARTICIPATION_MODE"
+    ]
+   },
+   "proposed_identity": "complete",
+   "participation_mode": "individual",
+   "complexity_dimensions": "authored_in_framework_reference",
+   "complexity_level": "simple",
+   "legacy_leakage": {
+    "present": true,
+    "tokens": [
+     "بمفرده",
+     "المساعدة",
+     "بثقة متزايدة"
+    ],
+    "affects": "presentation_only"
+   },
+   "event_duplication": "NONE",
+   "disposition": "EDIT",
+   "target_semantic_type": null,
+   "confidence": "HIGH",
+   "routing": "GREEN",
+   "evidence": "نتيجة مرئية مباشرة (منبّه مضبوط على وقت الجرعة) ونهاية طبيعية (حُفظ المنبّه).",
+   "materialized": true,
+   "framework_reference_id": "FR-B02-HEALTH-014-OP001",
+   "review_notes": "تحرير محدود؛ الغرض الأصلي غير تدريبي."
+  },
+  {
+   "legacy_id": "HOME-025-OP002",
+   "legacy_title": "تمرير المكنسة الكهربائية",
+   "event_id": "HOME-025",
+   "event_title": "تنظيف السجاد والموكيت",
+   "domain": "DOM-HOME",
+   "source_classification": "legacy_master",
+   "source_resolvable_in_production_reader": false,
+   "fp_gate_results": {
+    "raw_valid": false,
+    "failed_gates": [
+     "FP-02",
+     "FP-03",
+     "FP-04",
+     "FP-05",
+     "FP-06",
+     "FP-08"
+    ],
+    "codes": [
+     "MISSING_LIFE_CONTEXT",
+     "MISSING_FUNCTIONAL_INTENT",
+     "MISSING_OBSERVABLE_EFFECT",
+     "MISSING_NATURAL_COMPLETION",
+     "ROLE_NOT_INDEPENDENT",
+     "MISSING_PARTICIPATION_MODE"
+    ]
+   },
+   "proposed_identity": "none",
+   "participation_mode": "unknown",
+   "complexity_dimensions": "UNKNOWN",
+   "complexity_level": "UNKNOWN",
+   "legacy_leakage": {
+    "present": false,
+    "tokens": [],
+    "affects": "none"
+   },
+   "event_duplication": "NONE",
+   "disposition": "NEEDS_CLARIFICATION",
+   "target_semantic_type": null,
+   "confidence": "LOW",
+   "routing": "AMBER",
+   "evidence": "لا توجد بطاقة مرافقة؛ العنوان وحده هو كل الدليل، ولا يحلّه قارئ الإنتاج أصلاً (فرصة معلّقة).",
+   "materialized": false,
+   "framework_reference_id": null,
+   "review_notes": "لا سياق حياتي ولا غرض ولا نهاية طبيعية في المصدر."
+  },
+  {
+   "legacy_id": "HOME-025-OP003",
+   "legacy_title": "معالجة البقع السطحية بالمنظف والإسفنجة",
+   "event_id": "HOME-025",
+   "event_title": "تنظيف السجاد والموكيت",
+   "domain": "DOM-HOME",
+   "source_classification": "legacy_master",
+   "source_resolvable_in_production_reader": false,
+   "fp_gate_results": {
+    "raw_valid": false,
+    "failed_gates": [
+     "FP-02",
+     "FP-03",
+     "FP-04",
+     "FP-05",
+     "FP-06",
+     "FP-08"
+    ],
+    "codes": [
+     "MISSING_LIFE_CONTEXT",
+     "MISSING_FUNCTIONAL_INTENT",
+     "MISSING_OBSERVABLE_EFFECT",
+     "MISSING_NATURAL_COMPLETION",
+     "ROLE_NOT_INDEPENDENT",
+     "MISSING_PARTICIPATION_MODE"
+    ]
+   },
+   "proposed_identity": "none",
+   "participation_mode": "unknown",
+   "complexity_dimensions": "UNKNOWN",
+   "complexity_level": "UNKNOWN",
+   "legacy_leakage": {
+    "present": false,
+    "tokens": [],
+    "affects": "none"
+   },
+   "event_duplication": "NONE",
+   "disposition": "NEEDS_CLARIFICATION",
+   "target_semantic_type": null,
+   "confidence": "LOW",
+   "routing": "AMBER",
+   "evidence": "لا توجد بطاقة مرافقة؛ العنوان وحده هو كل الدليل.",
+   "materialized": false,
+   "framework_reference_id": null,
+   "review_notes": "نفس حالة الصف السابق داخل الحدث HOME-025."
+  },
+  {
+   "legacy_id": "HOME-065-OP002",
+   "legacy_title": "تداخل الحقائب الصغيرة داخل الكبيرة",
+   "event_id": "HOME-065",
+   "event_title": "ترتيب أدوات السفر والتخزين",
+   "domain": "DOM-HOME",
+   "source_classification": "legacy_master",
+   "source_resolvable_in_production_reader": false,
+   "fp_gate_results": {
+    "raw_valid": false,
+    "failed_gates": [
+     "FP-02",
+     "FP-03",
+     "FP-04",
+     "FP-05",
+     "FP-06",
+     "FP-08"
+    ],
+    "codes": [
+     "MISSING_LIFE_CONTEXT",
+     "MISSING_FUNCTIONAL_INTENT",
+     "MISSING_OBSERVABLE_EFFECT",
+     "MISSING_NATURAL_COMPLETION",
+     "ROLE_NOT_INDEPENDENT",
+     "MISSING_PARTICIPATION_MODE"
+    ]
+   },
+   "proposed_identity": "none",
+   "participation_mode": "unknown",
+   "complexity_dimensions": "UNKNOWN",
+   "complexity_level": "UNKNOWN",
+   "legacy_leakage": {
+    "present": false,
+    "tokens": [],
+    "affects": "none"
+   },
+   "event_duplication": "NONE",
+   "disposition": "NEEDS_CLARIFICATION",
+   "target_semantic_type": null,
+   "confidence": "LOW",
+   "routing": "AMBER",
+   "evidence": "لا توجد بطاقة مرافقة؛ الصياغة تحتمل خطوة تنفيذ لكن بلا دليل كافٍ للحسم.",
+   "materialized": false,
+   "framework_reference_id": null,
+   "review_notes": "RECLASSIFY يحتاج دليلاً، ولا يوجد."
+  },
+  {
+   "legacy_id": "SHOP-041-OP001",
+   "legacy_title": "سحب العربة من منطقة التجمع",
+   "event_id": "SHOP-041",
+   "event_title": "استخدام عربة التسوق الكبيرة",
+   "domain": "DOM-SHOP",
+   "source_classification": "legacy_master",
+   "source_resolvable_in_production_reader": true,
+   "fp_gate_results": {
+    "raw_valid": false,
+    "failed_gates": [
+     "FP-02",
+     "FP-03",
+     "FP-04",
+     "FP-05",
+     "FP-06",
+     "FP-08"
+    ],
+    "codes": [
+     "MISSING_LIFE_CONTEXT",
+     "MISSING_FUNCTIONAL_INTENT",
+     "MISSING_OBSERVABLE_EFFECT",
+     "MISSING_NATURAL_COMPLETION",
+     "ROLE_NOT_INDEPENDENT",
+     "MISSING_PARTICIPATION_MODE"
+    ]
+   },
+   "proposed_identity": "none",
+   "participation_mode": "unknown",
+   "complexity_dimensions": "UNKNOWN",
+   "complexity_level": "UNKNOWN",
+   "legacy_leakage": {
+    "present": true,
+    "tokens": [
+     "بمفرده",
+     "المساعدة"
+    ],
+    "affects": "presentation_only"
+   },
+   "event_duplication": "NONE",
+   "disposition": "RECLASSIFY",
+   "target_semantic_type": "EXECUTION_BLOCK",
+   "confidence": "MEDIUM",
+   "routing": "AMBER",
+   "evidence": "«الإمساك بالمقبض، سحبها» بداية متسلسلة داخل الحدث «استخدام عربة التسوق»، والتالي لها «قيادة العربة».",
+   "materialized": false,
+   "framework_reference_id": null,
+   "review_notes": "محتوى نافع كخطوة تنفيذ."
+  },
+  {
+   "legacy_id": "SHOP-066-OP001",
+   "legacy_title": "توزيع عبوات الشامبو والصابون في الحمامات",
+   "event_id": "SHOP-066",
+   "event_title": "تخزين العناية الشخصية في الحمام",
+   "domain": "DOM-SHOP",
+   "source_classification": "legacy_master",
+   "source_resolvable_in_production_reader": true,
+   "fp_gate_results": {
+    "raw_valid": false,
+    "failed_gates": [
+     "FP-02",
+     "FP-03",
+     "FP-04",
+     "FP-05",
+     "FP-06",
+     "FP-08"
+    ],
+    "codes": [
+     "MISSING_LIFE_CONTEXT",
+     "MISSING_FUNCTIONAL_INTENT",
+     "MISSING_OBSERVABLE_EFFECT",
+     "MISSING_NATURAL_COMPLETION",
+     "ROLE_NOT_INDEPENDENT",
+     "MISSING_PARTICIPATION_MODE"
+    ]
+   },
+   "proposed_identity": "complete",
+   "participation_mode": "individual",
+   "complexity_dimensions": "authored_in_framework_reference",
+   "complexity_level": "moderate",
+   "legacy_leakage": {
+    "present": true,
+    "tokens": [
+     "المساعدة"
+    ],
+    "affects": "presentation_only"
+   },
+   "event_duplication": "NONE",
+   "disposition": "EDIT",
+   "target_semantic_type": null,
+   "confidence": "HIGH",
+   "routing": "GREEN",
+   "evidence": "أثر ملحوظ (العبوات في الحمامات) ونهاية طبيعية، ومتميّز عن الحدث «تخزين العناية الشخصية».",
+   "materialized": true,
+   "framework_reference_id": "FR-B02-SHOP-066-OP001",
+   "review_notes": "تحرير محدود؛ التعقيد من تعدد العناصر ومطابقة الوجهات لا من عدد الخطوات."
+  },
+  {
+   "legacy_id": "SHOP-019-OP002",
+   "legacy_title": "طلب تجربة الجهاز من البائع",
+   "event_id": "SHOP-019",
+   "event_title": "شراء الأجهزة الإلكترونية",
+   "domain": "DOM-SHOP",
+   "source_classification": "legacy_master",
+   "source_resolvable_in_production_reader": true,
+   "fp_gate_results": {
+    "raw_valid": false,
+    "failed_gates": [
+     "FP-02",
+     "FP-03",
+     "FP-04",
+     "FP-05",
+     "FP-06",
+     "FP-08"
+    ],
+    "codes": [
+     "MISSING_LIFE_CONTEXT",
+     "MISSING_FUNCTIONAL_INTENT",
+     "MISSING_OBSERVABLE_EFFECT",
+     "MISSING_NATURAL_COMPLETION",
+     "ROLE_NOT_INDEPENDENT",
+     "MISSING_PARTICIPATION_MODE"
+    ]
+   },
+   "proposed_identity": "complete",
+   "participation_mode": "individual",
+   "complexity_dimensions": "authored_in_framework_reference",
+   "complexity_level": "moderate",
+   "legacy_leakage": {
+    "present": true,
+    "tokens": [
+     "بمفرده",
+     "بثقة متزايدة"
+    ],
+    "affects": "presentation_only"
+   },
+   "event_duplication": "NONE",
+   "disposition": "EDIT",
+   "target_semantic_type": null,
+   "confidence": "HIGH",
+   "routing": "GREEN",
+   "evidence": "دور تواصلي مع طرف خارج الأسرة، أثره ملحوظ في المتجر ونهايته طبيعية.",
+   "materialized": true,
+   "framework_reference_id": "FR-B02-SHOP-019-OP002",
+   "review_notes": "تحرير محدود؛ التعقيد من عدم تحدّد استجابة الطرف الآخر."
+  }
+ ]
+}
