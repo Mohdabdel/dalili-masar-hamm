@@ -23,6 +23,7 @@ export type SourceClassification =
 export function classifyReferenceSource(id: string): SourceClassification {
   ensureEasyBeginningCorpus();
   ensureGoldenCorpus();
+  ensureBatch02Corpus();
   for (const candidate of referenceIdVariants(id)) {
     if (getFrameworkParticipation(candidate)) {
       return { source: "framework_reference", frameworkValidated: true };
