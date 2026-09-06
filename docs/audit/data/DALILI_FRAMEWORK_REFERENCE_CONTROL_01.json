@@ -1,0 +1,127 @@
+{
+ "export_version": "01",
+ "generated_at": "2026-09-06T19:59:13.754Z",
+ "framework_reference_count": 15,
+ "records": [
+  {
+   "framework_reference_id": "FR-POPCORN-BRING-001",
+   "title": "إحضار البوب كورن إلى مكان جلوس الأسرة",
+   "provenance": "framework_reference",
+   "golden_id": null,
+   "legacy_source_id": null,
+   "event_id": null
+  },
+  {
+   "framework_reference_id": "FR-POPCORN-SHARE-001",
+   "title": "توزيع البوب كورن على أفراد الأسرة",
+   "provenance": "framework_reference",
+   "golden_id": null,
+   "legacy_source_id": null,
+   "event_id": null
+  },
+  {
+   "framework_reference_id": "FR-WATER-JUG-001",
+   "title": "تعبئة إبريق الماء لمائدة الأسرة",
+   "provenance": "framework_reference",
+   "golden_id": null,
+   "legacy_source_id": null,
+   "event_id": null
+  },
+  {
+   "framework_reference_id": "FR-OUTING-BAG-001",
+   "title": "حمل كيس المشتريات الخفيف إلى السيارة",
+   "provenance": "framework_reference",
+   "golden_id": null,
+   "legacy_source_id": null,
+   "event_id": null
+  },
+  {
+   "framework_reference_id": "FR-MUSIC-PLAY-001",
+   "title": "تشغيل المقطع الذي تجتمع عليه الأسرة",
+   "provenance": "framework_reference",
+   "golden_id": null,
+   "legacy_source_id": null,
+   "event_id": null
+  },
+  {
+   "framework_reference_id": "GJ-EASY-001",
+   "title": "إحضار البوب كورن إلى مكان جلوس الأسرة",
+   "provenance": "framework_reference",
+   "golden_id": "GJ-EASY-001",
+   "legacy_source_id": null,
+   "event_id": "EV-FAMILY-SNACK"
+  },
+  {
+   "framework_reference_id": "GJ-DISCOVERY-001",
+   "title": "إعادة أجهزة التحكم المستخدمة إلى مكانها",
+   "provenance": "framework_reference",
+   "golden_id": "GJ-DISCOVERY-001",
+   "legacy_source_id": null,
+   "event_id": "EV-LIVING-TIDY"
+  },
+  {
+   "framework_reference_id": "GJ-SHARED-001",
+   "title": "تثبيت الوعاء بينما يضع فرد الأسرة البوب كورن فيه",
+   "provenance": "framework_reference",
+   "golden_id": "GJ-SHARED-001",
+   "legacy_source_id": null,
+   "event_id": "EV-POPCORN-PREP"
+  },
+  {
+   "framework_reference_id": "GJ-MODERATE-001",
+   "title": "توزيع الأكواب والأطباق المناسبة على الضيوف",
+   "provenance": "framework_reference",
+   "golden_id": "GJ-MODERATE-001",
+   "legacy_source_id": null,
+   "event_id": "EV-HOSTING"
+  },
+  {
+   "framework_reference_id": "GJ-ADVANCED-001",
+   "title": "تلقّي طلبات المشروبات من الضيوف وتسليم كل مشروب لصاحبه",
+   "provenance": "framework_reference",
+   "golden_id": "GJ-ADVANCED-001",
+   "legacy_source_id": null,
+   "event_id": "EV-HOSTING"
+  },
+  {
+   "framework_reference_id": "FR-B02-COMM-005-OP001",
+   "title": "تحديد موعد اللقاء الأسري ومكانه مع الأسرة",
+   "provenance": "framework_reference",
+   "golden_id": null,
+   "legacy_source_id": "COMM-005-OP001",
+   "event_id": "COMM-005"
+  },
+  {
+   "framework_reference_id": "FR-B02-COMM-002-OP001",
+   "title": "تجهيز أغراض النزهة في حقيبة الخروج",
+   "provenance": "framework_reference",
+   "golden_id": null,
+   "legacy_source_id": "COMM-002-OP001",
+   "event_id": "COMM-002"
+  },
+  {
+   "framework_reference_id": "FR-B02-HEALTH-014-OP001",
+   "title": "ضبط منبّه لموعد الجرعة",
+   "provenance": "framework_reference",
+   "golden_id": null,
+   "legacy_source_id": "HEALTH-014-OP001",
+   "event_id": "HEALTH-014"
+  },
+  {
+   "framework_reference_id": "FR-B02-SHOP-066-OP001",
+   "title": "توزيع عبوات العناية على الحمامات",
+   "provenance": "framework_reference",
+   "golden_id": null,
+   "legacy_source_id": "SHOP-066-OP001",
+   "event_id": "SHOP-066"
+  },
+  {
+   "framework_reference_id": "FR-B02-SHOP-019-OP002",
+   "title": "طلب تجربة الجهاز من البائع",
+   "provenance": "framework_reference",
+   "golden_id": null,
+   "legacy_source_id": "SHOP-019-OP002",
+   "event_id": "SHOP-019"
+  }
+ ]
+}
