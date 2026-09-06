@@ -21,6 +21,14 @@ import type {
   StepPresentationMode,
 } from "@/lab/slice/types";
 import { suggestVisual } from "@/lab/data/space/coverage";
+import {
+  frameworkOnlyEvents,
+  frameworkParticipationsForEvent,
+  discoverableFrameworkParticipations,
+  legacyIdsSupersededByFramework,
+} from "@/lib/framework/discovery";
+import type { FunctionalParticipation } from "@/lib/framework/reference-model";
+
 
 export type SpaceContext = "home" | "community";
 
@@ -84,20 +92,37 @@ function toSpaceEvent(ctx: FlatEvent): SpaceEvent {
 
 let cache: SpaceEvent[] | null = null;
 
-/** كل أحداث مكتبة الحياة التي تحتوي مشاركات فعلية. */
+/** أحداث مرجعية مجمّدة لا وجود لها في مكتبة CSV — تُعرض بنفس شكل بقية الأحداث. */
+function frameworkSpaceEvents(): SpaceEvent[] {
+  return frameworkOnlyEvents().map((e) => ({
+    id: e.id,
+    title: e.title,
+    hint: e.life_context,
+    domainName: e.life_context,
+    contexts: ["home", "community"] as SpaceContext[],
+    participationCount: e.participationCount,
+  }));
+}
+
+/** كل أحداث مكتبة الحياة التي تحتوي مشاركات فعلية + الأحداث المرجعية. */
 export function allSpaceEvents(): SpaceEvent[] {
   if (!cache) {
-    cache = getAllEvents()
-      .filter((c) => c.event.opportunities.length > 0)
-      .map(toSpaceEvent);
+    cache = [
+      ...frameworkSpaceEvents(),
+      ...getAllEvents()
+        .filter((c) => c.event.opportunities.length > 0)
+        .map(toSpaceEvent),
+    ];
   }
   return cache;
 }
 
 export function getSpaceEvent(eventId: string): SpaceEvent | null {
   const ctx = findEventById(eventId);
-  return ctx ? toSpaceEvent(ctx) : null;
+  if (ctx) return toSpaceEvent(ctx);
+  return frameworkSpaceEvents().find((e) => e.id === eventId) ?? null;
 }
+
 
 export function listLibraryEvents(options: {
   context?: SpaceContext;
@@ -182,20 +207,54 @@ function fixtureSpecsForEvent(eventId: string): LabParticipationSpec[] {
 function librarySpecsForEvent(eventId: string): LabParticipationSpec[] {
   const ctx = findEventById(eventId);
   if (!ctx) return [];
+  const superseded = legacyIdsSupersededByFramework();
   return ctx.event.opportunities
+    .filter((o) => !superseded.has(o.id))
     .map((o) => specFromLibrary(ctx, o.id))
     .filter((s): s is LabParticipationSpec => Boolean(s));
 }
 
+/** تحويل مشاركة مرجعية متوافقة مع الإطار إلى مواصفة عرض — بلا تعديل على المصدر. */
+function specFromFrameworkReference(
+  p: FunctionalParticipation,
+): LabParticipationSpec {
+  const blocks = [...p.execution_blocks].sort((a, b) => a.order - b.order);
+  const eventCtx = p.event_id ? findEventById(p.event_id) : null;
+  return {
+    id: p.id,
+    eventId: p.event_id ?? "",
+    eventTitle_ar: eventCtx?.event.name ?? p.life_context,
+    level: p.complexity.level,
+    context: eventCtx ? contextsOf(eventCtx.domain.id)[0] : "home",
+    title_ar: p.title,
+    majorSteps: blocks.map((b, i) => ({
+      id: `${p.id}-S${i + 1}`,
+      order: i + 1,
+      instruction_family_ar: b.text,
+      instruction_short_ar: shortText(b.text),
+      visual_asset: null,
+      substeps: [],
+    })),
+    provenance: "framework_reference",
+  };
+}
+
+/** المشاركات المرجعية المتوافقة مع الإطار داخل حدث. */
+function frameworkSpecsForEvent(eventId: string): LabParticipationSpec[] {
+  return frameworkParticipationsForEvent(eventId).map(specFromFrameworkReference);
+}
+
 /**
- * كل المشاركات الوظيفية داخل حدث.
- * قاعدة الأسبقية: مصدر المكتبة/الإنتاج هو المعتمد دائماً.
- * Fixtures الخاصة بـ Lab تُستخدم فقط عندما لا يوجد أي مصدر مكتبة لهذا الحدث،
- * فلا تسبق ولا تحجب محتوى الإنتاج.
+ * كل المشاركات الوظيفية داخل حدث — من المصدرين معاً بلا دمج دلالي.
+ * الأسبقية: التمثيل المرجعي المتحقَّق يسبق نظيره القديم داخل نفس المجموعة،
+ * والصف القديم يبقى موجوداً في المكتبة بلا تعديل ولا حذف.
+ * Fixtures الخاصة بـ Lab تُستخدم فقط عند غياب أي مصدر إنتاجي لهذا الحدث.
  */
 export function participationsForEvent(eventId: string): LabParticipationSpec[] {
+  const fromFramework = frameworkSpecsForEvent(eventId);
   const fromLibrary = librarySpecsForEvent(eventId);
-  if (fromLibrary.length > 0) return fromLibrary;
+  const combined = [...fromFramework, ...fromLibrary];
+  if (combined.length > 0) return combined;
   return fixtureSpecsForEvent(eventId);
 }
 
@@ -213,7 +272,12 @@ export function levelCounts(eventId: string): Record<SliceLevel, number> {
 }
 
 export function getSpaceSpec(specId: string): LabParticipationSpec | null {
-  // 1) المصدر المعتمد: المكتبة/الإنتاج.
+  // 1) مرجع متوافق مع الإطار — يُحلّ بمعرّفه نفسه.
+  const fromFramework = discoverableFrameworkParticipations().find(
+    (p) => p.id === specId,
+  );
+  if (fromFramework) return specFromFrameworkReference(fromFramework);
+  // 2) المصدر المعتمد: المكتبة/الإنتاج.
   if (specId.startsWith("KB-")) {
     const oppId = specId.slice(3);
     const eventId = oppId.split("-OP")[0];
@@ -221,6 +285,7 @@ export function getSpaceSpec(specId: string): LabParticipationSpec | null {
     const fromLibrary = ctx ? specFromLibrary(ctx, oppId) : null;
     if (fromLibrary) return fromLibrary;
   }
+
   // 2) احتياطي: fixture خاص بـ Lab، ولا يُستخدم إلا إذا لم يوجد مصدر مكتبة.
   const fixture = SLICE_SPECS.find((s) => s.id === specId);
   if (fixture) {
