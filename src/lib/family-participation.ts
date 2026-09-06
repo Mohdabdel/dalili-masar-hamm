@@ -32,6 +32,8 @@ export interface CreateFamilyParticipationInput {
   routineStationId?: string | null;
   source?: string;
   notes?: string | null;
+  /** كتلة هوية المشاركة الوظيفية بعد التحقق — تُحفظ كما هي أو لا تُحفظ إطلاقاً. */
+  identity?: FunctionalIdentityBlock | null;
 }
 
 export interface FamilyParticipation {
@@ -42,6 +44,8 @@ export interface FamilyParticipation {
   status: string;
   dailyEventId: string | null;
   routineStationId: string | null;
+  /** الهوية الوظيفية المحفوظة (FA-04) — null يعني صف توافقي بلا هوية، بلا اختلاق. */
+  identity: FunctionalIdentityBlock | null;
 }
 
 export interface FamilyParticipationRow {
@@ -54,6 +58,7 @@ export interface FamilyParticipationRow {
   routine_station_id: string | null;
   source: string;
   status: string;
+  functional_identity: FunctionalIdentityBlock | null;
   notes?: string | null;
 }
 
@@ -82,6 +87,7 @@ export function buildFamilyParticipationRow(
     routine_station_id: input.routineStationId ?? null,
     source: input.source ?? "family_workspace",
     status: "active",
+    functional_identity: input.identity ?? null,
     ...(input.notes ? { notes: input.notes } : {}),
   };
 }
@@ -94,6 +100,7 @@ export function toFamilyParticipation(row: {
   status: string;
   daily_event_id: string | null;
   routine_station_id: string | null;
+  functional_identity?: unknown;
 }): FamilyParticipation {
   return {
     id: row.id,
@@ -107,11 +114,12 @@ export function toFamilyParticipation(row: {
     status: row.status,
     dailyEventId: row.daily_event_id,
     routineStationId: row.routine_station_id,
+    identity: parseIdentityBlock(row.functional_identity),
   };
 }
 
 const SELECT_COLUMNS =
-  "id, origin, reference_spec_id, reference_source, status, daily_event_id, routine_station_id";
+  "id, origin, reference_spec_id, reference_source, status, daily_event_id, routine_station_id, functional_identity";
 
 /** إنشاء مشاركة أسرية بأي أصل — بلا حاجة لأي معرّف مكتبة. */
 export async function createFamilyParticipation(
