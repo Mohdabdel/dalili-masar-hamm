@@ -6,6 +6,7 @@
 // reference = مصدر مرجعي اختياري (legacy_master | framework_reference).
 
 import { supabase } from "@/integrations/supabase/client";
+import type { Json } from "@/integrations/supabase/types";
 import {
   parseIdentityBlock,
   type FunctionalIdentityBlock,
@@ -58,7 +59,8 @@ export interface FamilyParticipationRow {
   routine_station_id: string | null;
   source: string;
   status: string;
-  functional_identity: FunctionalIdentityBlock | null;
+  /** كتلة الهوية مخزّنة كـ JSON — انظر مخطط الحقل في قاعدة البيانات. */
+  functional_identity: Json | null;
   notes?: string | null;
 }
 
@@ -87,7 +89,7 @@ export function buildFamilyParticipationRow(
     routine_station_id: input.routineStationId ?? null,
     source: input.source ?? "family_workspace",
     status: "active",
-    functional_identity: input.identity ?? null,
+    functional_identity: (input.identity ?? null) as Json | null,
     ...(input.notes ? { notes: input.notes } : {}),
   };
 }
