@@ -77,6 +77,8 @@ describe("Golden reference corpus (FREEZE §11)", () => {
     const identity = identityFromFrameworkParticipation(
       getGoldenParticipation("GJ-MODERATE-001")!,
     );
+    expect(identity).not.toBeNull();
+    if (!identity) return;
     expect(identity.validated).toBe(true);
     expect(identity.complexity_level).toBe("moderate");
     expect(identity.complexity_dimensions?.c1_elements).toBeTruthy();
