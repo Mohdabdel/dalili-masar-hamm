@@ -6,6 +6,10 @@
 // reference = مصدر مرجعي اختياري (legacy_master | framework_reference).
 
 import { supabase } from "@/integrations/supabase/client";
+import {
+  parseIdentityBlock,
+  type FunctionalIdentityBlock,
+} from "@/lib/framework/participation-identity";
 
 export type FamilyParticipationOrigin =
   | "reference"
