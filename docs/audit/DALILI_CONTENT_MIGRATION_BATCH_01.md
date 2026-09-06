@@ -127,3 +127,91 @@ Batch 02 is NOT authorized.
 ---
 
 **DALILI CONTROLLED CONTENT MIGRATION BATCH 01 = BLOCKED**
+
+---
+
+# SOURCE-PROVENANCE CORRECTION (RESUME ATTEMPT 02)
+
+**RESULT: SOURCE INGESTION GATE = FAIL — the two authoritative artifacts were not supplied to this project.**
+No content was migrated. No code, schema, data, registry, or Master content was modified.
+The previous STOP record above is preserved unchanged as historical evidence.
+
+## 1. Previous stop reason
+
+Batch 01 attempt 01 stopped because `DALILI_FRAMEWORK_FREEZE_01.md` and
+`DALILI_FRAMEWORK_VALIDATION_EVIDENCE_01.md` were absent **from the current Production
+repository**, and the task instruction treated repository absence as the STOP condition.
+
+## 2. Why it was not a Production defect
+
+Governance is correct: the Golden artifacts were frozen in the previous clean-room
+validation project and were never a Production runtime dependency. Their absence from
+`docs/` says nothing about Production integrity. Attempt 01's stop reasoning
+("required file absent from repository") is therefore withdrawn as a source-location
+assumption error, exactly as instructed. Production architecture is NOT implicated:
+the validator (Foundation 02), the provenance boundary (`classifyReferenceSource`),
+the identity persistence layer (Pre-Migration Safety Gate 01) and the publication layer
+(`registerFrameworkParticipation`) are all in place and unmodified.
+
+## 3. Source / target projects
+
+| Role | Project |
+| --- | --- |
+| SOURCE PROJECT | Previous DALILI clean-room / Golden framework validation project |
+| TARGET PROJECT | Current DALILI Production project |
+| SOURCE ARTIFACT ROLE | Frozen authoritative content/governance input (migration authority only) |
+| TARGET ROLE | Materialize the approved Golden Functional Participations as controlled `framework_reference` content |
+
+## 4. Recovered artifacts actually delivered to this project
+
+The correction message states the artifacts were recovered by governance, but recovery
+in the source project is not the same as delivery to the target project. Inventory of
+everything reachable by this migration process (uploaded attachments + repository):
+
+| Required authoritative artifact | Delivered to target project | Evidence |
+| --- | --- | --- |
+| `DALILI_FRAMEWORK_FREEZE_01.md` | **NO** — not attached, not present in uploads, not in repository | full attachment listing and repository search |
+| `DALILI_FRAMEWORK_VALIDATION_EVIDENCE_01.md` | **NO** — same | same |
+| `DALILI_FRAMEWORK_IMPLEMENTATION_CONTRACT_01.md` | **YES** — attached, byte-identical to the imported copy (SHA-256 `693a0e688ebedee5ccdb945f06329f58777aff13bad925cee937415226e039fc`) | `sha256sum` on the attachment and on `docs/audit/DALILI_FRAMEWORK_IMPLEMENTATION_CONTRACT_01.md` |
+
+The delivered contract contains **0** occurrences of `GJ-`; it defines 82 requirements
+and carries no Golden item definitions (no titles, no C1–C4, no FP fields).
+A search across the whole project for the five identifiers returns hits only in this
+audit file itself.
+
+## 5. Golden IDs recovered / verification result
+
+| Golden ID | Present in a delivered authoritative artifact |
+| --- | --- |
+| GJ-EASY-001 | NO |
+| GJ-SHARED-001 | NO |
+| GJ-DISCOVERY-001 | NO |
+| GJ-MODERATE-001 | NO |
+| GJ-ADVANCED-001 | NO |
+
+EXPECTED FROZEN COVERAGE (Easy Beginning control, Shared Simple control, Discovery
+Simple control, Moderate control, Advanced structural control) cannot be demonstrated
+from the source, because the source document was not delivered. Per the SOURCE
+INGESTION GATE ("If fewer than 5 are present in the supplied authoritative artifacts:
+STOP. Do NOT reconstruct missing definitions."), the gate fails and no reconstruction
+was attempted from `FX-FP-*` fixtures, `FR-*` Easy-Beginning seeds, or Legacy Master.
+
+## 6. Migration resumed from stage
+
+NOT RESUMED. Attempt 02 stopped at the SOURCE INGESTION GATE, before the FP validation
+stage. All Batch 01 safety constraints remain satisfied vacuously: BATCH LIMIT 5 (0
+used), LEGACY MASTER MUTATED = NO, CONTENT OUTSIDE GOLDEN FIVE MIGRATED = 0, no sixth
+item, no guessing, no legacy semantic backfill, no snapshot rewrite, no
+migration-specific Workspace, no implicit latest Learner, no Batch 02.
+
+## 7. Unblocking condition
+
+Attach `DALILI_FRAMEWORK_FREEZE_01.md` (and, for cross-check,
+`DALILI_FRAMEWORK_VALIDATION_EVIDENCE_01.md`) to this project as files. On receipt the
+gate re-runs unchanged and Batch 01 resumes at the FP validation stage; lineage will be
+recorded on each materialized record as `source_project = previous_clean_room`,
+`source_artifact = DALILI_FRAMEWORK_FREEZE_01`, `golden_id = <GJ-*>`,
+`reference_source = framework_reference`, using the existing provenance/identity model
+with no redundant schema.
+
+**SOURCE INGESTION = FAIL · MIGRATION BLOCKED (input not delivered) · BATCH 02 NOT AUTHORIZED**
