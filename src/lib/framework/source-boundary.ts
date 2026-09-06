@@ -6,6 +6,7 @@
 import { findOpportunityById } from "@/lib/knowledge-base";
 import { getFrameworkParticipation } from "./reference-registry";
 import { ensureEasyBeginningCorpus } from "./easy-beginning-corpus";
+import { ensureGoldenCorpus } from "./golden-corpus";
 import type { ReferenceProvenance } from "./reference-model";
 
 export type SourceClassification =
@@ -20,6 +21,7 @@ export type SourceClassification =
  */
 export function classifyReferenceSource(id: string): SourceClassification {
   ensureEasyBeginningCorpus();
+  ensureGoldenCorpus();
   for (const candidate of referenceIdVariants(id)) {
     if (getFrameworkParticipation(candidate)) {
       return { source: "framework_reference", frameworkValidated: true };
