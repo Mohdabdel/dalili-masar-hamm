@@ -59,7 +59,7 @@ describe("FA-04 identity persistence", () => {
     expect(row.reference_spec_id).toBeNull();
     expect(row.reference_source).toBeNull();
     expect(row.opportunity_id).toBeNull();
-    expect(row.functional_identity?.functional_intent).toBeTruthy();
+    expect(identityCompleteness(row.functional_identity)).not.toBe("none");
   });
 
   it("a framework reference carries its authored complexity", () => {
