@@ -6,9 +6,14 @@ import {
   draftSelectionForFamilySpec,
   specFromFamilyAnswers,
   specFromFrameworkParticipation,
+  toCandidate,
   validateFamilyAnswers,
   type FamilyParticipationAnswers,
 } from "@/lib/entry/family-spec";
+import {
+  identityFromFrameworkParticipation,
+  identityFromValidatedCandidate,
+} from "@/lib/framework/participation-identity";
 import type { PreferredContextValue } from "@/lib/entry/preferred-context";
 import type { FunctionalParticipation } from "@/lib/framework/reference-model";
 import type { SliceAction } from "@/features/space/store";
@@ -25,7 +30,12 @@ export async function createFamilyAuthoredParticipation(input: {
   if (!validity.valid) {
     throw new Error(`INVALID_FUNCTIONAL_PARTICIPATION: ${validity.gates.filter((g) => !g.passed).map((g) => g.gate).join(",")}`);
   }
-  const participation = await createFamilyParticipation({ origin: input.origin });
+  // الهوية تُشتق من التعريف المتحقَّق منه وحده؛ أبعاد C1–C4 تبقى غائبة لأنها غير معروفة.
+  const identity = identityFromValidatedCandidate(toCandidate(input.answers));
+  const participation = await createFamilyParticipation({
+    origin: input.origin,
+    identity,
+  });
   const spec = specFromFamilyAnswers({
     participationId: participation.id,
     answers: input.answers,
@@ -47,7 +57,10 @@ export async function createFrameworkCandidateParticipation(input: {
   context?: SliceContext;
   dispatch: (action: SliceAction) => void;
 }): Promise<string> {
-  const created = await createFamilyParticipation({ origin: "easy_beginning" });
+  const created = await createFamilyParticipation({
+    origin: "easy_beginning",
+    identity: identityFromFrameworkParticipation(input.participation),
+  });
   const spec = specFromFrameworkParticipation({
     participationId: created.id,
     participation: input.participation,
