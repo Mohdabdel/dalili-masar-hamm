@@ -93,6 +93,11 @@ export interface Opportunity {
   participationLevel?: ParticipationLevelKey;
   /** تفاصيل التصنيف الداخلية. */
   classification?: ParticipationClassification;
+  /**
+   * مصدر السجل (FP-01): legacy_master محتوى المكتبة القديم كما هو،
+   * framework_reference محتوى تحقق من بوابات الإطار. غياب القيمة لا يعني توافقاً.
+   */
+  provenance?: "legacy_master" | "framework_reference";
 }
 
 export interface LifeEvent {

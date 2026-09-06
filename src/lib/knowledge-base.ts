@@ -310,6 +310,8 @@ function build(): {
         opportunities.push({
           id: op.opportunity_id,
           name: op.opportunity_name_ar,
+          // كل صف من CSV هو محتوى قديم بحكم مصدره — لا يُرقّى تلقائياً (FP-01).
+          provenance: "legacy_master",
           levels: full.levels,
           card: full,
           participationLevel: level,
