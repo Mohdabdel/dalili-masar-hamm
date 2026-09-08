@@ -1,0 +1,276 @@
+{
+  "artifact": "DALILI_REPRESENTATIVE_SET_6_CANDIDATES_01",
+  "status": "CANDIDATE_ONLY_NOT_MATERIALIZED",
+  "purpose": "Representative Production-contract-complete set covering all six DALILI domains after 3/3 Contract Alignment PASS.",
+  "source": {
+    "legacy_corpus": "docs/audit/data/DALILI_LEGACY_CORPUS_EXPORT_01.json",
+    "contract_extraction": "docs/audit/DALILI_PRODUCTION_CONTENT_CONTRACT_EXTRACTION_01.md",
+    "prior_gate": "docs/audit/DALILI_CONTRACT_ALIGNMENT_3_CANDIDATES_VALIDATION_01.md"
+  },
+  "coverage": {
+    "domains": [
+      "إعداد الطعام والوجبات",
+      "التسوق وإدارة المشتريات",
+      "إدارة المنزل",
+      "الأنشطة والمشاركة المجتمعية",
+      "الصحة والمواعيد",
+      "الملابس والعناية بها"
+    ],
+    "participation_modes": ["individual", "shared"],
+    "complexity_levels": ["simple", "moderate", "advanced"]
+  },
+  "candidates": [
+    {
+      "id": "FP-REP-FOOD-SIMPLE-001",
+      "domain": "إعداد الطعام والوجبات",
+      "source_evidence_ids": ["FOOD-001-OP002"],
+      "source_titles": ["تحضير الأطباق والأكواب"],
+      "title": "وضع الأطباق والأكواب على مائدة الإفطار",
+      "life_context": "قبل إفطار الأسرة، توجد أطباق وأكواب في الخزانة وتحتاج المائدة إلى تجهيز بسيط قبل جلوس الجميع.",
+      "functional_intent": "المائدة تحتاج أدوات أساسية أمام الجالسين حتى يبدأ الإفطار بصورة منظمة.",
+      "observable_effect": "تصبح الأطباق والأكواب موجودة على المائدة وفي متناول الأسرة.",
+      "natural_completion": "ينتهي الدور عندما تكون أدوات الإفطار الأساسية موضوعة على المائدة.",
+      "standalone_role_meaning": "تجهيز أدوات المائدة دور منزلي مفهوم بذاته في أي وجبة أسرية، حتى إذا تولى آخرون إعداد الطعام.",
+      "participation_mode": "individual",
+      "complexity": {
+        "level": "simple",
+        "dimensions": {
+          "c1_elements": "عناصر قليلة ومتكررة: أطباق وأكواب.",
+          "c2_coordination": "ترتيب مباشر قبل الجلوس إلى المائدة، بلا تزامن مع أدوار أخرى.",
+          "c3_variability": "الوضع ثابت غالبًا؛ الأدوات والمكان معروفان.",
+          "c4_choice_uncertainty": "اختيارات محدودة؛ المطلوب وضع الأدوات الأساسية فقط."
+        },
+        "rationale": "بنية الدور بسيطة لأنها تجمع عناصر قليلة، وتسلسلًا مباشرًا، وتغيرًا محدودًا، واختيارات قليلة."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-REP-FOOD-SIMPLE-001-B1",
+          "order": 1,
+          "text": "إحضار الأطباق من الخزانة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-REP-FOOD-SIMPLE-001-B2",
+          "order": 2,
+          "text": "وضع الأكواب بجانب الأطباق على المائدة"
+        }
+      ]
+    },
+    {
+      "id": "FP-REP-SHOP-MODERATE-001",
+      "domain": "التسوق وإدارة المشتريات",
+      "source_evidence_ids": ["SHOP-004-OP002"],
+      "source_titles": ["حمل الأكياس الفارغة إلى السيارة"],
+      "title": "نقل أكياس التسوق الفارغة إلى السيارة",
+      "life_context": "قبل الذهاب إلى السوبرماركت، تحتاج الأسرة إلى أخذ أكياس التسوق الفارغة من المنزل إلى السيارة.",
+      "functional_intent": "رحلة التسوق تحتاج أكياسًا متاحة في السيارة لاستخدامها عند تعبئة المشتريات.",
+      "observable_effect": "تصل الأكياس الفارغة إلى السيارة قبل بدء رحلة التسوق.",
+      "natural_completion": "ينتهي الدور عندما توضع الأكياس في السيارة وتصبح متاحة للرحلة.",
+      "standalone_role_meaning": "نقل أكياس التسوق إلى السيارة دور تحضيري مفهوم بذاته ضمن الاستعداد للتسوق، حتى إذا تولى آخرون اختيار المشتريات.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة أكياس أو حقائب قابلة للحمل.",
+          "c2_coordination": "الدور يرتبط بتوقيت خروج الأسرة وتجهيز السيارة قبل الرحلة.",
+          "c3_variability": "عدد الأكياس ومكانها قد يختلفان من مرة لأخرى.",
+          "c4_choice_uncertainty": "يوجد اختيار محدود لما يؤخذ من الأكياس وأين توضع في السيارة."
+        },
+        "rationale": "بنية الدور متوسطة لأنها تتضمن أكثر من عنصر، وربطًا بخروج الأسرة، وتغيرًا في عدد الأكياس ومكانها، مع اختيارات محدودة."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-REP-SHOP-MODERATE-001-B1",
+          "order": 1,
+          "text": "جمع أكياس التسوق الفارغة من مكانها"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-REP-SHOP-MODERATE-001-B2",
+          "order": 2,
+          "text": "حمل الأكياس باتجاه السيارة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-REP-SHOP-MODERATE-001-B3",
+          "order": 3,
+          "text": "وضع الأكياس في مكان مناسب داخل السيارة"
+        }
+      ]
+    },
+    {
+      "id": "FP-REP-HOME-SIMPLE-001",
+      "domain": "إدارة المنزل",
+      "source_evidence_ids": ["HOME-001-OP002"],
+      "source_titles": ["جمع الملابس المتناثرة."],
+      "title": "جمع الملابس المتناثرة في غرفة النوم",
+      "life_context": "أثناء ترتيب غرفة النوم، تكون بعض الملابس متفرقة على السرير أو الأرض وتحتاج إلى جمعها قبل إكمال الترتيب.",
+      "functional_intent": "الغرفة تحتاج إزالة الملابس المتفرقة من المساحات المستخدمة حتى تصبح مرتبة.",
+      "observable_effect": "تخلو المساحة الظاهرة في الغرفة من الملابس المتناثرة.",
+      "natural_completion": "ينتهي الدور عندما تجمع الملابس المتفرقة في موضع واحد مخصص لها.",
+      "standalone_role_meaning": "جمع الملابس المتناثرة دور منزلي مفهوم بذاته في ترتيب أي غرفة، حتى إذا تولى آخرون ترتيب السرير أو الخزانة.",
+      "participation_mode": "individual",
+      "complexity": {
+        "level": "simple",
+        "dimensions": {
+          "c1_elements": "عنصر واحد متكرر: قطع الملابس المتفرقة.",
+          "c2_coordination": "تتابع مباشر داخل الغرفة قبل متابعة الترتيب.",
+          "c3_variability": "قد يختلف عدد القطع ومكانها، لكن نوع الدور ثابت.",
+          "c4_choice_uncertainty": "اختيار محدود بين جمع القطع ووضعها في موضع واحد."
+        },
+        "rationale": "بنية الدور بسيطة لأن العناصر من نوع واحد، والتنسيق محدود، والتغير قابل للاحتواء، والاختيار ضيق."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-REP-HOME-SIMPLE-001-B1",
+          "order": 1,
+          "text": "التقاط الملابس المتفرقة من السرير أو الأرض"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-REP-HOME-SIMPLE-001-B2",
+          "order": 2,
+          "text": "وضع الملابس المجموعة في السلة أو مكانها المؤقت"
+        }
+      ]
+    },
+    {
+      "id": "FP-REP-COMM-MODERATE-001",
+      "domain": "الأنشطة والمشاركة المجتمعية",
+      "source_evidence_ids": ["COMM-007-OP002"],
+      "source_titles": ["اختيار الوجبة من القائمة"],
+      "title": "اختيار وجبة من قائمة المطعم",
+      "life_context": "أثناء تناول الأسرة وجبة في مطعم، تعرض القائمة عدة أطباق قبل إرسال الطلب.",
+      "functional_intent": "الطلب يحتاج تحديد الوجبة التي ستضاف إلى طلب المائدة.",
+      "observable_effect": "تتحدد وجبة واحدة يمكن إبلاغها ضمن طلب الأسرة.",
+      "natural_completion": "ينتهي الدور عندما تصبح الوجبة المختارة واضحة وجاهزة للإبلاغ.",
+      "standalone_role_meaning": "اختيار عنصر من قائمة الطعام دور اجتماعي مفهوم بذاته داخل زيارة مطعم، حتى إذا تولى شخص آخر إرسال الطلب.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر معروضة في القائمة، مثل أطباق أو صور أو أسماء وجبات.",
+          "c2_coordination": "الاختيار يرتبط بطلب الأسرة قبل إرساله للمطعم.",
+          "c3_variability": "القائمة والخيارات قد تختلف حسب المطعم أو الزيارة.",
+          "c4_choice_uncertainty": "يوجد قرار مفتوح بين بدائل متعددة قبل تثبيت الطلب."
+        },
+        "rationale": "بنية الدور متوسطة لأن فيها بدائل متعددة، وربطًا بطلب الأسرة، وتغيرًا في الخيارات، وقرارًا مفتوحًا ضمن موقف اجتماعي."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-REP-COMM-MODERATE-001-B1",
+          "order": 1,
+          "text": "النظر إلى عناصر القائمة أو صور الوجبات"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-REP-COMM-MODERATE-001-B2",
+          "order": 2,
+          "text": "تحديد الوجبة المطلوبة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-REP-COMM-MODERATE-001-B3",
+          "order": 3,
+          "text": "إبلاغ الأسرة بالاختيار قبل إرسال الطلب"
+        }
+      ]
+    },
+    {
+      "id": "FP-REP-HEALTH-SIMPLE-001",
+      "domain": "الصحة والمواعيد",
+      "source_evidence_ids": ["HEALTH-002-OP003"],
+      "source_titles": ["تجهيز زجاجة الماء"],
+      "title": "تجهيز زجاجة ماء قبل الموعد",
+      "life_context": "قبل الخروج إلى موعد محدد، تحتاج الأسرة إلى تجهيز أغراض الخروج الأساسية ومنها زجاجة ماء.",
+      "functional_intent": "الخروج يحتاج زجاجة ماء مغلقة يمكن حملها مع بقية الأغراض.",
+      "observable_effect": "تصبح زجاجة الماء مملوءة ومغلقة وجاهزة للحمل.",
+      "natural_completion": "ينتهي الدور عندما توضع الزجاجة المملوءة مع أغراض الخروج.",
+      "standalone_role_meaning": "تجهيز زجاجة ماء للخروج دور تحضيري مفهوم بذاته في مواقف الخروج اليومية، حتى إذا تولى آخرون تجهيز بقية الأغراض.",
+      "participation_mode": "individual",
+      "complexity": {
+        "level": "simple",
+        "dimensions": {
+          "c1_elements": "عنصر واحد أساسي: زجاجة الماء.",
+          "c2_coordination": "تسلسل مباشر قبل وضع الزجاجة مع أغراض الخروج.",
+          "c3_variability": "التغير محدود؛ قد يختلف مكان الزجاجة أو كمية الماء.",
+          "c4_choice_uncertainty": "اختيارات قليلة: تعبئة الزجاجة وإغلاقها ووضعها مع الأغراض."
+        },
+        "rationale": "بنية الدور بسيطة لأنها تركز على عنصر واحد، وتسلسل قصير، وتغير محدود، واختيارات قليلة."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-REP-HEALTH-SIMPLE-001-B1",
+          "order": 1,
+          "text": "فتح زجاجة الماء"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-REP-HEALTH-SIMPLE-001-B2",
+          "order": 2,
+          "text": "تعبئة الزجاجة بالماء"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-REP-HEALTH-SIMPLE-001-B3",
+          "order": 3,
+          "text": "إغلاق الزجاجة ووضعها مع أغراض الخروج"
+        }
+      ]
+    },
+    {
+      "id": "FP-REP-CLO-ADVANCED-001",
+      "domain": "الملابس والعناية بها",
+      "source_evidence_ids": ["CLO-003-OP001"],
+      "source_titles": ["إرجاع أو استبدال ملابس غير مناسبة"],
+      "title": "تنسيق إرجاع أو استبدال قطعة ملابس غير مناسبة",
+      "life_context": "بعد وصول قطعة ملابس غير مناسبة في المقاس أو الجودة، تحتاج الأسرة إلى ترتيب طريقة الإرجاع أو الاستبدال.",
+      "functional_intent": "الموقف يحتاج تحديد سبب عدم المناسبة وتجهيز القطعة ومعلومات الطلب قبل التواصل مع المتجر أو خدمة الشحن.",
+      "observable_effect": "تصبح القطعة وسبب الإرجاع ومعلومات الطلب جاهزة لبدء الإرجاع أو الاستبدال.",
+      "natural_completion": "ينتهي الدور عندما تكون متطلبات الإرجاع أو الاستبدال جاهزة ومحددة للخطوة التالية.",
+      "standalone_role_meaning": "تنسيق متطلبات الإرجاع أو الاستبدال دور إداري منزلي مفهوم بذاته، لأنه يجمع سبب الإرجاع والقطعة ومعلومات الطلب قبل التعامل مع الجهة الخارجية.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "advanced",
+        "dimensions": {
+          "c1_elements": "عناصر متعددة: قطعة الملابس، سبب عدم المناسبة، فاتورة أو رقم طلب، خيار إرجاع أو استبدال.",
+          "c2_coordination": "تنسيق بين قرار الأسرة ومتطلبات المتجر أو الشحن قبل متابعة الإجراء.",
+          "c3_variability": "الأسباب والإجراءات تختلف حسب نوع القطعة وسياسة المتجر وطريقة الشراء.",
+          "c4_choice_uncertainty": "اختيارات مفتوحة بين إرجاع، استبدال، أو انتظار معلومات إضافية قبل المتابعة."
+        },
+        "rationale": "بنية الدور متقدمة لأنها تجمع عناصر كثيرة، وتنسيقًا مع جهة خارجية، وتغيرًا في الإجراءات، وقرارات مفتوحة حسب سبب عدم المناسبة وخيار الأسرة."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-REP-CLO-ADVANCED-001-B1",
+          "order": 1,
+          "text": "تحديد سبب عدم مناسبة قطعة الملابس"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-REP-CLO-ADVANCED-001-B2",
+          "order": 2,
+          "text": "جمع القطعة مع الفاتورة أو رقم الطلب"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-REP-CLO-ADVANCED-001-B3",
+          "order": 3,
+          "text": "تحديد هل المتابعة ستكون إرجاعًا أو استبدالًا"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-REP-CLO-ADVANCED-001-B4",
+          "order": 4,
+          "text": "تجهيز المعلومات المطلوبة للتواصل مع المتجر أو خدمة الشحن"
+        }
+      ]
+    }
+  ]
+}

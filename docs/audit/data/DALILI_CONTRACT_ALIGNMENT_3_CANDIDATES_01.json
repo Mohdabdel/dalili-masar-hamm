@@ -1,0 +1,143 @@
+{
+  "artifact": "DALILI_CONTRACT_ALIGNMENT_3_CANDIDATES_01",
+  "status": "CANDIDATE_ONLY_NOT_MATERIALIZED",
+  "purpose": "Three Production-contract-complete candidates for Contract Alignment validation: Simple, Moderate, Advanced.",
+  "source": {
+    "legacy_corpus": "docs/audit/data/DALILI_LEGACY_CORPUS_EXPORT_01.json",
+    "contract_extraction": "docs/audit/DALILI_PRODUCTION_CONTENT_CONTRACT_EXTRACTION_01.md"
+  },
+  "candidates": [
+    {
+      "id": "FP-ALIGN-SIMPLE-001",
+      "candidate_level": "simple",
+      "domain": "إعداد الطعام والوجبات",
+      "source_evidence_ids": ["FOOD-001-OP002"],
+      "source_titles": ["تحضير الأطباق والأكواب"],
+      "title": "وضع الأطباق والأكواب على مائدة الإفطار",
+      "life_context": "قبل إفطار الأسرة، توجد أطباق وأكواب في الخزانة وتحتاج المائدة إلى تجهيز بسيط قبل جلوس الجميع.",
+      "functional_intent": "المائدة تحتاج أدوات أساسية أمام الجالسين حتى يبدأ الإفطار بصورة منظمة.",
+      "observable_effect": "تصبح الأطباق والأكواب موجودة على المائدة وفي متناول الأسرة.",
+      "natural_completion": "ينتهي الدور عندما تكون أدوات الإفطار الأساسية موضوعة على المائدة.",
+      "standalone_role_meaning": "تجهيز أدوات المائدة دور منزلي مفهوم بذاته في أي وجبة أسرية، حتى إذا تولى آخرون إعداد الطعام.",
+      "participation_mode": "individual",
+      "complexity": {
+        "level": "simple",
+        "dimensions": {
+          "c1_elements": "عناصر قليلة ومتكررة: أطباق وأكواب.",
+          "c2_coordination": "ترتيب مباشر قبل الجلوس إلى المائدة، بلا تزامن مع أدوار أخرى.",
+          "c3_variability": "الوضع ثابت غالبًا؛ الأدوات والمكان معروفان.",
+          "c4_choice_uncertainty": "اختيارات محدودة؛ المطلوب وضع الأدوات الأساسية فقط."
+        },
+        "rationale": "بنية الدور بسيطة لأنها تجمع عناصر قليلة، وتسلسلًا مباشرًا، وتغيرًا محدودًا، واختيارات قليلة."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-ALIGN-SIMPLE-001-B1",
+          "order": 1,
+          "text": "إحضار الأطباق من الخزانة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-ALIGN-SIMPLE-001-B2",
+          "order": 2,
+          "text": "وضع الأكواب بجانب الأطباق على المائدة"
+        }
+      ]
+    },
+    {
+      "id": "FP-ALIGN-MODERATE-001",
+      "candidate_level": "moderate",
+      "domain": "الأنشطة والمشاركة المجتمعية",
+      "source_evidence_ids": ["COMM-007-OP002"],
+      "source_titles": ["اختيار الوجبة من القائمة"],
+      "title": "اختيار وجبة من قائمة المطعم",
+      "life_context": "أثناء تناول الأسرة وجبة في مطعم، تعرض القائمة عدة أطباق قبل إرسال الطلب.",
+      "functional_intent": "الطلب يحتاج تحديد الوجبة التي ستضاف إلى طلب المائدة.",
+      "observable_effect": "تتحدد وجبة واحدة يمكن إبلاغها ضمن طلب الأسرة.",
+      "natural_completion": "ينتهي الدور عندما تصبح الوجبة المختارة واضحة وجاهزة للإبلاغ.",
+      "standalone_role_meaning": "اختيار عنصر من قائمة الطعام دور اجتماعي مفهوم بذاته داخل زيارة مطعم، حتى إذا تولى شخص آخر إرسال الطلب.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر معروضة في القائمة، مثل أطباق أو صور أو أسماء وجبات.",
+          "c2_coordination": "الاختيار يرتبط بطلب الأسرة قبل إرساله للمطعم.",
+          "c3_variability": "القائمة والخيارات قد تختلف حسب المطعم أو الزيارة.",
+          "c4_choice_uncertainty": "يوجد قرار مفتوح بين بدائل متعددة قبل تثبيت الطلب."
+        },
+        "rationale": "بنية الدور متوسطة لأن فيها بدائل متعددة، وربطًا بطلب الأسرة، وتغيرًا في الخيارات، وقرارًا مفتوحًا ضمن موقف اجتماعي."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-ALIGN-MODERATE-001-B1",
+          "order": 1,
+          "text": "النظر إلى عناصر القائمة أو صور الوجبات"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-ALIGN-MODERATE-001-B2",
+          "order": 2,
+          "text": "تحديد الوجبة المطلوبة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-ALIGN-MODERATE-001-B3",
+          "order": 3,
+          "text": "إبلاغ الأسرة بالاختيار قبل إرسال الطلب"
+        }
+      ]
+    },
+    {
+      "id": "FP-ALIGN-ADVANCED-001",
+      "candidate_level": "advanced",
+      "domain": "الملابس والعناية بها",
+      "source_evidence_ids": ["CLO-003-OP001"],
+      "source_titles": ["إرجاع أو استبدال ملابس غير مناسبة"],
+      "title": "تنسيق إرجاع أو استبدال قطعة ملابس غير مناسبة",
+      "life_context": "بعد وصول قطعة ملابس غير مناسبة في المقاس أو الجودة، تحتاج الأسرة إلى ترتيب طريقة الإرجاع أو الاستبدال.",
+      "functional_intent": "الموقف يحتاج تحديد سبب عدم المناسبة وتجهيز القطعة ومعلومات الطلب قبل التواصل مع المتجر أو خدمة الشحن.",
+      "observable_effect": "تصبح القطعة وسبب الإرجاع ومعلومات الطلب جاهزة لبدء الإرجاع أو الاستبدال.",
+      "natural_completion": "ينتهي الدور عندما تكون متطلبات الإرجاع أو الاستبدال جاهزة ومحددة للخطوة التالية.",
+      "standalone_role_meaning": "تنسيق متطلبات الإرجاع أو الاستبدال دور إداري منزلي مفهوم بذاته، لأنه يجمع سبب الإرجاع والقطعة ومعلومات الطلب قبل التعامل مع الجهة الخارجية.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "advanced",
+        "dimensions": {
+          "c1_elements": "عناصر متعددة: قطعة الملابس، سبب عدم المناسبة، فاتورة أو رقم طلب، خيار إرجاع أو استبدال.",
+          "c2_coordination": "تنسيق بين قرار الأسرة ومتطلبات المتجر أو الشحن قبل متابعة الإجراء.",
+          "c3_variability": "الأسباب والإجراءات تختلف حسب نوع القطعة وسياسة المتجر وطريقة الشراء.",
+          "c4_choice_uncertainty": "اختيارات مفتوحة بين إرجاع، استبدال، أو انتظار معلومات إضافية قبل المتابعة."
+        },
+        "rationale": "بنية الدور متقدمة لأنها تجمع عناصر كثيرة، وتنسيقًا مع جهة خارجية، وتغيرًا في الإجراءات، وقرارات مفتوحة حسب سبب عدم المناسبة وخيار الأسرة."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-ALIGN-ADVANCED-001-B1",
+          "order": 1,
+          "text": "تحديد سبب عدم مناسبة قطعة الملابس"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-ALIGN-ADVANCED-001-B2",
+          "order": 2,
+          "text": "جمع القطعة مع الفاتورة أو رقم الطلب"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-ALIGN-ADVANCED-001-B3",
+          "order": 3,
+          "text": "تحديد هل المتابعة ستكون إرجاعًا أو استبدالًا"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-ALIGN-ADVANCED-001-B4",
+          "order": 4,
+          "text": "تجهيز المعلومات المطلوبة للتواصل مع المتجر أو خدمة الشحن"
+        }
+      ]
+    }
+  ]
+}

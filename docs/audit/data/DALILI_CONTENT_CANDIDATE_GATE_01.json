@@ -1,0 +1,384 @@
+{
+  "artifact": "DALILI_CONTENT_CANDIDATE_GATE_01",
+  "status": "PASS",
+  "scope": "offline semantic candidate-library gate only",
+  "source_legacy_count": 1413,
+  "candidate_count": 30,
+  "dedup_decisions": [
+    {
+      "a": "FP-CAND-004",
+      "b": "FP-CAND-005",
+      "lexical_similarity": 0.64,
+      "decision": "RETAIN_BOTH",
+      "reason": "Different event/context and natural completion; lexical similarity does not establish semantic duplication."
+    },
+    {
+      "a": "FP-CAND-015",
+      "b": "FP-CAND-016",
+      "lexical_similarity": 0.44,
+      "decision": "RETAIN_BOTH",
+      "reason": "Different event/context and natural completion; lexical similarity does not establish semantic duplication."
+    }
+  ],
+  "c1_c4_audit": [
+    {
+      "candidate_id": "FP-CAND-001",
+      "dimensions": {
+        "C1_elements": 0,
+        "C2_coordination": 1,
+        "C3_variability": 0,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "simple",
+      "result": "SIMPLE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-002",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-003",
+      "dimensions": {
+        "C1_elements": 0,
+        "C2_coordination": 1,
+        "C3_variability": 0,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "simple",
+      "result": "SIMPLE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-004",
+      "dimensions": {
+        "C1_elements": 0,
+        "C2_coordination": 1,
+        "C3_variability": 0,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "simple",
+      "result": "SIMPLE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-005",
+      "dimensions": {
+        "C1_elements": 0,
+        "C2_coordination": 1,
+        "C3_variability": 0,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "simple",
+      "result": "SIMPLE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-006",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-007",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-008",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-009",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 1
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-010",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 1
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-011",
+      "dimensions": {
+        "C1_elements": 0,
+        "C2_coordination": 0,
+        "C3_variability": 0,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "simple",
+      "result": "SIMPLE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-012",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-013",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 1
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-014",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 1
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-015",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-016",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-017",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-018",
+      "dimensions": {
+        "C1_elements": 0,
+        "C2_coordination": 0,
+        "C3_variability": 0,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "simple",
+      "result": "SIMPLE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-019",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-020",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-021",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-022",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 0,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 1
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-023",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 0,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 1
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-024",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 0,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-025",
+      "dimensions": {
+        "C1_elements": 0,
+        "C2_coordination": 1,
+        "C3_variability": 0,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "simple",
+      "result": "SIMPLE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-026",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-027",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-028",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 0,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 1
+      },
+      "proposed": "moderate",
+      "result": "MODERATE_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-029",
+      "dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 2,
+        "C3_variability": 2,
+        "C4_choice_uncertainty": 2
+      },
+      "proposed": "advanced",
+      "result": "ADVANCED_SUPPORTED_EDITORIALLY"
+    },
+    {
+      "candidate_id": "FP-CAND-030",
+      "dimensions": {
+        "C1_elements": 0,
+        "C2_coordination": 1,
+        "C3_variability": 0,
+        "C4_choice_uncertainty": 0
+      },
+      "proposed": "simple",
+      "result": "SIMPLE_SUPPORTED_EDITORIALLY"
+    }
+  ],
+  "complexity_issues": [],
+  "health_mvp_decision": {
+    "status": "BOUNDED_SUFFICIENT_FOR_MVP_CANDIDATE_LIBRARY",
+    "count": 2,
+    "scope": "administrative/preparation participation only",
+    "excluded": "therapy, exercise-with-specialist, medication management, emergency response, adherence/compliance",
+    "rationale": "MVP sufficiency does not require equal counts per domain. Two non-clinical roles establish domain presence while avoiding unsafe or therapeutic reinterpretation. Expansion can occur post-gate with separate contextual review."
+  },
+  "bounded_domain_decisions": {
+    "إدارة المنزل": {
+      "status": "BOUNDED_SUFFICIENT",
+      "count": 5,
+      "rationale": "Covers shared-space ordering, shoes/books/pantry; further expansion is blocked by card_pending/source completeness and is not required to prove MVP breadth."
+    },
+    "الأنشطة والمشاركة المجتمعية": {
+      "status": "BOUNDED_SUFFICIENT",
+      "count": 5,
+      "rationale": "Covers family outing/visit plus café, restaurant and ticket transaction contexts without promoting greetings/walking/movement to FPs."
+    }
+  },
+  "gate_checks": {
+    "six_domains_represented": true,
+    "dedup_resolved": true,
+    "c1_c4_editorial_audit_clear": true,
+    "health_scope_explicit": true,
+    "home_community_scope_explicit": true,
+    "production_canonical_validation_complete": false
+  },
+  "content_ready_status": "NOT_YET — requires representative canonical Production validation before controlled expansion/materialization."
+}

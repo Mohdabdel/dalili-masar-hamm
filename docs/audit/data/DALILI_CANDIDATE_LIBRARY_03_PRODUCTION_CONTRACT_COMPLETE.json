@@ -1,0 +1,1948 @@
+{
+  "artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+  "status": "PRODUCTION_CONTRACT_COMPLETE_CANONICAL_PASS",
+  "source_artifact": "dalili-masar-hamm/docs/audit/data/DALILI_CANDIDATE_LIBRARY_02_C1C4.json",
+  "candidate_count": 30,
+  "candidates": [
+    {
+      "candidate_id": "FP-CAND-001",
+      "id": "FP-CAND-001",
+      "title": "تجهيز مائدة الإفطار",
+      "life_context": "تجهيز مائدة الإفطار للأسرة",
+      "functional_intent": "جعل أدوات التقديم اللازمة للإفطار جاهزة لاستخدام الأسرة",
+      "observable_effect": "تكون أدوات المائدة/التقديم المطلوبة جاهزة في مكان الإفطار",
+      "natural_completion": "عندما تصبح الأدوات المطلوبة جاهزة للاستخدام",
+      "standalone_role_meaning": "تجهيز مائدة الإفطار دور له معنى داخل تجهيز مائدة الإفطار للأسرة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "simple",
+        "dimensions": {
+          "c1_elements": "عناصر قليلة ومباشرة داخل الدور: تجهيز مائدة الإفطار.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "الموقف ثابت غالبًا ويتكرر بصورة مألوفة.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت simple اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=0, C2=1, C3=0, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-001-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: تجهيز مائدة الإفطار للأسرة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-001-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـتحضير الأطباق والأكواب"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-001-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـتحضير المشروبات المرافقة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-001-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تكون أدوات المائدة/التقديم المطلوبة جاهزة في مكان الإفطار"
+        }
+      ],
+      "event_id": "FOOD-001",
+      "source_evidence_ids": [
+        "FOOD-001-OP002",
+        "FOOD-001-OP004"
+      ],
+      "source_titles": [
+        "تحضير الأطباق والأكواب",
+        "تحضير المشروبات المرافقة"
+      ],
+      "domain": "إعداد الطعام والوجبات",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-002",
+      "id": "FP-CAND-002",
+      "title": "تجهيز ما يلزم لتقديم الغداء",
+      "life_context": "إعداد الغداء للأسرة",
+      "functional_intent": "المساهمة في انتقال الغداء من التحضير إلى الإعداد للتقديم",
+      "observable_effect": "تصبح أدوات/عناصر التقديم المطلوبة متاحة ويصبح الطعام جاهزًا للتقديم",
+      "natural_completion": "عندما يصبح الجزء المتفق عليه من الغداء جاهزًا للتقديم",
+      "standalone_role_meaning": "تجهيز ما يلزم لتقديم الغداء دور له معنى داخل إعداد الغداء للأسرة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: تجهيز ما يلزم لتقديم الغداء.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-002-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: إعداد الغداء للأسرة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-002-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـإحضار أدوات الطهي"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-002-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـسكب الطعام في الأطباق"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-002-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تصبح أدوات/عناصر التقديم المطلوبة متاحة ويصبح الطعام جاهزًا للتقديم"
+        }
+      ],
+      "event_id": "FOOD-002",
+      "source_evidence_ids": [
+        "FOOD-002-OP003",
+        "FOOD-002-OP005"
+      ],
+      "source_titles": [
+        "إحضار أدوات الطهي",
+        "سكب الطعام في الأطباق"
+      ],
+      "domain": "إعداد الطعام والوجبات",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-003",
+      "id": "FP-CAND-003",
+      "title": "تجهيز مائدة العشاء",
+      "life_context": "إعداد العشاء للأسرة",
+      "functional_intent": "جعل مائدة العشاء جاهزة لاستخدام الأسرة",
+      "observable_effect": "تكون أدوات المائدة المطلوبة مرتبة وجاهزة",
+      "natural_completion": "عندما تصبح المائدة جاهزة للعشاء",
+      "standalone_role_meaning": "تجهيز مائدة العشاء دور له معنى داخل إعداد العشاء للأسرة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "simple",
+        "dimensions": {
+          "c1_elements": "عناصر قليلة ومباشرة داخل الدور: تجهيز مائدة العشاء.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "الموقف ثابت غالبًا ويتكرر بصورة مألوفة.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت simple اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=0, C2=1, C3=0, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-003-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: إعداد العشاء للأسرة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-003-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـتجهيز أدوات المائدة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-003-B3",
+          "order": 3,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تكون أدوات المائدة المطلوبة مرتبة وجاهزة"
+        }
+      ],
+      "event_id": "FOOD-003",
+      "source_evidence_ids": [
+        "FOOD-003-OP002"
+      ],
+      "source_titles": [
+        "تجهيز أدوات المائدة"
+      ],
+      "domain": "إعداد الطعام والوجبات",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-004",
+      "id": "FP-CAND-004",
+      "title": "تجهيز تقديم المشروبات الساخنة",
+      "life_context": "تجهيز المشروبات الساخنة للأسرة أو الضيوف",
+      "functional_intent": "جعل أدوات تقديم المشروبات الساخنة جاهزة للتقديم",
+      "observable_effect": "تصبح الأكواب/أدوات التقديم المطلوبة جاهزة في مكان التقديم",
+      "natural_completion": "عندما تصبح أدوات التقديم المطلوبة جاهزة",
+      "standalone_role_meaning": "تجهيز تقديم المشروبات الساخنة دور له معنى داخل تجهيز المشروبات الساخنة للأسرة أو الضيوف، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "simple",
+        "dimensions": {
+          "c1_elements": "عناصر قليلة ومباشرة داخل الدور: تجهيز تقديم المشروبات الساخنة.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "الموقف ثابت غالبًا ويتكرر بصورة مألوفة.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت simple اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=0, C2=1, C3=0, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-004-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: تجهيز المشروبات الساخنة للأسرة أو الضيوف"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-004-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـإحضار الأكواب"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-004-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـتقديم المشروبات"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-004-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تصبح الأكواب/أدوات التقديم المطلوبة جاهزة في مكان التقديم"
+        }
+      ],
+      "event_id": "FOOD-004",
+      "source_evidence_ids": [
+        "FOOD-004-OP002",
+        "FOOD-004-OP004"
+      ],
+      "source_titles": [
+        "إحضار الأكواب",
+        "تقديم المشروبات"
+      ],
+      "domain": "إعداد الطعام والوجبات",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-005",
+      "id": "FP-CAND-005",
+      "title": "تجهيز تقديم المشروبات الباردة",
+      "life_context": "تجهيز المشروبات الباردة للأسرة أو الضيوف",
+      "functional_intent": "جعل أدوات تقديم المشروبات الباردة جاهزة للتقديم",
+      "observable_effect": "تصبح الأكواب/عناصر التقديم المطلوبة جاهزة",
+      "natural_completion": "عندما تصبح عناصر التقديم المطلوبة جاهزة",
+      "standalone_role_meaning": "تجهيز تقديم المشروبات الباردة دور له معنى داخل تجهيز المشروبات الباردة للأسرة أو الضيوف، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "simple",
+        "dimensions": {
+          "c1_elements": "عناصر قليلة ومباشرة داخل الدور: تجهيز تقديم المشروبات الباردة.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "الموقف ثابت غالبًا ويتكرر بصورة مألوفة.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت simple اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=0, C2=1, C3=0, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-005-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: تجهيز المشروبات الباردة للأسرة أو الضيوف"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-005-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـتجهيز الأكواب"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-005-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـتقديم المشروبات"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-005-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تصبح الأكواب/عناصر التقديم المطلوبة جاهزة"
+        }
+      ],
+      "event_id": "FOOD-005",
+      "source_evidence_ids": [
+        "FOOD-005-OP003",
+        "FOOD-005-OP004"
+      ],
+      "source_titles": [
+        "تجهيز الأكواب",
+        "تقديم المشروبات"
+      ],
+      "domain": "إعداد الطعام والوجبات",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-006",
+      "id": "FP-CAND-006",
+      "title": "تجهيز صينية الضيافة",
+      "life_context": "استقبال الضيوف وتقديم الضيافة",
+      "functional_intent": "المساهمة في جعل الضيافة جاهزة للحمل والتقديم",
+      "observable_effect": "تصبح صينية الضيافة مرتبة بعناصرها المطلوبة",
+      "natural_completion": "عندما تصبح الصينية جاهزة للتقديم",
+      "standalone_role_meaning": "تجهيز صينية الضيافة دور له معنى داخل استقبال الضيوف وتقديم الضيافة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: تجهيز صينية الضيافة.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-006-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: استقبال الضيوف وتقديم الضيافة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-006-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـترتيب صينية الضيافة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-006-B3",
+          "order": 3,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تصبح صينية الضيافة مرتبة بعناصرها المطلوبة"
+        }
+      ],
+      "event_id": "FOOD-006",
+      "source_evidence_ids": [
+        "FOOD-006-OP001"
+      ],
+      "source_titles": [
+        "ترتيب صينية الضيافة"
+      ],
+      "domain": "إعداد الطعام والوجبات",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-007",
+      "id": "FP-CAND-007",
+      "title": "تجهيز وجبة للخروج",
+      "life_context": "تجهيز وجبة للعمل أو المدرسة",
+      "functional_intent": "جعل الوجبة والأغراض المرتبطة بها جاهزة للخروج من المنزل",
+      "observable_effect": "تصبح الوجبة محفوظة/معبأة وجاهزة للحمل",
+      "natural_completion": "عندما تصبح الوجبة جاهزة للخروج",
+      "standalone_role_meaning": "تجهيز وجبة للخروج دور له معنى داخل تجهيز وجبة للعمل أو المدرسة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: تجهيز وجبة للخروج.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-007-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: تجهيز وجبة للعمل أو المدرسة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-007-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـتعبئة الصندوق بالوجبات"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-007-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـوضع الصندوق في الحقيبة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-007-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تصبح الوجبة محفوظة/معبأة وجاهزة للحمل"
+        }
+      ],
+      "event_id": "FOOD-008",
+      "source_evidence_ids": [
+        "FOOD-008-OP002",
+        "FOOD-008-OP004"
+      ],
+      "source_titles": [
+        "تعبئة الصندوق بالوجبات",
+        "وضع الصندوق في الحقيبة"
+      ],
+      "domain": "إعداد الطعام والوجبات",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-008",
+      "id": "FP-CAND-008",
+      "title": "تجهيز بقايا الطعام للاستخدام كوجبة",
+      "life_context": "حفظ أو إعادة استخدام بقايا الطعام",
+      "functional_intent": "تحويل بقايا صالحة للاستخدام إلى وجبة جاهزة للأسرة",
+      "observable_effect": "تصبح البقايا المختارة محفوظة/مجهزة للاستخدام كوجبة",
+      "natural_completion": "عندما تصبح الوجبة الناتجة جاهزة للأكل أو الحفظ المقصود",
+      "standalone_role_meaning": "تجهيز بقايا الطعام للاستخدام كوجبة دور له معنى داخل حفظ أو إعادة استخدام بقايا الطعام، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: تجهيز بقايا الطعام للاستخدام كوجبة.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-008-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: حفظ أو إعادة استخدام بقايا الطعام"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-008-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـدمج البقايا في أطباق جديدة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-008-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـتقديم الوجبة المعدلة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-008-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تصبح البقايا المختارة محفوظة/مجهزة للاستخدام كوجبة"
+        }
+      ],
+      "event_id": "FOOD-010",
+      "source_evidence_ids": [
+        "FOOD-010-OP003",
+        "FOOD-010-OP004"
+      ],
+      "source_titles": [
+        "دمج البقايا في أطباق جديدة",
+        "تقديم الوجبة المعدلة"
+      ],
+      "domain": "إعداد الطعام والوجبات",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "STANDARD",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-009",
+      "id": "FP-CAND-009",
+      "title": "إعداد قائمة المشتريات",
+      "life_context": "التخطيط لمشتريات الأسرة",
+      "functional_intent": "إنشاء قائمة تعكس ما تحتاج الأسرة إلى شرائه",
+      "observable_effect": "توجد قائمة قابلة للاستخدام تتضمن الاحتياجات المحددة",
+      "natural_completion": "عندما تصبح القائمة جاهزة للاستخدام في التسوق",
+      "standalone_role_meaning": "إعداد قائمة المشتريات دور له معنى داخل التخطيط لمشتريات الأسرة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: إعداد قائمة المشتريات.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "يوجد اختيار محدود بين بدائل واضحة."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=1), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-009-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: التخطيط لمشتريات الأسرة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-009-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـجرد محتويات الخزائن والثلاجة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-009-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـتدوين المنتجات الناقصة (ورقيًا أو رقميًا)"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-009-B4",
+          "order": 4,
+          "text": "القيام بجزء عملي مرتبط بـتصنيف القائمة حسب أقسام المتجر"
+        }
+      ],
+      "event_id": "SHOP-001",
+      "source_evidence_ids": [
+        "SHOP-001-OP001",
+        "SHOP-001-OP002",
+        "SHOP-001-OP003"
+      ],
+      "source_titles": [
+        "جرد محتويات الخزائن والثلاجة",
+        "تدوين المنتجات الناقصة (ورقيًا أو رقميًا)",
+        "تصنيف القائمة حسب أقسام المتجر"
+      ],
+      "domain": "التسوق وإدارة المشتريات",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-010",
+      "id": "FP-CAND-010",
+      "title": "تحديد المواد الناقصة قبل التسوق",
+      "life_context": "مراجعة احتياجات المنزل قبل التسوق",
+      "functional_intent": "تزويد الأسرة بمعلومة عملية عما يحتاج إلى الشراء",
+      "observable_effect": "تُحدد المواد الناقصة/القريبة من النفاد لتدخل قرار الشراء",
+      "natural_completion": "عندما تكتمل مراجعة المواد المقصودة وتُعرف النواقص",
+      "standalone_role_meaning": "تحديد المواد الناقصة قبل التسوق دور له معنى داخل مراجعة احتياجات المنزل قبل التسوق، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: تحديد المواد الناقصة قبل التسوق.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "يوجد اختيار محدود بين بدائل واضحة."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=1), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-010-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: مراجعة احتياجات المنزل قبل التسوق"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-010-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـالتبليغ عن المنتجات التي أوشكت على الانتهاء"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-010-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـكتابة مسودة النواقص الأولية"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-010-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تُحدد المواد الناقصة/القريبة من النفاد لتدخل قرار الشراء"
+        }
+      ],
+      "event_id": "SHOP-002",
+      "source_evidence_ids": [
+        "SHOP-002-OP002",
+        "SHOP-002-OP003"
+      ],
+      "source_titles": [
+        "التبليغ عن المنتجات التي أوشكت على الانتهاء",
+        "كتابة مسودة النواقص الأولية"
+      ],
+      "domain": "التسوق وإدارة المشتريات",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-011",
+      "id": "FP-CAND-011",
+      "title": "تجهيز أكياس التسوق للخروج",
+      "life_context": "الذهاب إلى السوبرماركت",
+      "functional_intent": "جعل أكياس التسوق اللازمة متاحة للرحلة",
+      "observable_effect": "تكون الأكياس المطلوبة موجودة في السيارة/مع الأسرة",
+      "natural_completion": "عندما تصبح الأكياس جاهزة قبل الانطلاق",
+      "standalone_role_meaning": "تجهيز أكياس التسوق للخروج دور له معنى داخل الذهاب إلى السوبرماركت، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "individual",
+      "complexity": {
+        "level": "simple",
+        "dimensions": {
+          "c1_elements": "عناصر قليلة ومباشرة داخل الدور: تجهيز أكياس التسوق للخروج.",
+          "c2_coordination": "تسلسل مباشر لا يحتاج ربطًا ملحوظًا مع أدوار أخرى.",
+          "c3_variability": "الموقف ثابت غالبًا ويتكرر بصورة مألوفة.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت simple اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=0, C2=0, C3=0, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-011-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: الذهاب إلى السوبرماركت"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-011-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـحمل الأكياس الفارغة إلى السيارة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-011-B3",
+          "order": 3,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تكون الأكياس المطلوبة موجودة في السيارة/مع الأسرة"
+        }
+      ],
+      "event_id": "SHOP-004",
+      "source_evidence_ids": [
+        "SHOP-004-OP002"
+      ],
+      "source_titles": [
+        "حمل الأكياس الفارغة إلى السيارة"
+      ],
+      "domain": "التسوق وإدارة المشتريات",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-012",
+      "id": "FP-CAND-012",
+      "title": "تجهيز الخضار والفواكه المختارة للشراء",
+      "life_context": "التسوق من قسم الخضار والفواكه",
+      "functional_intent": "جعل المنتجات التي اختارتها الأسرة مجمعة بصورة مناسبة لمتابعة الشراء",
+      "observable_effect": "تكون المنتجات المختارة في أكياسها وجاهزة للوزن/العربة",
+      "natural_completion": "عندما تصبح المنتجات المختارة مجهزة للمرحلة التالية من الشراء",
+      "standalone_role_meaning": "تجهيز الخضار والفواكه المختارة للشراء دور له معنى داخل التسوق من قسم الخضار والفواكه، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: تجهيز الخضار والفواكه المختارة للشراء.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-012-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: التسوق من قسم الخضار والفواكه"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-012-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـاختيار الثمار السليمة والناضجة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-012-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـوضع الخضار في الأكياس المخصصة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-012-B4",
+          "order": 4,
+          "text": "القيام بجزء عملي مرتبط بـتسليم الأكياس للوزن أو وضعها في العربة"
+        }
+      ],
+      "event_id": "SHOP-005",
+      "source_evidence_ids": [
+        "SHOP-005-OP001",
+        "SHOP-005-OP002",
+        "SHOP-005-OP003"
+      ],
+      "source_titles": [
+        "اختيار الثمار السليمة والناضجة",
+        "وضع الخضار في الأكياس المخصصة",
+        "تسليم الأكياس للوزن أو وضعها في العربة"
+      ],
+      "domain": "التسوق وإدارة المشتريات",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "STANDARD",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-013",
+      "id": "FP-CAND-013",
+      "title": "اختيار المخبوزات للأسرة",
+      "life_context": "شراء الخبز والمخبوزات",
+      "functional_intent": "المساهمة في قرار شراء المخبوزات المناسبة لاحتياج الأسرة",
+      "observable_effect": "تُحدد المخبوزات المراد شراؤها وتصبح جاهزة للإضافة للمشتريات",
+      "natural_completion": "عندما يتم اختيار الكمية/النوع المقصود للشراء",
+      "standalone_role_meaning": "اختيار المخبوزات للأسرة دور له معنى داخل شراء الخبز والمخبوزات، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: اختيار المخبوزات للأسرة.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "يوجد اختيار محدود بين بدائل واضحة."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=1), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-013-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: شراء الخبز والمخبوزات"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-013-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـاختيار نوع الخبز المطلوب"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-013-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـفحص تاريخ الإنتاج"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-013-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تُحدد المخبوزات المراد شراؤها وتصبح جاهزة للإضافة للمشتريات"
+        }
+      ],
+      "event_id": "SHOP-007",
+      "source_evidence_ids": [
+        "SHOP-007-OP001",
+        "SHOP-007-OP002"
+      ],
+      "source_titles": [
+        "اختيار نوع الخبز المطلوب",
+        "فحص تاريخ الإنتاج"
+      ],
+      "domain": "التسوق وإدارة المشتريات",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "STANDARD",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-014",
+      "id": "FP-CAND-014",
+      "title": "اختيار وتجميع المنتجات المجمدة للشراء",
+      "life_context": "شراء المنتجات المجمدة",
+      "functional_intent": "المساهمة في اختيار المجمدات المطلوبة وتجميعها ضمن المشتريات",
+      "observable_effect": "تكون المجمدات المطلوبة مختارة ومجمعة للشراء",
+      "natural_completion": "عندما تكتمل المنتجات المجمدة المطلوبة ضمن المشتريات",
+      "standalone_role_meaning": "اختيار وتجميع المنتجات المجمدة للشراء دور له معنى داخل شراء المنتجات المجمدة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: اختيار وتجميع المنتجات المجمدة للشراء.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "يوجد اختيار محدود بين بدائل واضحة."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=1), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-014-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: شراء المنتجات المجمدة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-014-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـاختيار المنتجات المجمدة السليمة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-014-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـتجميع المجمدات في نهاية التسوق للحفاظ على برودتها"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-014-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تكون المجمدات المطلوبة مختارة ومجمعة للشراء"
+        }
+      ],
+      "event_id": "SHOP-008",
+      "source_evidence_ids": [
+        "SHOP-008-OP002",
+        "SHOP-008-OP003"
+      ],
+      "source_titles": [
+        "اختيار المنتجات المجمدة السليمة",
+        "تجميع المجمدات في نهاية التسوق للحفاظ على برودتها"
+      ],
+      "domain": "التسوق وإدارة المشتريات",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "STANDARD",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-015",
+      "id": "FP-CAND-015",
+      "title": "إعادة غرفة النوم إلى حالة مرتبة",
+      "life_context": "ترتيب غرفة النوم",
+      "functional_intent": "المساهمة في إعادة مساحة النوم إلى حالة مرتبة وقابلة للاستخدام",
+      "observable_effect": "تعود العناصر المستهدفة إلى أماكنها وتصبح المساحة مرتبة",
+      "natural_completion": "عندما تصبح المنطقة/العناصر المتفق عليها مرتبة",
+      "standalone_role_meaning": "إعادة غرفة النوم إلى حالة مرتبة دور له معنى داخل ترتيب غرفة النوم، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: إعادة غرفة النوم إلى حالة مرتبة.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-015-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: ترتيب غرفة النوم"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-015-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـترتيب السرير والمخدات."
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-015-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـجمع الملابس المتناثرة."
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-015-B4",
+          "order": 4,
+          "text": "القيام بجزء عملي مرتبط بـإعادة الأغراض الشخصية لأماكنها."
+        }
+      ],
+      "event_id": "HOME-001",
+      "source_evidence_ids": [
+        "HOME-001-OP001",
+        "HOME-001-OP002",
+        "HOME-001-OP003"
+      ],
+      "source_titles": [
+        "ترتيب السرير والمخدات.",
+        "جمع الملابس المتناثرة.",
+        "إعادة الأغراض الشخصية لأماكنها."
+      ],
+      "domain": "إدارة المنزل",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-016",
+      "id": "FP-CAND-016",
+      "title": "إعادة غرفة المعيشة إلى حالة مرتبة",
+      "life_context": "ترتيب غرفة المعيشة",
+      "functional_intent": "المساهمة في إعادة المساحة المشتركة إلى حالة مرتبة لاستخدام الأسرة",
+      "observable_effect": "تُعاد العناصر المستخدمة إلى أماكنها وتصبح المساحة جاهزة للاستخدام",
+      "natural_completion": "عندما تصبح المنطقة المتفق عليها جاهزة للاستخدام الأسري",
+      "standalone_role_meaning": "إعادة غرفة المعيشة إلى حالة مرتبة دور له معنى داخل ترتيب غرفة المعيشة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: إعادة غرفة المعيشة إلى حالة مرتبة.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-016-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: ترتيب غرفة المعيشة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-016-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـجمع الوسائد وتنسيقها."
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-016-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـترتيب الطاولة الوسطية."
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-016-B4",
+          "order": 4,
+          "text": "القيام بجزء عملي مرتبط بـإعادة الأجهزة (أجهزة التحكم) إلى أماكنها."
+        }
+      ],
+      "event_id": "HOME-002",
+      "source_evidence_ids": [
+        "HOME-002-OP001",
+        "HOME-002-OP002",
+        "HOME-002-OP003",
+        "HOME-002-OP004",
+        "HOME-002-OP005"
+      ],
+      "source_titles": [
+        "جمع الوسائد وتنسيقها.",
+        "ترتيب الطاولة الوسطية.",
+        "إعادة الأجهزة (أجهزة التحكم) إلى أماكنها.",
+        "جمع الأكواب الفارغة.",
+        "ترتيب المجلات أو الكتب."
+      ],
+      "domain": "إدارة المنزل",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-017",
+      "id": "FP-CAND-017",
+      "title": "تنظيم أحذية الأسرة في المدخل",
+      "life_context": "ترتيب الأحذية في المدخل",
+      "functional_intent": "جعل أحذية الأسرة منظمة في المكان المخصص لها",
+      "observable_effect": "تكون الأحذية مجمعة/مطابقة وموضوعة في أماكنها",
+      "natural_completion": "عندما تصبح الأحذية المستهدفة منظمة في المدخل",
+      "standalone_role_meaning": "تنظيم أحذية الأسرة في المدخل دور له معنى داخل ترتيب الأحذية في المدخل، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: تنظيم أحذية الأسرة في المدخل.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-017-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: ترتيب الأحذية في المدخل"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-017-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـجمع الأحذية المبعثرة."
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-017-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـمطابقة أزواج الأحذية."
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-017-B4",
+          "order": 4,
+          "text": "القيام بجزء عملي مرتبط بـترتيب الأحذية على الرفوف المخصصة."
+        }
+      ],
+      "event_id": "HOME-006",
+      "source_evidence_ids": [
+        "HOME-006-OP001",
+        "HOME-006-OP002",
+        "HOME-006-OP003"
+      ],
+      "source_titles": [
+        "جمع الأحذية المبعثرة.",
+        "مطابقة أزواج الأحذية.",
+        "ترتيب الأحذية على الرفوف المخصصة."
+      ],
+      "domain": "إدارة المنزل",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-018",
+      "id": "FP-CAND-018",
+      "title": "إعادة الكتب إلى الرفوف",
+      "life_context": "ترتيب الكتب والرفوف",
+      "functional_intent": "إعادة الكتب المستخدمة إلى تنظيم يجعل الرف قابلًا للاستخدام",
+      "observable_effect": "تكون الكتب المستهدفة عائدة إلى الرفوف وفق التنظيم المستخدم في المنزل",
+      "natural_completion": "عندما تعود الكتب المستهدفة إلى أماكنها",
+      "standalone_role_meaning": "إعادة الكتب إلى الرفوف دور له معنى داخل ترتيب الكتب والرفوف، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "individual",
+      "complexity": {
+        "level": "simple",
+        "dimensions": {
+          "c1_elements": "عناصر قليلة ومباشرة داخل الدور: إعادة الكتب إلى الرفوف.",
+          "c2_coordination": "تسلسل مباشر لا يحتاج ربطًا ملحوظًا مع أدوار أخرى.",
+          "c3_variability": "الموقف ثابت غالبًا ويتكرر بصورة مألوفة.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت simple اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=0, C2=0, C3=0, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-018-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: ترتيب الكتب والرفوف"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-018-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـجمع الكتب المتناثرة."
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-018-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـإعادة الكتب وتصفيفها بشكل عمودي."
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-018-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تكون الكتب المستهدفة عائدة إلى الرفوف وفق التنظيم المستخدم في المنزل"
+        }
+      ],
+      "event_id": "HOME-007",
+      "source_evidence_ids": [
+        "HOME-007-OP001",
+        "HOME-007-OP003"
+      ],
+      "source_titles": [
+        "جمع الكتب المتناثرة.",
+        "إعادة الكتب وتصفيفها بشكل عمودي."
+      ],
+      "domain": "إدارة المنزل",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-019",
+      "id": "FP-CAND-019",
+      "title": "تنظيم محتويات خزانة المؤن",
+      "life_context": "ترتيب خزانة المؤن والبهارات",
+      "functional_intent": "المساهمة في إبقاء محتويات الخزانة صالحة ومنظمة للاستخدام الأسري",
+      "observable_effect": "تُزال العبوات غير الصالحة وتُرتب العبوات المستهدفة وفق تنظيم المنزل",
+      "natural_completion": "عندما تصبح المجموعة المستهدفة من محتويات الخزانة مراجعة ومنظمة",
+      "standalone_role_meaning": "تنظيم محتويات خزانة المؤن دور له معنى داخل ترتيب خزانة المؤن والبهارات، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: تنظيم محتويات خزانة المؤن.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-019-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: ترتيب خزانة المؤن والبهارات"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-019-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـالتخلص من العلب الفارغة أو التالفة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-019-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـترتيب العلب حسب نوعها واستخدامها"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-019-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تُزال العبوات غير الصالحة وتُرتب العبوات المستهدفة وفق تنظيم المنزل"
+        }
+      ],
+      "event_id": "HOME-052",
+      "source_evidence_ids": [
+        "HOME-052-OP002",
+        "HOME-052-OP003"
+      ],
+      "source_titles": [
+        "التخلص من العلب الفارغة أو التالفة",
+        "ترتيب العلب حسب نوعها واستخدامها"
+      ],
+      "domain": "إدارة المنزل",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "STANDARD",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-020",
+      "id": "FP-CAND-020",
+      "title": "تجهيز أغراض النزهة العائلية",
+      "life_context": "الذهاب في نزهة عائلية إلى الحديقة",
+      "functional_intent": "المساهمة في جعل أغراض النزهة المطلوبة جاهزة للاستخدام والعودة",
+      "observable_effect": "تكون الأغراض المطلوبة مجهزة ثم مجمعة عند انتهاء النزهة",
+      "natural_completion": "عندما تكتمل مسؤولية التجهيز/الجمع المتفق عليها",
+      "standalone_role_meaning": "تجهيز أغراض النزهة العائلية دور له معنى داخل الذهاب في نزهة عائلية إلى الحديقة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: تجهيز أغراض النزهة العائلية.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-020-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: الذهاب في نزهة عائلية إلى الحديقة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-020-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـتجهيز أغراض النزهة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-020-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـجمع الأغراض والمخلفات قبل المغادرة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-020-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تكون الأغراض المطلوبة مجهزة ثم مجمعة عند انتهاء النزهة"
+        }
+      ],
+      "event_id": "COMM-002",
+      "source_evidence_ids": [
+        "COMM-002-OP001",
+        "COMM-002-OP004"
+      ],
+      "source_titles": [
+        "تجهيز أغراض النزهة",
+        "جمع الأغراض والمخلفات قبل المغادرة"
+      ],
+      "domain": "الأنشطة والمشاركة المجتمعية",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-021",
+      "id": "FP-CAND-021",
+      "title": "المساهمة في تجهيز شيء للزيارة العائلية",
+      "life_context": "زيارة الأقارب",
+      "functional_intent": "المساهمة بشيء تستخدمه الأسرة في الزيارة",
+      "observable_effect": "يصبح الشيء المتفق عليه جاهزًا للزيارة/الاستخدام خلالها",
+      "natural_completion": "عندما يكتمل الجزء المتفق عليه للزيارة",
+      "standalone_role_meaning": "المساهمة في تجهيز شيء للزيارة العائلية دور له معنى داخل زيارة الأقارب، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: المساهمة في تجهيز شيء للزيارة العائلية.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-021-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: زيارة الأقارب"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-021-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـإعداد شيء بسيط يؤخذ للزيارة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-021-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـالمشاركة في تقديم المساعدة أثناء الزيارة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-021-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: يصبح الشيء المتفق عليه جاهزًا للزيارة/الاستخدام خلالها"
+        }
+      ],
+      "event_id": "COMM-004",
+      "source_evidence_ids": [
+        "COMM-004-OP001",
+        "COMM-004-OP004"
+      ],
+      "source_titles": [
+        "إعداد شيء بسيط يؤخذ للزيارة",
+        "المشاركة في تقديم المساعدة أثناء الزيارة"
+      ],
+      "domain": "الأنشطة والمشاركة المجتمعية",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-022",
+      "id": "FP-CAND-022",
+      "title": "طلب واستلام مشروب في المقهى",
+      "life_context": "الذهاب إلى المقهى",
+      "functional_intent": "إتمام الجزء المتعلق باختيار/طلب واستلام مشروب ضمن زيارة المقهى",
+      "observable_effect": "يُسجل الطلب ويُستلم المشروب المقصود",
+      "natural_completion": "عندما يصبح المشروب المطلوب مستلمًا ضمن الزيارة",
+      "standalone_role_meaning": "طلب واستلام مشروب في المقهى دور له معنى داخل الذهاب إلى المقهى، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "individual",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: طلب واستلام مشروب في المقهى.",
+          "c2_coordination": "تسلسل مباشر لا يحتاج ربطًا ملحوظًا مع أدوار أخرى.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "يوجد اختيار محدود بين بدائل واضحة."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=0, C3=1, C4=1), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-022-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: الذهاب إلى المقهى"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-022-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـالاطلاع على قائمة المشروبات"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-022-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـإبلاغ الموظف بالطلب"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-022-B4",
+          "order": 4,
+          "text": "القيام بجزء عملي مرتبط بـدفع الحساب"
+        }
+      ],
+      "event_id": "COMM-006",
+      "source_evidence_ids": [
+        "COMM-006-OP001",
+        "COMM-006-OP002",
+        "COMM-006-OP003"
+      ],
+      "source_titles": [
+        "الاطلاع على قائمة المشروبات",
+        "إبلاغ الموظف بالطلب",
+        "دفع الحساب"
+      ],
+      "domain": "الأنشطة والمشاركة المجتمعية",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "STANDARD",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-023",
+      "id": "FP-CAND-023",
+      "title": "اختيار وطلب وجبة في المطعم",
+      "life_context": "تناول الطعام في المطعم",
+      "functional_intent": "إتمام قرار وطلب وجبة ضمن زيارة المطعم",
+      "observable_effect": "يصل طلب واضح إلى المطعم للوجبة المختارة",
+      "natural_completion": "عندما يتم تقديم الطلب المقصود ضمن الزيارة",
+      "standalone_role_meaning": "اختيار وطلب وجبة في المطعم دور له معنى داخل تناول الطعام في المطعم، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "individual",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: اختيار وطلب وجبة في المطعم.",
+          "c2_coordination": "تسلسل مباشر لا يحتاج ربطًا ملحوظًا مع أدوار أخرى.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "يوجد اختيار محدود بين بدائل واضحة."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=0, C3=1, C4=1), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-023-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: تناول الطعام في المطعم"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-023-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـاختيار الوجبة من القائمة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-023-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـإبلاغ النادل بالطلب"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-023-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: يصل طلب واضح إلى المطعم للوجبة المختارة"
+        }
+      ],
+      "event_id": "COMM-007",
+      "source_evidence_ids": [
+        "COMM-007-OP002",
+        "COMM-007-OP003"
+      ],
+      "source_titles": [
+        "اختيار الوجبة من القائمة",
+        "إبلاغ النادل بالطلب"
+      ],
+      "domain": "الأنشطة والمشاركة المجتمعية",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "STANDARD",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-024",
+      "id": "FP-CAND-024",
+      "title": "شراء تذكرة لحضور عرض",
+      "life_context": "الذهاب إلى السينما أو المسرح",
+      "functional_intent": "إتمام معاملة الحصول على تذكرة لازمة لدخول العرض",
+      "observable_effect": "تصبح التذكرة المطلوبة متاحة للاستخدام للدخول",
+      "natural_completion": "عندما يتم الحصول على التذكرة المطلوبة",
+      "standalone_role_meaning": "شراء تذكرة لحضور عرض دور له معنى داخل الذهاب إلى السينما أو المسرح، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "individual",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: شراء تذكرة لحضور عرض.",
+          "c2_coordination": "تسلسل مباشر لا يحتاج ربطًا ملحوظًا مع أدوار أخرى.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=0, C3=1, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-024-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: الذهاب إلى السينما أو المسرح"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-024-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـشراء تذكرة العرض"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-024-B3",
+          "order": 3,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تصبح التذكرة المطلوبة متاحة للاستخدام للدخول"
+        }
+      ],
+      "event_id": "COMM-014",
+      "source_evidence_ids": [
+        "COMM-014-OP001"
+      ],
+      "source_titles": [
+        "شراء تذكرة العرض"
+      ],
+      "domain": "الأنشطة والمشاركة المجتمعية",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "STANDARD",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-025",
+      "id": "FP-CAND-025",
+      "title": "تجهيز الأغراض الشخصية للموعد",
+      "life_context": "الاستعداد للموعد الطبي",
+      "functional_intent": "جعل الأغراض الشخصية المطلوبة للخروج إلى الموعد جاهزة",
+      "observable_effect": "تكون الحقيبة/الأغراض المتفق عليها جاهزة للخروج",
+      "natural_completion": "عندما تصبح الأغراض المطلوبة جاهزة",
+      "standalone_role_meaning": "تجهيز الأغراض الشخصية للموعد دور له معنى داخل الاستعداد للموعد الطبي، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "simple",
+        "dimensions": {
+          "c1_elements": "عناصر قليلة ومباشرة داخل الدور: تجهيز الأغراض الشخصية للموعد.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "الموقف ثابت غالبًا ويتكرر بصورة مألوفة.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت simple اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=0, C2=1, C3=0, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-025-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: الاستعداد للموعد الطبي"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-025-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـتجهيز الحقيبة الشخصية"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-025-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـتجهيز زجاجة الماء"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-025-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تكون الحقيبة/الأغراض المتفق عليها جاهزة للخروج"
+        }
+      ],
+      "event_id": "HEALTH-002",
+      "source_evidence_ids": [
+        "HEALTH-002-OP002",
+        "HEALTH-002-OP003"
+      ],
+      "source_titles": [
+        "تجهيز الحقيبة الشخصية",
+        "تجهيز زجاجة الماء"
+      ],
+      "domain": "الصحة والمواعيد",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "CAUTION",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-026",
+      "id": "FP-CAND-026",
+      "title": "تجهيز ملف المستندات للموعد",
+      "life_context": "تجهيز المستندات الطبية",
+      "functional_intent": "جعل المستندات المطلوبة للموعد مجمعة وقابلة للاستخدام",
+      "observable_effect": "تكون التقارير/المستندات المطلوبة مجمعة في ملف جاهز",
+      "natural_completion": "عندما يصبح ملف الموعد جاهزًا",
+      "standalone_role_meaning": "تجهيز ملف المستندات للموعد دور له معنى داخل تجهيز المستندات الطبية، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: تجهيز ملف المستندات للموعد.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-026-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: تجهيز المستندات الطبية"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-026-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـجمع التقارير السابقة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-026-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـجمع صور الأشعة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-026-B4",
+          "order": 4,
+          "text": "القيام بجزء عملي مرتبط بـوضع المستندات في ملف أو حقيبة"
+        }
+      ],
+      "event_id": "HEALTH-003",
+      "source_evidence_ids": [
+        "HEALTH-003-OP001",
+        "HEALTH-003-OP002",
+        "HEALTH-003-OP003"
+      ],
+      "source_titles": [
+        "جمع التقارير السابقة",
+        "جمع صور الأشعة",
+        "وضع المستندات في ملف أو حقيبة"
+      ],
+      "domain": "الصحة والمواعيد",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "CAUTION",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-027",
+      "id": "FP-CAND-027",
+      "title": "المساهمة في شراء ملابس للأسرة",
+      "life_context": "شراء ملابس جديدة للأسرة",
+      "functional_intent": "المساهمة في قرار شراء قطعة مطلوبة للأسرة",
+      "observable_effect": "تُحدد القطعة المقصودة وتصبح جزءًا من قرار الشراء",
+      "natural_completion": "عند اختيار القطعة المقصودة للشراء",
+      "standalone_role_meaning": "المساهمة في شراء ملابس للأسرة دور له معنى داخل شراء ملابس جديدة للأسرة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: المساهمة في شراء ملابس للأسرة.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-027-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: شراء ملابس جديدة للأسرة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-027-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـشراء ملابس جديدة للأسرة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-027-B3",
+          "order": 3,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تُحدد القطعة المقصودة وتصبح جزءًا من قرار الشراء"
+        }
+      ],
+      "event_id": "CLO-001",
+      "source_evidence_ids": [
+        "CLO-001-OP001"
+      ],
+      "source_titles": [
+        "شراء ملابس جديدة للأسرة"
+      ],
+      "domain": "الملابس والعناية بها",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "STANDARD",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-028",
+      "id": "FP-CAND-028",
+      "title": "استلام طلب ملابس للأسرة",
+      "life_context": "استلام طلب ملابس عبر الإنترنت",
+      "functional_intent": "إتمام استلام طلب الملابس الذي تنتظره الأسرة",
+      "observable_effect": "يصبح الطلب المستلم في حوزة الأسرة",
+      "natural_completion": "عند استلام الطلب والتحقق من أنه الطلب المقصود",
+      "standalone_role_meaning": "استلام طلب ملابس للأسرة دور له معنى داخل استلام طلب ملابس عبر الإنترنت، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "individual",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: استلام طلب ملابس للأسرة.",
+          "c2_coordination": "تسلسل مباشر لا يحتاج ربطًا ملحوظًا مع أدوار أخرى.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "يوجد اختيار محدود بين بدائل واضحة."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=0, C3=1, C4=1), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-028-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: استلام طلب ملابس عبر الإنترنت"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-028-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـاستلام طلب ملابس عبر الإنترنت"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-028-B3",
+          "order": 3,
+          "text": "تأكيد أن الأثر المطلوب تحقق: يصبح الطلب المستلم في حوزة الأسرة"
+        }
+      ],
+      "event_id": "CLO-002",
+      "source_evidence_ids": [
+        "CLO-002-OP001"
+      ],
+      "source_titles": [
+        "استلام طلب ملابس عبر الإنترنت"
+      ],
+      "domain": "الملابس والعناية بها",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "STANDARD",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-029",
+      "id": "FP-CAND-029",
+      "title": "إرجاع أو استبدال قطعة غير مناسبة",
+      "life_context": "إرجاع أو استبدال ملابس غير مناسبة",
+      "functional_intent": "إتمام معاملة إرجاع/استبدال قطعة لا تناسب حاجة الأسرة",
+      "observable_effect": "تُقبل القطعة للإرجاع أو يتم استبدالها وفق المعاملة",
+      "natural_completion": "عند اكتمال معاملة الإرجاع/الاستبدال المقصودة",
+      "standalone_role_meaning": "إرجاع أو استبدال قطعة غير مناسبة دور له معنى داخل إرجاع أو استبدال ملابس غير مناسبة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "individual",
+      "complexity": {
+        "level": "advanced",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: إرجاع أو استبدال قطعة غير مناسبة.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "تتغير تفاصيل الموقف والإجراءات بصورة واضحة حسب الحالة.",
+          "c4_choice_uncertainty": "يوجد قرار مفتوح أو عدم يقين يحتاج حسمًا داخل الدور."
+        },
+        "rationale": "بنية الدور صنفت advanced اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=2, C4=2), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-029-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: إرجاع أو استبدال ملابس غير مناسبة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-029-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـإرجاع أو استبدال ملابس غير مناسبة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-029-B3",
+          "order": 3,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تُقبل القطعة للإرجاع أو يتم استبدالها وفق المعاملة"
+        }
+      ],
+      "event_id": "CLO-003",
+      "source_evidence_ids": [
+        "CLO-003-OP001"
+      ],
+      "source_titles": [
+        "إرجاع أو استبدال ملابس غير مناسبة"
+      ],
+      "domain": "الملابس والعناية بها",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "STANDARD",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    },
+    {
+      "candidate_id": "FP-CAND-030",
+      "id": "FP-CAND-030",
+      "title": "جمع الملابس المتسخة للغسيل",
+      "life_context": "جمع الملابس المتسخة من أفراد الأسرة",
+      "functional_intent": "المساهمة في تجهيز غسيل الأسرة بجمع الملابس المخصصة للغسيل",
+      "observable_effect": "تصبح الملابس المتسخة المستهدفة مجمعة في مكان الغسيل",
+      "natural_completion": "عند جمع الملابس المستهدفة في المكان المخصص",
+      "standalone_role_meaning": "جمع الملابس المتسخة للغسيل دور له معنى داخل جمع الملابس المتسخة من أفراد الأسرة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "simple",
+        "dimensions": {
+          "c1_elements": "عناصر قليلة ومباشرة داخل الدور: جمع الملابس المتسخة للغسيل.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "الموقف ثابت غالبًا ويتكرر بصورة مألوفة.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت simple اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=0, C2=1, C3=0, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-030-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: جمع الملابس المتسخة من أفراد الأسرة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-030-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـجمع الملابس المتسخة من أفراد الأسرة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-030-B3",
+          "order": 3,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تصبح الملابس المتسخة المستهدفة مجمعة في مكان الغسيل"
+        }
+      ],
+      "event_id": "CLO-010",
+      "source_evidence_ids": [
+        "CLO-010-OP001"
+      ],
+      "source_titles": [
+        "جمع الملابس المتسخة من أفراد الأسرة"
+      ],
+      "domain": "الملابس والعناية بها",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED"
+    }
+  ],
+  "validation_summary": {
+    "valid_count": 30,
+    "invalid_count": 0,
+    "results": [
+      {
+        "candidate_id": "FP-CAND-001",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-002",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-003",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-004",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-005",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-006",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-007",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-008",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-009",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-010",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-011",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-012",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-013",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-014",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-015",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-016",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-017",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-018",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-019",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-020",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-021",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-022",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-023",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-024",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-025",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-026",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-027",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-028",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-029",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      },
+      {
+        "candidate_id": "FP-CAND-030",
+        "valid": true,
+        "failedGates": [],
+        "codes": []
+      }
+    ]
+  }
+}

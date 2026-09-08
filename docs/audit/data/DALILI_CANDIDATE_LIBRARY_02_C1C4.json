@@ -1,0 +1,961 @@
+{
+  "artifact": "DALILI_CANDIDATE_LIBRARY_02_C1C4",
+  "status": "OFFLINE_PREVALIDATION",
+  "source_legacy_count": 1413,
+  "candidates": [
+    {
+      "candidate_id": "FP-CAND-001",
+      "event_id": "FOOD-001",
+      "title": "تجهيز مائدة الإفطار",
+      "life_context": "تجهيز مائدة الإفطار للأسرة",
+      "functional_intent": "جعل أدوات التقديم اللازمة للإفطار جاهزة لاستخدام الأسرة",
+      "observable_effect": "تكون أدوات المائدة/التقديم المطلوبة جاهزة في مكان الإفطار",
+      "natural_completion": "عندما تصبح الأدوات المطلوبة جاهزة للاستخدام",
+      "participation_mode": "shared",
+      "proposed_complexity": "simple",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "source_evidence_ids": [
+        "FOOD-001-OP002",
+        "FOOD-001-OP004"
+      ],
+      "source_titles": [
+        "تحضير الأطباق والأكواب",
+        "تحضير المشروبات المرافقة"
+      ],
+      "domain": "إعداد الطعام والوجبات",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 0,
+        "C2_coordination": 1,
+        "C3_variability": 0,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-002",
+      "event_id": "FOOD-002",
+      "title": "تجهيز ما يلزم لتقديم الغداء",
+      "life_context": "إعداد الغداء للأسرة",
+      "functional_intent": "المساهمة في انتقال الغداء من التحضير إلى الجاهزية للتقديم",
+      "observable_effect": "تصبح أدوات/عناصر التقديم المطلوبة متاحة ويصبح الطعام جاهزًا للتقديم",
+      "natural_completion": "عندما يصبح الجزء المتفق عليه من الغداء جاهزًا للتقديم",
+      "participation_mode": "shared",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "source_evidence_ids": [
+        "FOOD-002-OP003",
+        "FOOD-002-OP005"
+      ],
+      "source_titles": [
+        "إحضار أدوات الطهي",
+        "سكب الطعام في الأطباق"
+      ],
+      "domain": "إعداد الطعام والوجبات",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-003",
+      "event_id": "FOOD-003",
+      "title": "تجهيز مائدة العشاء",
+      "life_context": "إعداد العشاء للأسرة",
+      "functional_intent": "جعل مائدة العشاء جاهزة لاستخدام الأسرة",
+      "observable_effect": "تكون أدوات المائدة المطلوبة مرتبة وجاهزة",
+      "natural_completion": "عندما تصبح المائدة جاهزة للعشاء",
+      "participation_mode": "shared",
+      "proposed_complexity": "simple",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "source_evidence_ids": [
+        "FOOD-003-OP002"
+      ],
+      "source_titles": [
+        "تجهيز أدوات المائدة"
+      ],
+      "domain": "إعداد الطعام والوجبات",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 0,
+        "C2_coordination": 1,
+        "C3_variability": 0,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-004",
+      "event_id": "FOOD-004",
+      "title": "تجهيز تقديم المشروبات الساخنة",
+      "life_context": "تجهيز المشروبات الساخنة للأسرة أو الضيوف",
+      "functional_intent": "جعل أدوات تقديم المشروبات الساخنة جاهزة للتقديم",
+      "observable_effect": "تصبح الأكواب/أدوات التقديم المطلوبة جاهزة في مكان التقديم",
+      "natural_completion": "عندما تصبح أدوات التقديم المطلوبة جاهزة",
+      "participation_mode": "shared",
+      "proposed_complexity": "simple",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "source_evidence_ids": [
+        "FOOD-004-OP002",
+        "FOOD-004-OP004"
+      ],
+      "source_titles": [
+        "إحضار الأكواب",
+        "تقديم المشروبات"
+      ],
+      "domain": "إعداد الطعام والوجبات",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 0,
+        "C2_coordination": 1,
+        "C3_variability": 0,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-005",
+      "event_id": "FOOD-005",
+      "title": "تجهيز تقديم المشروبات الباردة",
+      "life_context": "تجهيز المشروبات الباردة للأسرة أو الضيوف",
+      "functional_intent": "جعل أدوات تقديم المشروبات الباردة جاهزة للتقديم",
+      "observable_effect": "تصبح الأكواب/عناصر التقديم المطلوبة جاهزة",
+      "natural_completion": "عندما تصبح عناصر التقديم المطلوبة جاهزة",
+      "participation_mode": "shared",
+      "proposed_complexity": "simple",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "source_evidence_ids": [
+        "FOOD-005-OP003",
+        "FOOD-005-OP004"
+      ],
+      "source_titles": [
+        "تجهيز الأكواب",
+        "تقديم المشروبات"
+      ],
+      "domain": "إعداد الطعام والوجبات",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 0,
+        "C2_coordination": 1,
+        "C3_variability": 0,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-006",
+      "event_id": "FOOD-006",
+      "title": "تجهيز صينية الضيافة",
+      "life_context": "استقبال الضيوف وتقديم الضيافة",
+      "functional_intent": "المساهمة في جعل الضيافة جاهزة للحمل والتقديم",
+      "observable_effect": "تصبح صينية الضيافة مرتبة بعناصرها المطلوبة",
+      "natural_completion": "عندما تصبح الصينية جاهزة للتقديم",
+      "participation_mode": "shared",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "source_evidence_ids": [
+        "FOOD-006-OP001"
+      ],
+      "source_titles": [
+        "ترتيب صينية الضيافة"
+      ],
+      "domain": "إعداد الطعام والوجبات",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-007",
+      "event_id": "FOOD-008",
+      "title": "تجهيز وجبة للخروج",
+      "life_context": "تجهيز وجبة للعمل أو المدرسة",
+      "functional_intent": "جعل الوجبة والأغراض المرتبطة بها جاهزة للخروج من المنزل",
+      "observable_effect": "تصبح الوجبة محفوظة/معبأة وجاهزة للحمل",
+      "natural_completion": "عندما تصبح الوجبة جاهزة للخروج",
+      "participation_mode": "shared",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "EASY",
+      "source_evidence_ids": [
+        "FOOD-008-OP002",
+        "FOOD-008-OP004"
+      ],
+      "source_titles": [
+        "تعبئة الصندوق بالوجبات",
+        "وضع الصندوق في الحقيبة"
+      ],
+      "domain": "إعداد الطعام والوجبات",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-008",
+      "event_id": "FOOD-010",
+      "title": "تجهيز بقايا الطعام للاستخدام كوجبة",
+      "life_context": "حفظ أو إعادة استخدام بقايا الطعام",
+      "functional_intent": "تحويل بقايا صالحة للاستخدام إلى وجبة جاهزة للأسرة",
+      "observable_effect": "تصبح البقايا المختارة محفوظة/مجهزة للاستخدام كوجبة",
+      "natural_completion": "عندما تصبح الوجبة الناتجة جاهزة للأكل أو الحفظ المقصود",
+      "participation_mode": "shared",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "STANDARD",
+      "source_evidence_ids": [
+        "FOOD-010-OP003",
+        "FOOD-010-OP004"
+      ],
+      "source_titles": [
+        "دمج البقايا في أطباق جديدة",
+        "تقديم الوجبة المعدلة"
+      ],
+      "domain": "إعداد الطعام والوجبات",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-009",
+      "event_id": "SHOP-001",
+      "title": "إعداد قائمة المشتريات",
+      "life_context": "التخطيط لمشتريات الأسرة",
+      "functional_intent": "إنشاء قائمة تعكس ما تحتاج الأسرة إلى شرائه",
+      "observable_effect": "توجد قائمة قابلة للاستخدام تتضمن الاحتياجات المحددة",
+      "natural_completion": "عندما تصبح القائمة جاهزة للاستخدام في التسوق",
+      "participation_mode": "shared",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "source_evidence_ids": [
+        "SHOP-001-OP001",
+        "SHOP-001-OP002",
+        "SHOP-001-OP003"
+      ],
+      "source_titles": [
+        "جرد محتويات الخزائن والثلاجة",
+        "تدوين المنتجات الناقصة (ورقيًا أو رقميًا)",
+        "تصنيف القائمة حسب أقسام المتجر"
+      ],
+      "domain": "التسوق وإدارة المشتريات",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 1
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-010",
+      "event_id": "SHOP-002",
+      "title": "تحديد المواد الناقصة قبل التسوق",
+      "life_context": "مراجعة احتياجات المنزل قبل التسوق",
+      "functional_intent": "تزويد الأسرة بمعلومة عملية عما يحتاج إلى الشراء",
+      "observable_effect": "تُحدد المواد الناقصة/القريبة من النفاد لتدخل قرار الشراء",
+      "natural_completion": "عندما تكتمل مراجعة المواد المقصودة وتُعرف النواقص",
+      "participation_mode": "shared",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "source_evidence_ids": [
+        "SHOP-002-OP002",
+        "SHOP-002-OP003"
+      ],
+      "source_titles": [
+        "التبليغ عن المنتجات التي أوشكت على الانتهاء",
+        "كتابة مسودة النواقص الأولية"
+      ],
+      "domain": "التسوق وإدارة المشتريات",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 1
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-011",
+      "event_id": "SHOP-004",
+      "title": "تجهيز أكياس التسوق للخروج",
+      "life_context": "الذهاب إلى السوبرماركت",
+      "functional_intent": "جعل أكياس التسوق اللازمة متاحة للرحلة",
+      "observable_effect": "تكون الأكياس المطلوبة موجودة في السيارة/مع الأسرة",
+      "natural_completion": "عندما تصبح الأكياس جاهزة قبل الانطلاق",
+      "participation_mode": "individual",
+      "proposed_complexity": "simple",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "source_evidence_ids": [
+        "SHOP-004-OP002"
+      ],
+      "source_titles": [
+        "حمل الأكياس الفارغة إلى السيارة"
+      ],
+      "domain": "التسوق وإدارة المشتريات",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 0,
+        "C2_coordination": 0,
+        "C3_variability": 0,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-012",
+      "event_id": "SHOP-005",
+      "title": "تجهيز الخضار والفواكه المختارة للشراء",
+      "life_context": "التسوق من قسم الخضار والفواكه",
+      "functional_intent": "جعل المنتجات التي اختارتها الأسرة مجمعة بصورة مناسبة لمتابعة الشراء",
+      "observable_effect": "تكون المنتجات المختارة في أكياسها وجاهزة للوزن/العربة",
+      "natural_completion": "عندما تصبح المنتجات المختارة مجهزة للمرحلة التالية من الشراء",
+      "participation_mode": "shared",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "STANDARD",
+      "source_evidence_ids": [
+        "SHOP-005-OP001",
+        "SHOP-005-OP002",
+        "SHOP-005-OP003"
+      ],
+      "source_titles": [
+        "اختيار الثمار السليمة والناضجة",
+        "وضع الخضار في الأكياس المخصصة",
+        "تسليم الأكياس للوزن أو وضعها في العربة"
+      ],
+      "domain": "التسوق وإدارة المشتريات",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-013",
+      "event_id": "SHOP-007",
+      "title": "اختيار المخبوزات للأسرة",
+      "life_context": "شراء الخبز والمخبوزات",
+      "functional_intent": "المساهمة في قرار شراء المخبوزات المناسبة لاحتياج الأسرة",
+      "observable_effect": "تُحدد المخبوزات المراد شراؤها وتصبح جاهزة للإضافة للمشتريات",
+      "natural_completion": "عندما يتم اختيار الكمية/النوع المقصود للشراء",
+      "participation_mode": "shared",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "STANDARD",
+      "source_evidence_ids": [
+        "SHOP-007-OP001",
+        "SHOP-007-OP002"
+      ],
+      "source_titles": [
+        "اختيار نوع الخبز المطلوب",
+        "فحص تاريخ الإنتاج"
+      ],
+      "domain": "التسوق وإدارة المشتريات",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 1
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-014",
+      "event_id": "SHOP-008",
+      "title": "اختيار وتجميع المنتجات المجمدة للشراء",
+      "life_context": "شراء المنتجات المجمدة",
+      "functional_intent": "المساهمة في اختيار المجمدات المطلوبة وتجميعها ضمن المشتريات",
+      "observable_effect": "تكون المجمدات المطلوبة مختارة ومجمعة للشراء",
+      "natural_completion": "عندما تكتمل المنتجات المجمدة المطلوبة ضمن المشتريات",
+      "participation_mode": "shared",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "STANDARD",
+      "source_evidence_ids": [
+        "SHOP-008-OP002",
+        "SHOP-008-OP003"
+      ],
+      "source_titles": [
+        "اختيار المنتجات المجمدة السليمة",
+        "تجميع المجمدات في نهاية التسوق للحفاظ على برودتها"
+      ],
+      "domain": "التسوق وإدارة المشتريات",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 1
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-015",
+      "event_id": "HOME-001",
+      "title": "إعادة غرفة النوم إلى حالة مرتبة",
+      "life_context": "ترتيب غرفة النوم",
+      "functional_intent": "المساهمة في إعادة مساحة النوم إلى حالة مرتبة وقابلة للاستخدام",
+      "observable_effect": "تعود العناصر المستهدفة إلى أماكنها وتصبح المساحة مرتبة",
+      "natural_completion": "عندما تصبح المنطقة/العناصر المتفق عليها مرتبة",
+      "participation_mode": "shared",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "EASY",
+      "source_evidence_ids": [
+        "HOME-001-OP001",
+        "HOME-001-OP002",
+        "HOME-001-OP003"
+      ],
+      "source_titles": [
+        "ترتيب السرير والمخدات.",
+        "جمع الملابس المتناثرة.",
+        "إعادة الأغراض الشخصية لأماكنها."
+      ],
+      "domain": "إدارة المنزل",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-016",
+      "event_id": "HOME-002",
+      "title": "إعادة غرفة المعيشة إلى حالة مرتبة",
+      "life_context": "ترتيب غرفة المعيشة",
+      "functional_intent": "المساهمة في إعادة المساحة المشتركة إلى حالة مرتبة لاستخدام الأسرة",
+      "observable_effect": "تُعاد العناصر المستخدمة إلى أماكنها وتصبح المساحة جاهزة للاستخدام",
+      "natural_completion": "عندما تصبح المنطقة المتفق عليها جاهزة للاستخدام الأسري",
+      "participation_mode": "shared",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "EASY",
+      "source_evidence_ids": [
+        "HOME-002-OP001",
+        "HOME-002-OP002",
+        "HOME-002-OP003",
+        "HOME-002-OP004",
+        "HOME-002-OP005"
+      ],
+      "source_titles": [
+        "جمع الوسائد وتنسيقها.",
+        "ترتيب الطاولة الوسطية.",
+        "إعادة الأجهزة (أجهزة التحكم) إلى أماكنها.",
+        "جمع الأكواب الفارغة.",
+        "ترتيب المجلات أو الكتب."
+      ],
+      "domain": "إدارة المنزل",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-017",
+      "event_id": "HOME-006",
+      "title": "تنظيم أحذية الأسرة في المدخل",
+      "life_context": "ترتيب الأحذية في المدخل",
+      "functional_intent": "جعل أحذية الأسرة منظمة في المكان المخصص لها",
+      "observable_effect": "تكون الأحذية مجمعة/مطابقة وموضوعة في أماكنها",
+      "natural_completion": "عندما تصبح الأحذية المستهدفة منظمة في المدخل",
+      "participation_mode": "shared",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "source_evidence_ids": [
+        "HOME-006-OP001",
+        "HOME-006-OP002",
+        "HOME-006-OP003"
+      ],
+      "source_titles": [
+        "جمع الأحذية المبعثرة.",
+        "مطابقة أزواج الأحذية.",
+        "ترتيب الأحذية على الرفوف المخصصة."
+      ],
+      "domain": "إدارة المنزل",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-018",
+      "event_id": "HOME-007",
+      "title": "إعادة الكتب إلى الرفوف",
+      "life_context": "ترتيب الكتب والرفوف",
+      "functional_intent": "إعادة الكتب المستخدمة إلى تنظيم يجعل الرف قابلًا للاستخدام",
+      "observable_effect": "تكون الكتب المستهدفة عائدة إلى الرفوف وفق التنظيم المستخدم في المنزل",
+      "natural_completion": "عندما تعود الكتب المستهدفة إلى أماكنها",
+      "participation_mode": "individual",
+      "proposed_complexity": "simple",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "EASY",
+      "source_evidence_ids": [
+        "HOME-007-OP001",
+        "HOME-007-OP003"
+      ],
+      "source_titles": [
+        "جمع الكتب المتناثرة.",
+        "إعادة الكتب وتصفيفها بشكل عمودي."
+      ],
+      "domain": "إدارة المنزل",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 0,
+        "C2_coordination": 0,
+        "C3_variability": 0,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-019",
+      "event_id": "HOME-052",
+      "title": "تنظيم محتويات خزانة المؤن",
+      "life_context": "ترتيب خزانة المؤن والبهارات",
+      "functional_intent": "المساهمة في إبقاء محتويات الخزانة صالحة ومنظمة للاستخدام الأسري",
+      "observable_effect": "تُزال العبوات غير الصالحة وتُرتب العبوات المستهدفة وفق تنظيم المنزل",
+      "natural_completion": "عندما تصبح المجموعة المستهدفة من محتويات الخزانة مراجعة ومنظمة",
+      "participation_mode": "shared",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "STANDARD",
+      "source_evidence_ids": [
+        "HOME-052-OP002",
+        "HOME-052-OP003"
+      ],
+      "source_titles": [
+        "التخلص من العلب الفارغة أو التالفة",
+        "ترتيب العلب حسب نوعها واستخدامها"
+      ],
+      "domain": "إدارة المنزل",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-020",
+      "event_id": "COMM-002",
+      "title": "تجهيز أغراض النزهة العائلية",
+      "life_context": "الذهاب في نزهة عائلية إلى الحديقة",
+      "functional_intent": "المساهمة في جعل أغراض النزهة المطلوبة جاهزة للاستخدام والعودة",
+      "observable_effect": "تكون الأغراض المطلوبة مجهزة ثم مجمعة عند انتهاء النزهة",
+      "natural_completion": "عندما تكتمل مسؤولية التجهيز/الجمع المتفق عليها",
+      "participation_mode": "shared",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "source_evidence_ids": [
+        "COMM-002-OP001",
+        "COMM-002-OP004"
+      ],
+      "source_titles": [
+        "تجهيز أغراض النزهة",
+        "جمع الأغراض والمخلفات قبل المغادرة"
+      ],
+      "domain": "الأنشطة والمشاركة المجتمعية",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-021",
+      "event_id": "COMM-004",
+      "title": "المساهمة في تجهيز شيء للزيارة العائلية",
+      "life_context": "زيارة الأقارب",
+      "functional_intent": "المساهمة بشيء تستخدمه الأسرة في الزيارة",
+      "observable_effect": "يصبح الشيء المتفق عليه جاهزًا للزيارة/الاستخدام خلالها",
+      "natural_completion": "عندما يكتمل الجزء المتفق عليه للزيارة",
+      "participation_mode": "shared",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "EASY",
+      "source_evidence_ids": [
+        "COMM-004-OP001",
+        "COMM-004-OP004"
+      ],
+      "source_titles": [
+        "إعداد شيء بسيط يؤخذ للزيارة",
+        "المشاركة في تقديم المساعدة أثناء الزيارة"
+      ],
+      "domain": "الأنشطة والمشاركة المجتمعية",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-022",
+      "event_id": "COMM-006",
+      "title": "طلب واستلام مشروب في المقهى",
+      "life_context": "الذهاب إلى المقهى",
+      "functional_intent": "إتمام الجزء المتعلق باختيار/طلب واستلام مشروب ضمن زيارة المقهى",
+      "observable_effect": "يُسجل الطلب ويُستلم المشروب المقصود",
+      "natural_completion": "عندما يصبح المشروب المطلوب مستلمًا ضمن الزيارة",
+      "participation_mode": "individual",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "STANDARD",
+      "source_evidence_ids": [
+        "COMM-006-OP001",
+        "COMM-006-OP002",
+        "COMM-006-OP003"
+      ],
+      "source_titles": [
+        "الاطلاع على قائمة المشروبات",
+        "إبلاغ الموظف بالطلب",
+        "دفع الحساب"
+      ],
+      "domain": "الأنشطة والمشاركة المجتمعية",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 0,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 1
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-023",
+      "event_id": "COMM-007",
+      "title": "اختيار وطلب وجبة في المطعم",
+      "life_context": "تناول الطعام في المطعم",
+      "functional_intent": "إتمام قرار وطلب وجبة ضمن زيارة المطعم",
+      "observable_effect": "يصل طلب واضح إلى المطعم للوجبة المختارة",
+      "natural_completion": "عندما يتم تقديم الطلب المقصود ضمن الزيارة",
+      "participation_mode": "individual",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "STANDARD",
+      "source_evidence_ids": [
+        "COMM-007-OP002",
+        "COMM-007-OP003"
+      ],
+      "source_titles": [
+        "اختيار الوجبة من القائمة",
+        "إبلاغ النادل بالطلب"
+      ],
+      "domain": "الأنشطة والمشاركة المجتمعية",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 0,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 1
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-024",
+      "event_id": "COMM-014",
+      "title": "شراء تذكرة لحضور عرض",
+      "life_context": "الذهاب إلى السينما أو المسرح",
+      "functional_intent": "إتمام معاملة الحصول على تذكرة لازمة لدخول العرض",
+      "observable_effect": "تصبح التذكرة المطلوبة متاحة للاستخدام للدخول",
+      "natural_completion": "عندما يتم الحصول على التذكرة المطلوبة",
+      "participation_mode": "individual",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "STANDARD",
+      "source_evidence_ids": [
+        "COMM-014-OP001"
+      ],
+      "source_titles": [
+        "شراء تذكرة العرض"
+      ],
+      "domain": "الأنشطة والمشاركة المجتمعية",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 0,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-025",
+      "event_id": "HEALTH-002",
+      "title": "تجهيز الأغراض الشخصية للموعد",
+      "life_context": "الاستعداد للموعد الطبي",
+      "functional_intent": "جعل الأغراض الشخصية المطلوبة للخروج إلى الموعد جاهزة",
+      "observable_effect": "تكون الحقيبة/الأغراض المتفق عليها جاهزة للخروج",
+      "natural_completion": "عندما تصبح الأغراض المطلوبة جاهزة",
+      "participation_mode": "shared",
+      "proposed_complexity": "simple",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "CAUTION",
+      "source_evidence_ids": [
+        "HEALTH-002-OP002",
+        "HEALTH-002-OP003"
+      ],
+      "source_titles": [
+        "تجهيز الحقيبة الشخصية",
+        "تجهيز زجاجة الماء"
+      ],
+      "domain": "الصحة والمواعيد",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 0,
+        "C2_coordination": 1,
+        "C3_variability": 0,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-026",
+      "event_id": "HEALTH-003",
+      "title": "تجهيز ملف المستندات للموعد",
+      "life_context": "تجهيز المستندات الطبية",
+      "functional_intent": "جعل المستندات المطلوبة للموعد مجمعة وقابلة للاستخدام",
+      "observable_effect": "تكون التقارير/المستندات المطلوبة مجمعة في ملف جاهز",
+      "natural_completion": "عندما يصبح ملف الموعد جاهزًا",
+      "participation_mode": "shared",
+      "proposed_complexity": "moderate",
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "CAUTION",
+      "source_evidence_ids": [
+        "HEALTH-003-OP001",
+        "HEALTH-003-OP002",
+        "HEALTH-003-OP003"
+      ],
+      "source_titles": [
+        "جمع التقارير السابقة",
+        "جمع صور الأشعة",
+        "وضع المستندات في ملف أو حقيبة"
+      ],
+      "domain": "الصحة والمواعيد",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-027",
+      "event_id": "CLO-001",
+      "title": "المساهمة في شراء ملابس للأسرة",
+      "life_context": "شراء ملابس جديدة للأسرة",
+      "functional_intent": "المساهمة في قرار شراء قطعة مطلوبة للأسرة",
+      "observable_effect": "تُحدد القطعة المقصودة وتصبح جزءًا من قرار الشراء",
+      "natural_completion": "عند اختيار القطعة المقصودة للشراء",
+      "participation_mode": "shared",
+      "proposed_complexity": "moderate",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "STANDARD",
+      "source_evidence_ids": [
+        "CLO-001-OP001"
+      ],
+      "source_titles": [
+        "شراء ملابس جديدة للأسرة"
+      ],
+      "domain": "الملابس والعناية بها",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 0
+      },
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED"
+    },
+    {
+      "candidate_id": "FP-CAND-028",
+      "event_id": "CLO-002",
+      "title": "استلام طلب ملابس للأسرة",
+      "life_context": "استلام طلب ملابس عبر الإنترنت",
+      "functional_intent": "إتمام استلام طلب الملابس الذي تنتظره الأسرة",
+      "observable_effect": "يصبح الطلب المستلم في حوزة الأسرة",
+      "natural_completion": "عند استلام الطلب والتحقق من أنه الطلب المقصود",
+      "participation_mode": "individual",
+      "proposed_complexity": "moderate",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "STANDARD",
+      "source_evidence_ids": [
+        "CLO-002-OP001"
+      ],
+      "source_titles": [
+        "استلام طلب ملابس عبر الإنترنت"
+      ],
+      "domain": "الملابس والعناية بها",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 0,
+        "C3_variability": 1,
+        "C4_choice_uncertainty": 1
+      },
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED"
+    },
+    {
+      "candidate_id": "FP-CAND-029",
+      "event_id": "CLO-003",
+      "title": "إرجاع أو استبدال قطعة غير مناسبة",
+      "life_context": "إرجاع أو استبدال ملابس غير مناسبة",
+      "functional_intent": "إتمام معاملة إرجاع/استبدال قطعة لا تناسب حاجة الأسرة",
+      "observable_effect": "تُقبل القطعة للإرجاع أو يتم استبدالها وفق المعاملة",
+      "natural_completion": "عند اكتمال معاملة الإرجاع/الاستبدال المقصودة",
+      "participation_mode": "individual",
+      "proposed_complexity": "advanced",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "STANDARD",
+      "source_evidence_ids": [
+        "CLO-003-OP001"
+      ],
+      "source_titles": [
+        "إرجاع أو استبدال ملابس غير مناسبة"
+      ],
+      "domain": "الملابس والعناية بها",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 1,
+        "C2_coordination": 1,
+        "C3_variability": 2,
+        "C4_choice_uncertainty": 2
+      },
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED"
+    },
+    {
+      "candidate_id": "FP-CAND-030",
+      "event_id": "CLO-010",
+      "title": "جمع الملابس المتسخة للغسيل",
+      "life_context": "جمع الملابس المتسخة من أفراد الأسرة",
+      "functional_intent": "المساهمة في تجهيز غسيل الأسرة بجمع الملابس المخصصة للغسيل",
+      "observable_effect": "تصبح الملابس المتسخة المستهدفة مجمعة في مكان الغسيل",
+      "natural_completion": "عند جمع الملابس المستهدفة في المكان المخصص",
+      "participation_mode": "shared",
+      "proposed_complexity": "simple",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "source_evidence_ids": [
+        "CLO-010-OP001"
+      ],
+      "source_titles": [
+        "جمع الملابس المتسخة من أفراد الأسرة"
+      ],
+      "domain": "الملابس والعناية بها",
+      "status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "complexity_dimensions": {
+        "C1_elements": 0,
+        "C2_coordination": 1,
+        "C3_variability": 0,
+        "C4_choice_uncertainty": 0
+      },
+      "complexity_status": "PROVISIONAL_C1_C4_EDITORIAL_REVIEWED"
+    }
+  ],
+  "coverage": {
+    "count": 30,
+    "domain": {
+      "إعداد الطعام والوجبات": 8,
+      "التسوق وإدارة المشتريات": 6,
+      "إدارة المنزل": 5,
+      "الأنشطة والمشاركة المجتمعية": 5,
+      "الصحة والمواعيد": 2,
+      "الملابس والعناية بها": 4
+    },
+    "mode": {
+      "shared": 23,
+      "individual": 7
+    },
+    "complexity": {
+      "simple": 8,
+      "moderate": 21,
+      "advanced": 1
+    },
+    "confidence": {
+      "HIGH": 20,
+      "MEDIUM": 10
+    },
+    "easy": {
+      "EASY": 17,
+      "STANDARD": 11,
+      "CAUTION": 2
+    },
+    "near_duplicate_pairs_flagged": 2
+  },
+  "near_duplicate_review": [
+    {
+      "a": "FP-CAND-004",
+      "b": "FP-CAND-005",
+      "similarity": 0.64
+    },
+    {
+      "a": "FP-CAND-015",
+      "b": "FP-CAND-016",
+      "similarity": 0.44
+    }
+  ],
+  "minimum_sufficient_library_gate": {
+    "status": "NOT_READY",
+    "blockers": [
+      "Health remains intentionally narrow and requires bounded expansion or an explicit sufficiency rationale.",
+      "Home and Community still need selected source-grounded gap closure.",
+      "The sole Advanced candidate remains provisional; no Advanced quota is imposed.",
+      "Near-duplicate flags require editorial resolution.",
+      "Canonical seven-gate Production validation has not yet run."
+    ]
+  }
+}
