@@ -1,0 +1,502 @@
+{
+  "artifact": "DALILI_MIGRATION_BATCH_03_PLAN_01",
+  "status": "PLAN_VALIDATED_NOT_MATERIALIZED",
+  "mode": "migration_plan_only",
+  "source_library": "DALILI_REVIEWER_FULL_LIBRARY_42_01",
+  "candidate_count": 6,
+  "selection_policy": "One reviewed candidate from each current domain, favoring low-risk accepted roles with clear context, effect, completion, and no reviewer rejection.",
+  "hard_constraints": [
+    "Legacy Master remains immutable.",
+    "No production-facing migration is performed by this plan.",
+    "Each proposed framework reference id differs from its source candidate and legacy evidence ids.",
+    "Every proposed record must pass evaluateFunctionalParticipation before any later materialization.",
+    "No support content is migrated in this batch plan.",
+    "Approved snapshots and family history are untouched."
+  ],
+  "records": [
+    {
+      "candidate_id": "FP-CAND-001",
+      "framework_reference_id": "FR-B03-FOOD-001-OP002",
+      "domain": "إعداد الطعام والوجبات",
+      "title": "تجهيز مائدة الإفطار",
+      "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+      "source_evidence_ids": [
+        "FOOD-001-OP002",
+        "FOOD-001-OP004"
+      ],
+      "source_titles": [
+        "تحضير الأطباق والأكواب",
+        "تحضير المشروبات المرافقة"
+      ],
+      "migration_disposition": "PLAN_ONLY",
+      "target_reference_source": "framework_reference",
+      "materialized": false,
+      "migration_reason": "Simple family meal-table role; already accepted after execution-block wording fix.",
+      "candidate_gate_result": {
+        "valid": true,
+        "failed_gates": [],
+        "codes": []
+      },
+      "proposed_framework_gate_result": {
+        "valid": true,
+        "failed_gates": [],
+        "codes": []
+      },
+      "proposed_framework_participation": {
+        "candidate_id": "FP-CAND-001",
+        "id": "FR-B03-FOOD-001-OP002",
+        "title": "تجهيز مائدة الإفطار",
+        "life_context": "تجهيز مائدة الإفطار للأسرة",
+        "functional_intent": "جعل أدوات التقديم اللازمة للإفطار جاهزة لاستخدام الأسرة",
+        "observable_effect": "تكون أدوات المائدة/التقديم المطلوبة جاهزة في مكان الإفطار",
+        "natural_completion": "عندما تصبح الأدوات المطلوبة جاهزة للاستخدام",
+        "standalone_role_meaning": "تجهيز مائدة الإفطار دور له معنى داخل تجهيز مائدة الإفطار للأسرة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+        "participation_mode": "shared",
+        "complexity": {
+          "level": "simple",
+          "dimensions": {
+            "c1_elements": "عناصر قليلة ومباشرة داخل الدور: تجهيز مائدة الإفطار.",
+            "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+            "c3_variability": "الموقف ثابت غالبًا ويتكرر بصورة مألوفة.",
+            "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+          },
+          "rationale": "بنية الدور صنفت simple اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=0, C2=1, C3=0, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+        },
+        "execution_blocks": [
+          {
+            "kind": "execution_block",
+            "id": "FP-CAND-001-B1",
+            "order": 1,
+            "text": "تحضير الأطباق والأكواب"
+          },
+          {
+            "kind": "execution_block",
+            "id": "FP-CAND-001-B2",
+            "order": 2,
+            "text": "تحضير المشروبات المرافقة"
+          }
+        ],
+        "event_id": "FOOD-001",
+        "source_evidence_ids": [
+          "FOOD-001-OP002",
+          "FOOD-001-OP004"
+        ],
+        "source_titles": [
+          "تحضير الأطباق والأكواب",
+          "تحضير المشروبات المرافقة"
+        ],
+        "domain": "إعداد الطعام والوجبات",
+        "confidence": "HIGH",
+        "easy_beginning_suitability": "EASY",
+        "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+        "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+        "kind": "functional_participation",
+        "provenance": "framework_reference"
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-011",
+      "framework_reference_id": "FR-B03-SHOP-009-OP001",
+      "domain": "التسوق وإدارة المشتريات",
+      "title": "تجهيز أكياس التسوق للخروج",
+      "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+      "source_evidence_ids": [
+        "SHOP-004-OP002"
+      ],
+      "source_titles": [
+        "حمل الأكياس الفارغة إلى السيارة"
+      ],
+      "migration_disposition": "PLAN_ONLY",
+      "target_reference_source": "framework_reference",
+      "materialized": false,
+      "migration_reason": "Simple pre-shopping preparation role; reviewed as accepted after systemic wording fix.",
+      "candidate_gate_result": {
+        "valid": true,
+        "failed_gates": [],
+        "codes": []
+      },
+      "proposed_framework_gate_result": {
+        "valid": true,
+        "failed_gates": [],
+        "codes": []
+      },
+      "proposed_framework_participation": {
+        "candidate_id": "FP-CAND-011",
+        "id": "FR-B03-SHOP-009-OP001",
+        "title": "تجهيز أكياس التسوق للخروج",
+        "life_context": "الذهاب إلى السوبرماركت",
+        "functional_intent": "جعل أكياس التسوق اللازمة متاحة للرحلة",
+        "observable_effect": "تكون الأكياس المطلوبة موجودة في السيارة/مع الأسرة",
+        "natural_completion": "عندما تصبح الأكياس جاهزة قبل الانطلاق",
+        "standalone_role_meaning": "تجهيز أكياس التسوق للخروج دور له معنى داخل الذهاب إلى السوبرماركت، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+        "participation_mode": "individual",
+        "complexity": {
+          "level": "simple",
+          "dimensions": {
+            "c1_elements": "عناصر قليلة ومباشرة داخل الدور: تجهيز أكياس التسوق للخروج.",
+            "c2_coordination": "تسلسل مباشر لا يحتاج ربطًا ملحوظًا مع أدوار أخرى.",
+            "c3_variability": "الموقف ثابت غالبًا ويتكرر بصورة مألوفة.",
+            "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+          },
+          "rationale": "بنية الدور صنفت simple اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=0, C2=0, C3=0, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+        },
+        "execution_blocks": [
+          {
+            "kind": "execution_block",
+            "id": "FP-CAND-011-B1",
+            "order": 1,
+            "text": "حمل الأكياس الفارغة إلى السيارة"
+          }
+        ],
+        "event_id": "SHOP-004",
+        "source_evidence_ids": [
+          "SHOP-004-OP002"
+        ],
+        "source_titles": [
+          "حمل الأكياس الفارغة إلى السيارة"
+        ],
+        "domain": "التسوق وإدارة المشتريات",
+        "confidence": "HIGH",
+        "easy_beginning_suitability": "EASY",
+        "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+        "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+        "kind": "functional_participation",
+        "provenance": "framework_reference"
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-018",
+      "framework_reference_id": "FR-B03-HOME-018-OP001",
+      "domain": "إدارة المنزل",
+      "title": "إعادة الكتب إلى الرفوف",
+      "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+      "source_evidence_ids": [
+        "HOME-007-OP001",
+        "HOME-007-OP003"
+      ],
+      "source_titles": [
+        "جمع الكتب المتناثرة.",
+        "إعادة الكتب وتصفيفها بشكل عمودي."
+      ],
+      "migration_disposition": "PLAN_ONLY",
+      "target_reference_source": "framework_reference",
+      "materialized": false,
+      "migration_reason": "Simple bounded home organization role with clear visual completion.",
+      "candidate_gate_result": {
+        "valid": true,
+        "failed_gates": [],
+        "codes": []
+      },
+      "proposed_framework_gate_result": {
+        "valid": true,
+        "failed_gates": [],
+        "codes": []
+      },
+      "proposed_framework_participation": {
+        "candidate_id": "FP-CAND-018",
+        "id": "FR-B03-HOME-018-OP001",
+        "title": "إعادة الكتب إلى الرفوف",
+        "life_context": "ترتيب الكتب والرفوف",
+        "functional_intent": "إعادة الكتب المستخدمة إلى تنظيم يجعل الرف قابلًا للاستخدام",
+        "observable_effect": "تكون الكتب المستهدفة عائدة إلى الرفوف وفق التنظيم المستخدم في المنزل",
+        "natural_completion": "عندما تعود الكتب المستهدفة إلى أماكنها",
+        "standalone_role_meaning": "إعادة الكتب إلى الرفوف دور له معنى داخل ترتيب الكتب والرفوف، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+        "participation_mode": "individual",
+        "complexity": {
+          "level": "simple",
+          "dimensions": {
+            "c1_elements": "عناصر قليلة ومباشرة داخل الدور: إعادة الكتب إلى الرفوف.",
+            "c2_coordination": "تسلسل مباشر لا يحتاج ربطًا ملحوظًا مع أدوار أخرى.",
+            "c3_variability": "الموقف ثابت غالبًا ويتكرر بصورة مألوفة.",
+            "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+          },
+          "rationale": "بنية الدور صنفت simple اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=0, C2=0, C3=0, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+        },
+        "execution_blocks": [
+          {
+            "kind": "execution_block",
+            "id": "FP-CAND-018-B1",
+            "order": 1,
+            "text": "جمع الكتب المتناثرة"
+          },
+          {
+            "kind": "execution_block",
+            "id": "FP-CAND-018-B2",
+            "order": 2,
+            "text": "إعادة الكتب وتصفيفها بشكل عمودي"
+          }
+        ],
+        "event_id": "HOME-007",
+        "source_evidence_ids": [
+          "HOME-007-OP001",
+          "HOME-007-OP003"
+        ],
+        "source_titles": [
+          "جمع الكتب المتناثرة.",
+          "إعادة الكتب وتصفيفها بشكل عمودي."
+        ],
+        "domain": "إدارة المنزل",
+        "confidence": "MEDIUM",
+        "easy_beginning_suitability": "EASY",
+        "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+        "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+        "kind": "functional_participation",
+        "provenance": "framework_reference"
+      }
+    },
+    {
+      "candidate_id": "FP-CAND-020",
+      "framework_reference_id": "FR-B03-COMM-002-OP001",
+      "domain": "الأنشطة والمشاركة المجتمعية",
+      "title": "تجهيز أغراض النزهة العائلية",
+      "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+      "source_evidence_ids": [
+        "COMM-002-OP001",
+        "COMM-002-OP004"
+      ],
+      "source_titles": [
+        "تجهيز أغراض النزهة",
+        "جمع الأغراض والمخلفات قبل المغادرة"
+      ],
+      "migration_disposition": "PLAN_ONLY",
+      "target_reference_source": "framework_reference",
+      "materialized": false,
+      "migration_reason": "Shared family outing preparation role with corrected concrete completion.",
+      "candidate_gate_result": {
+        "valid": true,
+        "failed_gates": [],
+        "codes": []
+      },
+      "proposed_framework_gate_result": {
+        "valid": true,
+        "failed_gates": [],
+        "codes": []
+      },
+      "proposed_framework_participation": {
+        "candidate_id": "FP-CAND-020",
+        "id": "FR-B03-COMM-002-OP001",
+        "title": "تجهيز أغراض النزهة العائلية",
+        "life_context": "الذهاب في نزهة عائلية إلى الحديقة",
+        "functional_intent": "المساهمة في جعل أغراض النزهة المطلوبة جاهزة للاستخدام والعودة",
+        "observable_effect": "تكون الأغراض المطلوبة مجهزة ثم مجمعة عند انتهاء النزهة",
+        "natural_completion": "عندما توضع أغراض النزهة المتفق عليها في الحقيبة أو السيارة.",
+        "standalone_role_meaning": "تجهيز أغراض النزهة العائلية دور له معنى داخل الذهاب في نزهة عائلية إلى الحديقة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+        "participation_mode": "shared",
+        "complexity": {
+          "level": "moderate",
+          "dimensions": {
+            "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: تجهيز أغراض النزهة العائلية.",
+            "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+            "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+            "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+          },
+          "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+        },
+        "execution_blocks": [
+          {
+            "kind": "execution_block",
+            "id": "FP-CAND-020-B1",
+            "order": 1,
+            "text": "تجهيز أغراض النزهة"
+          },
+          {
+            "kind": "execution_block",
+            "id": "FP-CAND-020-B2",
+            "order": 2,
+            "text": "جمع الأغراض والمخلفات قبل المغادرة"
+          }
+        ],
+        "event_id": "COMM-002",
+        "source_evidence_ids": [
+          "COMM-002-OP001",
+          "COMM-002-OP004"
+        ],
+        "source_titles": [
+          "تجهيز أغراض النزهة",
+          "جمع الأغراض والمخلفات قبل المغادرة"
+        ],
+        "domain": "الأنشطة والمشاركة المجتمعية",
+        "confidence": "HIGH",
+        "easy_beginning_suitability": "EASY",
+        "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+        "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+        "kind": "functional_participation",
+        "provenance": "framework_reference"
+      }
+    },
+    {
+      "candidate_id": "FP-WAVE-A-001",
+      "framework_reference_id": "FR-B03-HEALTH-001-OP001",
+      "domain": "الصحة والمواعيد",
+      "title": "البحث عن رقم العيادة",
+      "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+      "source_evidence_ids": [
+        "HEALTH-001-OP001"
+      ],
+      "source_titles": [
+        "البحث عن رقم العيادة"
+      ],
+      "migration_disposition": "PLAN_ONLY",
+      "target_reference_source": "framework_reference",
+      "materialized": false,
+      "migration_reason": "Health/appointment role that remains administrative and avoids therapy or diagnosis framing.",
+      "candidate_gate_result": {
+        "valid": true,
+        "failed_gates": [],
+        "codes": []
+      },
+      "proposed_framework_gate_result": {
+        "valid": true,
+        "failed_gates": [],
+        "codes": []
+      },
+      "proposed_framework_participation": {
+        "candidate_id": "FP-WAVE-A-001",
+        "id": "FR-B03-HEALTH-001-OP001",
+        "title": "البحث عن رقم العيادة",
+        "life_context": "أثناء حجز موعد طبي، الاتصال بالعيادة أو التطبيق لتحديد موعد زيارة طبية.",
+        "functional_intent": "ليكون له دور في تجهيز موعد يخصه أو يخص أحد أفراد أسرته.",
+        "observable_effect": "يصبح أثر الدور واضحًا في الموقف: البحث عن رقم العيادة ضمن حجز موعد طبي.",
+        "natural_completion": "ينتهي الدور عندما يكتمل البحث عن رقم العيادة داخل الموقف.",
+        "standalone_role_meaning": "البحث عن رقم العيادة دور له معنى داخل حجز موعد طبي، لأنه يغيّر حالة محددة في الموقف حتى إذا تولى آخرون بقية النشاط.",
+        "participation_mode": "shared",
+        "complexity": {
+          "level": "moderate",
+          "dimensions": {
+            "c1_elements": "عدة عناصر مرتبطة بالدور: البحث عن رقم العيادة.",
+            "c2_coordination": "يتطلب تنسيقًا واضحًا بين ترتيب الحدث ومتطلبات الأسرة أو الجهة الخارجية.",
+            "c3_variability": "قد تختلف التفاصيل أو العناصر أو المكان ضمن حدود مألوفة.",
+            "c4_choice_uncertainty": "يوجد اختيار محدود بين بدائل واضحة."
+          },
+          "rationale": "بنية الدور صنفت moderate اعتمادًا على عناصر الدور وتنسيقه وتغيره وخياراته فقط: role_scope=moderate, organization=advanced, variation=moderate."
+        },
+        "execution_blocks": [
+          {
+            "kind": "execution_block",
+            "id": "FP-WAVE-A-001-B1",
+            "order": 1,
+            "text": "فتح المصدر"
+          },
+          {
+            "kind": "execution_block",
+            "id": "FP-WAVE-A-001-B2",
+            "order": 2,
+            "text": "البحث عن اسم العيادة"
+          },
+          {
+            "kind": "execution_block",
+            "id": "FP-WAVE-A-001-B3",
+            "order": 3,
+            "text": "إيجاد الرقم"
+          }
+        ],
+        "event_id": "HEALTH-001",
+        "domain": "الصحة والمواعيد",
+        "source_evidence_ids": [
+          "HEALTH-001-OP001"
+        ],
+        "source_titles": [
+          "البحث عن رقم العيادة"
+        ],
+        "original_legacy_dimensions": {
+          "role_scope": "moderate",
+          "organization_demand": "advanced",
+          "variation_demand": "moderate"
+        },
+        "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+        "kind": "functional_participation",
+        "provenance": "framework_reference"
+      }
+    },
+    {
+      "candidate_id": "FP-WAVE-A-005",
+      "framework_reference_id": "FR-B03-CLO-011-OP001",
+      "domain": "الملابس والعناية بها",
+      "title": "فرز الملابس المتسخة قبل الغسيل",
+      "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+      "source_evidence_ids": [
+        "CLO-011-OP001"
+      ],
+      "source_titles": [
+        "فرز الملابس المتسخة قبل الغسيل"
+      ],
+      "migration_disposition": "PLAN_ONLY",
+      "target_reference_source": "framework_reference",
+      "materialized": false,
+      "migration_reason": "Clothing/laundry role cleaned of skill-language and accepted in recheck.",
+      "candidate_gate_result": {
+        "valid": true,
+        "failed_gates": [],
+        "codes": []
+      },
+      "proposed_framework_gate_result": {
+        "valid": true,
+        "failed_gates": [],
+        "codes": []
+      },
+      "proposed_framework_participation": {
+        "candidate_id": "FP-WAVE-A-005",
+        "id": "FR-B03-CLO-011-OP001",
+        "title": "فرز الملابس المتسخة قبل الغسيل",
+        "life_context": "أثناء جمع الملابس قبل الغسيل، تفصل الأسرة الملابس المتسخة إلى مجموعات واضحة قبل تشغيل الغسالة.",
+        "functional_intent": "للمساهمة في تجهيز الغسيل قبل بدء الغسالة عبر فصل الملابس إلى مجموعات واضحة.",
+        "observable_effect": "تصبح الملابس المتسخة مفصولة إلى مجموعات واضحة قبل الغسيل.",
+        "natural_completion": "ينتهي الدور عندما توضع كل مجموعة ملابس في مكانها المحدد قبل تشغيل الغسالة.",
+        "standalone_role_meaning": "فرز الملابس المتسخة قبل الغسيل دور له معنى داخل جمع الملابس للغسيل، لأنه يجهز المجموعات التي ستدخل الغسالة حتى إذا تولى آخرون تشغيلها.",
+        "participation_mode": "individual",
+        "complexity": {
+          "level": "moderate",
+          "dimensions": {
+            "c1_elements": "عدة عناصر مرتبطة بالدور: فرز الملابس المتسخة قبل الغسيل.",
+            "c2_coordination": "يتطلب تنسيقًا واضحًا بين ترتيب الحدث ومتطلبات الأسرة أو الجهة الخارجية.",
+            "c3_variability": "قد تختلف التفاصيل أو العناصر أو المكان ضمن حدود مألوفة.",
+            "c4_choice_uncertainty": "يوجد اختيار محدود بين بدائل واضحة."
+          },
+          "rationale": "بنية الدور صنفت moderate اعتمادًا على عناصر الدور وتنسيقه وتغيره وخياراته فقط: role_scope=moderate, organization=advanced, variation=moderate."
+        },
+        "execution_blocks": [
+          {
+            "kind": "execution_block",
+            "id": "FP-WAVE-A-005-B1",
+            "order": 1,
+            "text": "فصل الملابس الفاتحة عن الداكنة"
+          },
+          {
+            "kind": "execution_block",
+            "id": "FP-WAVE-A-005-B2",
+            "order": 2,
+            "text": "فصل الأقمشة الحساسة"
+          },
+          {
+            "kind": "execution_block",
+            "id": "FP-WAVE-A-005-B3",
+            "order": 3,
+            "text": "تجميع كل مجموعة معًا"
+          }
+        ],
+        "event_id": "CLO-011",
+        "domain": "الملابس والعناية بها",
+        "source_evidence_ids": [
+          "CLO-011-OP001"
+        ],
+        "source_titles": [
+          "فرز الملابس المتسخة قبل الغسيل"
+        ],
+        "original_legacy_dimensions": {
+          "role_scope": "moderate",
+          "organization_demand": "advanced",
+          "variation_demand": "moderate"
+        },
+        "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+        "kind": "functional_participation",
+        "provenance": "framework_reference"
+      }
+    }
+  ],
+  "validation_summary": {
+    "valid_count": 6,
+    "invalid_count": 0,
+    "all_candidate_sources_valid": true,
+    "all_proposed_framework_records_valid": true
+  }
+}
