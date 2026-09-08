@@ -1,6 +1,6 @@
 {
   "artifact": "DALILI_PRECISION_REVIEW_EDGE_SAMPLE_6_01",
-  "status": "READY_FOR_DIRECT_REVIEW",
+  "status": "PRECISION_REVIEW_FIXES_APPLIED_READY_FOR_RECHECK",
   "purpose": "Edge sample focused on sensitive contexts and moderate/advanced roles: health, staff/community interaction, clothing/purchase, and scope-risk cards.",
   "selection_policy": "Purposefully selected hard cases rather than random sampling.",
   "candidate_count": 6,
@@ -125,7 +125,7 @@
       "functional_intent": "ليصبح العنوان واضحًا على الطرد قبل تسليمه لموظف البريد.",
       "observable_effect": "تظهر بيانات العنوان على الطرد في مكان واضح يمكن مراجعته قبل الخروج.",
       "natural_completion": "ينتهي الدور عندما تكون بيانات العنوان مكتوبة أو مثبتة بوضوح على الطرد.",
-      "standalone_role_meaning": "تعبئة بيانات العنوان على الطرد دور له معنى داخل إرسال طرد أو بريد من مكتب بريد، لأنه يغيّر حالة محددة في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "standalone_role_meaning": "تعبئة بيانات العنوان على الطرد دور له معنى داخل تجهيز الطرد في المنزل قبل الذهاب إلى البريد، لأنه يجعل الطرد قابلًا للمراجعة والتسليم حتى إذا تولى آخرون بقية الإرسال.",
       "participation_mode": "shared",
       "complexity": {
         "level": "moderate",
@@ -280,11 +280,11 @@
       "candidate_id": "FP-CAND-028",
       "id": "FP-CAND-028",
       "title": "استلام طلب ملابس للأسرة",
-      "life_context": "استلام طلب ملابس عبر الإنترنت",
+      "life_context": "أثناء وصول طلب ملابس للأسرة من المتجر الإلكتروني، تستلم الأسرة الطرد وتضعه في مكان مخصص للمراجعة.",
       "functional_intent": "إتمام استلام طلب الملابس الذي تنتظره الأسرة",
-      "observable_effect": "يصبح الطلب المستلم في حوزة الأسرة",
-      "natural_completion": "عند استلام الطلب والتحقق من أنه الطلب المقصود",
-      "standalone_role_meaning": "استلام طلب ملابس للأسرة دور له معنى داخل استلام طلب ملابس عبر الإنترنت، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "observable_effect": "يصبح طرد الملابس في حوزة الأسرة وفي مكان واضح للمراجعة.",
+      "natural_completion": "عند استلام الطرد ووضعه في المكان المتفق عليه داخل المنزل.",
+      "standalone_role_meaning": "استلام طلب ملابس للأسرة دور له معنى داخل استلام طلب عبر الإنترنت، لأنه ينقل الطلب من المندوب إلى حوزة الأسرة حتى إذا تولى آخرون فتحه ومراجعته.",
       "participation_mode": "individual",
       "complexity": {
         "level": "moderate",
@@ -301,7 +301,19 @@
           "kind": "execution_block",
           "id": "FP-CAND-028-B1",
           "order": 1,
-          "text": "استلام طلب ملابس عبر الإنترنت"
+          "text": "استلام الطرد من المندوب أو من نقطة الاستلام"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-028-B2",
+          "order": 2,
+          "text": "مراجعة الاسم أو رقم الطلب على الصندوق مع الأسرة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-028-B3",
+          "order": 3,
+          "text": "وضع الطرد في المكان المخصص للمراجعة"
         }
       ],
       "event_id": "CLO-002",
@@ -317,5 +329,9 @@
       "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
       "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE"
     }
-  ]
+  ],
+  "review_result_summary": {
+    "raw_result": "5 ACCEPT / 1 REVISE_WORDING / 0 REJECT",
+    "applied_result": "FP-CAND-028 execution blocks expanded into concrete receiving actions."
+  }
 }

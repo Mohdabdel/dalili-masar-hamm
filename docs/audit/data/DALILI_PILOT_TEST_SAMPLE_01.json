@@ -1,6 +1,6 @@
 {
   "artifact": "DALILI_PILOT_TEST_SAMPLE_01",
-  "status": "REVIEW_FIXES_APPLIED_READY_FOR_RECHECK",
+  "status": "PRECISION_REVIEW_RECHECK_ACCEPTED",
   "created_from": [
     "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
     "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01"
@@ -314,7 +314,7 @@
       "functional_intent": "ليصبح العنوان واضحًا على الطرد قبل تسليمه لموظف البريد.",
       "observable_effect": "تظهر بيانات العنوان على الطرد في مكان واضح يمكن مراجعته قبل الخروج.",
       "natural_completion": "ينتهي الدور عندما تكون بيانات العنوان مكتوبة أو مثبتة بوضوح على الطرد.",
-      "standalone_role_meaning": "تعبئة بيانات العنوان على الطرد دور له معنى داخل إرسال طرد أو بريد من مكتب بريد، لأنه يغيّر حالة محددة في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "standalone_role_meaning": "تعبئة بيانات العنوان على الطرد دور له معنى داخل تجهيز الطرد في المنزل قبل الذهاب إلى البريد، لأنه يجعل الطرد قابلًا للمراجعة والتسليم حتى إذا تولى آخرون بقية الإرسال.",
       "participation_mode": "shared",
       "complexity": {
         "level": "moderate",
@@ -516,9 +516,9 @@
       "title": "فرز الملابس المتسخة قبل الغسيل",
       "life_context": "أثناء جمع الملابس قبل الغسيل، تفصل الأسرة الملابس المتسخة إلى مجموعات واضحة قبل تشغيل الغسالة.",
       "functional_intent": "للمساهمة في تجهيز الغسيل قبل بدء الغسالة عبر فصل الملابس إلى مجموعات واضحة.",
-      "observable_effect": "يصبح أثر الدور واضحًا في الموقف: فرز الملابس المتسخة قبل الغسيل ضمن فرز الملابس المتسخة قبل الغسيل.",
-      "natural_completion": "ينتهي الدور عندما يكتمل فرز الملابس المتسخة قبل الغسيل داخل الموقف.",
-      "standalone_role_meaning": "فرز الملابس المتسخة قبل الغسيل دور له معنى داخل فرز الملابس المتسخة قبل الغسيل، لأنه يغيّر حالة محددة في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "observable_effect": "تصبح الملابس المتسخة مفصولة إلى مجموعات واضحة قبل الغسيل.",
+      "natural_completion": "ينتهي الدور عندما توضع كل مجموعة ملابس في مكانها المحدد قبل تشغيل الغسالة.",
+      "standalone_role_meaning": "فرز الملابس المتسخة قبل الغسيل دور له معنى داخل جمع الملابس للغسيل، لأنه يجهز المجموعات التي ستدخل الغسالة حتى إذا تولى آخرون تشغيلها.",
       "participation_mode": "individual",
       "complexity": {
         "level": "moderate",
@@ -632,7 +632,8 @@
       "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
       "reviewer_decision": "",
       "notes": "",
-      "reviewer_decision_after_fixes": "ACCEPT"
+      "reviewer_decision_after_fixes": "ACCEPT",
+      "reviewer_decision_after_precision_review": "ACCEPT"
     },
     {
       "review_item_id": "PILOT-01-02",
@@ -647,7 +648,8 @@
       "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
       "reviewer_decision": "",
       "notes": "",
-      "reviewer_decision_after_fixes": "ACCEPT_AFTER_SYSTEMIC_WORDING_FIX"
+      "reviewer_decision_after_fixes": "ACCEPT_AFTER_SYSTEMIC_WORDING_FIX",
+      "reviewer_decision_after_precision_review": "ACCEPT"
     },
     {
       "review_item_id": "PILOT-01-03",
@@ -661,7 +663,8 @@
       "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
       "reviewer_decision": "",
       "notes": "",
-      "reviewer_decision_after_fixes": "ACCEPT"
+      "reviewer_decision_after_fixes": "ACCEPT",
+      "reviewer_decision_after_precision_review": "ACCEPT"
     },
     {
       "review_item_id": "PILOT-01-04",
@@ -675,7 +678,8 @@
       "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
       "reviewer_decision": "",
       "notes": "",
-      "reviewer_decision_after_fixes": "ACCEPT_AFTER_SYSTEMIC_WORDING_FIX"
+      "reviewer_decision_after_fixes": "ACCEPT_AFTER_SYSTEMIC_WORDING_FIX",
+      "reviewer_decision_after_precision_review": "ACCEPT"
     },
     {
       "review_item_id": "PILOT-01-05",
@@ -689,7 +693,8 @@
       "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
       "reviewer_decision": "",
       "notes": "",
-      "reviewer_decision_after_fixes": "ACCEPT"
+      "reviewer_decision_after_fixes": "ACCEPT",
+      "reviewer_decision_after_precision_review": "ACCEPT"
     },
     {
       "review_item_id": "PILOT-01-06",
@@ -704,7 +709,8 @@
       "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
       "reviewer_decision": "",
       "notes": "",
-      "reviewer_decision_after_fixes": "ACCEPT_AFTER_SYSTEMIC_WORDING_FIX"
+      "reviewer_decision_after_fixes": "ACCEPT_AFTER_SYSTEMIC_WORDING_FIX",
+      "reviewer_decision_after_precision_review": "ACCEPT"
     },
     {
       "review_item_id": "PILOT-01-07",
@@ -718,7 +724,8 @@
       "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
       "reviewer_decision": "",
       "notes": "",
-      "reviewer_decision_after_fixes": "ACCEPT_AFTER_CONTEXT_FIX"
+      "reviewer_decision_after_fixes": "ACCEPT_AFTER_CONTEXT_FIX",
+      "reviewer_decision_after_precision_review": "ACCEPT"
     },
     {
       "review_item_id": "PILOT-01-08",
@@ -733,7 +740,8 @@
       "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
       "reviewer_decision": "",
       "notes": "",
-      "reviewer_decision_after_fixes": "ACCEPT_AFTER_SYSTEMIC_WORDING_FIX"
+      "reviewer_decision_after_fixes": "ACCEPT_AFTER_SYSTEMIC_WORDING_FIX",
+      "reviewer_decision_after_precision_review": "ACCEPT"
     },
     {
       "review_item_id": "PILOT-01-09",
@@ -747,7 +755,8 @@
       "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
       "reviewer_decision": "",
       "notes": "",
-      "reviewer_decision_after_fixes": "ACCEPT"
+      "reviewer_decision_after_fixes": "ACCEPT",
+      "reviewer_decision_after_precision_review": "ACCEPT"
     },
     {
       "review_item_id": "PILOT-01-10",
@@ -762,7 +771,8 @@
       "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
       "reviewer_decision": "",
       "notes": "",
-      "reviewer_decision_after_fixes": "ACCEPT_AFTER_SYSTEMIC_WORDING_FIX"
+      "reviewer_decision_after_fixes": "ACCEPT_AFTER_SYSTEMIC_WORDING_FIX",
+      "reviewer_decision_after_precision_review": "ACCEPT"
     },
     {
       "review_item_id": "PILOT-01-11",
@@ -776,7 +786,8 @@
       "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
       "reviewer_decision": "",
       "notes": "",
-      "reviewer_decision_after_fixes": "ACCEPT_AFTER_WORDING_FIX"
+      "reviewer_decision_after_fixes": "ACCEPT_AFTER_WORDING_FIX",
+      "reviewer_decision_after_precision_review": "ACCEPT"
     },
     {
       "review_item_id": "PILOT-01-12",
@@ -790,11 +801,13 @@
       "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
       "reviewer_decision": "",
       "notes": "",
-      "reviewer_decision_after_fixes": "ACCEPT_AFTER_SCOPE_FIX"
+      "reviewer_decision_after_fixes": "ACCEPT_AFTER_SCOPE_FIX",
+      "reviewer_decision_after_precision_review": "ACCEPT"
     }
   ],
   "review_result_summary": {
     "raw_result": "4 ACCEPT / 6 REVISE_WORDING / 2 REVISE_CONTEXT / 0 REJECT before fixes.",
-    "applied_result": "Systemic FP-CAND execution block wording fixed, FP-WAVE-A-012 context fixed, FP-WAVE-A-005 wording fixed, FP-WAVE-A-007 scope reduced."
+    "applied_result": "Systemic FP-CAND execution block wording fixed, FP-WAVE-A-012 context fixed, FP-WAVE-A-005 wording fixed, FP-WAVE-A-007 scope reduced.",
+    "precision_recheck_result": "12 ACCEPT / 0 REVISE / 0 REJECT after direct data review."
   }
 }
