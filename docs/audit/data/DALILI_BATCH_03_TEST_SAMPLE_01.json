@@ -1,0 +1,347 @@
+{
+  "artifact": "DALILI_BATCH_03_TEST_SAMPLE_01",
+  "status": "READY_FOR_REVIEW_NOT_MATERIALIZED",
+  "purpose": "Direct reviewer test content for the six planned Batch 03 framework references before any materialization.",
+  "source_plan": "DALILI_MIGRATION_BATCH_03_PLAN_01",
+  "source_plan_status": "PLAN_VALIDATED_NOT_MATERIALIZED",
+  "sample_size": 6,
+  "test_type": "pre_materialization_content_review",
+  "pass_criteria": {
+    "minimum_accept_count": 5,
+    "maximum_reject_count": 0,
+    "allowed_revision_types": "Minor wording or scope revisions only if they preserve source evidence and pass evaluateFunctionalParticipation after revision.",
+    "systemic_defect_policy": "Any recurring defect across two or more records pauses materialization until a corrective rule is documented."
+  },
+  "non_goals": [
+    "Do not test child ability.",
+    "Do not score child performance.",
+    "Do not infer diagnosis, age, support level, readiness, mastery, or independence.",
+    "Do not evaluate therapeutic usefulness."
+  ],
+  "hard_constraints": [
+    "Legacy Master remains immutable.",
+    "No production-facing migration is performed by this plan.",
+    "Each proposed framework reference id differs from its source candidate and legacy evidence ids.",
+    "Every proposed record must pass evaluateFunctionalParticipation before any later materialization.",
+    "No support content is migrated in this batch plan.",
+    "Approved snapshots and family history are untouched."
+  ],
+  "records": [
+    {
+      "test_item_id": "B03-TEST-01",
+      "candidate_id": "FP-CAND-001",
+      "proposed_framework_reference_id": "FR-B03-FOOD-001-OP002",
+      "domain": "إعداد الطعام والوجبات",
+      "title": "تجهيز مائدة الإفطار",
+      "status": "READY_FOR_REVIEW_NOT_MATERIALIZED",
+      "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+      "source_evidence_ids": [
+        "FOOD-001-OP002",
+        "FOOD-001-OP004"
+      ],
+      "source_titles": [
+        "تحضير الأطباق والأكواب",
+        "تحضير المشروبات المرافقة"
+      ],
+      "participation_text": {
+        "life_context": "تجهيز مائدة الإفطار للأسرة",
+        "functional_intent": "جعل أدوات التقديم اللازمة للإفطار جاهزة لاستخدام الأسرة",
+        "observable_effect": "تكون أدوات المائدة/التقديم المطلوبة جاهزة في مكان الإفطار",
+        "natural_completion": "عندما تصبح الأدوات المطلوبة جاهزة للاستخدام",
+        "standalone_role_meaning": "تجهيز مائدة الإفطار دور له معنى داخل تجهيز مائدة الإفطار للأسرة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+        "participation_mode": "shared",
+        "complexity_level": "simple",
+        "complexity_rationale": "بنية الدور صنفت simple اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=0, C2=1, C3=0, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات.",
+        "execution_blocks": [
+          {
+            "order": 1,
+            "text": "تحضير الأطباق والأكواب"
+          },
+          {
+            "order": 2,
+            "text": "تحضير المشروبات المرافقة"
+          }
+        ]
+      },
+      "reviewer_focus": [
+        "هل يقرأ النص كفرصة مشاركة أسرية وليس كهدف تدريب؟",
+        "هل سياق الحياة واضح ومحدد دون شرح خارجي؟",
+        "هل الدور الجزئي له أثر مفهوم حتى إذا أكمل آخرون بقية النشاط؟",
+        "هل نقطة الاكتمال الطبيعية ظاهرة دون قياس أداء؟",
+        "هل تخلو الصياغة من العلاج والجاهزية والإتقان والاستقلالية والقدرة والتشخيص؟",
+        "هل نطاق الدور مناسب للمشاركة الأسرية وليس مهمة فردية كاملة؟",
+        "هل العلاقة بين المرشح الأصلي والمرجع المقترح واضحة دون خلط مع Legacy Master؟"
+      ],
+      "decision_options": [
+        "ACCEPT",
+        "REVISE_WORDING",
+        "REVISE_CONTEXT",
+        "REVISE_SCOPE",
+        "REJECT"
+      ]
+    },
+    {
+      "test_item_id": "B03-TEST-02",
+      "candidate_id": "FP-CAND-011",
+      "proposed_framework_reference_id": "FR-B03-SHOP-009-OP001",
+      "domain": "التسوق وإدارة المشتريات",
+      "title": "تجهيز أكياس التسوق للخروج",
+      "status": "READY_FOR_REVIEW_NOT_MATERIALIZED",
+      "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+      "source_evidence_ids": [
+        "SHOP-004-OP002"
+      ],
+      "source_titles": [
+        "حمل الأكياس الفارغة إلى السيارة"
+      ],
+      "participation_text": {
+        "life_context": "الذهاب إلى السوبرماركت",
+        "functional_intent": "جعل أكياس التسوق اللازمة متاحة للرحلة",
+        "observable_effect": "تكون الأكياس المطلوبة موجودة في السيارة/مع الأسرة",
+        "natural_completion": "عندما تصبح الأكياس جاهزة قبل الانطلاق",
+        "standalone_role_meaning": "تجهيز أكياس التسوق للخروج دور له معنى داخل الذهاب إلى السوبرماركت، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+        "participation_mode": "individual",
+        "complexity_level": "simple",
+        "complexity_rationale": "بنية الدور صنفت simple اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=0, C2=0, C3=0, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات.",
+        "execution_blocks": [
+          {
+            "order": 1,
+            "text": "حمل الأكياس الفارغة إلى السيارة"
+          }
+        ]
+      },
+      "reviewer_focus": [
+        "هل يقرأ النص كفرصة مشاركة أسرية وليس كهدف تدريب؟",
+        "هل سياق الحياة واضح ومحدد دون شرح خارجي؟",
+        "هل الدور الجزئي له أثر مفهوم حتى إذا أكمل آخرون بقية النشاط؟",
+        "هل نقطة الاكتمال الطبيعية ظاهرة دون قياس أداء؟",
+        "هل تخلو الصياغة من العلاج والجاهزية والإتقان والاستقلالية والقدرة والتشخيص؟",
+        "هل نطاق الدور مناسب للمشاركة الأسرية وليس مهمة فردية كاملة؟",
+        "هل العلاقة بين المرشح الأصلي والمرجع المقترح واضحة دون خلط مع Legacy Master؟"
+      ],
+      "decision_options": [
+        "ACCEPT",
+        "REVISE_WORDING",
+        "REVISE_CONTEXT",
+        "REVISE_SCOPE",
+        "REJECT"
+      ]
+    },
+    {
+      "test_item_id": "B03-TEST-03",
+      "candidate_id": "FP-CAND-018",
+      "proposed_framework_reference_id": "FR-B03-HOME-018-OP001",
+      "domain": "إدارة المنزل",
+      "title": "إعادة الكتب إلى الرفوف",
+      "status": "READY_FOR_REVIEW_NOT_MATERIALIZED",
+      "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+      "source_evidence_ids": [
+        "HOME-007-OP001",
+        "HOME-007-OP003"
+      ],
+      "source_titles": [
+        "جمع الكتب المتناثرة.",
+        "إعادة الكتب وتصفيفها بشكل عمودي."
+      ],
+      "participation_text": {
+        "life_context": "ترتيب الكتب والرفوف",
+        "functional_intent": "إعادة الكتب المستخدمة إلى تنظيم يجعل الرف قابلًا للاستخدام",
+        "observable_effect": "تكون الكتب المستهدفة عائدة إلى الرفوف وفق التنظيم المستخدم في المنزل",
+        "natural_completion": "عندما تعود الكتب المستهدفة إلى أماكنها",
+        "standalone_role_meaning": "إعادة الكتب إلى الرفوف دور له معنى داخل ترتيب الكتب والرفوف، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+        "participation_mode": "individual",
+        "complexity_level": "simple",
+        "complexity_rationale": "بنية الدور صنفت simple اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=0, C2=0, C3=0, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات.",
+        "execution_blocks": [
+          {
+            "order": 1,
+            "text": "جمع الكتب المتناثرة"
+          },
+          {
+            "order": 2,
+            "text": "إعادة الكتب وتصفيفها بشكل عمودي"
+          }
+        ]
+      },
+      "reviewer_focus": [
+        "هل يقرأ النص كفرصة مشاركة أسرية وليس كهدف تدريب؟",
+        "هل سياق الحياة واضح ومحدد دون شرح خارجي؟",
+        "هل الدور الجزئي له أثر مفهوم حتى إذا أكمل آخرون بقية النشاط؟",
+        "هل نقطة الاكتمال الطبيعية ظاهرة دون قياس أداء؟",
+        "هل تخلو الصياغة من العلاج والجاهزية والإتقان والاستقلالية والقدرة والتشخيص؟",
+        "هل نطاق الدور مناسب للمشاركة الأسرية وليس مهمة فردية كاملة؟",
+        "هل العلاقة بين المرشح الأصلي والمرجع المقترح واضحة دون خلط مع Legacy Master؟"
+      ],
+      "decision_options": [
+        "ACCEPT",
+        "REVISE_WORDING",
+        "REVISE_CONTEXT",
+        "REVISE_SCOPE",
+        "REJECT"
+      ]
+    },
+    {
+      "test_item_id": "B03-TEST-04",
+      "candidate_id": "FP-CAND-020",
+      "proposed_framework_reference_id": "FR-B03-COMM-002-OP001",
+      "domain": "الأنشطة والمشاركة المجتمعية",
+      "title": "تجهيز أغراض النزهة العائلية",
+      "status": "READY_FOR_REVIEW_NOT_MATERIALIZED",
+      "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+      "source_evidence_ids": [
+        "COMM-002-OP001",
+        "COMM-002-OP004"
+      ],
+      "source_titles": [
+        "تجهيز أغراض النزهة",
+        "جمع الأغراض والمخلفات قبل المغادرة"
+      ],
+      "participation_text": {
+        "life_context": "الذهاب في نزهة عائلية إلى الحديقة",
+        "functional_intent": "المساهمة في جعل أغراض النزهة المطلوبة جاهزة للاستخدام والعودة",
+        "observable_effect": "تكون الأغراض المطلوبة مجهزة ثم مجمعة عند انتهاء النزهة",
+        "natural_completion": "عندما توضع أغراض النزهة المتفق عليها في الحقيبة أو السيارة.",
+        "standalone_role_meaning": "تجهيز أغراض النزهة العائلية دور له معنى داخل الذهاب في نزهة عائلية إلى الحديقة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+        "participation_mode": "shared",
+        "complexity_level": "moderate",
+        "complexity_rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات.",
+        "execution_blocks": [
+          {
+            "order": 1,
+            "text": "تجهيز أغراض النزهة"
+          },
+          {
+            "order": 2,
+            "text": "جمع الأغراض والمخلفات قبل المغادرة"
+          }
+        ]
+      },
+      "reviewer_focus": [
+        "هل يقرأ النص كفرصة مشاركة أسرية وليس كهدف تدريب؟",
+        "هل سياق الحياة واضح ومحدد دون شرح خارجي؟",
+        "هل الدور الجزئي له أثر مفهوم حتى إذا أكمل آخرون بقية النشاط؟",
+        "هل نقطة الاكتمال الطبيعية ظاهرة دون قياس أداء؟",
+        "هل تخلو الصياغة من العلاج والجاهزية والإتقان والاستقلالية والقدرة والتشخيص؟",
+        "هل نطاق الدور مناسب للمشاركة الأسرية وليس مهمة فردية كاملة؟",
+        "هل العلاقة بين المرشح الأصلي والمرجع المقترح واضحة دون خلط مع Legacy Master؟"
+      ],
+      "decision_options": [
+        "ACCEPT",
+        "REVISE_WORDING",
+        "REVISE_CONTEXT",
+        "REVISE_SCOPE",
+        "REJECT"
+      ]
+    },
+    {
+      "test_item_id": "B03-TEST-05",
+      "candidate_id": "FP-WAVE-A-001",
+      "proposed_framework_reference_id": "FR-B03-HEALTH-001-OP001",
+      "domain": "الصحة والمواعيد",
+      "title": "البحث عن رقم العيادة",
+      "status": "READY_FOR_REVIEW_NOT_MATERIALIZED",
+      "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+      "source_evidence_ids": [
+        "HEALTH-001-OP001"
+      ],
+      "source_titles": [
+        "البحث عن رقم العيادة"
+      ],
+      "participation_text": {
+        "life_context": "أثناء حجز موعد طبي، الاتصال بالعيادة أو التطبيق لتحديد موعد زيارة طبية.",
+        "functional_intent": "ليكون له دور في تجهيز موعد يخصه أو يخص أحد أفراد أسرته.",
+        "observable_effect": "يصبح أثر الدور واضحًا في الموقف: البحث عن رقم العيادة ضمن حجز موعد طبي.",
+        "natural_completion": "ينتهي الدور عندما يكتمل البحث عن رقم العيادة داخل الموقف.",
+        "standalone_role_meaning": "البحث عن رقم العيادة دور له معنى داخل حجز موعد طبي، لأنه يغيّر حالة محددة في الموقف حتى إذا تولى آخرون بقية النشاط.",
+        "participation_mode": "shared",
+        "complexity_level": "moderate",
+        "complexity_rationale": "بنية الدور صنفت moderate اعتمادًا على عناصر الدور وتنسيقه وتغيره وخياراته فقط: role_scope=moderate, organization=advanced, variation=moderate.",
+        "execution_blocks": [
+          {
+            "order": 1,
+            "text": "فتح المصدر"
+          },
+          {
+            "order": 2,
+            "text": "البحث عن اسم العيادة"
+          },
+          {
+            "order": 3,
+            "text": "إيجاد الرقم"
+          }
+        ]
+      },
+      "reviewer_focus": [
+        "هل يقرأ النص كفرصة مشاركة أسرية وليس كهدف تدريب؟",
+        "هل سياق الحياة واضح ومحدد دون شرح خارجي؟",
+        "هل الدور الجزئي له أثر مفهوم حتى إذا أكمل آخرون بقية النشاط؟",
+        "هل نقطة الاكتمال الطبيعية ظاهرة دون قياس أداء؟",
+        "هل تخلو الصياغة من العلاج والجاهزية والإتقان والاستقلالية والقدرة والتشخيص؟",
+        "هل نطاق الدور مناسب للمشاركة الأسرية وليس مهمة فردية كاملة؟",
+        "هل العلاقة بين المرشح الأصلي والمرجع المقترح واضحة دون خلط مع Legacy Master؟"
+      ],
+      "decision_options": [
+        "ACCEPT",
+        "REVISE_WORDING",
+        "REVISE_CONTEXT",
+        "REVISE_SCOPE",
+        "REJECT"
+      ]
+    },
+    {
+      "test_item_id": "B03-TEST-06",
+      "candidate_id": "FP-WAVE-A-005",
+      "proposed_framework_reference_id": "FR-B03-CLO-011-OP001",
+      "domain": "الملابس والعناية بها",
+      "title": "فرز الملابس المتسخة قبل الغسيل",
+      "status": "READY_FOR_REVIEW_NOT_MATERIALIZED",
+      "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+      "source_evidence_ids": [
+        "CLO-011-OP001"
+      ],
+      "source_titles": [
+        "فرز الملابس المتسخة قبل الغسيل"
+      ],
+      "participation_text": {
+        "life_context": "أثناء جمع الملابس قبل الغسيل، تفصل الأسرة الملابس المتسخة إلى مجموعات واضحة قبل تشغيل الغسالة.",
+        "functional_intent": "للمساهمة في تجهيز الغسيل قبل بدء الغسالة عبر فصل الملابس إلى مجموعات واضحة.",
+        "observable_effect": "تصبح الملابس المتسخة مفصولة إلى مجموعات واضحة قبل الغسيل.",
+        "natural_completion": "ينتهي الدور عندما توضع كل مجموعة ملابس في مكانها المحدد قبل تشغيل الغسالة.",
+        "standalone_role_meaning": "فرز الملابس المتسخة قبل الغسيل دور له معنى داخل جمع الملابس للغسيل، لأنه يجهز المجموعات التي ستدخل الغسالة حتى إذا تولى آخرون تشغيلها.",
+        "participation_mode": "individual",
+        "complexity_level": "moderate",
+        "complexity_rationale": "بنية الدور صنفت moderate اعتمادًا على عناصر الدور وتنسيقه وتغيره وخياراته فقط: role_scope=moderate, organization=advanced, variation=moderate.",
+        "execution_blocks": [
+          {
+            "order": 1,
+            "text": "فصل الملابس الفاتحة عن الداكنة"
+          },
+          {
+            "order": 2,
+            "text": "فصل الأقمشة الحساسة"
+          },
+          {
+            "order": 3,
+            "text": "تجميع كل مجموعة معًا"
+          }
+        ]
+      },
+      "reviewer_focus": [
+        "هل يقرأ النص كفرصة مشاركة أسرية وليس كهدف تدريب؟",
+        "هل سياق الحياة واضح ومحدد دون شرح خارجي؟",
+        "هل الدور الجزئي له أثر مفهوم حتى إذا أكمل آخرون بقية النشاط؟",
+        "هل نقطة الاكتمال الطبيعية ظاهرة دون قياس أداء؟",
+        "هل تخلو الصياغة من العلاج والجاهزية والإتقان والاستقلالية والقدرة والتشخيص؟",
+        "هل نطاق الدور مناسب للمشاركة الأسرية وليس مهمة فردية كاملة؟",
+        "هل العلاقة بين المرشح الأصلي والمرجع المقترح واضحة دون خلط مع Legacy Master؟"
+      ],
+      "decision_options": [
+        "ACCEPT",
+        "REVISE_WORDING",
+        "REVISE_CONTEXT",
+        "REVISE_SCOPE",
+        "REJECT"
+      ]
+    }
+  ]
+}
