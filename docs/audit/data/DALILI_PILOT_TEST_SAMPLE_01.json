@@ -1,0 +1,856 @@
+{
+  "artifact": "DALILI_PILOT_TEST_SAMPLE_01",
+  "status": "READY_FOR_PILOT_REVIEW",
+  "created_from": [
+    "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+    "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01"
+  ],
+  "sample_policy": "Two candidates per current domain, prioritizing controlled-expansion coverage for Health and Clothing while keeping the pilot small enough for desk and single-expert review.",
+  "review_scope": {
+    "total_candidates": 12,
+    "domains": 6,
+    "review_mode": "desk_review_then_single_expert_review",
+    "excludes": "No child testing, no performance scoring, no therapy/training/readiness/independence assessment."
+  },
+  "acceptance_questions": [
+    "Does the item read as a family participation opportunity?",
+    "Is the life context concrete and understandable without external explanation?",
+    "Is the functional role meaningful even if others complete the rest of the event?",
+    "Is the natural completion point visible in the situation?",
+    "Is the wording free from training, therapy, readiness, independence, mastery, score, or performance framing?"
+  ],
+  "candidates": [
+    {
+      "candidate_id": "FP-WAVE-A-011",
+      "id": "FP-WAVE-A-011",
+      "title": "ترتيب الحوافظ في حقيبة السفر",
+      "life_context": "أثناء تجهيز وجبة سفر، تحضير طعام في حافظة للنزهات أو الرحلات.",
+      "functional_intent": "ليكمل التجهيز للرحلة بلمسته الأخيرة قبل الانطلاق.",
+      "observable_effect": "يصبح أثر الدور واضحًا في الموقف: ترتيب الحوافظ في حقيبة السفر ضمن تجهيز وجبة سفر.",
+      "natural_completion": "ينتهي الدور عندما يكتمل ترتيب الحوافظ في حقيبة السفر داخل الموقف.",
+      "standalone_role_meaning": "ترتيب الحوافظ في حقيبة السفر دور له معنى داخل تجهيز وجبة سفر، لأنه يغيّر حالة محددة في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "individual",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور: ترتيب الحوافظ في حقيبة السفر.",
+          "c2_coordination": "يرتبط بتسلسل الحدث أو ترتيب الأسرة قبل الانتقال لما بعده.",
+          "c3_variability": "الموقف ثابت غالبًا ويتكرر بصورة قريبة.",
+          "c4_choice_uncertainty": "الاختيارات قليلة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على عناصر الدور وتنسيقه وتغيره وخياراته فقط: role_scope=moderate, organization=moderate, variation=simple."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-WAVE-A-011-B1",
+          "order": 1,
+          "text": "وضع الحوافظ في الحقيبة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-WAVE-A-011-B2",
+          "order": 2,
+          "text": "ترتيبها بجانب بعضها"
+        }
+      ],
+      "event_id": "FOOD-007",
+      "domain": "إعداد الطعام والوجبات",
+      "source_evidence_ids": [
+        "FOOD-007-OP004"
+      ],
+      "source_titles": [
+        "ترتيب الحوافظ في حقيبة السفر"
+      ],
+      "original_legacy_dimensions": {
+        "role_scope": "moderate",
+        "organization_demand": "moderate",
+        "variation_demand": "simple"
+      },
+      "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+      "canonical_validation_status": "CANONICAL_VALIDATION_PASS"
+    },
+    {
+      "candidate_id": "FP-CAND-001",
+      "id": "FP-CAND-001",
+      "title": "تجهيز مائدة الإفطار",
+      "life_context": "تجهيز مائدة الإفطار للأسرة",
+      "functional_intent": "جعل أدوات التقديم اللازمة للإفطار جاهزة لاستخدام الأسرة",
+      "observable_effect": "تكون أدوات المائدة/التقديم المطلوبة جاهزة في مكان الإفطار",
+      "natural_completion": "عندما تصبح الأدوات المطلوبة جاهزة للاستخدام",
+      "standalone_role_meaning": "تجهيز مائدة الإفطار دور له معنى داخل تجهيز مائدة الإفطار للأسرة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "simple",
+        "dimensions": {
+          "c1_elements": "عناصر قليلة ومباشرة داخل الدور: تجهيز مائدة الإفطار.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "الموقف ثابت غالبًا ويتكرر بصورة مألوفة.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت simple اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=0, C2=1, C3=0, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-001-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: تجهيز مائدة الإفطار للأسرة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-001-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـتحضير الأطباق والأكواب"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-001-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـتحضير المشروبات المرافقة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-001-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تكون أدوات المائدة/التقديم المطلوبة جاهزة في مكان الإفطار"
+        }
+      ],
+      "event_id": "FOOD-001",
+      "source_evidence_ids": [
+        "FOOD-001-OP002",
+        "FOOD-001-OP004"
+      ],
+      "source_titles": [
+        "تحضير الأطباق والأكواب",
+        "تحضير المشروبات المرافقة"
+      ],
+      "domain": "إعداد الطعام والوجبات",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+      "canonical_validation_status": "PRODUCTION_CONTRACT_COMPLETE_CANONICAL_PASS"
+    },
+    {
+      "candidate_id": "FP-WAVE-A-010",
+      "id": "FP-WAVE-A-010",
+      "title": "فحص سلامة العبوات من الانبعاج أو التلف",
+      "life_context": "أثناء شراء المواد المعلبة والجافة، اختيار وشراء الأرز والمعكرونة والمعلبات والبقوليات.",
+      "functional_intent": "ليساهم في التأكد من جودة ما تشتريه الأسرة.",
+      "observable_effect": "يصبح أثر الدور واضحًا في الموقف: فحص سلامة العبوات من الانبعاج أو التلف ضمن شراء المواد المعلبة والجافة.",
+      "natural_completion": "ينتهي الدور عندما يكتمل فحص سلامة العبوات من الانبعاج أو التلف داخل الموقف.",
+      "standalone_role_meaning": "فحص سلامة العبوات من الانبعاج أو التلف دور له معنى داخل شراء المواد المعلبة والجافة، لأنه يغيّر حالة محددة في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "individual",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور: فحص سلامة العبوات من الانبعاج أو التلف.",
+          "c2_coordination": "يتطلب تنسيقًا واضحًا بين ترتيب الحدث ومتطلبات الأسرة أو الجهة الخارجية.",
+          "c3_variability": "قد تختلف التفاصيل أو العناصر أو المكان ضمن حدود مألوفة.",
+          "c4_choice_uncertainty": "يوجد اختيار محدود بين بدائل واضحة."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على عناصر الدور وتنسيقه وتغيره وخياراته فقط: role_scope=moderate, organization=advanced, variation=moderate."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-WAVE-A-010-B1",
+          "order": 1,
+          "text": "حمل العبوة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-WAVE-A-010-B2",
+          "order": 2,
+          "text": "فحصها"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-WAVE-A-010-B3",
+          "order": 3,
+          "text": "اختيار السليمة"
+        }
+      ],
+      "event_id": "SHOP-009",
+      "domain": "التسوق وإدارة المشتريات",
+      "source_evidence_ids": [
+        "SHOP-009-OP002"
+      ],
+      "source_titles": [
+        "فحص سلامة العبوات من الانبعاج أو التلف"
+      ],
+      "original_legacy_dimensions": {
+        "role_scope": "moderate",
+        "organization_demand": "advanced",
+        "variation_demand": "moderate"
+      },
+      "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+      "canonical_validation_status": "CANONICAL_VALIDATION_PASS"
+    },
+    {
+      "candidate_id": "FP-CAND-011",
+      "id": "FP-CAND-011",
+      "title": "تجهيز أكياس التسوق للخروج",
+      "life_context": "الذهاب إلى السوبرماركت",
+      "functional_intent": "جعل أكياس التسوق اللازمة متاحة للرحلة",
+      "observable_effect": "تكون الأكياس المطلوبة موجودة في السيارة/مع الأسرة",
+      "natural_completion": "عندما تصبح الأكياس جاهزة قبل الانطلاق",
+      "standalone_role_meaning": "تجهيز أكياس التسوق للخروج دور له معنى داخل الذهاب إلى السوبرماركت، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "individual",
+      "complexity": {
+        "level": "simple",
+        "dimensions": {
+          "c1_elements": "عناصر قليلة ومباشرة داخل الدور: تجهيز أكياس التسوق للخروج.",
+          "c2_coordination": "تسلسل مباشر لا يحتاج ربطًا ملحوظًا مع أدوار أخرى.",
+          "c3_variability": "الموقف ثابت غالبًا ويتكرر بصورة مألوفة.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت simple اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=0, C2=0, C3=0, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-011-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: الذهاب إلى السوبرماركت"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-011-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـحمل الأكياس الفارغة إلى السيارة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-011-B3",
+          "order": 3,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تكون الأكياس المطلوبة موجودة في السيارة/مع الأسرة"
+        }
+      ],
+      "event_id": "SHOP-004",
+      "source_evidence_ids": [
+        "SHOP-004-OP002"
+      ],
+      "source_titles": [
+        "حمل الأكياس الفارغة إلى السيارة"
+      ],
+      "domain": "التسوق وإدارة المشتريات",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+      "canonical_validation_status": "PRODUCTION_CONTRACT_COMPLETE_CANONICAL_PASS"
+    },
+    {
+      "candidate_id": "FP-WAVE-A-009",
+      "id": "FP-WAVE-A-009",
+      "title": "إخراج العلب من الخزانة ومسح الأرفف",
+      "life_context": "أثناء ترتيب خزانة المؤن والبهارات، ترتيب علب البهارات والمؤن وإزالة الفارغة منها.",
+      "functional_intent": "ليشارك في مهمة تنظيم بسيطة تحافظ على مطبخ مرتب.",
+      "observable_effect": "يصبح أثر الدور واضحًا في الموقف: إخراج العلب من الخزانة ومسح الأرفف ضمن ترتيب خزانة المؤن والبهارات.",
+      "natural_completion": "ينتهي الدور عندما يكتمل إخراج العلب من الخزانة ومسح الأرفف داخل الموقف.",
+      "standalone_role_meaning": "إخراج العلب من الخزانة ومسح الأرفف دور له معنى داخل ترتيب خزانة المؤن والبهارات، لأنه يغيّر حالة محددة في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "individual",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عنصر أو فعل واحد مباشر داخل الدور: إخراج العلب من الخزانة ومسح الأرفف.",
+          "c2_coordination": "يرتبط بتسلسل الحدث أو ترتيب الأسرة قبل الانتقال لما بعده.",
+          "c3_variability": "قد تختلف التفاصيل أو العناصر أو المكان ضمن حدود مألوفة.",
+          "c4_choice_uncertainty": "يوجد اختيار محدود بين بدائل واضحة."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على عناصر الدور وتنسيقه وتغيره وخياراته فقط: role_scope=simple, organization=moderate, variation=moderate."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-WAVE-A-009-B1",
+          "order": 1,
+          "text": "إخراج العلب"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-WAVE-A-009-B2",
+          "order": 2,
+          "text": "مسح الرف بقطعة قماش"
+        }
+      ],
+      "event_id": "HOME-052",
+      "domain": "إدارة المنزل",
+      "source_evidence_ids": [
+        "HOME-052-OP001"
+      ],
+      "source_titles": [
+        "إخراج العلب من الخزانة ومسح الأرفف"
+      ],
+      "original_legacy_dimensions": {
+        "role_scope": "simple",
+        "organization_demand": "moderate",
+        "variation_demand": "moderate"
+      },
+      "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+      "canonical_validation_status": "CANONICAL_VALIDATION_PASS"
+    },
+    {
+      "candidate_id": "FP-CAND-018",
+      "id": "FP-CAND-018",
+      "title": "إعادة الكتب إلى الرفوف",
+      "life_context": "ترتيب الكتب والرفوف",
+      "functional_intent": "إعادة الكتب المستخدمة إلى تنظيم يجعل الرف قابلًا للاستخدام",
+      "observable_effect": "تكون الكتب المستهدفة عائدة إلى الرفوف وفق التنظيم المستخدم في المنزل",
+      "natural_completion": "عندما تعود الكتب المستهدفة إلى أماكنها",
+      "standalone_role_meaning": "إعادة الكتب إلى الرفوف دور له معنى داخل ترتيب الكتب والرفوف، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "individual",
+      "complexity": {
+        "level": "simple",
+        "dimensions": {
+          "c1_elements": "عناصر قليلة ومباشرة داخل الدور: إعادة الكتب إلى الرفوف.",
+          "c2_coordination": "تسلسل مباشر لا يحتاج ربطًا ملحوظًا مع أدوار أخرى.",
+          "c3_variability": "الموقف ثابت غالبًا ويتكرر بصورة مألوفة.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت simple اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=0, C2=0, C3=0, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-018-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: ترتيب الكتب والرفوف"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-018-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـجمع الكتب المتناثرة."
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-018-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـإعادة الكتب وتصفيفها بشكل عمودي."
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-018-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تكون الكتب المستهدفة عائدة إلى الرفوف وفق التنظيم المستخدم في المنزل"
+        }
+      ],
+      "event_id": "HOME-007",
+      "source_evidence_ids": [
+        "HOME-007-OP001",
+        "HOME-007-OP003"
+      ],
+      "source_titles": [
+        "جمع الكتب المتناثرة.",
+        "إعادة الكتب وتصفيفها بشكل عمودي."
+      ],
+      "domain": "إدارة المنزل",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+      "canonical_validation_status": "PRODUCTION_CONTRACT_COMPLETE_CANONICAL_PASS"
+    },
+    {
+      "candidate_id": "FP-WAVE-A-012",
+      "id": "FP-WAVE-A-012",
+      "title": "تعبئة بيانات العنوان على الطرد",
+      "life_context": "أثناء إرسال طرد أو بريد من مكتب بريد، تسليم طرد أو ظرف لموظف البريد لإرساله إلى عنوان آخر.",
+      "functional_intent": "المشاركة في تعبئة بيانات العنوان على الطرد تمنحه دورًا في تجهيز مهمة إرسال حقيقية تخص الأسرة.",
+      "observable_effect": "يصبح أثر الدور واضحًا في الموقف: تعبئة بيانات العنوان على الطرد ضمن إرسال طرد أو بريد من مكتب بريد.",
+      "natural_completion": "ينتهي الدور عندما يكتمل تعبئة بيانات العنوان على الطرد داخل الموقف.",
+      "standalone_role_meaning": "تعبئة بيانات العنوان على الطرد دور له معنى داخل إرسال طرد أو بريد من مكتب بريد، لأنه يغيّر حالة محددة في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور: تعبئة بيانات العنوان على الطرد.",
+          "c2_coordination": "يتبع تسلسلًا مباشرًا داخل الموقف دون تنسيق واسع.",
+          "c3_variability": "تتغير تفاصيل الموقف والبدائل بصورة واضحة من مرة لأخرى.",
+          "c4_choice_uncertainty": "يوجد قرار مفتوح أو عدم يقين يحتاج حسمًا داخل الدور."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على عناصر الدور وتنسيقه وتغيره وخياراته فقط: role_scope=moderate, organization=simple, variation=advanced."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-WAVE-A-012-B1",
+          "order": 1,
+          "text": "نسخ أو نقل بيانات العنوان على الطرد مع الأسرة أو ضمن الدور"
+        }
+      ],
+      "event_id": "COMM-025",
+      "domain": "الأنشطة والمشاركة المجتمعية",
+      "source_evidence_ids": [
+        "COMM-025-OP001"
+      ],
+      "source_titles": [
+        "تعبئة بيانات العنوان على الطرد"
+      ],
+      "original_legacy_dimensions": {
+        "role_scope": "moderate",
+        "organization_demand": "simple",
+        "variation_demand": "advanced"
+      },
+      "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+      "canonical_validation_status": "CANONICAL_VALIDATION_PASS"
+    },
+    {
+      "candidate_id": "FP-CAND-020",
+      "id": "FP-CAND-020",
+      "title": "تجهيز أغراض النزهة العائلية",
+      "life_context": "الذهاب في نزهة عائلية إلى الحديقة",
+      "functional_intent": "المساهمة في جعل أغراض النزهة المطلوبة جاهزة للاستخدام والعودة",
+      "observable_effect": "تكون الأغراض المطلوبة مجهزة ثم مجمعة عند انتهاء النزهة",
+      "natural_completion": "عندما تكتمل مسؤولية التجهيز/الجمع المتفق عليها",
+      "standalone_role_meaning": "تجهيز أغراض النزهة العائلية دور له معنى داخل الذهاب في نزهة عائلية إلى الحديقة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: تجهيز أغراض النزهة العائلية.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=1, C2=1, C3=1, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-020-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: الذهاب في نزهة عائلية إلى الحديقة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-020-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـتجهيز أغراض النزهة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-020-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـجمع الأغراض والمخلفات قبل المغادرة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-020-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تكون الأغراض المطلوبة مجهزة ثم مجمعة عند انتهاء النزهة"
+        }
+      ],
+      "event_id": "COMM-002",
+      "source_evidence_ids": [
+        "COMM-002-OP001",
+        "COMM-002-OP004"
+      ],
+      "source_titles": [
+        "تجهيز أغراض النزهة",
+        "جمع الأغراض والمخلفات قبل المغادرة"
+      ],
+      "domain": "الأنشطة والمشاركة المجتمعية",
+      "confidence": "HIGH",
+      "easy_beginning_suitability": "EASY",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+      "canonical_validation_status": "PRODUCTION_CONTRACT_COMPLETE_CANONICAL_PASS"
+    },
+    {
+      "candidate_id": "FP-WAVE-A-001",
+      "id": "FP-WAVE-A-001",
+      "title": "البحث عن رقم العيادة",
+      "life_context": "أثناء حجز موعد طبي، الاتصال بالعيادة أو التطبيق لتحديد موعد زيارة طبية.",
+      "functional_intent": "ليكون له دور في تجهيز موعد يخصه أو يخص أحد أفراد أسرته.",
+      "observable_effect": "يصبح أثر الدور واضحًا في الموقف: البحث عن رقم العيادة ضمن حجز موعد طبي.",
+      "natural_completion": "ينتهي الدور عندما يكتمل البحث عن رقم العيادة داخل الموقف.",
+      "standalone_role_meaning": "البحث عن رقم العيادة دور له معنى داخل حجز موعد طبي، لأنه يغيّر حالة محددة في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور: البحث عن رقم العيادة.",
+          "c2_coordination": "يتطلب تنسيقًا واضحًا بين ترتيب الحدث ومتطلبات الأسرة أو الجهة الخارجية.",
+          "c3_variability": "قد تختلف التفاصيل أو العناصر أو المكان ضمن حدود مألوفة.",
+          "c4_choice_uncertainty": "يوجد اختيار محدود بين بدائل واضحة."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على عناصر الدور وتنسيقه وتغيره وخياراته فقط: role_scope=moderate, organization=advanced, variation=moderate."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-WAVE-A-001-B1",
+          "order": 1,
+          "text": "فتح المصدر"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-WAVE-A-001-B2",
+          "order": 2,
+          "text": "البحث عن اسم العيادة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-WAVE-A-001-B3",
+          "order": 3,
+          "text": "إيجاد الرقم"
+        }
+      ],
+      "event_id": "HEALTH-001",
+      "domain": "الصحة والمواعيد",
+      "source_evidence_ids": [
+        "HEALTH-001-OP001"
+      ],
+      "source_titles": [
+        "البحث عن رقم العيادة"
+      ],
+      "original_legacy_dimensions": {
+        "role_scope": "moderate",
+        "organization_demand": "advanced",
+        "variation_demand": "moderate"
+      },
+      "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+      "canonical_validation_status": "CANONICAL_VALIDATION_PASS"
+    },
+    {
+      "candidate_id": "FP-CAND-025",
+      "id": "FP-CAND-025",
+      "title": "تجهيز الأغراض الشخصية للموعد",
+      "life_context": "الاستعداد للموعد الطبي",
+      "functional_intent": "جعل الأغراض الشخصية المطلوبة للخروج إلى الموعد جاهزة",
+      "observable_effect": "تكون الحقيبة/الأغراض المتفق عليها جاهزة للخروج",
+      "natural_completion": "عندما تصبح الأغراض المطلوبة جاهزة",
+      "standalone_role_meaning": "تجهيز الأغراض الشخصية للموعد دور له معنى داخل الاستعداد للموعد الطبي، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "shared",
+      "complexity": {
+        "level": "simple",
+        "dimensions": {
+          "c1_elements": "عناصر قليلة ومباشرة داخل الدور: تجهيز الأغراض الشخصية للموعد.",
+          "c2_coordination": "يوجد ربط بين هذا الدور وسياق الأسرة أو ترتيب الحدث.",
+          "c3_variability": "الموقف ثابت غالبًا ويتكرر بصورة مألوفة.",
+          "c4_choice_uncertainty": "الاختيارات محدودة ومحددة مسبقًا."
+        },
+        "rationale": "بنية الدور صنفت simple اعتمادًا على العناصر والتنسيق والتغير والاختيار فقط (C1=0, C2=1, C3=0, C4=0), دون أي معيار متعلق بالشخص أو الدعم أو عدد الخطوات."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-025-B1",
+          "order": 1,
+          "text": "تحديد موضع الدور داخل السياق: الاستعداد للموعد الطبي"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-025-B2",
+          "order": 2,
+          "text": "القيام بجزء عملي مرتبط بـتجهيز الحقيبة الشخصية"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-025-B3",
+          "order": 3,
+          "text": "القيام بجزء عملي مرتبط بـتجهيز زجاجة الماء"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-CAND-025-B4",
+          "order": 4,
+          "text": "تأكيد أن الأثر المطلوب تحقق: تكون الحقيبة/الأغراض المتفق عليها جاهزة للخروج"
+        }
+      ],
+      "event_id": "HEALTH-002",
+      "source_evidence_ids": [
+        "HEALTH-002-OP002",
+        "HEALTH-002-OP003"
+      ],
+      "source_titles": [
+        "تجهيز الحقيبة الشخصية",
+        "تجهيز زجاجة الماء"
+      ],
+      "domain": "الصحة والمواعيد",
+      "confidence": "MEDIUM",
+      "easy_beginning_suitability": "CAUTION",
+      "original_status": "CANDIDATE_NOT_FRAMEWORK_VALIDATED",
+      "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+      "canonical_validation_status": "PRODUCTION_CONTRACT_COMPLETE_CANONICAL_PASS"
+    },
+    {
+      "candidate_id": "FP-WAVE-A-005",
+      "id": "FP-WAVE-A-005",
+      "title": "فرز الملابس المتسخة قبل الغسيل",
+      "life_context": "أثناء فرز الملابس المتسخة قبل الغسيل، فرز الملابس المتسخة قبل الغسيل.",
+      "functional_intent": "للمشاركة في مهارة التصنيف والانتباه للتفاصيل (اللون والقماش).",
+      "observable_effect": "يصبح أثر الدور واضحًا في الموقف: فرز الملابس المتسخة قبل الغسيل ضمن فرز الملابس المتسخة قبل الغسيل.",
+      "natural_completion": "ينتهي الدور عندما يكتمل فرز الملابس المتسخة قبل الغسيل داخل الموقف.",
+      "standalone_role_meaning": "فرز الملابس المتسخة قبل الغسيل دور له معنى داخل فرز الملابس المتسخة قبل الغسيل، لأنه يغيّر حالة محددة في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "individual",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "عدة عناصر مرتبطة بالدور: فرز الملابس المتسخة قبل الغسيل.",
+          "c2_coordination": "يتطلب تنسيقًا واضحًا بين ترتيب الحدث ومتطلبات الأسرة أو الجهة الخارجية.",
+          "c3_variability": "قد تختلف التفاصيل أو العناصر أو المكان ضمن حدود مألوفة.",
+          "c4_choice_uncertainty": "يوجد اختيار محدود بين بدائل واضحة."
+        },
+        "rationale": "بنية الدور صنفت moderate اعتمادًا على عناصر الدور وتنسيقه وتغيره وخياراته فقط: role_scope=moderate, organization=advanced, variation=moderate."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-WAVE-A-005-B1",
+          "order": 1,
+          "text": "فصل الملابس الفاتحة عن الداكنة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-WAVE-A-005-B2",
+          "order": 2,
+          "text": "فصل الأقمشة الحساسة"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-WAVE-A-005-B3",
+          "order": 3,
+          "text": "تجميع كل مجموعة معًا"
+        }
+      ],
+      "event_id": "CLO-011",
+      "domain": "الملابس والعناية بها",
+      "source_evidence_ids": [
+        "CLO-011-OP001"
+      ],
+      "source_titles": [
+        "فرز الملابس المتسخة قبل الغسيل"
+      ],
+      "original_legacy_dimensions": {
+        "role_scope": "moderate",
+        "organization_demand": "advanced",
+        "variation_demand": "moderate"
+      },
+      "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+      "canonical_validation_status": "CANONICAL_VALIDATION_PASS"
+    },
+    {
+      "candidate_id": "FP-WAVE-A-007",
+      "id": "FP-WAVE-A-007",
+      "title": "ترتيب وإعادة تنظيم خزانة الملابس",
+      "life_context": "أثناء ترتيب وإعادة تنظيم خزانة الملابس، ترتيب وإعادة تنظيم خزانة الملابس.",
+      "functional_intent": "للمشاركة في مهارات التنظيم واتخاذ قرارات حول ما يُحتفظ به وما يُستبعد.",
+      "observable_effect": "يصبح أثر الدور واضحًا في الموقف: ترتيب وإعادة تنظيم خزانة الملابس ضمن ترتيب وإعادة تنظيم خزانة الملابس.",
+      "natural_completion": "ينتهي الدور عندما يكتمل ترتيب وإعادة تنظيم خزانة الملابس داخل الموقف.",
+      "standalone_role_meaning": "ترتيب وإعادة تنظيم خزانة الملابس دور له معنى داخل ترتيب وإعادة تنظيم خزانة الملابس، لأنه يغيّر حالة محددة في الموقف حتى إذا تولى آخرون بقية النشاط.",
+      "participation_mode": "individual",
+      "complexity": {
+        "level": "advanced",
+        "dimensions": {
+          "c1_elements": "عناصر متعددة ومتداخلة داخل الدور: ترتيب وإعادة تنظيم خزانة الملابس.",
+          "c2_coordination": "يتطلب تنسيقًا واضحًا بين ترتيب الحدث ومتطلبات الأسرة أو الجهة الخارجية.",
+          "c3_variability": "تتغير تفاصيل الموقف والبدائل بصورة واضحة من مرة لأخرى.",
+          "c4_choice_uncertainty": "يوجد قرار مفتوح أو عدم يقين يحتاج حسمًا داخل الدور."
+        },
+        "rationale": "بنية الدور صنفت advanced اعتمادًا على عناصر الدور وتنسيقه وتغيره وخياراته فقط: role_scope=advanced, organization=advanced, variation=advanced."
+      },
+      "execution_blocks": [
+        {
+          "kind": "execution_block",
+          "id": "FP-WAVE-A-007-B1",
+          "order": 1,
+          "text": "إخراج جميع المحتويات"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-WAVE-A-007-B2",
+          "order": 2,
+          "text": "فرزها حسب النوع أو الموسم"
+        },
+        {
+          "kind": "execution_block",
+          "id": "FP-WAVE-A-007-B3",
+          "order": 3,
+          "text": "إعادة ترتيبها في أماكنها"
+        }
+      ],
+      "event_id": "CLO-018",
+      "domain": "الملابس والعناية بها",
+      "source_evidence_ids": [
+        "CLO-018-OP001"
+      ],
+      "source_titles": [
+        "ترتيب وإعادة تنظيم خزانة الملابس"
+      ],
+      "original_legacy_dimensions": {
+        "role_scope": "advanced",
+        "organization_demand": "advanced",
+        "variation_demand": "advanced"
+      },
+      "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+      "canonical_validation_status": "CANONICAL_VALIDATION_PASS"
+    }
+  ],
+  "review_rows": [
+    {
+      "review_item_id": "PILOT-01-01",
+      "candidate_id": "FP-WAVE-A-011",
+      "domain": "إعداد الطعام والوجبات",
+      "title": "ترتيب الحوافظ في حقيبة السفر",
+      "source_evidence_ids": [
+        "FOOD-007-OP004"
+      ],
+      "complexity_level": "moderate",
+      "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+      "reviewer_decision": "",
+      "notes": ""
+    },
+    {
+      "review_item_id": "PILOT-01-02",
+      "candidate_id": "FP-CAND-001",
+      "domain": "إعداد الطعام والوجبات",
+      "title": "تجهيز مائدة الإفطار",
+      "source_evidence_ids": [
+        "FOOD-001-OP002",
+        "FOOD-001-OP004"
+      ],
+      "complexity_level": "simple",
+      "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+      "reviewer_decision": "",
+      "notes": ""
+    },
+    {
+      "review_item_id": "PILOT-01-03",
+      "candidate_id": "FP-WAVE-A-010",
+      "domain": "التسوق وإدارة المشتريات",
+      "title": "فحص سلامة العبوات من الانبعاج أو التلف",
+      "source_evidence_ids": [
+        "SHOP-009-OP002"
+      ],
+      "complexity_level": "moderate",
+      "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+      "reviewer_decision": "",
+      "notes": ""
+    },
+    {
+      "review_item_id": "PILOT-01-04",
+      "candidate_id": "FP-CAND-011",
+      "domain": "التسوق وإدارة المشتريات",
+      "title": "تجهيز أكياس التسوق للخروج",
+      "source_evidence_ids": [
+        "SHOP-004-OP002"
+      ],
+      "complexity_level": "simple",
+      "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+      "reviewer_decision": "",
+      "notes": ""
+    },
+    {
+      "review_item_id": "PILOT-01-05",
+      "candidate_id": "FP-WAVE-A-009",
+      "domain": "إدارة المنزل",
+      "title": "إخراج العلب من الخزانة ومسح الأرفف",
+      "source_evidence_ids": [
+        "HOME-052-OP001"
+      ],
+      "complexity_level": "moderate",
+      "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+      "reviewer_decision": "",
+      "notes": ""
+    },
+    {
+      "review_item_id": "PILOT-01-06",
+      "candidate_id": "FP-CAND-018",
+      "domain": "إدارة المنزل",
+      "title": "إعادة الكتب إلى الرفوف",
+      "source_evidence_ids": [
+        "HOME-007-OP001",
+        "HOME-007-OP003"
+      ],
+      "complexity_level": "simple",
+      "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+      "reviewer_decision": "",
+      "notes": ""
+    },
+    {
+      "review_item_id": "PILOT-01-07",
+      "candidate_id": "FP-WAVE-A-012",
+      "domain": "الأنشطة والمشاركة المجتمعية",
+      "title": "تعبئة بيانات العنوان على الطرد",
+      "source_evidence_ids": [
+        "COMM-025-OP001"
+      ],
+      "complexity_level": "moderate",
+      "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+      "reviewer_decision": "",
+      "notes": ""
+    },
+    {
+      "review_item_id": "PILOT-01-08",
+      "candidate_id": "FP-CAND-020",
+      "domain": "الأنشطة والمشاركة المجتمعية",
+      "title": "تجهيز أغراض النزهة العائلية",
+      "source_evidence_ids": [
+        "COMM-002-OP001",
+        "COMM-002-OP004"
+      ],
+      "complexity_level": "moderate",
+      "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+      "reviewer_decision": "",
+      "notes": ""
+    },
+    {
+      "review_item_id": "PILOT-01-09",
+      "candidate_id": "FP-WAVE-A-001",
+      "domain": "الصحة والمواعيد",
+      "title": "البحث عن رقم العيادة",
+      "source_evidence_ids": [
+        "HEALTH-001-OP001"
+      ],
+      "complexity_level": "moderate",
+      "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+      "reviewer_decision": "",
+      "notes": ""
+    },
+    {
+      "review_item_id": "PILOT-01-10",
+      "candidate_id": "FP-CAND-025",
+      "domain": "الصحة والمواعيد",
+      "title": "تجهيز الأغراض الشخصية للموعد",
+      "source_evidence_ids": [
+        "HEALTH-002-OP002",
+        "HEALTH-002-OP003"
+      ],
+      "complexity_level": "simple",
+      "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
+      "reviewer_decision": "",
+      "notes": ""
+    },
+    {
+      "review_item_id": "PILOT-01-11",
+      "candidate_id": "FP-WAVE-A-005",
+      "domain": "الملابس والعناية بها",
+      "title": "فرز الملابس المتسخة قبل الغسيل",
+      "source_evidence_ids": [
+        "CLO-011-OP001"
+      ],
+      "complexity_level": "moderate",
+      "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+      "reviewer_decision": "",
+      "notes": ""
+    },
+    {
+      "review_item_id": "PILOT-01-12",
+      "candidate_id": "FP-WAVE-A-007",
+      "domain": "الملابس والعناية بها",
+      "title": "ترتيب وإعادة تنظيم خزانة الملابس",
+      "source_evidence_ids": [
+        "CLO-018-OP001"
+      ],
+      "complexity_level": "advanced",
+      "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
+      "reviewer_decision": "",
+      "notes": ""
+    }
+  ]
+}
