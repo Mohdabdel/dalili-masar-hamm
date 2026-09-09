@@ -1,7 +1,7 @@
 test_item_id,proposed_framework_reference_id,candidate_id,domain,title,complexity_level,participation_opportunity,life_context_clear,role_meaning_clear,natural_completion_clear,forbidden_language_absent,scope_appropriate,source_lineage_clear,decision,notes
-"B03-TEST-01","FR-B03-FOOD-001-OP002","FP-CAND-001","إعداد الطعام والوجبات","تجهيز مائدة الإفطار","simple","","","","","","","","",""
-"B03-TEST-02","FR-B03-SHOP-009-OP001","FP-CAND-011","التسوق وإدارة المشتريات","تجهيز أكياس التسوق للخروج","simple","","","","","","","","",""
-"B03-TEST-03","FR-B03-HOME-018-OP001","FP-CAND-018","إدارة المنزل","إعادة الكتب إلى الرفوف","simple","","","","","","","","",""
-"B03-TEST-04","FR-B03-COMM-002-OP001","FP-CAND-020","الأنشطة والمشاركة المجتمعية","تجهيز أغراض النزهة العائلية","moderate","","","","","","","","",""
-"B03-TEST-05","FR-B03-HEALTH-001-OP001","FP-WAVE-A-001","الصحة والمواعيد","البحث عن رقم العيادة","moderate","","","","","","","","",""
-"B03-TEST-06","FR-B03-CLO-011-OP001","FP-WAVE-A-005","الملابس والعناية بها","فرز الملابس المتسخة قبل الغسيل","moderate","","","","","","","","",""
+"B03-TEST-01","FR-B03-FOOD-001-OP002","FP-CAND-001","إعداد الطعام والوجبات","تجهيز مائدة الإفطار","simple","yes","yes","yes","yes","yes","yes","yes","ACCEPT","Desk review: concrete family meal-table role; no wording defect."
+"B03-TEST-02","FR-B03-SHOP-009-OP001","FP-CAND-011","التسوق وإدارة المشتريات","تجهيز أكياس التسوق للخروج","simple","yes","yes","yes","yes","yes","yes","yes","ACCEPT","Desk review: narrow preparation role before shopping trip."
+"B03-TEST-03","FR-B03-HOME-018-OP001","FP-CAND-018","إدارة المنزل","إعادة الكتب إلى الرفوف","simple","yes","yes","yes","yes","yes","yes","yes","ACCEPT","Desk review: partial home-order role; legacy evidence remains source only."
+"B03-TEST-04","FR-B03-COMM-002-OP001","FP-CAND-020","الأنشطة والمشاركة المجتمعية","تجهيز أغراض النزهة العائلية","moderate","yes","yes","yes","yes","yes","yes","yes","ACCEPT","Desk review after narrowing to pre-outing preparation and removing departure cleanup from this reference."
+"B03-TEST-05","FR-B03-HEALTH-001-OP001","FP-WAVE-A-001","الصحة والمواعيد","البحث عن رقم العيادة","moderate","yes","yes","yes","yes","yes","yes","yes","ACCEPT","Desk review after replacing generic role wording with direct appointment-preparation effect."
+"B03-TEST-06","FR-B03-CLO-011-OP001","FP-WAVE-A-005","الملابس والعناية بها","فرز الملابس المتسخة قبل الغسيل","moderate","yes","yes","yes","yes","yes","yes","yes","ACCEPT","Desk review: functional laundry preparation role; no skill/training wording."

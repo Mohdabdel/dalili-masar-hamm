@@ -1,10 +1,17 @@
 {
   "artifact": "DALILI_MIGRATION_BATCH_03_PLAN_01",
-  "status": "PLAN_VALIDATED_NOT_MATERIALIZED",
-  "mode": "migration_plan_only",
+  "status": "MATERIALIZED_AFTER_DESK_REVIEW",
+  "mode": "controlled_materialization",
   "source_library": "DALILI_REVIEWER_FULL_LIBRARY_42_01",
   "candidate_count": 6,
   "selection_policy": "One reviewed candidate from each current domain, favoring low-risk accepted roles with clear context, effect, completion, and no reviewer rejection.",
+  "desk_review_result": {
+    "status": "PASSED",
+    "accept_count": 6,
+    "reject_count": 0,
+    "recurring_systemic_defect": false,
+    "scorecard": "DALILI_BATCH_03_TEST_SCORECARD_01"
+  },
   "hard_constraints": [
     "Legacy Master remains immutable.",
     "No production-facing migration is performed by this plan.",
@@ -28,9 +35,9 @@
         "تحضير الأطباق والأكواب",
         "تحضير المشروبات المرافقة"
       ],
-      "migration_disposition": "PLAN_ONLY",
+      "migration_disposition": "DESK_REVIEW_ACCEPT",
       "target_reference_source": "framework_reference",
-      "materialized": false,
+      "materialized": true,
       "migration_reason": "Simple family meal-table role; already accepted after execution-block wording fix.",
       "candidate_gate_result": {
         "valid": true,
@@ -106,9 +113,9 @@
       "source_titles": [
         "حمل الأكياس الفارغة إلى السيارة"
       ],
-      "migration_disposition": "PLAN_ONLY",
+      "migration_disposition": "DESK_REVIEW_ACCEPT",
       "target_reference_source": "framework_reference",
-      "materialized": false,
+      "materialized": true,
       "migration_reason": "Simple pre-shopping preparation role; reviewed as accepted after systemic wording fix.",
       "candidate_gate_result": {
         "valid": true,
@@ -178,9 +185,9 @@
         "جمع الكتب المتناثرة.",
         "إعادة الكتب وتصفيفها بشكل عمودي."
       ],
-      "migration_disposition": "PLAN_ONLY",
+      "migration_disposition": "DESK_REVIEW_ACCEPT",
       "target_reference_source": "framework_reference",
-      "materialized": false,
+      "materialized": true,
       "migration_reason": "Simple bounded home organization role with clear visual completion.",
       "candidate_gate_result": {
         "valid": true,
@@ -251,16 +258,14 @@
       "title": "تجهيز أغراض النزهة العائلية",
       "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
       "source_evidence_ids": [
-        "COMM-002-OP001",
-        "COMM-002-OP004"
+        "COMM-002-OP001"
       ],
       "source_titles": [
-        "تجهيز أغراض النزهة",
-        "جمع الأغراض والمخلفات قبل المغادرة"
+        "تجهيز أغراض النزهة"
       ],
-      "migration_disposition": "PLAN_ONLY",
+      "migration_disposition": "DESK_REVIEW_ACCEPT",
       "target_reference_source": "framework_reference",
-      "materialized": false,
+      "materialized": true,
       "migration_reason": "Shared family outing preparation role with corrected concrete completion.",
       "candidate_gate_result": {
         "valid": true,
@@ -277,9 +282,9 @@
         "id": "FR-B03-COMM-002-OP001",
         "title": "تجهيز أغراض النزهة العائلية",
         "life_context": "الذهاب في نزهة عائلية إلى الحديقة",
-        "functional_intent": "المساهمة في جعل أغراض النزهة المطلوبة جاهزة للاستخدام والعودة",
-        "observable_effect": "تكون الأغراض المطلوبة مجهزة ثم مجمعة عند انتهاء النزهة",
-        "natural_completion": "عندما توضع أغراض النزهة المتفق عليها في الحقيبة أو السيارة.",
+        "functional_intent": "جعل أغراض النزهة المطلوبة جاهزة قبل الخروج مع الأسرة",
+        "observable_effect": "تكون أغراض النزهة المتفق عليها موضوعة في الحقيبة أو السيارة قبل الانطلاق",
+        "natural_completion": "عندما توضع أغراض النزهة المتفق عليها في الحقيبة أو السيارة",
         "standalone_role_meaning": "تجهيز أغراض النزهة العائلية دور له معنى داخل الذهاب في نزهة عائلية إلى الحديقة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
         "participation_mode": "shared",
         "complexity": {
@@ -303,17 +308,15 @@
             "kind": "execution_block",
             "id": "FP-CAND-020-B2",
             "order": 2,
-            "text": "جمع الأغراض والمخلفات قبل المغادرة"
+            "text": "وضع الأغراض في الحقيبة أو السيارة"
           }
         ],
         "event_id": "COMM-002",
         "source_evidence_ids": [
-          "COMM-002-OP001",
-          "COMM-002-OP004"
+          "COMM-002-OP001"
         ],
         "source_titles": [
-          "تجهيز أغراض النزهة",
-          "جمع الأغراض والمخلفات قبل المغادرة"
+          "تجهيز أغراض النزهة"
         ],
         "domain": "الأنشطة والمشاركة المجتمعية",
         "confidence": "HIGH",
@@ -336,9 +339,9 @@
       "source_titles": [
         "البحث عن رقم العيادة"
       ],
-      "migration_disposition": "PLAN_ONLY",
+      "migration_disposition": "DESK_REVIEW_ACCEPT",
       "target_reference_source": "framework_reference",
-      "materialized": false,
+      "materialized": true,
       "migration_reason": "Health/appointment role that remains administrative and avoids therapy or diagnosis framing.",
       "candidate_gate_result": {
         "valid": true,
@@ -355,9 +358,9 @@
         "id": "FR-B03-HEALTH-001-OP001",
         "title": "البحث عن رقم العيادة",
         "life_context": "أثناء حجز موعد طبي، الاتصال بالعيادة أو التطبيق لتحديد موعد زيارة طبية.",
-        "functional_intent": "ليكون له دور في تجهيز موعد يخصه أو يخص أحد أفراد أسرته.",
-        "observable_effect": "يصبح أثر الدور واضحًا في الموقف: البحث عن رقم العيادة ضمن حجز موعد طبي.",
-        "natural_completion": "ينتهي الدور عندما يكتمل البحث عن رقم العيادة داخل الموقف.",
+        "functional_intent": "جعل رقم العيادة متاحًا للأسرة قبل إكمال حجز الموعد.",
+        "observable_effect": "يصبح رقم العيادة المطلوب ظاهرًا ويمكن استخدامه لإكمال الحجز.",
+        "natural_completion": "ينتهي الدور عندما يظهر رقم العيادة المطلوب أمام الأسرة.",
         "standalone_role_meaning": "البحث عن رقم العيادة دور له معنى داخل حجز موعد طبي، لأنه يغيّر حالة محددة في الموقف حتى إذا تولى آخرون بقية النشاط.",
         "participation_mode": "shared",
         "complexity": {
@@ -375,7 +378,7 @@
             "kind": "execution_block",
             "id": "FP-WAVE-A-001-B1",
             "order": 1,
-            "text": "فتح المصدر"
+            "text": "فتح مصدر الأرقام"
           },
           {
             "kind": "execution_block",
@@ -387,7 +390,7 @@
             "kind": "execution_block",
             "id": "FP-WAVE-A-001-B3",
             "order": 3,
-            "text": "إيجاد الرقم"
+            "text": "تحديد الرقم المطلوب"
           }
         ],
         "event_id": "HEALTH-001",
@@ -420,9 +423,9 @@
       "source_titles": [
         "فرز الملابس المتسخة قبل الغسيل"
       ],
-      "migration_disposition": "PLAN_ONLY",
+      "migration_disposition": "DESK_REVIEW_ACCEPT",
       "target_reference_source": "framework_reference",
-      "materialized": false,
+      "materialized": true,
       "migration_reason": "Clothing/laundry role cleaned of skill-language and accepted in recheck.",
       "candidate_gate_result": {
         "valid": true,

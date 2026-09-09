@@ -8,6 +8,7 @@ import {
   GOLDEN_EVENTS,
 } from "./golden-corpus";
 import { ensureBatch02Corpus, getMigrationLineage } from "./batch02-corpus";
+import { ensureBatch03Corpus, getBatch03Lineage } from "./batch03-corpus";
 import { ensureEasyBeginningCorpus } from "./easy-beginning-corpus";
 import { listFrameworkParticipations } from "./reference-registry";
 import type { FunctionalParticipation } from "./reference-model";
@@ -17,6 +18,7 @@ export function ensureFrameworkCorpora(): void {
   ensureEasyBeginningCorpus();
   ensureGoldenCorpus();
   ensureBatch02Corpus();
+  ensureBatch03Corpus();
 }
 
 /** كل المشاركات المرجعية المتاحة للاكتشاف. */
@@ -59,8 +61,14 @@ export function frameworkOnlyEvents(): Array<{
 export function legacyIdsSupersededByFramework(): Set<string> {
   const out = new Set<string>();
   for (const p of discoverableFrameworkParticipations()) {
-    const lineage = getMigrationLineage(p.id);
-    if (lineage) out.add(lineage.legacy_id);
+    const batch02Lineage = getMigrationLineage(p.id);
+    if (batch02Lineage) out.add(batch02Lineage.legacy_id);
+    const batch03Lineage = getBatch03Lineage(p.id);
+    if (batch03Lineage) {
+      for (const legacyId of batch03Lineage.source_evidence_ids) {
+        out.add(legacyId);
+      }
+    }
   }
   return out;
 }

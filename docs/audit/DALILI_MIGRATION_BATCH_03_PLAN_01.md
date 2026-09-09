@@ -2,9 +2,9 @@
 
 ## Status
 
-PLAN VALIDATED — NOT MATERIALIZED.
+MATERIALIZED AFTER DESK REVIEW.
 
-This document prepares the first controlled post-review migration batch from the corrected 42-candidate library. It does not register framework references, does not mutate the Legacy Master, and does not touch family data or approved snapshots.
+This document records the first controlled post-review migration batch from the corrected 42-candidate library. The six planned references were materialized as framework references after desk review. The materialization does not mutate the Legacy Master, family data, or approved snapshots.
 
 ## Source
 
@@ -31,7 +31,19 @@ The proposed framework records were checked through the actual `evaluateFunction
 - Candidate source records valid: 6 / 6
 - Proposed framework records valid: 6 / 6
 - Failed gates: none
-- Materialized records: 0
+- Materialized records: 6
+
+## Desk Review Result
+
+- Test protocol: `docs/audit/DALILI_BATCH_03_TEST_PROTOCOL_01.md`
+- Test sample: `docs/audit/data/DALILI_BATCH_03_TEST_SAMPLE_01.json`
+- Test scorecard: `docs/audit/data/DALILI_BATCH_03_TEST_SCORECARD_01.csv`
+- ACCEPT: 6 / 6
+- REJECT: 0 / 6
+- Recurring systemic defect: none
+- Editorial corrections before materialization:
+  - `FR-B03-COMM-002-OP001`: narrowed to pre-outing preparation and removed departure cleanup from this reference.
+  - `FR-B03-HEALTH-001-OP001`: replaced generic role wording with direct appointment-preparation effect.
 
 ## Hard Constraints
 
@@ -48,10 +60,10 @@ This batch is intentionally small. It gives one clean representative from each d
 
 ## Next Gate Before Materialization
 
-Before converting this plan into code such as `batch03-corpus.ts`, run:
+Before expanding beyond this batch, run:
 
-1. Re-read the manifest and confirm the six selected records.
-2. Re-run `evaluateFunctionalParticipation` on the proposed framework records.
-3. Add lineage tests equivalent to Batch 02.
-4. Confirm `classifyReferenceSource(id)` returns `framework_reference / true` for Batch 03 ids only after registration.
-5. Confirm legacy source ids still classify as `legacy_master / false`.
+1. Re-read the manifest and confirm no Batch 03 record changed silently.
+2. Re-run `evaluateFunctionalParticipation` on all Batch 03 records.
+3. Keep lineage tests equivalent to Batch 02.
+4. Confirm `classifyReferenceSource(id)` returns `framework_reference / true` for Batch 03 ids.
+5. Confirm visible legacy source ids still classify as `legacy_master / false`, while pending-card evidence remains source evidence only.

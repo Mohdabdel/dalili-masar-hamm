@@ -5,6 +5,7 @@ import { classifyReferenceSource } from "@/lib/framework/source-boundary";
 import { findOpportunityById } from "@/lib/knowledge-base";
 import { GOLDEN_PARTICIPATION_IDS } from "@/lib/framework/golden-corpus";
 import { BATCH02_PARTICIPATION_IDS, getMigrationLineage } from "@/lib/framework/batch02-corpus";
+import { BATCH03_PARTICIPATION_IDS, getBatch03Lineage } from "@/lib/framework/batch03-corpus";
 
 describe("discovery gate", () => {
   it("counts", () => {
@@ -38,8 +39,27 @@ describe("discovery gate", () => {
     }
     console.log("SUPERSEDED", [...legacyIdsSupersededByFramework()].join(","));
   });
+  it("batch03 6 reachable + source evidence dedup when visible", () => {
+    for (const id of BATCH03_PARTICIPATION_IDS) {
+      const spec = getSpaceSpec(id)!;
+      expect(spec, id).toBeTruthy();
+      expect(classifyReferenceSource(id)?.source).toBe("framework_reference");
+      expect(participationsForEvent(spec.eventId).some((s) => s.id === id)).toBe(true);
+      const lineage = getBatch03Lineage(id)!;
+      for (const legacyId of lineage.source_evidence_ids) {
+        expect(participationsForEvent(spec.eventId).some((s) => s.id === `KB-${legacyId}`)).toBe(false);
+        if (findOpportunityById(legacyId)) {
+          expect(getSpaceSpec(`KB-${legacyId}`)).toBeTruthy();
+          expect(classifyReferenceSource(legacyId)?.source).toBe("legacy_master");
+        }
+      }
+    }
+  });
   it("unmigrated legacy still discoverable as legacy_master", () => {
-    const ev = allSpaceEvents().find((e) => e.id.startsWith("FOOD"))!;
+    const ev = allSpaceEvents().find((event) => {
+      const specs = participationsForEvent(event.id);
+      return specs.length > 0 && specs.every((s) => s.provenance !== "framework_reference");
+    })!;
     const specs = participationsForEvent(ev.id);
     expect(specs.length).toBeGreaterThan(0);
     expect(specs.every((s) => s.provenance !== "framework_reference")).toBe(true);

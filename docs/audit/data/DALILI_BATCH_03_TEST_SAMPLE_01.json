@@ -1,9 +1,15 @@
 {
   "artifact": "DALILI_BATCH_03_TEST_SAMPLE_01",
-  "status": "READY_FOR_REVIEW_NOT_MATERIALIZED",
+  "status": "DESK_REVIEW_PASSED_USED_FOR_MATERIALIZATION",
   "purpose": "Direct reviewer test content for the six planned Batch 03 framework references before any materialization.",
   "source_plan": "DALILI_MIGRATION_BATCH_03_PLAN_01",
-  "source_plan_status": "PLAN_VALIDATED_NOT_MATERIALIZED",
+  "source_plan_status": "MATERIALIZED_AFTER_DESK_REVIEW",
+  "desk_review_result": {
+    "status": "PASSED",
+    "accept_count": 6,
+    "reject_count": 0,
+    "recurring_systemic_defect": false
+  },
   "sample_size": 6,
   "test_type": "pre_materialization_content_review",
   "pass_criteria": {
@@ -33,7 +39,7 @@
       "proposed_framework_reference_id": "FR-B03-FOOD-001-OP002",
       "domain": "إعداد الطعام والوجبات",
       "title": "تجهيز مائدة الإفطار",
-      "status": "READY_FOR_REVIEW_NOT_MATERIALIZED",
+      "status": "DESK_REVIEW_PASSED_USED_FOR_MATERIALIZATION",
       "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
       "source_evidence_ids": [
         "FOOD-001-OP002",
@@ -86,7 +92,7 @@
       "proposed_framework_reference_id": "FR-B03-SHOP-009-OP001",
       "domain": "التسوق وإدارة المشتريات",
       "title": "تجهيز أكياس التسوق للخروج",
-      "status": "READY_FOR_REVIEW_NOT_MATERIALIZED",
+      "status": "DESK_REVIEW_PASSED_USED_FOR_MATERIALIZATION",
       "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
       "source_evidence_ids": [
         "SHOP-004-OP002"
@@ -133,7 +139,7 @@
       "proposed_framework_reference_id": "FR-B03-HOME-018-OP001",
       "domain": "إدارة المنزل",
       "title": "إعادة الكتب إلى الرفوف",
-      "status": "READY_FOR_REVIEW_NOT_MATERIALIZED",
+      "status": "DESK_REVIEW_PASSED_USED_FOR_MATERIALIZATION",
       "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
       "source_evidence_ids": [
         "HOME-007-OP001",
@@ -186,21 +192,19 @@
       "proposed_framework_reference_id": "FR-B03-COMM-002-OP001",
       "domain": "الأنشطة والمشاركة المجتمعية",
       "title": "تجهيز أغراض النزهة العائلية",
-      "status": "READY_FOR_REVIEW_NOT_MATERIALIZED",
+      "status": "DESK_REVIEW_PASSED_USED_FOR_MATERIALIZATION",
       "source_artifact": "DALILI_CANDIDATE_LIBRARY_03_PRODUCTION_CONTRACT_COMPLETE",
       "source_evidence_ids": [
-        "COMM-002-OP001",
-        "COMM-002-OP004"
+        "COMM-002-OP001"
       ],
       "source_titles": [
-        "تجهيز أغراض النزهة",
-        "جمع الأغراض والمخلفات قبل المغادرة"
+        "تجهيز أغراض النزهة"
       ],
       "participation_text": {
         "life_context": "الذهاب في نزهة عائلية إلى الحديقة",
-        "functional_intent": "المساهمة في جعل أغراض النزهة المطلوبة جاهزة للاستخدام والعودة",
-        "observable_effect": "تكون الأغراض المطلوبة مجهزة ثم مجمعة عند انتهاء النزهة",
-        "natural_completion": "عندما توضع أغراض النزهة المتفق عليها في الحقيبة أو السيارة.",
+        "functional_intent": "جعل أغراض النزهة المطلوبة جاهزة قبل الخروج مع الأسرة",
+        "observable_effect": "تكون أغراض النزهة المتفق عليها موضوعة في الحقيبة أو السيارة قبل الانطلاق",
+        "natural_completion": "عندما توضع أغراض النزهة المتفق عليها في الحقيبة أو السيارة",
         "standalone_role_meaning": "تجهيز أغراض النزهة العائلية دور له معنى داخل الذهاب في نزهة عائلية إلى الحديقة، لأنه يترك أثرًا محددًا في الموقف حتى إذا تولى آخرون بقية النشاط.",
         "participation_mode": "shared",
         "complexity_level": "moderate",
@@ -212,7 +216,7 @@
           },
           {
             "order": 2,
-            "text": "جمع الأغراض والمخلفات قبل المغادرة"
+            "text": "وضع الأغراض في الحقيبة أو السيارة"
           }
         ]
       },
@@ -239,7 +243,7 @@
       "proposed_framework_reference_id": "FR-B03-HEALTH-001-OP001",
       "domain": "الصحة والمواعيد",
       "title": "البحث عن رقم العيادة",
-      "status": "READY_FOR_REVIEW_NOT_MATERIALIZED",
+      "status": "DESK_REVIEW_PASSED_USED_FOR_MATERIALIZATION",
       "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
       "source_evidence_ids": [
         "HEALTH-001-OP001"
@@ -249,9 +253,9 @@
       ],
       "participation_text": {
         "life_context": "أثناء حجز موعد طبي، الاتصال بالعيادة أو التطبيق لتحديد موعد زيارة طبية.",
-        "functional_intent": "ليكون له دور في تجهيز موعد يخصه أو يخص أحد أفراد أسرته.",
-        "observable_effect": "يصبح أثر الدور واضحًا في الموقف: البحث عن رقم العيادة ضمن حجز موعد طبي.",
-        "natural_completion": "ينتهي الدور عندما يكتمل البحث عن رقم العيادة داخل الموقف.",
+        "functional_intent": "جعل رقم العيادة متاحًا للأسرة قبل إكمال حجز الموعد.",
+        "observable_effect": "يصبح رقم العيادة المطلوب ظاهرًا ويمكن استخدامه لإكمال الحجز.",
+        "natural_completion": "ينتهي الدور عندما يظهر رقم العيادة المطلوب أمام الأسرة.",
         "standalone_role_meaning": "البحث عن رقم العيادة دور له معنى داخل حجز موعد طبي، لأنه يغيّر حالة محددة في الموقف حتى إذا تولى آخرون بقية النشاط.",
         "participation_mode": "shared",
         "complexity_level": "moderate",
@@ -259,7 +263,7 @@
         "execution_blocks": [
           {
             "order": 1,
-            "text": "فتح المصدر"
+            "text": "فتح مصدر الأرقام"
           },
           {
             "order": 2,
@@ -267,7 +271,7 @@
           },
           {
             "order": 3,
-            "text": "إيجاد الرقم"
+            "text": "تحديد الرقم المطلوب"
           }
         ]
       },
@@ -294,7 +298,7 @@
       "proposed_framework_reference_id": "FR-B03-CLO-011-OP001",
       "domain": "الملابس والعناية بها",
       "title": "فرز الملابس المتسخة قبل الغسيل",
-      "status": "READY_FOR_REVIEW_NOT_MATERIALIZED",
+      "status": "DESK_REVIEW_PASSED_USED_FOR_MATERIALIZATION",
       "source_artifact": "DALILI_CONTROLLED_EXPANSION_WAVE_A_12_CANDIDATES_01",
       "source_evidence_ids": [
         "CLO-011-OP001"

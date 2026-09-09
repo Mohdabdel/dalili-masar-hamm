@@ -2,9 +2,9 @@
 
 ## Status
 
-READY FOR REVIEW - NOT MATERIALIZED.
+DESK REVIEW PASSED - READY FOR CONTROLLED MATERIALIZATION.
 
-This packet prepares test content for the six Batch 03 planned framework references. It is a review layer only. It does not register framework references, does not mutate Legacy Master, and does not touch family data or approved snapshots.
+This packet documents the desk review content for the six Batch 03 planned framework references. It remains a review layer: it does not register framework references, does not mutate Legacy Master, and does not touch family data or approved snapshots.
 
 ## Files
 
@@ -22,6 +22,15 @@ This packet prepares test content for the six Batch 03 planned framework referen
 | B03-TEST-04 | FP-CAND-020 | FR-B03-COMM-002-OP001 | الأنشطة والمشاركة المجتمعية | تجهيز أغراض النزهة العائلية | moderate |
 | B03-TEST-05 | FP-WAVE-A-001 | FR-B03-HEALTH-001-OP001 | الصحة والمواعيد | البحث عن رقم العيادة | moderate |
 | B03-TEST-06 | FP-WAVE-A-005 | FR-B03-CLO-011-OP001 | الملابس والعناية بها | فرز الملابس المتسخة قبل الغسيل | moderate |
+
+## Desk Review Result
+
+- ACCEPT: 6 / 6
+- REJECT: 0 / 6
+- Recurring systemic defect: none
+- Limited editorial corrections before materialization:
+  - `FR-B03-COMM-002-OP001`: narrowed to pre-outing preparation and removed departure cleanup from this reference.
+  - `FR-B03-HEALTH-001-OP001`: replaced generic role wording with direct appointment-preparation effect.
 
 ## Review Questions
 
