@@ -60,3 +60,11 @@ The lab workspace was checked at `/lab/slice/workspace/:id` for the six Batch 03
 
 Result: passed. All checked pages stayed in the lab workspace, did not redirect to auth, did not display an error state, and rendered Batch 03 images with non-zero natural dimensions.
 
+## Flow Follow-Up
+
+The visual user-path review also checked the transition from workspace to preview to approved cards.
+
+- Added the missing lab preview route: `/lab/slice/preview/$specId`.
+- Verified the six Batch 03 preview pages no longer return 404.
+- Verified one approval flow from preview to `/lab/slice/card/$specId`.
+- Adjusted approved-card rendering so the terminal `__done__` frame appears as a text-only ending and does not request a missing image.

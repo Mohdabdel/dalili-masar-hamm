@@ -9,139 +9,89 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SettingsRouteImport } from './routes/settings'
-import { Route as SearchRouteImport } from './routes/search'
-import { Route as ResourcesRouteImport } from './routes/resources'
-import { Route as ReminderRouteImport } from './routes/reminder'
-import { Route as ParticipationGuideRouteImport } from './routes/participation-guide'
-import { Route as MessagesRouteImport } from './routes/messages'
-import { Route as McpRouteImport } from './routes/mcp'
-import { Route as LabRouteImport } from './routes/lab'
-import { Route as HelpMeChooseRouteImport } from './routes/help-me-choose'
-import { Route as EducationSupportRouteImport } from './routes/education-support'
-import { Route as CommunitySupportRouteImport } from './routes/community-support'
-import { Route as CalendarRouteImport } from './routes/calendar'
-import { Route as AuthRouteImport } from './routes/auth'
-import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ToolsIndexRouteImport } from './routes/tools.index'
-import { Route as LabIndexRouteImport } from './routes/lab.index'
-import { Route as ActivitiesIndexRouteImport } from './routes/activities.index'
-import { Route as ToolsProjectIdRouteImport } from './routes/tools.$projectId'
-import { Route as SettingsFamilyRouteImport } from './routes/settings.family'
-import { Route as SettingsAddEventRouteImport } from './routes/settings.add-event'
-import { Route as LearnerIdRouteImport } from './routes/learner.$id'
-import { Route as LabWeavingRouteImport } from './routes/lab.weaving'
-import { Route as LabVisualRouteImport } from './routes/lab.visual'
-import { Route as LabStationsRouteImport } from './routes/lab.stations'
-import { Route as LabStatesRouteImport } from './routes/lab.states'
-import { Route as LabStartRouteImport } from './routes/lab.start'
-import { Route as LabSliceRouteImport } from './routes/lab.slice'
-import { Route as LabRoutineRouteImport } from './routes/lab.routine'
-import { Route as LabParticipationsRouteImport } from './routes/lab.participations'
-import { Route as LabCommunityRouteImport } from './routes/lab.community'
-import { Route as LabAiRouteImport } from './routes/lab.ai'
-import { Route as ActivitiesOptionsRouteImport } from './routes/activities.options'
-import { Route as ActivitiesMyDayRouteImport } from './routes/activities.my-day'
-import { Route as ActivitiesLevelRouteImport } from './routes/activities.level'
-import { Route as ActivitiesBrowseRouteImport } from './routes/activities.browse'
-import { Route as ActivitiesCategoryRouteImport } from './routes/activities.$category'
-import { Route as AuthenticatedSpaceRouteImport } from './routes/_authenticated/space'
-import { Route as AuthenticatedMyRoutineRouteImport } from './routes/_authenticated/my-routine'
-import { Route as AuthenticatedActiveParticipationsRouteImport } from './routes/_authenticated/active-participations'
-import { Route as AuthenticatedAccountRouteImport } from './routes/_authenticated/account'
-import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as CalendarRouteImport } from './routes/calendar'
+import { Route as CommunitySupportRouteImport } from './routes/community-support'
+import { Route as EducationSupportRouteImport } from './routes/education-support'
+import { Route as HelpMeChooseRouteImport } from './routes/help-me-choose'
+import { Route as LabRouteImport } from './routes/lab'
+import { Route as McpRouteImport } from './routes/mcp'
+import { Route as MessagesRouteImport } from './routes/messages'
+import { Route as ParticipationGuideRouteImport } from './routes/participation-guide'
+import { Route as ReminderRouteImport } from './routes/reminder'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
-import { Route as LabSliceIndexRouteImport } from './routes/lab.slice.index'
-import { Route as AuthenticatedSpaceIndexRouteImport } from './routes/_authenticated/space.index'
-import { Route as LabWorkspaceParticipationIdRouteImport } from './routes/lab.workspace.$participationId'
-import { Route as LabSliceParticipationsRouteImport } from './routes/lab.slice.participations'
-import { Route as LabSliceLibraryRouteImport } from './routes/lab.slice.library'
-import { Route as LabRunParticipationIdRouteImport } from './routes/lab.run.$participationId'
-import { Route as LabPrintParticipationIdRouteImport } from './routes/lab.print.$participationId'
-import { Route as LabMatchOpportunityIdRouteImport } from './routes/lab.match.$opportunityId'
-import { Route as LabLearnerParticipationIdRouteImport } from './routes/lab.learner.$participationId'
-import { Route as LabFeedbackParticipationIdRouteImport } from './routes/lab.feedback.$participationId'
-import { Route as LabEventEventIdRouteImport } from './routes/lab.event.$eventId'
-import { Route as LabCardParticipationIdRouteImport } from './routes/lab.card.$participationId'
-import { Route as AuthenticatedSpacePlanRouteImport } from './routes/_authenticated/space.plan'
-import { Route as AuthenticatedSpaceParticipationsRouteImport } from './routes/_authenticated/space.participations'
-import { Route as AuthenticatedSpaceLibraryRouteImport } from './routes/_authenticated/space.library'
-import { Route as AuthenticatedSpaceExploreRouteImport } from './routes/_authenticated/space.explore'
-import { Route as AuthenticatedSpaceEasyRouteImport } from './routes/_authenticated/space.easy'
+import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
+import { Route as AuthenticatedAccountRouteImport } from './routes/_authenticated/account'
+import { Route as AuthenticatedActiveParticipationsRouteImport } from './routes/_authenticated/active-participations'
+import { Route as AuthenticatedMyRoutineRouteImport } from './routes/_authenticated/my-routine'
+import { Route as AuthenticatedSpaceRouteImport } from './routes/_authenticated/space'
+import { Route as ActivitiesIndexRouteImport } from './routes/activities.index'
+import { Route as ActivitiesCategoryRouteImport } from './routes/activities.$category'
+import { Route as ActivitiesBrowseRouteImport } from './routes/activities.browse'
+import { Route as ActivitiesLevelRouteImport } from './routes/activities.level'
+import { Route as ActivitiesMyDayRouteImport } from './routes/activities.my-day'
+import { Route as ActivitiesOptionsRouteImport } from './routes/activities.options'
+import { Route as LabIndexRouteImport } from './routes/lab.index'
+import { Route as LabAiRouteImport } from './routes/lab.ai'
+import { Route as LabCommunityRouteImport } from './routes/lab.community'
+import { Route as LabParticipationsRouteImport } from './routes/lab.participations'
+import { Route as LabRoutineRouteImport } from './routes/lab.routine'
+import { Route as LabSliceRouteImport } from './routes/lab.slice'
+import { Route as LabStartRouteImport } from './routes/lab.start'
+import { Route as LabStatesRouteImport } from './routes/lab.states'
+import { Route as LabStationsRouteImport } from './routes/lab.stations'
+import { Route as LabVisualRouteImport } from './routes/lab.visual'
+import { Route as LabWeavingRouteImport } from './routes/lab.weaving'
+import { Route as LearnerIdRouteImport } from './routes/learner.$id'
+import { Route as SettingsAddEventRouteImport } from './routes/settings.add-event'
+import { Route as SettingsFamilyRouteImport } from './routes/settings.family'
+import { Route as ToolsIndexRouteImport } from './routes/tools.index'
+import { Route as ToolsProjectIdRouteImport } from './routes/tools.$projectId'
 import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
-import { Route as LabSliceWorkspaceSpecIdRouteImport } from './routes/lab.slice.workspace.$specId'
-import { Route as LabSliceLearnerSnapshotIdRouteImport } from './routes/lab.slice.learner.$snapshotId'
-import { Route as LabSliceFeedbackSnapshotIdRouteImport } from './routes/lab.slice.feedback.$snapshotId'
-import { Route as LabSliceCardSpecIdRouteImport } from './routes/lab.slice.card.$specId'
-import { Route as LabSliceEventIdParticipationsRouteImport } from './routes/lab.slice.$eventId.participations'
-import { Route as LabSliceEventIdLevelRouteImport } from './routes/lab.slice.$eventId.level'
-import { Route as AuthenticatedSpaceWorkspaceSpecIdRouteImport } from './routes/_authenticated/space.workspace.$specId'
-import { Route as AuthenticatedSpacePreviewSpecIdRouteImport } from './routes/_authenticated/space.preview.$specId'
-import { Route as AuthenticatedSpaceLearnerSnapshotIdRouteImport } from './routes/_authenticated/space.learner.$snapshotId'
-import { Route as AuthenticatedSpaceFeedbackSnapshotIdRouteImport } from './routes/_authenticated/space.feedback.$snapshotId'
-import { Route as AuthenticatedSpaceCardSpecIdRouteImport } from './routes/_authenticated/space.card.$specId'
-import { Route as AuthenticatedSpaceEventIdParticipationsRouteImport } from './routes/_authenticated/space.$eventId.participations'
+import { Route as AuthenticatedSpaceIndexRouteImport } from './routes/_authenticated/space.index'
+import { Route as AuthenticatedSpaceEasyRouteImport } from './routes/_authenticated/space.easy'
+import { Route as AuthenticatedSpaceExploreRouteImport } from './routes/_authenticated/space.explore'
+import { Route as AuthenticatedSpaceLibraryRouteImport } from './routes/_authenticated/space.library'
+import { Route as AuthenticatedSpaceParticipationsRouteImport } from './routes/_authenticated/space.participations'
+import { Route as AuthenticatedSpacePlanRouteImport } from './routes/_authenticated/space.plan'
+import { Route as LabCardParticipationIdRouteImport } from './routes/lab.card.$participationId'
+import { Route as LabEventEventIdRouteImport } from './routes/lab.event.$eventId'
+import { Route as LabFeedbackParticipationIdRouteImport } from './routes/lab.feedback.$participationId'
+import { Route as LabLearnerParticipationIdRouteImport } from './routes/lab.learner.$participationId'
+import { Route as LabMatchOpportunityIdRouteImport } from './routes/lab.match.$opportunityId'
+import { Route as LabPrintParticipationIdRouteImport } from './routes/lab.print.$participationId'
+import { Route as LabRunParticipationIdRouteImport } from './routes/lab.run.$participationId'
+import { Route as LabSliceIndexRouteImport } from './routes/lab.slice.index'
+import { Route as LabSliceLibraryRouteImport } from './routes/lab.slice.library'
+import { Route as LabSliceParticipationsRouteImport } from './routes/lab.slice.participations'
+import { Route as LabWorkspaceParticipationIdRouteImport } from './routes/lab.workspace.$participationId'
 import { Route as AuthenticatedSpaceEventIdLevelRouteImport } from './routes/_authenticated/space.$eventId.level'
+import { Route as AuthenticatedSpaceEventIdParticipationsRouteImport } from './routes/_authenticated/space.$eventId.participations'
+import { Route as AuthenticatedSpaceCardSpecIdRouteImport } from './routes/_authenticated/space.card.$specId'
+import { Route as AuthenticatedSpaceFeedbackSnapshotIdRouteImport } from './routes/_authenticated/space.feedback.$snapshotId'
+import { Route as AuthenticatedSpaceLearnerSnapshotIdRouteImport } from './routes/_authenticated/space.learner.$snapshotId'
+import { Route as AuthenticatedSpacePreviewSpecIdRouteImport } from './routes/_authenticated/space.preview.$specId'
+import { Route as AuthenticatedSpaceWorkspaceSpecIdRouteImport } from './routes/_authenticated/space.workspace.$specId'
+import { Route as LabSliceEventIdLevelRouteImport } from './routes/lab.slice.$eventId.level'
+import { Route as LabSliceEventIdParticipationsRouteImport } from './routes/lab.slice.$eventId.participations'
+import { Route as LabSliceCardSpecIdRouteImport } from './routes/lab.slice.card.$specId'
+import { Route as LabSliceFeedbackSnapshotIdRouteImport } from './routes/lab.slice.feedback.$snapshotId'
+import { Route as LabSliceLearnerSnapshotIdRouteImport } from './routes/lab.slice.learner.$snapshotId'
+import { Route as LabSlicePreviewSpecIdRouteImport } from './routes/lab.slice.preview.$specId'
+import { Route as LabSliceWorkspaceSpecIdRouteImport } from './routes/lab.slice.workspace.$specId'
 
-const SettingsRoute = SettingsRouteImport.update({
-  id: '/settings',
-  path: '/settings',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SearchRoute = SearchRouteImport.update({
-  id: '/search',
-  path: '/search',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ResourcesRoute = ResourcesRouteImport.update({
-  id: '/resources',
-  path: '/resources',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReminderRoute = ReminderRouteImport.update({
-  id: '/reminder',
-  path: '/reminder',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ParticipationGuideRoute = ParticipationGuideRouteImport.update({
-  id: '/participation-guide',
-  path: '/participation-guide',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MessagesRoute = MessagesRouteImport.update({
-  id: '/messages',
-  path: '/messages',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const McpRoute = McpRouteImport.update({
-  id: '/mcp',
-  path: '/mcp',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LabRoute = LabRouteImport.update({
-  id: '/lab',
-  path: '/lab',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HelpMeChooseRoute = HelpMeChooseRouteImport.update({
-  id: '/help-me-choose',
-  path: '/help-me-choose',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EducationSupportRoute = EducationSupportRouteImport.update({
-  id: '/education-support',
-  path: '/education-support',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CommunitySupportRoute = CommunitySupportRouteImport.update({
-  id: '/community-support',
-  path: '/community-support',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CalendarRoute = CalendarRouteImport.update({
-  id: '/calendar',
-  path: '/calendar',
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthRoute = AuthRouteImport.update({
@@ -149,133 +99,81 @@ const AuthRoute = AuthRouteImport.update({
   path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
-  id: '/_authenticated',
+const CalendarRoute = CalendarRouteImport.update({
+  id: '/calendar',
+  path: '/calendar',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const CommunitySupportRoute = CommunitySupportRouteImport.update({
+  id: '/community-support',
+  path: '/community-support',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ToolsIndexRoute = ToolsIndexRouteImport.update({
-  id: '/tools/',
-  path: '/tools/',
+const EducationSupportRoute = EducationSupportRouteImport.update({
+  id: '/education-support',
+  path: '/education-support',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LabIndexRoute = LabIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => LabRoute,
-} as any)
-const ActivitiesIndexRoute = ActivitiesIndexRouteImport.update({
-  id: '/activities/',
-  path: '/activities/',
+const HelpMeChooseRoute = HelpMeChooseRouteImport.update({
+  id: '/help-me-choose',
+  path: '/help-me-choose',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ToolsProjectIdRoute = ToolsProjectIdRouteImport.update({
-  id: '/tools/$projectId',
-  path: '/tools/$projectId',
+const LabRoute = LabRouteImport.update({
+  id: '/lab',
+  path: '/lab',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SettingsFamilyRoute = SettingsFamilyRouteImport.update({
-  id: '/family',
-  path: '/family',
-  getParentRoute: () => SettingsRoute,
-} as any)
-const SettingsAddEventRoute = SettingsAddEventRouteImport.update({
-  id: '/add-event',
-  path: '/add-event',
-  getParentRoute: () => SettingsRoute,
-} as any)
-const LearnerIdRoute = LearnerIdRouteImport.update({
-  id: '/learner/$id',
-  path: '/learner/$id',
+const McpRoute = McpRouteImport.update({
+  id: '/mcp',
+  path: '/mcp',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LabWeavingRoute = LabWeavingRouteImport.update({
-  id: '/weaving',
-  path: '/weaving',
-  getParentRoute: () => LabRoute,
-} as any)
-const LabVisualRoute = LabVisualRouteImport.update({
-  id: '/visual',
-  path: '/visual',
-  getParentRoute: () => LabRoute,
-} as any)
-const LabStationsRoute = LabStationsRouteImport.update({
-  id: '/stations',
-  path: '/stations',
-  getParentRoute: () => LabRoute,
-} as any)
-const LabStatesRoute = LabStatesRouteImport.update({
-  id: '/states',
-  path: '/states',
-  getParentRoute: () => LabRoute,
-} as any)
-const LabStartRoute = LabStartRouteImport.update({
-  id: '/start',
-  path: '/start',
-  getParentRoute: () => LabRoute,
-} as any)
-const LabSliceRoute = LabSliceRouteImport.update({
-  id: '/slice',
-  path: '/slice',
-  getParentRoute: () => LabRoute,
-} as any)
-const LabRoutineRoute = LabRoutineRouteImport.update({
-  id: '/routine',
-  path: '/routine',
-  getParentRoute: () => LabRoute,
-} as any)
-const LabParticipationsRoute = LabParticipationsRouteImport.update({
-  id: '/participations',
-  path: '/participations',
-  getParentRoute: () => LabRoute,
-} as any)
-const LabCommunityRoute = LabCommunityRouteImport.update({
-  id: '/community',
-  path: '/community',
-  getParentRoute: () => LabRoute,
-} as any)
-const LabAiRoute = LabAiRouteImport.update({
-  id: '/ai',
-  path: '/ai',
-  getParentRoute: () => LabRoute,
-} as any)
-const ActivitiesOptionsRoute = ActivitiesOptionsRouteImport.update({
-  id: '/activities/options',
-  path: '/activities/options',
+const MessagesRoute = MessagesRouteImport.update({
+  id: '/messages',
+  path: '/messages',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ActivitiesMyDayRoute = ActivitiesMyDayRouteImport.update({
-  id: '/activities/my-day',
-  path: '/activities/my-day',
+const ParticipationGuideRoute = ParticipationGuideRouteImport.update({
+  id: '/participation-guide',
+  path: '/participation-guide',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ActivitiesLevelRoute = ActivitiesLevelRouteImport.update({
-  id: '/activities/level',
-  path: '/activities/level',
+const ReminderRoute = ReminderRouteImport.update({
+  id: '/reminder',
+  path: '/reminder',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ActivitiesBrowseRoute = ActivitiesBrowseRouteImport.update({
-  id: '/activities/browse',
-  path: '/activities/browse',
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ActivitiesCategoryRoute = ActivitiesCategoryRouteImport.update({
-  id: '/activities/$category',
-  path: '/activities/$category',
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthenticatedSpaceRoute = AuthenticatedSpaceRouteImport.update({
-  id: '/space',
-  path: '/space',
-  getParentRoute: () => AuthenticatedRouteRoute,
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const AuthenticatedMyRoutineRoute = AuthenticatedMyRoutineRouteImport.update({
-  id: '/my-routine',
-  path: '/my-routine',
+const Char91DotmcpChar93ListToolsRoute =
+  Char91DotmcpChar93ListToolsRouteImport.update({
+    id: '/.mcp/list-tools',
+    path: '/.mcp/list-tools',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Char91DotwellKnownChar93OauthProtectedResourceRoute =
+  Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
+    id: '/.well-known/oauth-protected-resource',
+    path: '/.well-known/oauth-protected-resource',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AuthenticatedAccountRoute = AuthenticatedAccountRouteImport.update({
+  id: '/account',
+  path: '/account',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 const AuthenticatedActiveParticipationsRoute =
@@ -284,95 +182,146 @@ const AuthenticatedActiveParticipationsRoute =
     path: '/active-participations',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
-const AuthenticatedAccountRoute = AuthenticatedAccountRouteImport.update({
-  id: '/account',
-  path: '/account',
+const AuthenticatedMyRoutineRoute = AuthenticatedMyRoutineRouteImport.update({
+  id: '/my-routine',
+  path: '/my-routine',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-const Char91DotwellKnownChar93OauthProtectedResourceRoute =
-  Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
-    id: '/.well-known/oauth-protected-resource',
-    path: '/.well-known/oauth-protected-resource',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const Char91DotmcpChar93ListToolsRoute =
-  Char91DotmcpChar93ListToolsRouteImport.update({
-    id: '/.mcp/list-tools',
-    path: '/.mcp/list-tools',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const LabSliceIndexRoute = LabSliceIndexRouteImport.update({
+const AuthenticatedSpaceRoute = AuthenticatedSpaceRouteImport.update({
+  id: '/space',
+  path: '/space',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const ActivitiesIndexRoute = ActivitiesIndexRouteImport.update({
+  id: '/activities/',
+  path: '/activities/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActivitiesCategoryRoute = ActivitiesCategoryRouteImport.update({
+  id: '/activities/$category',
+  path: '/activities/$category',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActivitiesBrowseRoute = ActivitiesBrowseRouteImport.update({
+  id: '/activities/browse',
+  path: '/activities/browse',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActivitiesLevelRoute = ActivitiesLevelRouteImport.update({
+  id: '/activities/level',
+  path: '/activities/level',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActivitiesMyDayRoute = ActivitiesMyDayRouteImport.update({
+  id: '/activities/my-day',
+  path: '/activities/my-day',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActivitiesOptionsRoute = ActivitiesOptionsRouteImport.update({
+  id: '/activities/options',
+  path: '/activities/options',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LabIndexRoute = LabIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => LabSliceRoute,
+  getParentRoute: () => LabRoute,
 } as any)
+const LabAiRoute = LabAiRouteImport.update({
+  id: '/ai',
+  path: '/ai',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabCommunityRoute = LabCommunityRouteImport.update({
+  id: '/community',
+  path: '/community',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabParticipationsRoute = LabParticipationsRouteImport.update({
+  id: '/participations',
+  path: '/participations',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabRoutineRoute = LabRoutineRouteImport.update({
+  id: '/routine',
+  path: '/routine',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabSliceRoute = LabSliceRouteImport.update({
+  id: '/slice',
+  path: '/slice',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabStartRoute = LabStartRouteImport.update({
+  id: '/start',
+  path: '/start',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabStatesRoute = LabStatesRouteImport.update({
+  id: '/states',
+  path: '/states',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabStationsRoute = LabStationsRouteImport.update({
+  id: '/stations',
+  path: '/stations',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabVisualRoute = LabVisualRouteImport.update({
+  id: '/visual',
+  path: '/visual',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabWeavingRoute = LabWeavingRouteImport.update({
+  id: '/weaving',
+  path: '/weaving',
+  getParentRoute: () => LabRoute,
+} as any)
+const LearnerIdRoute = LearnerIdRouteImport.update({
+  id: '/learner/$id',
+  path: '/learner/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsAddEventRoute = SettingsAddEventRouteImport.update({
+  id: '/add-event',
+  path: '/add-event',
+  getParentRoute: () => SettingsRoute,
+} as any)
+const SettingsFamilyRoute = SettingsFamilyRouteImport.update({
+  id: '/family',
+  path: '/family',
+  getParentRoute: () => SettingsRoute,
+} as any)
+const ToolsIndexRoute = ToolsIndexRouteImport.update({
+  id: '/tools/',
+  path: '/tools/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsProjectIdRoute = ToolsProjectIdRouteImport.update({
+  id: '/tools/$projectId',
+  path: '/tools/$projectId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Char91DotmcpChar93InvokeToolToolRoute =
+  Char91DotmcpChar93InvokeToolToolRouteImport.update({
+    id: '/.mcp/invoke-tool/$tool',
+    path: '/.mcp/invoke-tool/$tool',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AuthenticatedSpaceIndexRoute = AuthenticatedSpaceIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => AuthenticatedSpaceRoute,
 } as any)
-const LabWorkspaceParticipationIdRoute =
-  LabWorkspaceParticipationIdRouteImport.update({
-    id: '/workspace/$participationId',
-    path: '/workspace/$participationId',
-    getParentRoute: () => LabRoute,
-  } as any)
-const LabSliceParticipationsRoute = LabSliceParticipationsRouteImport.update({
-  id: '/participations',
-  path: '/participations',
-  getParentRoute: () => LabSliceRoute,
-} as any)
-const LabSliceLibraryRoute = LabSliceLibraryRouteImport.update({
-  id: '/library',
-  path: '/library',
-  getParentRoute: () => LabSliceRoute,
-} as any)
-const LabRunParticipationIdRoute = LabRunParticipationIdRouteImport.update({
-  id: '/run/$participationId',
-  path: '/run/$participationId',
-  getParentRoute: () => LabRoute,
-} as any)
-const LabPrintParticipationIdRoute = LabPrintParticipationIdRouteImport.update({
-  id: '/print/$participationId',
-  path: '/print/$participationId',
-  getParentRoute: () => LabRoute,
-} as any)
-const LabMatchOpportunityIdRoute = LabMatchOpportunityIdRouteImport.update({
-  id: '/match/$opportunityId',
-  path: '/match/$opportunityId',
-  getParentRoute: () => LabRoute,
-} as any)
-const LabLearnerParticipationIdRoute =
-  LabLearnerParticipationIdRouteImport.update({
-    id: '/learner/$participationId',
-    path: '/learner/$participationId',
-    getParentRoute: () => LabRoute,
-  } as any)
-const LabFeedbackParticipationIdRoute =
-  LabFeedbackParticipationIdRouteImport.update({
-    id: '/feedback/$participationId',
-    path: '/feedback/$participationId',
-    getParentRoute: () => LabRoute,
-  } as any)
-const LabEventEventIdRoute = LabEventEventIdRouteImport.update({
-  id: '/event/$eventId',
-  path: '/event/$eventId',
-  getParentRoute: () => LabRoute,
-} as any)
-const LabCardParticipationIdRoute = LabCardParticipationIdRouteImport.update({
-  id: '/card/$participationId',
-  path: '/card/$participationId',
-  getParentRoute: () => LabRoute,
-} as any)
-const AuthenticatedSpacePlanRoute = AuthenticatedSpacePlanRouteImport.update({
-  id: '/plan',
-  path: '/plan',
+const AuthenticatedSpaceEasyRoute = AuthenticatedSpaceEasyRouteImport.update({
+  id: '/easy',
+  path: '/easy',
   getParentRoute: () => AuthenticatedSpaceRoute,
 } as any)
-const AuthenticatedSpaceParticipationsRoute =
-  AuthenticatedSpaceParticipationsRouteImport.update({
-    id: '/participations',
-    path: '/participations',
+const AuthenticatedSpaceExploreRoute =
+  AuthenticatedSpaceExploreRouteImport.update({
+    id: '/explore',
+    path: '/explore',
     getParentRoute: () => AuthenticatedSpaceRoute,
   } as any)
 const AuthenticatedSpaceLibraryRoute =
@@ -381,84 +330,79 @@ const AuthenticatedSpaceLibraryRoute =
     path: '/library',
     getParentRoute: () => AuthenticatedSpaceRoute,
   } as any)
-const AuthenticatedSpaceExploreRoute =
-  AuthenticatedSpaceExploreRouteImport.update({
-    id: '/explore',
-    path: '/explore',
+const AuthenticatedSpaceParticipationsRoute =
+  AuthenticatedSpaceParticipationsRouteImport.update({
+    id: '/participations',
+    path: '/participations',
     getParentRoute: () => AuthenticatedSpaceRoute,
   } as any)
-const AuthenticatedSpaceEasyRoute = AuthenticatedSpaceEasyRouteImport.update({
-  id: '/easy',
-  path: '/easy',
+const AuthenticatedSpacePlanRoute = AuthenticatedSpacePlanRouteImport.update({
+  id: '/plan',
+  path: '/plan',
   getParentRoute: () => AuthenticatedSpaceRoute,
 } as any)
-const Char91DotmcpChar93InvokeToolToolRoute =
-  Char91DotmcpChar93InvokeToolToolRouteImport.update({
-    id: '/.mcp/invoke-tool/$tool',
-    path: '/.mcp/invoke-tool/$tool',
-    getParentRoute: () => rootRouteImport,
+const LabCardParticipationIdRoute = LabCardParticipationIdRouteImport.update({
+  id: '/card/$participationId',
+  path: '/card/$participationId',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabEventEventIdRoute = LabEventEventIdRouteImport.update({
+  id: '/event/$eventId',
+  path: '/event/$eventId',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabFeedbackParticipationIdRoute =
+  LabFeedbackParticipationIdRouteImport.update({
+    id: '/feedback/$participationId',
+    path: '/feedback/$participationId',
+    getParentRoute: () => LabRoute,
   } as any)
-const LabSliceWorkspaceSpecIdRoute = LabSliceWorkspaceSpecIdRouteImport.update({
-  id: '/workspace/$specId',
-  path: '/workspace/$specId',
+const LabLearnerParticipationIdRoute =
+  LabLearnerParticipationIdRouteImport.update({
+    id: '/learner/$participationId',
+    path: '/learner/$participationId',
+    getParentRoute: () => LabRoute,
+  } as any)
+const LabMatchOpportunityIdRoute = LabMatchOpportunityIdRouteImport.update({
+  id: '/match/$opportunityId',
+  path: '/match/$opportunityId',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabPrintParticipationIdRoute = LabPrintParticipationIdRouteImport.update({
+  id: '/print/$participationId',
+  path: '/print/$participationId',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabRunParticipationIdRoute = LabRunParticipationIdRouteImport.update({
+  id: '/run/$participationId',
+  path: '/run/$participationId',
+  getParentRoute: () => LabRoute,
+} as any)
+const LabSliceIndexRoute = LabSliceIndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => LabSliceRoute,
 } as any)
-const LabSliceLearnerSnapshotIdRoute =
-  LabSliceLearnerSnapshotIdRouteImport.update({
-    id: '/learner/$snapshotId',
-    path: '/learner/$snapshotId',
-    getParentRoute: () => LabSliceRoute,
-  } as any)
-const LabSliceFeedbackSnapshotIdRoute =
-  LabSliceFeedbackSnapshotIdRouteImport.update({
-    id: '/feedback/$snapshotId',
-    path: '/feedback/$snapshotId',
-    getParentRoute: () => LabSliceRoute,
-  } as any)
-const LabSliceCardSpecIdRoute = LabSliceCardSpecIdRouteImport.update({
-  id: '/card/$specId',
-  path: '/card/$specId',
+const LabSliceLibraryRoute = LabSliceLibraryRouteImport.update({
+  id: '/library',
+  path: '/library',
   getParentRoute: () => LabSliceRoute,
 } as any)
-const LabSliceEventIdParticipationsRoute =
-  LabSliceEventIdParticipationsRouteImport.update({
-    id: '/$eventId/participations',
-    path: '/$eventId/participations',
-    getParentRoute: () => LabSliceRoute,
-  } as any)
-const LabSliceEventIdLevelRoute = LabSliceEventIdLevelRouteImport.update({
-  id: '/$eventId/level',
-  path: '/$eventId/level',
+const LabSliceParticipationsRoute = LabSliceParticipationsRouteImport.update({
+  id: '/participations',
+  path: '/participations',
   getParentRoute: () => LabSliceRoute,
 } as any)
-const AuthenticatedSpaceWorkspaceSpecIdRoute =
-  AuthenticatedSpaceWorkspaceSpecIdRouteImport.update({
-    id: '/workspace/$specId',
-    path: '/workspace/$specId',
-    getParentRoute: () => AuthenticatedSpaceRoute,
+const LabWorkspaceParticipationIdRoute =
+  LabWorkspaceParticipationIdRouteImport.update({
+    id: '/workspace/$participationId',
+    path: '/workspace/$participationId',
+    getParentRoute: () => LabRoute,
   } as any)
-const AuthenticatedSpacePreviewSpecIdRoute =
-  AuthenticatedSpacePreviewSpecIdRouteImport.update({
-    id: '/preview/$specId',
-    path: '/preview/$specId',
-    getParentRoute: () => AuthenticatedSpaceRoute,
-  } as any)
-const AuthenticatedSpaceLearnerSnapshotIdRoute =
-  AuthenticatedSpaceLearnerSnapshotIdRouteImport.update({
-    id: '/learner/$snapshotId',
-    path: '/learner/$snapshotId',
-    getParentRoute: () => AuthenticatedSpaceRoute,
-  } as any)
-const AuthenticatedSpaceFeedbackSnapshotIdRoute =
-  AuthenticatedSpaceFeedbackSnapshotIdRouteImport.update({
-    id: '/feedback/$snapshotId',
-    path: '/feedback/$snapshotId',
-    getParentRoute: () => AuthenticatedSpaceRoute,
-  } as any)
-const AuthenticatedSpaceCardSpecIdRoute =
-  AuthenticatedSpaceCardSpecIdRouteImport.update({
-    id: '/card/$specId',
-    path: '/card/$specId',
+const AuthenticatedSpaceEventIdLevelRoute =
+  AuthenticatedSpaceEventIdLevelRouteImport.update({
+    id: '/$eventId/level',
+    path: '/$eventId/level',
     getParentRoute: () => AuthenticatedSpaceRoute,
   } as any)
 const AuthenticatedSpaceEventIdParticipationsRoute =
@@ -467,12 +411,74 @@ const AuthenticatedSpaceEventIdParticipationsRoute =
     path: '/$eventId/participations',
     getParentRoute: () => AuthenticatedSpaceRoute,
   } as any)
-const AuthenticatedSpaceEventIdLevelRoute =
-  AuthenticatedSpaceEventIdLevelRouteImport.update({
-    id: '/$eventId/level',
-    path: '/$eventId/level',
+const AuthenticatedSpaceCardSpecIdRoute =
+  AuthenticatedSpaceCardSpecIdRouteImport.update({
+    id: '/card/$specId',
+    path: '/card/$specId',
     getParentRoute: () => AuthenticatedSpaceRoute,
   } as any)
+const AuthenticatedSpaceFeedbackSnapshotIdRoute =
+  AuthenticatedSpaceFeedbackSnapshotIdRouteImport.update({
+    id: '/feedback/$snapshotId',
+    path: '/feedback/$snapshotId',
+    getParentRoute: () => AuthenticatedSpaceRoute,
+  } as any)
+const AuthenticatedSpaceLearnerSnapshotIdRoute =
+  AuthenticatedSpaceLearnerSnapshotIdRouteImport.update({
+    id: '/learner/$snapshotId',
+    path: '/learner/$snapshotId',
+    getParentRoute: () => AuthenticatedSpaceRoute,
+  } as any)
+const AuthenticatedSpacePreviewSpecIdRoute =
+  AuthenticatedSpacePreviewSpecIdRouteImport.update({
+    id: '/preview/$specId',
+    path: '/preview/$specId',
+    getParentRoute: () => AuthenticatedSpaceRoute,
+  } as any)
+const AuthenticatedSpaceWorkspaceSpecIdRoute =
+  AuthenticatedSpaceWorkspaceSpecIdRouteImport.update({
+    id: '/workspace/$specId',
+    path: '/workspace/$specId',
+    getParentRoute: () => AuthenticatedSpaceRoute,
+  } as any)
+const LabSliceEventIdLevelRoute = LabSliceEventIdLevelRouteImport.update({
+  id: '/$eventId/level',
+  path: '/$eventId/level',
+  getParentRoute: () => LabSliceRoute,
+} as any)
+const LabSliceEventIdParticipationsRoute =
+  LabSliceEventIdParticipationsRouteImport.update({
+    id: '/$eventId/participations',
+    path: '/$eventId/participations',
+    getParentRoute: () => LabSliceRoute,
+  } as any)
+const LabSliceCardSpecIdRoute = LabSliceCardSpecIdRouteImport.update({
+  id: '/card/$specId',
+  path: '/card/$specId',
+  getParentRoute: () => LabSliceRoute,
+} as any)
+const LabSliceFeedbackSnapshotIdRoute =
+  LabSliceFeedbackSnapshotIdRouteImport.update({
+    id: '/feedback/$snapshotId',
+    path: '/feedback/$snapshotId',
+    getParentRoute: () => LabSliceRoute,
+  } as any)
+const LabSliceLearnerSnapshotIdRoute =
+  LabSliceLearnerSnapshotIdRouteImport.update({
+    id: '/learner/$snapshotId',
+    path: '/learner/$snapshotId',
+    getParentRoute: () => LabSliceRoute,
+  } as any)
+const LabSlicePreviewSpecIdRoute = LabSlicePreviewSpecIdRouteImport.update({
+  id: '/preview/$specId',
+  path: '/preview/$specId',
+  getParentRoute: () => LabSliceRoute,
+} as any)
+const LabSliceWorkspaceSpecIdRoute = LabSliceWorkspaceSpecIdRouteImport.update({
+  id: '/workspace/$specId',
+  path: '/workspace/$specId',
+  getParentRoute: () => LabSliceRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -547,6 +553,7 @@ export interface FileRoutesByFullPath {
   '/lab/slice/card/$specId': typeof LabSliceCardSpecIdRoute
   '/lab/slice/feedback/$snapshotId': typeof LabSliceFeedbackSnapshotIdRoute
   '/lab/slice/learner/$snapshotId': typeof LabSliceLearnerSnapshotIdRoute
+  '/lab/slice/preview/$specId': typeof LabSlicePreviewSpecIdRoute
   '/lab/slice/workspace/$specId': typeof LabSliceWorkspaceSpecIdRoute
 }
 export interface FileRoutesByTo {
@@ -619,6 +626,7 @@ export interface FileRoutesByTo {
   '/lab/slice/card/$specId': typeof LabSliceCardSpecIdRoute
   '/lab/slice/feedback/$snapshotId': typeof LabSliceFeedbackSnapshotIdRoute
   '/lab/slice/learner/$snapshotId': typeof LabSliceLearnerSnapshotIdRoute
+  '/lab/slice/preview/$specId': typeof LabSlicePreviewSpecIdRoute
   '/lab/slice/workspace/$specId': typeof LabSliceWorkspaceSpecIdRoute
 }
 export interface FileRoutesById {
@@ -696,6 +704,7 @@ export interface FileRoutesById {
   '/lab/slice/card/$specId': typeof LabSliceCardSpecIdRoute
   '/lab/slice/feedback/$snapshotId': typeof LabSliceFeedbackSnapshotIdRoute
   '/lab/slice/learner/$snapshotId': typeof LabSliceLearnerSnapshotIdRoute
+  '/lab/slice/preview/$specId': typeof LabSlicePreviewSpecIdRoute
   '/lab/slice/workspace/$specId': typeof LabSliceWorkspaceSpecIdRoute
 }
 export interface FileRouteTypes {
@@ -773,6 +782,7 @@ export interface FileRouteTypes {
     | '/lab/slice/card/$specId'
     | '/lab/slice/feedback/$snapshotId'
     | '/lab/slice/learner/$snapshotId'
+    | '/lab/slice/preview/$specId'
     | '/lab/slice/workspace/$specId'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -845,6 +855,7 @@ export interface FileRouteTypes {
     | '/lab/slice/card/$specId'
     | '/lab/slice/feedback/$snapshotId'
     | '/lab/slice/learner/$snapshotId'
+    | '/lab/slice/preview/$specId'
     | '/lab/slice/workspace/$specId'
   id:
     | '__root__'
@@ -921,6 +932,7 @@ export interface FileRouteTypes {
     | '/lab/slice/card/$specId'
     | '/lab/slice/feedback/$snapshotId'
     | '/lab/slice/learner/$snapshotId'
+    | '/lab/slice/preview/$specId'
     | '/lab/slice/workspace/$specId'
   fileRoutesById: FileRoutesById
 }
@@ -956,95 +968,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/settings': {
-      id: '/settings'
-      path: '/settings'
-      fullPath: '/settings'
-      preLoaderRoute: typeof SettingsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/search': {
-      id: '/search'
-      path: '/search'
-      fullPath: '/search'
-      preLoaderRoute: typeof SearchRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/resources': {
-      id: '/resources'
-      path: '/resources'
-      fullPath: '/resources'
-      preLoaderRoute: typeof ResourcesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/reminder': {
-      id: '/reminder'
-      path: '/reminder'
-      fullPath: '/reminder'
-      preLoaderRoute: typeof ReminderRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/participation-guide': {
-      id: '/participation-guide'
-      path: '/participation-guide'
-      fullPath: '/participation-guide'
-      preLoaderRoute: typeof ParticipationGuideRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/messages': {
-      id: '/messages'
-      path: '/messages'
-      fullPath: '/messages'
-      preLoaderRoute: typeof MessagesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mcp': {
-      id: '/mcp'
-      path: '/mcp'
-      fullPath: '/mcp'
-      preLoaderRoute: typeof McpRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/lab': {
-      id: '/lab'
-      path: '/lab'
-      fullPath: '/lab'
-      preLoaderRoute: typeof LabRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/help-me-choose': {
-      id: '/help-me-choose'
-      path: '/help-me-choose'
-      fullPath: '/help-me-choose'
-      preLoaderRoute: typeof HelpMeChooseRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/education-support': {
-      id: '/education-support'
-      path: '/education-support'
-      fullPath: '/education-support'
-      preLoaderRoute: typeof EducationSupportRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/community-support': {
-      id: '/community-support'
-      path: '/community-support'
-      fullPath: '/community-support'
-      preLoaderRoute: typeof CommunitySupportRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/calendar': {
-      id: '/calendar'
-      path: '/calendar'
-      fullPath: '/calendar'
-      preLoaderRoute: typeof CalendarRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/auth': {
-      id: '/auth'
-      path: '/auth'
-      fullPath: '/auth'
-      preLoaderRoute: typeof AuthRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated': {
@@ -1054,200 +982,95 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tools/': {
-      id: '/tools/'
-      path: '/tools'
-      fullPath: '/tools/'
-      preLoaderRoute: typeof ToolsIndexRouteImport
+    '/calendar': {
+      id: '/calendar'
+      path: '/calendar'
+      fullPath: '/calendar'
+      preLoaderRoute: typeof CalendarRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/lab/': {
-      id: '/lab/'
-      path: '/'
-      fullPath: '/lab/'
-      preLoaderRoute: typeof LabIndexRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/activities/': {
-      id: '/activities/'
-      path: '/activities'
-      fullPath: '/activities/'
-      preLoaderRoute: typeof ActivitiesIndexRouteImport
+    '/community-support': {
+      id: '/community-support'
+      path: '/community-support'
+      fullPath: '/community-support'
+      preLoaderRoute: typeof CommunitySupportRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tools/$projectId': {
-      id: '/tools/$projectId'
-      path: '/tools/$projectId'
-      fullPath: '/tools/$projectId'
-      preLoaderRoute: typeof ToolsProjectIdRouteImport
+    '/education-support': {
+      id: '/education-support'
+      path: '/education-support'
+      fullPath: '/education-support'
+      preLoaderRoute: typeof EducationSupportRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/settings/family': {
-      id: '/settings/family'
-      path: '/family'
-      fullPath: '/settings/family'
-      preLoaderRoute: typeof SettingsFamilyRouteImport
-      parentRoute: typeof SettingsRoute
-    }
-    '/settings/add-event': {
-      id: '/settings/add-event'
-      path: '/add-event'
-      fullPath: '/settings/add-event'
-      preLoaderRoute: typeof SettingsAddEventRouteImport
-      parentRoute: typeof SettingsRoute
-    }
-    '/learner/$id': {
-      id: '/learner/$id'
-      path: '/learner/$id'
-      fullPath: '/learner/$id'
-      preLoaderRoute: typeof LearnerIdRouteImport
+    '/help-me-choose': {
+      id: '/help-me-choose'
+      path: '/help-me-choose'
+      fullPath: '/help-me-choose'
+      preLoaderRoute: typeof HelpMeChooseRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/lab/weaving': {
-      id: '/lab/weaving'
-      path: '/weaving'
-      fullPath: '/lab/weaving'
-      preLoaderRoute: typeof LabWeavingRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/lab/visual': {
-      id: '/lab/visual'
-      path: '/visual'
-      fullPath: '/lab/visual'
-      preLoaderRoute: typeof LabVisualRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/lab/stations': {
-      id: '/lab/stations'
-      path: '/stations'
-      fullPath: '/lab/stations'
-      preLoaderRoute: typeof LabStationsRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/lab/states': {
-      id: '/lab/states'
-      path: '/states'
-      fullPath: '/lab/states'
-      preLoaderRoute: typeof LabStatesRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/lab/start': {
-      id: '/lab/start'
-      path: '/start'
-      fullPath: '/lab/start'
-      preLoaderRoute: typeof LabStartRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/lab/slice': {
-      id: '/lab/slice'
-      path: '/slice'
-      fullPath: '/lab/slice'
-      preLoaderRoute: typeof LabSliceRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/lab/routine': {
-      id: '/lab/routine'
-      path: '/routine'
-      fullPath: '/lab/routine'
-      preLoaderRoute: typeof LabRoutineRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/lab/participations': {
-      id: '/lab/participations'
-      path: '/participations'
-      fullPath: '/lab/participations'
-      preLoaderRoute: typeof LabParticipationsRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/lab/community': {
-      id: '/lab/community'
-      path: '/community'
-      fullPath: '/lab/community'
-      preLoaderRoute: typeof LabCommunityRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/lab/ai': {
-      id: '/lab/ai'
-      path: '/ai'
-      fullPath: '/lab/ai'
-      preLoaderRoute: typeof LabAiRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/activities/options': {
-      id: '/activities/options'
-      path: '/activities/options'
-      fullPath: '/activities/options'
-      preLoaderRoute: typeof ActivitiesOptionsRouteImport
+    '/lab': {
+      id: '/lab'
+      path: '/lab'
+      fullPath: '/lab'
+      preLoaderRoute: typeof LabRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/activities/my-day': {
-      id: '/activities/my-day'
-      path: '/activities/my-day'
-      fullPath: '/activities/my-day'
-      preLoaderRoute: typeof ActivitiesMyDayRouteImport
+    '/mcp': {
+      id: '/mcp'
+      path: '/mcp'
+      fullPath: '/mcp'
+      preLoaderRoute: typeof McpRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/activities/level': {
-      id: '/activities/level'
-      path: '/activities/level'
-      fullPath: '/activities/level'
-      preLoaderRoute: typeof ActivitiesLevelRouteImport
+    '/messages': {
+      id: '/messages'
+      path: '/messages'
+      fullPath: '/messages'
+      preLoaderRoute: typeof MessagesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/activities/browse': {
-      id: '/activities/browse'
-      path: '/activities/browse'
-      fullPath: '/activities/browse'
-      preLoaderRoute: typeof ActivitiesBrowseRouteImport
+    '/participation-guide': {
+      id: '/participation-guide'
+      path: '/participation-guide'
+      fullPath: '/participation-guide'
+      preLoaderRoute: typeof ParticipationGuideRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/activities/$category': {
-      id: '/activities/$category'
-      path: '/activities/$category'
-      fullPath: '/activities/$category'
-      preLoaderRoute: typeof ActivitiesCategoryRouteImport
+    '/reminder': {
+      id: '/reminder'
+      path: '/reminder'
+      fullPath: '/reminder'
+      preLoaderRoute: typeof ReminderRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_authenticated/space': {
-      id: '/_authenticated/space'
-      path: '/space'
-      fullPath: '/space'
-      preLoaderRoute: typeof AuthenticatedSpaceRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/_authenticated/my-routine': {
-      id: '/_authenticated/my-routine'
-      path: '/my-routine'
-      fullPath: '/my-routine'
-      preLoaderRoute: typeof AuthenticatedMyRoutineRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/_authenticated/active-participations': {
-      id: '/_authenticated/active-participations'
-      path: '/active-participations'
-      fullPath: '/active-participations'
-      preLoaderRoute: typeof AuthenticatedActiveParticipationsRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/account': {
-      id: '/_authenticated/account'
-      path: '/account'
-      fullPath: '/account'
-      preLoaderRoute: typeof AuthenticatedAccountRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/.well-known/oauth-protected-resource': {
-      id: '/.well-known/oauth-protected-resource'
-      path: '/.well-known/oauth-protected-resource'
-      fullPath: '/.well-known/oauth-protected-resource'
-      preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/.mcp/list-tools': {
@@ -1257,116 +1080,207 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char91DotmcpChar93ListToolsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/lab/slice/': {
-      id: '/lab/slice/'
+    '/.well-known/oauth-protected-resource': {
+      id: '/.well-known/oauth-protected-resource'
+      path: '/.well-known/oauth-protected-resource'
+      fullPath: '/.well-known/oauth-protected-resource'
+      preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/account': {
+      id: '/_authenticated/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AuthenticatedAccountRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/active-participations': {
+      id: '/_authenticated/active-participations'
+      path: '/active-participations'
+      fullPath: '/active-participations'
+      preLoaderRoute: typeof AuthenticatedActiveParticipationsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/my-routine': {
+      id: '/_authenticated/my-routine'
+      path: '/my-routine'
+      fullPath: '/my-routine'
+      preLoaderRoute: typeof AuthenticatedMyRoutineRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/space': {
+      id: '/_authenticated/space'
+      path: '/space'
+      fullPath: '/space'
+      preLoaderRoute: typeof AuthenticatedSpaceRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/activities/': {
+      id: '/activities/'
+      path: '/activities'
+      fullPath: '/activities/'
+      preLoaderRoute: typeof ActivitiesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/activities/$category': {
+      id: '/activities/$category'
+      path: '/activities/$category'
+      fullPath: '/activities/$category'
+      preLoaderRoute: typeof ActivitiesCategoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/activities/browse': {
+      id: '/activities/browse'
+      path: '/activities/browse'
+      fullPath: '/activities/browse'
+      preLoaderRoute: typeof ActivitiesBrowseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/activities/level': {
+      id: '/activities/level'
+      path: '/activities/level'
+      fullPath: '/activities/level'
+      preLoaderRoute: typeof ActivitiesLevelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/activities/my-day': {
+      id: '/activities/my-day'
+      path: '/activities/my-day'
+      fullPath: '/activities/my-day'
+      preLoaderRoute: typeof ActivitiesMyDayRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/activities/options': {
+      id: '/activities/options'
+      path: '/activities/options'
+      fullPath: '/activities/options'
+      preLoaderRoute: typeof ActivitiesOptionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lab/': {
+      id: '/lab/'
       path: '/'
-      fullPath: '/lab/slice/'
-      preLoaderRoute: typeof LabSliceIndexRouteImport
-      parentRoute: typeof LabSliceRoute
+      fullPath: '/lab/'
+      preLoaderRoute: typeof LabIndexRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/ai': {
+      id: '/lab/ai'
+      path: '/ai'
+      fullPath: '/lab/ai'
+      preLoaderRoute: typeof LabAiRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/community': {
+      id: '/lab/community'
+      path: '/community'
+      fullPath: '/lab/community'
+      preLoaderRoute: typeof LabCommunityRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/participations': {
+      id: '/lab/participations'
+      path: '/participations'
+      fullPath: '/lab/participations'
+      preLoaderRoute: typeof LabParticipationsRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/routine': {
+      id: '/lab/routine'
+      path: '/routine'
+      fullPath: '/lab/routine'
+      preLoaderRoute: typeof LabRoutineRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/slice': {
+      id: '/lab/slice'
+      path: '/slice'
+      fullPath: '/lab/slice'
+      preLoaderRoute: typeof LabSliceRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/start': {
+      id: '/lab/start'
+      path: '/start'
+      fullPath: '/lab/start'
+      preLoaderRoute: typeof LabStartRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/states': {
+      id: '/lab/states'
+      path: '/states'
+      fullPath: '/lab/states'
+      preLoaderRoute: typeof LabStatesRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/stations': {
+      id: '/lab/stations'
+      path: '/stations'
+      fullPath: '/lab/stations'
+      preLoaderRoute: typeof LabStationsRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/visual': {
+      id: '/lab/visual'
+      path: '/visual'
+      fullPath: '/lab/visual'
+      preLoaderRoute: typeof LabVisualRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/weaving': {
+      id: '/lab/weaving'
+      path: '/weaving'
+      fullPath: '/lab/weaving'
+      preLoaderRoute: typeof LabWeavingRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/learner/$id': {
+      id: '/learner/$id'
+      path: '/learner/$id'
+      fullPath: '/learner/$id'
+      preLoaderRoute: typeof LearnerIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings/add-event': {
+      id: '/settings/add-event'
+      path: '/add-event'
+      fullPath: '/settings/add-event'
+      preLoaderRoute: typeof SettingsAddEventRouteImport
+      parentRoute: typeof SettingsRoute
+    }
+    '/settings/family': {
+      id: '/settings/family'
+      path: '/family'
+      fullPath: '/settings/family'
+      preLoaderRoute: typeof SettingsFamilyRouteImport
+      parentRoute: typeof SettingsRoute
+    }
+    '/tools/': {
+      id: '/tools/'
+      path: '/tools'
+      fullPath: '/tools/'
+      preLoaderRoute: typeof ToolsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/$projectId': {
+      id: '/tools/$projectId'
+      path: '/tools/$projectId'
+      fullPath: '/tools/$projectId'
+      preLoaderRoute: typeof ToolsProjectIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/.mcp/invoke-tool/$tool': {
+      id: '/.mcp/invoke-tool/$tool'
+      path: '/.mcp/invoke-tool/$tool'
+      fullPath: '/.mcp/invoke-tool/$tool'
+      preLoaderRoute: typeof Char91DotmcpChar93InvokeToolToolRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_authenticated/space/': {
       id: '/_authenticated/space/'
       path: '/'
       fullPath: '/space/'
       preLoaderRoute: typeof AuthenticatedSpaceIndexRouteImport
-      parentRoute: typeof AuthenticatedSpaceRoute
-    }
-    '/lab/workspace/$participationId': {
-      id: '/lab/workspace/$participationId'
-      path: '/workspace/$participationId'
-      fullPath: '/lab/workspace/$participationId'
-      preLoaderRoute: typeof LabWorkspaceParticipationIdRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/lab/slice/participations': {
-      id: '/lab/slice/participations'
-      path: '/participations'
-      fullPath: '/lab/slice/participations'
-      preLoaderRoute: typeof LabSliceParticipationsRouteImport
-      parentRoute: typeof LabSliceRoute
-    }
-    '/lab/slice/library': {
-      id: '/lab/slice/library'
-      path: '/library'
-      fullPath: '/lab/slice/library'
-      preLoaderRoute: typeof LabSliceLibraryRouteImport
-      parentRoute: typeof LabSliceRoute
-    }
-    '/lab/run/$participationId': {
-      id: '/lab/run/$participationId'
-      path: '/run/$participationId'
-      fullPath: '/lab/run/$participationId'
-      preLoaderRoute: typeof LabRunParticipationIdRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/lab/print/$participationId': {
-      id: '/lab/print/$participationId'
-      path: '/print/$participationId'
-      fullPath: '/lab/print/$participationId'
-      preLoaderRoute: typeof LabPrintParticipationIdRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/lab/match/$opportunityId': {
-      id: '/lab/match/$opportunityId'
-      path: '/match/$opportunityId'
-      fullPath: '/lab/match/$opportunityId'
-      preLoaderRoute: typeof LabMatchOpportunityIdRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/lab/learner/$participationId': {
-      id: '/lab/learner/$participationId'
-      path: '/learner/$participationId'
-      fullPath: '/lab/learner/$participationId'
-      preLoaderRoute: typeof LabLearnerParticipationIdRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/lab/feedback/$participationId': {
-      id: '/lab/feedback/$participationId'
-      path: '/feedback/$participationId'
-      fullPath: '/lab/feedback/$participationId'
-      preLoaderRoute: typeof LabFeedbackParticipationIdRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/lab/event/$eventId': {
-      id: '/lab/event/$eventId'
-      path: '/event/$eventId'
-      fullPath: '/lab/event/$eventId'
-      preLoaderRoute: typeof LabEventEventIdRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/lab/card/$participationId': {
-      id: '/lab/card/$participationId'
-      path: '/card/$participationId'
-      fullPath: '/lab/card/$participationId'
-      preLoaderRoute: typeof LabCardParticipationIdRouteImport
-      parentRoute: typeof LabRoute
-    }
-    '/_authenticated/space/plan': {
-      id: '/_authenticated/space/plan'
-      path: '/plan'
-      fullPath: '/space/plan'
-      preLoaderRoute: typeof AuthenticatedSpacePlanRouteImport
-      parentRoute: typeof AuthenticatedSpaceRoute
-    }
-    '/_authenticated/space/participations': {
-      id: '/_authenticated/space/participations'
-      path: '/participations'
-      fullPath: '/space/participations'
-      preLoaderRoute: typeof AuthenticatedSpaceParticipationsRouteImport
-      parentRoute: typeof AuthenticatedSpaceRoute
-    }
-    '/_authenticated/space/library': {
-      id: '/_authenticated/space/library'
-      path: '/library'
-      fullPath: '/space/library'
-      preLoaderRoute: typeof AuthenticatedSpaceLibraryRouteImport
-      parentRoute: typeof AuthenticatedSpaceRoute
-    }
-    '/_authenticated/space/explore': {
-      id: '/_authenticated/space/explore'
-      path: '/explore'
-      fullPath: '/space/explore'
-      preLoaderRoute: typeof AuthenticatedSpaceExploreRouteImport
       parentRoute: typeof AuthenticatedSpaceRoute
     }
     '/_authenticated/space/easy': {
@@ -1376,88 +1290,116 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedSpaceEasyRouteImport
       parentRoute: typeof AuthenticatedSpaceRoute
     }
-    '/.mcp/invoke-tool/$tool': {
-      id: '/.mcp/invoke-tool/$tool'
-      path: '/.mcp/invoke-tool/$tool'
-      fullPath: '/.mcp/invoke-tool/$tool'
-      preLoaderRoute: typeof Char91DotmcpChar93InvokeToolToolRouteImport
-      parentRoute: typeof rootRouteImport
+    '/_authenticated/space/explore': {
+      id: '/_authenticated/space/explore'
+      path: '/explore'
+      fullPath: '/space/explore'
+      preLoaderRoute: typeof AuthenticatedSpaceExploreRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
     }
-    '/lab/slice/workspace/$specId': {
-      id: '/lab/slice/workspace/$specId'
-      path: '/workspace/$specId'
-      fullPath: '/lab/slice/workspace/$specId'
-      preLoaderRoute: typeof LabSliceWorkspaceSpecIdRouteImport
+    '/_authenticated/space/library': {
+      id: '/_authenticated/space/library'
+      path: '/library'
+      fullPath: '/space/library'
+      preLoaderRoute: typeof AuthenticatedSpaceLibraryRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
+    '/_authenticated/space/participations': {
+      id: '/_authenticated/space/participations'
+      path: '/participations'
+      fullPath: '/space/participations'
+      preLoaderRoute: typeof AuthenticatedSpaceParticipationsRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
+    '/_authenticated/space/plan': {
+      id: '/_authenticated/space/plan'
+      path: '/plan'
+      fullPath: '/space/plan'
+      preLoaderRoute: typeof AuthenticatedSpacePlanRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
+    '/lab/card/$participationId': {
+      id: '/lab/card/$participationId'
+      path: '/card/$participationId'
+      fullPath: '/lab/card/$participationId'
+      preLoaderRoute: typeof LabCardParticipationIdRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/event/$eventId': {
+      id: '/lab/event/$eventId'
+      path: '/event/$eventId'
+      fullPath: '/lab/event/$eventId'
+      preLoaderRoute: typeof LabEventEventIdRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/feedback/$participationId': {
+      id: '/lab/feedback/$participationId'
+      path: '/feedback/$participationId'
+      fullPath: '/lab/feedback/$participationId'
+      preLoaderRoute: typeof LabFeedbackParticipationIdRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/learner/$participationId': {
+      id: '/lab/learner/$participationId'
+      path: '/learner/$participationId'
+      fullPath: '/lab/learner/$participationId'
+      preLoaderRoute: typeof LabLearnerParticipationIdRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/match/$opportunityId': {
+      id: '/lab/match/$opportunityId'
+      path: '/match/$opportunityId'
+      fullPath: '/lab/match/$opportunityId'
+      preLoaderRoute: typeof LabMatchOpportunityIdRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/print/$participationId': {
+      id: '/lab/print/$participationId'
+      path: '/print/$participationId'
+      fullPath: '/lab/print/$participationId'
+      preLoaderRoute: typeof LabPrintParticipationIdRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/run/$participationId': {
+      id: '/lab/run/$participationId'
+      path: '/run/$participationId'
+      fullPath: '/lab/run/$participationId'
+      preLoaderRoute: typeof LabRunParticipationIdRouteImport
+      parentRoute: typeof LabRoute
+    }
+    '/lab/slice/': {
+      id: '/lab/slice/'
+      path: '/'
+      fullPath: '/lab/slice/'
+      preLoaderRoute: typeof LabSliceIndexRouteImport
       parentRoute: typeof LabSliceRoute
     }
-    '/lab/slice/learner/$snapshotId': {
-      id: '/lab/slice/learner/$snapshotId'
-      path: '/learner/$snapshotId'
-      fullPath: '/lab/slice/learner/$snapshotId'
-      preLoaderRoute: typeof LabSliceLearnerSnapshotIdRouteImport
+    '/lab/slice/library': {
+      id: '/lab/slice/library'
+      path: '/library'
+      fullPath: '/lab/slice/library'
+      preLoaderRoute: typeof LabSliceLibraryRouteImport
       parentRoute: typeof LabSliceRoute
     }
-    '/lab/slice/feedback/$snapshotId': {
-      id: '/lab/slice/feedback/$snapshotId'
-      path: '/feedback/$snapshotId'
-      fullPath: '/lab/slice/feedback/$snapshotId'
-      preLoaderRoute: typeof LabSliceFeedbackSnapshotIdRouteImport
+    '/lab/slice/participations': {
+      id: '/lab/slice/participations'
+      path: '/participations'
+      fullPath: '/lab/slice/participations'
+      preLoaderRoute: typeof LabSliceParticipationsRouteImport
       parentRoute: typeof LabSliceRoute
     }
-    '/lab/slice/card/$specId': {
-      id: '/lab/slice/card/$specId'
-      path: '/card/$specId'
-      fullPath: '/lab/slice/card/$specId'
-      preLoaderRoute: typeof LabSliceCardSpecIdRouteImport
-      parentRoute: typeof LabSliceRoute
+    '/lab/workspace/$participationId': {
+      id: '/lab/workspace/$participationId'
+      path: '/workspace/$participationId'
+      fullPath: '/lab/workspace/$participationId'
+      preLoaderRoute: typeof LabWorkspaceParticipationIdRouteImport
+      parentRoute: typeof LabRoute
     }
-    '/lab/slice/$eventId/participations': {
-      id: '/lab/slice/$eventId/participations'
-      path: '/$eventId/participations'
-      fullPath: '/lab/slice/$eventId/participations'
-      preLoaderRoute: typeof LabSliceEventIdParticipationsRouteImport
-      parentRoute: typeof LabSliceRoute
-    }
-    '/lab/slice/$eventId/level': {
-      id: '/lab/slice/$eventId/level'
+    '/_authenticated/space/$eventId/level': {
+      id: '/_authenticated/space/$eventId/level'
       path: '/$eventId/level'
-      fullPath: '/lab/slice/$eventId/level'
-      preLoaderRoute: typeof LabSliceEventIdLevelRouteImport
-      parentRoute: typeof LabSliceRoute
-    }
-    '/_authenticated/space/workspace/$specId': {
-      id: '/_authenticated/space/workspace/$specId'
-      path: '/workspace/$specId'
-      fullPath: '/space/workspace/$specId'
-      preLoaderRoute: typeof AuthenticatedSpaceWorkspaceSpecIdRouteImport
-      parentRoute: typeof AuthenticatedSpaceRoute
-    }
-    '/_authenticated/space/preview/$specId': {
-      id: '/_authenticated/space/preview/$specId'
-      path: '/preview/$specId'
-      fullPath: '/space/preview/$specId'
-      preLoaderRoute: typeof AuthenticatedSpacePreviewSpecIdRouteImport
-      parentRoute: typeof AuthenticatedSpaceRoute
-    }
-    '/_authenticated/space/learner/$snapshotId': {
-      id: '/_authenticated/space/learner/$snapshotId'
-      path: '/learner/$snapshotId'
-      fullPath: '/space/learner/$snapshotId'
-      preLoaderRoute: typeof AuthenticatedSpaceLearnerSnapshotIdRouteImport
-      parentRoute: typeof AuthenticatedSpaceRoute
-    }
-    '/_authenticated/space/feedback/$snapshotId': {
-      id: '/_authenticated/space/feedback/$snapshotId'
-      path: '/feedback/$snapshotId'
-      fullPath: '/space/feedback/$snapshotId'
-      preLoaderRoute: typeof AuthenticatedSpaceFeedbackSnapshotIdRouteImport
-      parentRoute: typeof AuthenticatedSpaceRoute
-    }
-    '/_authenticated/space/card/$specId': {
-      id: '/_authenticated/space/card/$specId'
-      path: '/card/$specId'
-      fullPath: '/space/card/$specId'
-      preLoaderRoute: typeof AuthenticatedSpaceCardSpecIdRouteImport
+      fullPath: '/space/$eventId/level'
+      preLoaderRoute: typeof AuthenticatedSpaceEventIdLevelRouteImport
       parentRoute: typeof AuthenticatedSpaceRoute
     }
     '/_authenticated/space/$eventId/participations': {
@@ -1467,12 +1409,89 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedSpaceEventIdParticipationsRouteImport
       parentRoute: typeof AuthenticatedSpaceRoute
     }
-    '/_authenticated/space/$eventId/level': {
-      id: '/_authenticated/space/$eventId/level'
-      path: '/$eventId/level'
-      fullPath: '/space/$eventId/level'
-      preLoaderRoute: typeof AuthenticatedSpaceEventIdLevelRouteImport
+    '/_authenticated/space/card/$specId': {
+      id: '/_authenticated/space/card/$specId'
+      path: '/card/$specId'
+      fullPath: '/space/card/$specId'
+      preLoaderRoute: typeof AuthenticatedSpaceCardSpecIdRouteImport
       parentRoute: typeof AuthenticatedSpaceRoute
+    }
+    '/_authenticated/space/feedback/$snapshotId': {
+      id: '/_authenticated/space/feedback/$snapshotId'
+      path: '/feedback/$snapshotId'
+      fullPath: '/space/feedback/$snapshotId'
+      preLoaderRoute: typeof AuthenticatedSpaceFeedbackSnapshotIdRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
+    '/_authenticated/space/learner/$snapshotId': {
+      id: '/_authenticated/space/learner/$snapshotId'
+      path: '/learner/$snapshotId'
+      fullPath: '/space/learner/$snapshotId'
+      preLoaderRoute: typeof AuthenticatedSpaceLearnerSnapshotIdRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
+    '/_authenticated/space/preview/$specId': {
+      id: '/_authenticated/space/preview/$specId'
+      path: '/preview/$specId'
+      fullPath: '/space/preview/$specId'
+      preLoaderRoute: typeof AuthenticatedSpacePreviewSpecIdRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
+    '/_authenticated/space/workspace/$specId': {
+      id: '/_authenticated/space/workspace/$specId'
+      path: '/workspace/$specId'
+      fullPath: '/space/workspace/$specId'
+      preLoaderRoute: typeof AuthenticatedSpaceWorkspaceSpecIdRouteImport
+      parentRoute: typeof AuthenticatedSpaceRoute
+    }
+    '/lab/slice/$eventId/level': {
+      id: '/lab/slice/$eventId/level'
+      path: '/$eventId/level'
+      fullPath: '/lab/slice/$eventId/level'
+      preLoaderRoute: typeof LabSliceEventIdLevelRouteImport
+      parentRoute: typeof LabSliceRoute
+    }
+    '/lab/slice/$eventId/participations': {
+      id: '/lab/slice/$eventId/participations'
+      path: '/$eventId/participations'
+      fullPath: '/lab/slice/$eventId/participations'
+      preLoaderRoute: typeof LabSliceEventIdParticipationsRouteImport
+      parentRoute: typeof LabSliceRoute
+    }
+    '/lab/slice/card/$specId': {
+      id: '/lab/slice/card/$specId'
+      path: '/card/$specId'
+      fullPath: '/lab/slice/card/$specId'
+      preLoaderRoute: typeof LabSliceCardSpecIdRouteImport
+      parentRoute: typeof LabSliceRoute
+    }
+    '/lab/slice/feedback/$snapshotId': {
+      id: '/lab/slice/feedback/$snapshotId'
+      path: '/feedback/$snapshotId'
+      fullPath: '/lab/slice/feedback/$snapshotId'
+      preLoaderRoute: typeof LabSliceFeedbackSnapshotIdRouteImport
+      parentRoute: typeof LabSliceRoute
+    }
+    '/lab/slice/learner/$snapshotId': {
+      id: '/lab/slice/learner/$snapshotId'
+      path: '/learner/$snapshotId'
+      fullPath: '/lab/slice/learner/$snapshotId'
+      preLoaderRoute: typeof LabSliceLearnerSnapshotIdRouteImport
+      parentRoute: typeof LabSliceRoute
+    }
+    '/lab/slice/preview/$specId': {
+      id: '/lab/slice/preview/$specId'
+      path: '/preview/$specId'
+      fullPath: '/lab/slice/preview/$specId'
+      preLoaderRoute: typeof LabSlicePreviewSpecIdRouteImport
+      parentRoute: typeof LabSliceRoute
+    }
+    '/lab/slice/workspace/$specId': {
+      id: '/lab/slice/workspace/$specId'
+      path: '/workspace/$specId'
+      fullPath: '/lab/slice/workspace/$specId'
+      preLoaderRoute: typeof LabSliceWorkspaceSpecIdRouteImport
+      parentRoute: typeof LabSliceRoute
     }
   }
 }
@@ -1543,6 +1562,7 @@ interface LabSliceRouteChildren {
   LabSliceCardSpecIdRoute: typeof LabSliceCardSpecIdRoute
   LabSliceFeedbackSnapshotIdRoute: typeof LabSliceFeedbackSnapshotIdRoute
   LabSliceLearnerSnapshotIdRoute: typeof LabSliceLearnerSnapshotIdRoute
+  LabSlicePreviewSpecIdRoute: typeof LabSlicePreviewSpecIdRoute
   LabSliceWorkspaceSpecIdRoute: typeof LabSliceWorkspaceSpecIdRoute
 }
 
@@ -1555,6 +1575,7 @@ const LabSliceRouteChildren: LabSliceRouteChildren = {
   LabSliceCardSpecIdRoute: LabSliceCardSpecIdRoute,
   LabSliceFeedbackSnapshotIdRoute: LabSliceFeedbackSnapshotIdRoute,
   LabSliceLearnerSnapshotIdRoute: LabSliceLearnerSnapshotIdRoute,
+  LabSlicePreviewSpecIdRoute: LabSlicePreviewSpecIdRoute,
   LabSliceWorkspaceSpecIdRoute: LabSliceWorkspaceSpecIdRoute,
 }
 

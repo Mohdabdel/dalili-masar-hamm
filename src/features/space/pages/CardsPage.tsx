@@ -46,6 +46,7 @@ export function CardsPage({ specId }: { specId: string }) {
           <ul className="space-y-4">
             {snapshots.map((snap) => {
               const closed = state.closedCards.includes(snap.id);
+              const participationFrames = snap.frames.filter((f) => f.sourceStepId !== "__done__");
               const tools = snap.supportTools
                 .map((id) => SPACE_SUPPORT_TOOLS.find((t) => t.id === id)?.label)
                 .filter(Boolean);
@@ -59,7 +60,7 @@ export function CardsPage({ specId }: { specId: string }) {
                           ? "البطاقة المعتمدة الحالية"
                           : "بطاقة سابقة"}{" "}
                         — نسخة {snap.version} — {snap.date ?? snap.createdAt} —{" "}
-                        {snap.frames.length - 1} خطوة
+                        {participationFrames.length} خطوة
                       </p>
                     </div>
 
@@ -71,7 +72,7 @@ export function CardsPage({ specId }: { specId: string }) {
                   </div>
 
                   <ol className="mb-3 grid grid-cols-3 gap-2 sm:grid-cols-4">
-                    {snap.frames.map((f) => (
+                    {participationFrames.map((f) => (
                       <li key={`${snap.id}-${f.order}`}>
                         <StepFrame asset={f.assetRef} label={f.text_short_ar} size="md" />
                         <p className="mt-1 text-center text-sm font-semibold leading-snug">
@@ -79,6 +80,12 @@ export function CardsPage({ specId }: { specId: string }) {
                         </p>
                       </li>
                     ))}
+                    <li
+                      key={`${snap.id}-done`}
+                      className="grid min-h-24 place-items-center rounded-2xl border border-dashed border-border p-3 text-center text-sm font-bold text-muted-foreground"
+                    >
+                      انتهينا
+                    </li>
                   </ol>
 
                   {(snap.supportAssetIds ?? []).length > 0 && (
