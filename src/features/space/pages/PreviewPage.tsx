@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { LabPage, LabSection, LabNote, LabButton, LabLinkButton } from "@/lab/components/lab-ui";
 import { StepBlocks, type ComposerItem } from "@/lab/components/space/FamilyComposer";
 import { buildDraftSelection } from "@/lab/data/space/catalog";
@@ -28,8 +29,9 @@ export function PreviewPage({ specId }: { specId: string }) {
 
   const [label, setLabel] = useState("");
   const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10));
-  // اتجاه معاينة بطاقة المشارك: رأسي (خطوة تحت خطوة) أو أفقي (خطوات متجاورة قابلة للتمرير).
-  const [layout, setLayout] = useState<"vertical" | "horizontal">("vertical");
+  // نمط معاينة بطاقة المشارك: خطوة واحدة افتراضياً، مع بدائل رؤية الكل.
+  const [layout, setLayout] = useState<"step" | "vertical" | "horizontal">("step");
+  const [currentStep, setCurrentStep] = useState(0);
 
   const selection: LabThisTimeSelection = useMemo(() => {
     const saved = state.selections[specId];
@@ -86,6 +88,8 @@ export function PreviewPage({ specId }: { specId: string }) {
     presentation: r.imageVisible ? (r.textVisible ? "both" : "visual") : "text",
     blockOrder: r.blockOrder,
   }));
+  const safeStep = Math.min(currentStep, Math.max(items.length - 1, 0));
+  const currentItem = items[safeStep];
 
   const approve = () => {
     if (validRows.length === 0) return;
@@ -136,10 +140,11 @@ export function PreviewPage({ specId }: { specId: string }) {
             <div
               className="mb-3 inline-flex rounded-xl border border-border bg-card p-1"
               role="group"
-              aria-label="اتجاه معاينة الخطوات"
+              aria-label="طريقة معاينة الخطوات"
             >
               {(
                 [
+                  { id: "step", label: "خطوة بخطوة" },
                   { id: "vertical", label: "رأسي" },
                   { id: "horizontal", label: "أفقي" },
                 ] as const
@@ -160,7 +165,38 @@ export function PreviewPage({ specId }: { specId: string }) {
               ))}
             </div>
 
-            {layout === "vertical" ? (
+            {layout === "step" ? (
+              <div className="mx-auto max-w-sm">
+                <div className="mb-3 text-center text-sm font-bold text-muted-foreground">
+                  {safeStep + 1} / {items.length}
+                </div>
+                {currentItem && (
+                  <div className="rounded-2xl border border-border bg-card p-3">
+                    <StepBlocks item={currentItem} index={safeStep + 1} />
+                  </div>
+                )}
+                <div className="mt-3 flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setCurrentStep((v) => Math.max(0, v - 1))}
+                    disabled={safeStep === 0}
+                    className="inline-flex min-h-11 flex-1 items-center justify-center gap-1 rounded-xl border border-border px-3 text-sm font-bold disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  >
+                    <ChevronRight className="h-4 w-4" aria-hidden />
+                    السابق
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setCurrentStep((v) => Math.min(items.length - 1, v + 1))}
+                    disabled={safeStep >= items.length - 1}
+                    className="inline-flex min-h-11 flex-1 items-center justify-center gap-1 rounded-xl bg-primary px-3 text-sm font-bold text-primary-foreground disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  >
+                    التالي
+                    <ChevronLeft className="h-4 w-4" aria-hidden />
+                  </button>
+                </div>
+              </div>
+            ) : layout === "vertical" ? (
               <ol className="space-y-3">
                 {items.map((item, i) => (
                   <li

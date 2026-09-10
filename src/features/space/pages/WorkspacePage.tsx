@@ -510,16 +510,14 @@ export function WorkspacePage({ specId }: { specId: string }) {
         {rows.length === 0 ? (
           <LabNote>أضيفوا خطوة واحدة على الأقل.</LabNote>
         ) : (
-          <ol className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {previewItems.map((item, i) => (
-              <li key={item.stepId} className="rounded-2xl border border-border bg-card p-2">
-                <StepBlocks item={item} index={i + 1} />
-              </li>
-            ))}
-            <li className="grid place-items-center rounded-2xl border border-dashed border-border p-4 text-lg font-bold text-muted-foreground">
-              انتهينا
-            </li>
-          </ol>
+          <div className="mx-auto max-w-sm">
+            <p className="mb-2 text-center text-sm font-bold text-muted-foreground">
+              أول خطوة من {previewItems.length}
+            </p>
+            <div className="rounded-2xl border border-border bg-card p-2">
+              <StepBlocks item={previewItems[0]} index={1} />
+            </div>
+          </div>
         )}
 
         <div className="mt-4 flex flex-wrap items-center gap-3">
