@@ -8,6 +8,7 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 import { mcpPlugin } from "@lovable.dev/mcp-js/stacks/tanstack/vite";
 
 const isVitest = process.env.VITEST === "true";
+const disableMcpPlugin = process.env.DALILI_DISABLE_MCP_PLUGIN === "true";
 
 export default defineConfig({
   tanstackStart: {
@@ -16,6 +17,6 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
-    plugins: isVitest ? [] : [mcpPlugin()],
+    plugins: isVitest || disableMcpPlugin ? [] : [mcpPlugin()],
   },
 });
