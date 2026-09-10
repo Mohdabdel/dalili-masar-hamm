@@ -13,6 +13,19 @@ VRS-HOME-PANTRY-SHELF-FR001,ترتيب خزانة المؤن — إخراج ال
 VRS-HOME-PANTRY-SHELF-FR002,ترتيب خزانة المؤن — مسح المساحة,PANTRY_SHELF_01-frame02.webp,/assets/execution/pantry/PANTRY_SHELF_01-frame02.webp,1.0,FINAL,DALILI_VISUAL_BATCH_02,APPROVED_FOR_PILOT,canonical,false
 VRS-HOME-PANTRY-SHELF-FR003,ترتيب خزانة المؤن — إعادة العلب,PANTRY_SHELF_01-frame03.webp,/assets/execution/pantry/PANTRY_SHELF_01-frame03.webp,1.0,FINAL,DALILI_VISUAL_BATCH_02,APPROVED_FOR_PILOT,canonical,false
 VRS-HOME-PANTRY-SHELF-SHEET-001,ترتيب خزانة المؤن — اللوحة المصدر,PANTRY_SHELF_01-sheet.webp,/assets/execution/pantry/PANTRY_SHELF_01-sheet.webp,1.0,SOURCE_BOARD,DALILI_VISUAL_BATCH_02,NOT_IN_PILOT,archive,false
+VRS-B03-FOOD-TABLE-001,تحضير الأطباق والأكواب,B03-FOOD-TABLE.png,/assets/execution/batch03/B03-FOOD-TABLE.png,1.0,FINAL,DALILI_VISUAL_BATCH_03_FP,APPROVED_FOR_PILOT,canonical,false
+VRS-B03-FOOD-DRINKS-001,تحضير المشروبات المرافقة,B03-FOOD-TABLE.png,/assets/execution/batch03/B03-FOOD-TABLE.png,1.0,FINAL,DALILI_VISUAL_BATCH_03_FP,APPROVED_FOR_PILOT,canonical,false
+VRS-B03-SHOP-BAGS-001,حمل الأكياس الفارغة إلى السيارة,B03-SHOP-BAGS.png,/assets/execution/batch03/B03-SHOP-BAGS.png,1.0,FINAL,DALILI_VISUAL_BATCH_03_FP,APPROVED_FOR_PILOT,canonical,false
+VRS-B03-HOME-BOOKS-COLLECT-001,جمع الكتب المتناثرة,B03-HOME-BOOKS.png,/assets/execution/batch03/B03-HOME-BOOKS.png,1.0,FINAL,DALILI_VISUAL_BATCH_03_FP,APPROVED_FOR_PILOT,canonical,false
+VRS-B03-HOME-BOOKS-SHELF-001,إعادة الكتب وتصفيفها بشكل عمودي,B03-HOME-BOOKS.png,/assets/execution/batch03/B03-HOME-BOOKS.png,1.0,FINAL,DALILI_VISUAL_BATCH_03_FP,APPROVED_FOR_PILOT,canonical,false
+VRS-B03-COMM-PICNIC-PREP-001,تجهيز أغراض النزهة,B03-COMM-PICNIC.png,/assets/execution/batch03/B03-COMM-PICNIC.png,1.0,FINAL,DALILI_VISUAL_BATCH_03_FP,APPROVED_FOR_PILOT,canonical,false
+VRS-B03-COMM-PICNIC-BAG-001,وضع الأغراض في الحقيبة أو السيارة,B03-COMM-PICNIC.png,/assets/execution/batch03/B03-COMM-PICNIC.png,1.0,FINAL,DALILI_VISUAL_BATCH_03_FP,APPROVED_FOR_PILOT,canonical,false
+VRS-B03-HEALTH-SOURCE-001,فتح مصدر الأرقام,B03-HEALTH-CLINIC-NUMBER.png,/assets/execution/batch03/B03-HEALTH-CLINIC-NUMBER.png,1.0,FINAL,DALILI_VISUAL_BATCH_03_FP,APPROVED_FOR_PILOT,canonical,false
+VRS-B03-HEALTH-SEARCH-001,البحث عن اسم العيادة,B03-HEALTH-CLINIC-NUMBER.png,/assets/execution/batch03/B03-HEALTH-CLINIC-NUMBER.png,1.0,FINAL,DALILI_VISUAL_BATCH_03_FP,APPROVED_FOR_PILOT,canonical,false
+VRS-B03-HEALTH-NUMBER-001,تحديد الرقم المطلوب,B03-HEALTH-CLINIC-NUMBER.png,/assets/execution/batch03/B03-HEALTH-CLINIC-NUMBER.png,1.0,FINAL,DALILI_VISUAL_BATCH_03_FP,APPROVED_FOR_PILOT,canonical,false
+VRS-B03-CLO-LIGHT-DARK-001,فصل الملابس الفاتحة عن الداكنة,B03-CLO-LAUNDRY-SORT.png,/assets/execution/batch03/B03-CLO-LAUNDRY-SORT.png,1.0,FINAL,DALILI_VISUAL_BATCH_03_FP,APPROVED_FOR_PILOT,canonical,false
+VRS-B03-CLO-DELICATE-001,فصل الأقمشة الحساسة,B03-CLO-LAUNDRY-SORT.png,/assets/execution/batch03/B03-CLO-LAUNDRY-SORT.png,1.0,FINAL,DALILI_VISUAL_BATCH_03_FP,APPROVED_FOR_PILOT,canonical,false
+VRS-B03-CLO-GROUP-001,تجميع كل مجموعة معًا,B03-CLO-LAUNDRY-SORT.png,/assets/execution/batch03/B03-CLO-LAUNDRY-SORT.png,1.0,FINAL,DALILI_VISUAL_BATCH_03_FP,APPROVED_FOR_PILOT,canonical,false
 VRS-HOME-BED-MAKE-001-P1,ترتيب السرير — مشهد 1,VRS-HOME-BED-MAKE-001-P1.webp,/assets/execution/derived/VRS-HOME-BED-MAKE-001-P1.webp,1.0,FINAL,DALILI_VISUAL_DERIVED_01,APPROVED_FOR_PILOT,canonical,false
 VRS-HOME-BED-MAKE-001-P2,ترتيب السرير — مشهد 2,VRS-HOME-BED-MAKE-001-P2.webp,/assets/execution/derived/VRS-HOME-BED-MAKE-001-P2.webp,1.0,FINAL,DALILI_VISUAL_DERIVED_01,APPROVED_FOR_PILOT,canonical,false
 VRS-HOME-BED-MAKE-001-P3,ترتيب السرير — مشهد 3,VRS-HOME-BED-MAKE-001-P3.webp,/assets/execution/derived/VRS-HOME-BED-MAKE-001-P3.webp,1.0,FINAL,DALILI_VISUAL_DERIVED_01,APPROVED_FOR_PILOT,canonical,false
