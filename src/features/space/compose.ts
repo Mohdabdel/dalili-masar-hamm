@@ -48,14 +48,42 @@ export function imageRefFor(
   stepId: string,
 ): LabStepImageRef | null {
   const map = selection.imageRefByStepId;
-  if (map && stepId in map) return map[stepId] ?? null;
-  const legacy = refFromLegacySrc(selection.visualByStepId?.[stepId]);
+  if (map && stepId in map) {
+    const ref = map[stepId] ?? null;
+    if (shouldUseStoredImageRef(spec.id, ref)) return ref;
+  }
+  const legacySrc = selection.visualByStepId?.[stepId];
+  const legacy = shouldUseLegacyVisualSrc(spec.id, legacySrc) ? refFromLegacySrc(legacySrc) : null;
   if (legacy) return legacy;
   if (isFamilyBlockId(stepId)) {
     // اقتراح الصورة يُشتق من عبارة الأسرة نفسها — لا من نص مرجعي لأنه غير موجود.
     return suggestStepImage(findFamilyBlock(selection, stepId)?.familyText ?? "");
   }
-  return suggestStepImage(sourceTextFor(spec, stepId));
+  return suggestStepImage(sourceTextFor(spec, stepId), {
+    preferredAssetCodePrefix: preferredAssetCodePrefixFor(spec.id),
+  });
+}
+
+function preferredAssetCodePrefixFor(specId: string): string | undefined {
+  if (specId.startsWith("FR-EXP12-02-")) return "VRS-EXP12-02-";
+  return undefined;
+}
+
+function shouldUseLegacyVisualSrc(specId: string, src: string | null | undefined): boolean {
+  if (!src) return false;
+  if (specId.startsWith("FR-EXP12-02-")) {
+    return src.includes("/assets/execution/expansion12-02/");
+  }
+  return true;
+}
+
+function shouldUseStoredImageRef(specId: string, ref: LabStepImageRef | null): boolean {
+  if (!ref) return true;
+  if (ref.uploadedPath) return true;
+  if (!specId.startsWith("FR-EXP12-02-")) return true;
+  const source = ref.sourceAssetCode ?? "";
+  const derived = ref.derivedAssetCode ?? "";
+  return source.startsWith("VRS-EXP12-02-") || derived.startsWith("VRS-EXP12-02-");
 }
 
 export function imageVisibleFor(selection: LabThisTimeSelection, stepId: string): boolean {

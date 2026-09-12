@@ -15,7 +15,7 @@ import {
 import { hasReferenceWording, resolveSpaceSpec } from "@/features/space/spec-resolution";
 import { createFamilyBlock, isFamilyBlockId } from "@/features/space/family-blocks";
 import { participationImagePaths, participationImageSrc } from "@/features/space/participation-image";
-import { stepImageOptions } from "@/features/space/step-image";
+import { stepImageOptions, suggestStepImage } from "@/features/space/step-image";
 import { resolveStepImage, resolvedAssetCode } from "@/features/space/step-image";
 import { uploadFamilyImage, useUploadedUrls } from "@/features/space/family-uploads";
 import {
@@ -258,10 +258,14 @@ export function WorkspacePage({ specId }: { specId: string }) {
   };
 
   const composed = composeDraft(spec, selection);
+  const safeComposed = composed.map((r) => ({
+    ...r,
+    image: safeWorkspaceImage(spec.id, r.familyText, r.image),
+  }));
   void uploadsTick;
   const participationSrc = participationImageSrc(participationImage);
 
-  const rows: ComposerStepRow[] = composed.map((r) => ({
+  const rows: ComposerStepRow[] = safeComposed.map((r) => ({
     stepId: r.stepId,
     sourceText: r.sourceText,
     familyText: r.familyText,
@@ -271,7 +275,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
     familyAuthored: r.familyAuthored,
   }));
 
-  const previewItems: ComposerItem[] = composed.map((r) => ({
+  const previewItems: ComposerItem[] = safeComposed.map((r) => ({
     stepId: r.stepId,
     familyText: r.textVisible ? r.familyText : "",
     visual: r.imageVisible ? r.image.src : null,
@@ -293,12 +297,12 @@ export function WorkspacePage({ specId }: { specId: string }) {
   };
 
   /** مصدر توليد الوسائل: الخطوات الباقية في مسودّتنا بعباراتها وصورها. */
-  const supportRows: SupportSourceRow[] = rows
+  const supportRows: SupportSourceRow[] = safeComposed
     .filter((r) => r.textVisible || r.imageVisible)
     .map((r) => ({
       stepId: r.stepId,
       text: r.textVisible ? r.familyText : "",
-      assetCode: r.imageVisible ? resolvedAssetCode(imageRefFor(r.stepId)) : null,
+      assetCode: r.imageVisible ? r.assetCode : null,
       src: r.imageVisible ? r.image.src : null,
     }));
 
@@ -587,5 +591,17 @@ export function WorkspacePage({ specId }: { specId: string }) {
         </LabLinkButton>
       </div>
     </LabPage>
+  );
+}
+
+function safeWorkspaceImage(
+  specId: string,
+  text: string,
+  image: ReturnType<typeof resolveStepImage>,
+): ReturnType<typeof resolveStepImage> {
+  if (!specId.startsWith("FR-EXP12-02-")) return image;
+  if (image.src?.includes("/assets/execution/expansion12-02/")) return image;
+  return resolveStepImage(
+    suggestStepImage(text, { preferredAssetCodePrefix: "VRS-EXP12-02-" }),
   );
 }

@@ -8,6 +8,7 @@ import { resolveSpaceSpec } from "@/features/space/spec-resolution";
 import { buildFrozenSnapshot, composeDraft } from "@/features/space/compose";
 import { peekUploadedUrl, useUploadedUrls } from "@/features/space/family-uploads";
 import { participationImagePaths, participationImageSrc } from "@/features/space/participation-image";
+import { resolveStepImage, suggestStepImage } from "@/features/space/step-image";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 import type { LabThisTimeSelection } from "@/lab/slice/types";
 
@@ -56,18 +57,28 @@ export function PreviewPage({ specId }: { specId: string }) {
 
   // tick يضمن إعادة حساب الصفوف بعد اشتقاق روابط الصور المرفوعة — وإلا تبقى فارغة وتُجمّد بلا صور.
   const rows = useMemo(() => (spec ? composeDraft(spec, selection) : []), [spec, selection, uploadsTick]);
+  const safeRows = useMemo(
+    () =>
+      spec
+        ? rows.map((r) => ({
+            ...r,
+            image: safePreviewImage(spec.id, r.familyText, r.image),
+          }))
+        : rows,
+    [rows, spec],
+  );
 
   // خطوة صالحة للاعتماد: تعرض صورة، أو نصاً غير فارغ. الخطوة الفارغة لا تُعتمد.
   const validRows = useMemo(
     () =>
-      rows.filter(
+      safeRows.filter(
         (r) =>
           (r.imageVisible && Boolean(r.image.src)) ||
           (r.textVisible && r.familyText.trim().length > 0),
       ),
-    [rows],
+    [safeRows],
   );
-  const blankRows = rows.length - validRows.length;
+  const blankRows = safeRows.length - validRows.length;
   // لا اعتماد قبل اكتمال اشتقاق روابط صور الأسرة — وإلا تُجمّد البطاقة بلا صور.
   const uploadsPending = uploadedPaths.some((p) => !peekUploadedUrl(p));
 
@@ -81,7 +92,7 @@ export function PreviewPage({ specId }: { specId: string }) {
 
   const participationSrc = participationImageSrc(participationImage);
 
-  const items: ComposerItem[] = rows.map((r) => ({
+  const items: ComposerItem[] = safeRows.map((r) => ({
     stepId: r.stepId,
     familyText: r.textVisible ? r.familyText : "",
     visual: r.imageVisible ? r.image.src : null,
@@ -133,7 +144,7 @@ export function PreviewPage({ specId }: { specId: string }) {
       )}
 
       <LabSection title="ما ستراه الأسرة">
-        {rows.length === 0 ? (
+        {safeRows.length === 0 ? (
           <LabNote>لا توجد خطوات في مسودّتكم بعد.</LabNote>
         ) : (
           <>
@@ -309,5 +320,17 @@ export function PreviewPage({ specId }: { specId: string }) {
         )}
       </div>
     </LabPage>
+  );
+}
+
+function safePreviewImage(
+  specId: string,
+  text: string,
+  image: ReturnType<typeof resolveStepImage>,
+): ReturnType<typeof resolveStepImage> {
+  if (!specId.startsWith("FR-EXP12-02-")) return image;
+  if (image.src?.includes("/assets/execution/expansion12-02/")) return image;
+  return resolveStepImage(
+    suggestStepImage(text, { preferredAssetCodePrefix: "VRS-EXP12-02-" }),
   );
 }

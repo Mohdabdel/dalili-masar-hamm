@@ -126,11 +126,25 @@ export function refFromLegacySrc(src: string | null | undefined): LabStepImageRe
   return { sourceAssetCode: asset.assetCode };
 }
 
+export interface StepImageSuggestionOptions {
+  preferredAssetCodePrefix?: string;
+}
+
 /** الصورة المقترحة تلقائياً لخطوة — تُستبعد المركّبة. */
-export function suggestStepImage(text: string): LabStepImageRef | null {
+export function suggestStepImage(
+  text: string,
+  options: StepImageSuggestionOptions = {},
+): LabStepImageRef | null {
   const clean = text.replace(/[.،]/g, " ");
+  const normalizedClean = normalizeForMatch(clean);
+  const choices = prioritizeOptions(options.preferredAssetCodePrefix);
+  const exact = choices.find(
+    (option) => normalizeForMatch(option.title) === normalizedClean,
+  );
+  if (exact) return { sourceAssetCode: exact.code };
+
   let best: { code: string; hits: number } | null = null;
-  for (const option of stepImageOptions()) {
+  for (const option of choices) {
     const words = option.title
       .replace(/[.،]/g, " ")
       .split(/\s+/)
@@ -142,4 +156,16 @@ export function suggestStepImage(text: string): LabStepImageRef | null {
     if (score > 0 && (!best || score > best.hits)) best = { code: option.code, hits: score };
   }
   return best ? { sourceAssetCode: best.code } : null;
+}
+
+function prioritizeOptions(prefix: string | undefined): StepImageOption[] {
+  const options = stepImageOptions();
+  if (!prefix) return options;
+  const preferred = options.filter((option) => option.code.startsWith(prefix));
+  if (preferred.length === 0) return options;
+  return preferred;
+}
+
+function normalizeForMatch(value: string): string {
+  return value.replace(/[.،]/g, " ").replace(/\s+/g, " ").trim();
 }

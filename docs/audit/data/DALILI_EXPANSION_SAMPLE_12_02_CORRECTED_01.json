@@ -730,5 +730,5 @@
     }
   ],
   "source_sample": "DALILI_EXPANSION_SAMPLE_12_02",
-  "materialization": "not_materialized"
+  "materialization": "materialized_as_BATCH_05"
 }

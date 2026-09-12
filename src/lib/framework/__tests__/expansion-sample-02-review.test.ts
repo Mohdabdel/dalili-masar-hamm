@@ -15,7 +15,7 @@ interface CorrectedSample02Candidate extends CandidateFunctionalParticipation {
 interface CorrectedSample02Packet {
   artifact: "DALILI_EXPANSION_SAMPLE_12_02_CORRECTED_01";
   status: "CORRECTED_REVIEW_CANDIDATES_READY_FOR_RECHECK";
-  materialization: "not_materialized";
+  materialization: "materialized_as_BATCH_05";
   candidates: CorrectedSample02Candidate[];
 }
 
@@ -31,11 +31,11 @@ function readCorrectedSample02(): CorrectedSample02Packet {
 }
 
 describe("Expansion sample 12-02 corrected review packet", () => {
-  it("keeps the corrected packet behind the materialization gate", () => {
+  it("keeps the corrected packet as the Batch05 activation source", () => {
     const packet = readCorrectedSample02();
     expect(packet.artifact).toBe("DALILI_EXPANSION_SAMPLE_12_02_CORRECTED_01");
     expect(packet.status).toBe("CORRECTED_REVIEW_CANDIDATES_READY_FOR_RECHECK");
-    expect(packet.materialization).toBe("not_materialized");
+    expect(packet.materialization).toBe("materialized_as_BATCH_05");
     expect(packet.candidates).toHaveLength(12);
   });
 

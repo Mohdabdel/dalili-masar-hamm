@@ -10,6 +10,7 @@ import {
 import { ensureBatch02Corpus, getMigrationLineage } from "./batch02-corpus";
 import { ensureBatch03Corpus, getBatch03Lineage } from "./batch03-corpus";
 import { ensureBatch04Corpus, getBatch04Lineage } from "./batch04-corpus";
+import { ensureBatch05Corpus, getBatch05Lineage } from "./batch05-corpus";
 import { ensureEasyBeginningCorpus } from "./easy-beginning-corpus";
 import { listFrameworkParticipations } from "./reference-registry";
 import type { FunctionalParticipation } from "./reference-model";
@@ -21,6 +22,7 @@ export function ensureFrameworkCorpora(): void {
   ensureBatch02Corpus();
   ensureBatch03Corpus();
   ensureBatch04Corpus();
+  ensureBatch05Corpus();
 }
 
 /** كل المشاركات المرجعية المتاحة للاكتشاف. */
@@ -74,6 +76,12 @@ export function legacyIdsSupersededByFramework(): Set<string> {
     const batch04Lineage = getBatch04Lineage(p.id);
     if (batch04Lineage) {
       for (const legacyId of batch04Lineage.source_evidence_ids) {
+        out.add(legacyId);
+      }
+    }
+    const batch05Lineage = getBatch05Lineage(p.id);
+    if (batch05Lineage) {
+      for (const legacyId of batch05Lineage.source_evidence_ids) {
         out.add(legacyId);
       }
     }
