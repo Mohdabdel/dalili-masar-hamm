@@ -3,7 +3,7 @@
   "date": "2026-09-12",
   "status": "CORRECTED_REVIEW_CANDIDATES_VALIDATED_FOR_NEXT_GATE",
   "source_sample": "DALILI_EXPANSION_SAMPLE_12_01",
-  "materialization": "not_materialized",
+  "materialization": "materialized_as_BATCH_04",
   "items": [
     {
       "kind": "functional_participation",

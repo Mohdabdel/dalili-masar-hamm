@@ -6,6 +6,7 @@ import { findOpportunityById } from "@/lib/knowledge-base";
 import { GOLDEN_PARTICIPATION_IDS } from "@/lib/framework/golden-corpus";
 import { BATCH02_PARTICIPATION_IDS, getMigrationLineage } from "@/lib/framework/batch02-corpus";
 import { BATCH03_PARTICIPATION_IDS, getBatch03Lineage } from "@/lib/framework/batch03-corpus";
+import { BATCH04_PARTICIPATION_IDS, getBatch04Lineage } from "@/lib/framework/batch04-corpus";
 
 describe("discovery gate", () => {
   it("counts", () => {
@@ -46,6 +47,24 @@ describe("discovery gate", () => {
       expect(classifyReferenceSource(id)?.source).toBe("framework_reference");
       expect(participationsForEvent(spec.eventId).some((s) => s.id === id)).toBe(true);
       const lineage = getBatch03Lineage(id)!;
+      for (const legacyId of lineage.source_evidence_ids) {
+        expect(participationsForEvent(spec.eventId).some((s) => s.id === `KB-${legacyId}`)).toBe(false);
+        if (findOpportunityById(legacyId)) {
+          expect(getSpaceSpec(`KB-${legacyId}`)).toBeTruthy();
+          expect(classifyReferenceSource(legacyId)?.source).toBe("legacy_master");
+        }
+      }
+    }
+  });
+  it("batch04 12 reachable + precision-reviewed source evidence dedup when visible", () => {
+    for (const id of BATCH04_PARTICIPATION_IDS) {
+      const spec = getSpaceSpec(id)!;
+      expect(spec, id).toBeTruthy();
+      expect(classifyReferenceSource(id)?.source).toBe("framework_reference");
+      expect(participationsForEvent(spec.eventId).some((s) => s.id === id)).toBe(true);
+      const lineage = getBatch04Lineage(id)!;
+      expect(lineage.batch).toBe("BATCH_04");
+      expect(lineage.disposition).toBe("PRECISION_REVIEW_ACCEPT");
       for (const legacyId of lineage.source_evidence_ids) {
         expect(participationsForEvent(spec.eventId).some((s) => s.id === `KB-${legacyId}`)).toBe(false);
         if (findOpportunityById(legacyId)) {

@@ -9,6 +9,7 @@ import { ensureEasyBeginningCorpus } from "./easy-beginning-corpus";
 import { ensureGoldenCorpus } from "./golden-corpus";
 import { ensureBatch02Corpus } from "./batch02-corpus";
 import { ensureBatch03Corpus } from "./batch03-corpus";
+import { ensureBatch04Corpus } from "./batch04-corpus";
 import type { ReferenceProvenance } from "./reference-model";
 
 export type SourceClassification =
@@ -26,6 +27,7 @@ export function classifyReferenceSource(id: string): SourceClassification {
   ensureGoldenCorpus();
   ensureBatch02Corpus();
   ensureBatch03Corpus();
+  ensureBatch04Corpus();
   for (const candidate of referenceIdVariants(id)) {
     if (getFrameworkParticipation(candidate)) {
       return { source: "framework_reference", frameworkValidated: true };

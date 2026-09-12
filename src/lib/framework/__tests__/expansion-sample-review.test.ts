@@ -21,7 +21,7 @@ function readCorrectedSample(): ExpansionSamplePacket {
 }
 
 describe("Expansion sample 12 corrected review packet", () => {
-  it("keeps the corrected packet as review data, not a runtime migration", () => {
+  it("keeps the corrected packet as the precision-reviewed activation source", () => {
     const packet = readCorrectedSample();
     expect(packet.items).toHaveLength(12);
     expect(new Set(packet.items.map((item) => item.id)).size).toBe(12);

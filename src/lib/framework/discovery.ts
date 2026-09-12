@@ -9,6 +9,7 @@ import {
 } from "./golden-corpus";
 import { ensureBatch02Corpus, getMigrationLineage } from "./batch02-corpus";
 import { ensureBatch03Corpus, getBatch03Lineage } from "./batch03-corpus";
+import { ensureBatch04Corpus, getBatch04Lineage } from "./batch04-corpus";
 import { ensureEasyBeginningCorpus } from "./easy-beginning-corpus";
 import { listFrameworkParticipations } from "./reference-registry";
 import type { FunctionalParticipation } from "./reference-model";
@@ -19,6 +20,7 @@ export function ensureFrameworkCorpora(): void {
   ensureGoldenCorpus();
   ensureBatch02Corpus();
   ensureBatch03Corpus();
+  ensureBatch04Corpus();
 }
 
 /** كل المشاركات المرجعية المتاحة للاكتشاف. */
@@ -66,6 +68,12 @@ export function legacyIdsSupersededByFramework(): Set<string> {
     const batch03Lineage = getBatch03Lineage(p.id);
     if (batch03Lineage) {
       for (const legacyId of batch03Lineage.source_evidence_ids) {
+        out.add(legacyId);
+      }
+    }
+    const batch04Lineage = getBatch04Lineage(p.id);
+    if (batch04Lineage) {
+      for (const legacyId of batch04Lineage.source_evidence_ids) {
         out.add(legacyId);
       }
     }
