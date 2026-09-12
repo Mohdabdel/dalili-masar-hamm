@@ -1,0 +1,349 @@
+{
+  "id": "DALILI_EXPANSION_SAMPLE_12_CORRECTED_01",
+  "date": "2026-09-12",
+  "status": "CORRECTED_REVIEW_CANDIDATES_VALIDATED_FOR_NEXT_GATE",
+  "source_sample": "DALILI_EXPANSION_SAMPLE_12_01",
+  "materialization": "not_materialized",
+  "items": [
+    {
+      "kind": "functional_participation",
+      "provenance": "framework_reference",
+      "id": "FR-EXP12-HOME-052-OP001",
+      "title": "تجهيز رف من خزانة المؤن",
+      "life_context": "أثناء ترتيب خزانة المؤن والبهارات في المطبخ",
+      "functional_intent": "المساهمة في جعل رف محدد من الخزانة جاهزًا لإعادة ترتيب العلب عليه",
+      "observable_effect": "تصبح علب الرف المحدد خارج الخزانة ويصبح الرف ممسوحًا وجاهزًا",
+      "natural_completion": "عندما يفرغ الرف المحدد وتتم تهيئته لإعادة العلب",
+      "standalone_role_meaning": "تجهيز رف من خزانة المؤن دور له معنى داخل ترتيب الخزانة لأنه يهيئ جزءًا واضحًا من المكان حتى إذا تولى آخرون بقية الترتيب.",
+      "participation_mode": "shared",
+      "event_id": "HOME-052",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "يتعامل الدور مع علب ورف وقطعة مسح ضمن جزء محدد من الخزانة.",
+          "c2_coordination": "يحتاج تنسيقًا بسيطًا مع من يعيد ترتيب بقية الخزانة.",
+          "c3_variability": "قد تختلف أنواع العلب أو عددها من مرة لأخرى.",
+          "c4_choice_uncertainty": "الاختيار محدود بالرف الذي تحدده الأسرة."
+        },
+        "rationale": "صنف moderate لأن الدور يتعامل مع عدة عناصر وتنسيق منزلي محدود، دون أي معيار متعلق بالشخص أو الدعم."
+      },
+      "execution_blocks": [
+        { "kind": "execution_block", "id": "FR-EXP12-HOME-052-OP001-b1", "order": 1, "text": "إخراج علب الرف المحدد" },
+        { "kind": "execution_block", "id": "FR-EXP12-HOME-052-OP001-b2", "order": 2, "text": "مسح الرف بقطعة قماش" }
+      ],
+      "lineage": { "source_opportunity_id": "HOME-052-OP001", "source_card": "legacy_master", "sample_id": "EXP12-01" }
+    },
+    {
+      "kind": "functional_participation",
+      "provenance": "framework_reference",
+      "id": "FR-EXP12-HOME-052-OP003",
+      "title": "تجميع علب المؤن حسب الفئة",
+      "life_context": "أثناء إعادة ترتيب خزانة المؤن والبهارات بعد إخراج العلب",
+      "functional_intent": "المساهمة في جعل العلب المتشابهة معًا لتسهيل استخدامها لاحقًا",
+      "observable_effect": "تصبح مجموعة محددة من العلب موضوعة معًا في مكان واضح على الرف",
+      "natural_completion": "عندما توضع العلب المستهدفة ضمن فئتها المتفق عليها",
+      "standalone_role_meaning": "تجميع علب المؤن حسب الفئة دور له معنى داخل ترتيب الخزانة لأنه يغيّر تنظيم جزء من الرف حتى إذا أكمل آخرون بقية الفئات.",
+      "participation_mode": "shared",
+      "event_id": "HOME-052",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "يتعامل الدور مع علب وفئة ومكان على الرف.",
+          "c2_coordination": "يرتبط بفئات تحددها الأسرة لبقية الخزانة.",
+          "c3_variability": "تختلف الفئات أو العلب حسب محتوى المنزل.",
+          "c4_choice_uncertainty": "الاختيار محدود بين فئات واضحة مسبقًا."
+        },
+        "rationale": "صنف moderate بسبب تغير عناصر المؤن والحاجة إلى مطابقة الفئة، دون قياس أداء أو استقلالية."
+      },
+      "execution_blocks": [
+        { "kind": "execution_block", "id": "FR-EXP12-HOME-052-OP003-b1", "order": 1, "text": "اختيار فئة واحدة من العلب" },
+        { "kind": "execution_block", "id": "FR-EXP12-HOME-052-OP003-b2", "order": 2, "text": "وضع العلب في مكانها المحدد" }
+      ],
+      "lineage": { "source_opportunity_id": "HOME-052-OP003", "source_card": "legacy_master", "sample_id": "EXP12-02" }
+    },
+    {
+      "kind": "functional_participation",
+      "provenance": "framework_reference",
+      "id": "FR-EXP12-FOOD-002-OP002",
+      "title": "غسل الخضروات للغداء",
+      "life_context": "أثناء إعداد الغداء في المطبخ مع الأسرة",
+      "functional_intent": "المساهمة في تجهيز الخضروات لتصبح جاهزة للطبخ أو التقطيع",
+      "observable_effect": "تصبح الخضروات الموضوعة في المصفاة مغسولة وموجودة جانبًا",
+      "natural_completion": "عندما تنتهي الخضروات المستهدفة من الغسل وتوضع في مكان التجهيز",
+      "standalone_role_meaning": "غسل الخضروات للغداء دور له معنى داخل إعداد الغداء لأنه يجهز مكوّنًا تستخدمه الأسرة في الخطوة التالية.",
+      "participation_mode": "shared",
+      "event_id": "FOOD-002",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "يتضمن خضروات ومصفاة وماء ومكان وضع لاحق.",
+          "c2_coordination": "يرتبط بترتيب إعداد الغداء قبل الطبخ أو التقطيع.",
+          "c3_variability": "قد تختلف أنواع الخضروات والكمية.",
+          "c4_choice_uncertainty": "الاختيار محدود بما حددته الأسرة للغداء."
+        },
+        "rationale": "صنف moderate بسبب تعدد العناصر وربطه بخطوة لاحقة في إعداد الوجبة."
+      },
+      "execution_blocks": [
+        { "kind": "execution_block", "id": "FR-EXP12-FOOD-002-OP002-b1", "order": 1, "text": "وضع الخضروات في المصفاة" },
+        { "kind": "execution_block", "id": "FR-EXP12-FOOD-002-OP002-b2", "order": 2, "text": "غسل الخضروات تحت الماء" },
+        { "kind": "execution_block", "id": "FR-EXP12-FOOD-002-OP002-b3", "order": 3, "text": "وضع الخضروات جانبًا" }
+      ],
+      "lineage": { "source_opportunity_id": "FOOD-002-OP002", "source_card": "legacy_master", "sample_id": "EXP12-03" }
+    },
+    {
+      "kind": "functional_participation",
+      "provenance": "framework_reference",
+      "id": "FR-EXP12-FOOD-006-OP001",
+      "title": "ترتيب صينية الضيافة",
+      "life_context": "أثناء استقبال ضيوف وتقديم الضيافة في المنزل",
+      "functional_intent": "المساهمة في جعل أدوات الضيافة جاهزة للحمل أو التقديم",
+      "observable_effect": "تصبح الأكواب والأطباق الصغيرة مرتبة على الصينية",
+      "natural_completion": "عندما تصبح الصينية جاهزة للمرحلة التالية من الضيافة",
+      "standalone_role_meaning": "ترتيب صينية الضيافة دور له معنى داخل استقبال الضيوف لأنه يجهز جزءًا ملموسًا من الضيافة حتى إذا قدمها شخص آخر.",
+      "participation_mode": "shared",
+      "event_id": "FOOD-006",
+      "complexity": {
+        "level": "simple",
+        "dimensions": {
+          "c1_elements": "عناصر قليلة ومباشرة: صينية وأكواب وأطباق.",
+          "c2_coordination": "التنسيق محدود لأن الأسرة تجهز العناصر مسبقًا.",
+          "c3_variability": "الموقف ثابت غالبًا داخل المنزل.",
+          "c4_choice_uncertainty": "الاختيارات محددة مسبقًا."
+        },
+        "rationale": "صنف simple لأن الدور مباشر ومحدود العناصر والاختيارات."
+      },
+      "execution_blocks": [
+        { "kind": "execution_block", "id": "FR-EXP12-FOOD-006-OP001-b1", "order": 1, "text": "وضع الأكواب على الصينية" },
+        { "kind": "execution_block", "id": "FR-EXP12-FOOD-006-OP001-b2", "order": 2, "text": "وضع الأطباق الصغيرة بجانب الأكواب" }
+      ],
+      "lineage": { "source_opportunity_id": "FOOD-006-OP001", "source_card": "legacy_master", "sample_id": "EXP12-04" }
+    },
+    {
+      "kind": "functional_participation",
+      "provenance": "framework_reference",
+      "id": "FR-EXP12-CLO-016-OP001",
+      "title": "طي قطعة ملابس نظيفة",
+      "life_context": "أثناء ترتيب الملابس النظيفة بعد الغسيل",
+      "functional_intent": "المساهمة في جعل قطعة ملابس نظيفة جاهزة لوضعها مع الملابس المرتبة",
+      "observable_effect": "تصبح قطعة الملابس المستهدفة مطوية وموجودة مع القطع المرتبة",
+      "natural_completion": "عندما تنتهي القطعة المحددة من الطي وتوضع مع المجموعة المناسبة",
+      "standalone_role_meaning": "طي قطعة ملابس نظيفة دور له معنى داخل ترتيب الغسيل لأنه يجهز قطعة محددة حتى إذا تولى آخرون بقية الملابس.",
+      "participation_mode": "shared",
+      "event_id": "CLO-016",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "يتضمن قطعة ملابس وسطح طي ومجموعة نهائية.",
+          "c2_coordination": "يرتبط بترتيب الملابس النظيفة مع الأسرة.",
+          "c3_variability": "تختلف القطع في الحجم والشكل.",
+          "c4_choice_uncertainty": "الاختيار محدود بالقطعة التي تحددها الأسرة."
+        },
+        "rationale": "صنف moderate بسبب تغير شكل القطع والحاجة إلى ترتيب متسلسل بسيط."
+      },
+      "execution_blocks": [
+        { "kind": "execution_block", "id": "FR-EXP12-CLO-016-OP001-b1", "order": 1, "text": "فرد القطعة على السطح" },
+        { "kind": "execution_block", "id": "FR-EXP12-CLO-016-OP001-b2", "order": 2, "text": "طي الجوانب أو الأكمام" },
+        { "kind": "execution_block", "id": "FR-EXP12-CLO-016-OP001-b3", "order": 3, "text": "وضع القطعة مع الملابس المطوية" }
+      ],
+      "lineage": { "source_opportunity_id": "CLO-016-OP001", "source_card": "legacy_master", "sample_id": "EXP12-05" }
+    },
+    {
+      "kind": "functional_participation",
+      "provenance": "framework_reference",
+      "id": "FR-EXP12-CLO-042-OP001",
+      "title": "إرجاع الحذاء إلى مكانه",
+      "life_context": "عند الدخول إلى المنزل وخلع الحذاء قرب مكان التخزين",
+      "functional_intent": "المساهمة في بقاء مدخل المنزل مرتبًا ومعروفًا للأسرة",
+      "observable_effect": "يصبح الحذاء الموضوع عند المدخل في مكان التخزين المخصص",
+      "natural_completion": "عندما يوضع الحذاء بجانب زوجه أو في المكان المحدد له",
+      "standalone_role_meaning": "إرجاع الحذاء إلى مكانه دور له معنى داخل ترتيب المدخل لأنه يزيل غرضًا من الممر ويعيده إلى مكان معروف.",
+      "participation_mode": "individual",
+      "event_id": "CLO-042",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "يتضمن حذاء ومكان تخزين وزوجًا مطابقًا.",
+          "c2_coordination": "يرتبط بروتين دخول المنزل وترتيب المدخل.",
+          "c3_variability": "قد يختلف مكان التخزين أو نوع الحذاء.",
+          "c4_choice_uncertainty": "الاختيار محدود بالمكان المحدد للأسرة."
+        },
+        "rationale": "صنف moderate بسبب الحاجة إلى مطابقة مكان الحذاء ضمن ترتيب منزلي متغير قليلًا."
+      },
+      "execution_blocks": [
+        { "kind": "execution_block", "id": "FR-EXP12-CLO-042-OP001-b1", "order": 1, "text": "حمل الحذاء من المدخل" },
+        { "kind": "execution_block", "id": "FR-EXP12-CLO-042-OP001-b2", "order": 2, "text": "وضعه في الرف أو المكان المخصص" },
+        { "kind": "execution_block", "id": "FR-EXP12-CLO-042-OP001-b3", "order": 3, "text": "ترتيبه بجانب الزوج المطابق" }
+      ],
+      "lineage": { "source_opportunity_id": "CLO-042-OP001", "source_card": "legacy_master", "sample_id": "EXP12-06" }
+    },
+    {
+      "kind": "functional_participation",
+      "provenance": "framework_reference",
+      "id": "FR-EXP12-SHOP-001-OP002",
+      "title": "إضافة نواقص محددة إلى قائمة التسوق",
+      "life_context": "أثناء إعداد قائمة مشتريات الأسرة قبل الذهاب إلى المتجر",
+      "functional_intent": "المساهمة في جعل عنصر أو عنصرين ناقصين ظاهرين في قائمة الأسرة",
+      "observable_effect": "تتضمن قائمة التسوق العناصر الناقصة التي حددتها الأسرة لهذه المرة",
+      "natural_completion": "عندما يضاف العنصر أو العنصران المتفق عليهما إلى القائمة",
+      "standalone_role_meaning": "إضافة نواقص محددة إلى قائمة التسوق دور له معنى داخل إعداد القائمة لأنه يضيف معلومات تستخدمها الأسرة عند الشراء.",
+      "participation_mode": "shared",
+      "event_id": "SHOP-001",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "يتعامل الدور مع قائمة وعنصر أو عنصرين ناقصين.",
+          "c2_coordination": "يرتبط بجرد الأسرة وبقية عناصر القائمة.",
+          "c3_variability": "تختلف العناصر الناقصة من مرة لأخرى.",
+          "c4_choice_uncertainty": "قد تكون هناك طريقة كتابة أو إملاء أو صورة."
+        },
+        "rationale": "صنف moderate بعد تضييق النطاق إلى عناصر محددة لا مسؤولية القائمة الكاملة."
+      },
+      "execution_blocks": [
+        { "kind": "execution_block", "id": "FR-EXP12-SHOP-001-OP002-b1", "order": 1, "text": "تحديد عنصر ناقص مع الأسرة" },
+        { "kind": "execution_block", "id": "FR-EXP12-SHOP-001-OP002-b2", "order": 2, "text": "إضافته إلى القائمة بالكتابة أو الإملاء أو الصورة" }
+      ],
+      "lineage": { "source_opportunity_id": "SHOP-001-OP002", "source_card": "legacy_master", "sample_id": "EXP12-07" }
+    },
+    {
+      "kind": "functional_participation",
+      "provenance": "framework_reference",
+      "id": "FR-EXP12-SHOP-041-OP001",
+      "title": "سحب عربة التسوق من مكانها",
+      "life_context": "عند بداية رحلة التسوق في منطقة تجمع العربات",
+      "functional_intent": "المساهمة في جعل عربة التسوق جاهزة لاستخدام الأسرة داخل المتجر",
+      "observable_effect": "تصبح عربة واحدة خارج منطقة التجمع وقريبة من الأسرة",
+      "natural_completion": "عندما تخرج العربة من مكانها وتصبح جاهزة للدفع أو الاستخدام",
+      "standalone_role_meaning": "سحب عربة التسوق من مكانها دور له معنى داخل رحلة التسوق لأنه يجهز أداة تستخدمها الأسرة في بقية الزيارة.",
+      "participation_mode": "shared",
+      "event_id": "SHOP-041",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "يتضمن عربة ومقبضًا ومنطقة تجمع.",
+          "c2_coordination": "يرتبط ببداية تحرك الأسرة داخل المتجر.",
+          "c3_variability": "قد تختلف العربة أو مساحة التجمع.",
+          "c4_choice_uncertainty": "الاختيار محدود بعربة مناسبة من منطقة واضحة."
+        },
+        "rationale": "صنف moderate بسبب التغير المكاني والحاجة إلى تنسيق بسيط مع حركة الأسرة."
+      },
+      "execution_blocks": [
+        { "kind": "execution_block", "id": "FR-EXP12-SHOP-041-OP001-b1", "order": 1, "text": "الإمساك بمقبض العربة" },
+        { "kind": "execution_block", "id": "FR-EXP12-SHOP-041-OP001-b2", "order": 2, "text": "سحب العربة من مكانها" }
+      ],
+      "lineage": { "source_opportunity_id": "SHOP-041-OP001", "source_card": "legacy_master", "sample_id": "EXP12-08" }
+    },
+    {
+      "kind": "functional_participation",
+      "provenance": "framework_reference",
+      "id": "FR-EXP12-COMM-006-OP002",
+      "title": "إبلاغ الموظف بطلب المقهى",
+      "life_context": "أثناء طلب مشروب أو وجبة خفيفة في المقهى مع الأسرة",
+      "functional_intent": "المساهمة في إيصال الطلب المتفق عليه إلى الموظف",
+      "observable_effect": "يعرف الموظف الطلب المطلوب عبر كلام أو إشارة أو بطاقة",
+      "natural_completion": "عندما يصل الطلب المتفق عليه إلى الموظف بوضوح كاف لإكمال الطلب",
+      "standalone_role_meaning": "إبلاغ الموظف بطلب المقهى دور له معنى داخل زيارة المقهى لأنه ينقل معلومة لازمة لإتمام الطلب حتى إذا أكمل آخرون الدفع أو الاستلام.",
+      "participation_mode": "shared",
+      "event_id": "COMM-006",
+      "complexity": {
+        "level": "advanced",
+        "dimensions": {
+          "c1_elements": "يتضمن موظفًا وطلبًا وقناة تواصل.",
+          "c2_coordination": "يرتبط بتوقيت وصول الموظف وترتيب الطلب.",
+          "c3_variability": "قد تختلف القائمة أو طريقة الطلب أو مستوى الزحام.",
+          "c4_choice_uncertainty": "توجد بدائل تواصل واضحة مثل الكلام أو الإشارة أو البطاقة."
+        },
+        "rationale": "صنف advanced بسبب التفاعل مع موظف خارجي وتغير طريقة التواصل، لا بسبب الشخص أو الأداء."
+      },
+      "execution_blocks": [
+        { "kind": "execution_block", "id": "FR-EXP12-COMM-006-OP002-b1", "order": 1, "text": "التوجه للموظف أو انتظار وصوله" },
+        { "kind": "execution_block", "id": "FR-EXP12-COMM-006-OP002-b2", "order": 2, "text": "ذكر الطلب أو الإشارة إليه في القائمة" }
+      ],
+      "lineage": { "source_opportunity_id": "COMM-006-OP002", "source_card": "legacy_master", "sample_id": "EXP12-09" }
+    },
+    {
+      "kind": "functional_participation",
+      "provenance": "framework_reference",
+      "id": "FR-EXP12-COMM-008-OP002",
+      "title": "عرض رقم طلب الطعام للموظف",
+      "life_context": "أثناء استلام طعام خارجي من مطعم مع الأسرة",
+      "functional_intent": "المساهمة في تعريف الموظف بالطلب المطلوب استلامه",
+      "observable_effect": "يصبح رقم الطلب أو الاسم ظاهرًا للموظف ليستطيع متابعة الاستلام",
+      "natural_completion": "عندما يرى الموظف رقم الطلب أو الاسم ويبدأ مطابقة الطلب",
+      "standalone_role_meaning": "عرض رقم طلب الطعام للموظف دور له معنى داخل استلام الطعام لأنه يقدم معلومة لازمة للعثور على الطلب حتى إذا تولى آخرون حمله أو فحصه.",
+      "participation_mode": "shared",
+      "event_id": "COMM-008",
+      "complexity": {
+        "level": "advanced",
+        "dimensions": {
+          "c1_elements": "يتضمن رقم طلب أو اسمًا وموظفًا وهاتفًا أو بطاقة.",
+          "c2_coordination": "يرتبط بترتيب الاستلام وسؤال الموظف.",
+          "c3_variability": "قد تختلف طريقة عرض الطلب أو قناة الاستلام.",
+          "c4_choice_uncertainty": "توجد بدائل واضحة: قول الاسم أو عرض الشاشة أو البطاقة."
+        },
+        "rationale": "صنف advanced لأن الدور يتضمن تفاعلًا خارجيًا ومعلومة متغيرة ضمن موقف مجتمعي."
+      },
+      "execution_blocks": [
+        { "kind": "execution_block", "id": "FR-EXP12-COMM-008-OP002-b1", "order": 1, "text": "فتح رقم الطلب أو البطاقة" },
+        { "kind": "execution_block", "id": "FR-EXP12-COMM-008-OP002-b2", "order": 2, "text": "عرض الرقم أو الاسم للموظف" }
+      ],
+      "lineage": { "source_opportunity_id": "COMM-008-OP002", "source_card": "legacy_master", "sample_id": "EXP12-10" }
+    },
+    {
+      "kind": "functional_participation",
+      "provenance": "framework_reference",
+      "id": "FR-EXP12-HEALTH-003-OP001",
+      "title": "جمع التقارير الطبية للموعد",
+      "life_context": "أثناء تجهيز مستندات موعد طبي مع الأسرة",
+      "functional_intent": "المساهمة في جعل التقارير المطلوبة متاحة قبل الخروج أو الحجز",
+      "observable_effect": "تصبح التقارير المستهدفة مجموعة في الملف أو الحقيبة",
+      "natural_completion": "عندما توضع التقارير المحددة في مكانها المخصص للموعد",
+      "standalone_role_meaning": "جمع التقارير الطبية للموعد دور له معنى داخل تجهيز المستندات لأنه يجعل أوراقًا مطلوبة حاضرة حتى إذا تولى آخرون مراجعتها.",
+      "participation_mode": "shared",
+      "event_id": "HEALTH-003",
+      "complexity": {
+        "level": "simple",
+        "dimensions": {
+          "c1_elements": "عناصر قليلة: ملف وتقارير محددة.",
+          "c2_coordination": "يرتبط بالتحضير للموعد لكنه لا يتطلب تفاعلًا خارجيًا.",
+          "c3_variability": "الموقف ثابت غالبًا إذا كان مكان الملف معروفًا.",
+          "c4_choice_uncertainty": "الاختيار محدود بالتقارير التي تحددها الأسرة."
+        },
+        "rationale": "صنف simple لأن الدور تحضيري محدود وواضح النهاية."
+      },
+      "execution_blocks": [
+        { "kind": "execution_block", "id": "FR-EXP12-HEALTH-003-OP001-b1", "order": 1, "text": "فتح ملف التقارير" },
+        { "kind": "execution_block", "id": "FR-EXP12-HEALTH-003-OP001-b2", "order": 2, "text": "وضع التقارير المطلوبة في الملف أو الحقيبة" }
+      ],
+      "lineage": { "source_opportunity_id": "HEALTH-003-OP001", "source_card": "legacy_master", "sample_id": "EXP12-11" }
+    },
+    {
+      "kind": "functional_participation",
+      "provenance": "framework_reference",
+      "id": "FR-EXP12-HEALTH-014-OP001",
+      "title": "إعداد منبه موعد الدواء مع الأسرة",
+      "life_context": "أثناء تجهيز تذكير منزلي بوقت جرعة الدواء تحت مسؤولية الأسرة",
+      "functional_intent": "المساهمة في جعل وقت الجرعة ظاهرًا كتذكير للأسرة قبل موعده",
+      "observable_effect": "يصبح منبه الوقت المتفق عليه مضبوطًا على الهاتف أو الجهاز المحدد",
+      "natural_completion": "عندما يظهر وقت الجرعة المتفق عليه داخل المنبه ويحفظه الجهاز",
+      "standalone_role_meaning": "إعداد منبه موعد الدواء مع الأسرة دور له معنى داخل متابعة الجرعات لأنه يجهز تذكيرًا تستخدمه الأسرة، مع بقاء قرار الدواء والتحقق للبالغ أو مقدم الرعاية.",
+      "participation_mode": "shared",
+      "event_id": "HEALTH-014",
+      "complexity": {
+        "level": "moderate",
+        "dimensions": {
+          "c1_elements": "يتضمن وقتًا وجهازًا وتذكيرًا محفوظًا.",
+          "c2_coordination": "يرتبط بمسؤولية الأسرة عن موعد الجرعة.",
+          "c3_variability": "قد يختلف وقت الجرعة أو الجهاز المستخدم.",
+          "c4_choice_uncertainty": "الاختيار محدود بالوقت الذي تحدده الأسرة."
+        },
+        "rationale": "صنف moderate بسبب ارتباطه بسياق صحي منزلي يتطلب تحقق الأسرة، دون تفويض قرار الدواء للمشارك."
+      },
+      "execution_blocks": [
+        { "kind": "execution_block", "id": "FR-EXP12-HEALTH-014-OP001-b1", "order": 1, "text": "فتح تطبيق المنبه مع الأسرة" },
+        { "kind": "execution_block", "id": "FR-EXP12-HEALTH-014-OP001-b2", "order": 2, "text": "اختيار وقت الجرعة المتفق عليه" },
+        { "kind": "execution_block", "id": "FR-EXP12-HEALTH-014-OP001-b3", "order": 3, "text": "حفظ المنبه على الجهاز" }
+      ],
+      "lineage": { "source_opportunity_id": "HEALTH-014-OP001", "source_card": "legacy_master", "sample_id": "EXP12-12" }
+    }
+  ]
+}
