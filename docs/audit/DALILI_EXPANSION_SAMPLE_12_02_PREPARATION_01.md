@@ -47,6 +47,14 @@ The reviewer should fill the scorecard with:
 - `REVISE_SCOPE`
 - `REJECT`
 
+Image review is recorded separately in `image_review_status`:
+
+- `IMAGE_ACCEPTED`
+- `IMAGE_REPLACE_LATER`
+- `IMAGE_MISSING`
+- `IMAGE_NOT_REQUIRED_FOR_CONTENT_APPROVAL`
+- `IMAGE_REJECTED`
+
 The key review question is not whether the activity is useful in general, but whether the record is a clean family-participation role:
 
 - clear life context
@@ -66,3 +74,4 @@ The packet has an automated selection guard:
 - No reused materialized source evidence from `BATCH_03` or `BATCH_04`.
 - Contains edge coverage across staff, health, clothing, individual/shared modes, and advanced complexity.
 - All selected candidates currently pass the frozen FP validity gates as review candidates.
+- The scorecard separates content decision from image review status.

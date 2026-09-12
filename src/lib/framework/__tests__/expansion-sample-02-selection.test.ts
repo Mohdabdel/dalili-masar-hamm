@@ -33,6 +33,18 @@ function readSample02(): ExpansionSample02Packet {
   return JSON.parse(raw) as ExpansionSample02Packet;
 }
 
+function readSample02ScorecardHeader(): string[] {
+  return readFileSync(
+    join(
+      process.cwd(),
+      "docs/audit/data/DALILI_EXPANSION_SAMPLE_12_02_SCORECARD.csv",
+    ),
+    "utf8",
+  )
+    .split(/\r?\n/, 1)[0]
+    .split(",");
+}
+
 function materializedEvidenceIds(): Set<string> {
   const out = new Set<string>();
   for (const id of BATCH03_PARTICIPATION_IDS) {
@@ -110,5 +122,14 @@ describe("Expansion sample 12-02 selection packet", () => {
       const result = evaluateFunctionalParticipation(candidate);
       expect(result.valid, `${candidate.id}: ${result.codes.join(",")}`).toBe(true);
     }
+  });
+
+  it("separates image review from the content decision in the scorecard", () => {
+    const header = readSample02ScorecardHeader();
+    expect(header).toContain("decision");
+    expect(header).toContain("image_review_status");
+    expect(header.indexOf("image_review_status")).toBeGreaterThan(
+      header.indexOf("decision"),
+    );
   });
 });
