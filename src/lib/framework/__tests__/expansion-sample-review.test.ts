@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { resolveStepImage, suggestStepImage } from "@/features/space/step-image";
 import { evaluateFunctionalParticipation } from "../fp-validity";
 import type { CandidateFunctionalParticipation } from "../reference-model";
 
@@ -32,6 +33,21 @@ describe("Expansion sample 12 corrected review packet", () => {
     for (const item of packet.items) {
       const result = evaluateFunctionalParticipation(item);
       expect(result.valid, `${item.id}: ${result.codes.join(",")}`).toBe(true);
+    }
+  });
+
+  it("has review visual coverage for every corrected execution block", () => {
+    const packet = readCorrectedSample();
+    for (const item of packet.items) {
+      for (const block of item.execution_blocks ?? []) {
+        const ref = suggestStepImage(block.text);
+        const resolved = resolveStepImage(ref);
+        expect(ref?.sourceAssetCode, `${item.id}: ${block.text}`).toMatch(/^VRS-EXP12-/);
+        expect(resolved.src, `${item.id}: ${block.text}`).toContain(
+          "/assets/execution/expansion12/",
+        );
+        expect(resolved.compositePending, `${item.id}: ${block.text}`).toBe(false);
+      }
     }
   });
 });
