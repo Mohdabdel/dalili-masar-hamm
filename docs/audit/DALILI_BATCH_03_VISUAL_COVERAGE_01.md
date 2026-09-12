@@ -68,3 +68,12 @@ The visual user-path review also checked the transition from workspace to previe
 - Verified the six Batch 03 preview pages no longer return 404.
 - Verified one approval flow from preview to `/lab/slice/card/$specId`.
 - Adjusted approved-card rendering so the terminal `__done__` frame appears as a text-only ending and does not request a missing image.
+
+## Pilot UX Follow-Up
+
+The pilot review found that showing all steps in the workspace preview can feel crowded. The workspace remains an editing surface for the family, but the user-facing preview now defaults to a focused step-by-step mode.
+
+- Workspace quick preview now shows only the first selected step as a compact sample.
+- Preview page now offers three display modes: step-by-step, vertical, and horizontal.
+- Step-by-step is the default preview mode, with previous/next controls.
+- Visual smoke check confirmed the picnic sample moves from `1 / 2` to `2 / 2` without console errors.
