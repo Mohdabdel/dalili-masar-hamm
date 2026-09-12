@@ -50,7 +50,10 @@ describe("Expansion sample 12-02 corrected review packet", () => {
   it("does not keep execution blocks equal to the role title", () => {
     const packet = readCorrectedSample02();
     for (const candidate of packet.candidates) {
-      for (const block of candidate.execution_blocks ?? []) {
+      for (const [index, block] of (candidate.execution_blocks ?? []).entries()) {
+        expect(block.id, candidate.candidate_id).toBe(
+          `${candidate.proposed_framework_reference_id}-b${index + 1}`,
+        );
         expect(block.text, candidate.candidate_id).not.toBe(candidate.title);
       }
     }

@@ -82,7 +82,7 @@
       "complexity": {
         "level": "moderate",
         "dimensions": {
-          "c1_elements": "عدة عناصر مرتبطة بالدور: ترتيب الحوافظ في حقيبة السفر.",
+          "c1_elements": "يتعامل الدور مع حوافظ طعام وحقيبة رحلة وترتيب داخلي واضح.",
           "c2_coordination": "يرتبط بتسلسل الحدث أو ترتيب الأسرة قبل الانتقال لما بعده.",
           "c3_variability": "الموقف ثابت غالبًا ويتكرر بصورة قريبة.",
           "c4_choice_uncertainty": "الاختيارات قليلة ومحددة مسبقًا."
@@ -200,7 +200,7 @@
       "complexity": {
         "level": "moderate",
         "dimensions": {
-          "c1_elements": "عدة عناصر مرتبطة بالدور: فحص سلامة العبوات من الانبعاج أو التلف.",
+          "c1_elements": "يتعامل الدور مع عبوة واحدة وحالة ظاهرية ومكان وضع للمراجعة.",
           "c2_coordination": "يتطلب تنسيقًا واضحًا بين ترتيب الحدث ومتطلبات الأسرة أو الجهة الخارجية.",
           "c3_variability": "قد تختلف التفاصيل أو العناصر أو المكان ضمن حدود مألوفة.",
           "c4_choice_uncertainty": "يوجد اختيار محدود بين بدائل واضحة."
@@ -271,19 +271,19 @@
       "execution_blocks": [
         {
           "kind": "execution_block",
-          "id": "FP-CAND-016-B1",
+          "id": "FR-EXP12-02-HOME002-OP005-b1",
           "order": 1,
           "text": "جمع الأكواب الفارغة من الطاولة"
         },
         {
           "kind": "execution_block",
-          "id": "FP-CAND-016-B2",
+          "id": "FR-EXP12-02-HOME002-OP005-b2",
           "order": 2,
           "text": "إعادة أجهزة التحكم أو المجلات إلى مكانها"
         },
         {
           "kind": "execution_block",
-          "id": "FP-CAND-016-B3",
+          "id": "FR-EXP12-02-HOME002-OP005-b3",
           "order": 3,
           "text": "ترك الأشياء المتفق عليها على الطاولة بشكل مرتب"
         }
@@ -338,19 +338,19 @@
       "execution_blocks": [
         {
           "kind": "execution_block",
-          "id": "FP-CAND-017-B1",
+          "id": "FR-EXP12-02-HOME006-OP006-b1",
           "order": 1,
           "text": "جمع الأحذية المبعثرة"
         },
         {
           "kind": "execution_block",
-          "id": "FP-CAND-017-B2",
+          "id": "FR-EXP12-02-HOME006-OP006-b2",
           "order": 2,
           "text": "مطابقة أزواج الأحذية"
         },
         {
           "kind": "execution_block",
-          "id": "FP-CAND-017-B3",
+          "id": "FR-EXP12-02-HOME006-OP006-b3",
           "order": 3,
           "text": "ترتيب الأحذية على الرفوف المخصصة"
         }
@@ -391,8 +391,8 @@
       "complexity": {
         "level": "moderate",
         "dimensions": {
-          "c1_elements": "عدة عناصر مرتبطة بالدور وتحتاج ترتيبًا واضحًا: اختيار وطلب وجبة في المطعم.",
-          "c2_coordination": "تسلسل مباشر لا يحتاج ربطًا ملحوظًا مع أدوار أخرى.",
+          "c1_elements": "يتعامل الدور مع خيار وجبة وقائمة وقناة إبلاغ للنادل.",
+          "c2_coordination": "يرتبط الدور بتوقيت طلب الأسرة وتفاعل النادل.",
           "c3_variability": "قد تختلف العناصر أو المكان أو تفاصيل الموقف من مرة لأخرى.",
           "c4_choice_uncertainty": "يوجد اختيار محدود بين بدائل واضحة."
         },
@@ -456,19 +456,19 @@
       "execution_blocks": [
         {
           "kind": "execution_block",
-          "id": "FP-WAVE-A-012-B1",
+          "id": "FR-EXP12-02-COMM025-OP008-b1",
           "order": 1,
           "text": "قراءة بيانات العنوان من الورقة أو الهاتف مع الأسرة"
         },
         {
           "kind": "execution_block",
-          "id": "FP-WAVE-A-012-B2",
+          "id": "FR-EXP12-02-COMM025-OP008-b2",
           "order": 2,
           "text": "وضع بيانات العنوان على الطرد"
         },
         {
           "kind": "execution_block",
-          "id": "FP-WAVE-A-012-B3",
+          "id": "FR-EXP12-02-COMM025-OP008-b3",
           "order": 3,
           "text": "مراجعة وضوح الاسم والوجهة قبل الخروج"
         }
