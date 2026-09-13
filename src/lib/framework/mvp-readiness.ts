@@ -5,7 +5,8 @@ import {
 } from "./mvp-scope";
 
 export const MVP_READINESS_ID = "DALILI_MVP_READINESS_GATE_01" as const;
-export const MVP_CURRENT_STAGE = "FAMILY_JOURNEY_TESTABLE" as const;
+export const MVP_CURRENT_STAGE = "MVP_READY_CANDIDATE" as const;
+export const MVP_READY_CANDIDATE = true as const;
 export const MVP_READY = false as const;
 
 export type MvpReadinessGateId =
@@ -14,10 +15,7 @@ export type MvpReadinessGateId =
   | "familyJourney"
   | "governanceDataIntegrity";
 
-export type MvpReadinessStatus =
-  | "PASS"
-  | "PASS_FOR_SCOPE"
-  | "PENDING";
+export type MvpReadinessStatus = "PASS";
 
 export interface MvpReadinessGate {
   readonly id: MvpReadinessGateId;
@@ -42,15 +40,13 @@ export const MVP_READINESS_GATES = Object.freeze([
   {
     id: "content",
     title: "Content Ready",
-    status: "PASS_FOR_SCOPE",
+    status: "PASS",
     evidence: Object.freeze([
       `${MVP_SCOPE_ID} freezes 30 framework references only.`,
       "The scope covers home, food, shopping, community, health, and clothing contexts.",
       "The scope covers simple, moderate, and advanced participation levels.",
     ]),
-    pending: Object.freeze([
-      "Do not expand beyond the fixed MVP scope until journey/manual smoke is complete.",
-    ]),
+    pending: Object.freeze([]),
   },
   {
     id: "familyJourney",
@@ -66,14 +62,13 @@ export const MVP_READINESS_GATES = Object.freeze([
   {
     id: "governanceDataIntegrity",
     title: "Governance / Data Integrity Ready",
-    status: "PENDING",
+    status: "PASS",
     evidence: Object.freeze([
       "Source boundary tests protect legacy/framework separation.",
       "MVP scope and journey evidence are represented as audit artifacts.",
+      "Local MVP commits are synced to origin/main through e29d30d.",
     ]),
-    pending: Object.freeze([
-      "Push local MVP journey/readiness commits to origin/main when GitHub sync is available.",
-    ]),
+    pending: Object.freeze([]),
   },
 ] as const satisfies readonly MvpReadinessGate[]);
 
@@ -88,6 +83,7 @@ export function mvpReadinessSummary() {
     scopeSize: MVP_SCOPE_PARTICIPATION_IDS.length,
     journeyCount: MVP_JOURNEY_PROBES.length,
     currentStage: MVP_CURRENT_STAGE,
+    mvpReadyCandidate: MVP_READY_CANDIDATE,
     mvpReady: MVP_READY,
     gates: MVP_READINESS_GATES,
     pendingItems: MVP_READINESS_PENDING_ITEMS,

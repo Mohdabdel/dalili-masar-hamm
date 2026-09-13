@@ -5,15 +5,18 @@ import {
   MVP_READINESS_ID,
   MVP_READINESS_PENDING_ITEMS,
   MVP_READY,
+  MVP_READY_CANDIDATE,
   mvpReadinessSummary,
 } from "../mvp-readiness";
 
 describe("DALILI MVP readiness gate 01", () => {
-  it("يثبت أن المشروع في محطة اختبار الرحلات وليس إعلان MVP Ready", () => {
+  it("يثبت أن المشروع وصل إلى محطة MVP Ready Candidate وليس إعلان MVP Ready النهائي", () => {
     const summary = mvpReadinessSummary();
 
     expect(summary.id).toBe(MVP_READINESS_ID);
     expect(summary.currentStage).toBe(MVP_CURRENT_STAGE);
+    expect(summary.mvpReadyCandidate).toBe(MVP_READY_CANDIDATE);
+    expect(summary.mvpReadyCandidate).toBe(true);
     expect(summary.mvpReady).toBe(MVP_READY);
     expect(summary.mvpReady).toBe(false);
     expect(summary.scopeSize).toBe(30);
@@ -32,18 +35,16 @@ describe("DALILI MVP readiness gate 01", () => {
       "PASS",
     );
     expect(MVP_READINESS_GATES.find((gate) => gate.id === "content")?.status).toBe(
-      "PASS_FOR_SCOPE",
+      "PASS",
     );
     expect(MVP_READINESS_GATES.find((gate) => gate.id === "familyJourney")?.status).toBe(
       "PASS",
     );
     expect(
       MVP_READINESS_GATES.find((gate) => gate.id === "governanceDataIntegrity")?.status,
-    ).toBe("PENDING");
+    ).toBe("PASS");
 
-    expect(MVP_READINESS_PENDING_ITEMS).toContain(
-      "Push local MVP journey/readiness commits to origin/main when GitHub sync is available.",
-    );
+    expect(MVP_READINESS_PENDING_ITEMS).toHaveLength(0);
     expect(MVP_READINESS_PENDING_ITEMS).not.toContain(
       "Run manual UI smoke for Home / Family journey.",
     );

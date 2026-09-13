@@ -15,9 +15,11 @@ DALILI is not targeting migration of the full 1413 Legacy Master opportunities. 
 
 ## Current Stage
 
-`FAMILY_JOURNEY_TESTABLE`
+`MVP_READY_CANDIDATE`
 
-This means the project has a fixed MVP candidate scope and automated journey evidence, but it is not yet `MVP_READY`.
+This means the project has a fixed MVP scope, automated journey evidence, manual UI smoke evidence, and synchronized repository state.
+
+It is not yet marked as final `MVP_READY` because that label is reserved for an explicit release/acceptance decision after this candidate station.
 
 ## Scope
 
@@ -43,9 +45,9 @@ The scope covers:
 | Gate | Status | Evidence | Remaining Work |
 | --- | --- | --- | --- |
 | Architecture Ready | PASS | Frozen framework references resolve through the canonical registry; legacy rows remain source/backlog only. | None for current MVP scope. |
-| Content Ready | PASS_FOR_SCOPE | `DALILI_MVP_SCOPE_01` fixes 30 references and tests them as discoverable, valid, and card-resolvable. | Do not expand beyond the fixed scope before manual journey smoke. |
+| Content Ready | PASS | `DALILI_MVP_SCOPE_01` fixes 30 references and tests them as discoverable, valid, and card-resolvable. | None for current MVP scope. |
 | Family Journey Ready | PASS | Automated probes cover workspace resolution, draft composition, family wording edits, visible rows, and frozen card snapshots. Manual UI smoke confirms single-step editing, next/previous navigation, preview modes, and approval entry. | None for current MVP scope. |
-| Governance / Data Integrity Ready | PENDING | Source boundary and audit artifacts exist locally. | Push local MVP journey/readiness commits to `origin/main` when GitHub sync is available. |
+| Governance / Data Integrity Ready | PASS | Source boundary and audit artifacts exist locally. Local MVP commits are synced to `origin/main` through `e29d30d`. | None. |
 
 ## Manual Smoke Result
 
@@ -68,11 +70,8 @@ Each manual smoke confirmed:
 
 `MVP_READY = false`
 
-The nearest reachable station is:
+Current station:
 
 `MVP_READY_CANDIDATE`
 
-That station is reachable after:
-
-- local commits are synced to GitHub;
-- no gate regresses from the frozen framework contract.
+All four readiness gates are now PASS for the fixed MVP scope. Final `MVP_READY` remains a separate release/acceptance mark, not an automatic content expansion trigger.
