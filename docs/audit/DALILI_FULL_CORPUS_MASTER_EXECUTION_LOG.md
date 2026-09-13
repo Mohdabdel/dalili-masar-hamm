@@ -44,3 +44,30 @@ Governing plan: `docs/DALILI_FULL_CORPUS_GOVERNING_EXECUTION_PLAN_v1.0.md`
 - Existing Framework lineage inside batch: **11 records**
 - card_pending inside batch: **0**
 - Artifact: `docs/audit/data/DALILI_CLASSIFICATION_BATCH_001.json`
+
+
+## Phase 2 — Classification approval through record 50
+
+- B001 P01 records 1–25: APPROVED.
+  - REWRITE_REQUIRED: 21
+  - SPLIT_REQUIRED: 2
+  - MERGED_BY_PROVENANCE: 2
+  - unresolved: 0
+- B001 P02 records 26–50: APPROVED.
+  - REWRITE_REQUIRED: 22
+  - SPLIT_REQUIRED: 2
+  - MERGED_BY_PROVENANCE: 1
+  - unresolved: 0
+- Cumulative records 1–50:
+  - REWRITE_REQUIRED: 43
+  - SPLIT_REQUIRED: 4
+  - MERGED_BY_PROVENANCE: 3
+  - unresolved: 0
+- Governing approval artifact:
+  `docs/audit/data/DALILI_CLASSIFICATION_B001_APPROVED_001_050.json`
+- Approval commit:
+  `b0b95ca47cfea3bbc8abe65e81aca38cfc19cbba`
+- Legacy Master unchanged.
+- No materialization performed.
+- Canonical validator unchanged.
+- Next slice: records 51–75.
