@@ -33,3 +33,14 @@ Governing plan: `docs/DALILI_FULL_CORPUS_GOVERNING_EXECUTION_PLAN_v1.0.md`
 - card_pending: **274**
 - normalized-title duplicate groups: **13 / 26 rows**
 - exact opportunity/event title matches: **50**
+
+
+## Phase 2 active batch
+
+- Batch: `CLASS-B001`
+- Status: **IN PROGRESS**
+- Input: **100 Legacy records**
+- Range: `CLO-001-OP001` → `COMM-014-OP001`
+- Existing Framework lineage inside batch: **11 records**
+- card_pending inside batch: **0**
+- Artifact: `docs/audit/data/DALILI_CLASSIFICATION_BATCH_001.json`
