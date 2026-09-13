@@ -1,0 +1,114 @@
+{
+  "artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050",
+  "phase": "PHASE_2_CORPUS_CLASSIFICATION",
+  "status": "GOVERNING_REVIEW_APPROVED",
+  "approved_ranges": [
+    {
+      "range": "1-25",
+      "count": 25,
+      "summary": {
+        "REWRITE_REQUIRED": 21,
+        "SPLIT_REQUIRED": 2,
+        "MERGED_BY_PROVENANCE": 2,
+        "unresolved": 0
+      },
+      "decisions": {
+        "CLO-001-OP001": "REWRITE_REQUIRED",
+        "CLO-002-OP001": "SPLIT_REQUIRED",
+        "CLO-003-OP001": "SPLIT_REQUIRED",
+        "CLO-004-OP001": "REWRITE_REQUIRED",
+        "CLO-005-OP001": "REWRITE_REQUIRED",
+        "CLO-006-OP001": "REWRITE_REQUIRED",
+        "CLO-007-OP001": "REWRITE_REQUIRED",
+        "CLO-008-OP001": "REWRITE_REQUIRED",
+        "CLO-009-OP001": "REWRITE_REQUIRED",
+        "CLO-010-OP001": "REWRITE_REQUIRED",
+        "CLO-011-OP001": "MERGED_BY_PROVENANCE",
+        "CLO-012-OP001": "REWRITE_REQUIRED",
+        "CLO-013-OP001": "REWRITE_REQUIRED",
+        "CLO-014-OP001": "REWRITE_REQUIRED",
+        "CLO-015-OP001": "REWRITE_REQUIRED",
+        "CLO-016-OP001": "MERGED_BY_PROVENANCE",
+        "CLO-017-OP001": "REWRITE_REQUIRED",
+        "CLO-018-OP001": "REWRITE_REQUIRED",
+        "CLO-019-OP001": "REWRITE_REQUIRED",
+        "CLO-020-OP001": "REWRITE_REQUIRED",
+        "CLO-021-OP001": "REWRITE_REQUIRED",
+        "CLO-022-OP001": "REWRITE_REQUIRED",
+        "CLO-023-OP001": "REWRITE_REQUIRED",
+        "CLO-024-OP001": "REWRITE_REQUIRED",
+        "CLO-025-OP001": "REWRITE_REQUIRED"
+      }
+    },
+    {
+      "range": "26-50",
+      "count": 25,
+      "summary": {
+        "REWRITE_REQUIRED": 22,
+        "SPLIT_REQUIRED": 2,
+        "MERGED_BY_PROVENANCE": 1,
+        "unresolved": 0
+      },
+      "decisions": {
+        "CLO-026-OP001": "REWRITE_REQUIRED",
+        "CLO-027-OP001": "REWRITE_REQUIRED",
+        "CLO-028-OP001": "REWRITE_REQUIRED",
+        "CLO-029-OP001": "REWRITE_REQUIRED",
+        "CLO-030-OP001": "SPLIT_REQUIRED",
+        "CLO-031-OP001": "REWRITE_REQUIRED",
+        "CLO-032-OP001": "REWRITE_REQUIRED",
+        "CLO-033-OP001": "REWRITE_REQUIRED",
+        "CLO-034-OP001": "REWRITE_REQUIRED",
+        "CLO-035-OP001": "REWRITE_REQUIRED",
+        "CLO-036-OP001": "REWRITE_REQUIRED",
+        "CLO-037-OP001": "REWRITE_REQUIRED",
+        "CLO-038-OP001": "REWRITE_REQUIRED",
+        "CLO-039-OP001": "REWRITE_REQUIRED",
+        "CLO-040-OP001": "REWRITE_REQUIRED",
+        "CLO-041-OP001": "REWRITE_REQUIRED",
+        "CLO-042-OP001": "MERGED_BY_PROVENANCE",
+        "CLO-043-OP001": "REWRITE_REQUIRED",
+        "CLO-044-OP001": "REWRITE_REQUIRED",
+        "CLO-045-OP001": "REWRITE_REQUIRED",
+        "CLO-046-OP001": "REWRITE_REQUIRED",
+        "CLO-047-OP001": "SPLIT_REQUIRED",
+        "CLO-048-OP001": "REWRITE_REQUIRED",
+        "CLO-049-OP001": "REWRITE_REQUIRED",
+        "CLO-050-OP001": "REWRITE_REQUIRED"
+      },
+      "governing_overrides": [
+        {
+          "legacy_id": "CLO-030-OP001",
+          "from": "REWRITE_REQUIRED",
+          "to": "SPLIT_REQUIRED",
+          "reason": "Legacy combines receipt, inspection/sorting, washing, and storage as separable functional roles."
+        },
+        {
+          "legacy_id": "CLO-040-OP001",
+          "from": "REWRITE_REQUIRED+HUMAN_REVIEW",
+          "to": "REWRITE_REQUIRED",
+          "reason": "Legacy review_required is not a canonical FP validity gate; no independent semantic ambiguity remains."
+        },
+        {
+          "legacy_id": "CLO-047-OP001",
+          "from": "REWRITE_REQUIRED",
+          "to": "SPLIT_REQUIRED",
+          "reason": "Legacy combines response/cleaning, clothing change, and handling soiled clothes as separable functional roles."
+        }
+      ]
+    }
+  ],
+  "totals_approved_1_50": {
+    "count": 50,
+    "REWRITE_REQUIRED": 43,
+    "SPLIT_REQUIRED": 4,
+    "MERGED_BY_PROVENANCE": 3,
+    "unresolved": 0
+  },
+  "governance_notes": [
+    "Legacy Master remains immutable.",
+    "No materialization performed.",
+    "Existing Framework lineage is preserved.",
+    "Canonical validator is unchanged."
+  ]
+}
