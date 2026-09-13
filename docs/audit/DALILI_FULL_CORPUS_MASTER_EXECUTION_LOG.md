@@ -5,7 +5,7 @@ Governing plan: `docs/DALILI_FULL_CORPUS_GOVERNING_EXECUTION_PLAN_v1.0.md`
 | Phase | Batch | Status | Input | PASS | AMBER | RED | Materialized | Unresolved | Regression | Audit artifact |
 |---|---|---|---:|---:|---:|---:|---:|---:|---|---|
 | 0 Governance Reconciliation | BASELINE-01 | PASS | — | — | — | — | 0 | 0 | N/A | `DALILI_FULL_CORPUS_EXECUTION_BASELINE_01.md` |
-| 1 Corpus Inventory & Integrity | INVENTORY-01 | IN PROGRESS | 1413 | — | — | — | 0 | 1413 pending fresh disposition overlay | N/A | pending |
+| 1 Corpus Inventory & Integrity | INVENTORY-01 | PASS | 1413 | 1413 accounted | 0 | 0 | 0 | 0 inventory gaps | N/A | `DALILI_FULL_CORPUS_INVENTORY_INTEGRITY_GATE_01.md` |
 
 ## Current counters
 
@@ -13,7 +13,8 @@ Governing plan: `docs/DALILI_FULL_CORPUS_GOVERNING_EXECUTION_PLAN_v1.0.md`
 - Legacy accounted by prior strict export: **1413**
 - Legacy source mutation authorized: **NO**
 - Full-corpus disposition complete: **NO**
-- Current execution state: **PHASE 1 IN PROGRESS**
+- Current Framework lineage overlay: **45 Legacy rows / 47 lineage links**
+- Current execution state: **PHASE 2 CORPUS CLASSIFICATION — READY TO START**
 
 ## Historical evidence retained
 
@@ -21,3 +22,14 @@ Governing plan: `docs/DALILI_FULL_CORPUS_GOVERNING_EXECUTION_PLAN_v1.0.md`
 - Previous 30-candidate Production contract pipeline: PASS.
 - Previous controlled-expansion batches: retained.
 - Previous MVP_READY_CANDIDATE: historical validation milestone only.
+
+
+## Phase 1 verified counts
+
+- Domains: **6**
+- Events: **564**
+- Legacy opportunities: **1413**
+- Card rows: **1139**
+- card_pending: **274**
+- normalized-title duplicate groups: **13 / 26 rows**
+- exact opportunity/event title matches: **50**
