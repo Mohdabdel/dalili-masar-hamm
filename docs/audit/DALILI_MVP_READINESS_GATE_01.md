@@ -44,22 +44,22 @@ The scope covers:
 | --- | --- | --- | --- |
 | Architecture Ready | PASS | Frozen framework references resolve through the canonical registry; legacy rows remain source/backlog only. | None for current MVP scope. |
 | Content Ready | PASS_FOR_SCOPE | `DALILI_MVP_SCOPE_01` fixes 30 references and tests them as discoverable, valid, and card-resolvable. | Do not expand beyond the fixed scope before manual journey smoke. |
-| Family Journey Ready | PASS_AUTOMATED | Automated probes cover workspace resolution, draft composition, family wording edits, visible rows, and frozen card snapshots. | Run manual UI smoke for the three journeys. |
+| Family Journey Ready | PASS | Automated probes cover workspace resolution, draft composition, family wording edits, visible rows, and frozen card snapshots. Manual UI smoke confirms single-step editing, next/previous navigation, preview modes, and approval entry. | None for current MVP scope. |
 | Governance / Data Integrity Ready | PENDING | Source boundary and audit artifacts exist locally. | Push local MVP journey/readiness commits to `origin/main` when GitHub sync is available. |
 
-## Manual Smoke Required
+## Manual Smoke Result
 
-Before declaring MVP ready, run the three manual UI smoke paths:
+Manual UI smoke was run for the three paths:
 
 1. Home / Family journey
 2. Community / Health journey
 3. Usable Card journey
 
-Each manual smoke must confirm:
+Each manual smoke confirmed:
 
 - the card opens from the workspace;
 - the displayed context is family participation, not training/therapy/readiness;
-- step flow is understandable without page crowding;
+- step flow is one active editable step at a time;
 - family wording edits do not alter source content;
 - card preview/freezing remains consistent;
 - image presence does not block card use and can be replaced later if unsuitable.
@@ -74,6 +74,5 @@ The nearest reachable station is:
 
 That station is reachable after:
 
-- manual UI smoke passes for the three journey probes;
 - local commits are synced to GitHub;
 - no gate regresses from the frozen framework contract.

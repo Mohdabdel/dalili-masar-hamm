@@ -17,7 +17,6 @@ export type MvpReadinessGateId =
 export type MvpReadinessStatus =
   | "PASS"
   | "PASS_FOR_SCOPE"
-  | "PASS_AUTOMATED"
   | "PENDING";
 
 export interface MvpReadinessGate {
@@ -56,16 +55,13 @@ export const MVP_READINESS_GATES = Object.freeze([
   {
     id: "familyJourney",
     title: "Family Journey Ready",
-    status: "PASS_AUTOMATED",
+    status: "PASS",
     evidence: Object.freeze([
       "Three journey probes resolve through the workspace/card runtime.",
       "Draft composition, family wording edits, visible rows, and frozen snapshots are covered by tests.",
+      "Manual UI smoke confirms single-step editing, next/previous navigation, preview modes, and approval entry.",
     ]),
-    pending: Object.freeze([
-      "Run manual UI smoke for Home / Family journey.",
-      "Run manual UI smoke for Community / Health journey.",
-      "Run manual UI smoke for Usable Card journey.",
-    ]),
+    pending: Object.freeze([]),
   },
   {
     id: "governanceDataIntegrity",

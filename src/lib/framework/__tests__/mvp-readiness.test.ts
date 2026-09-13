@@ -35,17 +35,17 @@ describe("DALILI MVP readiness gate 01", () => {
       "PASS_FOR_SCOPE",
     );
     expect(MVP_READINESS_GATES.find((gate) => gate.id === "familyJourney")?.status).toBe(
-      "PASS_AUTOMATED",
+      "PASS",
     );
     expect(
       MVP_READINESS_GATES.find((gate) => gate.id === "governanceDataIntegrity")?.status,
     ).toBe("PENDING");
 
     expect(MVP_READINESS_PENDING_ITEMS).toContain(
-      "Run manual UI smoke for Home / Family journey.",
-    );
-    expect(MVP_READINESS_PENDING_ITEMS).toContain(
       "Push local MVP journey/readiness commits to origin/main when GitHub sync is available.",
+    );
+    expect(MVP_READINESS_PENDING_ITEMS).not.toContain(
+      "Run manual UI smoke for Home / Family journey.",
     );
   });
 });

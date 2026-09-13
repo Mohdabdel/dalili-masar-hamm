@@ -258,7 +258,7 @@ export function PreviewPage({ specId }: { specId: string }) {
         </LabSection>
       )}
 
-      <LabSection title="اسم البطاقة">
+      <LabSection title="تفاصيل البطاقة">
         <div className="grid gap-3 sm:grid-cols-2">
           <label className="block">
             <span className="mb-1 block text-sm font-bold">اسم البطاقة</span>

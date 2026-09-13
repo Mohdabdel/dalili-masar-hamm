@@ -2,8 +2,19 @@
 // كل خطوة وحدة واحدة: مساحة الصورة + العبارة + أدوات تخصيص مختصرة.
 // كتلة الصورة وكتلة العبارة مستقلتان تماماً: تغيير إحداهما لا يمس الأخرى.
 
-import { useRef, useState } from "react";
-import { ArrowDown, ArrowUp, Eye, EyeOff, Image as ImageIcon, Repeat2, Upload, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import {
+  ArrowDown,
+  ArrowUp,
+  ChevronLeft,
+  ChevronRight,
+  Eye,
+  EyeOff,
+  Image as ImageIcon,
+  Repeat2,
+  Upload,
+  X,
+} from "lucide-react";
 import { stepImageOptions, type ResolvedStepImage } from "@/features/space/step-image";
 import { cn } from "@/lib/utils";
 
@@ -45,9 +56,18 @@ export function StepComposer({
 }) {
   const [pickerFor, setPickerFor] = useState<string | null>(null);
   const [uploadingFor, setUploadingFor] = useState<string | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const options = stepImageOptions();
   const canRemove = rows.length > 1;
+  const safeIndex = Math.min(activeIndex, Math.max(rows.length - 1, 0));
+  const activeRow = rows[safeIndex];
+
+  useEffect(() => {
+    if (activeIndex > Math.max(rows.length - 1, 0)) {
+      setActiveIndex(Math.max(rows.length - 1, 0));
+    }
+  }, [activeIndex, rows.length]);
 
   const handleFile = async (stepId: string, file: File | undefined) => {
     if (!file || !onUploadImage) return;
@@ -60,30 +80,72 @@ export function StepComposer({
     }
   };
 
+  if (!activeRow) {
+    return null;
+  }
+
+  const moveActive = (direction: -1 | 1) => {
+    onMove(activeRow.stepId, direction);
+    setActiveIndex((value) => Math.min(rows.length - 1, Math.max(0, value + direction)));
+  };
+
+  const rowHasSource = showSourceText && !activeRow.familyAuthored;
+
   return (
-    <ol className="space-y-3">
-      {rows.map((row, i) => {
-        const rowHasSource = showSourceText && !row.familyAuthored;
-        return (
-        <li key={row.stepId} className="rounded-2xl border border-border bg-card p-3">
+    <div className="space-y-3">
+      <div className="flex flex-wrap items-center justify-between gap-2 rounded-2xl border border-border bg-card p-2">
+        <button
+          type="button"
+          onClick={() => setActiveIndex((value) => Math.max(0, value - 1))}
+          disabled={safeIndex === 0}
+          className="inline-flex min-h-11 items-center gap-1 rounded-xl border border-border px-3 text-sm font-bold disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          <ChevronRight className="h-4 w-4" aria-hidden />
+          السابق
+        </button>
+        <div className="text-center">
+          <p className="text-sm font-bold">الخطوة {safeIndex + 1} من {rows.length}</p>
+          <p className="text-xs text-muted-foreground">حرروا خطوة واحدة، ثم انتقلوا للتالية.</p>
+        </div>
+        <button
+          type="button"
+          onClick={() => setActiveIndex((value) => Math.min(rows.length - 1, value + 1))}
+          disabled={safeIndex >= rows.length - 1}
+          className="inline-flex min-h-11 items-center gap-1 rounded-xl bg-primary px-3 text-sm font-bold text-primary-foreground disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          التالي
+          <ChevronLeft className="h-4 w-4" aria-hidden />
+        </button>
+      </div>
+
+      <ol>
+        <li key={activeRow.stepId} className="rounded-2xl border border-border bg-card p-3">
           <div className="flex items-start justify-between gap-2">
             <span className="text-sm font-bold text-muted-foreground">
-              الخطوة {i + 1}
-              {row.familyAuthored && (
+              الخطوة {safeIndex + 1}
+              {activeRow.familyAuthored && (
                 <span className="ms-2 rounded-full bg-accent px-2 py-0.5 text-xs font-bold text-accent-foreground">
                   من كتابتكم
                 </span>
               )}
             </span>
             <div className="flex shrink-0 gap-1">
-              <Mini onClick={() => onMove(row.stepId, -1)} aria-label="تقديم الخطوة">
+              <Mini
+                onClick={() => moveActive(-1)}
+                disabled={safeIndex === 0}
+                aria-label="تقديم الخطوة"
+              >
                 <ArrowUp className="h-4 w-4" aria-hidden />
               </Mini>
-              <Mini onClick={() => onMove(row.stepId, 1)} aria-label="تأخير الخطوة">
+              <Mini
+                onClick={() => moveActive(1)}
+                disabled={safeIndex >= rows.length - 1}
+                aria-label="تأخير الخطوة"
+              >
                 <ArrowDown className="h-4 w-4" aria-hidden />
               </Mini>
               <Mini
-                onClick={() => onRemove(row.stepId)}
+                onClick={() => onRemove(activeRow.stepId)}
                 disabled={!canRemove}
                 aria-label="إزالة الخطوة من مسودتنا"
                 title={canRemove ? "إزالة من مسودتنا" : "لا بد من بقاء خطوة واحدة"}
@@ -96,22 +158,22 @@ export function StepComposer({
           <div className="mt-3 grid gap-3 sm:grid-cols-[9rem_minmax(0,1fr)]">
             {/* كتلة الصورة — مستقلة */}
             <div>
-              {!row.imageVisible ? (
+              {!activeRow.imageVisible ? (
                 <div className="grid aspect-[4/3] place-items-center rounded-2xl border border-dashed border-border bg-muted/30 p-2 text-center text-xs font-bold text-muted-foreground">
                   بدون صورة
                 </div>
-              ) : row.image.src ? (
+              ) : activeRow.image.src ? (
                 <div className="overflow-hidden rounded-2xl border border-border bg-muted">
                   <img
-                    src={row.image.src}
-                    alt={row.familyText}
+                    src={activeRow.image.src}
+                    alt={activeRow.familyText}
                     loading="lazy"
                     className="aspect-[4/3] w-full object-cover"
                   />
                 </div>
               ) : (
                 <div className="grid aspect-[4/3] place-items-center rounded-2xl border border-dashed border-border bg-muted/30 p-2 text-center text-xs font-semibold text-muted-foreground">
-                  {row.image.compositePending
+                  {activeRow.image.compositePending
                     ? "الصورة المتاحة تجمع أكثر من مشهد — نجهّز صورة لهذه الخطوة"
                     : "مساحة الصورة — اختاروا صورة مناسبة"}
                 </div>
@@ -119,19 +181,21 @@ export function StepComposer({
               <div className="mt-2 flex gap-1">
                 <Mini
                   className="flex-1 justify-center"
-                  onClick={() => onToggleImage(row.stepId, !row.imageVisible)}
-                  aria-pressed={!row.imageVisible}
+                  onClick={() => onToggleImage(activeRow.stepId, !activeRow.imageVisible)}
+                  aria-pressed={!activeRow.imageVisible}
                 >
-                  {row.imageVisible ? (
+                  {activeRow.imageVisible ? (
                     <EyeOff className="h-4 w-4" aria-hidden />
                   ) : (
                     <Eye className="h-4 w-4" aria-hidden />
                   )}
-                  {row.imageVisible ? "إخفاء الصورة" : "إظهار الصورة"}
+                  {activeRow.imageVisible ? "إخفاء الصورة" : "إظهار الصورة"}
                 </Mini>
                 <Mini
-                  onClick={() => setPickerFor(pickerFor === row.stepId ? null : row.stepId)}
-                  aria-expanded={pickerFor === row.stepId}
+                  onClick={() =>
+                    setPickerFor(pickerFor === activeRow.stepId ? null : activeRow.stepId)
+                  }
+                  aria-expanded={pickerFor === activeRow.stepId}
                   aria-label="اختيار صورة"
                 >
                   <ImageIcon className="h-4 w-4" aria-hidden />
@@ -141,13 +205,13 @@ export function StepComposer({
 
             {/* كتلة العبارة — مستقلة */}
             <div className="min-w-0">
-              {row.textVisible ? (
+              {activeRow.textVisible ? (
                 <label className="block">
                   <span className="mb-1 block text-sm font-bold">العبارة التي نستخدمها</span>
                   <input
                     type="text"
-                    value={row.familyText}
-                    onChange={(e) => onText(row.stepId, e.target.value)}
+                    value={activeRow.familyText}
+                    onChange={(e) => onText(activeRow.stepId, e.target.value)}
                     placeholder="اكتبوا بطريقتكم"
                     className="min-h-11 w-full rounded-xl border border-border bg-background px-3 text-base font-bold placeholder:font-normal placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   />
@@ -160,24 +224,24 @@ export function StepComposer({
 
               {rowHasSource && (
                 <p className="mt-1 text-xs text-muted-foreground">
-                  العبارة المقترحة: {row.sourceText}
+                  العبارة المقترحة: {activeRow.sourceText}
                 </p>
               )}
 
               <div className="mt-2 flex flex-wrap gap-1">
                 <Mini
-                  onClick={() => onToggleText(row.stepId, !row.textVisible)}
-                  aria-pressed={!row.textVisible}
+                  onClick={() => onToggleText(activeRow.stepId, !activeRow.textVisible)}
+                  aria-pressed={!activeRow.textVisible}
                 >
-                  {row.textVisible ? (
+                  {activeRow.textVisible ? (
                     <EyeOff className="h-4 w-4" aria-hidden />
                   ) : (
                     <Eye className="h-4 w-4" aria-hidden />
                   )}
-                  {row.textVisible ? "إخفاء العبارة" : "إظهار العبارة"}
+                  {activeRow.textVisible ? "إخفاء العبارة" : "إظهار العبارة"}
                 </Mini>
-                {row.textVisible && rowHasSource && (
-                  <Mini onClick={() => onResetText(row.stepId)}>
+                {activeRow.textVisible && rowHasSource && (
+                  <Mini onClick={() => onResetText(activeRow.stepId)}>
                     <Repeat2 className="h-4 w-4" aria-hidden />
                     استخدموا العبارة المقترحة
                   </Mini>
@@ -186,7 +250,7 @@ export function StepComposer({
             </div>
           </div>
 
-          {pickerFor === row.stepId && (
+          {pickerFor === activeRow.stepId && (
             <div className="mt-3 rounded-2xl border border-border p-2">
               <p className="mb-2 px-1 text-sm font-bold">اختاروا صورة لهذه الخطوة</p>
               <ul className="grid grid-cols-3 gap-2 sm:grid-cols-5">
@@ -194,12 +258,12 @@ export function StepComposer({
                   <li>
                     <button
                       type="button"
-                      disabled={uploadingFor === row.stepId}
+                      disabled={uploadingFor === activeRow.stepId}
                       onClick={() => fileInputRef.current?.click()}
                       className="grid h-20 w-full place-items-center gap-1 rounded-xl border border-dashed border-primary/60 bg-primary/5 px-1 text-xs font-bold text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50"
                     >
                       <Upload className="h-4 w-4" aria-hidden />
-                      {uploadingFor === row.stepId ? "جارٍ الرفع…" : "ارفعوا صورة"}
+                      {uploadingFor === activeRow.stepId ? "جارٍ الرفع…" : "ارفعوا صورة"}
                     </button>
                     <input
                       ref={fileInputRef}
@@ -208,7 +272,7 @@ export function StepComposer({
                       className="hidden"
                       aria-label="رفع صورة من الجهاز"
                       onChange={(e) => {
-                        void handleFile(row.stepId, e.target.files?.[0]);
+                        void handleFile(activeRow.stepId, e.target.files?.[0]);
                         e.target.value = "";
                       }}
                     />
@@ -218,7 +282,7 @@ export function StepComposer({
                   <button
                     type="button"
                     onClick={() => {
-                      onPickImage(row.stepId, null);
+                      onPickImage(activeRow.stepId, null);
                       setPickerFor(null);
                     }}
                     className="grid h-20 w-full place-items-center rounded-xl border border-dashed border-border text-xs font-bold text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -232,12 +296,12 @@ export function StepComposer({
                       type="button"
                       title={option.title}
                       onClick={() => {
-                        onPickImage(row.stepId, option.code);
+                        onPickImage(activeRow.stepId, option.code);
                         setPickerFor(null);
                       }}
                       className={cn(
                         "block h-20 w-full overflow-hidden rounded-xl border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-                        row.image.src === option.src
+                        activeRow.image.src === option.src
                           ? "border-primary ring-2 ring-primary"
                           : "border-border",
                       )}
@@ -260,9 +324,8 @@ export function StepComposer({
             </div>
           )}
         </li>
-        );
-      })}
-    </ol>
+      </ol>
+    </div>
   );
 }
 
