@@ -109,3 +109,13 @@ Governing plan: `docs/DALILI_FULL_CORPUS_GOVERNING_EXECUTION_PLAN_v1.0.md`
 - Legacy Master unchanged.
 - No materialization performed.
 - Canonical validator unchanged.
+
+
+## Phase 2 — 351–450
+Status: APPROVED AND PERSISTED
+Count: 100/100
+Disposition: REWRITE_REQUIRED 100
+Unresolved: 0
+Artifact: docs/audit/data/DALILI_CLASSIFICATION_APPROVED_351_450.json
+Commit: 7342b98fb9d926aee72f928fb97c4127ad89d066
+Gap remaining in Round 2: 326–350.
