@@ -92,3 +92,20 @@ Governing plan: `docs/DALILI_FULL_CORPUS_GOVERNING_EXECUTION_PLAN_v1.0.md`
 - Canonical validator unchanged.
 - Records 326–350 remain reserved for governing review / input preparation.
 - Records 51–250 were governing-approved previously but GitHub persistence remained blocked and must be reconciled before final Phase-2 closure.
+
+
+## Phase 2 — Classification approval records 51–250
+
+- Status: **APPROVED AND PERSISTED**
+- Range: **51–250**
+- Accounted: **200 / 200**
+- REWRITE_REQUIRED: **196**
+- SPLIT_REQUIRED: **3**
+- MERGED_BY_PROVENANCE: **1**
+- unresolved: **0**
+- Governing artifact: `docs/audit/data/DALILI_CLASSIFICATION_APPROVED_051_250.json`
+- Persistence representation: **DEFAULT_PLUS_OVERRIDES** (lossless for dispositions and governing flags)
+- Approval commit: `5713f2788a5fbc714592d2d0633ab2cdbc6a45f3`
+- Legacy Master unchanged.
+- No materialization performed.
+- Canonical validator unchanged.
