@@ -1,0 +1,2158 @@
+{
+  "artifact": "DALILI_CLASSIFICATION_APPROVED_1251_1350",
+  "version": "1.0",
+  "governance_status": "APPROVED",
+  "result_count": 100,
+  "range": {
+    "start": 1251,
+    "end": 1350,
+    "count": 100
+  },
+  "distribution": {
+    "REWRITE_REQUIRED": 94,
+    "SPLIT_REQUIRED": 5,
+    "MERGED_BY_PROVENANCE": 1,
+    "unresolved": 0
+  },
+  "preflight": {
+    "input_count": 100,
+    "unique_ids": 100,
+    "first_id": "SHOP-049-OP001",
+    "last_id": "SHOP-084-OP001",
+    "source_identity_check": "PASS",
+    "original_worker_json": "FAILED_QUOTE_ESCAPING_NORMALIZED_WITHOUT_SEMANTIC_CHANGE",
+    "acceptance_gate": "PASS"
+  },
+  "review_corrections": {
+    "worker_output_used_as_draft_only": true,
+    "mechanical_over_splits_reclassified": [
+      1263,
+      1303,
+      1307,
+      1312,
+      1322,
+      1331,
+      1335
+    ],
+    "final_split_records": [
+      1259,
+      1268,
+      1271,
+      1325,
+      1343
+    ]
+  },
+  "results": [
+    {
+      "corpus_position": 1251,
+      "legacy_id": "SHOP-049-OP001",
+      "source_identity": {
+        "opportunity_title": "إخراج المنتجات من العربة",
+        "event_title": "وضع المنتجات على حزام المحاسبة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إخراج المنتجات من العربة",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإخراج، الإخراج الجزئي، الإخراج الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1252,
+      "legacy_id": "SHOP-049-OP002",
+      "source_identity": {
+        "opportunity_title": "ترتيب المنتجات بشكل يسهل مسحها",
+        "event_title": "وضع المنتجات على حزام المحاسبة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب المنتجات بشكل يسهل مسحها",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الترتيب، الترتيب الجزئي، الترتيب الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1253,
+      "legacy_id": "SHOP-049-OP003",
+      "source_identity": {
+        "opportunity_title": "وضع الفاصل البلاستيكي بعد الانتهاء",
+        "event_title": "وضع المنتجات على حزام المحاسبة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع الفاصل البلاستيكي بعد الانتهاء",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الوضع، الوضع بمفرده، اختيار التوقيت المناسب أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 1254,
+      "legacy_id": "SHOP-050-OP001",
+      "source_identity": {
+        "opportunity_title": "فرز المنتجات (عزل المنظفات عن الطعام)",
+        "event_title": "تعبئة المشتريات في أكياس"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فرز المنتجات (عزل المنظفات عن الطعام)",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الفرز، الفرز الجزئي، الفرز الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1255,
+      "legacy_id": "SHOP-050-OP002",
+      "source_identity": {
+        "opportunity_title": "وضع الأشياء الثقيلة أسفل الكيس",
+        "event_title": "تعبئة المشتريات في أكياس"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع الأشياء الثقيلة أسفل الكيس",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الوضع، الوضع بمفرده، تعبئة كيس كامل."
+      ]
+    },
+    {
+      "corpus_position": 1256,
+      "legacy_id": "SHOP-050-OP003",
+      "source_identity": {
+        "opportunity_title": "توزيع الأوزان لتسهيل الحمل",
+        "event_title": "تعبئة المشتريات في أكياس"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "توزيع الأوزان لتسهيل الحمل",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التوزيع، التوزيع الجزئي، التوزيع الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1257,
+      "legacy_id": "SHOP-051-OP001",
+      "source_identity": {
+        "opportunity_title": "تجهيز المبلغ المطلوب",
+        "event_title": "الدفع نقداً"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجهيز المبلغ المطلوب",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التجهيز، التجهيز بمفرده مع تأكيدك، التجهيز الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1258,
+      "legacy_id": "SHOP-051-OP002",
+      "source_identity": {
+        "opportunity_title": "تسليم النقود للكاشير",
+        "event_title": "الدفع نقداً"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تسليم النقود للكاشير",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التسليم، التسليم بمفرده، التسليم بثقة كاملة."
+      ]
+    },
+    {
+      "corpus_position": 1259,
+      "legacy_id": "SHOP-051-OP003",
+      "source_identity": {
+        "opportunity_title": "استلام الباقي والتأكد من صحته",
+        "event_title": "الدفع نقداً"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "استلام المبلغ المتبقي | التحقق من صحة المبلغ المتبقي",
+      "reasoning_summary": "يتضمن السجل دورين مستقلين نسبيًا في الأثر والاكتمال: «استلام المبلغ المتبقي | التحقق من صحة المبلغ المتبقي»؛ لذلك يلزم SPLIT_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title_ar: استلام الباقي والتأكد من صحته"
+      ]
+    },
+    {
+      "corpus_position": 1260,
+      "legacy_id": "SHOP-052-OP001",
+      "source_identity": {
+        "opportunity_title": "تمرير أو إدخال البطاقة في الجهاز",
+        "event_title": "الدفع ببطاقة الصراف أو الائتمان"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تمرير أو إدخال البطاقة في الجهاز",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التمرير، التمرير بمفرده، الإدخال والتمرير الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1261,
+      "legacy_id": "SHOP-052-OP002",
+      "source_identity": {
+        "opportunity_title": "إدخال الرقم السري",
+        "event_title": "الدفع ببطاقة الصراف أو الائتمان"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إدخال الرقم السري",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإدخال، الإدخال بمفرده بخصوصية، الإدخال الكامل بثقة."
+      ]
+    },
+    {
+      "corpus_position": 1262,
+      "legacy_id": "SHOP-052-OP003",
+      "source_identity": {
+        "opportunity_title": "استلام وسحب البطاقة بعد نجاح العملية",
+        "event_title": "الدفع ببطاقة الصراف أو الائتمان"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استلام وسحب البطاقة بعد نجاح العملية",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في السحب، السحب بمفرده، الإعادة الكاملة للمحفظة."
+      ]
+    },
+    {
+      "corpus_position": 1263,
+      "legacy_id": "SHOP-053-OP001",
+      "source_identity": {
+        "opportunity_title": "فتح التطبيق وتجهيز رمز الدفع",
+        "event_title": "الدفع عبر المحفظة الرقمية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فتح التطبيق، تجهيز رمز الدفع",
+      "reasoning_summary": "يمثل السجل دورًا واحدًا ذا نتيجة طبيعية واحدة؛ اختلاف الأشياء أو الوسائل أو خطوات التهيئة لا ينشئ دورين مستقلين. وتظل إعادة الصياغة مطلوبة لإزالة تدرجات FP-07.",
+      "evidence_from_record": [
+        "opportunity_title_ar: فتح التطبيق وتجهيز رمز الدفع"
+      ]
+    },
+    {
+      "corpus_position": 1264,
+      "legacy_id": "SHOP-053-OP002",
+      "source_identity": {
+        "opportunity_title": "تمرير الهاتف على جهاز القارئ",
+        "event_title": "الدفع عبر المحفظة الرقمية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تمرير الهاتف على جهاز القارئ",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التمرير، التمرير بمفرده، التمرير الكامل بثقة."
+      ]
+    },
+    {
+      "corpus_position": 1265,
+      "legacy_id": "SHOP-053-OP003",
+      "source_identity": {
+        "opportunity_title": "تأكيد عملية الدفع من الهاتف",
+        "event_title": "الدفع عبر المحفظة الرقمية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تأكيد عملية الدفع من الهاتف",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التأكيد، التأكيد بمفرده، التحقق من نجاح العملية أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 1266,
+      "legacy_id": "SHOP-054-OP001",
+      "source_identity": {
+        "opportunity_title": "تمرير المنتجات (الباركود) أمام الماسح",
+        "event_title": "استخدام ماكينة الخروج الذاتي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تمرير المنتجات (الباركود) أمام الماسح",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التمرير، تمرير منتج واحد، تمرير كل المنتجات."
+      ]
+    },
+    {
+      "corpus_position": 1267,
+      "legacy_id": "SHOP-054-OP002",
+      "source_identity": {
+        "opportunity_title": "وضع المنتجات الممسوحة في منطقة الوزن المخصصة",
+        "event_title": "استخدام ماكينة الخروج الذاتي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع المنتجات الممسوحة في منطقة الوزن المخصصة",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الوضع، الوضع بمفرده، وضع كل المنتجات."
+      ]
+    },
+    {
+      "corpus_position": 1268,
+      "legacy_id": "SHOP-054-OP003",
+      "source_identity": {
+        "opportunity_title": "إتمام عملية الدفع الآلي واستلام الإيصال",
+        "event_title": "استخدام ماكينة الخروج الذاتي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "إتمام عملية الدفع الآلي | استلام الإيصال",
+      "reasoning_summary": "يتضمن السجل دورين مستقلين نسبيًا في الأثر والاكتمال: «إتمام عملية الدفع الآلي | استلام الإيصال»؛ لذلك يلزم SPLIT_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title_ar: إتمام عملية الدفع الآلي واستلام الإيصال"
+      ]
+    },
+    {
+      "corpus_position": 1269,
+      "legacy_id": "SHOP-055-OP001",
+      "source_identity": {
+        "opportunity_title": "طلب الفاتورة الضريبية من الكاشير",
+        "event_title": "طلب فاتورة رسمية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "طلب الفاتورة الضريبية من الكاشير",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المرافقة أثناء الطلب، الطلب بمساعدتك، الطلب بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 1270,
+      "legacy_id": "SHOP-055-OP002",
+      "source_identity": {
+        "opportunity_title": "تقديم البيانات المطلوبة",
+        "event_title": "طلب فاتورة رسمية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تقديم البيانات المطلوبة",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التقديم، التقديم بمفرده، التسليم الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1271,
+      "legacy_id": "SHOP-055-OP003",
+      "source_identity": {
+        "opportunity_title": "استلام الفاتورة والاحتفاظ بها",
+        "event_title": "طلب فاتورة رسمية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "استلام الفاتورة | حفظ الفاتورة",
+      "reasoning_summary": "يتضمن السجل دورين مستقلين نسبيًا في الأثر والاكتمال: «استلام الفاتورة | حفظ الفاتورة»؛ لذلك يلزم SPLIT_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title_ar: استلام الفاتورة والاحتفاظ بها"
+      ]
+    },
+    {
+      "corpus_position": 1272,
+      "legacy_id": "SHOP-056-OP001",
+      "source_identity": {
+        "opportunity_title": "توزيع الأكياس لتوازن الحمل",
+        "event_title": "حمل المشتريات من المتجر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "توزيع الأكياس لتوازن الحمل",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التوزيع، التوزيع الجزئي، التوزيع الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1273,
+      "legacy_id": "SHOP-056-OP002",
+      "source_identity": {
+        "opportunity_title": "حمل الأكياس حتى المخرج",
+        "event_title": "حمل المشتريات من المتجر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "حمل الأكياس حتى المخرج",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الحمل، حمل جزء من المسافة، الحمل الكامل حتى المخرج."
+      ]
+    },
+    {
+      "corpus_position": 1274,
+      "legacy_id": "SHOP-056-OP003",
+      "source_identity": {
+        "opportunity_title": "إعادة عربة التسوق إلى المكان المخصص",
+        "event_title": "حمل المشتريات من المتجر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إعادة عربة التسوق إلى المكان المخصص",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإعادة، الإعادة بمفرده، الإعادة الكاملة بثقة."
+      ]
+    },
+    {
+      "corpus_position": 1275,
+      "legacy_id": "SHOP-057-OP001",
+      "source_identity": {
+        "opportunity_title": "فتح صندوق السيارة",
+        "event_title": "نقل المشتريات إلى صندوق السيارة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فتح صندوق السيارة",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الفتح، الفتح بمفرده، الفتح الكامل بثقة."
+      ]
+    },
+    {
+      "corpus_position": 1276,
+      "legacy_id": "SHOP-057-OP002",
+      "source_identity": {
+        "opportunity_title": "نقل الأكياس من العربة إلى الصندوق",
+        "event_title": "نقل المشتريات إلى صندوق السيارة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "نقل الأكياس من العربة إلى الصندوق",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في النقل، نقل كيس واحد، نقل كل الأكياس."
+      ]
+    },
+    {
+      "corpus_position": 1277,
+      "legacy_id": "SHOP-057-OP003",
+      "source_identity": {
+        "opportunity_title": "إغلاق الصندوق بإحكام",
+        "event_title": "نقل المشتريات إلى صندوق السيارة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إغلاق الصندوق بإحكام",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإغلاق، الإغلاق بمفرده، التحقق من الإغلاق أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 1278,
+      "legacy_id": "SHOP-058-OP001",
+      "source_identity": {
+        "opportunity_title": "تأمين الأكياس لمنع انسكابها أثناء القيادة",
+        "event_title": "ترتيب المشتريات في السيارة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تأمين الأكياس لمنع انسكابها أثناء القيادة",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التأمين، التأمين الجزئي، التأمين الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1279,
+      "legacy_id": "SHOP-058-OP002",
+      "source_identity": {
+        "opportunity_title": "عزل الأشياء القابلة للكسر كزجاجات الزيت",
+        "event_title": "ترتيب المشتريات في السيارة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "عزل الأشياء القابلة للكسر كزجاجات الزيت",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في العزل، العزل الجزئي، العزل الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1280,
+      "legacy_id": "SHOP-058-OP003",
+      "source_identity": {
+        "opportunity_title": "وضع الأغراض الخفيفة في الأعلى",
+        "event_title": "ترتيب المشتريات في السيارة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع الأغراض الخفيفة في الأعلى",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الوضع، الوضع الجزئي، الوضع الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1281,
+      "legacy_id": "SHOP-059-OP001",
+      "source_identity": {
+        "opportunity_title": "حمل الأكياس من صندوق السيارة",
+        "event_title": "إخراج المشتريات من السيارة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "حمل الأكياس من صندوق السيارة",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الحمل، حمل كيس واحد، حمل كل الأكياس."
+      ]
+    },
+    {
+      "corpus_position": 1282,
+      "legacy_id": "SHOP-059-OP002",
+      "source_identity": {
+        "opportunity_title": "التأكد من عدم نسيان أي غرض داخل السيارة",
+        "event_title": "إخراج المشتريات من السيارة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التأكد من عدم نسيان أي غرض داخل السيارة",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المراقبة معك، الفحص بمساعدة، الفحص بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 1283,
+      "legacy_id": "SHOP-059-OP003",
+      "source_identity": {
+        "opportunity_title": "إغلاق السيارة",
+        "event_title": "إخراج المشتريات من السيارة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إغلاق السيارة",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإغلاق، الإغلاق بمفرده، التحقق من الإغلاق أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 1284,
+      "legacy_id": "SHOP-060-OP001",
+      "source_identity": {
+        "opportunity_title": "فتح باب المنزل",
+        "event_title": "إدخال المشتريات إلى المنزل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فتح باب المنزل",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الفتح، الفتح بمفرده، الفتح الكامل بثقة."
+      ]
+    },
+    {
+      "corpus_position": 1285,
+      "legacy_id": "SHOP-060-OP002",
+      "source_identity": {
+        "opportunity_title": "نقل الأكياس إلى المطبخ أو أماكن التخزين",
+        "event_title": "إدخال المشتريات إلى المنزل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "نقل الأكياس إلى المطبخ أو أماكن التخزين",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في النقل، نقل كيس واحد، نقل كل الأكياس."
+      ]
+    },
+    {
+      "corpus_position": 1286,
+      "legacy_id": "SHOP-060-OP003",
+      "source_identity": {
+        "opportunity_title": "وضع الأكياس على طاولة الفرز",
+        "event_title": "إدخال المشتريات إلى المنزل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع الأكياس على طاولة الفرز",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الوضع، الوضع بمفرده، الترتيب الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1287,
+      "legacy_id": "SHOP-061-OP001",
+      "source_identity": {
+        "opportunity_title": "إخراج المنتجات من الأكياس",
+        "event_title": "تفريغ محتويات الأكياس"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إخراج المنتجات من الأكياس",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإخراج، الإخراج الجزئي، الإخراج الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1288,
+      "legacy_id": "SHOP-061-OP002",
+      "source_identity": {
+        "opportunity_title": "فرز المشتريات بناءً على مكان تخزينها",
+        "event_title": "تفريغ محتويات الأكياس"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فرز المشتريات بناءً على مكان تخزينها",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الفرز، فرز فئة واحدة، فرز كل الفئات."
+      ]
+    },
+    {
+      "corpus_position": 1289,
+      "legacy_id": "SHOP-061-OP003",
+      "source_identity": {
+        "opportunity_title": "عزل المنتجات التي تحتاج للتبريد الفوري",
+        "event_title": "تفريغ محتويات الأكياس"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "عزل المنتجات التي تحتاج للتبريد الفوري",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في العزل، العزل الجزئي، العزل الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1290,
+      "legacy_id": "SHOP-062-OP001",
+      "source_identity": {
+        "opportunity_title": "طي الأكياس القابلة لإعادة الاستخدام",
+        "event_title": "التخلص من الأكياس والأغلفة البلاستيكية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "طي الأكياس القابلة لإعادة الاستخدام",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الطي، الطي الجزئي، الطي الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1291,
+      "legacy_id": "SHOP-062-OP002",
+      "source_identity": {
+        "opportunity_title": "تجميع الأغلفة البلاستيكية والورقية الزائدة",
+        "event_title": "التخلص من الأكياس والأغلفة البلاستيكية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجميع الأغلفة البلاستيكية والورقية الزائدة",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التجميع، التجميع الجزئي، التجميع الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1292,
+      "legacy_id": "SHOP-062-OP003",
+      "source_identity": {
+        "opportunity_title": "رمي الأغلفة التالفة في سلة المهملات",
+        "event_title": "التخلص من الأكياس والأغلفة البلاستيكية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "رمي الأغلفة التالفة في سلة المهملات",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الرمي، الرمي بمفرده، الرمي الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1293,
+      "legacy_id": "SHOP-063-OP001",
+      "source_identity": {
+        "opportunity_title": "مسح العبوات الزجاجية أو البلاستيكية قبل إدخالها",
+        "event_title": "ترتيب المشتريات في الثلاجة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح العبوات الزجاجية أو البلاستيكية قبل إدخالها",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في المسح، مسح عبوة واحدة، مسح كل العبوات."
+      ]
+    },
+    {
+      "corpus_position": 1294,
+      "legacy_id": "SHOP-063-OP002",
+      "source_identity": {
+        "opportunity_title": "ترتيب المنتجات على الرفوف المناسبة",
+        "event_title": "ترتيب المشتريات في الثلاجة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب المنتجات على الرفوف المناسبة",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الترتيب، ترتيب رف واحد، ترتيب كل الرفوف."
+      ]
+    },
+    {
+      "corpus_position": 1295,
+      "legacy_id": "SHOP-063-OP003",
+      "source_identity": {
+        "opportunity_title": "تنظيم الخضار والفواكه في الأدراج المخصصة",
+        "event_title": "ترتيب المشتريات في الثلاجة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تنظيم الخضار والفواكه في الأدراج المخصصة",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التنظيم، التنظيم الجزئي، التنظيم الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1296,
+      "legacy_id": "SHOP-064-OP001",
+      "source_identity": {
+        "opportunity_title": "ترتيب العلب والأكياس الجافة على الرفوف",
+        "event_title": "ترتيب المشتريات في المخزن"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب العلب والأكياس الجافة على الرفوف",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الترتيب، ترتيب رف واحد، ترتيب كل الرفوف."
+      ]
+    },
+    {
+      "corpus_position": 1297,
+      "legacy_id": "SHOP-064-OP002",
+      "source_identity": {
+        "opportunity_title": "وضع المنتجات الأحدث في الخلف لدعم استهلاك القديم",
+        "event_title": "ترتيب المشتريات في المخزن"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع المنتجات الأحدث في الخلف لدعم استهلاك القديم",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الترتيب، الترتيب الجزئي، الترتيب الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1298,
+      "legacy_id": "SHOP-065-OP001",
+      "source_identity": {
+        "opportunity_title": "نقل المنظفات لخزانة أدوات التنظيف",
+        "event_title": "تخزين المنظفات في مكانها المخصص"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "نقل المنظفات لخزانة أدوات التنظيف",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في النقل، نقل عبوة واحدة، نقل كل العبوات."
+      ]
+    },
+    {
+      "corpus_position": 1299,
+      "legacy_id": "SHOP-065-OP002",
+      "source_identity": {
+        "opportunity_title": "ترتيب العبوات بشكل آمن ومغلق",
+        "event_title": "تخزين المنظفات في مكانها المخصص"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب العبوات بشكل آمن ومغلق",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المراقبة معك، الترتيب بمساعدة، الترتيب بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 1300,
+      "legacy_id": "SHOP-065-OP003",
+      "source_identity": {
+        "opportunity_title": "التأكد من إبعادها عن المواد الغذائية",
+        "event_title": "تخزين المنظفات في مكانها المخصص"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التأكد من إبعادها عن المواد الغذائية",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المراقبة معك، التحقق بمساعدة، التحقق بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 1301,
+      "legacy_id": "SHOP-066-OP001",
+      "source_identity": {
+        "opportunity_title": "توزيع عبوات الشامبو والصابون في الحمامات",
+        "event_title": "تخزين العناية الشخصية في الحمام"
+      },
+      "existing_framework_lineage_assessment": "ALIGNED",
+      "existing_framework_lineage_evidence": [
+        {
+          "framework_reference_id": "FR-B02-SHOP-066-OP001",
+          "batch": "BATCH_02",
+          "source": "batch02-corpus.ts"
+        }
+      ],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "MERGED_BY_PROVENANCE",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "توزيع عبوات الشامبو والصابون في الحمامات",
+      "reasoning_summary": "Semantically equivalent to an existing framework reference with explicit lineage evidence.",
+      "evidence_from_record": [
+        "existing_framework_lineage_evidence: FR-B02-SHOP-066-OP001",
+        "framework_reference_id: 'FR-B02-SHOP-066-OP001'"
+      ]
+    },
+    {
+      "corpus_position": 1302,
+      "legacy_id": "SHOP-066-OP002",
+      "source_identity": {
+        "opportunity_title": "ترتيب الأدوات الاحتياطية في خزانة الحمام",
+        "event_title": "تخزين العناية الشخصية في الحمام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب الأدوات الاحتياطية في خزانة الحمام",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الترتيب، الترتيب الجزئي، الترتيب الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1303,
+      "legacy_id": "SHOP-067-OP001",
+      "source_identity": {
+        "opportunity_title": "إزالة بطاقات الأسعار والأغلفة",
+        "event_title": "تعليق الملابس الجديدة في الخزانة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إزالة بطاقات الأسعار، إزالة الأغلفة",
+      "reasoning_summary": "يمثل السجل دورًا واحدًا ذا نتيجة طبيعية واحدة؛ اختلاف الأشياء أو الوسائل أو خطوات التهيئة لا ينشئ دورين مستقلين. وتظل إعادة الصياغة مطلوبة لإزالة تدرجات FP-07.",
+      "evidence_from_record": [
+        "opportunity_title_ar: إزالة بطاقات الأسعار والأغلفة"
+      ]
+    },
+    {
+      "corpus_position": 1304,
+      "legacy_id": "SHOP-067-OP002",
+      "source_identity": {
+        "opportunity_title": "تعليق الملابس على الشماعات",
+        "event_title": "تعليق الملابس الجديدة في الخزانة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تعليق الملابس على الشماعات",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التعليق، تعليق قطعة واحدة، تعليق كل القطع."
+      ]
+    },
+    {
+      "corpus_position": 1305,
+      "legacy_id": "SHOP-067-OP003",
+      "source_identity": {
+        "opportunity_title": "ترتيب الملابس الجديدة في الخزانة",
+        "event_title": "تعليق الملابس الجديدة في الخزانة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب الملابس الجديدة في الخزانة",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الترتيب، الترتيب الجزئي، الترتيب الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1306,
+      "legacy_id": "SHOP-068-OP001",
+      "source_identity": {
+        "opportunity_title": "مطابقة المنتجات في الفاتورة مع المشتريات الفعلية",
+        "event_title": "مراجعة الفاتورة والإيصالات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مطابقة المنتجات في الفاتورة مع المشتريات الفعلية",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في المطابقة، المطابقة الجزئية، المطابقة الكاملة."
+      ]
+    },
+    {
+      "corpus_position": 1307,
+      "legacy_id": "SHOP-068-OP002",
+      "source_identity": {
+        "opportunity_title": "التأكد من صحة الأسعار والعروض المحتسبة",
+        "event_title": "مراجعة الفاتورة والإيصالات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التأكد من صحة الأسعار، التأكد من صحة العروض المحتسبة",
+      "reasoning_summary": "يمثل السجل دورًا واحدًا ذا نتيجة طبيعية واحدة؛ اختلاف الأشياء أو الوسائل أو خطوات التهيئة لا ينشئ دورين مستقلين. وتظل إعادة الصياغة مطلوبة لإزالة تدرجات FP-07.",
+      "evidence_from_record": [
+        "opportunity_title_ar: التأكد من صحة الأسعار والعروض المحتسبة"
+      ]
+    },
+    {
+      "corpus_position": 1308,
+      "legacy_id": "SHOP-069-OP001",
+      "source_identity": {
+        "opportunity_title": "إدخال القيمة الإجمالية في تطبيق الميزانية",
+        "event_title": "تسجيل المصروفات في ميزانية المنزل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إدخال القيمة الإجمالية في تطبيق الميزانية",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإدخال، الإدخال بمفرده، إدخال أكثر من فاتورة."
+      ]
+    },
+    {
+      "corpus_position": 1309,
+      "legacy_id": "SHOP-069-OP002",
+      "source_identity": {
+        "opportunity_title": "تصنيف المصروفات حسب الأقسام (طعام، تنظيف)",
+        "event_title": "تسجيل المصروفات في ميزانية المنزل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تصنيف المصروفات حسب الأقسام (طعام، تنظيف)",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التصنيف، التصنيف بمفرده، التصنيف الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1310,
+      "legacy_id": "SHOP-070-OP001",
+      "source_identity": {
+        "opportunity_title": "كتابة تاريخ الشراء على الإيصال",
+        "event_title": "حفظ الإيصالات للضمان أو الاستبدال"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "كتابة تاريخ الشراء على الإيصال",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الكتابة، الكتابة بمفرده، التحقق من التاريخ المطبوع أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 1311,
+      "legacy_id": "SHOP-070-OP002",
+      "source_identity": {
+        "opportunity_title": "إيداع الإيصال في الملف المخصص للضمانات",
+        "event_title": "حفظ الإيصالات للضمان أو الاستبدال"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إيداع الإيصال في الملف المخصص للضمانات",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإيداع، الإيداع بمفرده، الإيداع الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1312,
+      "legacy_id": "SHOP-071-OP001",
+      "source_identity": {
+        "opportunity_title": "تصفح الأقسام وتطبيق الفلاتر (السعر، المقاس)",
+        "event_title": "التسوق الإلكتروني عبر موقع أو تطبيق"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تصفح الأقسام، تطبيق الفلاتر",
+      "reasoning_summary": "يمثل السجل دورًا واحدًا ذا نتيجة طبيعية واحدة؛ اختلاف الأشياء أو الوسائل أو خطوات التهيئة لا ينشئ دورين مستقلين. وتظل إعادة الصياغة مطلوبة لإزالة تدرجات FP-07.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تصفح الأقسام وتطبيق الفلاتر (السعر، المقاس)"
+      ]
+    },
+    {
+      "corpus_position": 1313,
+      "legacy_id": "SHOP-071-OP002",
+      "source_identity": {
+        "opportunity_title": "البحث عن المنتجات المطلوبة",
+        "event_title": "التسوق الإلكتروني عبر موقع أو تطبيق"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "البحث عن المنتجات المطلوبة",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: الإملاء لك، الكتابة بمساعدة، البحث بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 1314,
+      "legacy_id": "SHOP-071-OP003",
+      "source_identity": {
+        "opportunity_title": "استعراض صور المنتج",
+        "event_title": "التسوق الإلكتروني عبر موقع أو تطبيق"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استعراض صور المنتج",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المراقبة معك، التمرير بمساعدة، التمرير بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 1315,
+      "legacy_id": "SHOP-072-OP001",
+      "source_identity": {
+        "opportunity_title": "تحديد الكميات المطلوبة",
+        "event_title": "إضافة منتجات إلى سلة التسوق الرقمية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تحديد الكميات المطلوبة",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التحديد، التحديد بمفرده، التأكيد النهائي أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 1316,
+      "legacy_id": "SHOP-072-OP002",
+      "source_identity": {
+        "opportunity_title": "اختيار الخيارات (اللون، المقاس)",
+        "event_title": "إضافة منتجات إلى سلة التسوق الرقمية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "اختيار الخيارات (اللون، المقاس)",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: الإشارة للخيار، الاختيار من بين خيارين، الاختيار الكامل بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 1317,
+      "legacy_id": "SHOP-072-OP003",
+      "source_identity": {
+        "opportunity_title": "النقر على زر \"إضافة للسلة\"",
+        "event_title": "إضافة منتجات إلى سلة التسوق الرقمية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "النقر على زر إضافة للسلة",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الضغط، الضغط بمفرده، التحقق من الإضافة أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 1318,
+      "legacy_id": "SHOP-073-OP001",
+      "source_identity": {
+        "opportunity_title": "قراءة تقييمات وتعليقات المشترين",
+        "event_title": "البحث عن مراجعات المنتجات قبل الشراء"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "قراءة تقييمات وتعليقات المشترين",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في القراءة، القراءة بمفرده، مناقشة الرأي معك أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 1319,
+      "legacy_id": "SHOP-073-OP002",
+      "source_identity": {
+        "opportunity_title": "فحص الصور المرفقة من المستخدمين",
+        "event_title": "البحث عن مراجعات المنتجات قبل الشراء"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فحص الصور المرفقة من المستخدمين",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المراقبة معك، التمرير بمساعدة، التمرير بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 1320,
+      "legacy_id": "SHOP-073-OP003",
+      "source_identity": {
+        "opportunity_title": "اتخاذ قرار الشراء بناءً على المراجعات",
+        "event_title": "البحث عن مراجعات المنتجات قبل الشراء"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "اتخاذ قرار الشراء بناءً على المراجعات",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في القرار، المشاركة بالرأي، القرار الكامل بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 1321,
+      "legacy_id": "SHOP-074-OP001",
+      "source_identity": {
+        "opportunity_title": "حفظ المنتجات المفضلة للمقارنة اللاحقة",
+        "event_title": "إضافة منتج إلى قائمة الأمنيات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "حفظ المنتجات المفضلة للمقارنة اللاحقة",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الضغط، الضغط بمفرده، حفظ أكثر من منتج."
+      ]
+    },
+    {
+      "corpus_position": 1322,
+      "legacy_id": "SHOP-074-OP002",
+      "source_identity": {
+        "opportunity_title": "مراجعة وتصفية القائمة لاحقاً",
+        "event_title": "إضافة منتج إلى قائمة الأمنيات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مراجعة القائمة لاحقاً، تصفية القائمة لاحقاً",
+      "reasoning_summary": "يمثل السجل دورًا واحدًا ذا نتيجة طبيعية واحدة؛ اختلاف الأشياء أو الوسائل أو خطوات التهيئة لا ينشئ دورين مستقلين. وتظل إعادة الصياغة مطلوبة لإزالة تدرجات FP-07.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مراجعة وتصفية القائمة لاحقاً"
+      ]
+    },
+    {
+      "corpus_position": 1323,
+      "legacy_id": "SHOP-075-OP001",
+      "source_identity": {
+        "opportunity_title": "مراجعة محتويات السلة النهائية",
+        "event_title": "إتمام عملية الشراء الإلكترونية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مراجعة محتويات السلة النهائية",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في المراجعة، المراجعة الجزئية، المراجعة الكاملة."
+      ]
+    },
+    {
+      "corpus_position": 1324,
+      "legacy_id": "SHOP-075-OP002",
+      "source_identity": {
+        "opportunity_title": "إدخال أو تأكيد عنوان التوصيل",
+        "event_title": "إتمام عملية الشراء الإلكترونية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إدخال أو تأكيد عنوان التوصيل",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التحقق، التحقق بمفرده، التأكيد الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1325,
+      "legacy_id": "SHOP-075-OP003",
+      "source_identity": {
+        "opportunity_title": "اختيار طريقة الدفع وتأكيد الطلب",
+        "event_title": "إتمام عملية الشراء الإلكترونية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "اختيار طريقة الدفع | تأكيد الطلب",
+      "reasoning_summary": "يتضمن السجل دورين مستقلين نسبيًا في الأثر والاكتمال: «اختيار طريقة الدفع | تأكيد الطلب»؛ لذلك يلزم SPLIT_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title_ar: اختيار طريقة الدفع وتأكيد الطلب"
+      ]
+    },
+    {
+      "corpus_position": 1326,
+      "legacy_id": "SHOP-076-OP001",
+      "source_identity": {
+        "opportunity_title": "مقارنة تكاليف أساليب الشحن المتاحة",
+        "event_title": "اختيار طريقة الشحن"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مقارنة تكاليف أساليب الشحن المتاحة",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في المقارنة، المقارنة بمفرده، الاختيار النهائي أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 1327,
+      "legacy_id": "SHOP-076-OP002",
+      "source_identity": {
+        "opportunity_title": "اختيار التوقيت المناسب للتوصيل",
+        "event_title": "اختيار طريقة الشحن"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "اختيار التوقيت المناسب للتوصيل",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الاختيار، الاختيار بمفرده، التأكيد الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1328,
+      "legacy_id": "SHOP-076-OP003",
+      "source_identity": {
+        "opportunity_title": "اعتماد الاختيار لإتمام العملية",
+        "event_title": "اختيار طريقة الشحن"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "اعتماد الاختيار لإتمام العملية",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الضغط، الضغط بمفرده، التحقق من التأكيد أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 1329,
+      "legacy_id": "SHOP-077-OP001",
+      "source_identity": {
+        "opportunity_title": "فتح رابط التتبع دورياً",
+        "event_title": "تتبع حالة الطلبية عبر الإنترنت"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فتح رابط التتبع دورياً",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الفتح، الفتح بمفرده، المتابعة الدورية الكاملة."
+      ]
+    },
+    {
+      "corpus_position": 1330,
+      "legacy_id": "SHOP-077-OP002",
+      "source_identity": {
+        "opportunity_title": "متابعة مسار الشحنة على الخريطة أو عبر الحالات",
+        "event_title": "تتبع حالة الطلبية عبر الإنترنت"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "متابعة مسار الشحنة على الخريطة أو عبر الحالات",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المراقبة معك، الفهم بمساعدة، الفهم بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 1331,
+      "legacy_id": "SHOP-077-OP003",
+      "source_identity": {
+        "opportunity_title": "توقع وتحديد موعد الاستلام",
+        "event_title": "تتبع حالة الطلبية عبر الإنترنت"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "توقع موعد الاستلام، تحديد موعد الاستلام",
+      "reasoning_summary": "يمثل السجل دورًا واحدًا ذا نتيجة طبيعية واحدة؛ اختلاف الأشياء أو الوسائل أو خطوات التهيئة لا ينشئ دورين مستقلين. وتظل إعادة الصياغة مطلوبة لإزالة تدرجات FP-07.",
+      "evidence_from_record": [
+        "opportunity_title_ar: توقع وتحديد موعد الاستلام"
+      ]
+    },
+    {
+      "corpus_position": 1332,
+      "legacy_id": "SHOP-078-OP001",
+      "source_identity": {
+        "opportunity_title": "قراءة الرسالة النصية أو إشعار التطبيق",
+        "event_title": "استلام إشعار وصول الطلبية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "قراءة الرسالة النصية أو إشعار التطبيق",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في القراءة، القراءة بمفرده، الفهم الكامل للمحتوى."
+      ]
+    },
+    {
+      "corpus_position": 1333,
+      "legacy_id": "SHOP-078-OP002",
+      "source_identity": {
+        "opportunity_title": "تجهيز كود الاستلام المطلوب",
+        "event_title": "استلام إشعار وصول الطلبية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجهيز كود الاستلام المطلوب",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التجهيز، التجهيز بمفرده، عرضه عند الاستلام أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 1334,
+      "legacy_id": "SHOP-078-OP003",
+      "source_identity": {
+        "opportunity_title": "إبلاغ أفراد الأسرة بوصول المندوب",
+        "event_title": "استلام إشعار وصول الطلبية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إبلاغ أفراد الأسرة بوصول المندوب",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: الإشارة لشخص قريب، الإبلاغ بمساعدة، الإبلاغ بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 1335,
+      "legacy_id": "SHOP-079-OP001",
+      "source_identity": {
+        "opportunity_title": "التوجه للباب لاستقبال المندوب",
+        "event_title": "استلام طلبية منزلية من مندوب التوصيل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه للباب، استقبال المندوب",
+      "reasoning_summary": "يمثل السجل دورًا واحدًا ذا نتيجة طبيعية واحدة؛ اختلاف الأشياء أو الوسائل أو خطوات التهيئة لا ينشئ دورين مستقلين. وتظل إعادة الصياغة مطلوبة لإزالة تدرجات FP-07.",
+      "evidence_from_record": [
+        "opportunity_title_ar: التوجه للباب لاستقبال المندوب"
+      ]
+    },
+    {
+      "corpus_position": 1336,
+      "legacy_id": "SHOP-079-OP002",
+      "source_identity": {
+        "opportunity_title": "استلام الطرد أو الأكياس",
+        "event_title": "استلام طلبية منزلية من مندوب التوصيل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استلام الطرد أو الأكياس",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الاستلام، الاستلام بمفرده، الحمل الكامل للداخل."
+      ]
+    },
+    {
+      "corpus_position": 1337,
+      "legacy_id": "SHOP-079-OP003",
+      "source_identity": {
+        "opportunity_title": "تزويد المندوب بكود التسليم إن لزم",
+        "event_title": "استلام طلبية منزلية من مندوب التوصيل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تزويد المندوب بكود التسليم إن لزم",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التزويد، التزويد بمفرده، التزويد الكامل بثقة."
+      ]
+    },
+    {
+      "corpus_position": 1338,
+      "legacy_id": "SHOP-080-OP001",
+      "source_identity": {
+        "opportunity_title": "فتح الطرد أو الغلاف",
+        "event_title": "فحص المنتجات عند الاستلام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فتح الطرد أو الغلاف",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الفتح، الفتح بمفرده، الفتح والإخراج الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1339,
+      "legacy_id": "SHOP-080-OP002",
+      "source_identity": {
+        "opportunity_title": "مطابقة المحتويات مع الطلب الرقمي",
+        "event_title": "فحص المنتجات عند الاستلام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مطابقة المحتويات مع الطلب الرقمي",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في المطابقة، المطابقة الجزئية، المطابقة الكاملة."
+      ]
+    },
+    {
+      "corpus_position": 1340,
+      "legacy_id": "SHOP-080-OP003",
+      "source_identity": {
+        "opportunity_title": "فحص سلامة المنتجات من أي تلف",
+        "event_title": "فحص المنتجات عند الاستلام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فحص سلامة المنتجات من أي تلف",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المراقبة معك، الفحص بمساعدة، الفحص بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 1341,
+      "legacy_id": "SHOP-081-OP001",
+      "source_identity": {
+        "opportunity_title": "تجهيز المبلغ المطلوب نقداً",
+        "event_title": "الدفع عند الاستلام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجهيز المبلغ المطلوب نقداً",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التجهيز، التجهيز بمفرده مع تأكيدك، التجهيز الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1342,
+      "legacy_id": "SHOP-081-OP002",
+      "source_identity": {
+        "opportunity_title": "تسليم المبلغ للمندوب",
+        "event_title": "الدفع عند الاستلام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تسليم المبلغ للمندوب",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التسليم، التسليم بمفرده، التسليم بثقة كاملة."
+      ]
+    },
+    {
+      "corpus_position": 1343,
+      "legacy_id": "SHOP-081-OP003",
+      "source_identity": {
+        "opportunity_title": "استلام وتأكيد التغيير (الباقي)",
+        "event_title": "الدفع عند الاستلام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "استلام المبلغ المتبقي | التحقق من المبلغ المتبقي",
+      "reasoning_summary": "يتضمن السجل دورين مستقلين نسبيًا في الأثر والاكتمال: «استلام المبلغ المتبقي | التحقق من المبلغ المتبقي»؛ لذلك يلزم SPLIT_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title_ar: استلام وتأكيد التغيير (الباقي)"
+      ]
+    },
+    {
+      "corpus_position": 1344,
+      "legacy_id": "SHOP-082-OP001",
+      "source_identity": {
+        "opportunity_title": "قراءة بيانات الإيصال",
+        "event_title": "التوقيع على إيصال استلام الطلبية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "قراءة بيانات الإيصال",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في القراءة، القراءة بمفرده، التأكد الكامل من البيانات."
+      ]
+    },
+    {
+      "corpus_position": 1345,
+      "legacy_id": "SHOP-082-OP002",
+      "source_identity": {
+        "opportunity_title": "التوقيع بالاسم أو التوقيع الإلكتروني",
+        "event_title": "التوقيع على إيصال استلام الطلبية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوقيع بالاسم أو التوقيع الإلكتروني",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التوقيع، التوقيع بمفرده، التوقيع الكامل بثقة."
+      ]
+    },
+    {
+      "corpus_position": 1346,
+      "legacy_id": "SHOP-082-OP003",
+      "source_identity": {
+        "opportunity_title": "استلام النسخة الخاصة بالعميل",
+        "event_title": "التوقيع على إيصال استلام الطلبية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استلام النسخة الخاصة بالعميل",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الاستلام، الاستلام بمفرده، الحفظ الكامل في الملف."
+      ]
+    },
+    {
+      "corpus_position": 1347,
+      "legacy_id": "SHOP-083-OP001",
+      "source_identity": {
+        "opportunity_title": "تغليف المنتج بغلافه الأصلي",
+        "event_title": "إعادة منتج إلى المتجر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تغليف المنتج بغلافه الأصلي",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التغليف، التغليف بمفرده، التغليف الكامل بثقة."
+      ]
+    },
+    {
+      "corpus_position": 1348,
+      "legacy_id": "SHOP-083-OP002",
+      "source_identity": {
+        "opportunity_title": "إحضار الفاتورة أو الإيصال",
+        "event_title": "إعادة منتج إلى المتجر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إحضار الفاتورة أو الإيصال",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإحضار، الإحضار بمفرده، التجهيز الكامل."
+      ]
+    },
+    {
+      "corpus_position": 1349,
+      "legacy_id": "SHOP-083-OP003",
+      "source_identity": {
+        "opportunity_title": "تسليم المنتج لموظف خدمة العملاء",
+        "event_title": "إعادة منتج إلى المتجر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تسليم المنتج لموظف خدمة العملاء",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المرافقة أثناء التسليم، التسليم بمساعدتك، التسليم بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 1350,
+      "legacy_id": "SHOP-084-OP001",
+      "source_identity": {
+        "opportunity_title": "اختيار البديل المناسب من الرفوف",
+        "event_title": "استبدال منتج بمقاس أو لون مختلف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "اختيار البديل المناسب من الرفوف",
+      "reasoning_summary": "Valid functional role but contains staged participation and assistance levels in legacy fields.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الاختيار، الاختيار بمفرده، الاختيار الكامل بثقة."
+      ]
+    }
+  ],
+  "notes": [
+    "Gemini output required mechanical JSON quote repair, then independent governing review.",
+    "Legacy Master unchanged; no materialization performed; canonical validator unchanged."
+  ]
+}

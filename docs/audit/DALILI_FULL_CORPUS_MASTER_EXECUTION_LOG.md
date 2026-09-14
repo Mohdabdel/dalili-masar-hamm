@@ -14,9 +14,9 @@ Governing plan: `docs/DALILI_FULL_CORPUS_GOVERNING_EXECUTION_PLAN_v1.0.md`
 - Legacy source mutation authorized: **NO**
 - Full-corpus disposition complete: **NO**
 - Current Framework lineage overlay: **45 Legacy rows / 47 lineage links**
-- Current execution state: **PHASE 2 CORPUS CLASSIFICATION — 1250 / 1413 APPROVED AND PERSISTED**
-- Approved coverage: **1–1250**
-- Pending/unclassified: **1251–1413 (163 records)**
+- Current execution state: **PHASE 2 CORPUS CLASSIFICATION — 1350 / 1413 APPROVED AND PERSISTED**
+- Approved coverage: **1–1350**
+- Pending/unclassified: **1351–1413 (63 records)**
 
 ## Historical evidence retained
 
@@ -257,6 +257,22 @@ Gap remaining in Round 2: CLOSED by the approval recorded below.
 - No materialization performed.
 - Canonical validator unchanged.
 - Next unclassified position: **1251**.
+
+## Phase 2 — Classification approval records 1251–1350
+
+- Status: **APPROVED AND PERSISTED**
+- Range: **1251–1350**
+- Accounted: **100 / 100**
+- REWRITE_REQUIRED: **94**
+- SPLIT_REQUIRED: **5**
+- MERGED_BY_PROVENANCE: **1**
+- unresolved: **0**
+- Governing artifact: `docs/audit/data/DALILI_CLASSIFICATION_APPROVED_1251_1350.json`
+- Gemini output required mechanical quote-escape normalization; governing review then reversed seven mechanical over-splits.
+- Legacy Master unchanged.
+- No materialization performed.
+- Canonical validator unchanged.
+- Next unclassified position: **1351**.
 
 ## Phase 2 — Classification approval records 551–650
 
