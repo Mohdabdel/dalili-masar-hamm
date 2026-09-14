@@ -14,8 +14,9 @@ Governing plan: `docs/DALILI_FULL_CORPUS_GOVERNING_EXECUTION_PLAN_v1.0.md`
 - Legacy source mutation authorized: **NO**
 - Full-corpus disposition complete: **NO**
 - Current Framework lineage overlay: **45 Legacy rows / 47 lineage links**
-- Current execution state: **PHASE 2 CORPUS CLASSIFICATION — 750 / 1413 APPROVED AND PERSISTED**
-- Remaining corpus positions: **751–1413 (663 records)**
+- Current execution state: **PHASE 2 CORPUS CLASSIFICATION — 650 / 1413 APPROVED AND PERSISTED**
+- Approved coverage: **1–550 and 651–750**
+- Pending/unclassified: **551–650 and 751–1413 (763 records)**
 
 ## Historical evidence retained
 
