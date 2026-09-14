@@ -71,3 +71,24 @@ Governing plan: `docs/DALILI_FULL_CORPUS_GOVERNING_EXECUTION_PLAN_v1.0.md`
 - No materialization performed.
 - Canonical validator unchanged.
 - Next slice: records 51–75.
+
+
+## Phase 2 — Classification approval records 251–325
+
+- Status: **APPROVED AND PERSISTED**
+- Range: **251–325**
+- Input/accounted: **75 / 75**
+- REWRITE_REQUIRED: **73**
+- MERGED_BY_PROVENANCE: **2**
+- SPLIT_REQUIRED: **0**
+- unresolved: **0**
+- Merged lineage pair:
+  - FOOD-001-OP002 → FR-B03-FOOD-001-OP002
+  - FOOD-001-OP004 → FR-B03-FOOD-001-OP002
+- Governing artifact: `docs/audit/data/DALILI_CLASSIFICATION_APPROVED_251_325.json`
+- Approval commit: `ce73006d5972a3044d05df219a3692f4f2bbac19`
+- Legacy Master unchanged.
+- No materialization performed.
+- Canonical validator unchanged.
+- Records 326–350 remain reserved for governing review / input preparation.
+- Records 51–250 were governing-approved previously but GitHub persistence remained blocked and must be reconciled before final Phase-2 closure.
