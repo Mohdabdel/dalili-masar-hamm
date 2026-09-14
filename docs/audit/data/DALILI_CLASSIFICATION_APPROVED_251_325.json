@@ -1,0 +1,28 @@
+{
+  "artifact": "DALILI_CLASSIFICATION_APPROVED_251_325",
+  "version": "1.0",
+  "governance_status": "APPROVED",
+  "range": {
+    "start": 251,
+    "end": 325,
+    "count": 75
+  },
+  "distribution": {
+    "REWRITE_REQUIRED": 73,
+    "MERGED_BY_PROVENANCE": 2,
+    "SPLIT_REQUIRED": 0,
+    "unresolved": 0
+  },
+  "governing_decisions": {
+    "FOOD-001-OP002": "MERGED_BY_PROVENANCE",
+    "FOOD-001-OP004": "MERGED_BY_PROVENANCE"
+  },
+  "merged_reference": "FR-B03-FOOD-001-OP002",
+  "notes": [
+    "All other records 251-325 are REWRITE_REQUIRED under frozen FP-07 because Legacy card content encodes assistance/independence/performance progression.",
+    "No needs_human_review remains.",
+    "Legacy Master unchanged.",
+    "No materialization performed.",
+    "Canonical validator unchanged."
+  ]
+}
