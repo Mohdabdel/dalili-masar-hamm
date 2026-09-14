@@ -1,0 +1,2185 @@
+{
+  "artifact": "DALILI_CLASSIFICATION_APPROVED_851_950",
+  "version": "1.0",
+  "governance_status": "APPROVED",
+  "result_count": 100,
+  "range": {
+    "start": 851,
+    "end": 950,
+    "count": 100
+  },
+  "distribution": {
+    "ACCEPTED": 91,
+    "REWRITE_REQUIRED": 2,
+    "SPLIT_REQUIRED": 2,
+    "MERGED_BY_PROVENANCE": 5,
+    "unresolved": 0
+  },
+  "preflight": {
+    "input_count": 100,
+    "unique_ids": 100,
+    "first_id": "HOME-006-OP001",
+    "last_id": "HOME-042-OP002",
+    "source_identity_check": "PASS",
+    "acceptance_gate": "PASS"
+  },
+  "review_corrections": {
+    "worker_output_used_as_draft_only": true,
+    "over_split_records_reclassified": [
+      861,
+      875,
+      887,
+      895,
+      904,
+      913,
+      924,
+      945,
+      946
+    ],
+    "final_split_records": [
+      930,
+      931
+    ]
+  },
+  "results": [
+    {
+      "corpus_position": 851,
+      "legacy_id": "HOME-006-OP001",
+      "source_identity": {
+        "opportunity_title": "جمع الأحذية المبعثرة.",
+        "event_title": "ترتيب الأحذية في المدخل"
+      },
+      "existing_framework_lineage_assessment": "ALIGNED",
+      "existing_framework_lineage_evidence": [
+        {
+          "framework_reference_id": "FR-EXP12-02-HOME006-OP006",
+          "batch": "BATCH_05",
+          "source": "DALILI_EXPANSION_SAMPLE_12_02_CORRECTED_01"
+        }
+      ],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "MERGED_BY_PROVENANCE",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "جمع الأحذية المبعثرة",
+      "reasoning_summary": "يثبت سجل lineage الصريح إدماج هذا المصدر ضمن مرجع Framework قائم على مستوى الدور المجمع؛ لذلك يحفظ كمصدر provenance.",
+      "evidence_from_record": [
+        "existing_framework_lineage_evidence: FR-EXP12-02-HOME006-OP006",
+        "framework_reference_id: 'FR-EXP12-02-HOME006-OP006'"
+      ]
+    },
+    {
+      "corpus_position": 852,
+      "legacy_id": "HOME-006-OP002",
+      "source_identity": {
+        "opportunity_title": "مطابقة أزواج الأحذية.",
+        "event_title": "ترتيب الأحذية في المدخل"
+      },
+      "existing_framework_lineage_assessment": "ALIGNED",
+      "existing_framework_lineage_evidence": [
+        {
+          "framework_reference_id": "FR-EXP12-02-HOME006-OP006",
+          "batch": "BATCH_05",
+          "source": "DALILI_EXPANSION_SAMPLE_12_02_CORRECTED_01"
+        }
+      ],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "MERGED_BY_PROVENANCE",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مطابقة أزواج الأحذية",
+      "reasoning_summary": "يثبت سجل lineage الصريح إدماج هذا المصدر ضمن مرجع Framework قائم على مستوى الدور المجمع؛ لذلك يحفظ كمصدر provenance.",
+      "evidence_from_record": [
+        "existing_framework_lineage_evidence: FR-EXP12-02-HOME006-OP006",
+        "framework_reference_id: 'FR-EXP12-02-HOME006-OP006'"
+      ]
+    },
+    {
+      "corpus_position": 853,
+      "legacy_id": "HOME-006-OP003",
+      "source_identity": {
+        "opportunity_title": "ترتيب الأحذية على الرفوف المخصصة.",
+        "event_title": "ترتيب الأحذية في المدخل"
+      },
+      "existing_framework_lineage_assessment": "ALIGNED",
+      "existing_framework_lineage_evidence": [
+        {
+          "framework_reference_id": "FR-EXP12-02-HOME006-OP006",
+          "batch": "BATCH_05",
+          "source": "DALILI_EXPANSION_SAMPLE_12_02_CORRECTED_01"
+        }
+      ],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "MERGED_BY_PROVENANCE",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب الأحذية على الرفوف المخصصة",
+      "reasoning_summary": "يثبت سجل lineage الصريح إدماج هذا المصدر ضمن مرجع Framework قائم على مستوى الدور المجمع؛ لذلك يحفظ كمصدر provenance.",
+      "evidence_from_record": [
+        "existing_framework_lineage_evidence: FR-EXP12-02-HOME006-OP006",
+        "framework_reference_id: 'FR-EXP12-02-HOME006-OP006'"
+      ]
+    },
+    {
+      "corpus_position": 854,
+      "legacy_id": "HOME-007-OP001",
+      "source_identity": {
+        "opportunity_title": "جمع الكتب المتناثرة.",
+        "event_title": "ترتيب الكتب في المكتبة أو الرفوف"
+      },
+      "existing_framework_lineage_assessment": "ALIGNED",
+      "existing_framework_lineage_evidence": [
+        {
+          "framework_reference_id": "FR-B03-HOME-018-OP001",
+          "batch": "BATCH_03",
+          "source": "batch03-corpus.ts"
+        }
+      ],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "MERGED_BY_PROVENANCE",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "جمع الكتب المتناثرة",
+      "reasoning_summary": "يثبت سجل lineage الصريح إدماج هذا المصدر ضمن مرجع Framework قائم على مستوى الدور المجمع؛ لذلك يحفظ كمصدر provenance.",
+      "evidence_from_record": [
+        "existing_framework_lineage_evidence: FR-B03-HOME-018-OP001",
+        "framework_reference_id: 'FR-B03-HOME-018-OP001'"
+      ]
+    },
+    {
+      "corpus_position": 855,
+      "legacy_id": "HOME-007-OP002",
+      "source_identity": {
+        "opportunity_title": "مسح الغبار عن الرفوف.",
+        "event_title": "ترتيب الكتب في المكتبة أو الرفوف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح الغبار عن الرفوف",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مسح الغبار عن الرفوف."
+      ]
+    },
+    {
+      "corpus_position": 856,
+      "legacy_id": "HOME-007-OP003",
+      "source_identity": {
+        "opportunity_title": "إعادة الكتب وتصفيفها بشكل عمودي.",
+        "event_title": "ترتيب الكتب في المكتبة أو الرفوف"
+      },
+      "existing_framework_lineage_assessment": "ALIGNED",
+      "existing_framework_lineage_evidence": [
+        {
+          "framework_reference_id": "FR-B03-HOME-018-OP001",
+          "batch": "BATCH_03",
+          "source": "batch03-corpus.ts"
+        }
+      ],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "MERGED_BY_PROVENANCE",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إعادة الكتب وتصفيفها بشكل عمودي",
+      "reasoning_summary": "يثبت سجل lineage الصريح إدماج هذا المصدر ضمن مرجع Framework قائم على مستوى الدور المجمع؛ لذلك يحفظ كمصدر provenance.",
+      "evidence_from_record": [
+        "existing_framework_lineage_evidence: FR-B03-HOME-018-OP001",
+        "framework_reference_id: 'FR-B03-HOME-018-OP001'"
+      ]
+    },
+    {
+      "corpus_position": 857,
+      "legacy_id": "HOME-008-OP001",
+      "source_identity": {
+        "opportunity_title": "تجميع المحافظ والمفاتيح.",
+        "event_title": "ترتيب الأغراض الشخصية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجميع المحافظ والمفاتيح",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تجميع المحافظ والمفاتيح."
+      ]
+    },
+    {
+      "corpus_position": 858,
+      "legacy_id": "HOME-008-OP002",
+      "source_identity": {
+        "opportunity_title": "وضع الأغراض في الأدراج أو السلال المخصصة.",
+        "event_title": "ترتيب الأغراض الشخصية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع الأغراض في الأدراج أو السلال المخصصة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: وضع الأغراض في الأدراج أو السلال المخصصة."
+      ]
+    },
+    {
+      "corpus_position": 859,
+      "legacy_id": "HOME-009-OP001",
+      "source_identity": {
+        "opportunity_title": "ربط كيس القمامة بإحكام.",
+        "event_title": "إخراج القمامة إلى الحاوية الخارجية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ربط كيس القمامة بإحكام",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: ربط كيس القمامة بإحكام."
+      ]
+    },
+    {
+      "corpus_position": 860,
+      "legacy_id": "HOME-009-OP002",
+      "source_identity": {
+        "opportunity_title": "حمل الكيس إلى الخارج.",
+        "event_title": "إخراج القمامة إلى الحاوية الخارجية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "حمل الكيس إلى الخارج",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: حمل الكيس إلى الخارج."
+      ]
+    },
+    {
+      "corpus_position": 861,
+      "legacy_id": "HOME-009-OP003",
+      "source_identity": {
+        "opportunity_title": "وضع الكيس داخل الحاوية وإغلاقها.",
+        "event_title": "إخراج القمامة إلى الحاوية الخارجية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع الكيس داخل الحاوية، إغلاق الحاوية",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: وضع الكيس داخل الحاوية وإغلاقها."
+      ]
+    },
+    {
+      "corpus_position": 862,
+      "legacy_id": "HOME-010-OP001",
+      "source_identity": {
+        "opportunity_title": "إخراج الكيس الممتلئ من السلة.",
+        "event_title": "تغيير كيس القمامة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إخراج الكيس الممتلئ من السلة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: إخراج الكيس الممتلئ من السلة."
+      ]
+    },
+    {
+      "corpus_position": 863,
+      "legacy_id": "HOME-010-OP002",
+      "source_identity": {
+        "opportunity_title": "إحضار لفة الأكياس الجديدة.",
+        "event_title": "تغيير كيس القمامة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إحضار لفة الأكياس الجديدة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: إحضار لفة الأكياس الجديدة."
+      ]
+    },
+    {
+      "corpus_position": 864,
+      "legacy_id": "HOME-010-OP003",
+      "source_identity": {
+        "opportunity_title": "تلبيس الكيس الجديد داخل السلة.",
+        "event_title": "تغيير كيس القمامة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تلبيس الكيس الجديد داخل السلة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تلبيس الكيس الجديد داخل السلة."
+      ]
+    },
+    {
+      "corpus_position": 865,
+      "legacy_id": "HOME-011-OP001",
+      "source_identity": {
+        "opportunity_title": "رش سائل تلميع الزجاج.",
+        "event_title": "تنظيف النوافذ من الداخل والخارج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "رش سائل تلميع الزجاج",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: رش سائل تلميع الزجاج."
+      ]
+    },
+    {
+      "corpus_position": 866,
+      "legacy_id": "HOME-011-OP002",
+      "source_identity": {
+        "opportunity_title": "مسح الزجاج بفوطة أو أداة مسح.",
+        "event_title": "تنظيف النوافذ من الداخل والخارج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح الزجاج بفوطة أو أداة مسح",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مسح الزجاج بفوطة أو أداة مسح."
+      ]
+    },
+    {
+      "corpus_position": 867,
+      "legacy_id": "HOME-011-OP003",
+      "source_identity": {
+        "opportunity_title": "مسح إطارات النوافذ السفلية.",
+        "event_title": "تنظيف النوافذ من الداخل والخارج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح إطارات النوافذ السفلية",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مسح إطارات النوافذ السفلية."
+      ]
+    },
+    {
+      "corpus_position": 868,
+      "legacy_id": "HOME-012-OP001",
+      "source_identity": {
+        "opportunity_title": "ترتيب سجادة المدخل.",
+        "event_title": "ترتيب مدخل المنزل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب سجادة المدخل",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: ترتيب سجادة المدخل."
+      ]
+    },
+    {
+      "corpus_position": 869,
+      "legacy_id": "HOME-012-OP002",
+      "source_identity": {
+        "opportunity_title": "تعليق المعاطف أو المظلات في أماكنها.",
+        "event_title": "ترتيب مدخل المنزل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تعليق المعاطف أو المظلات في أماكنها",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تعليق المعاطف أو المظلات في أماكنها."
+      ]
+    },
+    {
+      "corpus_position": 870,
+      "legacy_id": "HOME-012-OP003",
+      "source_identity": {
+        "opportunity_title": "مسح طاولة المدخل.",
+        "event_title": "ترتيب مدخل المنزل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح طاولة المدخل",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مسح طاولة المدخل."
+      ]
+    },
+    {
+      "corpus_position": 871,
+      "legacy_id": "HOME-013-OP001",
+      "source_identity": {
+        "opportunity_title": "تعبئة إبريق الري بالماء.",
+        "event_title": "سقي النباتات المنزلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تعبئة إبريق الري بالماء",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تعبئة إبريق الري بالماء."
+      ]
+    },
+    {
+      "corpus_position": 872,
+      "legacy_id": "HOME-013-OP002",
+      "source_identity": {
+        "opportunity_title": "ري النباتات بالكمية المحددة.",
+        "event_title": "سقي النباتات المنزلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ري النباتات بالكمية المحددة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: ري النباتات بالكمية المحددة."
+      ]
+    },
+    {
+      "corpus_position": 873,
+      "legacy_id": "HOME-013-OP003",
+      "source_identity": {
+        "opportunity_title": "إزالة الأوراق الجافة المتساقطة.",
+        "event_title": "سقي النباتات المنزلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إزالة الأوراق الجافة المتساقطة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: إزالة الأوراق الجافة المتساقطة."
+      ]
+    },
+    {
+      "corpus_position": 874,
+      "legacy_id": "HOME-014-OP001",
+      "source_identity": {
+        "opportunity_title": "كنس أرضية الشرفة.",
+        "event_title": "تنظيف الشرفة أو البلكونة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "كنس أرضية الشرفة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: كنس أرضية الشرفة."
+      ]
+    },
+    {
+      "corpus_position": 875,
+      "legacy_id": "HOME-014-OP002",
+      "source_identity": {
+        "opportunity_title": "مسح الكراسي والطاولة الخارجية.",
+        "event_title": "تنظيف الشرفة أو البلكونة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح الكراسي الخارجية، مسح الطاولة الخارجية",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مسح الكراسي والطاولة الخارجية."
+      ]
+    },
+    {
+      "corpus_position": 876,
+      "legacy_id": "HOME-014-OP003",
+      "source_identity": {
+        "opportunity_title": "ترتيب مساحة الجلوس.",
+        "event_title": "تنظيف الشرفة أو البلكونة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب مساحة الجلوس",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: ترتيب مساحة الجلوس."
+      ]
+    },
+    {
+      "corpus_position": 877,
+      "legacy_id": "HOME-015-OP001",
+      "source_identity": {
+        "opportunity_title": "تجهيز مناشف الضيوف النظيفة.",
+        "event_title": "تجهيز المنزل لاستقبال ضيوف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجهيز مناشف الضيوف النظيفة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تجهيز مناشف الضيوف النظيفة."
+      ]
+    },
+    {
+      "corpus_position": 878,
+      "legacy_id": "HOME-015-OP002",
+      "source_identity": {
+        "opportunity_title": "ترتيب وسائد الجلوس.",
+        "event_title": "تجهيز المنزل لاستقبال ضيوف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب وسائد الجلوس",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: ترتيب وسائد الجلوس."
+      ]
+    },
+    {
+      "corpus_position": 879,
+      "legacy_id": "HOME-015-OP003",
+      "source_identity": {
+        "opportunity_title": "توزيع علب المناديل في الغرفة.",
+        "event_title": "تجهيز المنزل لاستقبال ضيوف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "توزيع علب المناديل في الغرفة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: توزيع علب المناديل في الغرفة."
+      ]
+    },
+    {
+      "corpus_position": 880,
+      "legacy_id": "HOME-016-OP001",
+      "source_identity": {
+        "opportunity_title": "تجميع فناجين وأكواب الضيافة.",
+        "event_title": "إعادة المنزل لوضعه الطبيعي بعد الضيوف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجميع فناجين وأكواب الضيافة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تجميع فناجين وأكواب الضيافة."
+      ]
+    },
+    {
+      "corpus_position": 881,
+      "legacy_id": "HOME-016-OP002",
+      "source_identity": {
+        "opportunity_title": "جمع المناديل المستعملة.",
+        "event_title": "إعادة المنزل لوضعه الطبيعي بعد الضيوف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "جمع المناديل المستعملة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: جمع المناديل المستعملة."
+      ]
+    },
+    {
+      "corpus_position": 882,
+      "legacy_id": "HOME-016-OP003",
+      "source_identity": {
+        "opportunity_title": "إعادة الكراسي لأماكنها المعتادة.",
+        "event_title": "إعادة المنزل لوضعه الطبيعي بعد الضيوف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إعادة الكراسي لأماكنها المعتادة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: إعادة الكراسي لأماكنها المعتادة."
+      ]
+    },
+    {
+      "corpus_position": 883,
+      "legacy_id": "HOME-017-OP001",
+      "source_identity": {
+        "opportunity_title": "تجميع الأشياء المتناثرة في صناديق.",
+        "event_title": "ترتيب المخزن أو غرفة التخزين"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجميع الأشياء المتناثرة في صناديق",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تجميع الأشياء المتناثرة في صناديق."
+      ]
+    },
+    {
+      "corpus_position": 884,
+      "legacy_id": "HOME-017-OP002",
+      "source_identity": {
+        "opportunity_title": "مسح الأرفف.",
+        "event_title": "ترتيب المخزن أو غرفة التخزين"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح الأرفف",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مسح الأرفف."
+      ]
+    },
+    {
+      "corpus_position": 885,
+      "legacy_id": "HOME-017-OP003",
+      "source_identity": {
+        "opportunity_title": "رص الصناديق على الرفوف.",
+        "event_title": "ترتيب المخزن أو غرفة التخزين"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "رص الصناديق على الرفوف",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: رص الصناديق على الرفوف."
+      ]
+    },
+    {
+      "corpus_position": 886,
+      "legacy_id": "HOME-018-OP001",
+      "source_identity": {
+        "opportunity_title": "تجميع عبوات المنظفات.",
+        "event_title": "تنظيم أدوات التنظيف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجميع عبوات المنظفات",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تجميع عبوات المنظفات."
+      ]
+    },
+    {
+      "corpus_position": 887,
+      "legacy_id": "HOME-018-OP002",
+      "source_identity": {
+        "opportunity_title": "إعادة المكنسة والممسحة إلى الزاوية المخصصة.",
+        "event_title": "تنظيم أدوات التنظيف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إعادة المكنسة إلى الزاوية المخصصة، إعادة الممسحة إلى الزاوية المخصصة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: إعادة المكنسة والممسحة إلى الزاوية المخصصة."
+      ]
+    },
+    {
+      "corpus_position": 888,
+      "legacy_id": "HOME-018-OP003",
+      "source_identity": {
+        "opportunity_title": "تعليق الفوط النظيفة.",
+        "event_title": "تنظيم أدوات التنظيف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تعليق الفوط النظيفة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تعليق الفوط النظيفة."
+      ]
+    },
+    {
+      "corpus_position": 889,
+      "legacy_id": "HOME-019-OP001",
+      "source_identity": {
+        "opportunity_title": "إغلاق النوافذ بإحكام.",
+        "event_title": "تجهيز المنزل قبل السفر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إغلاق النوافذ بإحكام",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: إغلاق النوافذ بإحكام."
+      ]
+    },
+    {
+      "corpus_position": 890,
+      "legacy_id": "HOME-019-OP002",
+      "source_identity": {
+        "opportunity_title": "فصل قوابس الأجهزة الكهربائية.",
+        "event_title": "تجهيز المنزل قبل السفر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فصل قوابس الأجهزة الكهربائية",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: فصل قوابس الأجهزة الكهربائية."
+      ]
+    },
+    {
+      "corpus_position": 891,
+      "legacy_id": "HOME-019-OP003",
+      "source_identity": {
+        "opportunity_title": "جمع القمامة للتخلص منها.",
+        "event_title": "تجهيز المنزل قبل السفر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "جمع القمامة للتخلص منها",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: جمع القمامة للتخلص منها."
+      ]
+    },
+    {
+      "corpus_position": 892,
+      "legacy_id": "HOME-020-OP001",
+      "source_identity": {
+        "opportunity_title": "فتح النوافذ للتهوية.",
+        "event_title": "إعادة ترتيب المنزل بعد العودة من السفر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فتح النوافذ للتهوية",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: فتح النوافذ للتهوية."
+      ]
+    },
+    {
+      "corpus_position": 893,
+      "legacy_id": "HOME-020-OP002",
+      "source_identity": {
+        "opportunity_title": "إزالة الأغطية الواقية عن الأثاث.",
+        "event_title": "إعادة ترتيب المنزل بعد العودة من السفر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إزالة الأغطية الواقية عن الأثاث",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: إزالة الأغطية الواقية عن الأثاث."
+      ]
+    },
+    {
+      "corpus_position": 894,
+      "legacy_id": "HOME-020-OP003",
+      "source_identity": {
+        "opportunity_title": "تفريغ حقائب السفر.",
+        "event_title": "إعادة ترتيب المنزل بعد العودة من السفر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تفريغ حقائب السفر",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تفريغ حقائب السفر."
+      ]
+    },
+    {
+      "corpus_position": 895,
+      "legacy_id": "HOME-021-OP001",
+      "source_identity": {
+        "opportunity_title": "خلع الشراشف وأكياس الوسائد المستخدمة.",
+        "event_title": "تغيير مفارش وشراشف السرير"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "خلع الشراشف المستخدمة، خلع أكياس الوسائد المستخدمة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: خلع الشراشف وأكياس الوسائد المستخدمة."
+      ]
+    },
+    {
+      "corpus_position": 896,
+      "legacy_id": "HOME-021-OP002",
+      "source_identity": {
+        "opportunity_title": "نقل المفارش المتسخة لغرفة الغسيل.",
+        "event_title": "تغيير مفارش وشراشف السرير"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "نقل المفارش المتسخة لغرفة الغسيل",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: نقل المفارش المتسخة لغرفة الغسيل."
+      ]
+    },
+    {
+      "corpus_position": 897,
+      "legacy_id": "HOME-021-OP003",
+      "source_identity": {
+        "opportunity_title": "المساعدة في فرد الشراشف النظيفة.",
+        "event_title": "تغيير مفارش وشراشف السرير"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فرد الشراشف النظيفة",
+      "reasoning_summary": "الدور الوظيفي صالح، لكن صياغة العنوان تربطه بالمساعدة فتخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع إزالة وصف المساعدة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: المساعدة في فرد الشراشف النظيفة."
+      ]
+    },
+    {
+      "corpus_position": 898,
+      "legacy_id": "HOME-022-OP001",
+      "source_identity": {
+        "opportunity_title": "فرز الملابس المطوية.",
+        "event_title": "ترتيب خزانة الملابس"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فرز الملابس المطوية",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: فرز الملابس المطوية."
+      ]
+    },
+    {
+      "corpus_position": 899,
+      "legacy_id": "HOME-022-OP002",
+      "source_identity": {
+        "opportunity_title": "تعليق الملابس على الشماعات.",
+        "event_title": "ترتيب خزانة الملابس"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تعليق الملابس على الشماعات",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تعليق الملابس على الشماعات."
+      ]
+    },
+    {
+      "corpus_position": 900,
+      "legacy_id": "HOME-022-OP003",
+      "source_identity": {
+        "opportunity_title": "ترتيب الملابس حسب التصنيف في الرفوف.",
+        "event_title": "ترتيب خزانة الملابس"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب الملابس حسب التصنيف في الرفوف",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: ترتيب الملابس حسب التصنيف في الرفوف."
+      ]
+    },
+    {
+      "corpus_position": 901,
+      "legacy_id": "HOME-023-OP001",
+      "source_identity": {
+        "opportunity_title": "رش المنظف على الأسطح.",
+        "event_title": "تنظيف الحمام الرئيسي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "رش المنظف على الأسطح",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: رش المنظف على الأسطح."
+      ]
+    },
+    {
+      "corpus_position": 902,
+      "legacy_id": "HOME-023-OP002",
+      "source_identity": {
+        "opportunity_title": "فرك الحوض بالفرشاة.",
+        "event_title": "تنظيف الحمام الرئيسي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فرك الحوض بالفرشاة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: فرك الحوض بالفرشاة."
+      ]
+    },
+    {
+      "corpus_position": 903,
+      "legacy_id": "HOME-023-OP003",
+      "source_identity": {
+        "opportunity_title": "تجفيف الأرضية بعد الغسيل.",
+        "event_title": "تنظيف الحمام الرئيسي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجفيف الأرضية بعد الغسيل",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تجفيف الأرضية بعد الغسيل."
+      ]
+    },
+    {
+      "corpus_position": 904,
+      "legacy_id": "HOME-024-OP001",
+      "source_identity": {
+        "opportunity_title": "ترتيب فرش الأسنان والمعجون.",
+        "event_title": "ترتيب أدوات الحمام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب فرش الأسنان، ترتيب المعجون",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: ترتيب فرش الأسنان والمعجون."
+      ]
+    },
+    {
+      "corpus_position": 905,
+      "legacy_id": "HOME-024-OP002",
+      "source_identity": {
+        "opportunity_title": "وضع عبوات الشامبو في أماكنها.",
+        "event_title": "ترتيب أدوات الحمام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع عبوات الشامبو في أماكنها",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: وضع عبوات الشامبو في أماكنها."
+      ]
+    },
+    {
+      "corpus_position": 906,
+      "legacy_id": "HOME-024-OP003",
+      "source_identity": {
+        "opportunity_title": "تعليق مناشف الاستحمام.",
+        "event_title": "ترتيب أدوات الحمام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تعليق مناشف الاستحمام",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تعليق مناشف الاستحمام."
+      ]
+    },
+    {
+      "corpus_position": 907,
+      "legacy_id": "HOME-025-OP001",
+      "source_identity": {
+        "opportunity_title": "إزالة الألعاب أو الأغراض من السجاد.",
+        "event_title": "تنظيف السجاد والموكيت"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إزالة الألعاب أو الأغراض من السجاد",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: إزالة الألعاب أو الأغراض من السجاد."
+      ]
+    },
+    {
+      "corpus_position": 908,
+      "legacy_id": "HOME-025-OP002",
+      "source_identity": {
+        "opportunity_title": "تمرير المكنسة الكهربائية.",
+        "event_title": "تنظيف السجاد والموكيت"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تمرير المكنسة الكهربائية",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تمرير المكنسة الكهربائية."
+      ]
+    },
+    {
+      "corpus_position": 909,
+      "legacy_id": "HOME-025-OP003",
+      "source_identity": {
+        "opportunity_title": "معالجة البقع السطحية بالمنظف والإسفنجة.",
+        "event_title": "تنظيف السجاد والموكيت"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "معالجة البقع السطحية بالمنظف والإسفنجة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: معالجة البقع السطحية بالمنظف والإسفنجة."
+      ]
+    },
+    {
+      "corpus_position": 910,
+      "legacy_id": "HOME-026-OP001",
+      "source_identity": {
+        "opportunity_title": "رش ملمع الأخشاب.",
+        "event_title": "تلميع الأثاث الخشبي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "رش ملمع الأخشاب",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: رش ملمع الأخشاب."
+      ]
+    },
+    {
+      "corpus_position": 911,
+      "legacy_id": "HOME-026-OP002",
+      "source_identity": {
+        "opportunity_title": "مسح الطاولات والأسطح الخشبية بفوطة مخصصة.",
+        "event_title": "تلميع الأثاث الخشبي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح الطاولات والأسطح الخشبية بفوطة مخصصة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مسح الطاولات والأسطح الخشبية بفوطة مخصصة."
+      ]
+    },
+    {
+      "corpus_position": 912,
+      "legacy_id": "HOME-027-OP001",
+      "source_identity": {
+        "opportunity_title": "تمرير أداة شفط الغبار على الستائر.",
+        "event_title": "تنظيف الستائر والمفروشات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تمرير أداة شفط الغبار على الستائر",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تمرير أداة شفط الغبار على الستائر."
+      ]
+    },
+    {
+      "corpus_position": 913,
+      "legacy_id": "HOME-027-OP002",
+      "source_identity": {
+        "opportunity_title": "فك المشابك لإنزال الستارة للغسيل.",
+        "event_title": "تنظيف الستائر والمفروشات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فك المشابك، إنزال الستارة للغسيل",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: فك المشابك لإنزال الستارة للغسيل."
+      ]
+    },
+    {
+      "corpus_position": 914,
+      "legacy_id": "HOME-028-OP001",
+      "source_identity": {
+        "opportunity_title": "جمع الألعاب المتناثرة في الصناديق.",
+        "event_title": "ترتيب غرفة الأطفال"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "جمع الألعاب المتناثرة في الصناديق",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: جمع الألعاب المتناثرة في الصناديق."
+      ]
+    },
+    {
+      "corpus_position": 915,
+      "legacy_id": "HOME-028-OP002",
+      "source_identity": {
+        "opportunity_title": "ترتيب القصص والكتب على الرف.",
+        "event_title": "ترتيب غرفة الأطفال"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب القصص والكتب على الرف",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: ترتيب القصص والكتب على الرف."
+      ]
+    },
+    {
+      "corpus_position": 916,
+      "legacy_id": "HOME-028-OP003",
+      "source_identity": {
+        "opportunity_title": "ترتيب السرير.",
+        "event_title": "ترتيب غرفة الأطفال"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب السرير",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: ترتيب السرير."
+      ]
+    },
+    {
+      "corpus_position": 917,
+      "legacy_id": "HOME-029-OP001",
+      "source_identity": {
+        "opportunity_title": "تمرير عصا إزالة الغبار (الريشة) على الأسطح العالية.",
+        "event_title": "تنظيف أعلى الخزائن والرفوف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تمرير عصا إزالة الغبار (الريشة) على الأسطح العالية",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تمرير عصا إزالة الغبار (الريشة) على الأسطح العالية."
+      ]
+    },
+    {
+      "corpus_position": 918,
+      "legacy_id": "HOME-029-OP002",
+      "source_identity": {
+        "opportunity_title": "مسح الرفوف التي يسهل الوصول إليها.",
+        "event_title": "تنظيف أعلى الخزائن والرفوف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح الرفوف التي يسهل الوصول إليها",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مسح الرفوف التي يسهل الوصول إليها."
+      ]
+    },
+    {
+      "corpus_position": 919,
+      "legacy_id": "HOME-030-OP001",
+      "source_identity": {
+        "opportunity_title": "مسح مصابيح الطاولة (الأباجورات) بفوطة جافة.",
+        "event_title": "تنظيف الثريات والإضاءة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح مصابيح الطاولة (الأباجورات) بفوطة جافة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مسح مصابيح الطاولة (الأباجورات) بفوطة جافة."
+      ]
+    },
+    {
+      "corpus_position": 920,
+      "legacy_id": "HOME-030-OP002",
+      "source_identity": {
+        "opportunity_title": "تنظيف مفاتيح الإضاءة الجدارية.",
+        "event_title": "تنظيف الثريات والإضاءة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تنظيف مفاتيح الإضاءة الجدارية",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تنظيف مفاتيح الإضاءة الجدارية."
+      ]
+    },
+    {
+      "corpus_position": 921,
+      "legacy_id": "HOME-031-OP001",
+      "source_identity": {
+        "opportunity_title": "إحضار اللمبة الجديدة البديلة.",
+        "event_title": "تغيير لمبات الإضاءة المحترقة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إحضار اللمبة الجديدة البديلة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: إحضار اللمبة الجديدة البديلة."
+      ]
+    },
+    {
+      "corpus_position": 922,
+      "legacy_id": "HOME-031-OP002",
+      "source_identity": {
+        "opportunity_title": "مناولة اللمبة للشخص الذي يقوم بالتركيب.",
+        "event_title": "تغيير لمبات الإضاءة المحترقة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مناولة اللمبة للشخص الذي يقوم بالتركيب",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مناولة اللمبة للشخص الذي يقوم بالتركيب."
+      ]
+    },
+    {
+      "corpus_position": 923,
+      "legacy_id": "HOME-031-OP003",
+      "source_identity": {
+        "opportunity_title": "رمي اللمبة التالفة في سلة المهملات.",
+        "event_title": "تغيير لمبات الإضاءة المحترقة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "رمي اللمبة التالفة في سلة المهملات",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: رمي اللمبة التالفة في سلة المهملات."
+      ]
+    },
+    {
+      "corpus_position": 924,
+      "legacy_id": "HOME-032-OP001",
+      "source_identity": {
+        "opportunity_title": "استلام فلاتر المكيف لنقلها للغسيل.",
+        "event_title": "تنظيف المكيفات ومراوح السقف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استلام فلاتر المكيف، نقل فلاتر المكيف للغسيل",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: استلام فلاتر المكيف لنقلها للغسيل."
+      ]
+    },
+    {
+      "corpus_position": 925,
+      "legacy_id": "HOME-032-OP002",
+      "source_identity": {
+        "opportunity_title": "غسل الفلاتر بالماء.",
+        "event_title": "تنظيف المكيفات ومراوح السقف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "غسل الفلاتر بالماء",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: غسل الفلاتر بالماء."
+      ]
+    },
+    {
+      "corpus_position": 926,
+      "legacy_id": "HOME-032-OP003",
+      "source_identity": {
+        "opportunity_title": "تجفيف الفلاتر قبل إعادتها.",
+        "event_title": "تنظيف المكيفات ومراوح السقف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجفيف الفلاتر",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تجفيف الفلاتر قبل إعادتها."
+      ]
+    },
+    {
+      "corpus_position": 927,
+      "legacy_id": "HOME-033-OP001",
+      "source_identity": {
+        "opportunity_title": "رش سائل التلميع على المرآة.",
+        "event_title": "تلميع المرايا والزجاج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "رش سائل التلميع على المرآة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: رش سائل التلميع على المرآة."
+      ]
+    },
+    {
+      "corpus_position": 928,
+      "legacy_id": "HOME-033-OP002",
+      "source_identity": {
+        "opportunity_title": "مسح وتلميع المرآة بورق أو فوطة جافة.",
+        "event_title": "تلميع المرايا والزجاج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح وتلميع المرآة بورق أو فوطة جافة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مسح وتلميع المرآة بورق أو فوطة جافة."
+      ]
+    },
+    {
+      "corpus_position": 929,
+      "legacy_id": "HOME-034-OP001",
+      "source_identity": {
+        "opportunity_title": "مسح سطح الباب الخشبي.",
+        "event_title": "تنظيف الأبواب والمقابض"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح سطح الباب الخشبي",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مسح سطح الباب الخشبي."
+      ]
+    },
+    {
+      "corpus_position": 930,
+      "legacy_id": "HOME-034-OP002",
+      "source_identity": {
+        "opportunity_title": "رش المعقم على مقابض الأبواب ومسحها.",
+        "event_title": "تنظيف الأبواب والمقابض"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "رش المعقم على مقابض الأبواب | مسح مقابض الأبواب",
+      "reasoning_summary": "يتضمن السجل فعلين لهما أثران ونقطتا اكتمال مستقلتان نسبيًا: «رش المعقم على مقابض الأبواب | مسح مقابض الأبواب»؛ لذلك يلزم SPLIT_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title_ar: رش المعقم على مقابض الأبواب ومسحها."
+      ]
+    },
+    {
+      "corpus_position": 931,
+      "legacy_id": "HOME-035-OP001",
+      "source_identity": {
+        "opportunity_title": "جمع الأوراق المتناثرة ووضعها في ملف.",
+        "event_title": "ترتيب المكتب المنزلي أو منطقة العمل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "جمع الأوراق المتناثرة | وضع الأوراق في ملف",
+      "reasoning_summary": "يتضمن السجل فعلين لهما أثران ونقطتا اكتمال مستقلتان نسبيًا: «جمع الأوراق المتناثرة | وضع الأوراق في ملف»؛ لذلك يلزم SPLIT_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title_ar: جمع الأوراق المتناثرة ووضعها في ملف."
+      ]
+    },
+    {
+      "corpus_position": 932,
+      "legacy_id": "HOME-035-OP002",
+      "source_identity": {
+        "opportunity_title": "تجميع الأقلام في حامل الأقلام.",
+        "event_title": "ترتيب المكتب المنزلي أو منطقة العمل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجميع الأقلام في حامل الأقلام",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تجميع الأقلام في حامل الأقلام."
+      ]
+    },
+    {
+      "corpus_position": 933,
+      "legacy_id": "HOME-035-OP003",
+      "source_identity": {
+        "opportunity_title": "مسح سطح المكتب.",
+        "event_title": "ترتيب المكتب المنزلي أو منطقة العمل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح سطح المكتب",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مسح سطح المكتب."
+      ]
+    },
+    {
+      "corpus_position": 934,
+      "legacy_id": "HOME-036-OP001",
+      "source_identity": {
+        "opportunity_title": "مسح شاشة التلفاز بفوطة ناعمة.",
+        "event_title": "تنظيف الأجهزة الإلكترونية والشاشات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح شاشة التلفاز بفوطة ناعمة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مسح شاشة التلفاز بفوطة ناعمة."
+      ]
+    },
+    {
+      "corpus_position": 935,
+      "legacy_id": "HOME-036-OP002",
+      "source_identity": {
+        "opportunity_title": "تنظيف لوحة المفاتيح بفرشاة صغيرة.",
+        "event_title": "تنظيف الأجهزة الإلكترونية والشاشات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تنظيف لوحة المفاتيح بفرشاة صغيرة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تنظيف لوحة المفاتيح بفرشاة صغيرة."
+      ]
+    },
+    {
+      "corpus_position": 936,
+      "legacy_id": "HOME-036-OP003",
+      "source_identity": {
+        "opportunity_title": "مسح أجهزة التحكم عن بعد.",
+        "event_title": "تنظيف الأجهزة الإلكترونية والشاشات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح أجهزة التحكم عن بعد",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مسح أجهزة التحكم عن بعد."
+      ]
+    },
+    {
+      "corpus_position": 937,
+      "legacy_id": "HOME-037-OP001",
+      "source_identity": {
+        "opportunity_title": "تجميع بكرات الخيوط.",
+        "event_title": "ترتيب أدوات الخياطة والصيانة المنزلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجميع بكرات الخيوط",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تجميع بكرات الخيوط."
+      ]
+    },
+    {
+      "corpus_position": 938,
+      "legacy_id": "HOME-037-OP002",
+      "source_identity": {
+        "opportunity_title": "ترتيب المسامير أو الأدوات الصغيرة في العلب المقسمة.",
+        "event_title": "ترتيب أدوات الخياطة والصيانة المنزلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب المسامير أو الأدوات الصغيرة في العلب المقسمة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: ترتيب المسامير أو الأدوات الصغيرة في العلب المقسمة."
+      ]
+    },
+    {
+      "corpus_position": 939,
+      "legacy_id": "HOME-037-OP003",
+      "source_identity": {
+        "opportunity_title": "إعادة صندوق الأدوات لمكانه.",
+        "event_title": "ترتيب أدوات الخياطة والصيانة المنزلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إعادة صندوق الأدوات لمكانه",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: إعادة صندوق الأدوات لمكانه."
+      ]
+    },
+    {
+      "corpus_position": 940,
+      "legacy_id": "HOME-038-OP001",
+      "source_identity": {
+        "opportunity_title": "مسح واجهة الثلاجة من البصمات.",
+        "event_title": "تنظيف الثلاجة والفريزر من الخارج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح واجهة الثلاجة من البصمات",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مسح واجهة الثلاجة من البصمات."
+      ]
+    },
+    {
+      "corpus_position": 941,
+      "legacy_id": "HOME-038-OP002",
+      "source_identity": {
+        "opportunity_title": "تنظيف مقابض أبواب الثلاجة.",
+        "event_title": "تنظيف الثلاجة والفريزر من الخارج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تنظيف مقابض أبواب الثلاجة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تنظيف مقابض أبواب الثلاجة."
+      ]
+    },
+    {
+      "corpus_position": 942,
+      "legacy_id": "HOME-039-OP001",
+      "source_identity": {
+        "opportunity_title": "مسح الأسطح العلوية للغسالة.",
+        "event_title": "تنظيف الغسالة والمجفف من الخارج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح الأسطح العلوية للغسالة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مسح الأسطح العلوية للغسالة."
+      ]
+    },
+    {
+      "corpus_position": 943,
+      "legacy_id": "HOME-039-OP002",
+      "source_identity": {
+        "opportunity_title": "تنظيف زجاج الباب الخارجي.",
+        "event_title": "تنظيف الغسالة والمجفف من الخارج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تنظيف زجاج الباب الخارجي",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: تنظيف زجاج الباب الخارجي."
+      ]
+    },
+    {
+      "corpus_position": 944,
+      "legacy_id": "HOME-040-OP001",
+      "source_identity": {
+        "opportunity_title": "كنس الأتربة المتراكمة بعد سحب الجهاز.",
+        "event_title": "تنظيف خلف الأجهزة المنزلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "كنس الأتربة المتراكمة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: كنس الأتربة المتراكمة بعد سحب الجهاز."
+      ]
+    },
+    {
+      "corpus_position": 945,
+      "legacy_id": "HOME-040-OP002",
+      "source_identity": {
+        "opportunity_title": "مسح الأرضية والجدار خلف الجهاز.",
+        "event_title": "تنظيف خلف الأجهزة المنزلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح الأرضية خلف الجهاز، مسح الجدار خلف الجهاز",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مسح الأرضية والجدار خلف الجهاز."
+      ]
+    },
+    {
+      "corpus_position": 946,
+      "legacy_id": "HOME-041-OP001",
+      "source_identity": {
+        "opportunity_title": "إخراج علب الأدوية لفحصها.",
+        "event_title": "ترتيب خزانة الأدوية والإسعافات الأولية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إخراج علب الأدوية، فحص علب الأدوية",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: إخراج علب الأدوية لفحصها."
+      ]
+    },
+    {
+      "corpus_position": 947,
+      "legacy_id": "HOME-041-OP002",
+      "source_identity": {
+        "opportunity_title": "فرز الأدوية ومواد الإسعاف في مجموعات.",
+        "event_title": "ترتيب خزانة الأدوية والإسعافات الأولية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فرز الأدوية ومواد الإسعاف في مجموعات",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: فرز الأدوية ومواد الإسعاف في مجموعات."
+      ]
+    },
+    {
+      "corpus_position": 948,
+      "legacy_id": "HOME-041-OP003",
+      "source_identity": {
+        "opportunity_title": "إعادة ترتيب العلب في الخزانة.",
+        "event_title": "ترتيب خزانة الأدوية والإسعافات الأولية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إعادة ترتيب العلب في الخزانة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: إعادة ترتيب العلب في الخزانة."
+      ]
+    },
+    {
+      "corpus_position": 949,
+      "legacy_id": "HOME-042-OP001",
+      "source_identity": {
+        "opportunity_title": "مسح طفاية الحريق من الغبار.",
+        "event_title": "فحص طفاية الحريق وأجهزة الإنذار"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح طفاية الحريق من الغبار",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية واحدًا ذا قصد وأثر واكتمال طبيعي ومعنى مستقل، ولا توجد بطاقة أداء أو مساعدة تلوث حياد FP-07. تعدد الأشياء أو الخطوات المتلازمة هنا يخدم نتيجة طبيعية واحدة ولا ينشئ أدوارًا مستقلة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: مسح طفاية الحريق من الغبار."
+      ]
+    },
+    {
+      "corpus_position": 950,
+      "legacy_id": "HOME-042-OP002",
+      "source_identity": {
+        "opportunity_title": "الضغط على زر الاختبار في كاشف الدخان (بمساعدة).",
+        "event_title": "فحص طفاية الحريق وأجهزة الإنذار"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الضغط على زر الاختبار في كاشف الدخان",
+      "reasoning_summary": "الدور الوظيفي صالح، لكن صياغة العنوان تربطه بالمساعدة فتخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع إزالة وصف المساعدة.",
+      "evidence_from_record": [
+        "opportunity_title_ar: الضغط على زر الاختبار في كاشف الدخان (بمساعدة)."
+      ]
+    }
+  ],
+  "notes": [
+    "Gemini output independently reviewed and corrected before approval.",
+    "Legacy Master unchanged; no materialization performed; canonical validator unchanged."
+  ]
+}
