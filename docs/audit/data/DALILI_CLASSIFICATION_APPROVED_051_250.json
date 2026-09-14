@@ -1,0 +1,58 @@
+{
+  "artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+  "version": "1.1-compact",
+  "governance_status": "APPROVED",
+  "range": {
+    "start": 51,
+    "end": 250,
+    "count": 200
+  },
+  "representation": "DEFAULT_PLUS_OVERRIDES",
+  "default_classification": {
+    "disposition": "REWRITE_REQUIRED",
+    "governing_confidence": "HIGH",
+    "needs_human_review": false,
+    "governing_note": "Functional role retained; Legacy card requires neutral rewrite under frozen FP-07 because Legacy card content encodes assistance, independence, prompting, training/mastery/readiness, or performance progression. Legacy review_required is not used as an independent gate."
+  },
+  "overrides": {
+    "COMM-002-OP001": {
+      "corpus_position": 55,
+      "disposition": "MERGED_BY_PROVENANCE",
+      "governing_confidence": "HIGH",
+      "needs_human_review": false,
+      "governing_note": "Existing FR-B03-COMM-002-OP001 is semantically aligned and explicitly traces to this Legacy ID."
+    },
+    "COMM-020-OP003": {
+      "disposition": "SPLIT_REQUIRED",
+      "governing_confidence": "HIGH",
+      "needs_human_review": false,
+      "governing_note": "Combines separable roles: selecting the item, completing payment, and receiving the purchase."
+    },
+    "COMM-041-OP003": {
+      "disposition": "SPLIT_REQUIRED",
+      "governing_confidence": "HIGH",
+      "needs_human_review": false,
+      "governing_note": "Combines payment transaction and departure as separable functional roles."
+    },
+    "COMM-059-OP002": {
+      "corpus_position": 240,
+      "disposition": "SPLIT_REQUIRED",
+      "governing_confidence": "HIGH",
+      "needs_human_review": false,
+      "governing_note": "Combines handling/carrying the gift and wrapping/arranging wrapping as separable functional roles."
+    }
+  },
+  "distribution": {
+    "REWRITE_REQUIRED": 196,
+    "SPLIT_REQUIRED": 3,
+    "MERGED_BY_PROVENANCE": 1,
+    "unresolved": 0
+  },
+  "invariants": {
+    "legacy_master_mutated": false,
+    "materialization_performed": false,
+    "canonical_validator_changed": false
+  },
+  "reconstruction_rule": "For every corpus record in positions 51-250, apply default_classification unless legacy_id appears in overrides.",
+  "source_full_artifact_note": "A row-level approved artifact was generated locally; this persisted compact representation is lossless for final dispositions and governing flags."
+}
