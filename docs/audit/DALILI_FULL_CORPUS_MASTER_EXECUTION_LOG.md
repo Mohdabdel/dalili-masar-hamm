@@ -167,11 +167,11 @@ Gap remaining in Round 2: CLOSED by the approval recorded below.
 - MERGED_BY_PROVENANCE: **0**
 - unresolved: **0**
 - Governing artifact: `docs/audit/data/DALILI_CLASSIFICATION_APPROVED_651_750.json`
-- Reviewed directly while records 551–650 were delegated to Gemini for preliminary classification only.
+- Reviewed directly in parallel while records 551–650 were undergoing preliminary Gemini classification.
 - Legacy Master unchanged.
 - No materialization performed.
 - Canonical validator unchanged.
-- Next unclassified position after the pending 551–650 worker review: **751**.
+- Next unclassified position: **751**.
 
 ## Phase 2 — Classification approval records 551–650
 
