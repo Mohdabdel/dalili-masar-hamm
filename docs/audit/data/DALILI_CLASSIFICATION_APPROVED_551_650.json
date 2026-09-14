@@ -1,0 +1,2193 @@
+{
+  "artifact": "DALILI_CLASSIFICATION_APPROVED_551_650",
+  "version": "1.0",
+  "governance_status": "APPROVED",
+  "result_count": 100,
+  "range": {
+    "start": 551,
+    "end": 650,
+    "count": 100
+  },
+  "distribution": {
+    "REWRITE_REQUIRED": 80,
+    "SPLIT_REQUIRED": 14,
+    "MERGED_BY_PROVENANCE": 5,
+    "EXECUTION_BLOCK_ONLY": 1,
+    "unresolved": 0
+  },
+  "preflight": {
+    "input_count": 100,
+    "unique_ids": 100,
+    "first_id": "FOOD-075-OP002",
+    "last_id": "HEALTH-019-OP001",
+    "source_identity_check": "PASS",
+    "acceptance_gate": "PASS"
+  },
+  "review_corrections": {
+    "worker_output_used_as_draft_only": true,
+    "dispositions_changed_from_rewrite_to_split": [
+      552,
+      555,
+      558,
+      564,
+      567,
+      570,
+      573,
+      579,
+      582,
+      585,
+      586,
+      597,
+      640,
+      646
+    ],
+    "count": 14
+  },
+  "results": [
+    {
+      "corpus_position": 551,
+      "legacy_id": "FOOD-075-OP002",
+      "source_identity": {
+        "opportunity_title": "مسح المسحوق المتسرب بقطعة قماش مبللة",
+        "event_title": "تنظيف خزانة البهارات من التسربات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح المسحوق المتسرب بقطعة قماش مبللة",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف خزانة البهارات من التسربات» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في المسح، المسح الجزئي، المسح الكامل."
+      ]
+    },
+    {
+      "corpus_position": 552,
+      "legacy_id": "FOOD-075-OP003",
+      "source_identity": {
+        "opportunity_title": "تجفيف الرف وإعادة البرطمانات",
+        "event_title": "تنظيف خزانة البهارات من التسربات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "تجفيف رف خزانة البهارات | إعادة البرطمانات إلى الرف",
+      "reasoning_summary": "يجمع السجل دورين وظيفيين قابلين للفصل، ولكل منهما فعل وأثر ونقطة اكتمال مستقلة نسبيًا: «تجفيف رف خزانة البهارات | إعادة البرطمانات إلى الرف». لذلك يلزم SPLIT_REQUIRED، مع إزالة تدرج المساعدة أو الاستقلال أو كمية الأداء من كل دور وفق FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التجفيف والإعادة، تنفيذ خطوة واحدة، تنفيذ المهمة كاملة."
+      ]
+    },
+    {
+      "corpus_position": 553,
+      "legacy_id": "FOOD-076-OP001",
+      "source_identity": {
+        "opportunity_title": "سحب الرفوف الزجاجية للخارج",
+        "event_title": "تنظيف رفوف الثلاجة الداخلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "سحب الرفوف الزجاجية للخارج",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف رفوف الثلاجة الداخلية» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في السحب، السحب بمفرده، سحب أكثر من رف."
+      ]
+    },
+    {
+      "corpus_position": 554,
+      "legacy_id": "FOOD-076-OP002",
+      "source_identity": {
+        "opportunity_title": "غسل الرفوف بالماء والصابون",
+        "event_title": "تنظيف رفوف الثلاجة الداخلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "غسل الرفوف بالماء والصابون",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف رفوف الثلاجة الداخلية» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الفرك، الفرك الجزئي، الفرك الكامل."
+      ]
+    },
+    {
+      "corpus_position": 555,
+      "legacy_id": "FOOD-076-OP003",
+      "source_identity": {
+        "opportunity_title": "تجفيف الرفوف وإعادتها لمكانها",
+        "event_title": "تنظيف رفوف الثلاجة الداخلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "تجفيف رفوف الثلاجة | إعادة رفوف الثلاجة إلى مكانها",
+      "reasoning_summary": "يجمع السجل دورين وظيفيين قابلين للفصل، ولكل منهما فعل وأثر ونقطة اكتمال مستقلة نسبيًا: «تجفيف رفوف الثلاجة | إعادة رفوف الثلاجة إلى مكانها». لذلك يلزم SPLIT_REQUIRED، مع إزالة تدرج المساعدة أو الاستقلال أو كمية الأداء من كل دور وفق FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التجفيف والإعادة، تنفيذ خطوة واحدة، تنفيذ المهمة كاملة."
+      ]
+    },
+    {
+      "corpus_position": 556,
+      "legacy_id": "FOOD-077-OP001",
+      "source_identity": {
+        "opportunity_title": "إخراج محتويات الفريزر",
+        "event_title": "تنظيف الفريزر من الثلج المتراكم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إخراج محتويات الفريزر",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف الفريزر من الثلج المتراكم» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإخراج، إخراج عنصر واحد، إخراج كل المحتويات."
+      ]
+    },
+    {
+      "corpus_position": 557,
+      "legacy_id": "FOOD-077-OP002",
+      "source_identity": {
+        "opportunity_title": "وضع وعاء ماء ساخن للمساعدة في إذابة الثلج",
+        "event_title": "تنظيف الفريزر من الثلج المتراكم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع وعاء ماء ساخن للمساعدة في إذابة الثلج",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف الفريزر من الثلج المتراكم» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المراقبة فقط، المساعدة في الوضع بإشرافك، المشاركة المحدودة بإشراف كامل."
+      ]
+    },
+    {
+      "corpus_position": 558,
+      "legacy_id": "FOOD-077-OP003",
+      "source_identity": {
+        "opportunity_title": "مسح وتجفيف الفريزر من الماء",
+        "event_title": "تنظيف الفريزر من الثلج المتراكم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "مسح ماء الفريزر | تجفيف الفريزر",
+      "reasoning_summary": "يجمع السجل دورين وظيفيين قابلين للفصل، ولكل منهما فعل وأثر ونقطة اكتمال مستقلة نسبيًا: «مسح ماء الفريزر | تجفيف الفريزر». لذلك يلزم SPLIT_REQUIRED، مع إزالة تدرج المساعدة أو الاستقلال أو كمية الأداء من كل دور وفق FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في المسح، المسح الجزئي، المسح الكامل."
+      ]
+    },
+    {
+      "corpus_position": 559,
+      "legacy_id": "FOOD-078-OP001",
+      "source_identity": {
+        "opportunity_title": "فك وعاء العجانة أو إبريق الخلاط",
+        "event_title": "تنظيف العجانة أو الخلاط الكهربائي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فك وعاء العجانة أو إبريق الخلاط",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف العجانة أو الخلاط الكهربائي» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الفك، الفك بمفرده، فك أكثر من جزء."
+      ]
+    },
+    {
+      "corpus_position": 560,
+      "legacy_id": "FOOD-078-OP002",
+      "source_identity": {
+        "opportunity_title": "غسل الأجزاء القابلة للفك",
+        "event_title": "تنظيف العجانة أو الخلاط الكهربائي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "غسل الأجزاء القابلة للفك",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف العجانة أو الخلاط الكهربائي» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الفرك، فرك جزء واحد، فرك كل الأجزاء."
+      ]
+    },
+    {
+      "corpus_position": 561,
+      "legacy_id": "FOOD-078-OP003",
+      "source_identity": {
+        "opportunity_title": "مسح قاعدة المحرك بفوطة مبللة",
+        "event_title": "تنظيف العجانة أو الخلاط الكهربائي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح قاعدة المحرك بفوطة مبللة",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف العجانة أو الخلاط الكهربائي» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المراقبة معك، المسح تحت إشرافك، المسح بمفرده على السطح الخارجي فقط."
+      ]
+    },
+    {
+      "corpus_position": 562,
+      "legacy_id": "FOOD-079-OP001",
+      "source_identity": {
+        "opportunity_title": "نقع الصينية بالماء الساخن والصابون",
+        "event_title": "تنظيف صينية الفرن بعد الاستخدام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "نقع الصينية بالماء الساخن والصابون",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف صينية الفرن بعد الاستخدام» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في النقع، النقع بمفرده، اختيار مدة النقع أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 563,
+      "legacy_id": "FOOD-079-OP002",
+      "source_identity": {
+        "opportunity_title": "فرك الدهون الملتصقة بالإسفنجة",
+        "event_title": "تنظيف صينية الفرن بعد الاستخدام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فرك الدهون الملتصقة بالإسفنجة",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف صينية الفرن بعد الاستخدام» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الفرك، الفرك الجزئي، الفرك الكامل."
+      ]
+    },
+    {
+      "corpus_position": 564,
+      "legacy_id": "FOOD-079-OP003",
+      "source_identity": {
+        "opportunity_title": "شطف الصينية وتجفيفها",
+        "event_title": "تنظيف صينية الفرن بعد الاستخدام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "شطف صينية الفرن | تجفيف صينية الفرن",
+      "reasoning_summary": "يجمع السجل دورين وظيفيين قابلين للفصل، ولكل منهما فعل وأثر ونقطة اكتمال مستقلة نسبيًا: «شطف صينية الفرن | تجفيف صينية الفرن». لذلك يلزم SPLIT_REQUIRED، مع إزالة تدرج المساعدة أو الاستقلال أو كمية الأداء من كل دور وفق FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الشطف والتجفيف، تنفيذ خطوة واحدة، تنفيذ المهمة كاملة."
+      ]
+    },
+    {
+      "corpus_position": 565,
+      "legacy_id": "FOOD-080-OP001",
+      "source_identity": {
+        "opportunity_title": "نقع شبك الشوي والأسياخ بالماء الدافئ",
+        "event_title": "تنظيف أدوات الشوي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "نقع شبك الشوي والأسياخ بالماء الدافئ",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف أدوات الشوي» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في النقع، النقع بمفرده، اختيار مدة النقع أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 566,
+      "legacy_id": "FOOD-080-OP002",
+      "source_identity": {
+        "opportunity_title": "فرك الأدوات بالفرشاة الخشنة",
+        "event_title": "تنظيف أدوات الشوي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فرك الأدوات بالفرشاة الخشنة",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف أدوات الشوي» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الفرك، فرك أداة واحدة، فرك كل الأدوات."
+      ]
+    },
+    {
+      "corpus_position": 567,
+      "legacy_id": "FOOD-080-OP003",
+      "source_identity": {
+        "opportunity_title": "شطف وتجفيف الأدوات لمنع الصدأ",
+        "event_title": "تنظيف أدوات الشوي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "شطف أدوات الشوي | تجفيف أدوات الشوي",
+      "reasoning_summary": "يجمع السجل دورين وظيفيين قابلين للفصل، ولكل منهما فعل وأثر ونقطة اكتمال مستقلة نسبيًا: «شطف أدوات الشوي | تجفيف أدوات الشوي». لذلك يلزم SPLIT_REQUIRED، مع إزالة تدرج المساعدة أو الاستقلال أو كمية الأداء من كل دور وفق FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الشطف والتجفيف، تنفيذ خطوة واحدة، تنفيذ المهمة كاملة."
+      ]
+    },
+    {
+      "corpus_position": 568,
+      "legacy_id": "FOOD-081-OP001",
+      "source_identity": {
+        "opportunity_title": "إفراغ الحافظة من بقايا الطعام",
+        "event_title": "تنظيف حافظة الطعام بعد العودة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إفراغ الحافظة من بقايا الطعام",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف حافظة الطعام بعد العودة» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإفراغ، الإفراغ بمفرده، فتح كل الأقسام أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 569,
+      "legacy_id": "FOOD-081-OP002",
+      "source_identity": {
+        "opportunity_title": "غسل العلب البلاستيكية والغطاء",
+        "event_title": "تنظيف حافظة الطعام بعد العودة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "غسل العلب البلاستيكية والغطاء",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف حافظة الطعام بعد العودة» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الغسل، الغسل الجزئي، الغسل الكامل."
+      ]
+    },
+    {
+      "corpus_position": 570,
+      "legacy_id": "FOOD-081-OP003",
+      "source_identity": {
+        "opportunity_title": "تجفيف الحافظة وتركها مفتوحة للتهوية",
+        "event_title": "تنظيف حافظة الطعام بعد العودة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "تجفيف حافظة الطعام | ترك الحافظة مفتوحة للتهوية",
+      "reasoning_summary": "يجمع السجل دورين وظيفيين قابلين للفصل، ولكل منهما فعل وأثر ونقطة اكتمال مستقلة نسبيًا: «تجفيف حافظة الطعام | ترك الحافظة مفتوحة للتهوية». لذلك يلزم SPLIT_REQUIRED، مع إزالة تدرج المساعدة أو الاستقلال أو كمية الأداء من كل دور وفق FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التجفيف، التجفيف بمفرده، اختيار مكان التهوية أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 571,
+      "legacy_id": "FOOD-082-OP001",
+      "source_identity": {
+        "opportunity_title": "فك غطاء الزجاجة",
+        "event_title": "تنظيف زجاجة الماء اليومية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فك غطاء الزجاجة",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف زجاجة الماء اليومية» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الفك، الفك بمفرده، الفك السريع بثقة."
+      ]
+    },
+    {
+      "corpus_position": 572,
+      "legacy_id": "FOOD-082-OP002",
+      "source_identity": {
+        "opportunity_title": "غسل الزجاجة من الداخل بفرشاة الزجاجات",
+        "event_title": "تنظيف زجاجة الماء اليومية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "غسل الزجاجة من الداخل بفرشاة الزجاجات",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف زجاجة الماء اليومية» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الغسل، الغسل بمفرده، تحديد وقت الغسل الكافي أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 573,
+      "legacy_id": "FOOD-082-OP003",
+      "source_identity": {
+        "opportunity_title": "شطف الزجاجة ووضعها مقلوبة لتجف",
+        "event_title": "تنظيف زجاجة الماء اليومية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "شطف زجاجة الماء | وضع زجاجة الماء مقلوبة لتجف",
+      "reasoning_summary": "يجمع السجل دورين وظيفيين قابلين للفصل، ولكل منهما فعل وأثر ونقطة اكتمال مستقلة نسبيًا: «شطف زجاجة الماء | وضع زجاجة الماء مقلوبة لتجف». لذلك يلزم SPLIT_REQUIRED، مع إزالة تدرج المساعدة أو الاستقلال أو كمية الأداء من كل دور وفق FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الشطف والوضع، تنفيذ خطوة واحدة، تنفيذ المهمة كاملة."
+      ]
+    },
+    {
+      "corpus_position": 574,
+      "legacy_id": "FOOD-083-OP001",
+      "source_identity": {
+        "opportunity_title": "التخلص من الفلتر والبن المستخدم",
+        "event_title": "تنظيف ماكينة القهوة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التخلص من الفلتر والبن المستخدم",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف ماكينة القهوة» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الفتح، الإخراج بمساعدة، التخلص منه بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 575,
+      "legacy_id": "FOOD-083-OP002",
+      "source_identity": {
+        "opportunity_title": "غسل إبريق الماكينة",
+        "event_title": "تنظيف ماكينة القهوة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "غسل إبريق الماكينة",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف ماكينة القهوة» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الفرك، الفرك بمفرده، الفرك والشطف الكامل."
+      ]
+    },
+    {
+      "corpus_position": 576,
+      "legacy_id": "FOOD-083-OP003",
+      "source_identity": {
+        "opportunity_title": "مسح هيكل وقاعدة الماكينة الخارجي",
+        "event_title": "تنظيف ماكينة القهوة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح هيكل وقاعدة الماكينة الخارجي",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف ماكينة القهوة» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المراقبة معك، المسح تحت إشرافك، المسح بمفرده على الهيكل الخارجي فقط."
+      ]
+    },
+    {
+      "corpus_position": 577,
+      "legacy_id": "FOOD-084-OP001",
+      "source_identity": {
+        "opportunity_title": "تعبئة الغلاية بخليط الماء والخل",
+        "event_title": "تنظيف غلاية الماء من التكلس"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تعبئة الغلاية بخليط الماء والخل",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف غلاية الماء من التكلس» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في السكب، السكب بمفرده، إغلاق الغلاية أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 578,
+      "legacy_id": "FOOD-084-OP002",
+      "source_identity": {
+        "opportunity_title": "تشغيل الغلاية حتى الغليان",
+        "event_title": "تنظيف غلاية الماء من التكلس"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تشغيل الغلاية حتى الغليان",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف غلاية الماء من التكلس» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المراقبة معك، الضغط على الزر تحت إشرافك، تنفيذ الخطوة بإشراف مباشر."
+      ]
+    },
+    {
+      "corpus_position": 579,
+      "legacy_id": "FOOD-084-OP003",
+      "source_identity": {
+        "opportunity_title": "سكب الخليط وشطف الغلاية عدة مرات",
+        "event_title": "تنظيف غلاية الماء من التكلس"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "سكب خليط تنظيف الغلاية | شطف الغلاية بالماء",
+      "reasoning_summary": "يجمع السجل دورين وظيفيين قابلين للفصل، ولكل منهما فعل وأثر ونقطة اكتمال مستقلة نسبيًا: «سكب خليط تنظيف الغلاية | شطف الغلاية بالماء». لذلك يلزم SPLIT_REQUIRED، مع إزالة تدرج المساعدة أو الاستقلال أو كمية الأداء من كل دور وفق FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في السكب والشطف، الشطف بمفرده، تكرار الخطوة الكاملة."
+      ]
+    },
+    {
+      "corpus_position": 580,
+      "legacy_id": "FOOD-085-OP001",
+      "source_identity": {
+        "opportunity_title": "فصل مضارب الخلط عن الجهاز",
+        "event_title": "تنظيف وعاء الخلط والمضرب"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فصل مضارب الخلط عن الجهاز",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف وعاء الخلط والمضرب» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الفصل، الفصل بمفرده، فصل كل المضارب."
+      ]
+    },
+    {
+      "corpus_position": 581,
+      "legacy_id": "FOOD-085-OP002",
+      "source_identity": {
+        "opportunity_title": "غسل المضارب والوعاء",
+        "event_title": "تنظيف وعاء الخلط والمضرب"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "غسل المضارب والوعاء",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف وعاء الخلط والمضرب» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الفرك، فرك جزء واحد، فرك كل الأجزاء."
+      ]
+    },
+    {
+      "corpus_position": 582,
+      "legacy_id": "FOOD-085-OP003",
+      "source_identity": {
+        "opportunity_title": "تجفيف الأدوات وإعادتها للدرج",
+        "event_title": "تنظيف وعاء الخلط والمضرب"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "تجفيف أدوات الخلط | إعادة أدوات الخلط إلى الدرج",
+      "reasoning_summary": "يجمع السجل دورين وظيفيين قابلين للفصل، ولكل منهما فعل وأثر ونقطة اكتمال مستقلة نسبيًا: «تجفيف أدوات الخلط | إعادة أدوات الخلط إلى الدرج». لذلك يلزم SPLIT_REQUIRED، مع إزالة تدرج المساعدة أو الاستقلال أو كمية الأداء من كل دور وفق FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التجفيف والإعادة، تنفيذ خطوة واحدة، تنفيذ المهمة كاملة."
+      ]
+    },
+    {
+      "corpus_position": 583,
+      "legacy_id": "FOOD-086-OP001",
+      "source_identity": {
+        "opportunity_title": "تفريغ مكعبات الثلج القديمة",
+        "event_title": "تنظيف صينية الثلج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تفريغ مكعبات الثلج القديمة",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف صينية الثلج» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التفريغ، التفريغ بمفرده، تفريغ أكثر من صينية."
+      ]
+    },
+    {
+      "corpus_position": 584,
+      "legacy_id": "FOOD-086-OP002",
+      "source_identity": {
+        "opportunity_title": "غسل الصينية بالماء الدافئ",
+        "event_title": "تنظيف صينية الثلج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "غسل الصينية بالماء الدافئ",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف صينية الثلج» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الغسل، الغسل بمفرده، الغسل والفرك الكامل."
+      ]
+    },
+    {
+      "corpus_position": 585,
+      "legacy_id": "FOOD-086-OP003",
+      "source_identity": {
+        "opportunity_title": "إعادة تعبئة الصينية ووضعها في الفريزر",
+        "event_title": "تنظيف صينية الثلج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "تعبئة صينية الثلج بالماء | وضع صينية الثلج في الفريزر",
+      "reasoning_summary": "يجمع السجل دورين وظيفيين قابلين للفصل، ولكل منهما فعل وأثر ونقطة اكتمال مستقلة نسبيًا: «تعبئة صينية الثلج بالماء | وضع صينية الثلج في الفريزر». لذلك يلزم SPLIT_REQUIRED، مع إزالة تدرج المساعدة أو الاستقلال أو كمية الأداء من كل دور وفق FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التعبئة والوضع، تنفيذ خطوة واحدة، تنفيذ المهمة كاملة."
+      ]
+    },
+    {
+      "corpus_position": 586,
+      "legacy_id": "FOOD-087-OP001",
+      "source_identity": {
+        "opportunity_title": "رفع الكيس القديم وربط فوهته",
+        "event_title": "تبديل كيس قمامة المطبخ"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "رفع كيس القمامة القديم | ربط فوهة كيس القمامة",
+      "reasoning_summary": "يجمع السجل دورين وظيفيين قابلين للفصل، ولكل منهما فعل وأثر ونقطة اكتمال مستقلة نسبيًا: «رفع كيس القمامة القديم | ربط فوهة كيس القمامة». لذلك يلزم SPLIT_REQUIRED، مع إزالة تدرج المساعدة أو الاستقلال أو كمية الأداء من كل دور وفق FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الرفع والربط، الربط بمفرده، الرفع والربط الكامل."
+      ]
+    },
+    {
+      "corpus_position": 587,
+      "legacy_id": "FOOD-087-OP002",
+      "source_identity": {
+        "opportunity_title": "غسل أو مسح قاع سلة القمامة عند اللزوم",
+        "event_title": "تبديل كيس قمامة المطبخ"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "غسل أو مسح قاع سلة القمامة عند اللزوم",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تبديل كيس قمامة المطبخ» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في المسح، المسح الجزئي، المسح الكامل."
+      ]
+    },
+    {
+      "corpus_position": 588,
+      "legacy_id": "FOOD-087-OP003",
+      "source_identity": {
+        "opportunity_title": "فرد كيس القمامة الجديد داخل السلة",
+        "event_title": "تبديل كيس قمامة المطبخ"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فرد كيس القمامة الجديد داخل السلة",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تبديل كيس قمامة المطبخ» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الفرد، الفرد بمفرده، التثبيت أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 589,
+      "legacy_id": "FOOD-088-OP001",
+      "source_identity": {
+        "opportunity_title": "عصر الإسفنجة من الماء والصابون",
+        "event_title": "تنظيف إسفنجة غسل الأطباق"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "عصر الإسفنجة من الماء والصابون",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف إسفنجة غسل الأطباق» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في العصر، العصر بمفرده، تكرار العصر عدة مرات."
+      ]
+    },
+    {
+      "corpus_position": 590,
+      "legacy_id": "FOOD-088-OP002",
+      "source_identity": {
+        "opportunity_title": "شطف الإسفنجة بالماء الساخن",
+        "event_title": "تنظيف إسفنجة غسل الأطباق"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "شطف الإسفنجة بالماء الساخن",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف إسفنجة غسل الأطباق» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الشطف، الشطف بمفرده، التحقق من زوال الرغوة أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 591,
+      "legacy_id": "FOOD-088-OP003",
+      "source_identity": {
+        "opportunity_title": "وضع الإسفنجة في مكان جاف لتتهوى",
+        "event_title": "تنظيف إسفنجة غسل الأطباق"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع الإسفنجة في مكان جاف لتتهوى",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف إسفنجة غسل الأطباق» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الوضع، الوضع بمفرده، اختيار المكان المناسب أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 592,
+      "legacy_id": "FOOD-089-OP001",
+      "source_identity": {
+        "opportunity_title": "خلع المريول",
+        "event_title": "تنظيف مريول الطبخ"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "خلع المريول",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف مريول الطبخ» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الخلع، الخلع بمفرده، فك الرباط أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 593,
+      "legacy_id": "FOOD-089-OP002",
+      "source_identity": {
+        "opportunity_title": "معالجة البقع الظاهرة بصابون مركز",
+        "event_title": "تنظيف مريول الطبخ"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "معالجة البقع الظاهرة بصابون مركز",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف مريول الطبخ» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في المعالجة، المعالجة الجزئية، المعالجة الكاملة."
+      ]
+    },
+    {
+      "corpus_position": 594,
+      "legacy_id": "FOOD-089-OP003",
+      "source_identity": {
+        "opportunity_title": "وضع المريول في سلة الغسيل",
+        "event_title": "تنظيف مريول الطبخ"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع المريول في سلة الغسيل",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف مريول الطبخ» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الوضع، الوضع بمفرده، طي المريول أولًا أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 595,
+      "legacy_id": "FOOD-090-OP001",
+      "source_identity": {
+        "opportunity_title": "رش سائل التلميع على الحنفية",
+        "event_title": "تنظيف وتلميع حنفية المطبخ"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "رش سائل التلميع على الحنفية",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف وتلميع حنفية المطبخ» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المراقبة معك، الرش تحت إشرافك، الرش بمفرده بمنظف آمن."
+      ]
+    },
+    {
+      "corpus_position": 596,
+      "legacy_id": "FOOD-090-OP002",
+      "source_identity": {
+        "opportunity_title": "فرك الحنفية بالإسفنجة",
+        "event_title": "تنظيف وتلميع حنفية المطبخ"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فرك الحنفية بالإسفنجة",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيف وتلميع حنفية المطبخ» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الفرك، الفرك الجزئي، الفرك الكامل."
+      ]
+    },
+    {
+      "corpus_position": 597,
+      "legacy_id": "FOOD-090-OP003",
+      "source_identity": {
+        "opportunity_title": "تجفيف الحنفية وتلميعها بفوطة جافة",
+        "event_title": "تنظيف وتلميع حنفية المطبخ"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "تجفيف حنفية المطبخ | تلميع حنفية المطبخ",
+      "reasoning_summary": "يجمع السجل دورين وظيفيين قابلين للفصل، ولكل منهما فعل وأثر ونقطة اكتمال مستقلة نسبيًا: «تجفيف حنفية المطبخ | تلميع حنفية المطبخ». لذلك يلزم SPLIT_REQUIRED، مع إزالة تدرج المساعدة أو الاستقلال أو كمية الأداء من كل دور وفق FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التلميع، التلميع الجزئي، التلميع الكامل."
+      ]
+    },
+    {
+      "corpus_position": 598,
+      "legacy_id": "HEALTH-001-OP001",
+      "source_identity": {
+        "opportunity_title": "البحث عن رقم العيادة",
+        "event_title": "حجز موعد طبي"
+      },
+      "existing_framework_lineage_assessment": "ALIGNED",
+      "existing_framework_lineage_evidence": [
+        {
+          "framework_reference_id": "FR-B03-HEALTH-001-OP001",
+          "batch": "BATCH_03",
+          "source": "batch03-corpus.ts"
+        }
+      ],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "MERGED_BY_PROVENANCE",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "البحث عن رقم العيادة",
+      "reasoning_summary": "يثبت سجل lineage الصريح ارتباط هذا السجل بمرجع Framework قائم؛ لذلك يحفظ كمصدر provenance ولا ينشأ له مرجع مستقل جديد.",
+      "evidence_from_record": [
+        "existing_framework_lineage_evidence: FR-B03-HEALTH-001-OP001",
+        "framework_reference_id: 'FR-B03-HEALTH-001-OP001'"
+      ]
+    },
+    {
+      "corpus_position": 599,
+      "legacy_id": "HEALTH-001-OP002",
+      "source_identity": {
+        "opportunity_title": "إجراء المكالمة للحجز",
+        "event_title": "حجز موعد طبي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إجراء المكالمة للحجز",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «حجز موعد طبي» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المرافقة أثناء الاتصال، المشاركة بجملة واحدة، الاتصال الكامل بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 600,
+      "legacy_id": "HEALTH-001-OP003",
+      "source_identity": {
+        "opportunity_title": "تسجيل موعد الزيارة في التقويم",
+        "event_title": "حجز موعد طبي"
+      },
+      "existing_framework_lineage_assessment": "ALIGNED",
+      "existing_framework_lineage_evidence": [
+        {
+          "framework_reference_id": "FR-EXP12-02-HEALTH001-OP009",
+          "batch": "BATCH_05",
+          "source": "DALILI_EXPANSION_SAMPLE_12_02_CORRECTED_01"
+        }
+      ],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "MERGED_BY_PROVENANCE",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تسجيل موعد الزيارة في التقويم",
+      "reasoning_summary": "يثبت سجل lineage الصريح ارتباط هذا السجل بمرجع Framework قائم؛ لذلك يحفظ كمصدر provenance ولا ينشأ له مرجع مستقل جديد.",
+      "evidence_from_record": [
+        "existing_framework_lineage_evidence: FR-EXP12-02-HEALTH001-OP009",
+        "framework_reference_id: 'FR-EXP12-02-HEALTH001-OP009'"
+      ]
+    },
+    {
+      "corpus_position": 601,
+      "legacy_id": "HEALTH-002-OP001",
+      "source_identity": {
+        "opportunity_title": "تجهيز الملابس المناسبة للخروج",
+        "event_title": "الاستعداد للموعد الطبي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجهيز الملابس المناسبة للخروج",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «الاستعداد للموعد الطبي» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الاختيار، الاختيار بمفرده، التجهيز الكامل."
+      ]
+    },
+    {
+      "corpus_position": 602,
+      "legacy_id": "HEALTH-002-OP002",
+      "source_identity": {
+        "opportunity_title": "تجهيز الحقيبة الشخصية",
+        "event_title": "الاستعداد للموعد الطبي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجهيز الحقيبة الشخصية",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «الاستعداد للموعد الطبي» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التجهيز، التجهيز الجزئي، التجهيز الكامل."
+      ]
+    },
+    {
+      "corpus_position": 603,
+      "legacy_id": "HEALTH-002-OP003",
+      "source_identity": {
+        "opportunity_title": "تجهيز زجاجة الماء",
+        "event_title": "الاستعداد للموعد الطبي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجهيز زجاجة الماء",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «الاستعداد للموعد الطبي» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التعبئة، التعبئة بمفرده، وضعها في الحقيبة أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 604,
+      "legacy_id": "HEALTH-003-OP001",
+      "source_identity": {
+        "opportunity_title": "جمع التقارير السابقة",
+        "event_title": "تجهيز المستندات الطبية"
+      },
+      "existing_framework_lineage_assessment": "ALIGNED",
+      "existing_framework_lineage_evidence": [
+        {
+          "framework_reference_id": "FR-EXP12-HEALTH-003-OP001",
+          "batch": "BATCH_04",
+          "source": "DALILI_EXPANSION_SAMPLE_12_CORRECTED_01"
+        }
+      ],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "MERGED_BY_PROVENANCE",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "جمع التقارير السابقة",
+      "reasoning_summary": "يثبت سجل lineage الصريح ارتباط هذا السجل بمرجع Framework قائم؛ لذلك يحفظ كمصدر provenance ولا ينشأ له مرجع مستقل جديد.",
+      "evidence_from_record": [
+        "existing_framework_lineage_evidence: FR-EXP12-HEALTH-003-OP001",
+        "framework_reference_id: 'FR-EXP12-HEALTH-003-OP001'"
+      ]
+    },
+    {
+      "corpus_position": 605,
+      "legacy_id": "HEALTH-003-OP002",
+      "source_identity": {
+        "opportunity_title": "جمع صور الأشعة",
+        "event_title": "تجهيز المستندات الطبية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "جمع صور الأشعة",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تجهيز المستندات الطبية» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الجمع، الجمع الجزئي، الجمع الكامل."
+      ]
+    },
+    {
+      "corpus_position": 606,
+      "legacy_id": "HEALTH-003-OP003",
+      "source_identity": {
+        "opportunity_title": "وضع المستندات في ملف أو حقيبة",
+        "event_title": "تجهيز المستندات الطبية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع المستندات في ملف أو حقيبة",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تجهيز المستندات الطبية» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الوضع، الوضع الجزئي، الوضع الكامل."
+      ]
+    },
+    {
+      "corpus_position": 607,
+      "legacy_id": "HEALTH-004-OP001",
+      "source_identity": {
+        "opportunity_title": "إحضار بطاقة الهوية",
+        "event_title": "تجهيز بطاقة الهوية أو التأمين"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إحضار بطاقة الهوية",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تجهيز بطاقة الهوية أو التأمين» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإحضار، الإحضار بمفرده، التحقق منها أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 608,
+      "legacy_id": "HEALTH-004-OP002",
+      "source_identity": {
+        "opportunity_title": "إحضار بطاقة التأمين الصحي",
+        "event_title": "تجهيز بطاقة الهوية أو التأمين"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إحضار بطاقة التأمين الصحي",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تجهيز بطاقة الهوية أو التأمين» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإحضار، الإحضار بمفرده، التحقق منها أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 609,
+      "legacy_id": "HEALTH-004-OP003",
+      "source_identity": {
+        "opportunity_title": "وضع البطاقات في المحفظة أو الحقيبة",
+        "event_title": "تجهيز بطاقة الهوية أو التأمين"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع البطاقات في المحفظة أو الحقيبة",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تجهيز بطاقة الهوية أو التأمين» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الوضع، الوضع بمفرده، التحقق النهائي أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 610,
+      "legacy_id": "HEALTH-005-OP001",
+      "source_identity": {
+        "opportunity_title": "التوجه إلى السيارة",
+        "event_title": "الذهاب إلى العيادة أو المستشفى"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه إلى السيارة",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «الذهاب إلى العيادة أو المستشفى» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 611,
+      "legacy_id": "HEALTH-005-OP002",
+      "source_identity": {
+        "opportunity_title": "ربط حزام الأمان",
+        "event_title": "الذهاب إلى العيادة أو المستشفى"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ربط حزام الأمان",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «الذهاب إلى العيادة أو المستشفى» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الربط، الربط بمفرده، التحقق من الإحكام أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 612,
+      "legacy_id": "HEALTH-005-OP003",
+      "source_identity": {
+        "opportunity_title": "النزول من السيارة عند الوصول",
+        "event_title": "الذهاب إلى العيادة أو المستشفى"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "النزول من السيارة عند الوصول",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «الذهاب إلى العيادة أو المستشفى» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في النزول، النزول بمفرده، فك الحزام أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 613,
+      "legacy_id": "HEALTH-006-OP001",
+      "source_identity": {
+        "opportunity_title": "الجلوس في المكان المخصص",
+        "event_title": "الانتظار في صالة العيادة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الجلوس في المكان المخصص",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «الانتظار في صالة العيادة» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المرافقة أثناء الجلوس، الجلوس بمفرده قريبًا منك، الجلوس المستقل."
+      ]
+    },
+    {
+      "corpus_position": 614,
+      "legacy_id": "HEALTH-006-OP002",
+      "source_identity": {
+        "opportunity_title": "الانتظار بهدوء",
+        "event_title": "الانتظار في صالة العيادة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الانتظار حتى النداء",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «الانتظار في صالة العيادة» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المرافقة أثناء الانتظار، الانتظار بمفرده قريبًا منك، الانتظار المستقل."
+      ]
+    },
+    {
+      "corpus_position": 615,
+      "legacy_id": "HEALTH-006-OP003",
+      "source_identity": {
+        "opportunity_title": "الانتباه للنداء على الاسم",
+        "event_title": "الانتظار في صالة العيادة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الانتباه للنداء على الاسم",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «الانتظار في صالة العيادة» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المراقبة معك، الانتباه بمفرده، الإخبار الفوري عند النداء."
+      ]
+    },
+    {
+      "corpus_position": 616,
+      "legacy_id": "HEALTH-007-OP001",
+      "source_identity": {
+        "opportunity_title": "التوجه لمكتب الاستقبال",
+        "event_title": "التسجيل في استقبال العيادة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه لمكتب الاستقبال",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «التسجيل في استقبال العيادة» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 617,
+      "legacy_id": "HEALTH-007-OP002",
+      "source_identity": {
+        "opportunity_title": "تقديم بطاقة الهوية أو التأمين",
+        "event_title": "التسجيل في استقبال العيادة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تقديم بطاقة الهوية أو التأمين",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «التسجيل في استقبال العيادة» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التقديم، التقديم بمفرده، التقديم الكامل بثقة."
+      ]
+    },
+    {
+      "corpus_position": 618,
+      "legacy_id": "HEALTH-007-OP003",
+      "source_identity": {
+        "opportunity_title": "استلام رقم الانتظار",
+        "event_title": "التسجيل في استقبال العيادة"
+      },
+      "existing_framework_lineage_assessment": "ALIGNED",
+      "existing_framework_lineage_evidence": [
+        {
+          "framework_reference_id": "FR-EXP12-02-HEALTH007-OP010",
+          "batch": "BATCH_05",
+          "source": "DALILI_EXPANSION_SAMPLE_12_02_CORRECTED_01"
+        }
+      ],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "MERGED_BY_PROVENANCE",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استلام رقم الانتظار",
+      "reasoning_summary": "يثبت سجل lineage الصريح ارتباط هذا السجل بمرجع Framework قائم؛ لذلك يحفظ كمصدر provenance ولا ينشأ له مرجع مستقل جديد.",
+      "evidence_from_record": [
+        "existing_framework_lineage_evidence: FR-EXP12-02-HEALTH007-OP010",
+        "framework_reference_id: 'FR-EXP12-02-HEALTH007-OP010'"
+      ]
+    },
+    {
+      "corpus_position": 619,
+      "legacy_id": "HEALTH-008-OP001",
+      "source_identity": {
+        "opportunity_title": "الدخول إلى غرفة الطبيب",
+        "event_title": "مقابلة الطبيب"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الدخول إلى غرفة الطبيب",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «مقابلة الطبيب» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المرافقة أثناء الدخول، الدخول بمساعدة قريبة، الدخول بثقة."
+      ]
+    },
+    {
+      "corpus_position": 620,
+      "legacy_id": "HEALTH-008-OP002",
+      "source_identity": {
+        "opportunity_title": "الجلوس في المكان المخصص للمريض",
+        "event_title": "مقابلة الطبيب"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الجلوس في المكان المخصص للمريض",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «مقابلة الطبيب» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الجلوس، الجلوس بمفرده، الجلوس بثقة تامة."
+      ]
+    },
+    {
+      "corpus_position": 621,
+      "legacy_id": "HEALTH-008-OP003",
+      "source_identity": {
+        "opportunity_title": "الإجابة على أسئلة الطبيب",
+        "event_title": "مقابلة الطبيب"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الإجابة على أسئلة الطبيب",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «مقابلة الطبيب» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإجابة، الإجابة الجزئية بمفرده، الإجابة الكاملة بثقة."
+      ]
+    },
+    {
+      "corpus_position": 622,
+      "legacy_id": "HEALTH-009-OP001",
+      "source_identity": {
+        "opportunity_title": "استلام الورقة من الطبيب",
+        "event_title": "استلام الوصفة الطبية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استلام الورقة من الطبيب",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «استلام الوصفة الطبية» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الاستلام، الاستلام بمفرده، الاستلام بثقة تامة."
+      ]
+    },
+    {
+      "corpus_position": 623,
+      "legacy_id": "HEALTH-009-OP002",
+      "source_identity": {
+        "opportunity_title": "الاحتفاظ بالوصفة في الحقيبة",
+        "event_title": "استلام الوصفة الطبية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الاحتفاظ بالوصفة في الحقيبة",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «استلام الوصفة الطبية» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الوضع، الوضع بمفرده، التحقق منها لاحقًا أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 624,
+      "legacy_id": "HEALTH-010-OP001",
+      "source_identity": {
+        "opportunity_title": "تقديم الوصفة للصيدلي",
+        "event_title": "صرف الدواء من الصيدلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تقديم الوصفة للصيدلي",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «صرف الدواء من الصيدلية» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المرافقة أثناء التقديم، التقديم بمساعدتك، التقديم بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 625,
+      "legacy_id": "HEALTH-010-OP002",
+      "source_identity": {
+        "opportunity_title": "استلام الأدوية",
+        "event_title": "صرف الدواء من الصيدلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استلام الأدوية",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «صرف الدواء من الصيدلية» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الاستلام، الاستلام بمفرده، الحمل الكامل."
+      ]
+    },
+    {
+      "corpus_position": 626,
+      "legacy_id": "HEALTH-010-OP003",
+      "source_identity": {
+        "opportunity_title": "دفع قيمة الأدوية",
+        "event_title": "صرف الدواء من الصيدلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "دفع قيمة الأدوية",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «صرف الدواء من الصيدلية» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في المناولة، المناولة بمفرده، متابعة الفاتورة أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 627,
+      "legacy_id": "HEALTH-011-OP001",
+      "source_identity": {
+        "opportunity_title": "التوجه إلى السيارة",
+        "event_title": "العودة إلى المنزل بعد الموعد"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه إلى السيارة",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «العودة إلى المنزل بعد الموعد» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده."
+      ]
+    },
+    {
+      "corpus_position": 628,
+      "legacy_id": "HEALTH-011-OP002",
+      "source_identity": {
+        "opportunity_title": "ركوب السيارة للعودة",
+        "event_title": "العودة إلى المنزل بعد الموعد"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ركوب السيارة للعودة",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «العودة إلى المنزل بعد الموعد» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الركوب، الركوب بمفرده، ربط الحزام أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 629,
+      "legacy_id": "HEALTH-011-OP003",
+      "source_identity": {
+        "opportunity_title": "النزول من السيارة عند المنزل",
+        "event_title": "العودة إلى المنزل بعد الموعد"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "النزول من السيارة عند المنزل",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «العودة إلى المنزل بعد الموعد» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في النزول، النزول بمفرده، فك الحزام أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 630,
+      "legacy_id": "HEALTH-012-OP001",
+      "source_identity": {
+        "opportunity_title": "إخراج الأدوية من الأكياس",
+        "event_title": "تنظيم الأدوية في المنزل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إخراج الأدوية من الأكياس",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيم الأدوية في المنزل» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإخراج، الإخراج الجزئي، الإخراج الكامل."
+      ]
+    },
+    {
+      "corpus_position": 631,
+      "legacy_id": "HEALTH-012-OP002",
+      "source_identity": {
+        "opportunity_title": "ترتيب الأدوية في الصندوق المخصص",
+        "event_title": "تنظيم الأدوية في المنزل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب الأدوية في الصندوق المخصص",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيم الأدوية في المنزل» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الترتيب تحت إشرافك، الوضع الجزئي بإشرافك، المشاركة الكاملة بإشراف مباشر."
+      ]
+    },
+    {
+      "corpus_position": 632,
+      "legacy_id": "HEALTH-012-OP003",
+      "source_identity": {
+        "opportunity_title": "وضع الصندوق في المكان المناسب",
+        "event_title": "تنظيم الأدوية في المنزل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع الصندوق في المكان المناسب",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تنظيم الأدوية في المنزل» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الوضع، الوضع بمفرده، التحقق من المكان أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 633,
+      "legacy_id": "HEALTH-013-OP001",
+      "source_identity": {
+        "opportunity_title": "إحضار كوب الماء",
+        "event_title": "تناول الدواء المقرر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إحضار كوب الماء",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تناول الدواء المقرر» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإحضار، الإحضار بمفرده، التعبئة الكامل."
+      ]
+    },
+    {
+      "corpus_position": 634,
+      "legacy_id": "HEALTH-013-OP002",
+      "source_identity": {
+        "opportunity_title": "إخراج حبة الدواء أو جرعة الدواء",
+        "event_title": "تناول الدواء المقرر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إخراج حبة الدواء أو جرعة الدواء",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تناول الدواء المقرر» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المراقبة معك، الإخراج من القسم المحدد سلفًا بإشرافك، المشاركة المحدودة دائمًا بإشرافك."
+      ]
+    },
+    {
+      "corpus_position": 635,
+      "legacy_id": "HEALTH-013-OP003",
+      "source_identity": {
+        "opportunity_title": "تناول الدواء",
+        "event_title": "تناول الدواء المقرر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تناول الدواء",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «تناول الدواء المقرر» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المراقبة معك، التناول بحضورك دائمًا، التناول المستقل ضمن الروتين المعتاد وبحضورك."
+      ]
+    },
+    {
+      "corpus_position": 636,
+      "legacy_id": "HEALTH-014-OP001",
+      "source_identity": {
+        "opportunity_title": "ضبط منبه لموعد الدواء",
+        "event_title": "متابعة مواعيد جرعات الدواء"
+      },
+      "existing_framework_lineage_assessment": "ALIGNED",
+      "existing_framework_lineage_evidence": [
+        {
+          "framework_reference_id": "FR-B02-HEALTH-014-OP001",
+          "batch": "BATCH_02",
+          "source": "batch02-corpus.ts"
+        },
+        {
+          "framework_reference_id": "FR-EXP12-HEALTH-014-OP001",
+          "batch": "BATCH_04",
+          "source": "DALILI_EXPANSION_SAMPLE_12_CORRECTED_01"
+        }
+      ],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "MERGED_BY_PROVENANCE",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ضبط منبه لموعد الدواء",
+      "reasoning_summary": "يثبت سجل lineage الصريح ارتباط هذا السجل بمرجع Framework قائم؛ لذلك يحفظ كمصدر provenance ولا ينشأ له مرجع مستقل جديد.",
+      "evidence_from_record": [
+        "existing_framework_lineage_evidence: FR-B02-HEALTH-014-OP001",
+        "framework_reference_id: 'FR-B02-HEALTH-014-OP001'",
+        "framework_reference_id: 'FR-EXP12-HEALTH-014-OP001'"
+      ]
+    },
+    {
+      "corpus_position": 637,
+      "legacy_id": "HEALTH-014-OP002",
+      "source_identity": {
+        "opportunity_title": "تسجيل تناول الجرعة في الجدول",
+        "event_title": "متابعة مواعيد جرعات الدواء"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تسجيل تناول الجرعة في الجدول",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «متابعة مواعيد جرعات الدواء» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التسجيل، التسجيل بمفرده، التسجيل الكامل بثقة."
+      ]
+    },
+    {
+      "corpus_position": 638,
+      "legacy_id": "HEALTH-015-OP001",
+      "source_identity": {
+        "opportunity_title": "إحضار جهاز الضغط",
+        "event_title": "قياس ضغط الدم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إحضار جهاز الضغط",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «قياس ضغط الدم» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإحضار، الإحضار بمفرده، التجهيز الكامل."
+      ]
+    },
+    {
+      "corpus_position": 639,
+      "legacy_id": "HEALTH-015-OP002",
+      "source_identity": {
+        "opportunity_title": "وضع الشريط حول الذراع",
+        "event_title": "قياس ضغط الدم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع الشريط حول الذراع",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «قياس ضغط الدم» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الوضع، الوضع بمفرده، الوضع الكامل بثقة."
+      ]
+    },
+    {
+      "corpus_position": 640,
+      "legacy_id": "HEALTH-015-OP003",
+      "source_identity": {
+        "opportunity_title": "تشغيل الجهاز وقراءة النتيجة",
+        "event_title": "قياس ضغط الدم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "تشغيل جهاز قياس الضغط | قراءة نتيجة قياس الضغط",
+      "reasoning_summary": "يجمع السجل دورين وظيفيين قابلين للفصل، ولكل منهما فعل وأثر ونقطة اكتمال مستقلة نسبيًا: «تشغيل جهاز قياس الضغط | قراءة نتيجة قياس الضغط». لذلك يلزم SPLIT_REQUIRED، مع إزالة تدرج المساعدة أو الاستقلال أو كمية الأداء من كل دور وفق FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التشغيل، التشغيل بمفرده، القراءة والتسجيل الكامل."
+      ]
+    },
+    {
+      "corpus_position": 641,
+      "legacy_id": "HEALTH-016-OP001",
+      "source_identity": {
+        "opportunity_title": "إحضار جهاز السكر والشرائح",
+        "event_title": "قياس سكر الدم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إحضار جهاز السكر والشرائح",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «قياس سكر الدم» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإحضار، الإحضار بمفرده، التجهيز الكامل."
+      ]
+    },
+    {
+      "corpus_position": 642,
+      "legacy_id": "HEALTH-016-OP002",
+      "source_identity": {
+        "opportunity_title": "تجهيز إبرة الوخز",
+        "event_title": "قياس سكر الدم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "EXECUTION_BLOCK_ONLY",
+      "confidence": "HIGH",
+      "semantic_type": "EXECUTION_BLOCK",
+      "functional_role_statement": "",
+      "reasoning_summary": "العنوان يوحي بتجهيز إبرة الوخز، لكن تعليمات السلامة تسند تجهيز الإبرة والوخز كاملًا إلى البالغ، ولا يبقى للشخص إلا المناولة أو الإشارة. لذلك لا يحقق السجل دورًا وظيفيًا مكتملًا وفق FP-06 ويصنف EXECUTION_BLOCK_ONLY.",
+      "evidence_from_record": [
+        "legacy_instructions_before_start: تحمل أنت مسؤولية تجهيز الإبرة وإجراء الوخز الفعلي دائمًا."
+      ]
+    },
+    {
+      "corpus_position": 643,
+      "legacy_id": "HEALTH-016-OP003",
+      "source_identity": {
+        "opportunity_title": "وضع قطرة الدم على الشريحة",
+        "event_title": "قياس سكر الدم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع قطرة الدم على الشريحة",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «قياس سكر الدم» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المراقبة معك، الإمساك بالشريحة بإشرافك، المشاركة المحدودة بإشراف كامل."
+      ]
+    },
+    {
+      "corpus_position": 644,
+      "legacy_id": "HEALTH-017-OP001",
+      "source_identity": {
+        "opportunity_title": "إحضار الميزان",
+        "event_title": "قياس الوزن"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إحضار الميزان",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «قياس الوزن» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الإحضار، الإحضار بمفرده، الوضع الكامل."
+      ]
+    },
+    {
+      "corpus_position": 645,
+      "legacy_id": "HEALTH-017-OP002",
+      "source_identity": {
+        "opportunity_title": "الوقوف على الميزان بثبات",
+        "event_title": "قياس الوزن"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الوقوف على الميزان بثبات",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «قياس الوزن» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الوقوف، الوقوف بمفرده، الثبات الكامل بثقة."
+      ]
+    },
+    {
+      "corpus_position": 646,
+      "legacy_id": "HEALTH-017-OP003",
+      "source_identity": {
+        "opportunity_title": "قراءة وتسجيل الوزن",
+        "event_title": "قياس الوزن"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "قراءة الوزن | تسجيل الوزن",
+      "reasoning_summary": "يجمع السجل دورين وظيفيين قابلين للفصل، ولكل منهما فعل وأثر ونقطة اكتمال مستقلة نسبيًا: «قراءة الوزن | تسجيل الوزن». لذلك يلزم SPLIT_REQUIRED، مع إزالة تدرج المساعدة أو الاستقلال أو كمية الأداء من كل دور وفق FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في القراءة، القراءة بمفرده، التسجيل الكامل بثقة."
+      ]
+    },
+    {
+      "corpus_position": 647,
+      "legacy_id": "HEALTH-018-OP001",
+      "source_identity": {
+        "opportunity_title": "ارتداء الملابس الرياضية",
+        "event_title": "ممارسة النشاط البدني اليومي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ارتداء الملابس الرياضية",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «ممارسة النشاط البدني اليومي» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الارتداء، الارتداء بمفرده، الاختيار الكامل أيضًا."
+      ]
+    },
+    {
+      "corpus_position": 648,
+      "legacy_id": "HEALTH-018-OP002",
+      "source_identity": {
+        "opportunity_title": "تجهيز مساحة التمرين",
+        "event_title": "ممارسة النشاط البدني اليومي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجهيز مساحة التمرين",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «ممارسة النشاط البدني اليومي» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في التجهيز، التجهيز بمفرده، التجهيز الكامل."
+      ]
+    },
+    {
+      "corpus_position": 649,
+      "legacy_id": "HEALTH-018-OP003",
+      "source_identity": {
+        "opportunity_title": "أداء الحركات الرياضية",
+        "event_title": "ممارسة النشاط البدني اليومي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "أداء الحركات الرياضية",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «ممارسة النشاط البدني اليومي» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المشاركة معك، الأداء الجزئي بمفرده، الأداء الكامل بثقة."
+      ]
+    },
+    {
+      "corpus_position": 650,
+      "legacy_id": "HEALTH-019-OP001",
+      "source_identity": {
+        "opportunity_title": "ارتداء الحذاء الرياضي",
+        "event_title": "المشي اليومي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ارتداء الحذاء الرياضي",
+      "reasoning_summary": "السجل يمثل دور مشاركة وظيفية قابلًا للملاحظة داخل سياق «المشي اليومي» ويحقق قصدًا وأثرًا واكتمالًا طبيعيًا وفق FP-02 إلى FP-06 وFP-08، لكنه يربط الدور بتدرج المساعدة أو الاستقلال أو الأداء؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: المساعدة في الارتداء، الارتداء بمفرده، الإغلاق الكامل."
+      ]
+    }
+  ],
+  "notes": [
+    "Gemini output independently reviewed and corrected before approval.",
+    "Legacy Master unchanged; no materialization performed; canonical validator unchanged."
+  ]
+}
