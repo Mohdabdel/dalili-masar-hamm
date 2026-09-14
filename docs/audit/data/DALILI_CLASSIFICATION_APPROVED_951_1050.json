@@ -1,0 +1,2350 @@
+{
+  "artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050",
+  "version": "1.0",
+  "governance_status": "APPROVED",
+  "result_count": 100,
+  "range": {
+    "start": 951,
+    "end": 1050,
+    "count": 100
+  },
+  "distribution": {
+    "ACCEPTED": 86,
+    "REWRITE_REQUIRED": 2,
+    "SPLIT_REQUIRED": 10,
+    "MERGED_BY_PROVENANCE": 2,
+    "unresolved": 0
+  },
+  "preflight": {
+    "input_count": 100,
+    "unique_ids": 100,
+    "first_id": "HOME-043-OP001",
+    "last_id": "HOME-080-OP003",
+    "source_identity_check": "PASS",
+    "acceptance_gate": "PASS"
+  },
+  "results": [
+    {
+      "corpus_position": 951,
+      "legacy_id": "HOME-043-OP001",
+      "source_identity": {
+        "opportunity_title": "إزالة العوالق من سطح المصفاة.",
+        "event_title": "تنظيف بالوعات الصرف والمصافي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إزالة العوالق من سطح المصفاة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'إزالة العوالق من سطح المصفاة.'",
+        "event_title: 'تنظيف بالوعات الصرف والمصافي'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 952,
+      "legacy_id": "HOME-043-OP002",
+      "source_identity": {
+        "opportunity_title": "سكب سائل التنظيف في البالوعة.",
+        "event_title": "تنظيف بالوعات الصرف والمصافي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "سكب سائل التنظيف في البالوعة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'سكب سائل التنظيف في البالوعة.'",
+        "event_title: 'تنظيف بالوعات الصرف والمصافي'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 953,
+      "legacy_id": "HOME-044-OP001",
+      "source_identity": {
+        "opportunity_title": "لف خرطوم المياه.",
+        "event_title": "ترتيب أدوات الحديقة والخارج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "لف خرطوم المياه",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'لف خرطوم المياه.'",
+        "event_title: 'ترتيب أدوات الحديقة والخارج'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 954,
+      "legacy_id": "HOME-044-OP002",
+      "source_identity": {
+        "opportunity_title": "جمع أدوات الحفر والمقصات ووضعها في الصندوق.",
+        "event_title": "ترتيب أدوات الحديقة والخارج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "جمع أدوات الحديقة | وضع أدوات الحديقة في الصندوق",
+      "reasoning_summary": "يتضمن السجل دورين مستقلين نسبيًا في الأثر ونقطة الاكتمال: «جمع أدوات الحديقة | وضع أدوات الحديقة في الصندوق»؛ لذلك يلزم SPLIT_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title: 'جمع أدوات الحفر والمقصات ووضعها في الصندوق.'",
+        "event_title: 'ترتيب أدوات الحديقة والخارج'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 955,
+      "legacy_id": "HOME-045-OP001",
+      "source_identity": {
+        "opportunity_title": "إحضار الأغطية الواقية.",
+        "event_title": "تغطية الأثاث في فصل الشتاء أو الصيف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إحضار الأغطية الواقية",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'إحضار الأغطية الواقية.'",
+        "event_title: 'تغطية الأثاث في فصل الشتاء أو الصيف'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 956,
+      "legacy_id": "HOME-045-OP002",
+      "source_identity": {
+        "opportunity_title": "المساعدة في فرد الأغطية على الكراسي.",
+        "event_title": "تغطية الأثاث في فصل الشتاء أو الصيف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فرد الأغطية الواقية على الكراسي",
+      "reasoning_summary": "الفكرة الوظيفية صالحة، لكن التمثيل الحالي يتضمن لغة مساعدة أو تدرج أداء تخالف حياد FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title: 'المساعدة في فرد الأغطية على الكراسي.'",
+        "event_title: 'تغطية الأثاث في فصل الشتاء أو الصيف'",
+        "card_pending: 'true'",
+        "legacy_assistance_levels: ''",
+        "legacy_performance_indicators: ''"
+      ]
+    },
+    {
+      "corpus_position": 957,
+      "legacy_id": "HOME-045-OP003",
+      "source_identity": {
+        "opportunity_title": "تثبيت حواف الأغطية.",
+        "event_title": "تغطية الأثاث في فصل الشتاء أو الصيف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تثبيت حواف الأغطية",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'تثبيت حواف الأغطية.'",
+        "event_title: 'تغطية الأثاث في فصل الشتاء أو الصيف'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 958,
+      "legacy_id": "HOME-046-OP001",
+      "source_identity": {
+        "opportunity_title": "تجميع أوراق الشجر المتساقطة.",
+        "event_title": "تنظيف السطح أو الروف الخارجي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجميع أوراق الشجر المتساقطة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'تجميع أوراق الشجر المتساقطة.'",
+        "event_title: 'تنظيف السطح أو الروف الخارجي'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 959,
+      "legacy_id": "HOME-046-OP002",
+      "source_identity": {
+        "opportunity_title": "كنس مساحة الجلوس.",
+        "event_title": "تنظيف السطح أو الروف الخارجي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "كنس مساحة الجلوس",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'كنس مساحة الجلوس.'",
+        "event_title: 'تنظيف السطح أو الروف الخارجي'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 960,
+      "legacy_id": "HOME-046-OP003",
+      "source_identity": {
+        "opportunity_title": "ترتيب الكراسي الخارجية.",
+        "event_title": "تنظيف السطح أو الروف الخارجي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب الكراسي الخارجية",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'ترتيب الكراسي الخارجية.'",
+        "event_title: 'تنظيف السطح أو الروف الخارجي'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 961,
+      "legacy_id": "HOME-047-OP001",
+      "source_identity": {
+        "opportunity_title": "طي المناشف النظيفة.",
+        "event_title": "ترتيب خزانة المناشف والمفارش"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "طي المناشف النظيفة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'طي المناشف النظيفة.'",
+        "event_title: 'ترتيب خزانة المناشف والمفارش'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 962,
+      "legacy_id": "HOME-047-OP002",
+      "source_identity": {
+        "opportunity_title": "فرز المناشف حسب المقاس.",
+        "event_title": "ترتيب خزانة المناشف والمفارش"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فرز المناشف حسب المقاس",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'فرز المناشف حسب المقاس.'",
+        "event_title: 'ترتيب خزانة المناشف والمفارش'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 963,
+      "legacy_id": "HOME-047-OP003",
+      "source_identity": {
+        "opportunity_title": "ترتيب المناشف والمفارش على الرفوف.",
+        "event_title": "ترتيب خزانة المناشف والمفارش"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب المناشف والمفارش على الرفوف",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'ترتيب المناشف والمفارش على الرفوف.'",
+        "event_title: 'ترتيب خزانة المناشف والمفارش'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 964,
+      "legacy_id": "HOME-048-OP001",
+      "source_identity": {
+        "opportunity_title": "جمع المناشف المستخدمة من الحمامات.",
+        "event_title": "تغيير مناشف اليد والاستحمام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "جمع المناشف المستخدمة من الحمامات",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'جمع المناشف المستخدمة من الحمامات.'",
+        "event_title: 'تغيير مناشف اليد والاستحمام'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 965,
+      "legacy_id": "HOME-048-OP002",
+      "source_identity": {
+        "opportunity_title": "وضع المناشف المتسخة في سلة الغسيل.",
+        "event_title": "تغيير مناشف اليد والاستحمام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع المناشف المتسخة في سلة الغسيل",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'وضع المناشف المتسخة في سلة الغسيل.'",
+        "event_title: 'تغيير مناشف اليد والاستحمام'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 966,
+      "legacy_id": "HOME-048-OP003",
+      "source_identity": {
+        "opportunity_title": "تعليق المناشف النظيفة في أماكنها.",
+        "event_title": "تغيير مناشف اليد والاستحمام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تعليق المناشف النظيفة في أماكنها",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'تعليق المناشف النظيفة في أماكنها.'",
+        "event_title: 'تغيير مناشف اليد والاستحمام'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 967,
+      "legacy_id": "HOME-049-OP001",
+      "source_identity": {
+        "opportunity_title": "رش سائل التنظيف داخل الحوض.",
+        "event_title": "تنظيف حوض الاستحمام أو الدش"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "رش سائل التنظيف داخل الحوض",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'رش سائل التنظيف داخل الحوض.'",
+        "event_title: 'تنظيف حوض الاستحمام أو الدش'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 968,
+      "legacy_id": "HOME-049-OP002",
+      "source_identity": {
+        "opportunity_title": "فرك الجوانب بالإسفنجة.",
+        "event_title": "تنظيف حوض الاستحمام أو الدش"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فرك الجوانب بالإسفنجة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'فرك الجوانب بالإسفنجة.'",
+        "event_title: 'تنظيف حوض الاستحمام أو الدش'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 969,
+      "legacy_id": "HOME-049-OP003",
+      "source_identity": {
+        "opportunity_title": "شطف الحوض بالماء الجاري.",
+        "event_title": "تنظيف حوض الاستحمام أو الدش"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "شطف الحوض بالماء الجاري",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'شطف الحوض بالماء الجاري.'",
+        "event_title: 'تنظيف حوض الاستحمام أو الدش'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 970,
+      "legacy_id": "HOME-050-OP001",
+      "source_identity": {
+        "opportunity_title": "رش ملمع المعادن على الصنابير.",
+        "event_title": "تلميع صنابير الماء والخلاطات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "رش ملمع المعادن على الصنابير",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'رش ملمع المعادن على الصنابير.'",
+        "event_title: 'تلميع صنابير الماء والخلاطات'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 971,
+      "legacy_id": "HOME-050-OP002",
+      "source_identity": {
+        "opportunity_title": "فرك الصنابير وتجفيفها لتعود لامعة.",
+        "event_title": "تلميع صنابير الماء والخلاطات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "فرك الصنابير | تجفيف الصنابير",
+      "reasoning_summary": "يتضمن السجل دورين مستقلين نسبيًا في الأثر ونقطة الاكتمال: «فرك الصنابير | تجفيف الصنابير»؛ لذلك يلزم SPLIT_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title: 'فرك الصنابير وتجفيفها لتعود لامعة.'",
+        "event_title: 'تلميع صنابير الماء والخلاطات'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 972,
+      "legacy_id": "HOME-051-OP001",
+      "source_identity": {
+        "opportunity_title": "رش المنظف المخصص للفواصل.",
+        "event_title": "تنظيف جدران الحمام من العفن"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "رش المنظف المخصص للفواصل",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'رش المنظف المخصص للفواصل.'",
+        "event_title: 'تنظيف جدران الحمام من العفن'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 973,
+      "legacy_id": "HOME-051-OP002",
+      "source_identity": {
+        "opportunity_title": "فرك الفواصل بفرشاة التنظيف.",
+        "event_title": "تنظيف جدران الحمام من العفن"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فرك الفواصل بفرشاة التنظيف",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'فرك الفواصل بفرشاة التنظيف.'",
+        "event_title: 'تنظيف جدران الحمام من العفن'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 974,
+      "legacy_id": "HOME-051-OP003",
+      "source_identity": {
+        "opportunity_title": "شطف الجدران بالماء.",
+        "event_title": "تنظيف جدران الحمام من العفن"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "شطف الجدران بالماء",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'شطف الجدران بالماء.'",
+        "event_title: 'تنظيف جدران الحمام من العفن'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 975,
+      "legacy_id": "HOME-052-OP001",
+      "source_identity": {
+        "opportunity_title": "إخراج العلب من الخزانة ومسح الأرفف",
+        "event_title": "ترتيب خزانة المؤن والبهارات"
+      },
+      "existing_framework_lineage_assessment": "ALIGNED",
+      "existing_framework_lineage_evidence": [
+        {
+          "framework_reference_id": "FR-EXP12-HOME-052-OP001",
+          "batch": "BATCH_04",
+          "source": "DALILI_EXPANSION_SAMPLE_12_CORRECTED_01"
+        }
+      ],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "MERGED_BY_PROVENANCE",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إخراج العلب من الخزانة ومسح الأرفف",
+      "reasoning_summary": "يثبت سجل lineage الصريح أن هذا المصدر ممثل في مرجع Framework قائم؛ لذلك يحفظ كمصدر provenance ولا ينشأ له مرجع مستقل.",
+      "evidence_from_record": [
+        "opportunity_title: 'إخراج العلب من الخزانة ومسح الأرفف'",
+        "event_title: 'ترتيب خزانة المؤن والبهارات'",
+        "card_pending: 'false'",
+        "framework_reference_id: 'FR-EXP12-HOME-052-OP001'"
+      ]
+    },
+    {
+      "corpus_position": 976,
+      "legacy_id": "HOME-052-OP002",
+      "source_identity": {
+        "opportunity_title": "التخلص من العلب الفارغة أو التالفة",
+        "event_title": "ترتيب خزانة المؤن والبهارات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التخلص من العلب الفارغة أو التالفة",
+      "reasoning_summary": "الفكرة الوظيفية صالحة، لكن التمثيل الحالي يتضمن لغة مساعدة أو تدرج أداء تخالف حياد FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title: 'التخلص من العلب الفارغة أو التالفة'",
+        "event_title: 'ترتيب خزانة المؤن والبهارات'",
+        "card_pending: 'false'",
+        "legacy_assistance_levels: 'المساعدة في الفحص، الفحص بمفرده، اتخاذ القرار بنفسه.'",
+        "legacy_performance_indicators: 'يميّز بثقة متزايدة بين ما يبقى وما يُستبعد.'"
+      ]
+    },
+    {
+      "corpus_position": 977,
+      "legacy_id": "HOME-052-OP003",
+      "source_identity": {
+        "opportunity_title": "ترتيب العلب حسب نوعها واستخدامها",
+        "event_title": "ترتيب خزانة المؤن والبهارات"
+      },
+      "existing_framework_lineage_assessment": "ALIGNED",
+      "existing_framework_lineage_evidence": [
+        {
+          "framework_reference_id": "FR-EXP12-HOME-052-OP003",
+          "batch": "BATCH_04",
+          "source": "DALILI_EXPANSION_SAMPLE_12_CORRECTED_01"
+        }
+      ],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "MERGED_BY_PROVENANCE",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب العلب حسب نوعها واستخدامها",
+      "reasoning_summary": "يثبت سجل lineage الصريح أن هذا المصدر ممثل في مرجع Framework قائم؛ لذلك يحفظ كمصدر provenance ولا ينشأ له مرجع مستقل.",
+      "evidence_from_record": [
+        "opportunity_title: 'ترتيب العلب حسب نوعها واستخدامها'",
+        "event_title: 'ترتيب خزانة المؤن والبهارات'",
+        "card_pending: 'false'",
+        "framework_reference_id: 'FR-EXP12-HOME-052-OP003'"
+      ]
+    },
+    {
+      "corpus_position": 978,
+      "legacy_id": "HOME-053-OP001",
+      "source_identity": {
+        "opportunity_title": "استخراج عبوات المنظفات لفحصها.",
+        "event_title": "فحص تاريخ صلاحية المنظفات والمواد المخزنة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استخراج عبوات المنظفات لفحصها",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'استخراج عبوات المنظفات لفحصها.'",
+        "event_title: 'فحص تاريخ صلاحية المنظفات والمواد المخزنة'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 979,
+      "legacy_id": "HOME-053-OP002",
+      "source_identity": {
+        "opportunity_title": "فرز العبوات التالفة أو المنتهية.",
+        "event_title": "فحص تاريخ صلاحية المنظفات والمواد المخزنة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فرز العبوات التالفة أو المنتهية",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'فرز العبوات التالفة أو المنتهية.'",
+        "event_title: 'فحص تاريخ صلاحية المنظفات والمواد المخزنة'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 980,
+      "legacy_id": "HOME-053-OP003",
+      "source_identity": {
+        "opportunity_title": "إلقاء العبوات الفاسدة في القمامة.",
+        "event_title": "فحص تاريخ صلاحية المنظفات والمواد المخزنة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إلقاء العبوات الفاسدة في القمامة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'إلقاء العبوات الفاسدة في القمامة.'",
+        "event_title: 'فحص تاريخ صلاحية المنظفات والمواد المخزنة'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 981,
+      "legacy_id": "HOME-054-OP001",
+      "source_identity": {
+        "opportunity_title": "إحضار البريد من الصندوق.",
+        "event_title": "ترتيب صندوق البريد والفواتير"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إحضار البريد من الصندوق",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'إحضار البريد من الصندوق.'",
+        "event_title: 'ترتيب صندوق البريد والفواتير'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 982,
+      "legacy_id": "HOME-054-OP002",
+      "source_identity": {
+        "opportunity_title": "تجميع الفواتير ووضعها في ملف الإدارة المالية.",
+        "event_title": "ترتيب صندوق البريد والفواتير"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "تجميع الفواتير | وضع الفواتير في ملف الإدارة المالية",
+      "reasoning_summary": "يتضمن السجل دورين مستقلين نسبيًا في الأثر ونقطة الاكتمال: «تجميع الفواتير | وضع الفواتير في ملف الإدارة المالية»؛ لذلك يلزم SPLIT_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title: 'تجميع الفواتير ووضعها في ملف الإدارة المالية.'",
+        "event_title: 'ترتيب صندوق البريد والفواتير'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 983,
+      "legacy_id": "HOME-055-OP001",
+      "source_identity": {
+        "opportunity_title": "تجميع الفواتير الورقية.",
+        "event_title": "دفع الفواتير المنزلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجميع الفواتير الورقية",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'تجميع الفواتير الورقية.'",
+        "event_title: 'دفع الفواتير المنزلية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 984,
+      "legacy_id": "HOME-055-OP002",
+      "source_identity": {
+        "opportunity_title": "حفظ الإيصالات بعد الدفع في الملف المخصص.",
+        "event_title": "دفع الفواتير المنزلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "حفظ الإيصالات بعد الدفع في الملف المخصص",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'حفظ الإيصالات بعد الدفع في الملف المخصص.'",
+        "event_title: 'دفع الفواتير المنزلية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 985,
+      "legacy_id": "HOME-056-OP001",
+      "source_identity": {
+        "opportunity_title": "فرز الأوراق المبعثرة.",
+        "event_title": "ترتيب خزانة الوثائق الهامة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فرز الأوراق المبعثرة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'فرز الأوراق المبعثرة.'",
+        "event_title: 'ترتيب خزانة الوثائق الهامة'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 986,
+      "legacy_id": "HOME-056-OP002",
+      "source_identity": {
+        "opportunity_title": "وضع الوثائق داخل الملفات أو الأظرف البلاستيكية.",
+        "event_title": "ترتيب خزانة الوثائق الهامة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع الوثائق داخل الملفات أو الأظرف البلاستيكية",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'وضع الوثائق داخل الملفات أو الأظرف البلاستيكية.'",
+        "event_title: 'ترتيب خزانة الوثائق الهامة'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 987,
+      "legacy_id": "HOME-056-OP003",
+      "source_identity": {
+        "opportunity_title": "إعادة الملفات إلى الدرج.",
+        "event_title": "ترتيب خزانة الوثائق الهامة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إعادة الملفات إلى الدرج",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'إعادة الملفات إلى الدرج.'",
+        "event_title: 'ترتيب خزانة الوثائق الهامة'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 988,
+      "legacy_id": "HOME-057-OP001",
+      "source_identity": {
+        "opportunity_title": "جمع المواد المطلوبة (بطاريات، كشاف، ماء).",
+        "event_title": "تجهيز حقيبة طوارئ منزلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "جمع المواد المطلوبة (بطاريات، كشاف، ماء)",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'جمع المواد المطلوبة (بطاريات، كشاف، ماء).'",
+        "event_title: 'تجهيز حقيبة طوارئ منزلية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 989,
+      "legacy_id": "HOME-057-OP002",
+      "source_identity": {
+        "opportunity_title": "تعبئة المواد في الحقيبة.",
+        "event_title": "تجهيز حقيبة طوارئ منزلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تعبئة المواد في الحقيبة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'تعبئة المواد في الحقيبة.'",
+        "event_title: 'تجهيز حقيبة طوارئ منزلية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 990,
+      "legacy_id": "HOME-057-OP003",
+      "source_identity": {
+        "opportunity_title": "إغلاق الحقيبة ووضعها في المكان المخصص.",
+        "event_title": "تجهيز حقيبة طوارئ منزلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "إغلاق حقيبة الطوارئ | وضع حقيبة الطوارئ في مكانها",
+      "reasoning_summary": "يتضمن السجل دورين مستقلين نسبيًا في الأثر ونقطة الاكتمال: «إغلاق حقيبة الطوارئ | وضع حقيبة الطوارئ في مكانها»؛ لذلك يلزم SPLIT_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title: 'إغلاق الحقيبة ووضعها في المكان المخصص.'",
+        "event_title: 'تجهيز حقيبة طوارئ منزلية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 991,
+      "legacy_id": "HOME-058-OP001",
+      "source_identity": {
+        "opportunity_title": "غسل الممسحة بالماء النظيف.",
+        "event_title": "تنظيف أدوات التنظيف نفسها"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "غسل الممسحة بالماء النظيف",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'غسل الممسحة بالماء النظيف.'",
+        "event_title: 'تنظيف أدوات التنظيف نفسها'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 992,
+      "legacy_id": "HOME-058-OP002",
+      "source_identity": {
+        "opportunity_title": "تنظيف فرشاة المكنسة من العوالق.",
+        "event_title": "تنظيف أدوات التنظيف نفسها"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تنظيف فرشاة المكنسة من العوالق",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'تنظيف فرشاة المكنسة من العوالق.'",
+        "event_title: 'تنظيف أدوات التنظيف نفسها'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 993,
+      "legacy_id": "HOME-058-OP003",
+      "source_identity": {
+        "opportunity_title": "تجفيف الإسفنج والفوط ووضعها في مكان جيد التهوية.",
+        "event_title": "تنظيف أدوات التنظيف نفسها"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "تجفيف الإسفنج والفوط | وضع الإسفنج والفوط في مكان جيد التهوية",
+      "reasoning_summary": "يتضمن السجل دورين مستقلين نسبيًا في الأثر ونقطة الاكتمال: «تجفيف الإسفنج والفوط | وضع الإسفنج والفوط في مكان جيد التهوية»؛ لذلك يلزم SPLIT_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title: 'تجفيف الإسفنج والفوط ووضعها في مكان جيد التهوية.'",
+        "event_title: 'تنظيف أدوات التنظيف نفسها'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 994,
+      "legacy_id": "HOME-059-OP001",
+      "source_identity": {
+        "opportunity_title": "التخلص من عبوات المعطرات الفارغة.",
+        "event_title": "تغيير معطرات الجو والشموع"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التخلص من عبوات المعطرات الفارغة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'التخلص من عبوات المعطرات الفارغة.'",
+        "event_title: 'تغيير معطرات الجو والشموع'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 995,
+      "legacy_id": "HOME-059-OP002",
+      "source_identity": {
+        "opportunity_title": "تركيب عبوات التعطير الجديدة.",
+        "event_title": "تغيير معطرات الجو والشموع"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تركيب عبوات التعطير الجديدة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'تركيب عبوات التعطير الجديدة.'",
+        "event_title: 'تغيير معطرات الجو والشموع'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 996,
+      "legacy_id": "HOME-059-OP003",
+      "source_identity": {
+        "opportunity_title": "توزيع الشموع الجديدة.",
+        "event_title": "تغيير معطرات الجو والشموع"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "توزيع الشموع الجديدة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'توزيع الشموع الجديدة.'",
+        "event_title: 'تغيير معطرات الجو والشموع'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 997,
+      "legacy_id": "HOME-060-OP001",
+      "source_identity": {
+        "opportunity_title": "استلام الفلتر بعد فكه.",
+        "event_title": "تنظيف فلاتر التكييف المركزي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استلام الفلتر بعد فكه",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'استلام الفلتر بعد فكه.'",
+        "event_title: 'تنظيف فلاتر التكييف المركزي'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 998,
+      "legacy_id": "HOME-060-OP002",
+      "source_identity": {
+        "opportunity_title": "مسح أو غسل الفلتر.",
+        "event_title": "تنظيف فلاتر التكييف المركزي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح أو غسل الفلتر",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'مسح أو غسل الفلتر.'",
+        "event_title: 'تنظيف فلاتر التكييف المركزي'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 999,
+      "legacy_id": "HOME-060-OP003",
+      "source_identity": {
+        "opportunity_title": "مناولة الفلتر لتركيبه.",
+        "event_title": "تنظيف فلاتر التكييف المركزي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مناولة الفلتر لتركيبه",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'مناولة الفلتر لتركيبه.'",
+        "event_title: 'تنظيف فلاتر التكييف المركزي'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1000,
+      "legacy_id": "HOME-061-OP001",
+      "source_identity": {
+        "opportunity_title": "رش أو وضع قطرات الزيت على المفصلة.",
+        "event_title": "تزييت مفصلات الأبواب والأقفال"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "رش أو وضع قطرات الزيت على المفصلة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'رش أو وضع قطرات الزيت على المفصلة.'",
+        "event_title: 'تزييت مفصلات الأبواب والأقفال'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1001,
+      "legacy_id": "HOME-061-OP002",
+      "source_identity": {
+        "opportunity_title": "مسح الزيت الزائد بمنديل.",
+        "event_title": "تزييت مفصلات الأبواب والأقفال"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح الزيت الزائد بمنديل",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'مسح الزيت الزائد بمنديل.'",
+        "event_title: 'تزييت مفصلات الأبواب والأقفال'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1002,
+      "legacy_id": "HOME-061-OP003",
+      "source_identity": {
+        "opportunity_title": "تحريك الباب لتوزيع الزيت.",
+        "event_title": "تزييت مفصلات الأبواب والأقفال"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تحريك الباب لتوزيع الزيت",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'تحريك الباب لتوزيع الزيت.'",
+        "event_title: 'تزييت مفصلات الأبواب والأقفال'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1003,
+      "legacy_id": "HOME-062-OP001",
+      "source_identity": {
+        "opportunity_title": "كنس درجات السلم.",
+        "event_title": "تنظيف درج المدخل والسلالم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "كنس درجات السلم",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'كنس درجات السلم.'",
+        "event_title: 'تنظيف درج المدخل والسلالم'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1004,
+      "legacy_id": "HOME-062-OP002",
+      "source_identity": {
+        "opportunity_title": "مسح درابزين السلم (المقبض الجانبي).",
+        "event_title": "تنظيف درج المدخل والسلالم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح درابزين السلم (المقبض الجانبي)",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'مسح درابزين السلم (المقبض الجانبي).'",
+        "event_title: 'تنظيف درج المدخل والسلالم'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1005,
+      "legacy_id": "HOME-062-OP003",
+      "source_identity": {
+        "opportunity_title": "مسح الدرجات بالممسحة.",
+        "event_title": "تنظيف درج المدخل والسلالم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح الدرجات بالممسحة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'مسح الدرجات بالممسحة.'",
+        "event_title: 'تنظيف درج المدخل والسلالم'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1006,
+      "legacy_id": "HOME-063-OP001",
+      "source_identity": {
+        "opportunity_title": "فرز سلال الغسيل وتنسيقها.",
+        "event_title": "ترتيب غرفة الغسيل والكي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "فرز سلال الغسيل | تنسيق سلال الغسيل",
+      "reasoning_summary": "يتضمن السجل دورين مستقلين نسبيًا في الأثر ونقطة الاكتمال: «فرز سلال الغسيل | تنسيق سلال الغسيل»؛ لذلك يلزم SPLIT_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title: 'فرز سلال الغسيل وتنسيقها.'",
+        "event_title: 'ترتيب غرفة الغسيل والكي'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1007,
+      "legacy_id": "HOME-063-OP002",
+      "source_identity": {
+        "opportunity_title": "ترتيب عبوات المنظفات على الرف.",
+        "event_title": "ترتيب غرفة الغسيل والكي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب عبوات المنظفات على الرف",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'ترتيب عبوات المنظفات على الرف.'",
+        "event_title: 'ترتيب غرفة الغسيل والكي'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1008,
+      "legacy_id": "HOME-063-OP003",
+      "source_identity": {
+        "opportunity_title": "طي طاولة الكي ووضعها في الركن.",
+        "event_title": "ترتيب غرفة الغسيل والكي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "طي طاولة الكي | وضع طاولة الكي في الركن",
+      "reasoning_summary": "يتضمن السجل دورين مستقلين نسبيًا في الأثر ونقطة الاكتمال: «طي طاولة الكي | وضع طاولة الكي في الركن»؛ لذلك يلزم SPLIT_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title: 'طي طاولة الكي ووضعها في الركن.'",
+        "event_title: 'ترتيب غرفة الغسيل والكي'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1009,
+      "legacy_id": "HOME-064-OP001",
+      "source_identity": {
+        "opportunity_title": "استخراج شبكة الوبر من المجفف وتنظيفها.",
+        "event_title": "تنظيف المجفف والغسالة من الداخل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "استخراج شبكة الوبر | تنظيف شبكة الوبر",
+      "reasoning_summary": "يتضمن السجل دورين مستقلين نسبيًا في الأثر ونقطة الاكتمال: «استخراج شبكة الوبر | تنظيف شبكة الوبر»؛ لذلك يلزم SPLIT_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title: 'استخراج شبكة الوبر من المجفف وتنظيفها.'",
+        "event_title: 'تنظيف المجفف والغسالة من الداخل'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1010,
+      "legacy_id": "HOME-064-OP002",
+      "source_identity": {
+        "opportunity_title": "مسح الإطار المطاطي الداخلي للغسالة.",
+        "event_title": "تنظيف المجفف والغسالة من الداخل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح الإطار المطاطي الداخلي للغسالة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'مسح الإطار المطاطي الداخلي للغسالة.'",
+        "event_title: 'تنظيف المجفف والغسالة من الداخل'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1011,
+      "legacy_id": "HOME-065-OP001",
+      "source_identity": {
+        "opportunity_title": "تفريغ الحقائب ومسحها من الداخل.",
+        "event_title": "ترتيب أدوات السفر والتخزين"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "تفريغ الحقائب | مسح الحقائب من الداخل",
+      "reasoning_summary": "يتضمن السجل دورين مستقلين نسبيًا في الأثر ونقطة الاكتمال: «تفريغ الحقائب | مسح الحقائب من الداخل»؛ لذلك يلزم SPLIT_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title: 'تفريغ الحقائب ومسحها من الداخل.'",
+        "event_title: 'ترتيب أدوات السفر والتخزين'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1012,
+      "legacy_id": "HOME-065-OP002",
+      "source_identity": {
+        "opportunity_title": "تداخل الحقائب الصغيرة داخل الكبيرة.",
+        "event_title": "ترتيب أدوات السفر والتخزين"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تداخل الحقائب الصغيرة داخل الكبيرة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'تداخل الحقائب الصغيرة داخل الكبيرة.'",
+        "event_title: 'ترتيب أدوات السفر والتخزين'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1013,
+      "legacy_id": "HOME-065-OP003",
+      "source_identity": {
+        "opportunity_title": "إعادة الحقائب إلى المخزن.",
+        "event_title": "ترتيب أدوات السفر والتخزين"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إعادة الحقائب إلى المخزن",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'إعادة الحقائب إلى المخزن.'",
+        "event_title: 'ترتيب أدوات السفر والتخزين'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1014,
+      "legacy_id": "HOME-066-OP001",
+      "source_identity": {
+        "opportunity_title": "كنس الأتربة خارجاً.",
+        "event_title": "تنظيف أرضية المدخل الخارجي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "كنس الأتربة خارجاً",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'كنس الأتربة خارجاً.'",
+        "event_title: 'تنظيف أرضية المدخل الخارجي'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1015,
+      "legacy_id": "HOME-066-OP002",
+      "source_identity": {
+        "opportunity_title": "مسح الباب الرئيسي من الخارج.",
+        "event_title": "تنظيف أرضية المدخل الخارجي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح الباب الرئيسي من الخارج",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'مسح الباب الرئيسي من الخارج.'",
+        "event_title: 'تنظيف أرضية المدخل الخارجي'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1016,
+      "legacy_id": "HOME-067-OP001",
+      "source_identity": {
+        "opportunity_title": "فصل الأحذية الرياضية عن الرسمية.",
+        "event_title": "ترتيب خزانة الأحذية الرياضية والرسمية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فصل الأحذية الرياضية عن الرسمية",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'فصل الأحذية الرياضية عن الرسمية.'",
+        "event_title: 'ترتيب خزانة الأحذية الرياضية والرسمية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1017,
+      "legacy_id": "HOME-067-OP002",
+      "source_identity": {
+        "opportunity_title": "مسح نعل الحذاء أو تلميعه قبل إدخاله.",
+        "event_title": "ترتيب خزانة الأحذية الرياضية والرسمية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح نعل الحذاء أو تلميعه قبل إدخاله",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'مسح نعل الحذاء أو تلميعه قبل إدخاله.'",
+        "event_title: 'ترتيب خزانة الأحذية الرياضية والرسمية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1018,
+      "legacy_id": "HOME-067-OP003",
+      "source_identity": {
+        "opportunity_title": "ترتيب الأحذية داخل الخزانة.",
+        "event_title": "ترتيب خزانة الأحذية الرياضية والرسمية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب الأحذية داخل الخزانة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'ترتيب الأحذية داخل الخزانة.'",
+        "event_title: 'ترتيب خزانة الأحذية الرياضية والرسمية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1019,
+      "legacy_id": "HOME-068-OP001",
+      "source_identity": {
+        "opportunity_title": "مسح الهيكل الخارجي للمكيف.",
+        "event_title": "تنظيف أجهزة التكييف المنفصلة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح الهيكل الخارجي للمكيف",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'مسح الهيكل الخارجي للمكيف.'",
+        "event_title: 'تنظيف أجهزة التكييف المنفصلة'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1020,
+      "legacy_id": "HOME-068-OP002",
+      "source_identity": {
+        "opportunity_title": "غسل الفلاتر بالماء.",
+        "event_title": "تنظيف أجهزة التكييف المنفصلة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "غسل الفلاتر بالماء",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'غسل الفلاتر بالماء.'",
+        "event_title: 'تنظيف أجهزة التكييف المنفصلة'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1021,
+      "legacy_id": "HOME-069-OP001",
+      "source_identity": {
+        "opportunity_title": "جمع الكشافات والبطاريات الاحتياطية.",
+        "event_title": "ترتيب أدوات الإضاءة الاحتياطية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "جمع الكشافات والبطاريات الاحتياطية",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'جمع الكشافات والبطاريات الاحتياطية.'",
+        "event_title: 'ترتيب أدوات الإضاءة الاحتياطية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1022,
+      "legacy_id": "HOME-069-OP002",
+      "source_identity": {
+        "opportunity_title": "ترتيب الشموع وأعواد الثقاب في درج محدد.",
+        "event_title": "ترتيب أدوات الإضاءة الاحتياطية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب الشموع وأعواد الثقاب في درج محدد",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'ترتيب الشموع وأعواد الثقاب في درج محدد.'",
+        "event_title: 'ترتيب أدوات الإضاءة الاحتياطية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1023,
+      "legacy_id": "HOME-070-OP001",
+      "source_identity": {
+        "opportunity_title": "مسح الأدوات (المطارق والمفكات).",
+        "event_title": "تنظيف خزانة الأدوات الكهربائية واليدوية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح الأدوات (المطارق والمفكات)",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'مسح الأدوات (المطارق والمفكات).'",
+        "event_title: 'تنظيف خزانة الأدوات الكهربائية واليدوية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1024,
+      "legacy_id": "HOME-070-OP002",
+      "source_identity": {
+        "opportunity_title": "ترتيب الأدوات في جيوب صندوق الصيانة.",
+        "event_title": "تنظيف خزانة الأدوات الكهربائية واليدوية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب الأدوات في جيوب صندوق الصيانة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'ترتيب الأدوات في جيوب صندوق الصيانة.'",
+        "event_title: 'تنظيف خزانة الأدوات الكهربائية واليدوية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1025,
+      "legacy_id": "HOME-071-OP001",
+      "source_identity": {
+        "opportunity_title": "تمرير المكنسة ذات الذراع الطويل على زوايا السقف.",
+        "event_title": "إزالة العنكبوت والحشرات من الزوايا"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تمرير المكنسة ذات الذراع الطويل على زوايا السقف",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'تمرير المكنسة ذات الذراع الطويل على زوايا السقف.'",
+        "event_title: 'إزالة العنكبوت والحشرات من الزوايا'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1026,
+      "legacy_id": "HOME-071-OP002",
+      "source_identity": {
+        "opportunity_title": "جمع ما يتساقط على الأرض بمكنسة صغيرة.",
+        "event_title": "إزالة العنكبوت والحشرات من الزوايا"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "جمع ما يتساقط على الأرض بمكنسة صغيرة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'جمع ما يتساقط على الأرض بمكنسة صغيرة.'",
+        "event_title: 'إزالة العنكبوت والحشرات من الزوايا'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1027,
+      "legacy_id": "HOME-072-OP001",
+      "source_identity": {
+        "opportunity_title": "تنظيف المروحة أو المدفأة قبل تخزينها.",
+        "event_title": "ترتيب أدوات التخزين الموسمي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تنظيف المروحة أو المدفأة قبل تخزينها",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'تنظيف المروحة أو المدفأة قبل تخزينها.'",
+        "event_title: 'ترتيب أدوات التخزين الموسمي'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1028,
+      "legacy_id": "HOME-072-OP002",
+      "source_identity": {
+        "opportunity_title": "وضع كيس الحماية على الجهاز.",
+        "event_title": "ترتيب أدوات التخزين الموسمي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع كيس الحماية على الجهاز",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'وضع كيس الحماية على الجهاز.'",
+        "event_title: 'ترتيب أدوات التخزين الموسمي'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1029,
+      "legacy_id": "HOME-072-OP003",
+      "source_identity": {
+        "opportunity_title": "نقل الجهاز لغرفة التخزين.",
+        "event_title": "ترتيب أدوات التخزين الموسمي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "نقل الجهاز لغرفة التخزين",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'نقل الجهاز لغرفة التخزين.'",
+        "event_title: 'ترتيب أدوات التخزين الموسمي'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1030,
+      "legacy_id": "HOME-073-OP001",
+      "source_identity": {
+        "opportunity_title": "كنس أرضية الكراج.",
+        "event_title": "تنظيف المرآب أو الكراج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "كنس أرضية الكراج",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'كنس أرضية الكراج.'",
+        "event_title: 'تنظيف المرآب أو الكراج'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1031,
+      "legacy_id": "HOME-073-OP002",
+      "source_identity": {
+        "opportunity_title": "تجميع أدوات غسيل السيارة في سلة واحدة.",
+        "event_title": "تنظيف المرآب أو الكراج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجميع أدوات غسيل السيارة في سلة واحدة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'تجميع أدوات غسيل السيارة في سلة واحدة.'",
+        "event_title: 'تنظيف المرآب أو الكراج'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1032,
+      "legacy_id": "HOME-074-OP001",
+      "source_identity": {
+        "opportunity_title": "جمع ألعاب الحيوان.",
+        "event_title": "ترتيب أدوات العناية بالحيوانات الأليفة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "جمع ألعاب الحيوان",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'جمع ألعاب الحيوان.'",
+        "event_title: 'ترتيب أدوات العناية بالحيوانات الأليفة'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1033,
+      "legacy_id": "HOME-074-OP002",
+      "source_identity": {
+        "opportunity_title": "ترتيب أكياس الطعام في الرف المخصص.",
+        "event_title": "ترتيب أدوات العناية بالحيوانات الأليفة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب أكياس الطعام في الرف المخصص",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'ترتيب أكياس الطعام في الرف المخصص.'",
+        "event_title: 'ترتيب أدوات العناية بالحيوانات الأليفة'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1034,
+      "legacy_id": "HOME-074-OP003",
+      "source_identity": {
+        "opportunity_title": "غسل أوعية الطعام والشرب.",
+        "event_title": "ترتيب أدوات العناية بالحيوانات الأليفة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "غسل أوعية الطعام والشرب",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'غسل أوعية الطعام والشرب.'",
+        "event_title: 'ترتيب أدوات العناية بالحيوانات الأليفة'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1035,
+      "legacy_id": "HOME-075-OP001",
+      "source_identity": {
+        "opportunity_title": "التخلص من الفضلات أو الرمل القديم.",
+        "event_title": "تنظيف أقفاص أو مناطق الحيوانات الأليفة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التخلص من الفضلات أو الرمل القديم",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'التخلص من الفضلات أو الرمل القديم.'",
+        "event_title: 'تنظيف أقفاص أو مناطق الحيوانات الأليفة'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1036,
+      "legacy_id": "HOME-075-OP002",
+      "source_identity": {
+        "opportunity_title": "مسح أرضية القفص أو المنطقة.",
+        "event_title": "تنظيف أقفاص أو مناطق الحيوانات الأليفة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح أرضية القفص أو المنطقة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'مسح أرضية القفص أو المنطقة.'",
+        "event_title: 'تنظيف أقفاص أو مناطق الحيوانات الأليفة'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1037,
+      "legacy_id": "HOME-075-OP003",
+      "source_identity": {
+        "opportunity_title": "وضع المفارش أو الرمل الجديد.",
+        "event_title": "تنظيف أقفاص أو مناطق الحيوانات الأليفة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع المفارش أو الرمل الجديد",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'وضع المفارش أو الرمل الجديد.'",
+        "event_title: 'تنظيف أقفاص أو مناطق الحيوانات الأليفة'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1038,
+      "legacy_id": "HOME-076-OP001",
+      "source_identity": {
+        "opportunity_title": "ترتيب الساعات في العلب.",
+        "event_title": "ترتيب خزانة الإكسسوارات والمجوهرات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب الساعات في العلب",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'ترتيب الساعات في العلب.'",
+        "event_title: 'ترتيب خزانة الإكسسوارات والمجوهرات'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1039,
+      "legacy_id": "HOME-076-OP002",
+      "source_identity": {
+        "opportunity_title": "تعليق القلائد لمنع تشابكها.",
+        "event_title": "ترتيب خزانة الإكسسوارات والمجوهرات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تعليق القلائد لمنع تشابكها",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'تعليق القلائد لمنع تشابكها.'",
+        "event_title: 'ترتيب خزانة الإكسسوارات والمجوهرات'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1040,
+      "legacy_id": "HOME-076-OP003",
+      "source_identity": {
+        "opportunity_title": "مسح سطح التسريحة المخصص للإكسسوارات.",
+        "event_title": "ترتيب خزانة الإكسسوارات والمجوهرات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح سطح التسريحة المخصص للإكسسوارات",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'مسح سطح التسريحة المخصص للإكسسوارات.'",
+        "event_title: 'ترتيب خزانة الإكسسوارات والمجوهرات'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1041,
+      "legacy_id": "HOME-077-OP001",
+      "source_identity": {
+        "opportunity_title": "مسح أجهزة الريموت بمناديل معقمة.",
+        "event_title": "تنظيف أجهزة التحكم عن بعد والهواتف المنزلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح أجهزة الريموت بمناديل معقمة",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'مسح أجهزة الريموت بمناديل معقمة.'",
+        "event_title: 'تنظيف أجهزة التحكم عن بعد والهواتف المنزلية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1042,
+      "legacy_id": "HOME-077-OP002",
+      "source_identity": {
+        "opportunity_title": "تنظيف أزرار وسماعة الهاتف الأرضي.",
+        "event_title": "تنظيف أجهزة التحكم عن بعد والهواتف المنزلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تنظيف أزرار وسماعة الهاتف الأرضي",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'تنظيف أزرار وسماعة الهاتف الأرضي.'",
+        "event_title: 'تنظيف أجهزة التحكم عن بعد والهواتف المنزلية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1043,
+      "legacy_id": "HOME-078-OP001",
+      "source_identity": {
+        "opportunity_title": "فرز العبوات والتخلص من الفارغ منها.",
+        "event_title": "ترتيب خزانة أدوات التجميل والعناية الشخصية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "فرز العبوات | التخلص من العبوات الفارغة",
+      "reasoning_summary": "يتضمن السجل دورين مستقلين نسبيًا في الأثر ونقطة الاكتمال: «فرز العبوات | التخلص من العبوات الفارغة»؛ لذلك يلزم SPLIT_REQUIRED.",
+      "evidence_from_record": [
+        "opportunity_title: 'فرز العبوات والتخلص من الفارغ منها.'",
+        "event_title: 'ترتيب خزانة أدوات التجميل والعناية الشخصية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1044,
+      "legacy_id": "HOME-078-OP002",
+      "source_identity": {
+        "opportunity_title": "مسح الرفوف.",
+        "event_title": "ترتيب خزانة أدوات التجميل والعناية الشخصية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مسح الرفوف",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'مسح الرفوف.'",
+        "event_title: 'ترتيب خزانة أدوات التجميل والعناية الشخصية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1045,
+      "legacy_id": "HOME-078-OP003",
+      "source_identity": {
+        "opportunity_title": "ترتيب العبوات المتشابهة معاً.",
+        "event_title": "ترتيب خزانة أدوات التجميل والعناية الشخصية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب العبوات المتشابهة معاً",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'ترتيب العبوات المتشابهة معاً.'",
+        "event_title: 'ترتيب خزانة أدوات التجميل والعناية الشخصية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1046,
+      "legacy_id": "HOME-079-OP001",
+      "source_identity": {
+        "opportunity_title": "جمع الستارة القديمة لوضعها في الغسيل.",
+        "event_title": "تغيير ستائر الحمام أو غرفة النوم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "جمع الستارة القديمة لوضعها في الغسيل",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'جمع الستارة القديمة لوضعها في الغسيل.'",
+        "event_title: 'تغيير ستائر الحمام أو غرفة النوم'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1047,
+      "legacy_id": "HOME-079-OP002",
+      "source_identity": {
+        "opportunity_title": "مناولة حلقات الستارة الجديدة للتركيب.",
+        "event_title": "تغيير ستائر الحمام أو غرفة النوم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مناولة حلقات الستارة الجديدة للتركيب",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'مناولة حلقات الستارة الجديدة للتركيب.'",
+        "event_title: 'تغيير ستائر الحمام أو غرفة النوم'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1048,
+      "legacy_id": "HOME-080-OP001",
+      "source_identity": {
+        "opportunity_title": "كنس الشرفة جيداً.",
+        "event_title": "تنظيف أرضية الشرفة الخارجية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "كنس الشرفة جيداً",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'كنس الشرفة جيداً.'",
+        "event_title: 'تنظيف أرضية الشرفة الخارجية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1049,
+      "legacy_id": "HOME-080-OP002",
+      "source_identity": {
+        "opportunity_title": "سكب الماء والصابون.",
+        "event_title": "تنظيف أرضية الشرفة الخارجية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "سكب الماء والصابون",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'سكب الماء والصابون.'",
+        "event_title: 'تنظيف أرضية الشرفة الخارجية'",
+        "card_pending: 'true'"
+      ]
+    },
+    {
+      "corpus_position": 1050,
+      "legacy_id": "HOME-080-OP003",
+      "source_identity": {
+        "opportunity_title": "دفع الماء بالممسحة المطاطية نحو المصرف.",
+        "event_title": "تنظيف أرضية الشرفة الخارجية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "ACCEPTED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "دفع الماء بالممسحة المطاطية نحو المصرف",
+      "reasoning_summary": "دور مشاركة وظيفية واحد ذو قصد وأثر واكتمال طبيعي ومعنى قائم بذاته، ولا توجد بطاقة مساعدة أو أداء تلوث حياد FP-07. حالة card_pending وصف اكتمال للبطاقة وليست حكمًا دلاليًا.",
+      "evidence_from_record": [
+        "opportunity_title: 'دفع الماء بالممسحة المطاطية نحو المصرف.'",
+        "event_title: 'تنظيف أرضية الشرفة الخارجية'",
+        "card_pending: 'true'"
+      ]
+    }
+  ],
+  "notes": [
+    "Reviewed directly by governing authority.",
+    "Legacy Master unchanged; no materialization performed; canonical validator unchanged."
+  ]
+}
