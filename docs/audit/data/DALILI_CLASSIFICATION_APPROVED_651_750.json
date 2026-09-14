@@ -1,0 +1,2230 @@
+{
+  "artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+  "version": "1.0",
+  "governance_status": "APPROVED",
+  "result_count": 100,
+  "range": {
+    "start": 651,
+    "end": 750,
+    "count": 100
+  },
+  "distribution": {
+    "REWRITE_REQUIRED": 96,
+    "SPLIT_REQUIRED": 3,
+    "EVENT_ONLY": 1,
+    "unresolved": 0
+  },
+  "preflight": {
+    "input_count": 100,
+    "unique_ids": 100,
+    "first_id": "HEALTH-019-OP002",
+    "last_id": "HEALTH-070-OP001",
+    "source_identity_check": "PASS"
+  },
+  "results": [
+    {
+      "corpus_position": 651,
+      "legacy_id": "HEALTH-019-OP002",
+      "source_identity": {
+        "opportunity_title": "الخروج للمشي في المسار المحدد",
+        "event_title": "المشي اليومي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الخروج للمشي في المسار المحدد",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «المشي اليومي»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء المشي، المشي بمفرده قريبًا منك، المشي المستقل ضمن مسافة متفق عليها.'",
+        "legacy_performance_indicators: 'يمشي مسافة أطول بثبات متزايد.'",
+        "legacy_execution_steps: 'الخروج من المنزل، المشي في المسار.'"
+      ]
+    },
+    {
+      "corpus_position": 652,
+      "legacy_id": "HEALTH-019-OP003",
+      "source_identity": {
+        "opportunity_title": "العودة للمنزل بعد الانتهاء",
+        "event_title": "المشي اليومي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "العودة للمنزل بعد الانتهاء",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «المشي اليومي»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء العودة، العودة بمفرده قريبًا منك، العودة المستقلة الكاملة.'",
+        "legacy_performance_indicators: 'يعود بثبات دون تردد.'",
+        "legacy_execution_steps: 'السير باتجاه المنزل، الدخول.'"
+      ]
+    },
+    {
+      "corpus_position": 653,
+      "legacy_id": "HEALTH-020-OP001",
+      "source_identity": {
+        "opportunity_title": "التوجه لمركز العلاج الطبيعي",
+        "event_title": "حضور جلسة علاج طبيعي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه لمركز العلاج الطبيعي",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «حضور جلسة علاج طبيعي»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده.'",
+        "legacy_performance_indicators: 'يتوجه للمركز بثبات متزايد.'",
+        "legacy_execution_steps: 'التوجه للمركز، الدخول.'"
+      ]
+    },
+    {
+      "corpus_position": 654,
+      "legacy_id": "HEALTH-020-OP002",
+      "source_identity": {
+        "opportunity_title": "أداء التمارين مع الأخصائي",
+        "event_title": "حضور جلسة علاج طبيعي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تنفيذ الحركات التي يحددها اختصاصي العلاج الطبيعي",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «حضور جلسة علاج طبيعي»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «تنفيذ الحركات التي يحددها اختصاصي العلاج الطبيعي».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة تحت إشراف الأخصائي الكامل دائمًا، بحسب توجيهه.'",
+        "legacy_performance_indicators: 'يتفاعل مع توجيهات الأخصائي بثقة متزايدة.'",
+        "legacy_execution_steps: 'أداء الحركة وفق توجيه الأخصائي.'"
+      ]
+    },
+    {
+      "corpus_position": 655,
+      "legacy_id": "HEALTH-020-OP003",
+      "source_identity": {
+        "opportunity_title": "استخدام الأجهزة الرياضية",
+        "event_title": "حضور جلسة علاج طبيعي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استخدام جهاز الجلسة وفق توجيه الاختصاصي",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «حضور جلسة علاج طبيعي»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «استخدام جهاز الجلسة وفق توجيه الاختصاصي».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة تحت إشراف الأخصائي الكامل دائمًا.'",
+        "legacy_performance_indicators: 'يتفاعل مع الجهاز بثقة متزايدة تحت الإشراف.'",
+        "legacy_execution_steps: 'استخدام الجهاز وفق توجيه الأخصائي المباشر.'"
+      ]
+    },
+    {
+      "corpus_position": 656,
+      "legacy_id": "HEALTH-021-OP001",
+      "source_identity": {
+        "opportunity_title": "إعداد قائمة بالمستلزمات",
+        "event_title": "شراء المستلزمات الطبية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إعداد قائمة بالمستلزمات",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «شراء المستلزمات الطبية»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'الإملاء لك، المشاركة في الكتابة، الكتابة بمفرده.'",
+        "legacy_performance_indicators: 'يتذكر مستلزمات إضافية من تلقاء نفسه.'",
+        "legacy_execution_steps: 'كتابة أو إملاء أسماء المستلزمات.'"
+      ]
+    },
+    {
+      "corpus_position": 657,
+      "legacy_id": "HEALTH-021-OP002",
+      "source_identity": {
+        "opportunity_title": "اختيار المستلزمات من الصيدلية",
+        "event_title": "شراء المستلزمات الطبية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "اختيار المستلزمات من الصيدلية",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «شراء المستلزمات الطبية»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء البحث، البحث بمساعدة، البحث بمفرده.'",
+        "legacy_performance_indicators: 'يجد المستلزم المطلوب بثقة متزايدة.'",
+        "legacy_execution_steps: 'البحث في الرفوف، إيجاد المستلزم المطلوب.'"
+      ]
+    },
+    {
+      "corpus_position": 658,
+      "legacy_id": "HEALTH-021-OP003",
+      "source_identity": {
+        "opportunity_title": "دفع قيمة المستلزمات",
+        "event_title": "شراء المستلزمات الطبية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إتمام دفع قيمة المستلزمات الطبية",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «شراء المستلزمات الطبية»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «إتمام دفع قيمة المستلزمات الطبية».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في التسليم، التسليم بمفرده، الدفع الكامل بثقة.'",
+        "legacy_performance_indicators: 'يسلّم المبلغ بثقة متزايدة.'",
+        "legacy_execution_steps: 'تسليم المبلغ أو البطاقة، استلام الفاتورة.'"
+      ]
+    },
+    {
+      "corpus_position": 659,
+      "legacy_id": "HEALTH-022-OP001",
+      "source_identity": {
+        "opportunity_title": "الاتصال بالعيادة لطلب التجديد",
+        "event_title": "تجديد الوصفة الطبية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الاتصال بالعيادة لطلب التجديد",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «تجديد الوصفة الطبية»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء الاتصال، المشاركة بجملة واحدة، الاتصال الكامل بمفرده.'",
+        "legacy_performance_indicators: 'يتواصل مع العيادة بثقة متزايدة.'",
+        "legacy_execution_steps: 'الاتصال بالعيادة، طلب التجديد.'"
+      ]
+    },
+    {
+      "corpus_position": 660,
+      "legacy_id": "HEALTH-022-OP002",
+      "source_identity": {
+        "opportunity_title": "الذهاب لاستلام الوصفة",
+        "event_title": "تجديد الوصفة الطبية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الذهاب لاستلام الوصفة",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «تجديد الوصفة الطبية»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء الاستلام، الاستلام بمساعدتك، الاستلام بمفرده.'",
+        "legacy_performance_indicators: 'يستلم الوصفة بثقة متزايدة.'",
+        "legacy_execution_steps: 'التوجه للعيادة، استلام الوصفة.'"
+      ]
+    },
+    {
+      "corpus_position": 661,
+      "legacy_id": "HEALTH-023-OP001",
+      "source_identity": {
+        "opportunity_title": "استلام ورقة النتائج",
+        "event_title": "مراجعة نتائج التحاليل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استلام ورقة النتائج",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «مراجعة نتائج التحاليل»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في الاستلام، الاستلام بمفرده، الاستلام الكامل بثقة.'",
+        "legacy_performance_indicators: 'يستلم النتائج بثقة متزايدة.'",
+        "legacy_execution_steps: 'التوجه للمختبر أو العيادة، استلام الورقة.'"
+      ]
+    },
+    {
+      "corpus_position": 662,
+      "legacy_id": "HEALTH-023-OP002",
+      "source_identity": {
+        "opportunity_title": "حفظ النتائج في الملف الطبي",
+        "event_title": "مراجعة نتائج التحاليل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "حفظ النتائج في الملف الطبي",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «مراجعة نتائج التحاليل»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في الحفظ، الحفظ بمفرده، الترتيب الكامل.'",
+        "legacy_performance_indicators: 'يحفظ النتائج في مكانها الصحيح دون تذكير.'",
+        "legacy_execution_steps: 'حمل الورقة، وضعها في الملف.'"
+      ]
+    },
+    {
+      "corpus_position": 663,
+      "legacy_id": "HEALTH-024-OP001",
+      "source_identity": {
+        "opportunity_title": "حجز موعد الفحص الشامل",
+        "event_title": "إجراء فحص دوري شامل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "حجز موعد الفحص الشامل",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «إجراء فحص دوري شامل»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء الاتصال، المشاركة بجملة واحدة، الاتصال الكامل بمفرده.'",
+        "legacy_performance_indicators: 'يحجز الموعد بثقة متزايدة.'",
+        "legacy_execution_steps: 'الاتصال، طلب حجز الموعد.'"
+      ]
+    },
+    {
+      "corpus_position": 664,
+      "legacy_id": "HEALTH-024-OP002",
+      "source_identity": {
+        "opportunity_title": "الذهاب للعيادة لإجراء الفحوصات",
+        "event_title": "إجراء فحص دوري شامل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "التوجه إلى العيادة في الموعد | المشاركة في الفحوصات وفق توجيه الفريق الطبي",
+      "reasoning_summary": "يجمع السجل دورين منفصلين في المكان والزمن ونقطة الاكتمال: «التوجه إلى العيادة في الموعد | المشاركة في الفحوصات وفق توجيه الفريق الطبي». يلزم SPLIT_REQUIRED، ثم إزالة تدرج المساعدة أو الاستقلال أو الأداء من كل دور امتثالًا لـFP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء الفحوصات، المشاركة الجزئية بثقة، المشاركة الكاملة ضمن إشراف الفريق الطبي.'",
+        "legacy_performance_indicators: 'يتفاعل مع الفحوصات بهدوء متزايد.'",
+        "legacy_execution_steps: 'التوجه للعيادة، المشاركة في الفحوصات حسب توجيه الفريق الطبي.'"
+      ]
+    },
+    {
+      "corpus_position": 665,
+      "legacy_id": "HEALTH-025-OP001",
+      "source_identity": {
+        "opportunity_title": "التوجه لغرفة التطعيم",
+        "event_title": "تلقي التطعيمات الروتينية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه لغرفة التطعيم",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «تلقي التطعيمات الروتينية»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده.'",
+        "legacy_performance_indicators: 'يتوجه للغرفة بهدوء متزايد.'",
+        "legacy_execution_steps: 'التوجه للغرفة، الدخول.'"
+      ]
+    },
+    {
+      "corpus_position": 666,
+      "legacy_id": "HEALTH-025-OP002",
+      "source_identity": {
+        "opportunity_title": "كشف الذراع أو المكان المخصص للتطعيم",
+        "event_title": "تلقي التطعيمات الروتينية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "كشف موضع التطعيم والثبات أثناء الإجراء",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «تلقي التطعيمات الروتينية»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «كشف موضع التطعيم والثبات أثناء الإجراء».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، الكشف بمفرده بثقة، الثبات الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يكشف المكان بهدوء متزايد.'",
+        "legacy_execution_steps: 'كشف المكان المطلوب، الثبات لثوانٍ.'"
+      ]
+    },
+    {
+      "corpus_position": 667,
+      "legacy_id": "HEALTH-025-OP003",
+      "source_identity": {
+        "opportunity_title": "الانتظار بعد التطعيم للملاحظة",
+        "event_title": "تلقي التطعيمات الروتينية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الانتظار بعد التطعيم للملاحظة",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «تلقي التطعيمات الروتينية»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء الانتظار، الانتظار بمفرده قريبًا منك، الانتظار المستقل.'",
+        "legacy_performance_indicators: 'ينتظر بهدوء متزايد.'",
+        "legacy_execution_steps: 'الجلوس، الانتظار للمدة المحددة من الفريق الطبي.'"
+      ]
+    },
+    {
+      "corpus_position": 668,
+      "legacy_id": "HEALTH-026-OP001",
+      "source_identity": {
+        "opportunity_title": "الجلوس على كرسي الأسنان",
+        "event_title": "موعد طبيب الأسنان"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الجلوس على كرسي الأسنان",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد طبيب الأسنان»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في الجلوس، الجلوس بمفرده، الاستقرار الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يجلس بهدوء متزايد.'",
+        "legacy_execution_steps: 'الجلوس على الكرسي، الاستقرار في وضعية مريحة.'"
+      ]
+    },
+    {
+      "corpus_position": 669,
+      "legacy_id": "HEALTH-026-OP002",
+      "source_identity": {
+        "opportunity_title": "فتح الفم للفحص",
+        "event_title": "موعد طبيب الأسنان"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فتح الفم والثبات أثناء فحص الأسنان",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد طبيب الأسنان»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «فتح الفم والثبات أثناء فحص الأسنان».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، الفتح بمفرده بثقة، الثبات الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يفتح فمه ويثبت بهدوء متزايد.'",
+        "legacy_execution_steps: 'فتح الفم عند الطلب، البقاء ثابتًا لثوانٍ.'"
+      ]
+    },
+    {
+      "corpus_position": 670,
+      "legacy_id": "HEALTH-026-OP003",
+      "source_identity": {
+        "opportunity_title": "المضمضة بالماء عند الطلب",
+        "event_title": "موعد طبيب الأسنان"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "المضمضة بالماء عند الطلب",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد طبيب الأسنان»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في المضمضة، المضمضة بمفرده، الخطوة الكاملة بثقة.'",
+        "legacy_performance_indicators: 'يتمضمض بثبات متزايد.'",
+        "legacy_execution_steps: 'أخذ رشفة ماء، المضمضة، البصق في الحوض المخصص.'"
+      ]
+    },
+    {
+      "corpus_position": 671,
+      "legacy_id": "HEALTH-027-OP001",
+      "source_identity": {
+        "opportunity_title": "الجلوس أمام جهاز الفحص",
+        "event_title": "موعد فحص النظر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الجلوس أمام جهاز الفحص",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد فحص النظر»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في الجلوس، الجلوس بمفرده، الاستقرار الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يجلس بهدوء متزايد.'",
+        "legacy_execution_steps: 'الجلوس أمام الجهاز، الاستقرار في وضعية مريحة.'"
+      ]
+    },
+    {
+      "corpus_position": 672,
+      "legacy_id": "HEALTH-027-OP002",
+      "source_identity": {
+        "opportunity_title": "قراءة الحروف أو الأرقام من اللوحة",
+        "event_title": "موعد فحص النظر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الاستجابة لعناصر لوحة فحص النظر",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد فحص النظر»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «الاستجابة لعناصر لوحة فحص النظر».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، القراءة بمفرده بثقة، المشاركة الكاملة في الفحص.'",
+        "legacy_performance_indicators: 'يشارك في القراءة بثقة متزايدة.'",
+        "legacy_execution_steps: 'النظر للوحة، قراءة ما يستطيع رؤيته.'"
+      ]
+    },
+    {
+      "corpus_position": 673,
+      "legacy_id": "HEALTH-028-OP001",
+      "source_identity": {
+        "opportunity_title": "وضع سماعات الفحص",
+        "event_title": "موعد فحص السمع"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع سماعات الفحص",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد فحص السمع»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في الوضع، الوضع بمفرده، الاستقرار الكامل بثقة.'",
+        "legacy_performance_indicators: 'يضع السماعات ويستقر بهدوء متزايد.'",
+        "legacy_execution_steps: 'وضع السماعات على أذنيه بمساعدة الفريق الطبي.'"
+      ]
+    },
+    {
+      "corpus_position": 674,
+      "legacy_id": "HEALTH-028-OP002",
+      "source_identity": {
+        "opportunity_title": "الإشارة عند سماع الصوت",
+        "event_title": "موعد فحص السمع"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الإشارة عند سماع الصوت",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد فحص السمع»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في الإشارة، الإشارة بمفرده، المشاركة الكاملة بثقة.'",
+        "legacy_performance_indicators: 'يشير عند سماع الصوت بثقة متزايدة.'",
+        "legacy_execution_steps: 'الانتباه للصوت، الإشارة عند سماعه.'"
+      ]
+    },
+    {
+      "corpus_position": 675,
+      "legacy_id": "HEALTH-029-OP001",
+      "source_identity": {
+        "opportunity_title": "حجز موعد مع الطبيب المختص",
+        "event_title": "موعد عيادة متخصصة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "حجز موعد مع الطبيب المختص",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد عيادة متخصصة»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء الاتصال، المشاركة بجملة واحدة، الاتصال الكامل بمفرده.'",
+        "legacy_performance_indicators: 'يحجز الموعد بثقة متزايدة.'",
+        "legacy_execution_steps: 'الاتصال، طلب حجز الموعد.'"
+      ]
+    },
+    {
+      "corpus_position": 676,
+      "legacy_id": "HEALTH-029-OP002",
+      "source_identity": {
+        "opportunity_title": "تجهيز الأسئلة المتعلقة بالحالة",
+        "event_title": "موعد عيادة متخصصة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجهيز الأسئلة المتعلقة بالحالة",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد عيادة متخصصة»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'الإملاء لك، المشاركة في الكتابة، الكتابة بمفرده.'",
+        "legacy_performance_indicators: 'يعبّر عن أسئلته بوضوح متزايد.'",
+        "legacy_execution_steps: 'كتابة أو إملاء الأسئلة التي يريد طرحها.'"
+      ]
+    },
+    {
+      "corpus_position": 677,
+      "legacy_id": "HEALTH-030-OP001",
+      "source_identity": {
+        "opportunity_title": "التوجه لغرفة الأشعة",
+        "event_title": "موعد الأشعة أو الصور الطبية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه لغرفة الأشعة",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد الأشعة أو الصور الطبية»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده.'",
+        "legacy_performance_indicators: 'يتوجه للغرفة بهدوء متزايد.'",
+        "legacy_execution_steps: 'التوجه للغرفة، الدخول.'"
+      ]
+    },
+    {
+      "corpus_position": 678,
+      "legacy_id": "HEALTH-030-OP002",
+      "source_identity": {
+        "opportunity_title": "ارتداء الرداء الطبي إن لزم",
+        "event_title": "موعد الأشعة أو الصور الطبية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ارتداء الرداء الطبي إن لزم",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد الأشعة أو الصور الطبية»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في الارتداء، الارتداء بمفرده، الارتداء الكامل بثقة.'",
+        "legacy_performance_indicators: 'يرتدي الرداء بثبات متزايد.'",
+        "legacy_execution_steps: 'ارتداء الرداء بمساعدة الفريق الطبي.'"
+      ]
+    },
+    {
+      "corpus_position": 679,
+      "legacy_id": "HEALTH-030-OP003",
+      "source_identity": {
+        "opportunity_title": "الثبات أثناء التقاط الأشعة",
+        "event_title": "موعد الأشعة أو الصور الطبية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "اتخاذ الوضعية المطلوبة والثبات أثناء التصوير الطبي",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد الأشعة أو الصور الطبية»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «اتخاذ الوضعية المطلوبة والثبات أثناء التصوير الطبي».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، الثبات بمفرده بثقة، الثبات الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يثبت في الوضعية بهدوء متزايد.'",
+        "legacy_execution_steps: 'الوقوف أو الاستلقاء في الوضعية المطلوبة، الثبات لثوانٍ.'"
+      ]
+    },
+    {
+      "corpus_position": 680,
+      "legacy_id": "HEALTH-031-OP001",
+      "source_identity": {
+        "opportunity_title": "تقديم استمارة التحليل",
+        "event_title": "موعد المختبر لأخذ عينات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تقديم استمارة التحليل",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد المختبر لأخذ عينات»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في التقديم، التقديم بمفرده، التقديم الكامل بثقة.'",
+        "legacy_performance_indicators: 'يقدّم الاستمارة بثقة متزايدة.'",
+        "legacy_execution_steps: 'التوجه للموظف، تقديم الاستمارة.'"
+      ]
+    },
+    {
+      "corpus_position": 681,
+      "legacy_id": "HEALTH-031-OP002",
+      "source_identity": {
+        "opportunity_title": "كشف الذراع لسحب الدم",
+        "event_title": "موعد المختبر لأخذ عينات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "كشف الذراع والثبات أثناء سحب عينة الدم",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد المختبر لأخذ عينات»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «كشف الذراع والثبات أثناء سحب عينة الدم».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، الكشف بمفرده بثقة، الثبات الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يكشف ذراعه ويثبت بهدوء متزايد.'",
+        "legacy_execution_steps: 'كشف الذراع، الثبات أثناء الإجراء.'"
+      ]
+    },
+    {
+      "corpus_position": 682,
+      "legacy_id": "HEALTH-031-OP003",
+      "source_identity": {
+        "opportunity_title": "الضغط على مكان السحب بقطنة",
+        "event_title": "موعد المختبر لأخذ عينات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الضغط على مكان السحب بقطنة",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد المختبر لأخذ عينات»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في الضغط، الضغط بمفرده، المتابعة الكاملة بثقة.'",
+        "legacy_performance_indicators: 'يضغط بثبات للمدة المطلوبة.'",
+        "legacy_execution_steps: 'إمساك القطنة، الضغط عليها برفق للمدة المطلوبة.'"
+      ]
+    },
+    {
+      "corpus_position": 683,
+      "legacy_id": "HEALTH-032-OP001",
+      "source_identity": {
+        "opportunity_title": "الذهاب للمختبر لاستلام النتائج",
+        "event_title": "استلام نتائج التحاليل المخبرية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الذهاب للمختبر لاستلام النتائج",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «استلام نتائج التحاليل المخبرية»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء الاستلام، الاستلام بمساعدتك، الاستلام بمفرده.'",
+        "legacy_performance_indicators: 'يستلم النتائج بثقة متزايدة.'",
+        "legacy_execution_steps: 'التوجه للمختبر، الانتظار حتى استلام النتائج.'"
+      ]
+    },
+    {
+      "corpus_position": 684,
+      "legacy_id": "HEALTH-032-OP002",
+      "source_identity": {
+        "opportunity_title": "التأكد من الاسم على التقرير",
+        "event_title": "استلام نتائج التحاليل المخبرية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التأكد من الاسم على التقرير",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «استلام نتائج التحاليل المخبرية»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في القراءة، القراءة بمفرده، التأكيد الكامل بثقة.'",
+        "legacy_performance_indicators: 'يتحقق من الاسم بثقة متزايدة.'",
+        "legacy_execution_steps: 'قراءة الاسم، التأكد من صحته.'"
+      ]
+    },
+    {
+      "corpus_position": 685,
+      "legacy_id": "HEALTH-033-OP001",
+      "source_identity": {
+        "opportunity_title": "التوجه السريع لقسم الطوارئ",
+        "event_title": "موعد طوارئ غير مخطط"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "MEDIUM",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه إلى قسم الطوارئ مع الأسرة",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد طوارئ غير مخطط»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «التوجه إلى قسم الطوارئ مع الأسرة».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة القريبة معك، المساهمة بخطوة بسيطة، المشاركة حسب الموقف.'",
+        "legacy_performance_indicators: 'يبقى هادئًا ومتعاونًا قدر الإمكان.'",
+        "legacy_execution_steps: 'التوجه للسيارة أو الطوارئ بسرعة وهدوء.'"
+      ]
+    },
+    {
+      "corpus_position": 686,
+      "legacy_id": "HEALTH-033-OP002",
+      "source_identity": {
+        "opportunity_title": "حمل البطاقة الصحية والهوية",
+        "event_title": "موعد طوارئ غير مخطط"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "MEDIUM",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "حمل البطاقة الصحية والهوية إلى الطوارئ",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد طوارئ غير مخطط»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «حمل البطاقة الصحية والهوية إلى الطوارئ».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة إن كان قادرًا، الحمل بمفرده إن أمكن، حسب ظروف الموقف.'",
+        "legacy_performance_indicators: 'يساهم بالقدر الذي يسمح به الموقف.'",
+        "legacy_execution_steps: 'حمل البطاقات إن أمكن.'"
+      ]
+    },
+    {
+      "corpus_position": 687,
+      "legacy_id": "HEALTH-034-OP001",
+      "source_identity": {
+        "opportunity_title": "مساعدة المريض في ركوب السيارة",
+        "event_title": "نقل مريض للمستشفى"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "MEDIUM",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فتح باب السيارة وتقديم الإسناد المحدد للمريض",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «نقل مريض للمستشفى»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «فتح باب السيارة وتقديم الإسناد المحدد للمريض».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'فتح الباب فقط، المساعدة الجزئية بإشرافك، المشاركة حسب الموقف والقدرة.'",
+        "legacy_performance_indicators: 'يساهم بهدوء وتعاون متزايد.'",
+        "legacy_execution_steps: 'فتح الباب، المساعدة بإسناد بسيط حسب قدرته.'"
+      ]
+    },
+    {
+      "corpus_position": 688,
+      "legacy_id": "HEALTH-034-OP002",
+      "source_identity": {
+        "opportunity_title": "مرافقة المريض في الطريق",
+        "event_title": "نقل مريض للمستشفى"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مرافقة المريض في الطريق",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «نقل مريض للمستشفى»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'الجلوس بجانبه بهدوء، المشاركة بالطمأنينة، المرافقة الكاملة.'",
+        "legacy_performance_indicators: 'يقدّم حضورًا هادئًا وداعمًا.'",
+        "legacy_execution_steps: 'الجلوس بجانب المريض، تقديم الطمأنينة.'"
+      ]
+    },
+    {
+      "corpus_position": 689,
+      "legacy_id": "HEALTH-035-OP001",
+      "source_identity": {
+        "opportunity_title": "الجلوس في صالة الانتظار",
+        "event_title": "الانتظار في قسم الطوارئ"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الجلوس في صالة الانتظار",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «الانتظار في قسم الطوارئ»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء الجلوس، الجلوس بمفرده قريبًا منك، الجلوس المستقل.'",
+        "legacy_performance_indicators: 'يجلس بهدوء متزايد رغم الموقف.'",
+        "legacy_execution_steps: 'الجلوس بهدوء، الانتظار.'"
+      ]
+    },
+    {
+      "corpus_position": 690,
+      "legacy_id": "HEALTH-035-OP002",
+      "source_identity": {
+        "opportunity_title": "الانتباه لنداء الممرض",
+        "event_title": "الانتظار في قسم الطوارئ"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الانتباه لنداء الممرض",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «الانتظار في قسم الطوارئ»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المراقبة معك، الانتباه بمفرده، الإخبار الفوري عند النداء.'",
+        "legacy_performance_indicators: 'ينتبه للنداء بثقة متزايدة.'",
+        "legacy_execution_steps: 'الانتباه للنداء، إخبارك عند سماعه.'"
+      ]
+    },
+    {
+      "corpus_position": 691,
+      "legacy_id": "HEALTH-036-OP001",
+      "source_identity": {
+        "opportunity_title": "تقديم الهوية لموظف الاستقبال",
+        "event_title": "التسجيل في استقبال الطوارئ"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تقديم الهوية لموظف الاستقبال",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «التسجيل في استقبال الطوارئ»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في التقديم، التقديم بمفرده إن كان مستعدًا، حسب ظروف الموقف.'",
+        "legacy_performance_indicators: 'يساهم بالقدر الذي يسمح به الموقف والحالة النفسية.'",
+        "legacy_execution_steps: 'إخراج البطاقة، تقديمها للموظف.'"
+      ]
+    },
+    {
+      "corpus_position": 692,
+      "legacy_id": "HEALTH-036-OP002",
+      "source_identity": {
+        "opportunity_title": "ذكر سبب الزيارة باختصار",
+        "event_title": "التسجيل في استقبال الطوارئ"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "MEDIUM",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ذكر سبب الزيارة باختصار",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «التسجيل في استقبال الطوارئ»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'أنت تتولى الشرح، مشاركة جزئية بجملة واحدة إن كان مستعدًا، حسب الموقف.'",
+        "legacy_performance_indicators: 'يشارك بالقدر الذي يشعر فيه بالراحة.'",
+        "legacy_execution_steps: 'ذكر جملة بسيطة عن السبب إن كان مستعدًا.'"
+      ]
+    },
+    {
+      "corpus_position": 693,
+      "legacy_id": "HEALTH-037-OP001",
+      "source_identity": {
+        "opportunity_title": "قياس الحرارة والضغط مع الممرض",
+        "event_title": "الفحص الأولي في الطوارئ"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الجلوس والسماح بقياس المؤشرات الحيوية",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «الفحص الأولي في الطوارئ»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «الجلوس والسماح بقياس المؤشرات الحيوية».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، الجلوس بمفرده بثقة، التعاون الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يتعاون مع القياس بهدوء متزايد.'",
+        "legacy_execution_steps: 'الجلوس، السماح بالقياس.'"
+      ]
+    },
+    {
+      "corpus_position": 694,
+      "legacy_id": "HEALTH-037-OP002",
+      "source_identity": {
+        "opportunity_title": "الإجابة على أسئلة الطبيب الأولي",
+        "event_title": "الفحص الأولي في الطوارئ"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الإجابة على أسئلة الطبيب الأولي",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «الفحص الأولي في الطوارئ»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في الإجابة، الإجابة الجزئية بمفرده، الإجابة الكاملة بثقة.'",
+        "legacy_performance_indicators: 'يجيب عن الأسئلة بثقة متزايدة.'",
+        "legacy_execution_steps: 'الاستماع للسؤال، الإجابة بكلماته إن كان مستعدًا.'"
+      ]
+    },
+    {
+      "corpus_position": 695,
+      "legacy_id": "HEALTH-038-OP001",
+      "source_identity": {
+        "opportunity_title": "استلام تقرير الزيارة",
+        "event_title": "استلام تقرير الطوارئ والخروج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استلام تقرير الزيارة",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «استلام تقرير الطوارئ والخروج»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في الاستلام، الاستلام بمفرده، الاستلام الكامل بثقة.'",
+        "legacy_performance_indicators: 'يستلم التقرير بثقة متزايدة.'",
+        "legacy_execution_steps: 'استلام التقرير من الفريق الطبي.'"
+      ]
+    },
+    {
+      "corpus_position": 696,
+      "legacy_id": "HEALTH-038-OP002",
+      "source_identity": {
+        "opportunity_title": "استلام الوصفة الطبية",
+        "event_title": "استلام تقرير الطوارئ والخروج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استلام الوصفة الطبية",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «استلام تقرير الطوارئ والخروج»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في الاستلام، الاستلام بمفرده، الاستلام الكامل بثقة.'",
+        "legacy_performance_indicators: 'يستلم الوصفة بثقة متزايدة.'",
+        "legacy_execution_steps: 'استلام الورقة.'"
+      ]
+    },
+    {
+      "corpus_position": 697,
+      "legacy_id": "HEALTH-038-OP003",
+      "source_identity": {
+        "opportunity_title": "مغادرة قسم الطوارئ",
+        "event_title": "استلام تقرير الطوارئ والخروج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مغادرة قسم الطوارئ",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «استلام تقرير الطوارئ والخروج»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء المغادرة، المغادرة بمفرده قريبًا منك، المغادرة المستقلة.'",
+        "legacy_performance_indicators: 'يغادر بثبات متزايد.'",
+        "legacy_execution_steps: 'حمل الأغراض، السير نحو الخروج.'"
+      ]
+    },
+    {
+      "corpus_position": 698,
+      "legacy_id": "HEALTH-039-OP001",
+      "source_identity": {
+        "opportunity_title": "التوجه للغرفة المخصصة",
+        "event_title": "الدخول للمتابعة أو الملاحظة في المستشفى"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه للغرفة المخصصة",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «الدخول للمتابعة أو الملاحظة في المستشفى»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده.'",
+        "legacy_performance_indicators: 'يتوجه للغرفة بهدوء متزايد.'",
+        "legacy_execution_steps: 'التوجه للغرفة، الدخول.'"
+      ]
+    },
+    {
+      "corpus_position": 699,
+      "legacy_id": "HEALTH-039-OP002",
+      "source_identity": {
+        "opportunity_title": "ارتداء ملابس المستشفى",
+        "event_title": "الدخول للمتابعة أو الملاحظة في المستشفى"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ارتداء ملابس المستشفى",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «الدخول للمتابعة أو الملاحظة في المستشفى»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في الارتداء، الارتداء بمفرده، الارتداء الكامل بثقة.'",
+        "legacy_performance_indicators: 'يرتدي الملابس بثبات متزايد.'",
+        "legacy_execution_steps: 'ارتداء الملابس بمساعدة الفريق الطبي أو الأسرة.'"
+      ]
+    },
+    {
+      "corpus_position": 700,
+      "legacy_id": "HEALTH-040-OP001",
+      "source_identity": {
+        "opportunity_title": "إجراء التحاليل المطلوبة",
+        "event_title": "موعد فحص ما قبل الجراحة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "EVENT_ONLY",
+      "confidence": "MEDIUM",
+      "semantic_type": "EVENT",
+      "functional_role_statement": "",
+      "reasoning_summary": "عبارة «إجراء التحاليل المطلوبة» تمثل حاوية عامة لعدد غير محدد من الإجراءات، بينما لا تصف خطوة التنفيذ إلا الحضور والثبات وفق توجيه الفريق. لذلك لا يتوافر دور واحد ذو أثر واكتمال مستقلين وفق FP-04 إلى FP-06، ويصنف السجل EVENT_ONLY إلى أن يفكك إلى أدوار مشاركة محددة.",
+      "evidence_from_record": [
+        "opportunity_title: 'إجراء التحاليل المطلوبة'",
+        "legacy_execution_steps: 'المشاركة في الحضور والثبات وفق توجيه الفريق الطبي.'",
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، التعاون بمفرده بثقة، المشاركة الكاملة بهدوء.'"
+      ]
+    },
+    {
+      "corpus_position": 701,
+      "legacy_id": "HEALTH-040-OP002",
+      "source_identity": {
+        "opportunity_title": "مقابلة طبيب التخدير",
+        "event_title": "موعد فحص ما قبل الجراحة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مقابلة طبيب التخدير",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد فحص ما قبل الجراحة»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك، الإجابة الجزئية بمفرده، المشاركة الكاملة بثقة.'",
+        "legacy_performance_indicators: 'يشارك في المحادثة بثقة متزايدة.'",
+        "legacy_execution_steps: 'الاستماع لطبيب التخدير، الإجابة عن الأسئلة إن وُجدت.'"
+      ]
+    },
+    {
+      "corpus_position": 702,
+      "legacy_id": "HEALTH-041-OP001",
+      "source_identity": {
+        "opportunity_title": "التوجه للمستشفى في الوقت المحدد",
+        "event_title": "موعد الجراحة أو العملية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه للمستشفى في الوقت المحدد",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد الجراحة أو العملية»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده.'",
+        "legacy_performance_indicators: 'يتوجه في الموعد بهدوء متزايد.'",
+        "legacy_execution_steps: 'التوجه للمستشفى في الموعد المحدد.'"
+      ]
+    },
+    {
+      "corpus_position": 703,
+      "legacy_id": "HEALTH-041-OP002",
+      "source_identity": {
+        "opportunity_title": "تسليم الأغراض الشخصية للمرافق",
+        "event_title": "موعد الجراحة أو العملية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تسليم الأغراض الشخصية للمرافق",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد الجراحة أو العملية»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في التسليم، التسليم بمفرده، التسليم الكامل بثقة.'",
+        "legacy_performance_indicators: 'يسلّم الأغراض بثبات متزايد.'",
+        "legacy_execution_steps: 'حمل الأغراض، تسليمها للشخص المرافق.'"
+      ]
+    },
+    {
+      "corpus_position": 704,
+      "legacy_id": "HEALTH-042-OP001",
+      "source_identity": {
+        "opportunity_title": "الانتظار في غرفة الإفاقة",
+        "event_title": "الاستيقاظ من التخدير والتعافي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الانتظار في غرفة الإفاقة",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «الاستيقاظ من التخدير والتعافي»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء الانتظار، الانتظار بمفرده قريبًا، الانتظار المستقل.'",
+        "legacy_performance_indicators: 'ينتظر بهدوء متزايد.'",
+        "legacy_execution_steps: 'الجلوس بهدوء، الانتظار بالقرب.'"
+      ]
+    },
+    {
+      "corpus_position": 705,
+      "legacy_id": "HEALTH-042-OP002",
+      "source_identity": {
+        "opportunity_title": "التنفس بعمق حسب التوجيهات",
+        "event_title": "الاستيقاظ من التخدير والتعافي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التنفس وفق توجيه فريق التعافي",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «الاستيقاظ من التخدير والتعافي»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «التنفس وفق توجيه فريق التعافي».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة تحت إشراف الفريق الطبي الكامل دائمًا.'",
+        "legacy_performance_indicators: 'يتنفس بهدوء متزايد وفق التوجيه.'",
+        "legacy_execution_steps: 'التنفس ببطء وعمق وفق توجيه الفريق الطبي.'"
+      ]
+    },
+    {
+      "corpus_position": 706,
+      "legacy_id": "HEALTH-043-OP001",
+      "source_identity": {
+        "opportunity_title": "جمع الأغراض الشخصية",
+        "event_title": "خروج المريض من المستشفى"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "جمع الأغراض الشخصية",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «خروج المريض من المستشفى»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في الجمع، الجمع الجزئي، الجمع الكامل.'",
+        "legacy_performance_indicators: 'يجمع الأغراض بثبات دون تذكير متكرر.'",
+        "legacy_execution_steps: 'جمع كل غرض، وضعه في الحقيبة.'"
+      ]
+    },
+    {
+      "corpus_position": 707,
+      "legacy_id": "HEALTH-043-OP002",
+      "source_identity": {
+        "opportunity_title": "استلام أوراق الخروج",
+        "event_title": "خروج المريض من المستشفى"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استلام أوراق الخروج",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «خروج المريض من المستشفى»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في الاستلام، الاستلام بمفرده، الاستلام الكامل بثقة.'",
+        "legacy_performance_indicators: 'يستلم الأوراق بثقة متزايدة.'",
+        "legacy_execution_steps: 'استلام الأوراق من الفريق الطبي.'"
+      ]
+    },
+    {
+      "corpus_position": 708,
+      "legacy_id": "HEALTH-043-OP003",
+      "source_identity": {
+        "opportunity_title": "التوجه للسيارة للعودة",
+        "event_title": "خروج المريض من المستشفى"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه للسيارة للعودة",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «خروج المريض من المستشفى»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده.'",
+        "legacy_performance_indicators: 'يتوجه للسيارة بثبات متزايد.'",
+        "legacy_execution_steps: 'حمل الأغراض، السير نحو السيارة.'"
+      ]
+    },
+    {
+      "corpus_position": 709,
+      "legacy_id": "HEALTH-044-OP001",
+      "source_identity": {
+        "opportunity_title": "الذهاب لموعد المراجعة",
+        "event_title": "متابعة ما بعد الجراحة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الذهاب لموعد المراجعة",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «متابعة ما بعد الجراحة»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده.'",
+        "legacy_performance_indicators: 'يتوجه للموعد بثبات متزايد.'",
+        "legacy_execution_steps: 'التوجه للعيادة في الموعد المحدد.'"
+      ]
+    },
+    {
+      "corpus_position": 710,
+      "legacy_id": "HEALTH-044-OP002",
+      "source_identity": {
+        "opportunity_title": "كشف مكان الجرح للطبيب",
+        "event_title": "متابعة ما بعد الجراحة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "كشف مكان الجرح للطبيب",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «متابعة ما بعد الجراحة»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، الكشف بمفرده بثقة، المشاركة الكاملة بهدوء.'",
+        "legacy_performance_indicators: 'يكشف المكان بهدوء متزايد.'",
+        "legacy_execution_steps: 'كشف المكان المطلوب برفق.'"
+      ]
+    },
+    {
+      "corpus_position": 711,
+      "legacy_id": "HEALTH-045-OP001",
+      "source_identity": {
+        "opportunity_title": "تجهيز أدوات الغيار (شاش، معقم)",
+        "event_title": "تغيير ضماد أو فحص جرح"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجهيز أدوات الغيار (شاش، معقم)",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «تغيير ضماد أو فحص جرح»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في التجهيز، التجهيز بمفرده، التجهيز الكامل.'",
+        "legacy_performance_indicators: 'يجهز الأدوات بثبات متزايد.'",
+        "legacy_execution_steps: 'إحضار الشاش والمعقم، وضعهما على الطاولة.'"
+      ]
+    },
+    {
+      "corpus_position": 712,
+      "legacy_id": "HEALTH-045-OP002",
+      "source_identity": {
+        "opportunity_title": "التخلص من الضماد القديم في سلة المهملات",
+        "event_title": "تغيير ضماد أو فحص جرح"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التخلص من الضماد القديم في سلة المهملات",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «تغيير ضماد أو فحص جرح»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في التخلص، التخلص بمفرده، التخلص الكامل بثقة.'",
+        "legacy_performance_indicators: 'يتخلص من الضماد بثبات دون تردد.'",
+        "legacy_execution_steps: 'حمل الضماد القديم، التخلص منه في السلة.'"
+      ]
+    },
+    {
+      "corpus_position": 713,
+      "legacy_id": "HEALTH-046-OP001",
+      "source_identity": {
+        "opportunity_title": "التوجه للعيادة لإزالة الغرز",
+        "event_title": "إزالة غرز أو تبديل جبيرة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه للعيادة لإزالة الغرز",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «إزالة غرز أو تبديل جبيرة»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده.'",
+        "legacy_performance_indicators: 'يتوجه للعيادة بهدوء متزايد.'",
+        "legacy_execution_steps: 'التوجه للعيادة، الدخول.'"
+      ]
+    },
+    {
+      "corpus_position": 714,
+      "legacy_id": "HEALTH-046-OP002",
+      "source_identity": {
+        "opportunity_title": "الثبات أثناء عملية الإزالة",
+        "event_title": "إزالة غرز أو تبديل جبيرة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الثبات أثناء إزالة الغرز أو تبديل الجبيرة",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «إزالة غرز أو تبديل جبيرة»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «الثبات أثناء إزالة الغرز أو تبديل الجبيرة».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، الثبات بمفرده بثقة، الثبات الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يثبت بهدوء متزايد.'",
+        "legacy_execution_steps: 'الجلوس، الثبات لثوانٍ قليلة.'"
+      ]
+    },
+    {
+      "corpus_position": 715,
+      "legacy_id": "HEALTH-047-OP001",
+      "source_identity": {
+        "opportunity_title": "التوجه لغرفة الإجراء الطبي",
+        "event_title": "موعد أخذ عينة خزعة أو بزل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه لغرفة الإجراء الطبي",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد أخذ عينة خزعة أو بزل»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده.'",
+        "legacy_performance_indicators: 'يتوجه للغرفة بهدوء متزايد.'",
+        "legacy_execution_steps: 'التوجه للغرفة، الدخول.'"
+      ]
+    },
+    {
+      "corpus_position": 716,
+      "legacy_id": "HEALTH-047-OP002",
+      "source_identity": {
+        "opportunity_title": "الثبات التام أثناء أخذ العينة",
+        "event_title": "موعد أخذ عينة خزعة أو بزل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "اتخاذ الوضعية المطلوبة والثبات أثناء أخذ العينة",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد أخذ عينة خزعة أو بزل»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «اتخاذ الوضعية المطلوبة والثبات أثناء أخذ العينة».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، الثبات بمفرده بثقة، الثبات الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يثبت بهدوء متزايد وفق التوجيه.'",
+        "legacy_execution_steps: 'الاستلقاء أو الجلوس في الوضعية المطلوبة، الثبات وفق التوجيه.'"
+      ]
+    },
+    {
+      "corpus_position": 717,
+      "legacy_id": "HEALTH-048-OP001",
+      "source_identity": {
+        "opportunity_title": "الجلوس على كرسي نقل الدم",
+        "event_title": "موعد نقل دم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الجلوس على كرسي نقل الدم",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد نقل دم»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في الجلوس، الجلوس بمفرده، الاستقرار الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يجلس بهدوء متزايد.'",
+        "legacy_execution_steps: 'الجلوس، الاستقرار في وضعية مريحة.'"
+      ]
+    },
+    {
+      "corpus_position": 718,
+      "legacy_id": "HEALTH-048-OP002",
+      "source_identity": {
+        "opportunity_title": "الانتظار حتى انتهاء كيس الدم",
+        "event_title": "موعد نقل دم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الانتظار حتى انتهاء كيس الدم",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد نقل دم»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء الانتظار، الانتظار بمفرده قريبًا منك، الانتظار المستقل.'",
+        "legacy_performance_indicators: 'ينتظر بهدوء متزايد.'",
+        "legacy_execution_steps: 'الجلوس بهدوء، الانتظار حتى الانتهاء.'"
+      ]
+    },
+    {
+      "corpus_position": 719,
+      "legacy_id": "HEALTH-049-OP001",
+      "source_identity": {
+        "opportunity_title": "التوجه لمركز الغسيل",
+        "event_title": "موعد جلسة غسيل كلى"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه لمركز الغسيل",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد جلسة غسيل كلى»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده.'",
+        "legacy_performance_indicators: 'يتوجه للمركز بثبات متزايد.'",
+        "legacy_execution_steps: 'التوجه للمركز، الدخول.'"
+      ]
+    },
+    {
+      "corpus_position": 720,
+      "legacy_id": "HEALTH-049-OP002",
+      "source_identity": {
+        "opportunity_title": "الجلوس في المكان المخصص لانتهاء الجلسة",
+        "event_title": "موعد جلسة غسيل كلى"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "MEDIUM",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الجلوس في المكان المخصص حتى انتهاء جلسة الغسيل",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد جلسة غسيل كلى»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «الجلوس في المكان المخصص حتى انتهاء جلسة الغسيل».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء الجلسة، الجلوس بمفرده قريبًا منك، الجلوس المستقل.'",
+        "legacy_performance_indicators: 'يجلس بهدوء متزايد خلال الجلسات.'",
+        "legacy_execution_steps: 'الجلوس بهدوء، الانتظار حتى انتهاء الجلسة.'"
+      ]
+    },
+    {
+      "corpus_position": 721,
+      "legacy_id": "HEALTH-050-OP001",
+      "source_identity": {
+        "opportunity_title": "التوجه لمركز العلاج",
+        "event_title": "موعد جلسة علاج كيميائي أو إشعاعي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه لمركز العلاج",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد جلسة علاج كيميائي أو إشعاعي»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده.'",
+        "legacy_performance_indicators: 'يتوجه للمركز بثبات متزايد.'",
+        "legacy_execution_steps: 'التوجه للمركز، الدخول.'"
+      ]
+    },
+    {
+      "corpus_position": 722,
+      "legacy_id": "HEALTH-050-OP002",
+      "source_identity": {
+        "opportunity_title": "الانتظار خلال فترة الجلسة",
+        "event_title": "موعد جلسة علاج كيميائي أو إشعاعي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الانتظار خلال فترة الجلسة",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد جلسة علاج كيميائي أو إشعاعي»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء الجلسة، الجلوس بمفرده قريبًا منك، الجلوس المستقل.'",
+        "legacy_performance_indicators: 'يجلس بهدوء متزايد خلال الجلسات.'",
+        "legacy_execution_steps: 'الجلوس بهدوء، الانتظار حتى انتهاء الجلسة.'"
+      ]
+    },
+    {
+      "corpus_position": 723,
+      "legacy_id": "HEALTH-051-OP001",
+      "source_identity": {
+        "opportunity_title": "تسجيل الوجبات السابقة",
+        "event_title": "موعد استشارة تغذية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تسجيل الوجبات السابقة",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد استشارة تغذية»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'الإملاء لك، المشاركة في الكتابة، الكتابة بمفرده.'",
+        "legacy_performance_indicators: 'يتذكر تفاصيل أكثر من تلقاء نفسه.'",
+        "legacy_execution_steps: 'كتابة أو إملاء الوجبات التي تناولها.'"
+      ]
+    },
+    {
+      "corpus_position": 724,
+      "legacy_id": "HEALTH-051-OP002",
+      "source_identity": {
+        "opportunity_title": "مناقشة الأخصائي حول النظام الغذائي",
+        "event_title": "موعد استشارة تغذية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مناقشة الأخصائي حول النظام الغذائي",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد استشارة تغذية»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في المناقشة، المشاركة الجزئية بمفرده، المشاركة الكاملة بثقة.'",
+        "legacy_performance_indicators: 'يشارك برأيه بثقة متزايدة.'",
+        "legacy_execution_steps: 'الاستماع للأخصائي، مشاركة رأيه وتفضيلاته.'"
+      ]
+    },
+    {
+      "corpus_position": 725,
+      "legacy_id": "HEALTH-052-OP001",
+      "source_identity": {
+        "opportunity_title": "خلع الحذاء والجوارب للفحص",
+        "event_title": "فحص القدم السكري"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "خلع الحذاء والجوارب للفحص",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «فحص القدم السكري»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في الخلع، الخلع بمفرده، الخلع الكامل بثقة.'",
+        "legacy_performance_indicators: 'يخلع الحذاء والجوارب بثبات متزايد.'",
+        "legacy_execution_steps: 'خلع الحذاء، خلع الجوارب.'"
+      ]
+    },
+    {
+      "corpus_position": 726,
+      "legacy_id": "HEALTH-052-OP002",
+      "source_identity": {
+        "opportunity_title": "عرض القدمين على الطبيب",
+        "event_title": "فحص القدم السكري"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "عرض القدمين على الطبيب",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «فحص القدم السكري»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، العرض بمفرده بثقة، الثبات الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يعرض قدميه بهدوء متزايد.'",
+        "legacy_execution_steps: 'رفع القدمين، الثبات أثناء الفحص.'"
+      ]
+    },
+    {
+      "corpus_position": 727,
+      "legacy_id": "HEALTH-053-OP001",
+      "source_identity": {
+        "opportunity_title": "الذهاب للمختبر",
+        "event_title": "فحص وظائف الكبد والفيروسات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الذهاب للمختبر",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «فحص وظائف الكبد والفيروسات»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده.'",
+        "legacy_performance_indicators: 'يتوجه للمختبر بثبات متزايد.'",
+        "legacy_execution_steps: 'التوجه للمختبر، الدخول.'"
+      ]
+    },
+    {
+      "corpus_position": 728,
+      "legacy_id": "HEALTH-053-OP002",
+      "source_identity": {
+        "opportunity_title": "سحب عينة الدم",
+        "event_title": "فحص وظائف الكبد والفيروسات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "كشف الذراع والثبات أثناء سحب عينة الدم",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «فحص وظائف الكبد والفيروسات»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «كشف الذراع والثبات أثناء سحب عينة الدم».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، الكشف بمفرده بثقة، الثبات الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يثبت بهدوء متزايد.'",
+        "legacy_execution_steps: 'كشف الذراع، الثبات أثناء الإجراء.'"
+      ]
+    },
+    {
+      "corpus_position": 729,
+      "legacy_id": "HEALTH-054-OP001",
+      "source_identity": {
+        "opportunity_title": "سحب عينة الدم المطلوبة",
+        "event_title": "فحص فيتامينات ومعادن"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "كشف الذراع والثبات أثناء سحب عينة الدم",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «فحص فيتامينات ومعادن»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «كشف الذراع والثبات أثناء سحب عينة الدم».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، الكشف بمفرده بثقة، الثبات الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يثبت بهدوء متزايد.'",
+        "legacy_execution_steps: 'كشف الذراع، الثبات أثناء الإجراء.'"
+      ]
+    },
+    {
+      "corpus_position": 730,
+      "legacy_id": "HEALTH-054-OP002",
+      "source_identity": {
+        "opportunity_title": "استلام النتائج لاحقاً",
+        "event_title": "فحص فيتامينات ومعادن"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استلام النتائج لاحقاً",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «فحص فيتامينات ومعادن»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في الاستلام، الاستلام بمفرده، الاستلام الكامل بثقة.'",
+        "legacy_performance_indicators: 'يستلم النتائج بثقة متزايدة.'",
+        "legacy_execution_steps: 'التوجه للمختبر، استلام النتائج.'"
+      ]
+    },
+    {
+      "corpus_position": 731,
+      "legacy_id": "HEALTH-055-OP001",
+      "source_identity": {
+        "opportunity_title": "سحب عينة الدم في الوقت المحدد",
+        "event_title": "فحص الهرمونات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "MEDIUM",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "كشف الذراع والثبات أثناء سحب العينة في الموعد المحدد",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «فحص الهرمونات»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «كشف الذراع والثبات أثناء سحب العينة في الموعد المحدد».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، الكشف بمفرده بثقة، الثبات الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يثبت بهدوء متزايد في الموعد المحدد.'",
+        "legacy_execution_steps: 'الوصول في الوقت المحدد، كشف الذراع، الثبات أثناء الإجراء.'"
+      ]
+    },
+    {
+      "corpus_position": 732,
+      "legacy_id": "HEALTH-056-OP001",
+      "source_identity": {
+        "opportunity_title": "كشف الذراع أو الظهر لإجراء الفحص",
+        "event_title": "فحص الحساسية والجل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "كشف الذراع أو الظهر لإجراء الفحص",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «فحص الحساسية والجل»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، الكشف بمفرده بثقة، الثبات الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يكشف المكان بهدوء متزايد.'",
+        "legacy_execution_steps: 'كشف المكان المطلوب برفق.'"
+      ]
+    },
+    {
+      "corpus_position": 733,
+      "legacy_id": "HEALTH-056-OP002",
+      "source_identity": {
+        "opportunity_title": "الانتظار لملاحظة تفاعل الجلد",
+        "event_title": "فحص الحساسية والجل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الانتظار لملاحظة تفاعل الجلد",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «فحص الحساسية والجل»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء الانتظار، الانتظار بمفرده قريبًا منك، الانتظار المستقل.'",
+        "legacy_performance_indicators: 'ينتظر بهدوء متزايد.'",
+        "legacy_execution_steps: 'الجلوس بهدوء، الانتظار للمدة المحددة.'"
+      ]
+    },
+    {
+      "corpus_position": 734,
+      "legacy_id": "HEALTH-057-OP001",
+      "source_identity": {
+        "opportunity_title": "سحب عينة الدم للمختبر",
+        "event_title": "فحص المناعة والروماتيزم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "كشف الذراع والثبات أثناء سحب عينة الدم",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «فحص المناعة والروماتيزم»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «كشف الذراع والثبات أثناء سحب عينة الدم».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، الكشف بمفرده بثقة، الثبات الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يثبت بهدوء متزايد.'",
+        "legacy_execution_steps: 'كشف الذراع، الثبات أثناء الإجراء.'"
+      ]
+    },
+    {
+      "corpus_position": 735,
+      "legacy_id": "HEALTH-058-OP001",
+      "source_identity": {
+        "opportunity_title": "التوجه لمركز تخطيط النوم",
+        "event_title": "موعد عيادة النوم أو تخطيط النوم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه لمركز تخطيط النوم",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد عيادة النوم أو تخطيط النوم»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده.'",
+        "legacy_performance_indicators: 'يتوجه للمركز بثبات متزايد.'",
+        "legacy_execution_steps: 'التوجه للمركز، الدخول.'"
+      ]
+    },
+    {
+      "corpus_position": 736,
+      "legacy_id": "HEALTH-058-OP002",
+      "source_identity": {
+        "opportunity_title": "السماح بتوصيل أجهزة القياس قبل النوم",
+        "event_title": "موعد عيادة النوم أو تخطيط النوم"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "اتخاذ وضعية القياس والسماح بتوصيل أجهزة تخطيط النوم",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد عيادة النوم أو تخطيط النوم»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «اتخاذ وضعية القياس والسماح بتوصيل أجهزة تخطيط النوم».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، التعاون بمفرده بثقة، التعاون الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يتعاون مع التوصيل بهدوء متزايد.'",
+        "legacy_execution_steps: 'الاستلقاء، السماح بتوصيل الأجهزة برفق.'"
+      ]
+    },
+    {
+      "corpus_position": 737,
+      "legacy_id": "HEALTH-059-OP001",
+      "source_identity": {
+        "opportunity_title": "عرض الشامة أو العلامة لطبيب الجلدية",
+        "event_title": "فحص الشامات والجلد"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "عرض الشامة أو العلامة لطبيب الجلدية",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «فحص الشامات والجلد»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، الإشارة بمفرده بثقة، المشاركة الكاملة بهدوء.'",
+        "legacy_performance_indicators: 'يشير للمكان بثقة متزايدة.'",
+        "legacy_execution_steps: 'الإشارة لمكان الشامة، السماح بالفحص.'"
+      ]
+    },
+    {
+      "corpus_position": 738,
+      "legacy_id": "HEALTH-060-OP001",
+      "source_identity": {
+        "opportunity_title": "مرافقة الطفل للعيادة",
+        "event_title": "فحص أسنان الأطفال الروتيني"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مرافقة الطفل للعيادة",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «فحص أسنان الأطفال الروتيني»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة بحضوره، المساعدة الجزئية، المرافقة الكاملة.'",
+        "legacy_performance_indicators: 'يقدّم حضورًا داعمًا لأخيه.'",
+        "legacy_execution_steps: 'المشي بجانب الطفل، الجلوس معه في الانتظار.'"
+      ]
+    },
+    {
+      "corpus_position": 739,
+      "legacy_id": "HEALTH-060-OP002",
+      "source_identity": {
+        "opportunity_title": "تشجيع الطفل على فتح فمه للفحص",
+        "event_title": "فحص أسنان الأطفال الروتيني"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تشجيع الطفل على فتح فمه للفحص",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «فحص أسنان الأطفال الروتيني»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في التشجيع، التشجيع بمفرده، الدعم الكامل بثقة.'",
+        "legacy_performance_indicators: 'يشجّع أخاه بثقة متزايدة.'",
+        "legacy_execution_steps: 'الجلوس بجانب الطفل، تشجيعه بابتسامة أو كلمة.'"
+      ]
+    },
+    {
+      "corpus_position": 740,
+      "legacy_id": "HEALTH-061-OP001",
+      "source_identity": {
+        "opportunity_title": "الجلوس على كرسي الأسنان لتعديل السلك",
+        "event_title": "تركيب أو تعديل تقويم الأسنان"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "الجلوس وفتح الفم والثبات أثناء تعديل التقويم",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «تركيب أو تعديل تقويم الأسنان»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «الجلوس وفتح الفم والثبات أثناء تعديل التقويم».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، الجلوس بمفرده بثقة، الثبات الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يثبت بهدوء متزايد أثناء التعديل.'",
+        "legacy_execution_steps: 'الجلوس، فتح الفم عند الطلب، الثبات أثناء التعديل.'"
+      ]
+    },
+    {
+      "corpus_position": 741,
+      "legacy_id": "HEALTH-062-OP001",
+      "source_identity": {
+        "opportunity_title": "مرافقة الطفل لعيادة العيون",
+        "event_title": "فحص عيون الأطفال (كسل العين)"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مرافقة الطفل لعيادة العيون",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «فحص عيون الأطفال (كسل العين)»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة بحضوره، المساعدة الجزئية، المرافقة الكاملة.'",
+        "legacy_performance_indicators: 'يقدّم حضورًا داعمًا لأخيه.'",
+        "legacy_execution_steps: 'المشي بجانب الطفل، الجلوس معه في الانتظار.'"
+      ]
+    },
+    {
+      "corpus_position": 742,
+      "legacy_id": "HEALTH-062-OP002",
+      "source_identity": {
+        "opportunity_title": "مساعدة الطفل في تغطية إحدى العينين للفحص",
+        "event_title": "فحص عيون الأطفال (كسل العين)"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مساعدة الطفل في تغطية إحدى العينين للفحص",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «فحص عيون الأطفال (كسل العين)»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المساعدة في الوضع، المساعدة الجزئية، المساعدة الكاملة بثقة.'",
+        "legacy_performance_indicators: 'يساعد أخاه بثبات ولطف متزايد.'",
+        "legacy_execution_steps: 'المساعدة في وضع الغطاء على عين الطفل برفق.'"
+      ]
+    },
+    {
+      "corpus_position": 743,
+      "legacy_id": "HEALTH-063-OP001",
+      "source_identity": {
+        "opportunity_title": "مرافقة الرضيع لإجراء الفحص",
+        "event_title": "فحص سمع الأطفال (حديثي الولادة)"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مرافقة الرضيع لإجراء الفحص",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «فحص سمع الأطفال (حديثي الولادة)»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة بحضوره، المساعدة الجزئية، المرافقة الكاملة.'",
+        "legacy_performance_indicators: 'يقدّم حضورًا هادئًا وداعمًا.'",
+        "legacy_execution_steps: 'الجلوس بجانب الأسرة، تقديم حضور هادئ.'"
+      ]
+    },
+    {
+      "corpus_position": 744,
+      "legacy_id": "HEALTH-064-OP001",
+      "source_identity": {
+        "opportunity_title": "التوجه للمركز لإجراء تحاليل الدم المطلوبة",
+        "event_title": "فحص ما قبل الزواج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "التوجه إلى مركز الفحص | المشاركة في التحاليل المطلوبة وفق توجيه الفريق الطبي",
+      "reasoning_summary": "يجمع السجل دورين منفصلين في المكان والزمن ونقطة الاكتمال: «التوجه إلى مركز الفحص | المشاركة في التحاليل المطلوبة وفق توجيه الفريق الطبي». يلزم SPLIT_REQUIRED، ثم إزالة تدرج المساعدة أو الاستقلال أو الأداء من كل دور امتثالًا لـFP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده.'",
+        "legacy_performance_indicators: 'يتوجه للمركز بثبات متزايد.'",
+        "legacy_execution_steps: 'التوجه للمركز، إجراء التحاليل المطلوبة.'"
+      ]
+    },
+    {
+      "corpus_position": 745,
+      "legacy_id": "HEALTH-065-OP001",
+      "source_identity": {
+        "opportunity_title": "مرافقة المريضة لعيادة النساء",
+        "event_title": "موعد فحص حمل أو توليد"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "MEDIUM",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مرافقة المريضة لعيادة النساء",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد فحص حمل أو توليد»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة بحضوره، الانتظار بمفرده قريبًا، المرافقة الكاملة.'",
+        "legacy_performance_indicators: 'يقدّم حضورًا هادئًا وداعمًا.'",
+        "legacy_execution_steps: 'الجلوس في الانتظار، تقديم حضور هادئ.'"
+      ]
+    },
+    {
+      "corpus_position": 746,
+      "legacy_id": "HEALTH-066-OP001",
+      "source_identity": {
+        "opportunity_title": "حضور الفحص لمشاهدة السونار",
+        "event_title": "موعد سونار حمل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "MEDIUM",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "حضور الفحص لمشاهدة السونار",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد سونار حمل»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة بحضوره، المشاهدة بمفرده قريبًا، المشاركة الكاملة في اللحظة.'",
+        "legacy_performance_indicators: 'يشارك في اللحظة بفرح وهدوء متزايد.'",
+        "legacy_execution_steps: 'الجلوس بجانب الأسرة، مشاهدة الشاشة.'"
+      ]
+    },
+    {
+      "corpus_position": 747,
+      "legacy_id": "HEALTH-067-OP001",
+      "source_identity": {
+        "opportunity_title": "حجز الموعد الدوري",
+        "event_title": "موعد طبيب النساء الروتيني"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "حجز الموعد الدوري",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «موعد طبيب النساء الروتيني»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء الاتصال، المشاركة بجملة واحدة، الاتصال الكامل بمفرده.'",
+        "legacy_performance_indicators: 'يحجز الموعد بثقة متزايدة.'",
+        "legacy_execution_steps: 'الاتصال، طلب حجز الموعد الدوري.'"
+      ]
+    },
+    {
+      "corpus_position": 748,
+      "legacy_id": "HEALTH-068-OP001",
+      "source_identity": {
+        "opportunity_title": "حجز الموعد وإجراء الفحص بالعيادة",
+        "event_title": "فحص سرطان عنق الرحم (مسحة بابانيكولاو)"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "حجز موعد الفحص الوقائي | التوجه إلى العيادة لإجراء الفحص",
+      "reasoning_summary": "يجمع السجل دورين منفصلين في المكان والزمن ونقطة الاكتمال: «حجز موعد الفحص الوقائي | التوجه إلى العيادة لإجراء الفحص». يلزم SPLIT_REQUIRED، ثم إزالة تدرج المساعدة أو الاستقلال أو الأداء من كل دور امتثالًا لـFP-07.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء الحجز، المشاركة بجملة واحدة، الحجز الكامل بمفرده.'",
+        "legacy_performance_indicators: 'يحجز الموعد بثقة متزايدة.'",
+        "legacy_execution_steps: 'الاتصال لحجز الموعد، التوجه للعيادة في موعده.'"
+      ]
+    },
+    {
+      "corpus_position": 749,
+      "legacy_id": "HEALTH-069-OP001",
+      "source_identity": {
+        "opportunity_title": "التوجه لمركز الأشعة للفحص",
+        "event_title": "فحص الماموجرام (الثدي)"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه لمركز الأشعة للفحص",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «فحص الماموجرام (الثدي)»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED.",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده.'",
+        "legacy_performance_indicators: 'يتوجه للمركز في وقته بثبات متزايد.'",
+        "legacy_execution_steps: 'التوجه للمركز في الموعد المحدد.'"
+      ]
+    },
+    {
+      "corpus_position": 750,
+      "legacy_id": "HEALTH-070-OP001",
+      "source_identity": {
+        "opportunity_title": "إجراء تحليل الدم الخاص بالفحص",
+        "event_title": "فحص البروستاتا وPSA"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "كشف الذراع والثبات أثناء سحب عينة الفحص",
+      "reasoning_summary": "السجل دور مشاركة وظيفية قابل للملاحظة داخل سياق «فحص البروستاتا وPSA»، وله قصد وأثر واكتمال طبيعي ومعنى قائم بذاته وفق FP-02 إلى FP-06 وFP-08. لكنه يربط المشاركة بالمساعدة أو الاستقلال أو الهدوء أو الثقة أو مقدار الإنجاز، فيخالف حياد الأداء FP-07؛ لذلك يلزم REWRITE_REQUIRED مع ضبط بيان الدور إلى «كشف الذراع والثبات أثناء سحب عينة الفحص».",
+      "evidence_from_record": [
+        "legacy_assistance_levels: 'المشاركة بحضورك وطمأنته، الكشف بمفرده بثقة، الثبات الكامل بهدوء.'",
+        "legacy_performance_indicators: 'يثبت بهدوء متزايد.'",
+        "legacy_execution_steps: 'كشف الذراع، الثبات أثناء الإجراء.'"
+      ]
+    }
+  ],
+  "notes": [
+    "Reviewed directly without external worker output.",
+    "Legacy Master unchanged; no materialization performed; canonical validator unchanged."
+  ]
+}
