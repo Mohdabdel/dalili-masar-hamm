@@ -1,0 +1,17 @@
+{
+  "artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+  "governance_status": "APPROVED",
+  "range": "351-450",
+  "count": 100,
+  "default_disposition": "REWRITE_REQUIRED",
+  "governing_confidence": "HIGH",
+  "semantic_type": "FUNCTIONAL_PARTICIPATION",
+  "needs_human_review": false,
+  "lineage": "NONE",
+  "duplicates": "NONE",
+  "unresolved": 0,
+  "source_identity_check": "100/100 PASS",
+  "note": "All records preserve a functional participation role but their Legacy cards violate FP-07 performance neutrality; no split/merge/event-only/block-only/excluded exception survived governing review.",
+  "legacy_master_mutated": false,
+  "materialization_performed": false
+}
