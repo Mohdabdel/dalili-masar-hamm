@@ -14,7 +14,8 @@ Governing plan: `docs/DALILI_FULL_CORPUS_GOVERNING_EXECUTION_PLAN_v1.0.md`
 - Legacy source mutation authorized: **NO**
 - Full-corpus disposition complete: **NO**
 - Current Framework lineage overlay: **45 Legacy rows / 47 lineage links**
-- Current execution state: **PHASE 2 CORPUS CLASSIFICATION — READY TO START**
+- Current execution state: **PHASE 2 CORPUS CLASSIFICATION — 550 / 1413 APPROVED AND PERSISTED**
+- Remaining corpus positions: **551–1413 (863 records)**
 
 ## Historical evidence retained
 
@@ -118,4 +119,37 @@ Disposition: REWRITE_REQUIRED 100
 Unresolved: 0
 Artifact: docs/audit/data/DALILI_CLASSIFICATION_APPROVED_351_450.json
 Commit: 7342b98fb9d926aee72f928fb97c4127ad89d066
-Gap remaining in Round 2: 326–350.
+Gap remaining in Round 2: CLOSED by the approval recorded below.
+
+
+## Phase 2 — Classification approval records 326–350
+
+- Status: **APPROVED AND PERSISTED**
+- Range: **326–350**
+- Accounted: **25 / 25**
+- REWRITE_REQUIRED: **25**
+- SPLIT_REQUIRED: **0**
+- MERGED_BY_PROVENANCE: **0**
+- unresolved: **0**
+- Governing artifact: `docs/audit/data/DALILI_CLASSIFICATION_APPROVED_326_350.json`
+- Legacy Master unchanged.
+- No materialization performed.
+- Canonical validator unchanged.
+
+
+## Phase 2 — Classification approval records 451–550
+
+- Status: **APPROVED AND PERSISTED**
+- Range: **451–550**
+- Accounted: **100 / 100**
+- REWRITE_REQUIRED: **90**
+- SPLIT_REQUIRED: **9**
+- EVENT_ONLY: **1**
+- MERGED_BY_PROVENANCE: **0**
+- unresolved: **0**
+- Governing artifact: `docs/audit/data/DALILI_CLASSIFICATION_APPROVED_451_550.json`
+- Claude stopped after completing preflight/review narration and supplied no classification result; governing review was completed directly from the self-contained input.
+- Legacy Master unchanged.
+- No materialization performed.
+- Canonical validator unchanged.
+- Next unclassified position: **551**.

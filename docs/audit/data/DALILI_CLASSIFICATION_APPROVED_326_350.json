@@ -1,0 +1,434 @@
+{
+  "artifact": "DALILI_CLASSIFICATION_APPROVED_326_350",
+  "version": "1.0",
+  "governance_status": "APPROVED",
+  "range": {
+    "start": 326,
+    "end": 350,
+    "count": 25
+  },
+  "distribution": {
+    "REWRITE_REQUIRED": 25,
+    "MERGED_BY_PROVENANCE": 0,
+    "SPLIT_REQUIRED": 0,
+    "unresolved": 0
+  },
+  "governing_decisions": {},
+  "default_disposition": "REWRITE_REQUIRED",
+  "validation_basis": {
+    "semantic_type": "FUNCTIONAL_PARTICIPATION",
+    "fp_02_to_fp_06_and_fp_08": "PASS_FOR_ALL_25",
+    "fp_07": "FAIL_FOR_ALL_25",
+    "lineage_evidence": "NONE_FOR_ALL_25",
+    "duplicate_evidence": "NONE_CONFIRMED_WITHIN_AVAILABLE_RECORD_EVIDENCE",
+    "needs_human_review": 0
+  },
+  "record_manifest": [
+    {
+      "corpus_position": 326,
+      "legacy_id": "FOOD-006-OP001",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب صينية الضيافة",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في الترتيب، ترتيب جزء من الصينية، ترتيبها كاملة.",
+        "card.indicators: يرتب العناصر بشكل متسق دون توجيه."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 327,
+      "legacy_id": "FOOD-006-OP002",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "توزيع الأكواب والأطباق الصغيرة",
+      "evidence_from_record": [
+        "card.participation_levels: المرافقة أثناء التوزيع، توزيع جزء، توزيع كل الأطباق.",
+        "card.indicators: يتنقل بين الضيوف بثقة متزايدة."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 328,
+      "legacy_id": "FOOD-006-OP003",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تقديم المشروبات والمأكولات للضيوف",
+      "evidence_from_record": [
+        "card.participation_levels: المرافقة في التقديم، تقديم لضيف واحد، تقديم لكل الضيوف.",
+        "card.indicators: يبادر بالتقديم دون تردد كبير."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 329,
+      "legacy_id": "FOOD-006-OP004",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "جمع الأكواب والأطباق بعد الانتهاء",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في الجمع، جمع جزء، جمع كل القطع.",
+        "card.indicators: يجمع القطع بثبات دون إسقاطها."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 330,
+      "legacy_id": "FOOD-007-OP001",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجميع العلب والحوافظ",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في التجميع، إحضار علبة واحدة، تجميع كل العلب.",
+        "card.indicators: يتعرف على علب السفر ويميزها عن غيرها."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 331,
+      "legacy_id": "FOOD-007-OP002",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تعبئة الطعام في العلب",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في التعبئة، تعبئة علبة واحدة، تعبئة كل العلب.",
+        "card.indicators: يتحكم بكمية الطعام دون سكب زائد."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 332,
+      "legacy_id": "FOOD-007-OP003",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إغلاق الحوافظ بإحكام",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في الإغلاق، إغلاق علبة واحدة، إغلاق كل العلب.",
+        "card.indicators: يتحقق بنفسه من إحكام الغطاء."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 333,
+      "legacy_id": "FOOD-007-OP004",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب الحوافظ في حقيبة السفر",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في الترتيب، وضع حافظة واحدة، ترتيب كل الحوافظ.",
+        "card.indicators: يرتب الحوافظ بثبات دون تكديس عشوائي."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 334,
+      "legacy_id": "FOOD-008-OP001",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إخراج صندوق الطعام",
+      "evidence_from_record": [
+        "card.participation_levels: الإشارة إليه، إحضاره بمساعدة، إحضاره بمفرده.",
+        "card.indicators: يتوجه لمكان الصندوق دون تذكير."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 335,
+      "legacy_id": "FOOD-008-OP002",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تعبئة الصندوق بالوجبات",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في الوضع، تعبئة قسم واحد، تعبئة الصندوق كاملًا.",
+        "card.indicators: يضع كل صنف في قسمه الصحيح باستقلالية متزايدة."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 336,
+      "legacy_id": "FOOD-008-OP003",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تعبئة زجاجة الماء",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في التعبئة، التعبئة بمفرده، التحقق من الإغلاق أيضًا.",
+        "card.indicators: يتحكم بكمية الماء دون فيضان."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 337,
+      "legacy_id": "FOOD-008-OP004",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع الصندوق في الحقيبة",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في الوضع، الوضع بمفرده، التحقق من إغلاق الحقيبة أيضًا.",
+        "card.indicators: يتذكر وضع الصندوق دون تذكير من الأسرة."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 338,
+      "legacy_id": "FOOD-009-OP001",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "اختيار مكونات الوجبة",
+      "evidence_from_record": [
+        "card.participation_levels: الإشارة لخيار، اختيار من بين خيارين، اقتراح فكرة بنفسه.",
+        "card.indicators: يعبّر عن تفضيله بوضوح."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 339,
+      "legacy_id": "FOOD-009-OP002",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجميع مكونات الساندويتش أو الوجبة",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في التجميع، تجميع جزء، تجميع الوجبة كاملة.",
+        "card.indicators: يتبع ترتيب المكونات دون توجيه متكرر."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 340,
+      "legacy_id": "FOOD-009-OP003",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إحضار طبق التقديم",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في الإحضار، الإحضار بمفرده، وضع الوجبة عليه أيضًا.",
+        "card.indicators: يحمل الطبق بثبات ويضع الوجبة بعناية."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 341,
+      "legacy_id": "FOOD-009-OP004",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تنظيف المكان بعد التحضير",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في المسح، المسح الجزئي، تنظيف المكان كاملًا.",
+        "card.indicators: يبادر بالمسح دون تذكير بعد الانتهاء من الأكل."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 342,
+      "legacy_id": "FOOD-010-OP001",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إخراج البقايا من الثلاجة",
+      "evidence_from_record": [
+        "card.participation_levels: الإشارة للعلبة، الإخراج بمساعدة، الإخراج بمفرده.",
+        "card.indicators: يتعرف على العلبة الصحيحة من الملصق أو الشكل."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 343,
+      "legacy_id": "FOOD-010-OP002",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تسخين الطعام",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في الضبط، الضغط على الزر، تنفيذ الخطوة كاملة معك بجانبه.",
+        "card.indicators: يضغط الزر الصحيح بثقة متزايدة."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 344,
+      "legacy_id": "FOOD-010-OP003",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "دمج البقايا في أطباق جديدة",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في الخلط، الخلط بمفرده، اقتراح فكرة الدمج بنفسه.",
+        "card.indicators: يقترح إضافة بسيطة من عنده."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 345,
+      "legacy_id": "FOOD-010-OP004",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تقديم الوجبة المعدلة",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في الحمل، الحمل بمفرده، التقديم الكامل للمائدة.",
+        "card.indicators: يحمل الطبق بثبات ويقدّمه بثقة."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 346,
+      "legacy_id": "FOOD-011-OP001",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إحضار علب الحفظ",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في الإحضار، إحضار علبة واحدة، إحضار كل العلب المطلوبة.",
+        "card.indicators: يعرف مكان العلب دون تذكير."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 347,
+      "legacy_id": "FOOD-011-OP002",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "نقل البقايا إلى العلب",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في النقل، نقل جزء، نقل كل الطعام.",
+        "card.indicators: يتحكم بكمية النقل دون سكب زائد."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 348,
+      "legacy_id": "FOOD-011-OP003",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إغلاق العلب بإحكام",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في الإغلاق، إغلاق علبة واحدة، إغلاق كل العلب.",
+        "card.indicators: يتحقق بنفسه من إحكام الغطاء."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 349,
+      "legacy_id": "FOOD-011-OP004",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب العلب في الثلاجة",
+      "evidence_from_record": [
+        "card.participation_levels: المساعدة في الترتيب، وضع علبة واحدة، ترتيب كل العلب.",
+        "card.indicators: يضع العلب بترتيب متسق في نفس الرف."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    },
+    {
+      "corpus_position": 350,
+      "legacy_id": "FOOD-012-OP001",
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تحديد المكونات المطلوبة للطبخ",
+      "evidence_from_record": [
+        "card.participation_levels: الإشارة للمكون، الاختيار من بين خيارين، التحديد بمفرده.",
+        "card.indicators: يتعرف على المكون الصحيح من الصورة أو الشكل."
+      ],
+      "existing_framework_lineage_assessment": "NONE",
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null
+    }
+  ],
+  "notes": [
+    "All 25 records are valid functional participation roles but require rewrite because Legacy card content encodes assistance, independence, quantity, performance, or progression in violation of frozen FP-07.",
+    "Legacy review_required was not treated as an independent validity or human-review gate.",
+    "No explicit Existing Framework lineage evidence appears in records 326-350.",
+    "Legacy Master unchanged; no materialization performed; canonical validator unchanged."
+  ]
+}
