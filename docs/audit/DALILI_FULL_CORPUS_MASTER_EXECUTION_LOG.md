@@ -18,6 +18,14 @@ Governing plan: `docs/DALILI_FULL_CORPUS_GOVERNING_EXECUTION_PLAN_v1.0.md`
 - Approved coverage: **1–1413**
 - Pending/unclassified: **NONE (0 records)**
 
+## Locked execution destination
+
+- Final target: **FULL PLANNED SPECIFICATION + ALL PREVIOUSLY APPROVED ADDITIONS — PRODUCTION READY**
+- Target lock: `docs/audit/DALILI_PRODUCTION_ACTIVATION_TARGET_LOCK_01.md`
+- Intermediate milestones are not accepted as substitute completion states.
+- Next governed execution phase: **PHASE 3 — AUTOMATED CONTRACT ALIGNMENT**.
+- Materialization remains conditional on the governing validation and routing gates.
+
 ## Historical evidence retained
 
 - Previous strict Legacy export: PASS, 1413/1413.
@@ -301,7 +309,7 @@ Gap remaining in Round 2: CLOSED by the approval recorded below.
 - Legacy Master unchanged.
 - No materialization performed.
 - Canonical validator unchanged.
-- Next governed phase: **Phase 3 — disposition execution/materialization planning, subject to governing authorization**.
+- Next governed phase: **Phase 3 — Automated Contract Alignment; target authorized, with materialization still subject to its governing gates**.
 
 ## Phase 2 — Classification approval records 551–650
 
