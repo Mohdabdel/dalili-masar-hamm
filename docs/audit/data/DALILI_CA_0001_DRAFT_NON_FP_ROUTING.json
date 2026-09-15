@@ -1,0 +1,243 @@
+{
+  "artifact": "DALILI_CA_0001_DRAFT_NON_FP_ROUTING",
+  "version": "1.0",
+  "batch": "CA-0001",
+  "status": "DRAFT_ROUTING_VERIFIED_NO_MATERIALIZATION",
+  "scope": {
+    "selected_source_count": 5,
+    "included_dispositions": [
+      "EVENT_ONLY",
+      "EXECUTION_BLOCK_ONLY",
+      "EXCLUDED_WITH_REASON"
+    ],
+    "fp_candidates_created": 0,
+    "materialization_performed": false,
+    "legacy_master_mutated": false,
+    "canonical_validator_changed": false
+  },
+  "records": [
+    {
+      "corpus_position": 506,
+      "legacy_id": "FOOD-060-OP001",
+      "source_identity": {
+        "opportunity_title_ar": "إعداد وتجهيز الأطباق الشعبية",
+        "parent_event_id": "FOOD-060",
+        "parent_event_title_ar": "تجهيز فطور تقليدي خاص",
+        "domain_id": "DOM-FOOD"
+      },
+      "source_record_sha256": "ef0680a141c3ecd4e82c28e05f5166171edbad33510078c9d72f7fcec46cf747",
+      "classification": {
+        "artifact": "DALILI_CLASSIFICATION_APPROVED_451_550.json",
+        "disposition": "EVENT_ONLY",
+        "semantic_type": "EVENT",
+        "confidence": "MEDIUM",
+        "needs_human_review": false
+      },
+      "routing": {
+        "route_type": "ATTACH_SOURCE_TO_EXISTING_EVENT",
+        "destination_layer": "EVENT",
+        "destination_event_identity": "FOOD-060",
+        "new_event_created": false,
+        "fp_candidate_created": false,
+        "reason": "The source describes the broad preparation activity rather than one standalone functional role; the approved review found no distinct observable effect or natural completion for a separate role.",
+        "evidence": [
+          "opportunity_title_ar: إعداد وتجهيز الأطباق الشعبية",
+          "parent_event_title_ar: تجهيز فطور تقليدي خاص",
+          "legacy_execution_steps: المساعدة في تجهيز كل صنف حسب طبيعته.",
+          "classification finding: fails FP-04 through FP-06 as a standalone role"
+        ]
+      },
+      "lineage": {
+        "source_ledger": "DALILI_CONTRACT_ALIGNMENT_SOURCE_LEDGER_01.json",
+        "legacy_source_file": "src/data/knowledge/03_participation_opportunities.csv",
+        "legacy_source_row_index": 507,
+        "source_reference": "legacy_master",
+        "target_existing_identity": "FOOD-060",
+        "relationship": "EVENT_CONTEXT_SOURCE",
+        "lineage_complete": true
+      }
+    },
+    {
+      "corpus_position": 642,
+      "legacy_id": "HEALTH-016-OP002",
+      "source_identity": {
+        "opportunity_title_ar": "تجهيز إبرة الوخز",
+        "parent_event_id": "HEALTH-016",
+        "parent_event_title_ar": "قياس سكر الدم",
+        "domain_id": "DOM-HEALTH"
+      },
+      "source_record_sha256": "f2cd204470101fae22f22dae8f2f5aceca9e80a30ba23c4b86a164ee695a5d9a",
+      "classification": {
+        "artifact": "DALILI_CLASSIFICATION_APPROVED_551_650.json",
+        "disposition": "EXECUTION_BLOCK_ONLY",
+        "semantic_type": "EXECUTION_BLOCK",
+        "confidence": "HIGH",
+        "needs_human_review": false
+      },
+      "routing": {
+        "route_type": "CREATE_STAGED_EXECUTION_BLOCK_IDENTITY",
+        "destination_layer": "EXECUTION_BLOCK_STAGING",
+        "destination_block_identity": "XB-CA0001-HEALTH-016-OP002",
+        "destination_event_identity": "HEALTH-016",
+        "destination_fp_identity": null,
+        "block_source_text": "مناولتك الجهاز، المشاركة بالإشارة أو الإمساك بجهاز الوخز معك.",
+        "production_eligible": false,
+        "requires_parent_fp_before_materialization": true,
+        "fp_candidate_created": false,
+        "reason": "The approved classification establishes that the source is only an execution component. Safety instructions reserve needle preparation and the puncture to the adult, so this source cannot stand as a Functional Participation.",
+        "evidence": [
+          "legacy_instructions_before_start: تحمل أنت مسؤولية تجهيز الإبرة وإجراء الوخز الفعلي دائمًا.",
+          "legacy_execution_steps: مناولتك الجهاز، المشاركة بالإشارة أو الإمساك بجهاز الوخز معك.",
+          "classification finding: the remaining contribution is handling/indication, not a complete standalone role"
+        ]
+      },
+      "lineage": {
+        "source_ledger": "DALILI_CONTRACT_ALIGNMENT_SOURCE_LEDGER_01.json",
+        "legacy_source_file": "src/data/knowledge/03_participation_opportunities.csv",
+        "legacy_source_row_index": 643,
+        "source_reference": "legacy_master",
+        "target_staging_identity": "XB-CA0001-HEALTH-016-OP002",
+        "relationship": "SOURCE_TO_EXECUTION_BLOCK_STAGING",
+        "lineage_complete": true
+      }
+    },
+    {
+      "corpus_position": 700,
+      "legacy_id": "HEALTH-040-OP001",
+      "source_identity": {
+        "opportunity_title_ar": "إجراء التحاليل المطلوبة",
+        "parent_event_id": "HEALTH-040",
+        "parent_event_title_ar": "موعد فحص ما قبل الجراحة",
+        "domain_id": "DOM-HEALTH"
+      },
+      "source_record_sha256": "15e7db3d4d6025884c66acac75cf2581777c4369c773cf488db81b45ab3c04a3",
+      "classification": {
+        "artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json",
+        "disposition": "EVENT_ONLY",
+        "semantic_type": "EVENT",
+        "confidence": "MEDIUM",
+        "needs_human_review": false
+      },
+      "routing": {
+        "route_type": "ATTACH_SOURCE_TO_EXISTING_EVENT",
+        "destination_layer": "EVENT",
+        "destination_event_identity": "HEALTH-040",
+        "new_event_created": false,
+        "fp_candidate_created": false,
+        "reason": "The source is an open container for unspecified tests, while its execution text describes attendance and stillness under clinical direction rather than one independently meaningful functional role.",
+        "evidence": [
+          "opportunity_title_ar: إجراء التحاليل المطلوبة",
+          "parent_event_title_ar: موعد فحص ما قبل الجراحة",
+          "legacy_execution_steps: المشاركة في الحضور والثبات وفق توجيه الفريق الطبي.",
+          "classification finding: no single role with a distinct effect and completion under FP-04 through FP-06"
+        ]
+      },
+      "lineage": {
+        "source_ledger": "DALILI_CONTRACT_ALIGNMENT_SOURCE_LEDGER_01.json",
+        "legacy_source_file": "src/data/knowledge/03_participation_opportunities.csv",
+        "legacy_source_row_index": 701,
+        "source_reference": "legacy_master",
+        "target_existing_identity": "HEALTH-040",
+        "relationship": "EVENT_CONTEXT_SOURCE",
+        "lineage_complete": true
+      }
+    },
+    {
+      "corpus_position": 1105,
+      "legacy_id": "HOME-100-OP004",
+      "source_identity": {
+        "opportunity_title_ar": "**ما أُضيف اليوم:** كتالوج أحداث إدارة المنزل (HOME-001 إلى HOME-100) متضمناً فرص المشاركة المستخرجة كأدوار فعلية.",
+        "parent_event_id": "HOME-100",
+        "parent_event_title_ar": "إعادة تدوير النفايات المنزلية (فصل البلاستيك والورق)",
+        "domain_id": "DOM-HOME"
+      },
+      "source_record_sha256": "acce0abdb9350953db745e7684a5017b3cd8b71635145760fc5bb2d90af5c478",
+      "classification": {
+        "artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150.json",
+        "disposition": "EXCLUDED_WITH_REASON",
+        "semantic_type": "EXCLUDED",
+        "confidence": "HIGH",
+        "needs_human_review": false
+      },
+      "routing": {
+        "route_type": "CREATE_EXCLUSION_TOMBSTONE",
+        "destination_layer": "EXCLUSION_LEDGER",
+        "exclusion_tombstone_identity": "XT-CA0001-HOME-100-OP004",
+        "exclusion_reason_code": "WORKER_PROGRESS_METADATA_NOT_CONTENT",
+        "exclusion_reason": "The row is a previous-worker progress/update note about an added catalogue, not an Event, Functional Participation, or Execution Block.",
+        "fp_candidate_created": false
+      },
+      "lineage": {
+        "source_ledger": "DALILI_CONTRACT_ALIGNMENT_SOURCE_LEDGER_01.json",
+        "legacy_source_file": "src/data/knowledge/03_participation_opportunities.csv",
+        "legacy_source_row_index": 1106,
+        "source_reference": "legacy_master",
+        "target_tombstone_identity": "XT-CA0001-HOME-100-OP004",
+        "relationship": "SOURCE_EXCLUDED_WITH_REASON",
+        "lineage_complete": true
+      }
+    },
+    {
+      "corpus_position": 1106,
+      "legacy_id": "HOME-100-OP005",
+      "source_identity": {
+        "opportunity_title_ar": "**ما يحتاج استكمال بياناته:** تحويل فرص المشاركة إلى بطاقات أداء تفصيلية لاحقاً، وربطها بمرحلة \"الحياة الانتقالية\" لتخصيصها حسب مستويات الاستقلالية.",
+        "parent_event_id": "HOME-100",
+        "parent_event_title_ar": "إعادة تدوير النفايات المنزلية (فصل البلاستيك والورق)",
+        "domain_id": "DOM-HOME"
+      },
+      "source_record_sha256": "e08bce72e5eb625c9b249b68d331d7b6a96af75f985a42e09536bc6ae03c26c6",
+      "classification": {
+        "artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150.json",
+        "disposition": "EXCLUDED_WITH_REASON",
+        "semantic_type": "EXCLUDED",
+        "confidence": "HIGH",
+        "needs_human_review": false
+      },
+      "routing": {
+        "route_type": "CREATE_EXCLUSION_TOMBSTONE",
+        "destination_layer": "EXCLUSION_LEDGER",
+        "exclusion_tombstone_identity": "XT-CA0001-HOME-100-OP005",
+        "exclusion_reason_code": "WORKER_PROGRESS_METADATA_NOT_CONTENT",
+        "exclusion_reason": "The row is a previous-worker completion/backlog note and contains prohibited future performance/independence framing; it is not an Event, Functional Participation, or Execution Block.",
+        "fp_candidate_created": false
+      },
+      "lineage": {
+        "source_ledger": "DALILI_CONTRACT_ALIGNMENT_SOURCE_LEDGER_01.json",
+        "legacy_source_file": "src/data/knowledge/03_participation_opportunities.csv",
+        "legacy_source_row_index": 1107,
+        "source_reference": "legacy_master",
+        "target_tombstone_identity": "XT-CA0001-HOME-100-OP005",
+        "relationship": "SOURCE_EXCLUDED_WITH_REASON",
+        "lineage_complete": true
+      }
+    }
+  ],
+  "verification_summary": {
+    "expected_source_count": 5,
+    "accounted_source_count": 5,
+    "unique_source_ids": 5,
+    "unique_corpus_positions": 5,
+    "source_ids_match_ca_0001_selection": true,
+    "disposition_counts": {
+      "EVENT_ONLY": 2,
+      "EXECUTION_BLOCK_ONLY": 1,
+      "EXCLUDED_WITH_REASON": 2
+    },
+    "destination_counts": {
+      "existing_event_routes": 2,
+      "staged_execution_block_identities": 1,
+      "exclusion_tombstones": 2,
+      "fp_candidates": 0
+    },
+    "lineage_complete_count": 5,
+    "missing_lineage_count": 0,
+    "orphan_destinations": 0,
+    "silent_drops": 0,
+    "duplicate_source_routes": 0,
+    "materialized_count": 0,
+    "legacy_master_mutated": false,
+    "canonical_validator_changed": false,
+    "gate": "PASS_DRAFT_NON_FP_ROUTING_ONLY"
+  }
+}

@@ -1,0 +1,1835 @@
+{
+  "artifact": "DALILI_CA_0001_DRAFT_SPLIT_MERGE",
+  "version": "1.0",
+  "status": "DRAFT_ONLY_NOT_MATERIALIZED",
+  "scope": {
+    "selection": "selectCa0001",
+    "selected_source_count": 21,
+    "split_source_count": 10,
+    "merged_source_count": 11
+  },
+  "boundaries": {
+    "legacy_master_mutated": false,
+    "canonical_validator_changed": false,
+    "materialization_performed": false
+  },
+  "sources": {
+    "source_ledger": "DALILI_CONTRACT_ALIGNMENT_SOURCE_LEDGER_01.json",
+    "legacy_export": "DALILI_LEGACY_CORPUS_EXPORT_01.json"
+  },
+  "conservation": {
+    "input_sources": 21,
+    "accounted_sources": 21,
+    "split_children": 24,
+    "merge_candidates_created": 0,
+    "silent_drops": 0,
+    "duplicate_source_ids": 0,
+    "gate": "PASS"
+  },
+  "validation_summary": {
+    "split_children_fp_pass": 24,
+    "split_children_cx_pass": 24,
+    "merge_green": 10,
+    "merge_amber": 1
+  },
+  "split_sources": [
+    {
+      "corpus_position": 2,
+      "legacy_id": "CLO-002-OP001",
+      "source_record_sha256": "372318cb5729074577fa43553c9fe0020b1a53e6d0446a5b5232cda133bb9f8b",
+      "disposition": "SPLIT_REQUIRED",
+      "status": "DRAFT_VALIDATED",
+      "output_count": 2,
+      "candidates": [
+        {
+          "id": "CA-0001-CLO002OP001-S01",
+          "split_ordinal": 1,
+          "parent_legacy_id": "CLO-002-OP001",
+          "source_evidence_ids": [
+            "CLO-002-OP001"
+          ],
+          "title": "استلام طرد الملابس",
+          "life_context": "وصول طلب الملابس إلى الباب أو نقطة التسليم",
+          "functional_intent": "انتقال الطرد من جهة التسليم إلى الأسرة",
+          "observable_effect": "يصبح طرد الملابس بحوزة الأسرة",
+          "natural_completion": "عندما ينتقل الطرد إلى مكان الاستلام لدى الأسرة",
+          "standalone_role_meaning": "استلام طرد وارد دور مفهوم بذاته قبل فتحه أو فحصه",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "الطرد وجهة التسليم",
+              "c2_coordination": "تبادل مباشر مع جهة التسليم",
+              "c3_variability": "قد يختلف موضع التسليم",
+              "c4_choice_uncertainty": "تحديد الطرد المقصود"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: الطرد وجهة التسليم؛ تبادل مباشر مع جهة التسليم؛ قد يختلف موضع التسليم؛ تحديد الطرد المقصود."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO002OP001-S01-B1",
+              "order": 1,
+              "text": "تحديد الطرد الوارد"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO002OP001-S01-B2",
+              "order": 2,
+              "text": "نقله إلى مكان الاستلام"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "CLO-002-OP001",
+            "source_corpus_position": 2,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 1
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        },
+        {
+          "id": "CA-0001-CLO002OP001-S02",
+          "split_ordinal": 2,
+          "parent_legacy_id": "CLO-002-OP001",
+          "source_evidence_ids": [
+            "CLO-002-OP001"
+          ],
+          "title": "مطابقة محتويات طرد الملابس مع الطلب",
+          "life_context": "وجود طرد ملابس مفتوح وقائمة طلب لدى الأسرة",
+          "functional_intent": "التحقق من حضور القطع المطلوبة داخل الطرد",
+          "observable_effect": "تصبح القطع الموجودة مرتبطة ببنود الطلب",
+          "natural_completion": "عندما تُراجع القطع مقابل بنود الطلب",
+          "standalone_role_meaning": "مطابقة محتويات شحنة مع طلب دور مفهوم دون ارتباط بطريقة الاستلام",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "قطع الملابس وبنود الطلب",
+              "c2_coordination": "ربط كل قطعة ببندها",
+              "c3_variability": "قد يختلف عدد القطع وصفاتها",
+              "c4_choice_uncertainty": "تحديد التطابق أو وجود اختلاف"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: قطع الملابس وبنود الطلب؛ ربط كل قطعة ببندها؛ قد يختلف عدد القطع وصفاتها؛ تحديد التطابق أو وجود اختلاف."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO002OP001-S02-B1",
+              "order": 1,
+              "text": "عرض القطع الموجودة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO002OP001-S02-B2",
+              "order": 2,
+              "text": "مراجعتها مقابل الطلب"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "CLO-002-OP001",
+            "source_corpus_position": 2,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 2
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        }
+      ]
+    },
+    {
+      "corpus_position": 3,
+      "legacy_id": "CLO-003-OP001",
+      "source_record_sha256": "5b402492e6e8825aff96985ae39da6ba18a77c63fa5ced0043c4f7fe802aae25",
+      "disposition": "SPLIT_REQUIRED",
+      "status": "DRAFT_VALIDATED",
+      "output_count": 2,
+      "candidates": [
+        {
+          "id": "CA-0001-CLO003OP001-S01",
+          "split_ordinal": 1,
+          "parent_legacy_id": "CLO-003-OP001",
+          "source_evidence_ids": [
+            "CLO-003-OP001"
+          ],
+          "title": "تجهيز قطعة الملابس للإرجاع أو الاستبدال",
+          "life_context": "وجود قطعة ملابس غير مناسبة بعد الشراء",
+          "functional_intent": "جمع القطعة وبيانات الطلب لتصبح جاهزة للمتابعة",
+          "observable_effect": "تصبح القطعة ومعلومات الشراء مجمعة للإجراء التالي",
+          "natural_completion": "عندما توضع القطعة مع الفاتورة أو رقم الطلب",
+          "standalone_role_meaning": "تجهيز مقتنى للإرجاع دور إداري منزلي قائم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "القطعة وبيانات الطلب",
+              "c2_coordination": "جمع عنصر مادي مع مرجعه",
+              "c3_variability": "تختلف بيانات الشراء وحالة القطعة",
+              "c4_choice_uncertainty": "اختيار المعلومات اللازمة للمتابعة"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: القطعة وبيانات الطلب؛ جمع عنصر مادي مع مرجعه؛ تختلف بيانات الشراء وحالة القطعة؛ اختيار المعلومات اللازمة للمتابعة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO003OP001-S01-B1",
+              "order": 1,
+              "text": "جمع القطعة وملحقاتها"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO003OP001-S01-B2",
+              "order": 2,
+              "text": "إضافة الفاتورة أو رقم الطلب"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "CLO-003-OP001",
+            "source_corpus_position": 3,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 1
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        },
+        {
+          "id": "CA-0001-CLO003OP001-S02",
+          "split_ordinal": 2,
+          "parent_legacy_id": "CLO-003-OP001",
+          "source_evidence_ids": [
+            "CLO-003-OP001"
+          ],
+          "title": "تسليم قطعة الملابس للإرجاع أو الاستبدال",
+          "life_context": "الوصول إلى المتجر أو جهة الشحن بقطعة مجهزة",
+          "functional_intent": "نقل القطعة إلى الجهة المسؤولة عن الإرجاع أو الاستبدال",
+          "observable_effect": "تصبح القطعة مستلمة لدى الجهة المعنية",
+          "natural_completion": "عندما تؤكد الجهة استلام القطعة",
+          "standalone_role_meaning": "تسليم مقتنى إلى جهة خدمة دور مفهوم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "القطعة ومرجع الطلب والجهة",
+              "c2_coordination": "تنسيق التسليم مع موظف أو خدمة",
+              "c3_variability": "تختلف إجراءات الجهات",
+              "c4_choice_uncertainty": "تحديد الإرجاع أو الاستبدال وفق قرار الأسرة"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: القطعة ومرجع الطلب والجهة؛ تنسيق التسليم مع موظف أو خدمة؛ تختلف إجراءات الجهات؛ تحديد الإرجاع أو الاستبدال وفق قرار الأسرة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO003OP001-S02-B1",
+              "order": 1,
+              "text": "تقديم القطعة ومرجعها"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO003OP001-S02-B2",
+              "order": 2,
+              "text": "استلام تأكيد التسليم"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "CLO-003-OP001",
+            "source_corpus_position": 3,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 2
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        }
+      ]
+    },
+    {
+      "corpus_position": 30,
+      "legacy_id": "CLO-030-OP001",
+      "source_record_sha256": "7b86ea641eceeb1e9a907cba8e21ce76411b5d5db2527106e8bf20052ca0304d",
+      "disposition": "SPLIT_REQUIRED",
+      "status": "DRAFT_VALIDATED",
+      "output_count": 4,
+      "candidates": [
+        {
+          "id": "CA-0001-CLO030OP001-S01",
+          "split_ordinal": 1,
+          "parent_legacy_id": "CLO-030-OP001",
+          "source_evidence_ids": [
+            "CLO-030-OP001"
+          ],
+          "title": "استلام الملابس المقدمة من الأقارب أو الأصدقاء",
+          "life_context": "تقديم أقارب أو أصدقاء ملابس إلى الأسرة",
+          "functional_intent": "نقل الملابس المقدمة إلى حيازة الأسرة",
+          "observable_effect": "تصبح الملابس موجودة لدى الأسرة",
+          "natural_completion": "عندما توضع الملابس في مكان الاستلام",
+          "standalone_role_meaning": "استلام أغراض مقدمة للأسرة دور اجتماعي مفهوم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "الملابس والجهة المقدمة",
+              "c2_coordination": "تبادل مباشر",
+              "c3_variability": "يختلف عدد القطع",
+              "c4_choice_uncertainty": "تحديد موضع الاستلام"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: الملابس والجهة المقدمة؛ تبادل مباشر؛ يختلف عدد القطع؛ تحديد موضع الاستلام."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO030OP001-S01-B1",
+              "order": 1,
+              "text": "استلام القطع"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO030OP001-S01-B2",
+              "order": 2,
+              "text": "وضعها في موضع التجميع"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "CLO-030-OP001",
+            "source_corpus_position": 30,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 1
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        },
+        {
+          "id": "CA-0001-CLO030OP001-S02",
+          "split_ordinal": 2,
+          "parent_legacy_id": "CLO-030-OP001",
+          "source_evidence_ids": [
+            "CLO-030-OP001"
+          ],
+          "title": "فرز الملابس المستلمة حسب المقاس",
+          "life_context": "وجود ملابس مستلمة تحتاج مراجعة قبل استخدامها",
+          "functional_intent": "تجميع القطع وفق المقاسات المناسبة للأسرة",
+          "observable_effect": "تصبح الملابس موزعة في مجموعات مقاس واضحة",
+          "natural_completion": "عندما لا تبقى قطعة خارج مجموعة",
+          "standalone_role_meaning": "فرز الملابس حسب خاصية ظاهرة دور منزلي قائم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "قطع متعددة ومقاسات",
+              "c2_coordination": "مقارنة كل قطعة بالمجموعة",
+              "c3_variability": "تختلف الأنواع والمقاسات",
+              "c4_choice_uncertainty": "اختيار المجموعة الموافقة"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: قطع متعددة ومقاسات؛ مقارنة كل قطعة بالمجموعة؛ تختلف الأنواع والمقاسات؛ اختيار المجموعة الموافقة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO030OP001-S02-B1",
+              "order": 1,
+              "text": "مراجعة مقاس كل قطعة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO030OP001-S02-B2",
+              "order": 2,
+              "text": "وضعها مع المجموعة الموافقة"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "CLO-030-OP001",
+            "source_corpus_position": 30,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 2
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        },
+        {
+          "id": "CA-0001-CLO030OP001-S03",
+          "split_ordinal": 3,
+          "parent_legacy_id": "CLO-030-OP001",
+          "source_evidence_ids": [
+            "CLO-030-OP001"
+          ],
+          "title": "غسل الملابس المستلمة قبل الاستخدام",
+          "life_context": "وجود ملابس مستلمة اختارت الأسرة الاحتفاظ بها",
+          "functional_intent": "تهيئة الملابس للاستخدام ضمن غسيل الأسرة",
+          "observable_effect": "تنتقل الملابس إلى دورة الغسيل المخصصة",
+          "natural_completion": "عندما تدخل القطع المختارة في الغسيل",
+          "standalone_role_meaning": "إدخال ملابس في الغسيل دور منزلي مفهوم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "الملابس ودورة الغسيل",
+              "c2_coordination": "ضم القطع إلى الغسيل",
+              "c3_variability": "قد تختلف كمية القطع",
+              "c4_choice_uncertainty": "تحديد الدورة المخصصة"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: الملابس ودورة الغسيل؛ ضم القطع إلى الغسيل؛ قد تختلف كمية القطع؛ تحديد الدورة المخصصة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO030OP001-S03-B1",
+              "order": 1,
+              "text": "جمع القطع المختارة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO030OP001-S03-B2",
+              "order": 2,
+              "text": "وضعها في الغسيل المخصص"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "CLO-030-OP001",
+            "source_corpus_position": 30,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 3
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        },
+        {
+          "id": "CA-0001-CLO030OP001-S04",
+          "split_ordinal": 4,
+          "parent_legacy_id": "CLO-030-OP001",
+          "source_evidence_ids": [
+            "CLO-030-OP001"
+          ],
+          "title": "تخزين الملابس المستلمة",
+          "life_context": "وجود ملابس نظيفة قررت الأسرة الاحتفاظ بها",
+          "functional_intent": "وضع الملابس في أماكنها المنزلية المخصصة",
+          "observable_effect": "تصبح القطع محفوظة في الخزانة أو موضع التخزين",
+          "natural_completion": "عندما تستقر كل قطعة في موضعها",
+          "standalone_role_meaning": "تخزين الملابس دور منزلي قائم بذاته بعد أي مصدر للقطع",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "قطع ومواضع تخزين",
+              "c2_coordination": "ربط القطع بمواضعها",
+              "c3_variability": "تختلف الأنواع والمساحات",
+              "c4_choice_uncertainty": "اختيار موضع كل قطعة"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: قطع ومواضع تخزين؛ ربط القطع بمواضعها؛ تختلف الأنواع والمساحات؛ اختيار موضع كل قطعة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO030OP001-S04-B1",
+              "order": 1,
+              "text": "تجميع القطع النظيفة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO030OP001-S04-B2",
+              "order": 2,
+              "text": "وضعها في المواضع المخصصة"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "CLO-030-OP001",
+            "source_corpus_position": 30,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 4
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        }
+      ]
+    },
+    {
+      "corpus_position": 47,
+      "legacy_id": "CLO-047-OP001",
+      "source_record_sha256": "169d835d03649c0349264c1ee12604640cd3aeb64139ca8f8c199bf5d7c4d9a8",
+      "disposition": "SPLIT_REQUIRED",
+      "status": "DRAFT_VALIDATED",
+      "output_count": 3,
+      "candidates": [
+        {
+          "id": "CA-0001-CLO047OP001-S01",
+          "split_ordinal": 1,
+          "parent_legacy_id": "CLO-047-OP001",
+          "source_evidence_ids": [
+            "CLO-047-OP001"
+          ],
+          "title": "تنظيف الطفل بعد حادثة اتساخ الملابس",
+          "life_context": "حدوث اتساخ يحتاج معالجة ضمن رعاية الطفل",
+          "functional_intent": "إزالة آثار الاتساخ قبل ارتداء ملابس أخرى",
+          "observable_effect": "تصبح منطقة الاتساخ نظيفة وجاهزة للملابس",
+          "natural_completion": "عندما تزول آثار الاتساخ الظاهرة",
+          "standalone_role_meaning": "العناية بنظافة الطفل بعد الاتساخ دور رعاية مفهوم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "مواد التنظيف وموضع الاتساخ",
+              "c2_coordination": "ترتيب العناية مع حماية الخصوصية",
+              "c3_variability": "تختلف طبيعة الاتساخ",
+              "c4_choice_uncertainty": "اختيار مواد العناية المناسبة"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: مواد التنظيف وموضع الاتساخ؛ ترتيب العناية مع حماية الخصوصية؛ تختلف طبيعة الاتساخ؛ اختيار مواد العناية المناسبة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO047OP001-S01-B1",
+              "order": 1,
+              "text": "تجهيز مواد العناية"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO047OP001-S01-B2",
+              "order": 2,
+              "text": "تنظيف موضع الاتساخ"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "CLO-047-OP001",
+            "source_corpus_position": 47,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 1
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        },
+        {
+          "id": "CA-0001-CLO047OP001-S02",
+          "split_ordinal": 2,
+          "parent_legacy_id": "CLO-047-OP001",
+          "source_evidence_ids": [
+            "CLO-047-OP001"
+          ],
+          "title": "إلباس الطفل ملابس نظيفة بعد الحادثة",
+          "life_context": "انتهاء تنظيف الطفل ووجود ملابس بديلة",
+          "functional_intent": "إعادة الملابس النظيفة إلى الطفل",
+          "observable_effect": "يصبح الطفل مرتديًا الملابس البديلة",
+          "natural_completion": "عندما تستقر الملابس النظيفة في موضعها",
+          "standalone_role_meaning": "إلباس طفل ملابس بديلة دور رعاية قائم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "قطع الملابس البديلة",
+              "c2_coordination": "ترتيب ارتداء القطع",
+              "c3_variability": "تختلف القطع حسب الموقف",
+              "c4_choice_uncertainty": "اختيار البديل الملائم"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: قطع الملابس البديلة؛ ترتيب ارتداء القطع؛ تختلف القطع حسب الموقف؛ اختيار البديل الملائم."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO047OP001-S02-B1",
+              "order": 1,
+              "text": "إحضار الملابس البديلة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO047OP001-S02-B2",
+              "order": 2,
+              "text": "وضع القطع بالترتيب المناسب"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "CLO-047-OP001",
+            "source_corpus_position": 47,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 2
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        },
+        {
+          "id": "CA-0001-CLO047OP001-S03",
+          "split_ordinal": 3,
+          "parent_legacy_id": "CLO-047-OP001",
+          "source_evidence_ids": [
+            "CLO-047-OP001"
+          ],
+          "title": "وضع الملابس المتسخة في موضع الغسيل",
+          "life_context": "وجود ملابس متسخة بعد تغيير ملابس الطفل",
+          "functional_intent": "نقل الملابس بعيدًا عن مساحة الرعاية إلى موضع الغسيل",
+          "observable_effect": "تصبح الملابس داخل الحاوية المخصصة",
+          "natural_completion": "عندما لا تبقى الملابس المتسخة في مساحة التغيير",
+          "standalone_role_meaning": "نقل ملابس متسخة إلى الغسيل دور منزلي مفهوم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "الملابس وحاوية الغسيل",
+              "c2_coordination": "نقل مباشر بين موضعين",
+              "c3_variability": "الموضع ثابت غالبًا",
+              "c4_choice_uncertainty": "اختيار الحاوية المخصصة"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: الملابس وحاوية الغسيل؛ نقل مباشر بين موضعين؛ الموضع ثابت غالبًا؛ اختيار الحاوية المخصصة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO047OP001-S03-B1",
+              "order": 1,
+              "text": "جمع الملابس المتسخة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-CLO047OP001-S03-B2",
+              "order": 2,
+              "text": "وضعها في حاوية الغسيل"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "CLO-047-OP001",
+            "source_corpus_position": 47,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 3
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        }
+      ]
+    },
+    {
+      "corpus_position": 124,
+      "legacy_id": "COMM-020-OP003",
+      "source_record_sha256": "36d2456570d377b1cd43eb132c7158ea2b24809f148506d1b9e52b4c7d83ff09",
+      "disposition": "SPLIT_REQUIRED",
+      "status": "DRAFT_VALIDATED",
+      "output_count": 3,
+      "candidates": [
+        {
+          "id": "CA-0001-COMM020OP003-S01",
+          "split_ordinal": 1,
+          "parent_legacy_id": "COMM-020-OP003",
+          "source_evidence_ids": [
+            "COMM-020-OP003"
+          ],
+          "title": "اختيار مقتنى من السوق الشعبي",
+          "life_context": "زيارة الأسرة سوقًا شعبيًا تعرض فيه مقتنيات متعددة",
+          "functional_intent": "تحديد المقتنى الذي سيدخل في عملية الشراء",
+          "observable_effect": "يصبح مقتنى واحد محددًا أمام الأسرة والبائع",
+          "natural_completion": "عندما يستقر الاختيار على المقتنى",
+          "standalone_role_meaning": "اختيار مقتنى من بدائل سوقية دور اجتماعي مفهوم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "مقتنيات وخصائص متعددة",
+              "c2_coordination": "ربط الاختيار بغرض الزيارة",
+              "c3_variability": "تتغير المعروضات والأسعار",
+              "c4_choice_uncertainty": "قرار مفتوح بين بدائل"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: مقتنيات وخصائص متعددة؛ ربط الاختيار بغرض الزيارة؛ تتغير المعروضات والأسعار؛ قرار مفتوح بين بدائل."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-COMM020OP003-S01-B1",
+              "order": 1,
+              "text": "مراجعة المقتنيات المتاحة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-COMM020OP003-S01-B2",
+              "order": 2,
+              "text": "تحديد المقتنى المختار"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "COMM-020-OP003",
+            "source_corpus_position": 124,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 1
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        },
+        {
+          "id": "CA-0001-COMM020OP003-S02",
+          "split_ordinal": 2,
+          "parent_legacy_id": "COMM-020-OP003",
+          "source_evidence_ids": [
+            "COMM-020-OP003"
+          ],
+          "title": "دفع قيمة المقتنى في السوق",
+          "life_context": "اتفاق الأسرة والبائع على مقتنى وسعر",
+          "functional_intent": "نقل قيمة الشراء إلى البائع لإتمام المعاملة",
+          "observable_effect": "تكتمل معاملة الدفع لدى البائع",
+          "natural_completion": "عندما يؤكد البائع استلام القيمة",
+          "standalone_role_meaning": "دفع قيمة شراء دور معاملاتي مفهوم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "القيمة ووسيلة الدفع والبائع",
+              "c2_coordination": "تبادل منظم مع البائع",
+              "c3_variability": "تختلف وسائل الدفع",
+              "c4_choice_uncertainty": "اختيار الوسيلة المتاحة"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: القيمة ووسيلة الدفع والبائع؛ تبادل منظم مع البائع؛ تختلف وسائل الدفع؛ اختيار الوسيلة المتاحة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-COMM020OP003-S02-B1",
+              "order": 1,
+              "text": "تقديم وسيلة الدفع"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-COMM020OP003-S02-B2",
+              "order": 2,
+              "text": "استلام تأكيد الدفع"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "COMM-020-OP003",
+            "source_corpus_position": 124,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 2
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        },
+        {
+          "id": "CA-0001-COMM020OP003-S03",
+          "split_ordinal": 3,
+          "parent_legacy_id": "COMM-020-OP003",
+          "source_evidence_ids": [
+            "COMM-020-OP003"
+          ],
+          "title": "استلام المقتنى المشترى من البائع",
+          "life_context": "اكتمال دفع قيمة مقتنى في السوق",
+          "functional_intent": "نقل المقتنى من البائع إلى الأسرة",
+          "observable_effect": "يصبح المقتنى المدفوع بحوزة الأسرة",
+          "natural_completion": "عندما يسلم البائع المقتنى",
+          "standalone_role_meaning": "استلام غرض مشترى دور مفهوم بذاته بعد أي معاملة",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "المقتنى والبائع",
+              "c2_coordination": "تبادل مباشر",
+              "c3_variability": "قد يختلف تغليف المقتنى",
+              "c4_choice_uncertainty": "تحديد الغرض المدفوع"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: المقتنى والبائع؛ تبادل مباشر؛ قد يختلف تغليف المقتنى؛ تحديد الغرض المدفوع."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-COMM020OP003-S03-B1",
+              "order": 1,
+              "text": "تحديد المقتنى المدفوع"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-COMM020OP003-S03-B2",
+              "order": 2,
+              "text": "استلامه من البائع"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "COMM-020-OP003",
+            "source_corpus_position": 124,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 3
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        }
+      ]
+    },
+    {
+      "corpus_position": 187,
+      "legacy_id": "COMM-041-OP003",
+      "source_record_sha256": "a31f28b71426e73bbf136e53778a9392c13bd8c64940846d3b73dab583566f1a",
+      "disposition": "SPLIT_REQUIRED",
+      "status": "DRAFT_VALIDATED",
+      "output_count": 2,
+      "candidates": [
+        {
+          "id": "CA-0001-COMM041OP003-S01",
+          "split_ordinal": 1,
+          "parent_legacy_id": "COMM-041-OP003",
+          "source_evidence_ids": [
+            "COMM-041-OP003"
+          ],
+          "title": "دفع قيمة الحاجة في متجر الحي",
+          "life_context": "وجود حاجة مختارة لدى بائع متجر قريب",
+          "functional_intent": "إتمام المقابل المالي للحاجة المختارة",
+          "observable_effect": "تسجل الحاجة بوصفها مدفوعة",
+          "natural_completion": "عندما يؤكد البائع اكتمال الدفع",
+          "standalone_role_meaning": "دفع ثمن حاجة دور معاملاتي مستقل عن الوصول أو المغادرة",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "الحاجة والقيمة ووسيلة الدفع",
+              "c2_coordination": "تبادل مع البائع",
+              "c3_variability": "تختلف القيمة والوسيلة",
+              "c4_choice_uncertainty": "اختيار وسيلة الدفع"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: الحاجة والقيمة ووسيلة الدفع؛ تبادل مع البائع؛ تختلف القيمة والوسيلة؛ اختيار وسيلة الدفع."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-COMM041OP003-S01-B1",
+              "order": 1,
+              "text": "تقديم وسيلة الدفع"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-COMM041OP003-S01-B2",
+              "order": 2,
+              "text": "استلام تأكيد المعاملة"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "COMM-041-OP003",
+            "source_corpus_position": 187,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 1
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        },
+        {
+          "id": "CA-0001-COMM041OP003-S02",
+          "split_ordinal": 2,
+          "parent_legacy_id": "COMM-041-OP003",
+          "source_evidence_ids": [
+            "COMM-041-OP003"
+          ],
+          "title": "مغادرة متجر الحي بعد الشراء",
+          "life_context": "اكتمال شراء الحاجة داخل متجر قريب",
+          "functional_intent": "الانتقال بالحاجة من مساحة المتجر إلى وجهة الأسرة",
+          "observable_effect": "تصبح الأسرة والحاجة خارج المتجر",
+          "natural_completion": "عندما تنتهي الحركة عبر مخرج المتجر",
+          "standalone_role_meaning": "مغادرة مكان خدمة بعد المعاملة دور تنقل مفهوم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "الحاجة ومسار الخروج",
+              "c2_coordination": "انتقال مباشر",
+              "c3_variability": "قد يتغير موضع المخرج",
+              "c4_choice_uncertainty": "اختيار مسار الخروج"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: الحاجة ومسار الخروج؛ انتقال مباشر؛ قد يتغير موضع المخرج؛ اختيار مسار الخروج."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-COMM041OP003-S02-B1",
+              "order": 1,
+              "text": "جمع الحاجة المدفوعة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-COMM041OP003-S02-B2",
+              "order": 2,
+              "text": "التوجه إلى مخرج المتجر"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "COMM-041-OP003",
+            "source_corpus_position": 187,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 2
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        }
+      ]
+    },
+    {
+      "corpus_position": 240,
+      "legacy_id": "COMM-059-OP002",
+      "source_record_sha256": "3e4ed472f424466a3903a7b2556ea58ae46eb312c1978cb7c57166d4eaa00dcb",
+      "disposition": "SPLIT_REQUIRED",
+      "status": "DRAFT_VALIDATED",
+      "output_count": 2,
+      "candidates": [
+        {
+          "id": "CA-0001-COMM059OP002-S01",
+          "split_ordinal": 1,
+          "parent_legacy_id": "COMM-059-OP002",
+          "source_evidence_ids": [
+            "COMM-059-OP002"
+          ],
+          "title": "حمل الهدية المختارة داخل المتجر",
+          "life_context": "اختيار الأسرة هدية أثناء زيارة متجر",
+          "functional_intent": "نقل الهدية بين مساحة الاختيار ونقطة التجهيز",
+          "observable_effect": "تصل الهدية إلى موضع التغليف أو الحساب",
+          "natural_completion": "عندما توضع الهدية في نقطة التجهيز",
+          "standalone_role_meaning": "حمل غرض مختار إلى نقطة خدمة دور مفهوم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "الهدية ومسار النقل",
+              "c2_coordination": "انتقال مباشر",
+              "c3_variability": "يختلف حجم الغرض",
+              "c4_choice_uncertainty": "تحديد نقطة التجهيز"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: الهدية ومسار النقل؛ انتقال مباشر؛ يختلف حجم الغرض؛ تحديد نقطة التجهيز."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-COMM059OP002-S01-B1",
+              "order": 1,
+              "text": "رفع الهدية من موضعها"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-COMM059OP002-S01-B2",
+              "order": 2,
+              "text": "نقلها إلى نقطة التجهيز"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "COMM-059-OP002",
+            "source_corpus_position": 240,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 1
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        },
+        {
+          "id": "CA-0001-COMM059OP002-S02",
+          "split_ordinal": 2,
+          "parent_legacy_id": "COMM-059-OP002",
+          "source_evidence_ids": [
+            "COMM-059-OP002"
+          ],
+          "title": "ترتيب تغليف الهدية مع المتجر",
+          "life_context": "وجود هدية مختارة وخدمة تغليف في المتجر",
+          "functional_intent": "تحديد شكل التغليف وتسليم الهدية للخدمة",
+          "observable_effect": "تصبح الهدية مسجلة لدى نقطة التغليف",
+          "natural_completion": "عندما تؤكد نقطة الخدمة طلب التغليف",
+          "standalone_role_meaning": "طلب خدمة تغليف دور تواصلي قائم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "الهدية وخيارات التغليف والخدمة",
+              "c2_coordination": "تنسيق الطلب مع الموظف",
+              "c3_variability": "تختلف الخيارات المتاحة",
+              "c4_choice_uncertainty": "اختيار طريقة التغليف"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: الهدية وخيارات التغليف والخدمة؛ تنسيق الطلب مع الموظف؛ تختلف الخيارات المتاحة؛ اختيار طريقة التغليف."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-COMM059OP002-S02-B1",
+              "order": 1,
+              "text": "عرض الهدية على نقطة الخدمة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-COMM059OP002-S02-B2",
+              "order": 2,
+              "text": "تحديد خيار التغليف"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "COMM-059-OP002",
+            "source_corpus_position": 240,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 2
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        }
+      ]
+    },
+    {
+      "corpus_position": 455,
+      "legacy_id": "FOOD-043-OP003",
+      "source_record_sha256": "2c29f9a3b2f257f196739221b0c4e4c7cfefb0747e0d638f1e61e34b7af6173f",
+      "disposition": "SPLIT_REQUIRED",
+      "status": "DRAFT_VALIDATED",
+      "output_count": 2,
+      "candidates": [
+        {
+          "id": "CA-0001-FOOD043OP003-S01",
+          "split_ordinal": 1,
+          "parent_legacy_id": "FOOD-043-OP003",
+          "source_evidence_ids": [
+            "FOOD-043-OP003"
+          ],
+          "title": "إخراج علب الطعام من أكياس الطلب",
+          "life_context": "وصول طلب طعام خارجي في أكياس إلى المنزل",
+          "functional_intent": "إظهار علب الطعام لتصبح جاهزة للتوزيع",
+          "observable_effect": "تصبح العلب خارج الأكياس وفي مساحة التجهيز",
+          "natural_completion": "عندما تخلو الأكياس من علب الطعام",
+          "standalone_role_meaning": "تفريغ علب من أكياسها دور تجهيز منزلي مفهوم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "الأكياس والعلب",
+              "c2_coordination": "نقل مباشر إلى مساحة التجهيز",
+              "c3_variability": "يختلف عدد العلب",
+              "c4_choice_uncertainty": "تمييز العلب عن الملحقات"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: الأكياس والعلب؛ نقل مباشر إلى مساحة التجهيز؛ يختلف عدد العلب؛ تمييز العلب عن الملحقات."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-FOOD043OP003-S01-B1",
+              "order": 1,
+              "text": "فتح الأكياس"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-FOOD043OP003-S01-B2",
+              "order": 2,
+              "text": "نقل العلب إلى مساحة التجهيز"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "FOOD-043-OP003",
+            "source_corpus_position": 455,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 1
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        },
+        {
+          "id": "CA-0001-FOOD043OP003-S02",
+          "split_ordinal": 2,
+          "parent_legacy_id": "FOOD-043-OP003",
+          "source_evidence_ids": [
+            "FOOD-043-OP003"
+          ],
+          "title": "توزيع علب الطعام الخارجي على المائدة",
+          "life_context": "وجود علب طلب الطعام في مساحة التجهيز",
+          "functional_intent": "وضع العلب في مواضع تتيح للأسرة بدء الوجبة",
+          "observable_effect": "تصبح علب الطعام موزعة على المائدة",
+          "natural_completion": "عندما تستقر كل علبة في موضعها",
+          "standalone_role_meaning": "توزيع أوعية الطعام على المائدة دور أسري قائم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "علب ومواضع مائدة",
+              "c2_coordination": "ربط كل علبة بموضعها",
+              "c3_variability": "تختلف أحجام العلب وعددها",
+              "c4_choice_uncertainty": "اختيار مواضع العرض"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: علب ومواضع مائدة؛ ربط كل علبة بموضعها؛ تختلف أحجام العلب وعددها؛ اختيار مواضع العرض."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-FOOD043OP003-S02-B1",
+              "order": 1,
+              "text": "تحديد مساحة كل علبة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-FOOD043OP003-S02-B2",
+              "order": 2,
+              "text": "وضع العلب على المائدة"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "FOOD-043-OP003",
+            "source_corpus_position": 455,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 2
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        }
+      ]
+    },
+    {
+      "corpus_position": 459,
+      "legacy_id": "FOOD-045-OP001",
+      "source_record_sha256": "cc362d144b4631d531e31c3ca6fc39f51c3b63d83f585e7f6920964f91036a82",
+      "disposition": "SPLIT_REQUIRED",
+      "status": "DRAFT_VALIDATED",
+      "output_count": 2,
+      "candidates": [
+        {
+          "id": "CA-0001-FOOD045OP001-S01",
+          "split_ordinal": 1,
+          "parent_legacy_id": "FOOD-045-OP001",
+          "source_evidence_ids": [
+            "FOOD-045-OP001"
+          ],
+          "title": "قطف أوراق الأعشاب من السيقان",
+          "life_context": "وجود حزم أعشاب طازجة قبل تجفيفها",
+          "functional_intent": "فصل الأوراق المستخدمة عن السيقان",
+          "observable_effect": "تصبح الأوراق منفصلة في وعاء التجهيز",
+          "natural_completion": "عندما تنفصل الأوراق المقصودة عن السيقان",
+          "standalone_role_meaning": "فصل أوراق نباتية عن سيقانها دور إعداد طعام مفهوم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "الأوراق والسيقان والوعاء",
+              "c2_coordination": "فصل مباشر",
+              "c3_variability": "تختلف كثافة الحزم",
+              "c4_choice_uncertainty": "تمييز الورقة المقصودة"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: الأوراق والسيقان والوعاء؛ فصل مباشر؛ تختلف كثافة الحزم؛ تمييز الورقة المقصودة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-FOOD045OP001-S01-B1",
+              "order": 1,
+              "text": "إمساك حزمة الأعشاب"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-FOOD045OP001-S01-B2",
+              "order": 2,
+              "text": "فصل الأوراق إلى الوعاء"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "FOOD-045-OP001",
+            "source_corpus_position": 459,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 1
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        },
+        {
+          "id": "CA-0001-FOOD045OP001-S02",
+          "split_ordinal": 2,
+          "parent_legacy_id": "FOOD-045-OP001",
+          "source_evidence_ids": [
+            "FOOD-045-OP001"
+          ],
+          "title": "فرز أوراق الأعشاب الصالحة للتجفيف",
+          "life_context": "وجود أوراق أعشاب مفصولة تحتاج مراجعة",
+          "functional_intent": "فصل الأوراق المستخدمة عن الأوراق الذابلة",
+          "observable_effect": "تصبح الأوراق موزعة إلى مجموعتين واضحتين",
+          "natural_completion": "عندما لا تبقى ورقة دون مجموعة",
+          "standalone_role_meaning": "فرز مكونات غذائية بحسب حالتها دور إعداد مفهوم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "أوراق بحالات مختلفة",
+              "c2_coordination": "مقارنة كل ورقة بالمجموعة",
+              "c3_variability": "تختلف علامات الذبول",
+              "c4_choice_uncertainty": "اختيار المجموعة المناسبة"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: أوراق بحالات مختلفة؛ مقارنة كل ورقة بالمجموعة؛ تختلف علامات الذبول؛ اختيار المجموعة المناسبة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-FOOD045OP001-S02-B1",
+              "order": 1,
+              "text": "مراجعة حالة الأوراق"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-FOOD045OP001-S02-B2",
+              "order": 2,
+              "text": "وضع كل ورقة في مجموعتها"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "FOOD-045-OP001",
+            "source_corpus_position": 459,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 2
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        }
+      ]
+    },
+    {
+      "corpus_position": 460,
+      "legacy_id": "FOOD-045-OP002",
+      "source_record_sha256": "4d947c4679e71e6bf346db1acaa3faad6edd4a41d99ca6884aa780c5919d6e1a",
+      "disposition": "SPLIT_REQUIRED",
+      "status": "DRAFT_VALIDATED",
+      "output_count": 2,
+      "candidates": [
+        {
+          "id": "CA-0001-FOOD045OP002-S01",
+          "split_ordinal": 1,
+          "parent_legacy_id": "FOOD-045-OP002",
+          "source_evidence_ids": [
+            "FOOD-045-OP002"
+          ],
+          "title": "غسل أوراق الأعشاب في المصفاة",
+          "life_context": "وجود أوراق أعشاب مختارة قبل التجفيف",
+          "functional_intent": "تمرير الماء على الأوراق داخل المصفاة",
+          "observable_effect": "تصبح الأوراق مغسولة داخل المصفاة",
+          "natural_completion": "عندما يصل الماء إلى الأوراق المقصودة",
+          "standalone_role_meaning": "غسل مكونات نباتية دور إعداد طعام قائم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "الأوراق والمصفاة والماء",
+              "c2_coordination": "تنسيق مباشر بين العناصر",
+              "c3_variability": "تختلف كمية الأوراق",
+              "c4_choice_uncertainty": "تحديد كمية الماء اللازمة للموقف"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: الأوراق والمصفاة والماء؛ تنسيق مباشر بين العناصر؛ تختلف كمية الأوراق؛ تحديد كمية الماء اللازمة للموقف."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-FOOD045OP002-S01-B1",
+              "order": 1,
+              "text": "وضع الأوراق في المصفاة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-FOOD045OP002-S01-B2",
+              "order": 2,
+              "text": "تمرير الماء عليها"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "FOOD-045-OP002",
+            "source_corpus_position": 460,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 1
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        },
+        {
+          "id": "CA-0001-FOOD045OP002-S02",
+          "split_ordinal": 2,
+          "parent_legacy_id": "FOOD-045-OP002",
+          "source_evidence_ids": [
+            "FOOD-045-OP002"
+          ],
+          "title": "تجفيف أوراق الأعشاب بالمنشفة",
+          "life_context": "وجود أوراق أعشاب مغسولة قبل التجفيف الموسمي",
+          "functional_intent": "إزالة الماء الظاهر من سطح الأوراق",
+          "observable_effect": "تصبح الأوراق جاهزة للمرحلة التالية من التجفيف",
+          "natural_completion": "عندما لا يبقى ماء ظاهر على الأوراق",
+          "standalone_role_meaning": "تجفيف مكونات مغسولة دور إعداد طعام مفهوم بذاته",
+          "participation_mode": "shared",
+          "complexity": {
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "الأوراق والمنشفة",
+              "c2_coordination": "تلامس مباشر لإزالة الماء",
+              "c3_variability": "تختلف كمية الماء والأوراق",
+              "c4_choice_uncertainty": "تحديد مساحة المنشفة المستخدمة"
+            },
+            "rationale": "يستند الوصف إلى عناصر الدور وتنسيقها وتغيرها وخياراتها: الأوراق والمنشفة؛ تلامس مباشر لإزالة الماء؛ تختلف كمية الماء والأوراق؛ تحديد مساحة المنشفة المستخدمة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-FOOD045OP002-S02-B1",
+              "order": 1,
+              "text": "نشر الأوراق على المنشفة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0001-FOOD045OP002-S02-B2",
+              "order": 2,
+              "text": "تغطيتها أو تمرير المنشفة عليها"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "FOOD-045-OP002",
+            "source_corpus_position": 460,
+            "relation": "SPLIT_CHILD",
+            "split_ordinal": 2
+          },
+          "contract_complete": true,
+          "validation": {
+            "fp": {
+              "valid": true,
+              "passed_gates": 7,
+              "total_gates": 7,
+              "failed_gates": []
+            },
+            "complexity": {
+              "valid": true,
+              "passed_gates": 9,
+              "total_gates": 9,
+              "failed_gates": []
+            },
+            "route": "GREEN"
+          }
+        }
+      ]
+    }
+  ],
+  "merged_sources": [
+    {
+      "corpus_position": 11,
+      "legacy_id": "CLO-011-OP001",
+      "source_record_sha256": "6fe1e4514cc388e83b35b2307cf429147c9f23ac35866ea5aece8b2642385b99",
+      "disposition": "MERGED_BY_PROVENANCE",
+      "candidate_created": false,
+      "target_reference_id": "FR-B03-CLO-011-OP001",
+      "candidate_targets": [],
+      "explicit_evidence": [
+        {
+          "kind": "EXPLICIT_ID_OCCURRENCE",
+          "file": "DALILI_CLASSIFICATION_BATCH_001.json",
+          "framework_reference_id": "FR-B03-CLO-011-OP001"
+        },
+        {
+          "kind": "EXPLICIT_ID_OCCURRENCE",
+          "file": "DALILI_MIGRATION_BATCH_03_PLAN_01.json",
+          "framework_reference_id": "FR-B03-CLO-011-OP001"
+        }
+      ],
+      "route": "GREEN",
+      "review_reason": null
+    },
+    {
+      "corpus_position": 16,
+      "legacy_id": "CLO-016-OP001",
+      "source_record_sha256": "dd48cd3fd7d8823d8febfd12f34d701ae10e9d69373e488ce5fdd78fbe174237",
+      "disposition": "MERGED_BY_PROVENANCE",
+      "candidate_created": false,
+      "target_reference_id": "FR-EXP12-CLO-016-OP001",
+      "candidate_targets": [],
+      "explicit_evidence": [
+        {
+          "kind": "EXPLICIT_ID_OCCURRENCE",
+          "file": "DALILI_CLASSIFICATION_BATCH_001.json",
+          "framework_reference_id": "FR-EXP12-CLO-016-OP001"
+        },
+        {
+          "kind": "EXPLICIT_ID_OCCURRENCE",
+          "file": "DALILI_EXPANSION_SAMPLE_12_CORRECTED_01.json",
+          "framework_reference_id": "FR-EXP12-CLO-016-OP001"
+        }
+      ],
+      "route": "GREEN",
+      "review_reason": null
+    },
+    {
+      "corpus_position": 42,
+      "legacy_id": "CLO-042-OP001",
+      "source_record_sha256": "3cb3d96c06867f8c715dfb731c7d5cf514124fd1103b20ab92b88a6f947c43af",
+      "disposition": "MERGED_BY_PROVENANCE",
+      "candidate_created": false,
+      "target_reference_id": "FR-EXP12-CLO-042-OP001",
+      "candidate_targets": [],
+      "explicit_evidence": [
+        {
+          "kind": "EXPLICIT_ID_OCCURRENCE",
+          "file": "DALILI_CLASSIFICATION_BATCH_001.json",
+          "framework_reference_id": "FR-EXP12-CLO-042-OP001"
+        },
+        {
+          "kind": "EXPLICIT_ID_OCCURRENCE",
+          "file": "DALILI_EXPANSION_SAMPLE_12_CORRECTED_01.json",
+          "framework_reference_id": "FR-EXP12-CLO-042-OP001"
+        }
+      ],
+      "route": "GREEN",
+      "review_reason": null
+    },
+    {
+      "corpus_position": 55,
+      "legacy_id": "COMM-002-OP001",
+      "source_record_sha256": "deb786fc990fd92bd381edea4fc783e3048263d4f8cb32343b891343b884e031",
+      "disposition": "MERGED_BY_PROVENANCE",
+      "candidate_created": false,
+      "target_reference_id": "FR-B03-COMM-002-OP001",
+      "candidate_targets": [],
+      "explicit_evidence": [
+        {
+          "kind": "EXPLICIT_ID_OCCURRENCE",
+          "file": "DALILI_CLASSIFICATION_APPROVED_051_250.json",
+          "framework_reference_id": "FR-B03-COMM-002-OP001"
+        },
+        {
+          "kind": "EXPLICIT_ID_OCCURRENCE",
+          "file": "DALILI_MIGRATION_BATCH_03_PLAN_01.json",
+          "framework_reference_id": "FR-B03-COMM-002-OP001"
+        }
+      ],
+      "route": "GREEN",
+      "review_reason": null
+    },
+    {
+      "corpus_position": 306,
+      "legacy_id": "FOOD-001-OP002",
+      "source_record_sha256": "3c6e107415c5a9d63257594a9bc30be2a3b1bd050bfc9ecc43f58f40a036b2fc",
+      "disposition": "MERGED_BY_PROVENANCE",
+      "candidate_created": false,
+      "target_reference_id": "FR-B03-FOOD-001-OP002",
+      "candidate_targets": [],
+      "explicit_evidence": [
+        {
+          "kind": "APPROVED_LINEAGE",
+          "framework_reference_id": "FR-B03-FOOD-001-OP002",
+          "source": "DALILI_CLASSIFICATION_APPROVED_251_325"
+        }
+      ],
+      "route": "GREEN",
+      "review_reason": null
+    },
+    {
+      "corpus_position": 308,
+      "legacy_id": "FOOD-001-OP004",
+      "source_record_sha256": "4237300b2daff791734f8cc6b4fad374330f2cf72dbbb223143a6f5eb63b56ac",
+      "disposition": "MERGED_BY_PROVENANCE",
+      "candidate_created": false,
+      "target_reference_id": "FR-B03-FOOD-001-OP002",
+      "candidate_targets": [],
+      "explicit_evidence": [
+        {
+          "kind": "APPROVED_LINEAGE",
+          "framework_reference_id": "FR-B03-FOOD-001-OP002",
+          "source": "DALILI_CLASSIFICATION_APPROVED_251_325"
+        }
+      ],
+      "route": "GREEN",
+      "review_reason": null
+    },
+    {
+      "corpus_position": 598,
+      "legacy_id": "HEALTH-001-OP001",
+      "source_record_sha256": "c978a4ed858cf6be3ea358ced97a9030d3b5d82602f707ef2efb84bfe98b415c",
+      "disposition": "MERGED_BY_PROVENANCE",
+      "candidate_created": false,
+      "target_reference_id": "FR-B03-HEALTH-001-OP001",
+      "candidate_targets": [],
+      "explicit_evidence": [
+        {
+          "kind": "APPROVED_LINEAGE",
+          "framework_reference_id": "FR-B03-HEALTH-001-OP001",
+          "batch": "BATCH_03",
+          "source": "batch03-corpus.ts"
+        }
+      ],
+      "route": "GREEN",
+      "review_reason": null
+    },
+    {
+      "corpus_position": 600,
+      "legacy_id": "HEALTH-001-OP003",
+      "source_record_sha256": "f9a4ba1454cfc9925f5d798984ae9489546938deb5cea047a6c0fabe4fe390d5",
+      "disposition": "MERGED_BY_PROVENANCE",
+      "candidate_created": false,
+      "target_reference_id": "FR-EXP12-02-HEALTH001-OP009",
+      "candidate_targets": [],
+      "explicit_evidence": [
+        {
+          "kind": "APPROVED_LINEAGE",
+          "framework_reference_id": "FR-EXP12-02-HEALTH001-OP009",
+          "batch": "BATCH_05",
+          "source": "DALILI_EXPANSION_SAMPLE_12_02_CORRECTED_01"
+        }
+      ],
+      "route": "GREEN",
+      "review_reason": null
+    },
+    {
+      "corpus_position": 604,
+      "legacy_id": "HEALTH-003-OP001",
+      "source_record_sha256": "6595d054c15ec86d6203e7988550739e557e9756b4e487984e02b56715658d71",
+      "disposition": "MERGED_BY_PROVENANCE",
+      "candidate_created": false,
+      "target_reference_id": "FR-EXP12-HEALTH-003-OP001",
+      "candidate_targets": [],
+      "explicit_evidence": [
+        {
+          "kind": "APPROVED_LINEAGE",
+          "framework_reference_id": "FR-EXP12-HEALTH-003-OP001",
+          "batch": "BATCH_04",
+          "source": "DALILI_EXPANSION_SAMPLE_12_CORRECTED_01"
+        }
+      ],
+      "route": "GREEN",
+      "review_reason": null
+    },
+    {
+      "corpus_position": 618,
+      "legacy_id": "HEALTH-007-OP003",
+      "source_record_sha256": "c0894e717a10179dd5ab437f862b3e68885274c1fa5e610c89acb27630556f7d",
+      "disposition": "MERGED_BY_PROVENANCE",
+      "candidate_created": false,
+      "target_reference_id": "FR-EXP12-02-HEALTH007-OP010",
+      "candidate_targets": [],
+      "explicit_evidence": [
+        {
+          "kind": "APPROVED_LINEAGE",
+          "framework_reference_id": "FR-EXP12-02-HEALTH007-OP010",
+          "batch": "BATCH_05",
+          "source": "DALILI_EXPANSION_SAMPLE_12_02_CORRECTED_01"
+        }
+      ],
+      "route": "GREEN",
+      "review_reason": null
+    },
+    {
+      "corpus_position": 636,
+      "legacy_id": "HEALTH-014-OP001",
+      "source_record_sha256": "2b27ccbb4c282ca973b97b86d1ade4b25126eac298dd46e9f691383ed990503b",
+      "disposition": "MERGED_BY_PROVENANCE",
+      "candidate_created": false,
+      "target_reference_id": null,
+      "candidate_targets": [
+        "FR-B02-HEALTH-014-OP001",
+        "FR-EXP12-HEALTH-014-OP001"
+      ],
+      "explicit_evidence": [
+        {
+          "kind": "APPROVED_LINEAGE",
+          "framework_reference_id": "FR-B02-HEALTH-014-OP001",
+          "batch": "BATCH_02",
+          "source": "batch02-corpus.ts"
+        },
+        {
+          "kind": "APPROVED_LINEAGE",
+          "framework_reference_id": "FR-EXP12-HEALTH-014-OP001",
+          "batch": "BATCH_04",
+          "source": "DALILI_EXPANSION_SAMPLE_12_CORRECTED_01"
+        }
+      ],
+      "route": "AMBER",
+      "review_reason": "Two explicit existing Framework reference IDs claim the same Legacy source; canonical merge target requires governing resolution."
+    }
+  ]
+}

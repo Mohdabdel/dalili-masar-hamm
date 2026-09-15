@@ -7,6 +7,7 @@ Governing plan: `docs/DALILI_FULL_CORPUS_GOVERNING_EXECUTION_PLAN_v1.0.md`
 | 0 Governance Reconciliation | BASELINE-01 | PASS | — | — | — | — | 0 | 0 | N/A | `DALILI_FULL_CORPUS_EXECUTION_BASELINE_01.md` |
 | 1 Corpus Inventory & Integrity | INVENTORY-01 | PASS | 1413 | 1413 accounted | 0 | 0 | 0 | 0 inventory gaps | N/A | `DALILI_FULL_CORPUS_INVENTORY_INTEGRITY_GATE_01.md` |
 | 3 Contract Alignment Controls | CA-0001-PREFLIGHT | PASS | 1413 ledger / 50 pilot | controls ready | 0 | 0 | 0 | 0 | 20/20 control tests PASS | `DALILI_CONTRACT_ALIGNMENT_CA_0001_ROUTING_GATE_01.md` |
+| 3 Contract Alignment | CA-0001 | PASS WITH ROUTED EXCEPTIONS | 50 | 47 | 2 | 1 | 0 | 3 routed | 101/101 integrated tests PASS | `DALILI_CA_0001_CONTRACT_ALIGNMENT_GATE_01.md` |
 
 ## Current counters
 
@@ -15,13 +16,14 @@ Governing plan: `docs/DALILI_FULL_CORPUS_GOVERNING_EXECUTION_PLAN_v1.0.md`
 - Legacy source mutation authorized: **NO**
 - Full-corpus disposition complete: **YES**
 - Current Framework lineage overlay: **45 Legacy rows / 47 lineage links**
-- Current execution state: **PHASE 3 CONTRACT ALIGNMENT — CONTROL PLANE READY; CA-0001 DRAFTING AUTHORIZED**
+- Current execution state: **PHASE 3 CONTRACT ALIGNMENT — CA-0001 COMPLETE; CONTROLLED EXPANSION AUTHORIZED; MATERIALIZATION NOT AUTHORIZED**
 - Approved coverage: **1–1413**
 - Pending/unclassified: **NONE (0 records)**
 - Contract Alignment source ledger: **1413 / 1413 VERIFIED; SHA-256 `3e657d49763bd4363210902f11c67b14d4af1d0edc99ddccdb4ca003c62e6748`**
 - CA-0001 deterministic pilot selection: **50 real sources; 7/7 dispositions; 6/6 domains**
 - Control tests: **20 / 20 PASS** (`5` routing/conservation + `15` complexity)
-- CA-0001 content drafting: **AUTHORIZED — NOT YET EXECUTED**
+- CA-0001 content drafting: **COMPLETE — 50/50 ACCOUNTED; 47 GREEN / 2 AMBER / 1 RED**
+- CA-0001 FP drafts: **48/48 CANONICAL 7/7 PASS AND COMPLEXITY 9/9 PASS**
 - Full-corpus materialization: **NOT STARTED**
 
 ## Locked execution destination
