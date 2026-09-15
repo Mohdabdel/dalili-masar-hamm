@@ -12,11 +12,11 @@ Governing plan: `docs/DALILI_FULL_CORPUS_GOVERNING_EXECUTION_PLAN_v1.0.md`
 - Legacy source target: **1413**
 - Legacy accounted by prior strict export: **1413**
 - Legacy source mutation authorized: **NO**
-- Full-corpus disposition complete: **NO**
+- Full-corpus disposition complete: **YES**
 - Current Framework lineage overlay: **45 Legacy rows / 47 lineage links**
-- Current execution state: **PHASE 2 CORPUS CLASSIFICATION — 1350 / 1413 APPROVED AND PERSISTED**
-- Approved coverage: **1–1350**
-- Pending/unclassified: **1351–1413 (63 records)**
+- Current execution state: **PHASE 2 CORPUS CLASSIFICATION — 1413 / 1413 APPROVED AND PERSISTED — COMPLETE**
+- Approved coverage: **1–1413**
+- Pending/unclassified: **NONE (0 records)**
 
 ## Historical evidence retained
 
@@ -273,6 +273,35 @@ Gap remaining in Round 2: CLOSED by the approval recorded below.
 - No materialization performed.
 - Canonical validator unchanged.
 - Next unclassified position: **1351**.
+
+## Phase 2 — Classification approval records 1351–1413
+
+- Status: **APPROVED AND PERSISTED**
+- Range: **1351–1413**
+- Accounted: **63 / 63**
+- REWRITE_REQUIRED: **57**
+- SPLIT_REQUIRED: **6**
+- unresolved: **0**
+- Governing artifact: `docs/audit/data/DALILI_CLASSIFICATION_APPROVED_1351_1413.json`
+- Legacy Master unchanged.
+- No materialization performed.
+- Canonical validator unchanged.
+- Next unclassified position: **NONE — CLASSIFICATION COMPLETE**.
+
+## Phase 2 — Full-corpus classification closure
+
+- Status: **APPROVED — PHASE 2 COMPLETE**
+- Corpus accounted: **1413 / 1413**
+- Continuous coverage: **1–1413 PASS**
+- Unique source identities: **1413 PASS**
+- Unresolved records: **0 PASS**
+- Approved range artifacts: **15**
+- Closure artifact: `docs/audit/data/DALILI_CLASSIFICATION_FULL_CORPUS_CLOSURE_01.json`
+- Legacy source SHA-256: `e651921db9c46938c8b19edbc82859b8df7ca6427dae6f10d6e276f8e6dc2731`
+- Legacy Master unchanged.
+- No materialization performed.
+- Canonical validator unchanged.
+- Next governed phase: **Phase 3 — disposition execution/materialization planning, subject to governing authorization**.
 
 ## Phase 2 — Classification approval records 551–650
 

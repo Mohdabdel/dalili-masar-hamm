@@ -1,0 +1,1542 @@
+{
+  "artifact": "DALILI_CLASSIFICATION_APPROVED_1351_1413",
+  "version": "1.0",
+  "governance_status": "APPROVED",
+  "result_count": 63,
+  "range": {
+    "start": 1351,
+    "end": 1413,
+    "count": 63
+  },
+  "distribution": {
+    "REWRITE_REQUIRED": 57,
+    "SPLIT_REQUIRED": 6,
+    "unresolved": 0
+  },
+  "preflight": {
+    "input_count": 63,
+    "unique_ids": 63,
+    "first_id": "SHOP-084-OP002",
+    "last_id": "SHOP-105-OP003",
+    "source_identity_check": "PASS",
+    "acceptance_gate": "PASS"
+  },
+  "results": [
+    {
+      "corpus_position": 1351,
+      "legacy_id": "SHOP-084-OP002",
+      "source_identity": {
+        "opportunity_title": "التوجه لقسم الاستبدال بالمنتج الجديد والقديم",
+        "event_title": "استبدال منتج بمقاس أو لون مختلف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه لقسم الاستبدال بالمنتج الجديد والقديم",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «استبدال منتج بمقاس أو لون مختلف»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'التوجه لقسم الاستبدال بالمنتج الجديد والقديم'",
+        "legacy_assistance_levels: 'المرافقة أثناء التوجه، التوجه بمفرده، الحمل الكامل للمنتجين.'",
+        "legacy_performance_indicators: 'يتوجه للقسم الصحيح بثقة متزايدة.'",
+        "legacy_execution_steps: 'حمل المنتجين، التوجه للقسم المخصص.'"
+      ]
+    },
+    {
+      "corpus_position": 1352,
+      "legacy_id": "SHOP-084-OP003",
+      "source_identity": {
+        "opportunity_title": "إتمام عملية التبديل مع الموظف",
+        "event_title": "استبدال منتج بمقاس أو لون مختلف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إتمام عملية التبديل مع الموظف",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «استبدال منتج بمقاس أو لون مختلف»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'إتمام عملية التبديل مع الموظف'",
+        "legacy_assistance_levels: 'المرافقة أثناء التبديل، التبديل بمساعدتك، التبديل بمفرده.'",
+        "legacy_performance_indicators: 'يشرح طلبه بثقة متزايدة.'",
+        "legacy_execution_steps: 'تسليم المنتجين للموظف، شرح الطلب.'"
+      ]
+    },
+    {
+      "corpus_position": 1353,
+      "legacy_id": "SHOP-085-OP001",
+      "source_identity": {
+        "opportunity_title": "تقديم طلب إرجاع في التطبيق",
+        "event_title": "إرجاع منتج عبر التوصيل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تقديم طلب إرجاع في التطبيق",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «إرجاع منتج عبر التوصيل»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'تقديم طلب إرجاع في التطبيق'",
+        "legacy_assistance_levels: 'المساعدة في الضغط، الضغط بمفرده، اختيار السبب أيضًا.'",
+        "legacy_performance_indicators: 'يقدّم طلب الإرجاع بثقة متزايدة.'",
+        "legacy_execution_steps: 'الضغط على زر \"إرجاع\"، اختيار السبب.'"
+      ]
+    },
+    {
+      "corpus_position": 1354,
+      "legacy_id": "SHOP-085-OP002",
+      "source_identity": {
+        "opportunity_title": "تغليف المنتج وتجهيزه",
+        "event_title": "إرجاع منتج عبر التوصيل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تغليف المنتج وتجهيزه",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «إرجاع منتج عبر التوصيل»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'تغليف المنتج وتجهيزه'",
+        "legacy_assistance_levels: 'المساعدة في التغليف، التغليف بمفرده، التغليف الكامل بثقة.'",
+        "legacy_performance_indicators: 'يغلف المنتج بثبات دون صعوبة.'",
+        "legacy_execution_steps: 'وضع المنتج في الغلاف، إغلاقه بإحكام.'"
+      ]
+    },
+    {
+      "corpus_position": 1355,
+      "legacy_id": "SHOP-085-OP003",
+      "source_identity": {
+        "opportunity_title": "تسليم الطرد لمندوب شركة الشحن",
+        "event_title": "إرجاع منتج عبر التوصيل"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تسليم الطرد لمندوب شركة الشحن",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «إرجاع منتج عبر التوصيل»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'تسليم الطرد لمندوب شركة الشحن'",
+        "legacy_assistance_levels: 'المرافقة أثناء التسليم، التسليم بمساعدتك، التسليم بمفرده.'",
+        "legacy_performance_indicators: 'يسلّم الطرد بثقة متزايدة.'",
+        "legacy_execution_steps: 'التوجه للباب، تسليم الطرد للمندوب.'"
+      ]
+    },
+    {
+      "corpus_position": 1356,
+      "legacy_id": "SHOP-086-OP001",
+      "source_identity": {
+        "opportunity_title": "متابعة الحساب البنكي للتأكد من وصول الحوالة",
+        "event_title": "استرداد المبلغ المدفوع"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "متابعة الحساب البنكي للتأكد من وصول الحوالة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «استرداد المبلغ المدفوع»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'متابعة الحساب البنكي للتأكد من وصول الحوالة'",
+        "legacy_assistance_levels: 'المراقبة معك، المتابعة بمساعدة، المتابعة بمفرده.'",
+        "legacy_performance_indicators: 'يتابع الحساب بثقة متزايدة.'",
+        "legacy_execution_steps: 'النظر لكشف الحساب، التحقق من وصول المبلغ.'"
+      ]
+    },
+    {
+      "corpus_position": 1357,
+      "legacy_id": "SHOP-086-OP002",
+      "source_identity": {
+        "opportunity_title": "حفظ رسالة التأكيد أو الإشعار",
+        "event_title": "استرداد المبلغ المدفوع"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "حفظ رسالة التأكيد أو الإشعار",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «استرداد المبلغ المدفوع»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'حفظ رسالة التأكيد أو الإشعار'",
+        "legacy_assistance_levels: 'المساعدة في الحفظ، الحفظ بمفرده، الحفظ الكامل.'",
+        "legacy_performance_indicators: 'يحفظ الرسالة في مكانها الصحيح دون تذكير.'",
+        "legacy_execution_steps: 'حفظ الرسالة أو أخذ لقطة شاشة لها.'"
+      ]
+    },
+    {
+      "corpus_position": 1358,
+      "legacy_id": "SHOP-087-OP001",
+      "source_identity": {
+        "opportunity_title": "استلام بطاقة القسيمة أو تأكيد الرصيد الرقمي",
+        "event_title": "استلام رصيد متجر بدل المبلغ"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استلام بطاقة القسيمة أو تأكيد الرصيد الرقمي",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «استلام رصيد متجر بدل المبلغ»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'استلام بطاقة القسيمة أو تأكيد الرصيد الرقمي'",
+        "legacy_assistance_levels: 'المساعدة في الاستلام، الاستلام بمفرده، التحقق الكامل من الرصيد.'",
+        "legacy_performance_indicators: 'يستلم البطاقة أو يتحقق من الرصيد بثقة متزايدة.'",
+        "legacy_execution_steps: 'استلام البطاقة أو التحقق من الرصيد على الشاشة.'"
+      ]
+    },
+    {
+      "corpus_position": 1359,
+      "legacy_id": "SHOP-087-OP002",
+      "source_identity": {
+        "opportunity_title": "حفظ الرصيد في التطبيق",
+        "event_title": "استلام رصيد متجر بدل المبلغ"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "حفظ الرصيد في التطبيق",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «استلام رصيد متجر بدل المبلغ»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'حفظ الرصيد في التطبيق'",
+        "legacy_assistance_levels: 'المساعدة في الحفظ، الحفظ بمفرده، الحفظ الكامل بثقة.'",
+        "legacy_performance_indicators: 'يحفظ الرصيد بثقة متزايدة.'",
+        "legacy_execution_steps: 'إدخال رمز البطاقة أو تأكيد الحفظ.'"
+      ]
+    },
+    {
+      "corpus_position": 1360,
+      "legacy_id": "SHOP-087-OP003",
+      "source_identity": {
+        "opportunity_title": "استخدام الرصيد في عمليات الشراء القادمة",
+        "event_title": "استلام رصيد متجر بدل المبلغ"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استخدام الرصيد في عمليات الشراء القادمة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «استلام رصيد متجر بدل المبلغ»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'استخدام الرصيد في عمليات الشراء القادمة'",
+        "legacy_assistance_levels: 'المساعدة في الإخبار، الإخبار بمفرده، الاستخدام الكامل بثقة.'",
+        "legacy_performance_indicators: 'يستخدم رصيده بثقة متزايدة.'",
+        "legacy_execution_steps: 'إخبار الكاشير برغبته باستخدام الرصيد عند الحساب.'"
+      ]
+    },
+    {
+      "corpus_position": 1361,
+      "legacy_id": "SHOP-088-OP001",
+      "source_identity": {
+        "opportunity_title": "التواصل مع الدعم الفني أو خدمة العملاء",
+        "event_title": "طلب صيانة أو ضمان للمنتج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التواصل مع الدعم الفني أو خدمة العملاء",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «طلب صيانة أو ضمان للمنتج»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'التواصل مع الدعم الفني أو خدمة العملاء'",
+        "legacy_assistance_levels: 'المرافقة أثناء التواصل، التواصل بمساعدتك، التواصل بمفرده.'",
+        "legacy_performance_indicators: 'يبدأ التواصل بثقة متزايدة.'",
+        "legacy_execution_steps: 'الاتصال أو فتح المحادثة، بدء التواصل.'"
+      ]
+    },
+    {
+      "corpus_position": 1362,
+      "legacy_id": "SHOP-088-OP002",
+      "source_identity": {
+        "opportunity_title": "شرح العطل بوضوح",
+        "event_title": "طلب صيانة أو ضمان للمنتج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "شرح العطل بوضوح",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «طلب صيانة أو ضمان للمنتج»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'شرح العطل بوضوح'",
+        "legacy_assistance_levels: 'المساعدة في الشرح، الشرح بمساعدتك، الشرح الكامل بمفرده.'",
+        "legacy_performance_indicators: 'يشرح العطل بوضوح متزايد.'",
+        "legacy_execution_steps: 'وصف المشكلة للموظف بجمل بسيطة.'"
+      ]
+    },
+    {
+      "corpus_position": 1363,
+      "legacy_id": "SHOP-088-OP003",
+      "source_identity": {
+        "opportunity_title": "تسليم الجهاز لمركز الصيانة",
+        "event_title": "طلب صيانة أو ضمان للمنتج"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تسليم الجهاز لمركز الصيانة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «طلب صيانة أو ضمان للمنتج»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'تسليم الجهاز لمركز الصيانة'",
+        "legacy_assistance_levels: 'المساعدة في التسليم، التسليم بمفرده، التسليم الكامل بثقة.'",
+        "legacy_performance_indicators: 'يسلّم الجهاز بثقة متزايدة.'",
+        "legacy_execution_steps: 'حمل الجهاز، تسليمه لموظف المركز.'"
+      ]
+    },
+    {
+      "corpus_position": 1364,
+      "legacy_id": "SHOP-089-OP001",
+      "source_identity": {
+        "opportunity_title": "تقديم الطلب عبر خيارات التقسيط المتاحة",
+        "event_title": "الشراء بالتقسيط أو الدفع لاحقاً"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تقديم الطلب عبر خيارات التقسيط المتاحة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «الشراء بالتقسيط أو الدفع لاحقاً»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'تقديم الطلب عبر خيارات التقسيط المتاحة'",
+        "legacy_assistance_levels: 'المساعدة في الاختيار، الاختيار بمفرده، التقديم الكامل بمفرده.'",
+        "legacy_performance_indicators: 'يختار الخطة المناسبة بثقة متزايدة.'",
+        "legacy_execution_steps: 'النظر للخيارات، اختيار الخطة المناسبة.'"
+      ]
+    },
+    {
+      "corpus_position": 1365,
+      "legacy_id": "SHOP-089-OP002",
+      "source_identity": {
+        "opportunity_title": "متابعة جدول الأقساط",
+        "event_title": "الشراء بالتقسيط أو الدفع لاحقاً"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "متابعة جدول الأقساط",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «الشراء بالتقسيط أو الدفع لاحقاً»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'متابعة جدول الأقساط'",
+        "legacy_assistance_levels: 'المراقبة معك، المتابعة بمساعدة، المتابعة بمفرده.'",
+        "legacy_performance_indicators: 'يتابع المواعيد بثقة متزايدة.'",
+        "legacy_execution_steps: 'النظر لجدول الأقساط، تحديد المواعيد القادمة.'"
+      ]
+    },
+    {
+      "corpus_position": 1366,
+      "legacy_id": "SHOP-089-OP003",
+      "source_identity": {
+        "opportunity_title": "سداد القسط في الموعد المحدد",
+        "event_title": "الشراء بالتقسيط أو الدفع لاحقاً"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "سداد القسط في الموعد المحدد",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «الشراء بالتقسيط أو الدفع لاحقاً»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'سداد القسط في الموعد المحدد'",
+        "legacy_assistance_levels: 'المساعدة في السداد، السداد بمفرده مع تأكيدك، السداد الكامل بثقة.'",
+        "legacy_performance_indicators: 'يسدد القسط في وقته بثقة متزايدة.'",
+        "legacy_execution_steps: 'تجهيز المبلغ، سداده في الموعد المحدد.'"
+      ]
+    },
+    {
+      "corpus_position": 1367,
+      "legacy_id": "SHOP-090-OP001",
+      "source_identity": {
+        "opportunity_title": "اختيار العبوات والكراتين الكبيرة",
+        "event_title": "الشراء بالجملة لتوفير المال"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "اختيار العبوات والكراتين الكبيرة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «الشراء بالجملة لتوفير المال»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'اختيار العبوات والكراتين الكبيرة'",
+        "legacy_assistance_levels: 'الإشارة للخيار، الاختيار بمساعدة، الاختيار بمفرده.'",
+        "legacy_performance_indicators: 'يختار العبوة المناسبة بثقة متزايدة.'",
+        "legacy_execution_steps: 'النظر للعبوات الكبيرة، اختيار المناسب.'"
+      ]
+    },
+    {
+      "corpus_position": 1368,
+      "legacy_id": "SHOP-090-OP002",
+      "source_identity": {
+        "opportunity_title": "المساعدة في تحميل الكراتين إلى السيارة",
+        "event_title": "الشراء بالجملة لتوفير المال"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تحميل الكراتين إلى السيارة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «الشراء بالجملة لتوفير المال»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'المساعدة في تحميل الكراتين إلى السيارة'",
+        "legacy_assistance_levels: 'المساعدة الجزئية معك، حمل كرتون خفيف بمفرده، المشاركة الكاملة بإشرافك.'",
+        "legacy_performance_indicators: 'يحمل بثبات ضمن حدود قدرته البدنية.'",
+        "legacy_execution_steps: 'حمل جزء من الكرتون معك، المساعدة في التحميل.'"
+      ]
+    },
+    {
+      "corpus_position": 1369,
+      "legacy_id": "SHOP-090-OP003",
+      "source_identity": {
+        "opportunity_title": "ترتيب الكراتين في مساحة التخزين",
+        "event_title": "الشراء بالجملة لتوفير المال"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب الكراتين في مساحة التخزين",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «الشراء بالجملة لتوفير المال»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'ترتيب الكراتين في مساحة التخزين'",
+        "legacy_assistance_levels: 'المساعدة في الترتيب، ترتيب كرتون واحد، ترتيب كل الكراتين الخفيفة.'",
+        "legacy_performance_indicators: 'يرتب الكراتين بثبات ونظام متزايد.'",
+        "legacy_execution_steps: 'حمل كل كرتون، وضعه في مكانه.'"
+      ]
+    },
+    {
+      "corpus_position": 1370,
+      "legacy_id": "SHOP-091-OP001",
+      "source_identity": {
+        "opportunity_title": "تفريغ الكراتين الكبيرة",
+        "event_title": "تقسيم المشتريات بالجملة إلى أجزاء"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تفريغ الكراتين الكبيرة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «تقسيم المشتريات بالجملة إلى أجزاء»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'تفريغ الكراتين الكبيرة'",
+        "legacy_assistance_levels: 'المساعدة في التفريغ، التفريغ الجزئي، التفريغ الكامل.'",
+        "legacy_performance_indicators: 'يفرغ الكرتون بثبات دون إسقاط المحتويات.'",
+        "legacy_execution_steps: 'فتح الكرتون، إخراج المحتويات.'"
+      ]
+    },
+    {
+      "corpus_position": 1371,
+      "legacy_id": "SHOP-091-OP002",
+      "source_identity": {
+        "opportunity_title": "تعبئة المنتجات في أكياس أو عبوات صغيرة قابلة للاستخدام",
+        "event_title": "تقسيم المشتريات بالجملة إلى أجزاء"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تعبئة المنتجات في أكياس أو عبوات صغيرة قابلة للاستخدام",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «تقسيم المشتريات بالجملة إلى أجزاء»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'تعبئة المنتجات في أكياس أو عبوات صغيرة قابلة للاستخدام'",
+        "legacy_assistance_levels: 'المساعدة في التعبئة، تعبئة عبوة واحدة، تعبئة عدة عبوات.'",
+        "legacy_performance_indicators: 'يعبئ العبوات بكميات متقاربة ودقة متزايدة.'",
+        "legacy_execution_steps: 'نقل كمية مناسبة إلى كل عبوة صغيرة، إغلاقها.'"
+      ]
+    },
+    {
+      "corpus_position": 1372,
+      "legacy_id": "SHOP-091-OP003",
+      "source_identity": {
+        "opportunity_title": "وضع التواريخ على العبوات المفرزة",
+        "event_title": "تقسيم المشتريات بالجملة إلى أجزاء"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع التواريخ على العبوات المفرزة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «تقسيم المشتريات بالجملة إلى أجزاء»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'وضع التواريخ على العبوات المفرزة'",
+        "legacy_assistance_levels: 'المساعدة في الكتابة واللصق، تنفيذ خطوة واحدة، تنفيذ المهمة كاملة.'",
+        "legacy_performance_indicators: 'يضع التاريخ على كل عبوة دون تذكير متكرر.'",
+        "legacy_execution_steps: 'كتابة التاريخ على كل ملصق، لصقه على العبوة.'"
+      ]
+    },
+    {
+      "corpus_position": 1373,
+      "legacy_id": "SHOP-092-OP001",
+      "source_identity": {
+        "opportunity_title": "مراسلة البائع للاستفسار عن السعر والمواصفات",
+        "event_title": "الشراء من بائع عبر وسائل التواصل الاجتماعي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مراسلة البائع للاستفسار عن السعر والمواصفات",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «الشراء من بائع عبر وسائل التواصل الاجتماعي»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'مراسلة البائع للاستفسار عن السعر والمواصفات'",
+        "legacy_assistance_levels: 'المساعدة في الكتابة، الكتابة بمساعدتك، الإرسال بمفرده.'",
+        "legacy_performance_indicators: 'يرسل استفساره بثقة متزايدة.'",
+        "legacy_execution_steps: 'فتح المحادثة، إرسال السؤال.'"
+      ]
+    },
+    {
+      "corpus_position": 1374,
+      "legacy_id": "SHOP-092-OP002",
+      "source_identity": {
+        "opportunity_title": "تزويد البائع بعنوان التوصيل وتأكيد الطلب",
+        "event_title": "الشراء من بائع عبر وسائل التواصل الاجتماعي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "تزويد البائع بعنوان التوصيل | تأكيد الطلب",
+      "reasoning_summary": "يجمع السجل دورين مستقلين نسبيًا في القصد والأثر والاكتمال: «تزويد البائع بعنوان التوصيل | تأكيد الطلب»؛ لذلك يلزم SPLIT_REQUIRED مع إزالة تدرجات FP-07 من كل دور.",
+      "evidence_from_record": [
+        "opportunity_title: 'تزويد البائع بعنوان التوصيل وتأكيد الطلب'",
+        "legacy_assistance_levels: 'المساعدة في الإرسال، الإرسال بمفرده، التأكيد الكامل.'",
+        "legacy_performance_indicators: 'يرسل العنوان ويؤكد الطلب بثقة متزايدة.'",
+        "legacy_execution_steps: 'إرسال العنوان للبائع، تأكيد تفاصيل الطلب.'"
+      ]
+    },
+    {
+      "corpus_position": 1375,
+      "legacy_id": "SHOP-092-OP003",
+      "source_identity": {
+        "opportunity_title": "تحويل المبلغ ومشاركة إيصال التحويل",
+        "event_title": "الشراء من بائع عبر وسائل التواصل الاجتماعي"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "تحويل المبلغ إلى البائع | مشاركة إيصال التحويل مع البائع",
+      "reasoning_summary": "يجمع السجل دورين مستقلين نسبيًا في القصد والأثر والاكتمال: «تحويل المبلغ إلى البائع | مشاركة إيصال التحويل مع البائع»؛ لذلك يلزم SPLIT_REQUIRED مع إزالة تدرجات FP-07 من كل دور.",
+      "evidence_from_record": [
+        "opportunity_title: 'تحويل المبلغ ومشاركة إيصال التحويل'",
+        "legacy_assistance_levels: 'المساعدة في التحويل، التحويل بمساعدتك مع التأكيد، مشاركة الإيصال بمفرده.'",
+        "legacy_performance_indicators: 'يشارك الإيصال بثقة متزايدة.'",
+        "legacy_execution_steps: 'إتمام التحويل بمساعدتك، إرسال صورة الإيصال للبائع.'"
+      ]
+    },
+    {
+      "corpus_position": 1376,
+      "legacy_id": "SHOP-093-OP001",
+      "source_identity": {
+        "opportunity_title": "تصفح قوائم المطاعم",
+        "event_title": "الشراء عبر تطبيقات توصيل الطعام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تصفح قوائم المطاعم",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «الشراء عبر تطبيقات توصيل الطعام»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'تصفح قوائم المطاعم'",
+        "legacy_assistance_levels: 'المراقبة معك، التصفح بمساعدة، التصفح بمفرده.'",
+        "legacy_performance_indicators: 'يتصفح القوائم بثقة متزايدة.'",
+        "legacy_execution_steps: 'التمرير بين المطاعم، النظر للقوائم.'"
+      ]
+    },
+    {
+      "corpus_position": 1377,
+      "legacy_id": "SHOP-093-OP002",
+      "source_identity": {
+        "opportunity_title": "تحديد واختيار الوجبات المطلوبة",
+        "event_title": "الشراء عبر تطبيقات توصيل الطعام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تحديد واختيار الوجبات المطلوبة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «الشراء عبر تطبيقات توصيل الطعام»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'تحديد واختيار الوجبات المطلوبة'",
+        "legacy_assistance_levels: 'الإشارة للخيار، الاختيار من بين خيارين، الاختيار الكامل بمفرده.'",
+        "legacy_performance_indicators: 'يعبّر عن اختياره بوضوح متزايد.'",
+        "legacy_execution_steps: 'الضغط على الوجبة المفضلة، إضافتها للطلب.'"
+      ]
+    },
+    {
+      "corpus_position": 1378,
+      "legacy_id": "SHOP-093-OP003",
+      "source_identity": {
+        "opportunity_title": "متابعة خط سير المندوب على الخريطة",
+        "event_title": "الشراء عبر تطبيقات توصيل الطعام"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "متابعة خط سير المندوب على الخريطة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «الشراء عبر تطبيقات توصيل الطعام»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'متابعة خط سير المندوب على الخريطة'",
+        "legacy_assistance_levels: 'المراقبة معك، المتابعة بمفرده، الاستعداد للاستقبال أيضًا.'",
+        "legacy_performance_indicators: 'يتابع الخريطة بثقة متزايدة.'",
+        "legacy_execution_steps: 'النظر لموقع المندوب، متابعة اقترابه.'"
+      ]
+    },
+    {
+      "corpus_position": 1379,
+      "legacy_id": "SHOP-094-OP001",
+      "source_identity": {
+        "opportunity_title": "إدخال العملات أو تمرير البطاقة",
+        "event_title": "الشراء من آلة البيع الآلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إدخال العملات أو تمرير البطاقة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «الشراء من آلة البيع الآلية»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'إدخال العملات أو تمرير البطاقة'",
+        "legacy_assistance_levels: 'المساعدة في الإدخال، الإدخال بمفرده، الإدخال الكامل بثقة.'",
+        "legacy_performance_indicators: 'يدخل العملة أو يمرر البطاقة بثبات متزايد.'",
+        "legacy_execution_steps: 'إدخال العملة أو تمرير البطاقة في الفتحة المخصصة.'"
+      ]
+    },
+    {
+      "corpus_position": 1380,
+      "legacy_id": "SHOP-094-OP002",
+      "source_identity": {
+        "opportunity_title": "إدخال أو اختيار كود المنتج المطلوب",
+        "event_title": "الشراء من آلة البيع الآلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إدخال أو اختيار كود المنتج المطلوب",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «الشراء من آلة البيع الآلية»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'إدخال أو اختيار كود المنتج المطلوب'",
+        "legacy_assistance_levels: 'المساعدة في الاختيار، الاختيار بمفرده، الإدخال الكامل بثقة.'",
+        "legacy_performance_indicators: 'يختار المنتج المطلوب بثقة متزايدة.'",
+        "legacy_execution_steps: 'النظر للرموز، إدخال الكود المطلوب.'"
+      ]
+    },
+    {
+      "corpus_position": 1381,
+      "legacy_id": "SHOP-094-OP003",
+      "source_identity": {
+        "opportunity_title": "سحب المنتج من الفتحة المخصصة واستلام الباقي",
+        "event_title": "الشراء من آلة البيع الآلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "سحب المنتج من آلة البيع | استلام المبلغ المتبقي",
+      "reasoning_summary": "يجمع السجل دورين مستقلين نسبيًا في القصد والأثر والاكتمال: «سحب المنتج من آلة البيع | استلام المبلغ المتبقي»؛ لذلك يلزم SPLIT_REQUIRED مع إزالة تدرجات FP-07 من كل دور.",
+      "evidence_from_record": [
+        "opportunity_title: 'سحب المنتج من الفتحة المخصصة واستلام الباقي'",
+        "legacy_assistance_levels: 'المساعدة في السحب، السحب بمفرده، الاستلام الكامل بثقة.'",
+        "legacy_performance_indicators: 'يسحب المنتج ويستلم الباقي بثبات متزايد.'",
+        "legacy_execution_steps: 'سحب المنتج، استلام الباقي إن وجد.'"
+      ]
+    },
+    {
+      "corpus_position": 1382,
+      "legacy_id": "SHOP-095-OP001",
+      "source_identity": {
+        "opportunity_title": "توجيه السيارة نحو المضخة",
+        "event_title": "شراء وقود السيارة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "توجيه السيارة نحو المضخة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء وقود السيارة»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'توجيه السيارة نحو المضخة'",
+        "legacy_assistance_levels: 'المراقبة معك، الإشارة بمساعدة، التوجيه بمفرده.'",
+        "legacy_performance_indicators: 'يوجه بوضوح متزايد.'",
+        "legacy_execution_steps: 'الإشارة للاتجاه المناسب أثناء اقتراب السيارة.'"
+      ]
+    },
+    {
+      "corpus_position": 1383,
+      "legacy_id": "SHOP-095-OP002",
+      "source_identity": {
+        "opportunity_title": "طلب نوع وكمية الوقود من عامل المحطة",
+        "event_title": "شراء وقود السيارة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "طلب نوع وكمية الوقود من عامل المحطة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء وقود السيارة»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'طلب نوع وكمية الوقود من عامل المحطة'",
+        "legacy_assistance_levels: 'المرافقة أثناء الطلب، الطلب بمساعدتك، الطلب بمفرده.'",
+        "legacy_performance_indicators: 'يعبّر عن الطلب بثقة متزايدة.'",
+        "legacy_execution_steps: 'التوجه للعامل، ذكر النوع والكمية المطلوبة.'"
+      ]
+    },
+    {
+      "corpus_position": 1384,
+      "legacy_id": "SHOP-095-OP003",
+      "source_identity": {
+        "opportunity_title": "دفع القيمة للعامل",
+        "event_title": "شراء وقود السيارة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "دفع القيمة للعامل",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء وقود السيارة»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'دفع القيمة للعامل'",
+        "legacy_assistance_levels: 'المساعدة في التسليم، التسليم بمفرده، الدفع الكامل بثقة.'",
+        "legacy_performance_indicators: 'يسلّم المبلغ أو البطاقة بثقة متزايدة.'",
+        "legacy_execution_steps: 'تسليم المبلغ أو البطاقة للعامل.'"
+      ]
+    },
+    {
+      "corpus_position": 1385,
+      "legacy_id": "SHOP-096-OP001",
+      "source_identity": {
+        "opportunity_title": "إدخال النقود أو البطاقة في الجهاز",
+        "event_title": "شراء تذاكر موقف أو مواصلات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إدخال النقود أو البطاقة في الجهاز",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء تذاكر موقف أو مواصلات»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'إدخال النقود أو البطاقة في الجهاز'",
+        "legacy_assistance_levels: 'المساعدة في الإدخال، الإدخال بمفرده، الإدخال الكامل بثقة.'",
+        "legacy_performance_indicators: 'يدخل النقود أو البطاقة بثبات متزايد.'",
+        "legacy_execution_steps: 'إدخال النقود أو تمرير البطاقة في الجهاز.'"
+      ]
+    },
+    {
+      "corpus_position": 1386,
+      "legacy_id": "SHOP-096-OP002",
+      "source_identity": {
+        "opportunity_title": "تحديد نوع التذكرة أو الوجهة",
+        "event_title": "شراء تذاكر موقف أو مواصلات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تحديد نوع التذكرة أو الوجهة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء تذاكر موقف أو مواصلات»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'تحديد نوع التذكرة أو الوجهة'",
+        "legacy_assistance_levels: 'المساعدة في التحديد، التحديد بمفرده، الاختيار الكامل بثقة.'",
+        "legacy_performance_indicators: 'يحدد الوجهة الصحيحة بثقة متزايدة.'",
+        "legacy_execution_steps: 'الضغط على الخيار المطلوب.'"
+      ]
+    },
+    {
+      "corpus_position": 1387,
+      "legacy_id": "SHOP-096-OP003",
+      "source_identity": {
+        "opportunity_title": "استلام التذكرة من الجهاز",
+        "event_title": "شراء تذاكر موقف أو مواصلات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "استلام التذكرة من الجهاز",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء تذاكر موقف أو مواصلات»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'استلام التذكرة من الجهاز'",
+        "legacy_assistance_levels: 'المساعدة في الاستلام، الاستلام بمفرده، الاستلام الكامل بثقة.'",
+        "legacy_performance_indicators: 'يستلم التذكرة بثبات متزايد.'",
+        "legacy_execution_steps: 'سحب التذكرة من الفتحة.'"
+      ]
+    },
+    {
+      "corpus_position": 1388,
+      "legacy_id": "SHOP-097-OP001",
+      "source_identity": {
+        "opportunity_title": "اختيار نوع وقيمة البطاقة من الرف",
+        "event_title": "شراء بطاقات شحن أو هدايا"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "اختيار نوع وقيمة البطاقة من الرف",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء بطاقات شحن أو هدايا»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'اختيار نوع وقيمة البطاقة من الرف'",
+        "legacy_assistance_levels: 'الإشارة للبطاقة، البحث بمساعدة، البحث بمفرده.'",
+        "legacy_performance_indicators: 'يجد البطاقة المطلوبة بثقة متزايدة.'",
+        "legacy_execution_steps: 'البحث عن البطاقة المناسبة، اختيارها من الرف.'"
+      ]
+    },
+    {
+      "corpus_position": 1389,
+      "legacy_id": "SHOP-097-OP002",
+      "source_identity": {
+        "opportunity_title": "دفع قيمة البطاقة لتفعيلها عند الكاشير",
+        "event_title": "شراء بطاقات شحن أو هدايا"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "دفع قيمة البطاقة لتفعيلها عند الكاشير",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء بطاقات شحن أو هدايا»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'دفع قيمة البطاقة لتفعيلها عند الكاشير'",
+        "legacy_assistance_levels: 'المساعدة في التسليم، التسليم بمفرده، الدفع الكامل بثقة.'",
+        "legacy_performance_indicators: 'يسلّم المبلغ بثقة متزايدة.'",
+        "legacy_execution_steps: 'تسليم المبلغ أو البطاقة للكاشير.'"
+      ]
+    },
+    {
+      "corpus_position": 1390,
+      "legacy_id": "SHOP-097-OP003",
+      "source_identity": {
+        "opportunity_title": "تسليمها كهدية أو شحنها في الهاتف",
+        "event_title": "شراء بطاقات شحن أو هدايا"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "تسليم بطاقة الشحن كهدية | استخدام بطاقة الشحن في الهاتف",
+      "reasoning_summary": "يجمع السجل دورين مستقلين نسبيًا في القصد والأثر والاكتمال: «تسليم بطاقة الشحن كهدية | استخدام بطاقة الشحن في الهاتف»؛ لذلك يلزم SPLIT_REQUIRED مع إزالة تدرجات FP-07 من كل دور.",
+      "evidence_from_record": [
+        "opportunity_title: 'تسليمها كهدية أو شحنها في الهاتف'",
+        "legacy_assistance_levels: 'المساعدة في التسليم أو الشحن، التنفيذ بمفرده، التنفيذ الكامل بثقة.'",
+        "legacy_performance_indicators: 'يسلّم أو يشحن البطاقة بثقة متزايدة.'",
+        "legacy_execution_steps: 'تسليم البطاقة لصاحبها، أو إدخال الرمز في الهاتف.'"
+      ]
+    },
+    {
+      "corpus_position": 1391,
+      "legacy_id": "SHOP-098-OP001",
+      "source_identity": {
+        "opportunity_title": "التوجه للخزانة الذكية أو النقطة المحددة",
+        "event_title": "استلام طلبية من نقطة استلام محددة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "التوجه للخزانة الذكية أو النقطة المحددة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «استلام طلبية من نقطة استلام محددة»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'التوجه للخزانة الذكية أو النقطة المحددة'",
+        "legacy_assistance_levels: 'المرافقة أثناء التوجه، التوجه بمساعدة، التوجه بمفرده.'",
+        "legacy_performance_indicators: 'يصل للمكان الصحيح بثقة متزايدة.'",
+        "legacy_execution_steps: 'السير باتجاه المكان المحدد.'"
+      ]
+    },
+    {
+      "corpus_position": 1392,
+      "legacy_id": "SHOP-098-OP002",
+      "source_identity": {
+        "opportunity_title": "إدخال كود الاستلام في الشاشة",
+        "event_title": "استلام طلبية من نقطة استلام محددة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "إدخال كود الاستلام في الشاشة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «استلام طلبية من نقطة استلام محددة»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'إدخال كود الاستلام في الشاشة'",
+        "legacy_assistance_levels: 'المساعدة في الإدخال، الإدخال بمفرده، الإدخال الكامل بثقة.'",
+        "legacy_performance_indicators: 'يدخل الكود بثبات متزايد.'",
+        "legacy_execution_steps: 'الضغط على الأرقام لإدخال الكود.'"
+      ]
+    },
+    {
+      "corpus_position": 1393,
+      "legacy_id": "SHOP-098-OP003",
+      "source_identity": {
+        "opportunity_title": "سحب الطرد وإغلاق باب الخزانة",
+        "event_title": "استلام طلبية من نقطة استلام محددة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "سحب الطرد من الخزانة الذكية | إغلاق باب الخزانة الذكية",
+      "reasoning_summary": "يجمع السجل دورين مستقلين نسبيًا في القصد والأثر والاكتمال: «سحب الطرد من الخزانة الذكية | إغلاق باب الخزانة الذكية»؛ لذلك يلزم SPLIT_REQUIRED مع إزالة تدرجات FP-07 من كل دور.",
+      "evidence_from_record": [
+        "opportunity_title: 'سحب الطرد وإغلاق باب الخزانة'",
+        "legacy_assistance_levels: 'المساعدة في السحب والإغلاق، تنفيذ خطوة واحدة، تنفيذ المهمة كاملة.'",
+        "legacy_performance_indicators: 'يسحب الطرد ويغلق الباب بثقة متزايدة.'",
+        "legacy_execution_steps: 'سحب الطرد من الخزانة، إغلاق الباب.'"
+      ]
+    },
+    {
+      "corpus_position": 1394,
+      "legacy_id": "SHOP-099-OP001",
+      "source_identity": {
+        "opportunity_title": "شراء المنتجات المخصصة للتبرع (أغذية، ملابس)",
+        "event_title": "التبرع بمشتريات في نقاط التبرع بالمتجر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "شراء المنتجات المخصصة للتبرع (أغذية، ملابس)",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «التبرع بمشتريات في نقاط التبرع بالمتجر»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'شراء المنتجات المخصصة للتبرع (أغذية، ملابس)'",
+        "legacy_assistance_levels: 'الإشارة للخيار، الاختيار من بين خيارين، الاختيار الكامل بمفرده.'",
+        "legacy_performance_indicators: 'يختار منتج التبرع بثقة متزايدة.'",
+        "legacy_execution_steps: 'اختيار المنتج المناسب للتبرع، وضعه في العربة.'"
+      ]
+    },
+    {
+      "corpus_position": 1395,
+      "legacy_id": "SHOP-099-OP002",
+      "source_identity": {
+        "opportunity_title": "وضع المنتجات في صندوق التبرع الخاص بالجمعية في المتجر",
+        "event_title": "التبرع بمشتريات في نقاط التبرع بالمتجر"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "وضع المنتجات في صندوق التبرع الخاص بالجمعية في المتجر",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «التبرع بمشتريات في نقاط التبرع بالمتجر»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'وضع المنتجات في صندوق التبرع الخاص بالجمعية في المتجر'",
+        "legacy_assistance_levels: 'المساعدة في الوضع، الوضع بمفرده، الوضع الكامل بثقة.'",
+        "legacy_performance_indicators: 'يضع المنتج في الصندوق بثقة متزايدة.'",
+        "legacy_execution_steps: 'حمل المنتج، وضعه في صندوق التبرع.'"
+      ]
+    },
+    {
+      "corpus_position": 1396,
+      "legacy_id": "SHOP-100-OP001",
+      "source_identity": {
+        "opportunity_title": "اختيار الحلويات ومستلزمات الضيافة الموسمية",
+        "event_title": "شراء منتجات موسمية (رمضان/العيد)"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "اختيار الحلويات ومستلزمات الضيافة الموسمية",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء منتجات موسمية (رمضان/العيد)»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'اختيار الحلويات ومستلزمات الضيافة الموسمية'",
+        "legacy_assistance_levels: 'الإشارة للخيار، الاختيار من بين خيارين، الاختيار الكامل بمفرده.'",
+        "legacy_performance_indicators: 'يعبّر عن اختياره بوضوح متزايد.'",
+        "legacy_execution_steps: 'النظر للخيارات، اختيار الأصناف المناسبة.'"
+      ]
+    },
+    {
+      "corpus_position": 1397,
+      "legacy_id": "SHOP-100-OP002",
+      "source_identity": {
+        "opportunity_title": "مقارنة العروض الخاصة بالموسم",
+        "event_title": "شراء منتجات موسمية (رمضان/العيد)"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "مقارنة العروض الخاصة بالموسم",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء منتجات موسمية (رمضان/العيد)»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'مقارنة العروض الخاصة بالموسم'",
+        "legacy_assistance_levels: 'المساعدة في المقارنة، المقارنة بمفرده، الاختيار النهائي أيضًا.'",
+        "legacy_performance_indicators: 'يقارن العروض بثقة متزايدة.'",
+        "legacy_execution_steps: 'النظر للعروض، مقارنة القيمة.'"
+      ]
+    },
+    {
+      "corpus_position": 1398,
+      "legacy_id": "SHOP-100-OP003",
+      "source_identity": {
+        "opportunity_title": "ترتيب المنتجات الموسمية في المنزل استعداداً للمناسبة",
+        "event_title": "شراء منتجات موسمية (رمضان/العيد)"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب المنتجات الموسمية في المنزل استعداداً للمناسبة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء منتجات موسمية (رمضان/العيد)»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'ترتيب المنتجات الموسمية في المنزل استعداداً للمناسبة'",
+        "legacy_assistance_levels: 'المساعدة في الترتيب، الترتيب الجزئي، الترتيب الكامل.'",
+        "legacy_performance_indicators: 'يرتب المنتجات بثبات ونظام متزايد.'",
+        "legacy_execution_steps: 'حمل كل منتج، وضعه في مكانه المناسب.'"
+      ]
+    },
+    {
+      "corpus_position": 1399,
+      "legacy_id": "SHOP-101-OP001",
+      "source_identity": {
+        "opportunity_title": "اختيار أدوات الزينة (بالونات، شموع)",
+        "event_title": "شراء مستلزمات الحفلات والمناسبات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "اختيار أدوات الزينة (بالونات، شموع)",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء مستلزمات الحفلات والمناسبات»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'اختيار أدوات الزينة (بالونات، شموع)'",
+        "legacy_assistance_levels: 'الإشارة للخيار، الاختيار من بين خيارين، الاختيار الكامل بمفرده.'",
+        "legacy_performance_indicators: 'يعبّر عن اختياره بوضوح متزايد.'",
+        "legacy_execution_steps: 'النظر للخيارات، اختيار أدوات الزينة المناسبة.'"
+      ]
+    },
+    {
+      "corpus_position": 1400,
+      "legacy_id": "SHOP-101-OP002",
+      "source_identity": {
+        "opportunity_title": "تنسيق واختيار ألوان المستلزمات",
+        "event_title": "شراء مستلزمات الحفلات والمناسبات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تنسيق واختيار ألوان المستلزمات",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء مستلزمات الحفلات والمناسبات»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'تنسيق واختيار ألوان المستلزمات'",
+        "legacy_assistance_levels: 'المساعدة في التنسيق، التنسيق بمفرده، الاختيار النهائي بثقة.'",
+        "legacy_performance_indicators: 'ينسّق الألوان بثقة متزايدة.'",
+        "legacy_execution_steps: 'مقارنة الألوان المتاحة، اختيار التنسيق المفضل.'"
+      ]
+    },
+    {
+      "corpus_position": 1401,
+      "legacy_id": "SHOP-101-OP003",
+      "source_identity": {
+        "opportunity_title": "اختيار وشراء بطاقات الدعوة",
+        "event_title": "شراء مستلزمات الحفلات والمناسبات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "SPLIT_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "MULTI_ROLE",
+      "functional_role_statement": "اختيار بطاقات الدعوة | شراء بطاقات الدعوة",
+      "reasoning_summary": "يجمع السجل دورين مستقلين نسبيًا في القصد والأثر والاكتمال: «اختيار بطاقات الدعوة | شراء بطاقات الدعوة»؛ لذلك يلزم SPLIT_REQUIRED مع إزالة تدرجات FP-07 من كل دور.",
+      "evidence_from_record": [
+        "opportunity_title: 'اختيار وشراء بطاقات الدعوة'",
+        "legacy_assistance_levels: 'الإشارة للتصميم، الاختيار من بين خيارين، الاختيار الكامل بمفرده.'",
+        "legacy_performance_indicators: 'يختار التصميم المناسب بثقة متزايدة.'",
+        "legacy_execution_steps: 'النظر للتصاميم، اختيار البطاقات المناسبة.'"
+      ]
+    },
+    {
+      "corpus_position": 1402,
+      "legacy_id": "SHOP-102-OP001",
+      "source_identity": {
+        "opportunity_title": "سحب كراتين الماء أو الجالونات",
+        "event_title": "شراء ماء معبأ أو جالونات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "سحب كراتين الماء أو الجالونات",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء ماء معبأ أو جالونات»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'سحب كراتين الماء أو الجالونات'",
+        "legacy_assistance_levels: 'المساعدة في السحب، السحب بمفرده، سحب أكثر من كرتون.'",
+        "legacy_performance_indicators: 'يسحب الكرتون بثبات دون صعوبة.'",
+        "legacy_execution_steps: 'الإمساك بالكرتون، سحبه من الرف.'"
+      ]
+    },
+    {
+      "corpus_position": 1403,
+      "legacy_id": "SHOP-102-OP002",
+      "source_identity": {
+        "opportunity_title": "ترتيب الكراتين في أسفل عربة التسوق",
+        "event_title": "شراء ماء معبأ أو جالونات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "ترتيب الكراتين في أسفل عربة التسوق",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء ماء معبأ أو جالونات»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'ترتيب الكراتين في أسفل عربة التسوق'",
+        "legacy_assistance_levels: 'المساعدة في الوضع، الوضع بمفرده، الترتيب الكامل.'",
+        "legacy_performance_indicators: 'يضع الكراتين بثبات في المكان الصحيح.'",
+        "legacy_execution_steps: 'حمل الكرتون، وضعه في أسفل العربة.'"
+      ]
+    },
+    {
+      "corpus_position": 1404,
+      "legacy_id": "SHOP-102-OP003",
+      "source_identity": {
+        "opportunity_title": "رفع الكراتين ونقلها للسيارة",
+        "event_title": "شراء ماء معبأ أو جالونات"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "رفع الكراتين ونقلها للسيارة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء ماء معبأ أو جالونات»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'رفع الكراتين ونقلها للسيارة'",
+        "legacy_assistance_levels: 'المساعدة في الرفع والحمل، حمل كرتون خفيف بمفرده، الحمل الكامل بمشاركتك.'",
+        "legacy_performance_indicators: 'يحمل الكرتون بثبات ضمن حدود قدرته.'",
+        "legacy_execution_steps: 'رفع الكرتون، حمله للسيارة.'"
+      ]
+    },
+    {
+      "corpus_position": 1405,
+      "legacy_id": "SHOP-103-OP001",
+      "source_identity": {
+        "opportunity_title": "دحرجة أو نقل الأنبوبة الفارغة لمحل الاستبدال",
+        "event_title": "شراء أو استبدال أنبوبة غاز منزلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "دحرجة أو نقل الأنبوبة الفارغة لمحل الاستبدال",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء أو استبدال أنبوبة غاز منزلية»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'دحرجة أو نقل الأنبوبة الفارغة لمحل الاستبدال'",
+        "legacy_assistance_levels: 'المراقبة معك، المساعدة الجزئية بإشرافك، المشاركة الكاملة بإشراف مباشر.'",
+        "legacy_performance_indicators: 'يساهم بثبات ضمن حدود قدرته البدنية.'",
+        "legacy_execution_steps: 'المساعدة في دحرجة الأنبوبة نحو المحل.'"
+      ]
+    },
+    {
+      "corpus_position": 1406,
+      "legacy_id": "SHOP-103-OP002",
+      "source_identity": {
+        "opportunity_title": "دفع قيمة الاستبدال",
+        "event_title": "شراء أو استبدال أنبوبة غاز منزلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "دفع قيمة الاستبدال",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء أو استبدال أنبوبة غاز منزلية»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'دفع قيمة الاستبدال'",
+        "legacy_assistance_levels: 'المساعدة في التسليم، التسليم بمفرده، الدفع الكامل بثقة.'",
+        "legacy_performance_indicators: 'يسلّم المبلغ بثقة متزايدة.'",
+        "legacy_execution_steps: 'تسليم المبلغ للبائع.'"
+      ]
+    },
+    {
+      "corpus_position": 1407,
+      "legacy_id": "SHOP-103-OP003",
+      "source_identity": {
+        "opportunity_title": "تحميل الأنبوبة الممتلئة بأمان",
+        "event_title": "شراء أو استبدال أنبوبة غاز منزلية"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "توجيه أنبوبة الغاز أثناء التحميل",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء أو استبدال أنبوبة غاز منزلية»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'تحميل الأنبوبة الممتلئة بأمان'",
+        "legacy_assistance_levels: 'المراقبة معك، المساعدة بالتوجيه بإشرافك، المشاركة المحدودة بإشراف كامل.'",
+        "legacy_performance_indicators: 'يلتزم بتعليمات السلامة أثناء المهمة.'",
+        "legacy_execution_steps: 'المساعدة في التوجيه أثناء التحميل معك.'"
+      ]
+    },
+    {
+      "corpus_position": 1408,
+      "legacy_id": "SHOP-104-OP001",
+      "source_identity": {
+        "opportunity_title": "اختيار نوع الطعام المناسب للحيوان",
+        "event_title": "شراء مستلزمات الحيوانات الأليفة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "اختيار نوع الطعام المناسب للحيوان",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء مستلزمات الحيوانات الأليفة»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'اختيار نوع الطعام المناسب للحيوان'",
+        "legacy_assistance_levels: 'الإشارة للنوع، الاختيار من بين خيارين، الاختيار بمفرده.'",
+        "legacy_performance_indicators: 'يختار النوع الصحيح بثقة متزايدة.'",
+        "legacy_execution_steps: 'النظر للخيارات، اختيار النوع المناسب.'"
+      ]
+    },
+    {
+      "corpus_position": 1409,
+      "legacy_id": "SHOP-104-OP002",
+      "source_identity": {
+        "opportunity_title": "قراءة المكونات الخاصة بالغذاء",
+        "event_title": "شراء مستلزمات الحيوانات الأليفة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "قراءة المكونات الخاصة بالغذاء",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء مستلزمات الحيوانات الأليفة»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'قراءة المكونات الخاصة بالغذاء'",
+        "legacy_assistance_levels: 'المساعدة في القراءة، القراءة بمفرده، التحقق الكامل.'",
+        "legacy_performance_indicators: 'يقرأ المكونات بثقة متزايدة.'",
+        "legacy_execution_steps: 'قراءة المكونات، التحقق من ملاءمتها.'"
+      ]
+    },
+    {
+      "corpus_position": 1410,
+      "legacy_id": "SHOP-104-OP003",
+      "source_identity": {
+        "opportunity_title": "حمل أكياس الرمل أو الطعام للسيارة",
+        "event_title": "شراء مستلزمات الحيوانات الأليفة"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "حمل أكياس الرمل أو الطعام للسيارة",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء مستلزمات الحيوانات الأليفة»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'حمل أكياس الرمل أو الطعام للسيارة'",
+        "legacy_assistance_levels: 'المساعدة في الحمل، حمل كيس واحد، حمل عدة أكياس.'",
+        "legacy_performance_indicators: 'يحمل الأكياس بثبات دون إسقاطها.'",
+        "legacy_execution_steps: 'حمل الأكياس، نقلها للسيارة.'"
+      ]
+    },
+    {
+      "corpus_position": 1411,
+      "legacy_id": "SHOP-105-OP001",
+      "source_identity": {
+        "opportunity_title": "اختيار ألوان الخيوط والأقمشة ومطابقتها",
+        "event_title": "شراء أدوات ومواد الخياطة والحرف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "اختيار ألوان الخيوط والأقمشة ومطابقتها",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء أدوات ومواد الخياطة والحرف»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'اختيار ألوان الخيوط والأقمشة ومطابقتها'",
+        "legacy_assistance_levels: 'المساعدة في المطابقة، المطابقة بمفرده، الاختيار النهائي بثقة.'",
+        "legacy_performance_indicators: 'يطابق الألوان بدقة متزايدة.'",
+        "legacy_execution_steps: 'النظر للخيارات، مطابقة الألوان مع بعضها.'"
+      ]
+    },
+    {
+      "corpus_position": 1412,
+      "legacy_id": "SHOP-105-OP002",
+      "source_identity": {
+        "opportunity_title": "فحص متانة وجودة الأدوات (إبر، مقصات)",
+        "event_title": "شراء أدوات ومواد الخياطة والحرف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "فحص متانة وجودة الأدوات (إبر، مقصات)",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء أدوات ومواد الخياطة والحرف»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'فحص متانة وجودة الأدوات (إبر، مقصات)'",
+        "legacy_assistance_levels: 'المراقبة معك، الفحص بمساعدة، الفحص بمفرده.'",
+        "legacy_performance_indicators: 'يميّز الأداة الجيدة بثقة متزايدة.'",
+        "legacy_execution_steps: 'حمل الأداة بحذر، فحصها.'"
+      ]
+    },
+    {
+      "corpus_position": 1413,
+      "legacy_id": "SHOP-105-OP003",
+      "source_identity": {
+        "opportunity_title": "تجميع الأدوات وتجهيزها للحساب",
+        "event_title": "شراء أدوات ومواد الخياطة والحرف"
+      },
+      "existing_framework_lineage_assessment": "NONE",
+      "existing_framework_lineage_evidence": [],
+      "duplicate_assessment": "NONE",
+      "needs_human_review": false,
+      "review_reason": null,
+      "disposition": "REWRITE_REQUIRED",
+      "confidence": "HIGH",
+      "semantic_type": "FUNCTIONAL_PARTICIPATION",
+      "functional_role_statement": "تجميع الأدوات وتجهيزها للحساب",
+      "reasoning_summary": "يمثل السجل دور مشاركة وظيفية صالحًا داخل سياق «شراء أدوات ومواد الخياطة والحرف»، لكن البطاقة تربطه بالمساعدة أو الاستقلال أو مقدار الأداء أو التقدم؛ لذلك يلزم REWRITE_REQUIRED لضمان حياد FP-07.",
+      "evidence_from_record": [
+        "opportunity_title: 'تجميع الأدوات وتجهيزها للحساب'",
+        "legacy_assistance_levels: 'المساعدة في التجميع، التجميع بمفرده، التجهيز الكامل للحساب.'",
+        "legacy_performance_indicators: 'يجمع الأدوات بثبات دون إسقاطها.'",
+        "legacy_execution_steps: 'حمل كل أداة، وضعها في السلة.'"
+      ]
+    }
+  ],
+  "notes": [
+    "Final corpus range reviewed directly by governing authority.",
+    "Legacy Master unchanged; no materialization performed; canonical validator unchanged."
+  ]
+}
