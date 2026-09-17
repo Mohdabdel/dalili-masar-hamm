@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { createFileRoute, useNavigate, useRouter, Link } from "@tanstack/react-router";
+import { useCallback, useEffect, useState } from "react";
+import { createFileRoute, useRouter, Link } from "@tanstack/react-router";
 import { ChevronRight, Home } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -7,9 +7,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
+import { safeAuthReturnPath } from "@/lib/auth-return";
 
 export const Route = createFileRoute("/auth")({
   ssr: false,
+  validateSearch: (search: Record<string, unknown>) => ({
+    returnTo: safeAuthReturnPath(search.returnTo),
+  }),
   head: () => ({
     meta: [
       { title: "الدخول لحساب الأسرة — دليلي" },
@@ -30,18 +34,22 @@ export const Route = createFileRoute("/auth")({
 });
 
 function AuthPage() {
-  const navigate = useNavigate();
   const router = useRouter();
   const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const { returnTo } = Route.useSearch();
+
+  const continueJourney = useCallback(() => {
+    window.location.replace(returnTo);
+  }, [returnTo]);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
-      if (data.session) navigate({ to: "/", replace: true });
+      if (data.session) continueJourney();
     });
-  }, [navigate]);
+  }, [continueJourney]);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,12 +68,10 @@ function AuthPage() {
         if (error) throw error;
       }
       const { data } = await supabase.auth.getSession();
-      if (data.session) navigate({ to: "/", replace: true });
+      if (data.session) continueJourney();
     } catch (err) {
       const message = err instanceof Error ? err.message : "تعذّر إتمام الطلب";
-      toast.error(
-        message.includes("Invalid login") ? "البريد أو كلمة المرور غير صحيحة" : message,
-      );
+      toast.error(message.includes("Invalid login") ? "البريد أو كلمة المرور غير صحيحة" : message);
     } finally {
       setLoading(false);
     }

@@ -11,19 +11,28 @@ import {
   LabChoiceCard,
   LabLinkButton,
 } from "@/lab/components/lab-ui";
-import { allSpaceEvents, defaultStations, type SpaceContext } from "@/lab/data/space/catalog";
+import {
+  allSpaceEvents,
+  defaultStations,
+  mvpDefaultStations,
+  mvpSpaceEvents,
+  type SpaceContext,
+} from "@/lab/data/space/catalog";
 import { useSpaceBase } from "@/features/space/store";
 import { cn } from "@/lib/utils";
 
 type Lens = "event" | "station";
 
-export function ExplorePage() {
+export function ExplorePage({ initialLens = "event" }: { initialLens?: Lens }) {
   const base = useSpaceBase();
-  const [lens, setLens] = useState<Lens>("event");
+  const [lens, setLens] = useState<Lens>(initialLens);
   const [context, setContext] = useState<SpaceContext>("home");
 
-  const events = allSpaceEvents().filter((e) => e.contexts.includes(context) && e.participationCount > 0);
-  const stations = defaultStations(context);
+  const production = base === "/space";
+  const events = (production ? mvpSpaceEvents() : allSpaceEvents()).filter(
+    (e) => e.contexts.includes(context) && e.participationCount > 0,
+  );
+  const stations = production ? mvpDefaultStations(context) : defaultStations(context);
 
   return (
     <LabPage
@@ -120,7 +129,9 @@ function Tab({
       onClick={onClick}
       className={cn(
         "min-h-11 rounded-xl border text-base font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-        on ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-foreground",
+        on
+          ? "border-primary bg-primary text-primary-foreground"
+          : "border-border bg-card text-foreground",
       )}
     >
       {children}

@@ -1,0 +1,1968 @@
+{
+  "artifact": "DALILI_CA_0004_LANE_C_INPUT_01",
+  "version": "1.0",
+  "status": "AUTHORITATIVE_DRAFTING_INPUT_NOT_MATERIALIZED",
+  "batch_id": "CA-0004",
+  "lane_id": "C",
+  "selection_artifact": "DALILI_CA_0004_SELECTION_01",
+  "source_count": 100,
+  "drafting_contract": {
+    "source_outcome_schema": {
+      "source": "exact selection row including source_record_sha256 and source_identity",
+      "decision": {
+        "output_kind": "FP_CANDIDATE | SPLIT_FP_CANDIDATES | PROVENANCE_LINK",
+        "relationship": "NEUTRAL_REWRITE | ACCEPTED_ALIGNMENT | SPLIT_DERIVATION | MERGED_PROVENANCE",
+        "decision_rationale": "source-grounded, non-generic text"
+      },
+      "candidates": "array; one for ACCEPTED/REWRITE, at least two for SPLIT, zero for MERGE",
+      "provenance_links": "one verified target link for MERGE, otherwise empty",
+      "safety_review": {
+        "status": "CLEAR | OPEN_REPAIRABLE | BLOCKING",
+        "hazard_classes": "controlled array",
+        "missing_conditions": "required when OPEN_REPAIRABLE",
+        "reason": "required when not CLEAR"
+      },
+      "route": "GREEN | AMBER | RED; must be independently derivable"
+    },
+    "candidate_required_fields": [
+      "id",
+      "title",
+      "life_context",
+      "functional_intent",
+      "observable_effect",
+      "natural_completion",
+      "standalone_role_meaning",
+      "participation_mode",
+      "complexity.level",
+      "complexity.dimensions.c1_elements",
+      "complexity.dimensions.c2_coordination",
+      "complexity.dimensions.c3_variability",
+      "complexity.dimensions.c4_choice_uncertainty",
+      "complexity.rationale",
+      "execution_blocks",
+      "lineage"
+    ],
+    "hazard_classes": [
+      "SHARP",
+      "HEAT",
+      "ELECTRICITY",
+      "CHEMICAL",
+      "MEDICATION",
+      "BIOLOGICAL",
+      "TRAFFIC",
+      "HEIGHT",
+      "FIRE",
+      "PRIVACY_FINANCIAL",
+      "OTHER"
+    ],
+    "prohibitions": [
+      "No materialization or production registration.",
+      "Do not alter source identity, hash, disposition, Legacy Master, or canonical validator.",
+      "Do not copy generic identity, complexity, rationale, or execution-block templates.",
+      "Do not invent merge targets or safety conditions absent from governing evidence.",
+      "Do not mark a hazard-bearing candidate GREEN when a required condition is missing."
+    ]
+  },
+  "records": [
+    {
+      "selection_ordinal": 201,
+      "lane": "C",
+      "lane_ordinal": 1,
+      "corpus_position": 123,
+      "legacy_id": "COMM-020-OP002",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "412b87036443d77a493d1f3df292a46bf0b9c11bfd25c2463d736b3c679d5fca",
+      "source_identity": {
+        "opportunity_id": "COMM-020-OP002",
+        "opportunity_title_ar": "الاستفسار عن جودة أو نوع المنتجات",
+        "parent_event_id": "COMM-020",
+        "parent_event_title_ar": "زيارة سوق شعبي أو تقليدي",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 202,
+      "lane": "C",
+      "lane_ordinal": 2,
+      "corpus_position": 127,
+      "legacy_id": "COMM-021-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "989e0bd03fa89f67e22d3bde53359b6ba9a4cbab8b4456e0e13cac4dc31b91e5",
+      "source_identity": {
+        "opportunity_id": "COMM-021-OP003",
+        "opportunity_title_ar": "اختيار مطعم أو مقهى للاستراحة",
+        "parent_event_id": "COMM-021",
+        "parent_event_title_ar": "زيارة مركز تجاري كبير",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 203,
+      "lane": "C",
+      "lane_ordinal": 3,
+      "corpus_position": 130,
+      "legacy_id": "COMM-022-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "d9e98c5670140ffdcd3a698ca9ec9fd6d8344f18986069f2aec9c1fd3d3b4609",
+      "source_identity": {
+        "opportunity_id": "COMM-022-OP003",
+        "opportunity_title_ar": "دفع قيمة الخدمة",
+        "parent_event_id": "COMM-022",
+        "parent_event_title_ar": "زيارة صالون حلاقة أو تجميل",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 204,
+      "lane": "C",
+      "lane_ordinal": 4,
+      "corpus_position": 133,
+      "legacy_id": "COMM-023-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "5ff0745881131036796112b31a0862f5758025ffaba6d24fcabac20f0b13f045",
+      "source_identity": {
+        "opportunity_id": "COMM-023-OP003",
+        "opportunity_title_ar": "استلام إيصال الاستلام",
+        "parent_event_id": "COMM-023",
+        "parent_event_title_ar": "زيارة مغسلة ملابس أو خياط",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 205,
+      "lane": "C",
+      "lane_ordinal": 5,
+      "corpus_position": 136,
+      "legacy_id": "COMM-024-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "51d741d2e5c5fecaf06bf7308383a2f3de331259f10626a8758a853aef8c459d",
+      "source_identity": {
+        "opportunity_id": "COMM-024-OP003",
+        "opportunity_title_ar": "إتمام المعاملة المالية",
+        "parent_event_id": "COMM-024",
+        "parent_event_title_ar": "زيارة مكتب بريد أو شركة شحن",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 206,
+      "lane": "C",
+      "lane_ordinal": 6,
+      "corpus_position": 139,
+      "legacy_id": "COMM-025-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "14899bdb9cfd0a6a2e548f6e9939a2d948b0ec8e2a0f6eb0442dff5a4be49fe3",
+      "source_identity": {
+        "opportunity_id": "COMM-025-OP003",
+        "opportunity_title_ar": "استلام إيصال الإرسال",
+        "parent_event_id": "COMM-025",
+        "parent_event_title_ar": "إرسال طرد أو بريد من مكتب بريد",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 207,
+      "lane": "C",
+      "lane_ordinal": 7,
+      "corpus_position": 142,
+      "legacy_id": "COMM-026-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "2e1b7229b15627bfbf2fe0371d71f8ef89ca98dd8111cc4b774c82b88b21fdb8",
+      "source_identity": {
+        "opportunity_id": "COMM-026-OP003",
+        "opportunity_title_ar": "توقيع نموذج الاستلام",
+        "parent_event_id": "COMM-026",
+        "parent_event_title_ar": "استلام طرد أو بريد من مكتب بريد",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 208,
+      "lane": "C",
+      "lane_ordinal": 8,
+      "corpus_position": 145,
+      "legacy_id": "COMM-027-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "f48d2f137186e1bde22f3818554b1613403014fd82a8569210f698be451e8301",
+      "source_identity": {
+        "opportunity_id": "COMM-027-OP003",
+        "opportunity_title_ar": "استلام الإيصال والنقود",
+        "parent_event_id": "COMM-027",
+        "parent_event_title_ar": "زيارة بنك أو جهاز صراف آلي",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 209,
+      "lane": "C",
+      "lane_ordinal": 9,
+      "corpus_position": 148,
+      "legacy_id": "COMM-028-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "6273e306de6cb5664d15de27425043dc0abc67a34ef92b9bc2abcd0090102bd6",
+      "source_identity": {
+        "opportunity_id": "COMM-028-OP003",
+        "opportunity_title_ar": "إنجاز المعاملة مع الموظف",
+        "parent_event_id": "COMM-028",
+        "parent_event_title_ar": "زيارة مركز خدمة حكومي",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 210,
+      "lane": "C",
+      "lane_ordinal": 10,
+      "corpus_position": 151,
+      "legacy_id": "COMM-029-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "22761669a3bad9e8012f8dccdc3ffc8c3a16ca0483a66ff4f88e5093caa844c7",
+      "source_identity": {
+        "opportunity_id": "COMM-029-OP003",
+        "opportunity_title_ar": "التأكد من اكتمال الإجراء",
+        "parent_event_id": "COMM-029",
+        "parent_event_title_ar": "مراجعة جهة خدمية لاستكمال معاملة",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 211,
+      "lane": "C",
+      "lane_ordinal": 11,
+      "corpus_position": 154,
+      "legacy_id": "COMM-030-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "8c65ff0daa59dfceeaaf8ff5fa80612c2207334210805007e92c1d3e5971a408",
+      "source_identity": {
+        "opportunity_id": "COMM-030-OP003",
+        "opportunity_title_ar": "المشاركة في الاجتماع",
+        "parent_event_id": "COMM-030",
+        "parent_event_title_ar": "حضور موعد مجتمعي أو لقاء رسمي",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 212,
+      "lane": "C",
+      "lane_ordinal": 12,
+      "corpus_position": 157,
+      "legacy_id": "COMM-031-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "f9408f82cd30bb6754a1d71b75db88f0df953537d0a6f958d303345b54c3180e",
+      "source_identity": {
+        "opportunity_id": "COMM-031-OP003",
+        "opportunity_title_ar": "تناول الوجبة مع الآخرين",
+        "parent_event_id": "COMM-031",
+        "parent_event_title_ar": "المشاركة في مناسبة عائلية خارجية",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 213,
+      "lane": "C",
+      "lane_ordinal": 13,
+      "corpus_position": 160,
+      "legacy_id": "COMM-032-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "fdcdd4bf4a71d6ae905a4a06af56203e7d0d93f8312b14500926a622ed34a306",
+      "source_identity": {
+        "opportunity_id": "COMM-032-OP003",
+        "opportunity_title_ar": "الانصراف بعد تقديم التهنئة",
+        "parent_event_id": "COMM-032",
+        "parent_event_title_ar": "حضور حفل زفاف",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 214,
+      "lane": "C",
+      "lane_ordinal": 14,
+      "corpus_position": 163,
+      "legacy_id": "COMM-033-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "3d2d742474f282bc0b45a594e7b22d64c1d94176746570de7c7e802afdc06b89",
+      "source_identity": {
+        "opportunity_id": "COMM-033-OP003",
+        "opportunity_title_ar": "المغادرة بعد فترة مناسبة",
+        "parent_event_id": "COMM-033",
+        "parent_event_title_ar": "حضور مجلس عزاء",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 215,
+      "lane": "C",
+      "lane_ordinal": 15,
+      "corpus_position": 166,
+      "legacy_id": "COMM-034-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "09db126327c3ac916c4d9557a35697716142d21941c08d7cec6bf1c6a2765d96",
+      "source_identity": {
+        "opportunity_id": "COMM-034-OP003",
+        "opportunity_title_ar": "المغادرة عند انتهاء الاحتفال",
+        "parent_event_id": "COMM-034",
+        "parent_event_title_ar": "المشاركة في مناسبة دينية أو وطنية",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 216,
+      "lane": "C",
+      "lane_ordinal": 16,
+      "corpus_position": 169,
+      "legacy_id": "COMM-035-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "e1da18e339615e5124ad1c9e6e3c8b04c7476afe65efd2ee63ae04d43233826c",
+      "source_identity": {
+        "opportunity_id": "COMM-035-OP003",
+        "opportunity_title_ar": "تنفيذ المهمة التطوعية",
+        "parent_event_id": "COMM-035",
+        "parent_event_title_ar": "المشاركة في عمل تطوعي مجتمعي",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 217,
+      "lane": "C",
+      "lane_ordinal": 17,
+      "corpus_position": 172,
+      "legacy_id": "COMM-036-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "606aa8adf09d05c73323cdeec17473fa08aeec53e039e4a2250675f60c2a49c5",
+      "source_identity": {
+        "opportunity_id": "COMM-036-OP003",
+        "opportunity_title_ar": "استلام الكتيبات التعريفية",
+        "parent_event_id": "COMM-036",
+        "parent_event_title_ar": "زيارة جمعية خيرية أو مؤسسة مجتمعية",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 218,
+      "lane": "C",
+      "lane_ordinal": 18,
+      "corpus_position": 175,
+      "legacy_id": "COMM-037-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "56c97570e4f85f1c0247eaea0f39dd296c0257a653c65412e8cccada023e5a0a",
+      "source_identity": {
+        "opportunity_id": "COMM-037-OP003",
+        "opportunity_title_ar": "أخذ الملاحظات من الورشة",
+        "parent_event_id": "COMM-037",
+        "parent_event_title_ar": "حضور ورشة أو لقاء عام",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 219,
+      "lane": "C",
+      "lane_ordinal": 19,
+      "corpus_position": 178,
+      "legacy_id": "COMM-038-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250",
+      "source_record_sha256": "aa1e5a037f40e2ee69ee3ecacadc69bb95b6ba8278be32315d86a8e7b199be24",
+      "source_identity": {
+        "opportunity_id": "COMM-038-OP003",
+        "opportunity_title_ar": "شكر الموظفين قبل المغادرة",
+        "parent_event_id": "COMM-038",
+        "parent_event_title_ar": "استخدام مركز خدمة أصحاب الهمم",
+        "domain_id": "DOM-COMM"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json"
+    },
+    {
+      "selection_ordinal": 220,
+      "lane": "C",
+      "lane_ordinal": 20,
+      "corpus_position": 376,
+      "legacy_id": "FOOD-019-OP002",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "868af12ffff254525cbb26c93897d2e77033764fb841aa6a36d2b0cce660c9a9",
+      "source_identity": {
+        "opportunity_id": "FOOD-019-OP002",
+        "opportunity_title_ar": "فرز الملاعق والشوك",
+        "parent_event_id": "FOOD-019",
+        "parent_event_title_ar": "ترتيب أدوات المطبخ",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 221,
+      "lane": "C",
+      "lane_ordinal": 21,
+      "corpus_position": 379,
+      "legacy_id": "FOOD-020-OP002",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "e9981758d3ad8fb3bdb387b2b1bf4016a160e1dcd77ce9a823aa324d1f4b58c7",
+      "source_identity": {
+        "opportunity_id": "FOOD-020-OP002",
+        "opportunity_title_ar": "تفريغ الأطباق في سلة المهملات",
+        "parent_event_id": "FOOD-020",
+        "parent_event_title_ar": "التخلص من بقايا الطعام غير الصالحة",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 222,
+      "lane": "C",
+      "lane_ordinal": 22,
+      "corpus_position": 382,
+      "legacy_id": "FOOD-021-OP002",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "55b244c2238ba0abe090777969caf898b656860f3197b173de940c2c4d67ea56",
+      "source_identity": {
+        "opportunity_id": "FOOD-021-OP002",
+        "opportunity_title_ar": "ترتيب المشتريات في الرفوف",
+        "parent_event_id": "FOOD-021",
+        "parent_event_title_ar": "الاستعداد لشهر رمضان",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 223,
+      "lane": "C",
+      "lane_ordinal": 23,
+      "corpus_position": 385,
+      "legacy_id": "FOOD-022-OP002",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "c0750c46298d656b6aa149d0bff6262efc239b4c08da8da9774b19d5592c2a10",
+      "source_identity": {
+        "opportunity_id": "FOOD-022-OP002",
+        "opportunity_title_ar": "سكب العصائر وتجهيز الأكواب",
+        "parent_event_id": "FOOD-022",
+        "parent_event_title_ar": "تجهيز إفطار رمضاني",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 224,
+      "lane": "C",
+      "lane_ordinal": 24,
+      "corpus_position": 388,
+      "legacy_id": "FOOD-023-OP001",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "c9e00cb0a11dc46dd91df47e18c18b8c0601b6d2c7c22af42c1a98533f6a9483",
+      "source_identity": {
+        "opportunity_id": "FOOD-023-OP001",
+        "opportunity_title_ar": "تجهيز الأطباق الكبيرة للتقديم",
+        "parent_event_id": "FOOD-023",
+        "parent_event_title_ar": "تجهيز طعام للمناسبة الاجتماعية",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 225,
+      "lane": "C",
+      "lane_ordinal": 25,
+      "corpus_position": 391,
+      "legacy_id": "FOOD-023-OP004",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "ebd547fbaf2cc68e7db7731bc9bb801f8aacc560f540d8ec78cc854ab8a800dd",
+      "source_identity": {
+        "opportunity_id": "FOOD-023-OP004",
+        "opportunity_title_ar": "نقل الأطباق لمكان الضيوف",
+        "parent_event_id": "FOOD-023",
+        "parent_event_title_ar": "تجهيز طعام للمناسبة الاجتماعية",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 226,
+      "lane": "C",
+      "lane_ordinal": 26,
+      "corpus_position": 394,
+      "legacy_id": "FOOD-024-OP003",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "7f4cdfcd70db89707241a60f02fc4b4e6ef215815d192b91329b109ee3b76052",
+      "source_identity": {
+        "opportunity_id": "FOOD-024-OP003",
+        "opportunity_title_ar": "عزل أو التخلص من المنتجات المنتهية",
+        "parent_event_id": "FOOD-024",
+        "parent_event_title_ar": "تفقد تاريخ الصلاحية",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 227,
+      "lane": "C",
+      "lane_ordinal": 27,
+      "corpus_position": 397,
+      "legacy_id": "FOOD-025-OP003",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "4f99f5275c5f7b0d863ad652662499094cf9f87b30d6df5981a12a20299d1f3d",
+      "source_identity": {
+        "opportunity_id": "FOOD-025-OP003",
+        "opportunity_title_ar": "ضبط مؤقت التسخين",
+        "parent_event_id": "FOOD-025",
+        "parent_event_title_ar": "إعادة تسخين وجبة",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 228,
+      "lane": "C",
+      "lane_ordinal": 28,
+      "corpus_position": 400,
+      "legacy_id": "FOOD-026-OP002",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "aa507a51d48e7932656162f4b2f3768a1952b09fc97c24bd6e9a437dcfc561e7",
+      "source_identity": {
+        "opportunity_id": "FOOD-026-OP002",
+        "opportunity_title_ar": "هرس الطعام",
+        "parent_event_id": "FOOD-026",
+        "parent_event_title_ar": "تجهيز طعام للرضيع",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 229,
+      "lane": "C",
+      "lane_ordinal": 29,
+      "corpus_position": 403,
+      "legacy_id": "FOOD-027-OP001",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "594c958ab9283091c7348c2fd69a95f0e412724b8763baafb1af8932db65bb1f",
+      "source_identity": {
+        "opportunity_id": "FOOD-027-OP001",
+        "opportunity_title_ar": "وضع الخضار أو الفاكهة في المصفاة",
+        "parent_event_id": "FOOD-027",
+        "parent_event_title_ar": "غسل الخضار والفواكه",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 230,
+      "lane": "C",
+      "lane_ordinal": 30,
+      "corpus_position": 406,
+      "legacy_id": "FOOD-028-OP001",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "54a14da62961287a90ba5714c3ebedfd13ccc993d1878176f85d8bd4fe397390",
+      "source_identity": {
+        "opportunity_id": "FOOD-028-OP001",
+        "opportunity_title_ar": "إحضار لوح التقطيع",
+        "parent_event_id": "FOOD-028",
+        "parent_event_title_ar": "تقطيع وتجهيز المكونات",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 231,
+      "lane": "C",
+      "lane_ordinal": 31,
+      "corpus_position": 409,
+      "legacy_id": "FOOD-029-OP001",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "ddf5d61a917df3e6e5e5eab84ccf6c81b3bb3f0bd68644bc9b78b8bb5a5cb779",
+      "source_identity": {
+        "opportunity_id": "FOOD-029-OP001",
+        "opportunity_title_ar": "قياس مقادير الدقيق والمكونات",
+        "parent_event_id": "FOOD-029",
+        "parent_event_title_ar": "إعداد مخبوزات منزلية",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 232,
+      "lane": "C",
+      "lane_ordinal": 32,
+      "corpus_position": 412,
+      "legacy_id": "FOOD-029-OP004",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "f0d78b0deb342aefd7d009a3b97f763c514ebcc499563ebb4d869982e8d508ad",
+      "source_identity": {
+        "opportunity_id": "FOOD-029-OP004",
+        "opportunity_title_ar": "ترتيب القطع في صينية الخبز",
+        "parent_event_id": "FOOD-029",
+        "parent_event_title_ar": "إعداد مخبوزات منزلية",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 233,
+      "lane": "C",
+      "lane_ordinal": 33,
+      "corpus_position": 415,
+      "legacy_id": "FOOD-030-OP003",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "a60bd07a9889440bfcac2f913034d29930807afb493be779d3bc468f6fe0c118",
+      "source_identity": {
+        "opportunity_id": "FOOD-030-OP003",
+        "opportunity_title_ar": "تقليب الطعام أثناء الشوي",
+        "parent_event_id": "FOOD-030",
+        "parent_event_title_ar": "شوي الطعام في الفرن أو الشواية",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 234,
+      "lane": "C",
+      "lane_ordinal": 34,
+      "corpus_position": 418,
+      "legacy_id": "FOOD-031-OP002",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "e1e5c604163e68abfe66529756423d79137a68f05803e3d4f23da32469f2ec05",
+      "source_identity": {
+        "opportunity_id": "FOOD-031-OP002",
+        "opportunity_title_ar": "إضافة البهارات أو المكونات تدريجياً",
+        "parent_event_id": "FOOD-031",
+        "parent_event_title_ar": "الطهي على الموقد",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 235,
+      "lane": "C",
+      "lane_ordinal": 35,
+      "corpus_position": 421,
+      "legacy_id": "FOOD-032-OP002",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "2b961e4505f7a80237f76d58053cb13ef02c83c51fc6957a9cf4921950eb160b",
+      "source_identity": {
+        "opportunity_id": "FOOD-032-OP002",
+        "opportunity_title_ar": "بشر أو تقطيع المكونات",
+        "parent_event_id": "FOOD-032",
+        "parent_event_title_ar": "إعداد مقبلات أو سلطة",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 236,
+      "lane": "C",
+      "lane_ordinal": 36,
+      "corpus_position": 424,
+      "legacy_id": "FOOD-033-OP001",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "c76db3613a464d9a92047b1fa8a9681f3b5e5f23245a8bf34592e1015a0fc2d3",
+      "source_identity": {
+        "opportunity_id": "FOOD-033-OP001",
+        "opportunity_title_ar": "ترتيب الأطباق والأكواب البلاستيكية في السلة",
+        "parent_event_id": "FOOD-033",
+        "parent_event_title_ar": "تجهيز سفرة برية",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 237,
+      "lane": "C",
+      "lane_ordinal": 37,
+      "corpus_position": 427,
+      "legacy_id": "FOOD-034-OP001",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "67a306068f059a334fa42fa156716d22b70ccb7eba4609ba7b395400a2e2b436",
+      "source_identity": {
+        "opportunity_id": "FOOD-034-OP001",
+        "opportunity_title_ar": "تقسيم الطعام لأسهم أو حصص",
+        "parent_event_id": "FOOD-034",
+        "parent_event_title_ar": "تجميد الطعام",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 238,
+      "lane": "C",
+      "lane_ordinal": 38,
+      "corpus_position": 430,
+      "legacy_id": "FOOD-034-OP004",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450",
+      "source_record_sha256": "0fe00bb8752f6f387cea1e67f204497876e3abf05628fd40fdc92a82b8fa406f",
+      "source_identity": {
+        "opportunity_id": "FOOD-034-OP004",
+        "opportunity_title_ar": "ترتيب الأكياس في الفريزر",
+        "parent_event_id": "FOOD-034",
+        "parent_event_title_ar": "تجميد الطعام",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_351_450.json"
+    },
+    {
+      "selection_ordinal": 239,
+      "lane": "C",
+      "lane_ordinal": 39,
+      "corpus_position": 552,
+      "legacy_id": "FOOD-075-OP003",
+      "domain": "DOM-FOOD",
+      "disposition": "SPLIT_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650",
+      "source_record_sha256": "84f1df0671195bcacf206a04a685855b33ff4bfe1719c5a4d41e918026cfdaa7",
+      "source_identity": {
+        "opportunity_id": "FOOD-075-OP003",
+        "opportunity_title_ar": "تجفيف الرف وإعادة البرطمانات",
+        "parent_event_id": "FOOD-075",
+        "parent_event_title_ar": "تنظيف خزانة البهارات من التسربات",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650.json"
+    },
+    {
+      "selection_ordinal": 240,
+      "lane": "C",
+      "lane_ordinal": 40,
+      "corpus_position": 564,
+      "legacy_id": "FOOD-079-OP003",
+      "domain": "DOM-FOOD",
+      "disposition": "SPLIT_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650",
+      "source_record_sha256": "7998a9d771f4f15110b189f02637d89b43cb3462b4e1216d4dca3a18850e5336",
+      "source_identity": {
+        "opportunity_id": "FOOD-079-OP003",
+        "opportunity_title_ar": "شطف الصينية وتجفيفها",
+        "parent_event_id": "FOOD-079",
+        "parent_event_title_ar": "تنظيف صينية الفرن بعد الاستخدام",
+        "domain_id": "DOM-FOOD"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650.json"
+    },
+    {
+      "selection_ordinal": 241,
+      "lane": "C",
+      "lane_ordinal": 41,
+      "corpus_position": 676,
+      "legacy_id": "HEALTH-029-OP002",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "ad4dec36b0e6c389f8fb91e40f7357da2061cbc731cc0daf8c1b184180ef492a",
+      "source_identity": {
+        "opportunity_id": "HEALTH-029-OP002",
+        "opportunity_title_ar": "تجهيز الأسئلة المتعلقة بالحالة",
+        "parent_event_id": "HEALTH-029",
+        "parent_event_title_ar": "موعد عيادة متخصصة",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 242,
+      "lane": "C",
+      "lane_ordinal": 42,
+      "corpus_position": 679,
+      "legacy_id": "HEALTH-030-OP003",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "959935b66bfa85e63a19aa4b6af541cdb58a1f1beccf743b71862220b25684bd",
+      "source_identity": {
+        "opportunity_id": "HEALTH-030-OP003",
+        "opportunity_title_ar": "الثبات أثناء التقاط الأشعة",
+        "parent_event_id": "HEALTH-030",
+        "parent_event_title_ar": "موعد الأشعة أو الصور الطبية",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 243,
+      "lane": "C",
+      "lane_ordinal": 43,
+      "corpus_position": 682,
+      "legacy_id": "HEALTH-031-OP003",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "9f174031b0b20db4b6b9cb09b86d4cc27b99e7b7de0518e86b565e0772dc1b5e",
+      "source_identity": {
+        "opportunity_id": "HEALTH-031-OP003",
+        "opportunity_title_ar": "الضغط على مكان السحب بقطنة",
+        "parent_event_id": "HEALTH-031",
+        "parent_event_title_ar": "موعد المختبر لأخذ عينات",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 244,
+      "lane": "C",
+      "lane_ordinal": 44,
+      "corpus_position": 685,
+      "legacy_id": "HEALTH-033-OP001",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "3b445ce300a3722ea169435650e14e12a7a5482b9cd6507e25cb152f37763da3",
+      "source_identity": {
+        "opportunity_id": "HEALTH-033-OP001",
+        "opportunity_title_ar": "التوجه السريع لقسم الطوارئ",
+        "parent_event_id": "HEALTH-033",
+        "parent_event_title_ar": "موعد طوارئ غير مخطط",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 245,
+      "lane": "C",
+      "lane_ordinal": 45,
+      "corpus_position": 688,
+      "legacy_id": "HEALTH-034-OP002",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "f851fc938b57eb0381fc7139c3d49b2ef2d7042609c19cf9e6fd099a648f654d",
+      "source_identity": {
+        "opportunity_id": "HEALTH-034-OP002",
+        "opportunity_title_ar": "مرافقة المريض في الطريق",
+        "parent_event_id": "HEALTH-034",
+        "parent_event_title_ar": "نقل مريض للمستشفى",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 246,
+      "lane": "C",
+      "lane_ordinal": 46,
+      "corpus_position": 691,
+      "legacy_id": "HEALTH-036-OP001",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "d8cd3550b1c79411e400654567f4c42ae36f67229480c3aec915d1b64516d718",
+      "source_identity": {
+        "opportunity_id": "HEALTH-036-OP001",
+        "opportunity_title_ar": "تقديم الهوية لموظف الاستقبال",
+        "parent_event_id": "HEALTH-036",
+        "parent_event_title_ar": "التسجيل في استقبال الطوارئ",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 247,
+      "lane": "C",
+      "lane_ordinal": 47,
+      "corpus_position": 694,
+      "legacy_id": "HEALTH-037-OP002",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "0858b0aae38a54191918613612223d12b1c47b9cb6b069defc9094929cd22244",
+      "source_identity": {
+        "opportunity_id": "HEALTH-037-OP002",
+        "opportunity_title_ar": "الإجابة على أسئلة الطبيب الأولي",
+        "parent_event_id": "HEALTH-037",
+        "parent_event_title_ar": "الفحص الأولي في الطوارئ",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 248,
+      "lane": "C",
+      "lane_ordinal": 48,
+      "corpus_position": 697,
+      "legacy_id": "HEALTH-038-OP003",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "b62c695492018183eaffd38fc38044783482bf1fc186191be83515ce23440d44",
+      "source_identity": {
+        "opportunity_id": "HEALTH-038-OP003",
+        "opportunity_title_ar": "مغادرة قسم الطوارئ",
+        "parent_event_id": "HEALTH-038",
+        "parent_event_title_ar": "استلام تقرير الطوارئ والخروج",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 249,
+      "lane": "C",
+      "lane_ordinal": 49,
+      "corpus_position": 701,
+      "legacy_id": "HEALTH-040-OP002",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "4bac88f2a4611706c6085da0be16c64efea39d5851ae49fd7d855f1ee5cafe05",
+      "source_identity": {
+        "opportunity_id": "HEALTH-040-OP002",
+        "opportunity_title_ar": "مقابلة طبيب التخدير",
+        "parent_event_id": "HEALTH-040",
+        "parent_event_title_ar": "موعد فحص ما قبل الجراحة",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 250,
+      "lane": "C",
+      "lane_ordinal": 50,
+      "corpus_position": 704,
+      "legacy_id": "HEALTH-042-OP001",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "667444e6f6bd532468d94ce1a9f26c19bd097009033f1d087774c417e8cde53c",
+      "source_identity": {
+        "opportunity_id": "HEALTH-042-OP001",
+        "opportunity_title_ar": "الانتظار في غرفة الإفاقة",
+        "parent_event_id": "HEALTH-042",
+        "parent_event_title_ar": "الاستيقاظ من التخدير والتعافي",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 251,
+      "lane": "C",
+      "lane_ordinal": 51,
+      "corpus_position": 707,
+      "legacy_id": "HEALTH-043-OP002",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "2b6d45a13bed9e495d162473788ed2f31b8a46d7b83b17866010db3172615231",
+      "source_identity": {
+        "opportunity_id": "HEALTH-043-OP002",
+        "opportunity_title_ar": "استلام أوراق الخروج",
+        "parent_event_id": "HEALTH-043",
+        "parent_event_title_ar": "خروج المريض من المستشفى",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 252,
+      "lane": "C",
+      "lane_ordinal": 52,
+      "corpus_position": 710,
+      "legacy_id": "HEALTH-044-OP002",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "a5fbc26f9586740e9e5bb853889dd703a14eeda08cca7487960205cc1e53a063",
+      "source_identity": {
+        "opportunity_id": "HEALTH-044-OP002",
+        "opportunity_title_ar": "كشف مكان الجرح للطبيب",
+        "parent_event_id": "HEALTH-044",
+        "parent_event_title_ar": "متابعة ما بعد الجراحة",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 253,
+      "lane": "C",
+      "lane_ordinal": 53,
+      "corpus_position": 713,
+      "legacy_id": "HEALTH-046-OP001",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "54f99fed11e7e323137f28bec4ed86c31fcd7646a992c6cc6d1171b0c7e99fa0",
+      "source_identity": {
+        "opportunity_id": "HEALTH-046-OP001",
+        "opportunity_title_ar": "التوجه للعيادة لإزالة الغرز",
+        "parent_event_id": "HEALTH-046",
+        "parent_event_title_ar": "إزالة غرز أو تبديل جبيرة",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 254,
+      "lane": "C",
+      "lane_ordinal": 54,
+      "corpus_position": 716,
+      "legacy_id": "HEALTH-047-OP002",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "792caeb62eb3c8b29866d3ada6792f10cb9c8860f642e36406360b598601e742",
+      "source_identity": {
+        "opportunity_id": "HEALTH-047-OP002",
+        "opportunity_title_ar": "الثبات التام أثناء أخذ العينة",
+        "parent_event_id": "HEALTH-047",
+        "parent_event_title_ar": "موعد أخذ عينة خزعة أو بزل",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 255,
+      "lane": "C",
+      "lane_ordinal": 55,
+      "corpus_position": 719,
+      "legacy_id": "HEALTH-049-OP001",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "1d9100392284e83a8f6ed3a31704a7c38dd8a7f744a9848cd5a6ec3dab8f2624",
+      "source_identity": {
+        "opportunity_id": "HEALTH-049-OP001",
+        "opportunity_title_ar": "التوجه لمركز الغسيل",
+        "parent_event_id": "HEALTH-049",
+        "parent_event_title_ar": "موعد جلسة غسيل كلى",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 256,
+      "lane": "C",
+      "lane_ordinal": 56,
+      "corpus_position": 722,
+      "legacy_id": "HEALTH-050-OP002",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "14daa16828af956b19714079a9947b1e0c370ce41863f4c9c91c0a400baed12c",
+      "source_identity": {
+        "opportunity_id": "HEALTH-050-OP002",
+        "opportunity_title_ar": "الانتظار خلال فترة الجلسة",
+        "parent_event_id": "HEALTH-050",
+        "parent_event_title_ar": "موعد جلسة علاج كيميائي أو إشعاعي",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 257,
+      "lane": "C",
+      "lane_ordinal": 57,
+      "corpus_position": 725,
+      "legacy_id": "HEALTH-052-OP001",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "61eb7abf49712a1b7bc3b6e0e5f3f252fa0ec73a25871de8f077c9279decf360",
+      "source_identity": {
+        "opportunity_id": "HEALTH-052-OP001",
+        "opportunity_title_ar": "خلع الحذاء والجوارب للفحص",
+        "parent_event_id": "HEALTH-052",
+        "parent_event_title_ar": "فحص القدم السكري",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 258,
+      "lane": "C",
+      "lane_ordinal": 58,
+      "corpus_position": 728,
+      "legacy_id": "HEALTH-053-OP002",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "11e12f7689eaf2fc114672a99dfb0b34afbc781782897b44b95cc91dcbda1513",
+      "source_identity": {
+        "opportunity_id": "HEALTH-053-OP002",
+        "opportunity_title_ar": "سحب عينة الدم",
+        "parent_event_id": "HEALTH-053",
+        "parent_event_title_ar": "فحص وظائف الكبد والفيروسات",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 259,
+      "lane": "C",
+      "lane_ordinal": 59,
+      "corpus_position": 731,
+      "legacy_id": "HEALTH-055-OP001",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750",
+      "source_record_sha256": "798859912a4d8e5c85979c17648ecc2c346552a14cab800901dd2b622a1459ec",
+      "source_identity": {
+        "opportunity_id": "HEALTH-055-OP001",
+        "opportunity_title_ar": "سحب عينة الدم في الوقت المحدد",
+        "parent_event_id": "HEALTH-055",
+        "parent_event_title_ar": "فحص الهرمونات",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_651_750.json"
+    },
+    {
+      "selection_ordinal": 260,
+      "lane": "C",
+      "lane_ordinal": 60,
+      "corpus_position": 782,
+      "legacy_id": "HEALTH-098-OP002",
+      "domain": "DOM-HEALTH",
+      "disposition": "SPLIT_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_751_850",
+      "source_record_sha256": "2881d3861f845855a8658d49b82098f63bb208d4c8367d75b409eaf4b2c54e9d",
+      "source_identity": {
+        "opportunity_id": "HEALTH-098-OP002",
+        "opportunity_title_ar": "قياس الحرارة وقراءة النتيجة",
+        "parent_event_id": "HEALTH-098",
+        "parent_event_title_ar": "قياس درجة الحرارة",
+        "domain_id": "DOM-HEALTH"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_751_850.json"
+    },
+    {
+      "selection_ordinal": 261,
+      "lane": "C",
+      "lane_ordinal": 61,
+      "corpus_position": 837,
+      "legacy_id": "HOME-002-OP004",
+      "domain": "DOM-HOME",
+      "disposition": "MERGED_BY_PROVENANCE",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_751_850",
+      "source_record_sha256": "233b25146807c5faa572ea50480234e963e2b2c366bedf6dc0e9b1f5aeb0e88a",
+      "source_identity": {
+        "opportunity_id": "HOME-002-OP004",
+        "opportunity_title_ar": "جمع الأكواب الفارغة.",
+        "parent_event_id": "HOME-002",
+        "parent_event_title_ar": "ترتيب غرفة المعيشة",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_751_850.json"
+    },
+    {
+      "selection_ordinal": 262,
+      "lane": "C",
+      "lane_ordinal": 62,
+      "corpus_position": 921,
+      "legacy_id": "HOME-031-OP001",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950",
+      "source_record_sha256": "884ae42903e3b179a8acc01d776c0c3c3dd821a4f18b5e2c3f8694d21c9f749c",
+      "source_identity": {
+        "opportunity_id": "HOME-031-OP001",
+        "opportunity_title_ar": "إحضار اللمبة الجديدة البديلة.",
+        "parent_event_id": "HOME-031",
+        "parent_event_title_ar": "تغيير لمبات الإضاءة المحترقة",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950.json"
+    },
+    {
+      "selection_ordinal": 263,
+      "lane": "C",
+      "lane_ordinal": 63,
+      "corpus_position": 924,
+      "legacy_id": "HOME-032-OP001",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950",
+      "source_record_sha256": "b62f24e98fdcae23a372ebbb3743b93231e4969e73560fe0eb49695ce22c57db",
+      "source_identity": {
+        "opportunity_id": "HOME-032-OP001",
+        "opportunity_title_ar": "استلام فلاتر المكيف لنقلها للغسيل.",
+        "parent_event_id": "HOME-032",
+        "parent_event_title_ar": "تنظيف المكيفات ومراوح السقف",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950.json"
+    },
+    {
+      "selection_ordinal": 264,
+      "lane": "C",
+      "lane_ordinal": 64,
+      "corpus_position": 927,
+      "legacy_id": "HOME-033-OP001",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950",
+      "source_record_sha256": "6c4e4ec53685b5ffb6b40cf3e269e842cfb3397e705eb1c3d5b3c3fb5f999f04",
+      "source_identity": {
+        "opportunity_id": "HOME-033-OP001",
+        "opportunity_title_ar": "رش سائل التلميع على المرآة.",
+        "parent_event_id": "HOME-033",
+        "parent_event_title_ar": "تلميع المرايا والزجاج",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950.json"
+    },
+    {
+      "selection_ordinal": 265,
+      "lane": "C",
+      "lane_ordinal": 65,
+      "corpus_position": 932,
+      "legacy_id": "HOME-035-OP002",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950",
+      "source_record_sha256": "0c7ffa261fcf26f50d3524865c538d40d1215ceac3c78b5c69c2d7736bf5704f",
+      "source_identity": {
+        "opportunity_id": "HOME-035-OP002",
+        "opportunity_title_ar": "تجميع الأقلام في حامل الأقلام.",
+        "parent_event_id": "HOME-035",
+        "parent_event_title_ar": "ترتيب المكتب المنزلي أو منطقة العمل",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950.json"
+    },
+    {
+      "selection_ordinal": 266,
+      "lane": "C",
+      "lane_ordinal": 66,
+      "corpus_position": 935,
+      "legacy_id": "HOME-036-OP002",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950",
+      "source_record_sha256": "b6bdc3c811269dcb4ec207e523c75152b4d2fa82a8327cedf911ff5a83dbbcb7",
+      "source_identity": {
+        "opportunity_id": "HOME-036-OP002",
+        "opportunity_title_ar": "تنظيف لوحة المفاتيح بفرشاة صغيرة.",
+        "parent_event_id": "HOME-036",
+        "parent_event_title_ar": "تنظيف الأجهزة الإلكترونية والشاشات",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950.json"
+    },
+    {
+      "selection_ordinal": 267,
+      "lane": "C",
+      "lane_ordinal": 67,
+      "corpus_position": 938,
+      "legacy_id": "HOME-037-OP002",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950",
+      "source_record_sha256": "9123837a6618d99ee79fed9831e5d0c3b7e502938c8fa9f98f00c43dacc2f609",
+      "source_identity": {
+        "opportunity_id": "HOME-037-OP002",
+        "opportunity_title_ar": "ترتيب المسامير أو الأدوات الصغيرة في العلب المقسمة.",
+        "parent_event_id": "HOME-037",
+        "parent_event_title_ar": "ترتيب أدوات الخياطة والصيانة المنزلية",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950.json"
+    },
+    {
+      "selection_ordinal": 268,
+      "lane": "C",
+      "lane_ordinal": 68,
+      "corpus_position": 941,
+      "legacy_id": "HOME-038-OP002",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950",
+      "source_record_sha256": "9736334bd91ff8978ac507bb99c9f3649d8a28b704fba40994425658b66b28ab",
+      "source_identity": {
+        "opportunity_id": "HOME-038-OP002",
+        "opportunity_title_ar": "تنظيف مقابض أبواب الثلاجة.",
+        "parent_event_id": "HOME-038",
+        "parent_event_title_ar": "تنظيف الثلاجة والفريزر من الخارج",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950.json"
+    },
+    {
+      "selection_ordinal": 269,
+      "lane": "C",
+      "lane_ordinal": 69,
+      "corpus_position": 944,
+      "legacy_id": "HOME-040-OP001",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950",
+      "source_record_sha256": "bfbe655be5c7c9f6f28cb59eae8cc42bc7c29bafaf394f3cf5e5d8d47aa768ff",
+      "source_identity": {
+        "opportunity_id": "HOME-040-OP001",
+        "opportunity_title_ar": "كنس الأتربة المتراكمة بعد سحب الجهاز.",
+        "parent_event_id": "HOME-040",
+        "parent_event_title_ar": "تنظيف خلف الأجهزة المنزلية",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950.json"
+    },
+    {
+      "selection_ordinal": 270,
+      "lane": "C",
+      "lane_ordinal": 70,
+      "corpus_position": 947,
+      "legacy_id": "HOME-041-OP002",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950",
+      "source_record_sha256": "08c91aea40d8e676805f85ae6d014b9a76a674c692e750841b9b1f6d44ce8681",
+      "source_identity": {
+        "opportunity_id": "HOME-041-OP002",
+        "opportunity_title_ar": "فرز الأدوية ومواد الإسعاف في مجموعات.",
+        "parent_event_id": "HOME-041",
+        "parent_event_title_ar": "ترتيب خزانة الأدوية والإسعافات الأولية",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950.json"
+    },
+    {
+      "selection_ordinal": 271,
+      "lane": "C",
+      "lane_ordinal": 71,
+      "corpus_position": 951,
+      "legacy_id": "HOME-043-OP001",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050",
+      "source_record_sha256": "4c9317d3e7bc6310370c0974db014554a77514b820c27c47b4339faba8e298a7",
+      "source_identity": {
+        "opportunity_id": "HOME-043-OP001",
+        "opportunity_title_ar": "إزالة العوالق من سطح المصفاة.",
+        "parent_event_id": "HOME-043",
+        "parent_event_title_ar": "تنظيف بالوعات الصرف والمصافي",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050.json"
+    },
+    {
+      "selection_ordinal": 272,
+      "lane": "C",
+      "lane_ordinal": 72,
+      "corpus_position": 955,
+      "legacy_id": "HOME-045-OP001",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050",
+      "source_record_sha256": "cb67ee662c559b6bb14882089ce6c8064a96ff679e1dd4e02289da3d84c78986",
+      "source_identity": {
+        "opportunity_id": "HOME-045-OP001",
+        "opportunity_title_ar": "إحضار الأغطية الواقية.",
+        "parent_event_id": "HOME-045",
+        "parent_event_title_ar": "تغطية الأثاث في فصل الشتاء أو الصيف",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050.json"
+    },
+    {
+      "selection_ordinal": 273,
+      "lane": "C",
+      "lane_ordinal": 73,
+      "corpus_position": 959,
+      "legacy_id": "HOME-046-OP002",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050",
+      "source_record_sha256": "a6f7bc0569f5be51f68bd4039ea98ad93e34f40dba7782f335f3e7fe9785da39",
+      "source_identity": {
+        "opportunity_id": "HOME-046-OP002",
+        "opportunity_title_ar": "كنس مساحة الجلوس.",
+        "parent_event_id": "HOME-046",
+        "parent_event_title_ar": "تنظيف السطح أو الروف الخارجي",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050.json"
+    },
+    {
+      "selection_ordinal": 274,
+      "lane": "C",
+      "lane_ordinal": 74,
+      "corpus_position": 962,
+      "legacy_id": "HOME-047-OP002",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050",
+      "source_record_sha256": "44b65e245c022e35cd835462ea952a104866f82070bc6ecfd10bee7c4c3ac6b2",
+      "source_identity": {
+        "opportunity_id": "HOME-047-OP002",
+        "opportunity_title_ar": "فرز المناشف حسب المقاس.",
+        "parent_event_id": "HOME-047",
+        "parent_event_title_ar": "ترتيب خزانة المناشف والمفارش",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050.json"
+    },
+    {
+      "selection_ordinal": 275,
+      "lane": "C",
+      "lane_ordinal": 75,
+      "corpus_position": 965,
+      "legacy_id": "HOME-048-OP002",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050",
+      "source_record_sha256": "3aa60162333dbbed9a57f1127465a4f74286cb99ecac047a1af35819e8e094c4",
+      "source_identity": {
+        "opportunity_id": "HOME-048-OP002",
+        "opportunity_title_ar": "وضع المناشف المتسخة في سلة الغسيل.",
+        "parent_event_id": "HOME-048",
+        "parent_event_title_ar": "تغيير مناشف اليد والاستحمام",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050.json"
+    },
+    {
+      "selection_ordinal": 276,
+      "lane": "C",
+      "lane_ordinal": 76,
+      "corpus_position": 968,
+      "legacy_id": "HOME-049-OP002",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050",
+      "source_record_sha256": "5fe849d139c26a12cb045ea6c132281dff67bcc856168952f204c4d9cbadd413",
+      "source_identity": {
+        "opportunity_id": "HOME-049-OP002",
+        "opportunity_title_ar": "فرك الجوانب بالإسفنجة.",
+        "parent_event_id": "HOME-049",
+        "parent_event_title_ar": "تنظيف حوض الاستحمام أو الدش",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050.json"
+    },
+    {
+      "selection_ordinal": 277,
+      "lane": "C",
+      "lane_ordinal": 77,
+      "corpus_position": 972,
+      "legacy_id": "HOME-051-OP001",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050",
+      "source_record_sha256": "cd4bc458e3ab8036850609a4f8280dd3c62372c9259bec088f5587732ecfdfb6",
+      "source_identity": {
+        "opportunity_id": "HOME-051-OP001",
+        "opportunity_title_ar": "رش المنظف المخصص للفواصل.",
+        "parent_event_id": "HOME-051",
+        "parent_event_title_ar": "تنظيف جدران الحمام من العفن",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050.json"
+    },
+    {
+      "selection_ordinal": 278,
+      "lane": "C",
+      "lane_ordinal": 78,
+      "corpus_position": 978,
+      "legacy_id": "HOME-053-OP001",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050",
+      "source_record_sha256": "8d107760637326a35f7ddcf55d09d4b557fc8357ea76f70bbbfb2aab57165169",
+      "source_identity": {
+        "opportunity_id": "HOME-053-OP001",
+        "opportunity_title_ar": "استخراج عبوات المنظفات لفحصها.",
+        "parent_event_id": "HOME-053",
+        "parent_event_title_ar": "فحص تاريخ صلاحية المنظفات والمواد المخزنة",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050.json"
+    },
+    {
+      "selection_ordinal": 279,
+      "lane": "C",
+      "lane_ordinal": 79,
+      "corpus_position": 993,
+      "legacy_id": "HOME-058-OP003",
+      "domain": "DOM-HOME",
+      "disposition": "SPLIT_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050",
+      "source_record_sha256": "8baa066461f559ea1457fd4d15b4d399bb042cc5c2d832cbb36bd4a5257153ae",
+      "source_identity": {
+        "opportunity_id": "HOME-058-OP003",
+        "opportunity_title_ar": "تجفيف الإسفنج والفوط ووضعها في مكان جيد التهوية.",
+        "parent_event_id": "HOME-058",
+        "parent_event_title_ar": "تنظيف أدوات التنظيف نفسها",
+        "domain_id": "DOM-HOME"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050.json"
+    },
+    {
+      "selection_ordinal": 280,
+      "lane": "C",
+      "lane_ordinal": 80,
+      "corpus_position": 1121,
+      "legacy_id": "SHOP-005-OP003",
+      "domain": "DOM-SHOP",
+      "disposition": "MERGED_BY_PROVENANCE",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150",
+      "source_record_sha256": "98eaca0cb7944c74509949e38c94fdf18d3863fe3ae198eb12f4510d2e04f1cd",
+      "source_identity": {
+        "opportunity_id": "SHOP-005-OP003",
+        "opportunity_title_ar": "تسليم الأكياس للوزن أو وضعها في العربة",
+        "parent_event_id": "SHOP-005",
+        "parent_event_title_ar": "التسوق من قسم الخضار والفواكه",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150.json"
+    },
+    {
+      "selection_ordinal": 281,
+      "lane": "C",
+      "lane_ordinal": 81,
+      "corpus_position": 1186,
+      "legacy_id": "SHOP-027-OP002",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "47fca1e783b976af7ae743f52db7038a7fb218e6303a100261e045c078b0f104",
+      "source_identity": {
+        "opportunity_id": "SHOP-027-OP002",
+        "opportunity_title_ar": "البحث عن المنتجات المخفضة الخاصة بالجمعية",
+        "parent_event_id": "SHOP-027",
+        "parent_event_title_ar": "التسوق من جمعية تعاونية",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 282,
+      "lane": "C",
+      "lane_ordinal": 82,
+      "corpus_position": 1189,
+      "legacy_id": "SHOP-028-OP002",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "a6d2e60f8819060b3848958f5028f725fd72db50b1c499223cd2cb68dc3f4ba4",
+      "source_identity": {
+        "opportunity_id": "SHOP-028-OP002",
+        "opportunity_title_ar": "دفع المبلغ النقدي للبائع",
+        "parent_event_id": "SHOP-028",
+        "parent_event_title_ar": "التسوق من البقالة أو المحل الصغير",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 283,
+      "lane": "C",
+      "lane_ordinal": 83,
+      "corpus_position": 1193,
+      "legacy_id": "SHOP-029-OP003",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "218de235554369d8a53aa107cbc034bd55d0cd45368947396c6e38de965c7a49",
+      "source_identity": {
+        "opportunity_id": "SHOP-029-OP003",
+        "opportunity_title_ar": "اختيار المنتج النهائي",
+        "parent_event_id": "SHOP-029",
+        "parent_event_title_ar": "التسوق من متجر متخصص",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 284,
+      "lane": "C",
+      "lane_ordinal": 84,
+      "corpus_position": 1196,
+      "legacy_id": "SHOP-030-OP003",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "724f5be6ed17739b3b5d3079197119edc8ebaaa7d604fc3e5fc399bf6d0c687f",
+      "source_identity": {
+        "opportunity_id": "SHOP-030-OP003",
+        "opportunity_title_ar": "فحص جودة المنتجات المخفضة بدقة",
+        "parent_event_id": "SHOP-030",
+        "parent_event_title_ar": "التسوق من منفذ بيع المصنع",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 285,
+      "lane": "C",
+      "lane_ordinal": 85,
+      "corpus_position": 1199,
+      "legacy_id": "SHOP-031-OP003",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "66df44b68e47e854d8ba7b4715e93fed63007ff0d2dcde1a98f083087634c360",
+      "source_identity": {
+        "opportunity_id": "SHOP-031-OP003",
+        "opportunity_title_ar": "مساعدة الحمّال في توجيه الصناديق للسيارة",
+        "parent_event_id": "SHOP-031",
+        "parent_event_title_ar": "التسوق من سوق الخضار المركزي",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 286,
+      "lane": "C",
+      "lane_ordinal": 86,
+      "corpus_position": 1202,
+      "legacy_id": "SHOP-032-OP003",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "7046ec9cdd400df79a04a832b9a1c34364fe11ea2189f02bdbc7d301db7993dd",
+      "source_identity": {
+        "opportunity_id": "SHOP-032-OP003",
+        "opportunity_title_ar": "استلام الأكياس بعد التجهيز",
+        "parent_event_id": "SHOP-032",
+        "parent_event_title_ar": "التسوق من سوق السمك",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 287,
+      "lane": "C",
+      "lane_ordinal": 87,
+      "corpus_position": 1205,
+      "legacy_id": "SHOP-033-OP003",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "c0c1e188fa076a67e387850cae89ad569758e492f8010be056fa36617494b526",
+      "source_identity": {
+        "opportunity_id": "SHOP-033-OP003",
+        "opportunity_title_ar": "دفع الحساب للبائع",
+        "parent_event_id": "SHOP-033",
+        "parent_event_title_ar": "التسوق من المخبز المحلي",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 288,
+      "lane": "C",
+      "lane_ordinal": 88,
+      "corpus_position": 1209,
+      "legacy_id": "SHOP-035-OP001",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "2faf0193797e6b563d1a1731b0579d8a374654e7a808c0cac6ac3be4ec84b138",
+      "source_identity": {
+        "opportunity_id": "SHOP-035-OP001",
+        "opportunity_title_ar": "مراجعة جودة المنتجات المعروضة",
+        "parent_event_id": "SHOP-035",
+        "parent_event_title_ar": "التسوق من بائع متجول أو سوق شعبي",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 289,
+      "lane": "C",
+      "lane_ordinal": 89,
+      "corpus_position": 1212,
+      "legacy_id": "SHOP-036-OP001",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "c3f1048782c07c33dacdf877860639d051ad646f0d2b3b886d513903638e2e91",
+      "source_identity": {
+        "opportunity_id": "SHOP-036-OP001",
+        "opportunity_title_ar": "قراءة أسماء المنتجات للوصول للمطلوب",
+        "parent_event_id": "SHOP-036",
+        "parent_event_title_ar": "اختيار المنتجات من الرفوف",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 290,
+      "lane": "C",
+      "lane_ordinal": 90,
+      "corpus_position": 1215,
+      "legacy_id": "SHOP-037-OP001",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "274cbf17748961dfaca4189448c20ad3864238cd9203e01551495cd535867b19",
+      "source_identity": {
+        "opportunity_id": "SHOP-037-OP001",
+        "opportunity_title_ar": "البحث عن مكونات تسبب الحساسية",
+        "parent_event_id": "SHOP-037",
+        "parent_event_title_ar": "قراءة ملصقات المكونات والتغذية",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 291,
+      "lane": "C",
+      "lane_ordinal": 91,
+      "corpus_position": 1218,
+      "legacy_id": "SHOP-038-OP001",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "3b7ce82548a56be54a7b7a555c0e05b78cdd662d2ae874fe51d31be0a38177c8",
+      "source_identity": {
+        "opportunity_id": "SHOP-038-OP001",
+        "opportunity_title_ar": "قراءة تاريخ الإنتاج والانتهاء",
+        "parent_event_id": "SHOP-038",
+        "parent_event_title_ar": "التحقق من تاريخ الصلاحية",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 292,
+      "lane": "C",
+      "lane_ordinal": 92,
+      "corpus_position": 1221,
+      "legacy_id": "SHOP-039-OP001",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "71f3aa7ffa2310c37098068af27e2e8f3f4add60f580028c17fcb385b15f0254",
+      "source_identity": {
+        "opportunity_id": "SHOP-039-OP001",
+        "opportunity_title_ar": "قراءة بطاقات الأسعار على الرفوف",
+        "parent_event_id": "SHOP-039",
+        "parent_event_title_ar": "مقارنة الأسعار بين الماركات",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 293,
+      "lane": "C",
+      "lane_ordinal": 93,
+      "corpus_position": 1224,
+      "legacy_id": "SHOP-040-OP001",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "ab6fffd021a881968b2309c07a428f99acffdd8d0d0e8089beb0a02bd1fe9661",
+      "source_identity": {
+        "opportunity_id": "SHOP-040-OP001",
+        "opportunity_title_ar": "تدوين أسعار السلع الأساسية",
+        "parent_event_id": "SHOP-040",
+        "parent_event_title_ar": "مقارنة الأسعار بين المتاجر",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 294,
+      "lane": "C",
+      "lane_ordinal": 94,
+      "corpus_position": 1228,
+      "legacy_id": "SHOP-041-OP002",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "63b1af4005b3d8f9b1c3520d2f505f35b79b931f2b52044306fac64d1f14ca23",
+      "source_identity": {
+        "opportunity_id": "SHOP-041-OP002",
+        "opportunity_title_ar": "قيادة العربة بأمان بين الممرات",
+        "parent_event_id": "SHOP-041",
+        "parent_event_title_ar": "استخدام عربة التسوق الكبيرة",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 295,
+      "lane": "C",
+      "lane_ordinal": 95,
+      "corpus_position": 1231,
+      "legacy_id": "SHOP-042-OP002",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "f34a28c27cb9fef19c8fc101439ad1f231873e6ca2f5c85afe9eadd215dd36d6",
+      "source_identity": {
+        "opportunity_id": "SHOP-042-OP002",
+        "opportunity_title_ar": "حمل السلة أثناء التنقل",
+        "parent_event_id": "SHOP-042",
+        "parent_event_title_ar": "حمل سلة التسوق اليدوية",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 296,
+      "lane": "C",
+      "lane_ordinal": 96,
+      "corpus_position": 1234,
+      "legacy_id": "SHOP-043-OP002",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "3072a309a802c3706e283a32cd64a6893d1f2b6b05cf3cc9585b40ca5a6d49c0",
+      "source_identity": {
+        "opportunity_id": "SHOP-043-OP002",
+        "opportunity_title_ar": "إدخال كود الصنف أو اختياره من الشاشة",
+        "parent_event_id": "SHOP-043",
+        "parent_event_title_ar": "وزن المنتجات الطازجة",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 297,
+      "lane": "C",
+      "lane_ordinal": 97,
+      "corpus_position": 1237,
+      "legacy_id": "SHOP-044-OP002",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "2505dc03b58ef8ccd4ed885071d95fc61130e769dbce4a3f9b4dd03f8cc33f66",
+      "source_identity": {
+        "opportunity_id": "SHOP-044-OP002",
+        "opportunity_title_ar": "توجيه السؤال بوضوح عن موقع المنتج",
+        "parent_event_id": "SHOP-044",
+        "parent_event_title_ar": "طلب المساعدة من موظف المتجر",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 298,
+      "lane": "C",
+      "lane_ordinal": 98,
+      "corpus_position": 1240,
+      "legacy_id": "SHOP-045-OP002",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "930aeb9b621c152dd6df5866310fe55c13791e8a7a4854c582a140068ee1c0b4",
+      "source_identity": {
+        "opportunity_id": "SHOP-045-OP002",
+        "opportunity_title_ar": "تجربة الملابس والتأكد من الراحة",
+        "parent_event_id": "SHOP-045",
+        "parent_event_title_ar": "تجربة الملابس في غرفة القياس",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 299,
+      "lane": "C",
+      "lane_ordinal": 99,
+      "corpus_position": 1243,
+      "legacy_id": "SHOP-046-OP002",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250",
+      "source_record_sha256": "b426ecdd620f7f448a1c058090d7db7d9c7df879aefc83688df66726d76d4d6e",
+      "source_identity": {
+        "opportunity_id": "SHOP-046-OP002",
+        "opportunity_title_ar": "إبراز الكوبون للكاشير وقت الحساب",
+        "parent_event_id": "SHOP-046",
+        "parent_event_title_ar": "استخدام كوبونات الخصم أو العروض",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250.json"
+    },
+    {
+      "selection_ordinal": 300,
+      "lane": "C",
+      "lane_ordinal": 100,
+      "corpus_position": 1268,
+      "legacy_id": "SHOP-054-OP003",
+      "domain": "DOM-SHOP",
+      "disposition": "SPLIT_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1251_1350",
+      "source_record_sha256": "85b54b9b654d8e794e603e0b621e55bee06007e735da5ed14f5872596aeb59bf",
+      "source_identity": {
+        "opportunity_id": "SHOP-054-OP003",
+        "opportunity_title_ar": "إتمام عملية الدفع الآلي واستلام الإيصال",
+        "parent_event_id": "SHOP-054",
+        "parent_event_title_ar": "استخدام ماكينة الخروج الذاتي",
+        "domain_id": "DOM-SHOP"
+      },
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1251_1350.json"
+    }
+  ]
+}

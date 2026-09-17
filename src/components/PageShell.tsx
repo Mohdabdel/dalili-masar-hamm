@@ -13,7 +13,14 @@ interface PageShellProps {
   children: ReactNode;
 }
 
-export function PageShell({ title, subtitle, description, breadcrumbs, headerExtra, children }: PageShellProps) {
+export function PageShell({
+  title,
+  subtitle,
+  description,
+  breadcrumbs,
+  headerExtra,
+  children,
+}: PageShellProps) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const isHome = pathname === "/";
   return (
@@ -23,7 +30,7 @@ export function PageShell({ title, subtitle, description, breadcrumbs, headerExt
           <div className="mb-2 flex items-center justify-between gap-2">
             {!isHome ? <BackButton /> : <span />}
             <Link
-              to="/search"
+              to="/space/library"
               className="inline-flex items-center gap-1 rounded-lg bg-primary-foreground/10 px-2.5 py-1 text-[11px] font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/20"
             >
               <Search className="h-3.5 w-3.5" />
@@ -38,19 +45,13 @@ export function PageShell({ title, subtitle, description, breadcrumbs, headerExt
           <div className="flex items-center justify-between">
             <div className="min-w-0">
               {!isHome && (
-                <p className="text-xs font-semibold tracking-wider text-gold/90">
-                  دليلي
-                </p>
+                <p className="text-xs font-semibold tracking-wider text-gold/90">دليلي</p>
               )}
               <h1 className="mt-1 truncate text-2xl font-bold">{title}</h1>
               {description && (
-                <p className="mt-1 text-sm font-medium text-primary-foreground/80">
-                  {description}
-                </p>
+                <p className="mt-1 text-sm font-medium text-primary-foreground/80">{description}</p>
               )}
-              {subtitle && (
-                <p className="mt-1 text-xs text-primary-foreground/70">{subtitle}</p>
-              )}
+              {subtitle && <p className="mt-1 text-xs text-primary-foreground/70">{subtitle}</p>}
             </div>
             <div className="ms-3 flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-gold text-primary shadow-card-soft">
               <span className="text-lg font-bold">د</span>
@@ -64,4 +65,3 @@ export function PageShell({ title, subtitle, description, breadcrumbs, headerExt
     </div>
   );
 }
-

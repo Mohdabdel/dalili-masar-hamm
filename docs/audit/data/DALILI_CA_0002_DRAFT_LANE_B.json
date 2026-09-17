@@ -1,0 +1,2845 @@
+{
+  "artifact": "DALILI_CA_0002_DRAFT_LANE_B",
+  "version": "1.0",
+  "status": "DRAFT_ONLY_NOT_MATERIALIZED",
+  "selection": {
+    "selector": "selectCa0002",
+    "lane_rule": "index % 3 === 1",
+    "source_count": 33
+  },
+  "boundaries": {
+    "legacy_master_mutated": false,
+    "canonical_validator_changed": false,
+    "materialization_performed": false
+  },
+  "conservation": {
+    "input_sources": 33,
+    "accounted_sources": 33,
+    "candidate_count": 33,
+    "merge_candidates_created": 0,
+    "silent_drops": 0,
+    "duplicate_source_ids": 0,
+    "gate": "PASS"
+  },
+  "disposition_distribution": {
+    "REWRITE_REQUIRED": 25,
+    "SPLIT_REQUIRED": 1,
+    "MERGED_BY_PROVENANCE": 1,
+    "ACCEPTED": 6
+  },
+  "validation_summary": {
+    "candidate_count": 33,
+    "fp_pass_7_of_7": 33,
+    "cx_pass_9_of_9": 33,
+    "green": 33,
+    "amber": 0,
+    "red": 0,
+    "fail_closed": true
+  },
+  "records": [
+    {
+      "corpus_position": 15,
+      "legacy_id": "CLO-015-OP001",
+      "source_record_sha256": "fa9fc51670ce44474e92fae2662fe45b4beda8957a842590147e7cb2026b52ae",
+      "classification_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-CLO015OP001-C01",
+          "source_evidence_ids": [
+            "CLO-015-OP001"
+          ],
+          "source_record_sha256": "fa9fc51670ce44474e92fae2662fe45b4beda8957a842590147e7cb2026b52ae",
+          "title": "كي الملابس لإزالة التجاعيد",
+          "life_context": "بعد غسل قطعة ملابس مجعدة، تُجهز على طاولة الكي قبل ارتدائها أو حفظها.",
+          "functional_intent": "إزالة التجاعيد حتى تصبح القطعة صالحة للارتداء أو التعليق.",
+          "observable_effect": "يصبح سطح القماش مستويًا وتنتقل القطعة إلى علاقة الملابس.",
+          "natural_completion": "ينتهي الدور عند تعليق القطعة المكوية وخلو طاولة الكي منها.",
+          "standalone_role_meaning": "كي قطعة ملابس وتجهيزها للحفظ عمل منزلي كامل حتى لو تولى آخرون الغسيل.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "قطعة الملابس وطاولة الكي والمكواة والعلاقة.",
+              "c2_coordination": "تتابع بين فرد القماش وكي مواضع التجعد ثم نقل القطعة إلى العلاقة.",
+              "c3_variability": "تختلف مساحة القماش ومواضع التجعد ونوع القطعة.",
+              "c4_choice_uncertainty": "اختيار إعداد المكواة الملائم للقماش والموضع الذي يبدأ منه الكي."
+            },
+            "rationale": "تعدد أدوات الكي وترابط مراحل الفرد والمعالجة والتعليق مع تغير الأقمشة يجعل بنية الدور متوسطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-CLO015OP001-C01-B1",
+              "order": 1,
+              "text": "فرد القطعة على طاولة الكي"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-CLO015OP001-C01-B2",
+              "order": 2,
+              "text": "تمرير المكواة على مواضع التجعد"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-CLO015OP001-C01-B3",
+              "order": 3,
+              "text": "تعليق القطعة بعد الكي"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "CLO-015-OP001",
+            "source_corpus_position": 15,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 19,
+      "legacy_id": "CLO-019-OP001",
+      "source_record_sha256": "21ab121ab833f940bb7d4f0af05befd62de88016eb72dd1a2cdf6db86fd120ca",
+      "classification_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-CLO019OP001-C01",
+          "source_evidence_ids": [
+            "CLO-019-OP001"
+          ],
+          "source_record_sha256": "21ab121ab833f940bb7d4f0af05befd62de88016eb72dd1a2cdf6db86fd120ca",
+          "title": "البحث عن قطعة ملابس مفقودة أو مختبئة",
+          "life_context": "تحتاج الأسرة إلى قطعة ملابس لا توجد في موضعها المعتاد قبل الخروج أو ترتيب الملابس.",
+          "functional_intent": "تحديد مكان القطعة المفقودة بين مواضع حفظ الملابس واستخدامها.",
+          "observable_effect": "تُعثر على القطعة أو تُستبعد المواضع المنزلية المحددة للبحث.",
+          "natural_completion": "ينتهي الدور عند العثور على القطعة أو اكتمال فحص الخزانة وسلة الغسيل والمواضع المتفق عليها.",
+          "standalone_role_meaning": "البحث المنظم عن غرض منزلي مفقود عمل مفهوم بصرف النظر عن سبب الحاجة إليه.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "قطعة مفقودة وثلاثة نطاقات بحث: الخزانة وسلة الغسيل ومواضع الملابس الأخرى.",
+              "c2_coordination": "ينتقل البحث من الموضع المعتاد إلى نطاقات بديلة مع استبعاد كل موضع فُحص.",
+              "c3_variability": "تتغير القطعة المطلوبة وآخر موضع استُخدمت فيه والأماكن المحتملة.",
+              "c4_choice_uncertainty": "تحديد ترتيب مواضع البحث وقرار الانتقال إلى النطاق التالي."
+            },
+            "rationale": "تعدد نطاقات البحث والحاجة إلى تتبع ما فُحص والتكيف مع موضع غير معلوم يضع الدور في بنية متوسطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-CLO019OP001-C01-B1",
+              "order": 1,
+              "text": "فحص موضع القطعة في الخزانة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-CLO019OP001-C01-B2",
+              "order": 2,
+              "text": "فحص سلة الغسيل"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-CLO019OP001-C01-B3",
+              "order": 3,
+              "text": "مراجعة مواضع الملابس الأخرى"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "CLO-019-OP001",
+            "source_corpus_position": 19,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 22,
+      "legacy_id": "CLO-022-OP001",
+      "source_record_sha256": "831f76e793a9d41c8732c544af6c8fc15cb37c3c5c732ea60767d5e101caa567",
+      "classification_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-CLO022OP001-C01",
+          "source_evidence_ids": [
+            "CLO-022-OP001"
+          ],
+          "source_record_sha256": "831f76e793a9d41c8732c544af6c8fc15cb37c3c5c732ea60767d5e101caa567",
+          "title": "إزالة بقع صعبة من الملابس",
+          "life_context": "توجد بقعة ظاهرة على قطعة ملابس قبل إدخالها في الغسيل المعتاد.",
+          "functional_intent": "معالجة موضع البقعة بالمادة الملائمة قبل غسل القطعة.",
+          "observable_effect": "تُوضع مادة المعالجة على البقعة وتصبح القطعة جاهزة للغسيل.",
+          "natural_completion": "ينتهي الدور عند تغطية موضع البقعة بمادة المعالجة ووضع القطعة مع الغسيل.",
+          "standalone_role_meaning": "معالجة بقعة على قماش عمل عناية بالملابس قائم بذاته.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "advanced",
+            "dimensions": {
+              "c1_elements": "قطعة قماش وبقعة ومادة معالجة وماء وغسيل لاحق.",
+              "c2_coordination": "ربط نوع القماش والبقعة بمادة المعالجة ثم توقيت نقل القطعة إلى الغسيل.",
+              "c3_variability": "تختلف البقع والأقمشة وتعليمات مواد المعالجة.",
+              "c4_choice_uncertainty": "اختيار المادة وطريقة وضعها وفق القماش والبقعة."
+            },
+            "rationale": "اجتماع خصائص قماش وبقعة ومادة معالجة مع اختلاف قواعد الاستخدام وقرار الملاءمة يجعل البنية متقدمة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-CLO022OP001-C01-B1",
+              "order": 1,
+              "text": "تحديد موضع البقعة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-CLO022OP001-C01-B2",
+              "order": 2,
+              "text": "اختيار مادة المعالجة الملائمة للقماش"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-CLO022OP001-C01-B3",
+              "order": 3,
+              "text": "وضع المادة على البقعة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-CLO022OP001-C01-B4",
+              "order": 4,
+              "text": "نقل القطعة إلى الغسيل"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "CLO-022-OP001",
+            "source_corpus_position": 22,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 25,
+      "legacy_id": "CLO-025-OP001",
+      "source_record_sha256": "8968ff51619d2f252edab3f0a5f19bfd490347483d18cda53b155881d7075d62",
+      "classification_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-CLO025OP001-C01",
+          "source_evidence_ids": [
+            "CLO-025-OP001"
+          ],
+          "source_record_sha256": "8968ff51619d2f252edab3f0a5f19bfd490347483d18cda53b155881d7075d62",
+          "title": "تخزين الملابس الموسمية (شتوية/صيفية)",
+          "life_context": "مع تغير الموسم، توجد ملابس لن تستخدمها الأسرة خلال الفترة الحالية.",
+          "functional_intent": "إخلاء مساحة الاستخدام اليومي مع حفظ الملابس للموسم التالي.",
+          "observable_effect": "تصبح الملابس الموسمية مطوية داخل صناديق ومرفوعة في موضع التخزين.",
+          "natural_completion": "ينتهي الدور عندما تُغلق الصناديق ولا تبقى قطعة موسمية ضمن الملابس اليومية.",
+          "standalone_role_meaning": "تخزين مقتنيات موسمية عمل تنظيمي منزلي كامل بذاته.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "ملابس موسمية وصناديق وموضع تخزين ومساحة استخدام يومي.",
+              "c2_coordination": "فرز القطع ثم طيها وتجميعها في صناديق قبل نقلها إلى التخزين.",
+              "c3_variability": "تتغير كمية الملابس وحجم الصناديق والمساحة المتاحة بين المواسم.",
+              "c4_choice_uncertainty": "اختيار القطع التي ستخزن والصندوق والموضع الملائم لكل مجموعة."
+            },
+            "rationale": "تعدد مجموعات الملابس وارتباط الفرز بالتعبئة والمكان مع تغير السعة يجعل الدور متوسط البنية."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-CLO025OP001-C01-B1",
+              "order": 1,
+              "text": "فرز الملابس غير المستخدمة في الموسم الحالي"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-CLO025OP001-C01-B2",
+              "order": 2,
+              "text": "طي القطع ووضعها في الصناديق"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-CLO025OP001-C01-B3",
+              "order": 3,
+              "text": "إغلاق الصناديق ونقلها إلى موضع التخزين"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "CLO-025-OP001",
+            "source_corpus_position": 25,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 28,
+      "legacy_id": "CLO-028-OP001",
+      "source_record_sha256": "6512607a12c4bdce54c462a6ffe8858bd45cc56b065472c569dc42efc10ec74d",
+      "classification_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-CLO028OP001-C01",
+          "source_evidence_ids": [
+            "CLO-028-OP001"
+          ],
+          "source_record_sha256": "6512607a12c4bdce54c462a6ffe8858bd45cc56b065472c569dc42efc10ec74d",
+          "title": "التخلص من ملابس بالية غير صالحة",
+          "life_context": "أثناء مراجعة خزانة الأسرة، تظهر قطع بالية لا تصلح للارتداء أو التبرع.",
+          "functional_intent": "فصل القطع التالفة عن الملابس المحتفظ بها وإخراجها من الخزانة.",
+          "observable_effect": "تنتقل القطع البالية إلى حاوية التخلص الملائمة ولا تختلط بملابس التبرع.",
+          "natural_completion": "ينتهي الدور عند خلو الخزانة ومجموعة التبرع من القطع التالفة المحددة.",
+          "standalone_role_meaning": "التخلص من مقتنيات تالفة عمل منزلي مفهوم دون الحاجة إلى نشاط آخر.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "ملابس بالية وملابس قابلة للاستخدام ومجموعة تبرع وحاوية تخلص.",
+              "c2_coordination": "فصل القطع التالفة عن مسارين آخرين ثم نقلها إلى الحاوية الملائمة.",
+              "c3_variability": "تختلف علامات التلف وحالة القطع وقواعد التخلص المتاحة.",
+              "c4_choice_uncertainty": "التمييز بين التلف الكامل وإمكان الاستخدام أو التبرع واختيار الحاوية."
+            },
+            "rationale": "وجود حدود تصنيف بين الاحتفاظ والتبرع والتخلص مع تغير حالة القطع يجعل الدور متوسطًا."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-CLO028OP001-C01-B1",
+              "order": 1,
+              "text": "تحديد القطع التالفة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-CLO028OP001-C01-B2",
+              "order": 2,
+              "text": "فصلها عن القطع القابلة للاستخدام أو التبرع"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-CLO028OP001-C01-B3",
+              "order": 3,
+              "text": "وضعها في حاوية التخلص الملائمة"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "CLO-028-OP001",
+            "source_corpus_position": 28,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 53,
+      "legacy_id": "COMM-001-OP003",
+      "source_record_sha256": "fdc3eb1fa9759417586413266bb6f09e7ae3a9e23ff382edecb09d8ce59d9132",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-COMM001OP003-C01",
+          "source_evidence_ids": [
+            "COMM-001-OP003"
+          ],
+          "source_record_sha256": "fdc3eb1fa9759417586413266bb6f09e7ae3a9e23ff382edecb09d8ce59d9132",
+          "title": "حضور الشعائر الدينية",
+          "life_context": "أثناء وجود الأسرة في المسجد أو دار العبادة، تبدأ الشعائر التي حضر الزائرون من أجلها.",
+          "functional_intent": "الانضمام إلى اللحظة الدينية المشتركة داخل مكان العبادة.",
+          "observable_effect": "يبقى الشخص ضمن جماعة الحاضرين ويتخذ موضعه معهم أثناء الشعائر.",
+          "natural_completion": "ينتهي الدور عند انتهاء الشعائر ومغادرة موضعها مع الأسرة.",
+          "standalone_role_meaning": "حضور شعيرة جماعية دور اجتماعي وديني مفهوم حتى إذا اختلفت أدوار الحاضرين.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "مكان عبادة وموضع الأسرة وجماعة الحاضرين وبداية الشعائر وختامها.",
+              "c2_coordination": "مواءمة الدخول والجلوس والبقاء والخروج مع الإيقاع الجماعي للمناسبة.",
+              "c3_variability": "يختلف ترتيب المكان وكثافة الحضور ومدة الشعائر.",
+              "c4_choice_uncertainty": "اختيار موضع مناسب للأسرة ومسار الدخول والخروج."
+            },
+            "rationale": "التنسيق الزمني والمكاني مع جماعة داخل مكان عام متغير يمنح الدور بنية متوسطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-COMM001OP003-C01-B1",
+              "order": 1,
+              "text": "الانتقال إلى موضع الأسرة بين الحاضرين"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-COMM001OP003-C01-B2",
+              "order": 2,
+              "text": "البقاء في مساحة الشعائر حتى ختامها"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-COMM001OP003-C01-B3",
+              "order": 3,
+              "text": "الخروج مع الأسرة بعد الانتهاء"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "COMM-001-OP003",
+            "source_corpus_position": 53,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 57,
+      "legacy_id": "COMM-002-OP003",
+      "source_record_sha256": "9909762ef11e15f81f32140bc26770de8c8fa408099d51c19c6e5a2545e6a821",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-COMM002OP003-C01",
+          "source_evidence_ids": [
+            "COMM-002-OP003"
+          ],
+          "source_record_sha256": "9909762ef11e15f81f32140bc26770de8c8fa408099d51c19c6e5a2545e6a821",
+          "title": "المشي مع الأسرة داخل الحديقة",
+          "life_context": "خلال زيارة الأسرة للحديقة، تختار الأسرة مسارًا للمشي بين مناطق الجلوس والترفيه.",
+          "functional_intent": "مشاركة الأسرة انتقالها على مسار الحديقة ضمن وقت الزيارة.",
+          "observable_effect": "تتحرك الأسرة معًا من بداية المسار إلى النقطة التي اتفقت عليها.",
+          "natural_completion": "ينتهي الدور عند بلوغ نقطة نهاية المسار أو العودة إلى موضع جلوس الأسرة.",
+          "standalone_role_meaning": "المشي مع مجموعة في مكان عام مشاركة مجتمعية مفهومة مستقلة عن تجهيز النزهة.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "أفراد الأسرة ومسار حديقة ونقطة بداية ونقطة نهاية أو موضع جلوس.",
+              "c2_coordination": "الحفاظ على حركة المجموعة على المسار حتى الوصول إلى النهاية المتفق عليها.",
+              "c3_variability": "تتغير أطوال المسارات والازدحام ومواضع الجلوس بين الزيارات.",
+              "c4_choice_uncertainty": "اختيار نقطة النهاية أو قرار العودة إلى موضع الجلوس."
+            },
+            "rationale": "ربط حركة عدة أفراد بمسار عام متغير ونقطة انتهاء مختارة يجعل الدور متوسط البنية."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-COMM002OP003-C01-B1",
+              "order": 1,
+              "text": "الانضمام إلى الأسرة عند بداية المسار"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-COMM002OP003-C01-B2",
+              "order": 2,
+              "text": "السير على المسار المختار"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-COMM002OP003-C01-B3",
+              "order": 3,
+              "text": "الوصول إلى نقطة النهاية المتفق عليها"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "COMM-002-OP003",
+            "source_corpus_position": 57,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 60,
+      "legacy_id": "COMM-003-OP002",
+      "source_record_sha256": "ddacd17a2a214d28f0e51840f4740f0520f57d8e63c78ec6a95655c3c649c2f8",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-COMM003OP002-C01",
+          "source_evidence_ids": [
+            "COMM-003-OP002"
+          ],
+          "source_record_sha256": "ddacd17a2a214d28f0e51840f4740f0520f57d8e63c78ec6a95655c3c649c2f8",
+          "title": "اختيار مسار المشي في الحي",
+          "life_context": "عند بدء نزهة مشي في الحي، تتاح للأسرة عدة مسارات عامة تصل إلى وجهتها.",
+          "functional_intent": "تحديد الطريق الذي ستسلكه الأسرة قبل بدء المشي.",
+          "observable_effect": "يصبح مسار واحد معلومًا لأفراد الأسرة ويمكنهم الانطلاق عليه.",
+          "natural_completion": "ينتهي الدور عندما تشير الأسرة إلى المسار المختار وتبدأ الحركة في اتجاهه.",
+          "standalone_role_meaning": "اختيار طريق من بدائل متاحة قرار تنقل قائم بذاته.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "عدة مسارات عامة ووجهة أسرية واتجاهات انطلاق مختلفة.",
+              "c2_coordination": "ربط كل مسار بالوجهة قبل إبلاغ الأسرة وبدء الحركة.",
+              "c3_variability": "تختلف إتاحة الطرق والازدحام والوجهة في كل نزهة.",
+              "c4_choice_uncertainty": "المفاضلة بين المسارات واختيار اتجاه واحد للانطلاق."
+            },
+            "rationale": "تعدد بدائل الطريق وتغير ظروفها وضرورة تثبيت قرار مشترك يجعل البنية متوسطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-COMM003OP002-C01-B1",
+              "order": 1,
+              "text": "النظر إلى المسارات المتاحة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-COMM003OP002-C01-B2",
+              "order": 2,
+              "text": "تحديد المسار المفضل"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-COMM003OP002-C01-B3",
+              "order": 3,
+              "text": "إبلاغ الأسرة بالاتجاه المختار"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "COMM-003-OP002",
+            "source_corpus_position": 60,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 63,
+      "legacy_id": "COMM-004-OP001",
+      "source_record_sha256": "08b7c794844f66d537e4fae5de8ec4f08e8216a3680e61de44bc91000be27817",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-COMM004OP001-C01",
+          "source_evidence_ids": [
+            "COMM-004-OP001"
+          ],
+          "source_record_sha256": "08b7c794844f66d537e4fae5de8ec4f08e8216a3680e61de44bc91000be27817",
+          "title": "تجهيز غرض يؤخذ للزيارة",
+          "life_context": "قبل خروج الأسرة لزيارة قريب، تريد أن تأخذ معها ضيافة أو هدية صغيرة.",
+          "functional_intent": "إعداد الغرض الذي سيصل إلى منزل القريب مع الأسرة.",
+          "observable_effect": "يصبح الغرض مختارًا ومغلفًا أو موضوعًا قرب أغراض الخروج.",
+          "natural_completion": "ينتهي الدور عندما يصبح الغرض جاهزًا للحمل عند الباب.",
+          "standalone_role_meaning": "تجهيز غرض لزيارة اجتماعية مساهمة مفهومة قبل الانتقال إلى منزل المضيف.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "غرض ضيافة أو هدية وغلاف أو حقيبة وموضع أغراض الخروج.",
+              "c2_coordination": "انتقال الغرض من الاختيار إلى التغليف ثم إلى نقطة الحمل عند الباب.",
+              "c3_variability": "يتغير نوع الغرض وحجمه وطريقة تغليفه بحسب الزيارة.",
+              "c4_choice_uncertainty": "اختيار الغرض ووسيلة احتوائه المناسبة."
+            },
+            "rationale": "تعدد مراحل إعداد الغرض وتغير طبيعته وقرار التغليف يجعل الدور متوسطًا."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-COMM004OP001-C01-B1",
+              "order": 1,
+              "text": "اختيار الغرض مع الأسرة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-COMM004OP001-C01-B2",
+              "order": 2,
+              "text": "وضعه في غلاف أو حقيبة مناسبة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-COMM004OP001-C01-B3",
+              "order": 3,
+              "text": "نقله إلى موضع أغراض الخروج"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "COMM-004-OP001",
+            "source_corpus_position": 63,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 66,
+      "legacy_id": "COMM-004-OP004",
+      "source_record_sha256": "a910b56501f5a319c39cd30ab737a8583d1246efa59b6dd7a4cd2ed7835abe7f",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-COMM004OP004-C01",
+          "source_evidence_ids": [
+            "COMM-004-OP004"
+          ],
+          "source_record_sha256": "a910b56501f5a319c39cd30ab737a8583d1246efa59b6dd7a4cd2ed7835abe7f",
+          "title": "تقديم غرض يحتاجه المضيف أثناء الزيارة",
+          "life_context": "أثناء زيارة منزل قريب، يطلب المضيف غرضًا للمائدة أو لترتيب مساحة الجلوس.",
+          "functional_intent": "إيصال الغرض المطلوب إلى المضيف في وقت الحاجة إليه.",
+          "observable_effect": "يصل الغرض إلى يد المضيف أو إلى موضع استخدامه داخل الزيارة.",
+          "natural_completion": "ينتهي الدور عند وضع الغرض في الموضع الذي طلبه المضيف.",
+          "standalone_role_meaning": "تقديم غرض مطلوب داخل تجمع اجتماعي دور ضيافة مفهوم بذاته.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "طلب المضيف وغرض منزلي وموضع حفظ وموضع استخدام داخل الزيارة.",
+              "c2_coordination": "فهم الغرض المطلوب ثم نقله في الوقت الملائم إلى المضيف أو المائدة.",
+              "c3_variability": "تتغير الطلبات ومواضع الأغراض ومساحة منزل المضيف.",
+              "c4_choice_uncertainty": "تمييز الغرض المقصود واختيار موضع التسليم الصحيح."
+            },
+            "rationale": "التنسيق مع طلب اجتماعي متغير والانتقال في بيئة غير منزل الأسرة يجعل البنية متوسطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-COMM004OP004-C01-B1",
+              "order": 1,
+              "text": "تحديد الغرض الذي طلبه المضيف"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-COMM004OP004-C01-B2",
+              "order": 2,
+              "text": "إحضاره من موضعه"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-COMM004OP004-C01-B3",
+              "order": 3,
+              "text": "وضعه لدى المضيف أو في موضع الاستخدام"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "COMM-004-OP004",
+            "source_corpus_position": 66,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 310,
+      "legacy_id": "FOOD-002-OP002",
+      "source_record_sha256": "5e6691e13f774c01ee88155d83faccdeb6165d9605dad0246b7af4d7927eb820",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_251_325.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-FOOD002OP002-C01",
+          "source_evidence_ids": [
+            "FOOD-002-OP002"
+          ],
+          "source_record_sha256": "5e6691e13f774c01ee88155d83faccdeb6165d9605dad0246b7af4d7927eb820",
+          "title": "غسل الخضروات",
+          "life_context": "أثناء إعداد الغداء، توجد خضروات ستدخل في الوجبة وتحتاج إلى غسل.",
+          "functional_intent": "إزالة الأتربة الظاهرة عن الخضروات قبل تقطيعها أو طبخها.",
+          "observable_effect": "تصبح الخضروات مغسولة ومجتمعة في المصفاة بعيدًا عن القطع غير المغسولة.",
+          "natural_completion": "ينتهي الدور عندما يمر الماء على جميع الخضروات المقصودة وتوضع جانبًا.",
+          "standalone_role_meaning": "غسل مكونات الطعام مرحلة إعداد مستقلة عن طبخ الوجبة.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "خضروات ومصفاة وماء ومساحة تصفية.",
+              "c2_coordination": "وضع الخضروات في المصفاة ثم تمرير الماء وتركه يتصفى.",
+              "c3_variability": "تختلف كمية الخضروات وحجم القطع.",
+              "c4_choice_uncertainty": "تمييز الخضروات المقصودة وتحديد موضع التصفية."
+            },
+            "rationale": "العناصر قليلة والتتابع مباشر والتغير محدود والقرار واضح، لذا البنية بسيطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-FOOD002OP002-C01-B1",
+              "order": 1,
+              "text": "وضع الخضروات في المصفاة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-FOOD002OP002-C01-B2",
+              "order": 2,
+              "text": "تمرير الماء على الخضروات"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-FOOD002OP002-C01-B3",
+              "order": 3,
+              "text": "ترك الماء يتصفى ثم وضع المصفاة جانبًا"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "FOOD-002-OP002",
+            "source_corpus_position": 310,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 313,
+      "legacy_id": "FOOD-002-OP005",
+      "source_record_sha256": "33060440c10b25dbc34360efcd2f8e3f2f1da2f8085532932b4ed70d5feef678",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_251_325.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-FOOD002OP005-C01",
+          "source_evidence_ids": [
+            "FOOD-002-OP005"
+          ],
+          "source_record_sha256": "33060440c10b25dbc34360efcd2f8e3f2f1da2f8085532932b4ed70d5feef678",
+          "title": "سكب الطعام في الأطباق",
+          "life_context": "بعد نضج الغداء، يكون الطعام في وعاء التقديم والأطباق فارغة على المائدة.",
+          "functional_intent": "توزيع الطعام المطهو في الأطباق قبل جلوس أفراد الأسرة.",
+          "observable_effect": "يصبح في كل طبق نصيب من الطعام وتنتقل الأطباق إلى أماكن الجالسين.",
+          "natural_completion": "ينتهي الدور عندما لا يبقى طبق مقصود فارغًا وتوضع المغرفة جانبًا.",
+          "standalone_role_meaning": "تقسيم الطعام المطهو بين الأطباق دور منزلي واضح حتى إذا أعد شخص آخر الوجبة.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "وعاء طعام ومغرفة وعدة أطباق ومواضع الجالسين.",
+              "c2_coordination": "توزيع الطعام بالتتابع ثم ربط كل طبق بموضعه على المائدة.",
+              "c3_variability": "تختلف كثافة الطعام وحجم الأطباق وعدد الجالسين.",
+              "c4_choice_uncertainty": "تحديد نصيب الأطباق وترتيب ملئها ووضعها."
+            },
+            "rationale": "تكرار النقل بين وعاء وأطباق متعددة مع ضبط التوزيع والمواضع يجعل الدور متوسطًا."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-FOOD002OP005-C01-B1",
+              "order": 1,
+              "text": "وضع الأطباق قرب وعاء الطعام"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-FOOD002OP005-C01-B2",
+              "order": 2,
+              "text": "نقل الطعام بالمغرفة إلى كل طبق"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-FOOD002OP005-C01-B3",
+              "order": 3,
+              "text": "وضع الأطباق أمام الجالسين"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "FOOD-002-OP005",
+            "source_corpus_position": 313,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 316,
+      "legacy_id": "FOOD-003-OP003",
+      "source_record_sha256": "a4701fda5f30598a440a4a4278132dbdea91bda9751728e41f35a44d373dcfd0",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_251_325.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-FOOD003OP003-C01",
+          "source_evidence_ids": [
+            "FOOD-003-OP003"
+          ],
+          "source_record_sha256": "a4701fda5f30598a440a4a4278132dbdea91bda9751728e41f35a44d373dcfd0",
+          "title": "سكب الطعام",
+          "life_context": "عند تقديم العشاء، يكون الطعام جاهزًا في وعائه وتنتظر الأطباق تعبئتها.",
+          "functional_intent": "نقل الطعام من وعاء العشاء إلى أطباق الأسرة.",
+          "observable_effect": "تنتقل حصص الطعام إلى الأطباق ويصبح العشاء جاهزًا للتقديم.",
+          "natural_completion": "ينتهي الدور عند تعبئة الأطباق المقصودة وإعادة المغرفة إلى وعاء الطعام.",
+          "standalone_role_meaning": "سكب طعام جاهز في أوعية التقديم دور مفهوم منفصل عن الطهي.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "وعاء عشاء ومغرفة وأطباق تقديم.",
+              "c2_coordination": "نقل الطعام من الوعاء إلى الأطباق واحدًا بعد آخر.",
+              "c3_variability": "تختلف كثافة الطعام وعدد الأطباق.",
+              "c4_choice_uncertainty": "اختيار ترتيب الأطباق ومقدار ما يوضع فيها."
+            },
+            "rationale": "الأدوات محدودة ومسار النقل مباشر مع تغير بسيط، لذلك بنية الدور بسيطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-FOOD003OP003-C01-B1",
+              "order": 1,
+              "text": "تقريب الأطباق من وعاء العشاء"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-FOOD003OP003-C01-B2",
+              "order": 2,
+              "text": "سكب الطعام في الأطباق بالتتابع"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-FOOD003OP003-C01-B3",
+              "order": 3,
+              "text": "إعادة المغرفة إلى الوعاء"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "FOOD-003-OP003",
+            "source_corpus_position": 316,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 319,
+      "legacy_id": "FOOD-004-OP002",
+      "source_record_sha256": "6423d3d6fcc64d572d470df3a8f73726f021af5d258738089381e4939b3e9ce6",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_251_325.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-FOOD004OP002-C01",
+          "source_evidence_ids": [
+            "FOOD-004-OP002"
+          ],
+          "source_record_sha256": "6423d3d6fcc64d572d470df3a8f73726f021af5d258738089381e4939b3e9ce6",
+          "title": "إحضار الأكواب",
+          "life_context": "قبل تقديم المشروبات الساخنة، تكون الصينية جاهزة وتوجد الأكواب في الخزانة.",
+          "functional_intent": "نقل عدد الأكواب المطلوب من الخزانة إلى صينية التقديم.",
+          "observable_effect": "تصبح الأكواب مرتبة على الصينية وجاهزة لاستقبال المشروب.",
+          "natural_completion": "ينتهي الدور عند وضع جميع الأكواب المطلوبة على الصينية وإغلاق الخزانة.",
+          "standalone_role_meaning": "إحضار أوعية التقديم من موضع التخزين دور إعداد منزلي قائم بذاته.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "خزانة وأكواب وصينية تقديم.",
+              "c2_coordination": "نقل الأكواب من موضع الحفظ وترتيبها على الصينية قبل صب المشروب.",
+              "c3_variability": "يتغير عدد الأكواب وشكل الصينية بحسب الجالسين.",
+              "c4_choice_uncertainty": "تحديد عدد الأكواب ومواضعها على الصينية."
+            },
+            "rationale": "ثلاثة عناصر مترابطة بتتابع قصير وخيارات محدودة تجعل البنية بسيطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-FOOD004OP002-C01-B1",
+              "order": 1,
+              "text": "فتح موضع حفظ الأكواب"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-FOOD004OP002-C01-B2",
+              "order": 2,
+              "text": "إخراج الأكواب المطلوبة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-FOOD004OP002-C01-B3",
+              "order": 3,
+              "text": "ترتيب الأكواب على الصينية"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "FOOD-004-OP002",
+            "source_corpus_position": 319,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 464,
+      "legacy_id": "FOOD-046-OP002",
+      "source_record_sha256": "0dced77330c6513c4244c8403f51739de942d12c31cc6fcab6a207ca45beb51c",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_451_550.json",
+      "disposition": "SPLIT_REQUIRED",
+      "output_count": 2,
+      "candidates": [
+        {
+          "id": "CA-0002-FOOD046OP002-S01",
+          "split_ordinal": 1,
+          "parent_legacy_id": "FOOD-046-OP002",
+          "source_evidence_ids": [
+            "FOOD-046-OP002"
+          ],
+          "source_record_sha256": "0dced77330c6513c4244c8403f51739de942d12c31cc6fcab6a207ca45beb51c",
+          "title": "غسل زجاجات ماء الشرب",
+          "life_context": "قبل تعبئة ماء الشرب في المنزل، توجد زجاجات فارغة تحتاج إلى غسل.",
+          "functional_intent": "تحتاج الزجاجات إلى إزالة البقايا قبل استقبال ماء الشرب.",
+          "observable_effect": "تصبح الزجاجات المغسولة جاهزة للتعبئة.",
+          "natural_completion": "ينتهي الدور عندما تمر المياه على الزجاجات المقصودة وتوضع في مساحة التعبئة.",
+          "standalone_role_meaning": "غسل أوعية الشرب دور منزلي مفهوم بذاته قبل أي استخدام لاحق.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "زجاجات فارغة وماء وموضع غسل.",
+              "c2_coordination": "غسل مباشر قبل مرحلة التعبئة.",
+              "c3_variability": "قد يختلف عدد الزجاجات.",
+              "c4_choice_uncertainty": "اختيار الزجاجات التي تحتاج إلى الغسل."
+            },
+            "rationale": "الدور بسيط بنيويًا لعناصر قليلة، وتسلسل مباشر، وتغير محدود، واختيار واضح."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-FOOD046OP002-S01-B1",
+              "order": 1,
+              "text": "وضع الزجاجات في موضع الغسل"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-FOOD046OP002-S01-B2",
+              "order": 2,
+              "text": "تمرير الماء على الزجاجات"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "FOOD-046-OP002",
+            "source_corpus_position": 464,
+            "relationship": "SPLIT_CHILD",
+            "split_ordinal": 1
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        },
+        {
+          "id": "CA-0002-FOOD046OP002-S02",
+          "split_ordinal": 2,
+          "parent_legacy_id": "FOOD-046-OP002",
+          "source_evidence_ids": [
+            "FOOD-046-OP002"
+          ],
+          "source_record_sha256": "0dced77330c6513c4244c8403f51739de942d12c31cc6fcab6a207ca45beb51c",
+          "title": "تعبئة زجاجات ماء الشرب وإغلاقها",
+          "life_context": "بعد غسل زجاجات ماء الشرب، تحتاج الأسرة إلى تعبئتها قبل وضعها في الثلاجة.",
+          "functional_intent": "تحتاج الزجاجات إلى استقبال ماء الشرب والإغلاق قبل التخزين.",
+          "observable_effect": "تصبح الزجاجات ممتلئة ومغلقة وجاهزة للنقل إلى الثلاجة.",
+          "natural_completion": "ينتهي الدور عندما تمتلئ الزجاجات المقصودة وتثبت أغطيتها.",
+          "standalone_role_meaning": "تعبئة أوعية الشرب وإغلاقها دور منزلي مفهوم بذاته.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "زجاجات وماء وأغطية.",
+              "c2_coordination": "تتابع بين التعبئة وتثبيت الغطاء.",
+              "c3_variability": "تختلف سعة الزجاجات وعددها.",
+              "c4_choice_uncertainty": "اختيار مقدار التعبئة المناسب لكل زجاجة."
+            },
+            "rationale": "الدور متوسط بنيويًا لتعدد العناصر، وتتابع التعبئة والإغلاق، واختلاف السعات، واختيار مقدار التعبئة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-FOOD046OP002-S02-B1",
+              "order": 1,
+              "text": "تعبئة الزجاجات بماء الشرب"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-FOOD046OP002-S02-B2",
+              "order": 2,
+              "text": "تثبيت غطاء كل زجاجة"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "FOOD-046-OP002",
+            "source_corpus_position": 464,
+            "relationship": "SPLIT_CHILD",
+            "split_ordinal": 2
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 601,
+      "legacy_id": "HEALTH-002-OP001",
+      "source_record_sha256": "c8231a61656efa4dc12e5573bc9af19f7045f3f8d68c0e6f095a6539f1e1099c",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-HEALTH002OP001-C01",
+          "source_evidence_ids": [
+            "HEALTH-002-OP001"
+          ],
+          "source_record_sha256": "c8231a61656efa4dc12e5573bc9af19f7045f3f8d68c0e6f095a6539f1e1099c",
+          "title": "تجهيز الملابس المناسبة للخروج",
+          "life_context": "قبل موعد طبي خارج المنزل، تحتاج ملابس الخروج إلى أن تكون جاهزة قبل وقت المغادرة.",
+          "functional_intent": "اختيار قطع ملائمة لمكان الموعد ووضعها مع أغراض الخروج.",
+          "observable_effect": "تصبح قطع الملابس المختارة مجتمعة في موضع واحد قبل الموعد.",
+          "natural_completion": "ينتهي الدور عندما لا تبقى قطعة لازمة داخل الخزانة وتكون المجموعة جاهزة للارتداء.",
+          "standalone_role_meaning": "تجهيز ملابس لخروج محدد عمل منزلي مفهوم بصرف النظر عن وجهة الخروج.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "قطع ملابس وخزانة وموعد خارجي وموضع أغراض الخروج.",
+              "c2_coordination": "ربط اختيار القطع بطبيعة الخروج ثم جمعها قبل وقت المغادرة.",
+              "c3_variability": "تتغير حالة الطقس ومكان الموعد ومدة الخروج.",
+              "c4_choice_uncertainty": "اختيار القطع الملائمة وتجميع البدائل الضرورية."
+            },
+            "rationale": "تغير ظروف الخروج وتأثيرها في مجموعة الملابس مع قرار متعدد العناصر يجعل البنية متوسطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HEALTH002OP001-C01-B1",
+              "order": 1,
+              "text": "اختيار قطع ملابس الخروج"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HEALTH002OP001-C01-B2",
+              "order": 2,
+              "text": "إخراجها من الخزانة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HEALTH002OP001-C01-B3",
+              "order": 3,
+              "text": "وضعها مع أغراض الموعد"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "HEALTH-002-OP001",
+            "source_corpus_position": 601,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 605,
+      "legacy_id": "HEALTH-003-OP002",
+      "source_record_sha256": "7083ba3e0295d405f437de325dd18a93a44f993961446f5bd2aa3fb2d434bc36",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-HEALTH003OP002-C01",
+          "source_evidence_ids": [
+            "HEALTH-003-OP002"
+          ],
+          "source_record_sha256": "7083ba3e0295d405f437de325dd18a93a44f993961446f5bd2aa3fb2d434bc36",
+          "title": "جمع صور الأشعة",
+          "life_context": "قبل مراجعة طبية، تطلب الجهة صور أشعة أو أقراصًا محفوظة في ملف الأسرة.",
+          "functional_intent": "جمع مواد التصوير الطبي المطلوبة مع بقية مستندات الزيارة.",
+          "observable_effect": "تصبح صور الأشعة أو أقراصها داخل ملف الموعد.",
+          "natural_completion": "ينتهي الدور عند مطابقة الصور المطلوبة ووضعها في الملف الذي سيؤخذ للزيارة.",
+          "standalone_role_meaning": "جمع وثائق صحية لعرضها على جهة خدمة دور إداري قائم بذاته.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "صور أشعة أو أقراص وملف حفظ وطلب جهة طبية وملف موعد.",
+              "c2_coordination": "مطابقة المواد المحفوظة مع المطلوب ثم نقلها إلى ملف الزيارة.",
+              "c3_variability": "تختلف أنواع التصوير وتواريخه وصيغة الحفظ.",
+              "c4_choice_uncertainty": "اختيار الصور المرتبطة بالزيارة واستبعاد غير المطلوبة."
+            },
+            "rationale": "الحاجة إلى مطابقة وثائق متعددة بطلب طبي متغير تجعل الدور متوسط البنية."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HEALTH003OP002-C01-B1",
+              "order": 1,
+              "text": "فتح موضع حفظ الأشعة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HEALTH003OP002-C01-B2",
+              "order": 2,
+              "text": "تحديد الصور أو الأقراص المطلوبة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HEALTH003OP002-C01-B3",
+              "order": 3,
+              "text": "وضعها في ملف الموعد"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "HEALTH-003-OP002",
+            "source_corpus_position": 605,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 608,
+      "legacy_id": "HEALTH-004-OP002",
+      "source_record_sha256": "280f381d656e494e539033440d3f4becc8a5505547a5ed54d63f99bf6f634622",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-HEALTH004OP002-C01",
+          "source_evidence_ids": [
+            "HEALTH-004-OP002"
+          ],
+          "source_record_sha256": "280f381d656e494e539033440d3f4becc8a5505547a5ed54d63f99bf6f634622",
+          "title": "إحضار بطاقة التأمين الصحي",
+          "life_context": "أثناء تجهيز مستندات زيارة صحية، تكون بطاقة التأمين محفوظة في موضعها المعتاد.",
+          "functional_intent": "إضافة بطاقة التأمين إلى الأوراق التي ستقدم عند التسجيل.",
+          "observable_effect": "تصبح بطاقة التأمين داخل محفظة أو ملف الموعد.",
+          "natural_completion": "ينتهي الدور عند وضع البطاقة مع بطاقة الهوية أو مستندات التسجيل.",
+          "standalone_role_meaning": "إحضار وثيقة تعريفية لخدمة دور إداري مفهوم في مواقف متعددة.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "بطاقة تأمين وموضع حفظ وملف مستندات الموعد.",
+              "c2_coordination": "نقل البطاقة الصحيحة من موضعها إلى ملف التسجيل.",
+              "c3_variability": "قد تختلف البطاقة المطلوبة أو موضع حفظها.",
+              "c4_choice_uncertainty": "تمييز بطاقة التأمين السارية من بطاقات أخرى."
+            },
+            "rationale": "العناصر قليلة والنقل مباشر مع قرار تمييز واحد، لذا البنية بسيطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HEALTH004OP002-C01-B1",
+              "order": 1,
+              "text": "فتح موضع حفظ البطاقة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HEALTH004OP002-C01-B2",
+              "order": 2,
+              "text": "تمييز بطاقة التأمين المطلوبة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HEALTH004OP002-C01-B3",
+              "order": 3,
+              "text": "وضع البطاقة في ملف الموعد"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "HEALTH-004-OP002",
+            "source_corpus_position": 608,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 611,
+      "legacy_id": "HEALTH-005-OP002",
+      "source_record_sha256": "1366504930b9678eeb21441cc3415378b31a1b8beea41eb411d6c4de2b56b3d2",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-HEALTH005OP002-C01",
+          "source_evidence_ids": [
+            "HEALTH-005-OP002"
+          ],
+          "source_record_sha256": "1366504930b9678eeb21441cc3415378b31a1b8beea41eb411d6c4de2b56b3d2",
+          "title": "ربط حزام الأمان",
+          "life_context": "بعد الجلوس في السيارة للذهاب إلى العيادة أو المستشفى، يكون حزام المقعد إلى جانب الراكب.",
+          "functional_intent": "تثبيت حزام المقعد قبل تحرك السيارة.",
+          "observable_effect": "يمتد الحزام عبر موضع الجلوس ويثبت لسانه داخل القفل.",
+          "natural_completion": "ينتهي الدور عند سماع تثبيت القفل وبقاء الحزام موصولًا قبل الانطلاق.",
+          "standalone_role_meaning": "تثبيت حزام المركبة إجراء تنقل وسلامة قائم بذاته لأي رحلة.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "حزام مقعد ولسان تثبيت وقفل داخل المركبة.",
+              "c2_coordination": "سحب الحزام عبر موضع الجلوس وربط اللسان بالقفل قبل الحركة.",
+              "c3_variability": "يختلف موضع القفل وتصميم الحزام بين المركبات.",
+              "c4_choice_uncertainty": "تمييز القفل الموافق للمقعد وضبط امتداد الحزام."
+            },
+            "rationale": "أجزاء محدودة وتتابع قصير وتغير منخفض تجعل بنية الدور بسيطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HEALTH005OP002-C01-B1",
+              "order": 1,
+              "text": "سحب الحزام عبر موضع الجلوس"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HEALTH005OP002-C01-B2",
+              "order": 2,
+              "text": "إدخال لسان الحزام في القفل"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HEALTH005OP002-C01-B3",
+              "order": 3,
+              "text": "التحقق من بقاء الوصلة ثابتة"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "HEALTH-005-OP002",
+            "source_corpus_position": 611,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 614,
+      "legacy_id": "HEALTH-006-OP002",
+      "source_record_sha256": "956c5c9645667daea6eda4b91491c9f44d61acc02eab7f31c2f5274fe0452979",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-HEALTH006OP002-C01",
+          "source_evidence_ids": [
+            "HEALTH-006-OP002"
+          ],
+          "source_record_sha256": "956c5c9645667daea6eda4b91491c9f44d61acc02eab7f31c2f5274fe0452979",
+          "title": "الانتظار في صالة العيادة حتى النداء",
+          "life_context": "بعد التسجيل في العيادة، تجلس الأسرة في الصالة إلى أن يظهر رقمها أو يُنادى اسمها.",
+          "functional_intent": "البقاء في منطقة الانتظار المتاحة حتى يحين انتقال الأسرة إلى غرفة الموعد.",
+          "observable_effect": "تظل الأسرة في الصالة ويُلتقط النداء الخاص بموعدها.",
+          "natural_completion": "ينتهي الدور عند صدور النداء وقيام الأسرة للتوجه إلى الغرفة المحددة.",
+          "standalone_role_meaning": "انتظار الدور في مكان خدمة مشاركة مدنية مفهومة مستقلة عن نوع الخدمة.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "صالة انتظار ومقعد وشاشة أرقام أو نداء وغرفة موعد.",
+              "c2_coordination": "ربط البقاء في الصالة بإشارة النداء ثم الانتقال مع الأسرة.",
+              "c3_variability": "تختلف مدة الانتظار ونظام النداء وكثافة الصالة.",
+              "c4_choice_uncertainty": "اختيار موضع الجلوس وتمييز الإشارة الخاصة بموعد الأسرة."
+            },
+            "rationale": "تغير الزمن ونظام النداء والحاجة إلى الانتقال عند إشارة محددة يجعل الدور متوسطًا."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HEALTH006OP002-C01-B1",
+              "order": 1,
+              "text": "الجلوس في موضع متاح بالصالة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HEALTH006OP002-C01-B2",
+              "order": 2,
+              "text": "متابعة شاشة الأرقام أو النداء"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HEALTH006OP002-C01-B3",
+              "order": 3,
+              "text": "القيام مع الأسرة عند حلول الدور"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "HEALTH-006-OP002",
+            "source_corpus_position": 614,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 834,
+      "legacy_id": "HOME-002-OP001",
+      "source_record_sha256": "8130d4f6573620822d19bd301611289503eafe7b0449e8c278b07c268f77609b",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_751_850.json",
+      "disposition": "MERGED_BY_PROVENANCE",
+      "candidate_created": false,
+      "target_reference_id": "FR-EXP12-02-HOME002-OP005",
+      "explicit_evidence": [
+        {
+          "framework_reference_id": "FR-EXP12-02-HOME002-OP005",
+          "batch": "BATCH_05",
+          "source": "DALILI_EXPANSION_SAMPLE_12_02_CORRECTED_01"
+        }
+      ],
+      "route": "GREEN",
+      "review_reason": null
+    },
+    {
+      "corpus_position": 848,
+      "legacy_id": "HOME-005-OP002",
+      "source_record_sha256": "9b21fd83078a857e335954a687c4d7a6bcce698a39fc552123057e87f46d59f9",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_751_850.json",
+      "disposition": "ACCEPTED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-HOME005OP002-C01",
+          "source_evidence_ids": [
+            "HOME-005-OP002"
+          ],
+          "source_record_sha256": "9b21fd83078a857e335954a687c4d7a6bcce698a39fc552123057e87f46d59f9",
+          "title": "عصر الممسحة",
+          "life_context": "أثناء مسح أرضية أو سطح بالممسحة، تحمل الألياف ماءً زائدًا قبل متابعة المسح.",
+          "functional_intent": "إخراج الماء الزائد من الممسحة حتى لا يتجمع على السطح.",
+          "observable_effect": "ينخفض الماء المحتجز في الممسحة ويتجمع داخل الدلو.",
+          "natural_completion": "ينتهي الدور عند توقف نزول الماء الزائد وإعادة الممسحة فوق الدلو.",
+          "standalone_role_meaning": "عصر أداة تنظيف عمل منزلي واضح ضمن أي مهمة مسح.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "ممسحة وماء زائد ودلو وأداة عصر.",
+              "c2_coordination": "إبقاء رأس الممسحة داخل أداة العصر حتى يعود الماء إلى الدلو.",
+              "c3_variability": "تختلف كمية الماء ونوع آلية العصر.",
+              "c4_choice_uncertainty": "تحديد مقدار العصر الذي يمنع تقاطر الماء على السطح."
+            },
+            "rationale": "الأدوات قليلة والعلاقة بينها مباشرة مع تغير محدود، لذا البنية بسيطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME005OP002-C01-B1",
+              "order": 1,
+              "text": "وضع رأس الممسحة في أداة العصر"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME005OP002-C01-B2",
+              "order": 2,
+              "text": "الضغط على أداة العصر"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME005OP002-C01-B3",
+              "order": 3,
+              "text": "إبقاء الممسحة فوق الدلو حتى يتوقف الماء الزائد"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "HOME-005-OP002",
+            "source_corpus_position": 848,
+            "relationship": "CONTRACT_COMPLETION"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 855,
+      "legacy_id": "HOME-007-OP002",
+      "source_record_sha256": "dc1df109395ec26eea1141167ac34ade35cf6bf0d964bb3cb80221c82905c706",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950.json",
+      "disposition": "ACCEPTED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-HOME007OP002-C01",
+          "source_evidence_ids": [
+            "HOME-007-OP002"
+          ],
+          "source_record_sha256": "dc1df109395ec26eea1141167ac34ade35cf6bf0d964bb3cb80221c82905c706",
+          "title": "مسح الغبار عن الرفوف",
+          "life_context": "عند ترتيب مكتبة المنزل، تظهر طبقة غبار على الرفوف المكشوفة.",
+          "functional_intent": "إزالة الغبار عن أسطح الرفوف قبل إعادة الكتب أو الأغراض.",
+          "observable_effect": "تصبح أسطح الرفوف خالية من الغبار الظاهر وتتجمع الأتربة في قطعة المسح.",
+          "natural_completion": "ينتهي الدور عند مسح الرفوف المقصودة وعدم بقاء سطح محدد دون مسح.",
+          "standalone_role_meaning": "مسح الغبار عن سطح تخزين دور تنظيف منزلي مستقل عن ترتيب محتوياته.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "رفوف وقطعة مسح وطبقة غبار ومساحة توضع فيها الأغراض مؤقتًا.",
+              "c2_coordination": "إخلاء جزء من الرف ثم مسحه قبل إعادة استخدام سطحه.",
+              "c3_variability": "تختلف أطوال الرفوف وكمية الغبار والأغراض الموجودة.",
+              "c4_choice_uncertainty": "اختيار ترتيب الرفوف والجزء الذي يبدأ منه المسح."
+            },
+            "rationale": "تتابع قصير وعناصر منزلية محدودة مع تغير بسيط يجعل البنية بسيطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME007OP002-C01-B1",
+              "order": 1,
+              "text": "إخلاء الجزء المراد مسحه"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME007OP002-C01-B2",
+              "order": 2,
+              "text": "تمرير قطعة المسح على سطح الرف"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME007OP002-C01-B3",
+              "order": 3,
+              "text": "جمع قطعة المسح بعد انتهاء الرفوف"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "HOME-007-OP002",
+            "source_corpus_position": 855,
+            "relationship": "CONTRACT_COMPLETION"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 859,
+      "legacy_id": "HOME-009-OP001",
+      "source_record_sha256": "df0f05a50faf59f76485832c004e41dc836a00320aca1f4f9e5896b78c6a24c5",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950.json",
+      "disposition": "ACCEPTED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-HOME009OP001-C01",
+          "source_evidence_ids": [
+            "HOME-009-OP001"
+          ],
+          "source_record_sha256": "df0f05a50faf59f76485832c004e41dc836a00320aca1f4f9e5896b78c6a24c5",
+          "title": "ربط كيس القمامة بإحكام",
+          "life_context": "بعد امتلاء كيس القمامة داخل السلة، يحتاج فمه إلى الإغلاق قبل حمله خارج المنزل.",
+          "functional_intent": "منع خروج المحتويات أثناء نقل الكيس إلى الحاوية الخارجية.",
+          "observable_effect": "يصبح فم الكيس مغلقًا بعقدة وتبقى المحتويات داخله.",
+          "natural_completion": "ينتهي الدور عند ثبات العقدة ورفع الكيس دون انفتاح فمه.",
+          "standalone_role_meaning": "إغلاق حاوية نفايات مرنة دور منزلي مفهوم قبل أي عملية نقل.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "فم كيس قمامة وطرفان مرنان ومحتويات داخلية.",
+              "c2_coordination": "جمع الطرفين ولفهما وشدهما لتكوين إغلاق ثابت.",
+              "c3_variability": "تختلف سماكة الكيس ودرجة امتلائه وطول طرفيه.",
+              "c4_choice_uncertainty": "اختيار موضع العقدة وشدها بما يبقي الفم مغلقًا."
+            },
+            "rationale": "عناصر قليلة وعمل متتابع في موضع واحد مع اختلاف محدود يجعل الدور بسيطًا."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME009OP001-C01-B1",
+              "order": 1,
+              "text": "جمع طرفي فم الكيس"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME009OP001-C01-B2",
+              "order": 2,
+              "text": "لف الطرفين لتكوين عقدة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME009OP001-C01-B3",
+              "order": 3,
+              "text": "شد العقدة حتى يثبت الإغلاق"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "HOME-009-OP001",
+            "source_corpus_position": 859,
+            "relationship": "CONTRACT_COMPLETION"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 862,
+      "legacy_id": "HOME-010-OP001",
+      "source_record_sha256": "a3044cb3a8560b4f3624e9df1303d593155da1fff52c7d0821c42e753201e2c4",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950.json",
+      "disposition": "ACCEPTED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-HOME010OP001-C01",
+          "source_evidence_ids": [
+            "HOME-010-OP001"
+          ],
+          "source_record_sha256": "a3044cb3a8560b4f3624e9df1303d593155da1fff52c7d0821c42e753201e2c4",
+          "title": "إخراج الكيس الممتلئ من السلة",
+          "life_context": "عندما تمتلئ سلة القمامة المنزلية، يبقى الكيس داخلها قبل استبداله.",
+          "functional_intent": "فصل الكيس الممتلئ عن السلة لإتاحة تركيب كيس جديد.",
+          "observable_effect": "يصبح الكيس خارج السلة وتصبح السلة فارغة.",
+          "natural_completion": "ينتهي الدور عند وضع الكيس الممتلئ بجانب السلة دون بقاء محتويات داخلها.",
+          "standalone_role_meaning": "إخراج بطانة ممتلئة من حاويتها عمل منزلي قائم بذاته.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "كيس ممتلئ وسلة وحواف تثبيت وموضع نقل خارجي.",
+              "c2_coordination": "تحرير الحواف ثم رفع الكيس من السلة ووضعه خارجها.",
+              "c3_variability": "يختلف وزن المحتويات وشكل السلة وطريقة تثبيت الكيس.",
+              "c4_choice_uncertainty": "اختيار نقطة الإمساك وموضع وضع الكيس بعد الرفع."
+            },
+            "rationale": "الانتقال المباشر لكيس واحد بين موضعين مع خيارات قليلة يجعل البنية بسيطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME010OP001-C01-B1",
+              "order": 1,
+              "text": "تحرير حواف الكيس من السلة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME010OP001-C01-B2",
+              "order": 2,
+              "text": "رفع الكيس الممتلئ"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME010OP001-C01-B3",
+              "order": 3,
+              "text": "وضعه في موضع النقل إلى الخارج"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "HOME-010-OP001",
+            "source_corpus_position": 862,
+            "relationship": "CONTRACT_COMPLETION"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 865,
+      "legacy_id": "HOME-011-OP001",
+      "source_record_sha256": "cb8c9dac156f9bd0416202c781b52bebce409604edebd43e9d125e0b2d097eac",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950.json",
+      "disposition": "ACCEPTED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-HOME011OP001-C01",
+          "source_evidence_ids": [
+            "HOME-011-OP001"
+          ],
+          "source_record_sha256": "cb8c9dac156f9bd0416202c781b52bebce409604edebd43e9d125e0b2d097eac",
+          "title": "رش سائل تلميع الزجاج",
+          "life_context": "أثناء تنظيف نافذة، يكون سطح الزجاج جاهزًا لاستقبال سائل التلميع.",
+          "functional_intent": "توزيع سائل التنظيف على مساحة الزجاج قبل مسحها.",
+          "observable_effect": "تظهر طبقة رذاذ موزعة على الجزء المقصود من الزجاج.",
+          "natural_completion": "ينتهي الدور عند تغطية مساحة الزجاج المحددة بالرذاذ دون ترك العبوة على حافة النافذة.",
+          "standalone_role_meaning": "رش مادة تنظيف على سطح دور منزلي مفهوم قبل مرحلة المسح.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "عبوة تلميع وفوهة رش ومساحة زجاج وموضع حفظ العبوة.",
+              "c2_coordination": "توجيه الفوهة وتوزيع الرذاذ على مساحة محددة ثم إبعاد العبوة.",
+              "c3_variability": "يتغير حجم لوح الزجاج واتجاه السطح ومدى الرش.",
+              "c4_choice_uncertainty": "اختيار المساحة التي تغطى أولًا وموضع حفظ العبوة بعد الرش."
+            },
+            "rationale": "أداة واحدة وسطح محدد وتسلسل قصير وخيارات محدودة تجعل البنية بسيطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME011OP001-C01-B1",
+              "order": 1,
+              "text": "توجيه فوهة العبوة نحو الزجاج"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME011OP001-C01-B2",
+              "order": 2,
+              "text": "رش السائل على المساحة المحددة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME011OP001-C01-B3",
+              "order": 3,
+              "text": "وضع العبوة في موضع آمن للمسح التالي"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "HOME-011-OP001",
+            "source_corpus_position": 865,
+            "relationship": "CONTRACT_COMPLETION"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 868,
+      "legacy_id": "HOME-012-OP001",
+      "source_record_sha256": "e52e58758dfcb2631b6a0ccdb97a0d8edd7ef876b9bd7d5dc79558bcaaefe87a",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950.json",
+      "disposition": "ACCEPTED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-HOME012OP001-C01",
+          "source_evidence_ids": [
+            "HOME-012-OP001"
+          ],
+          "source_record_sha256": "e52e58758dfcb2631b6a0ccdb97a0d8edd7ef876b9bd7d5dc79558bcaaefe87a",
+          "title": "ترتيب سجادة المدخل",
+          "life_context": "بعد حركة الدخول والخروج، تتحرك سجادة المدخل بعيدًا عن موضعها أمام الباب.",
+          "functional_intent": "إعادة السجادة إلى موضع يحافظ على وضوح المدخل ومسار الباب.",
+          "observable_effect": "تستقر السجادة مستقيمة أمام الباب ولا تعوق فتحه.",
+          "natural_completion": "ينتهي الدور عند محاذاة حواف السجادة وبقاء مسار الباب خاليًا.",
+          "standalone_role_meaning": "إعادة غرض منزلي متحرك إلى موضعه دور ترتيب قائم بذاته.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "simple",
+            "dimensions": {
+              "c1_elements": "سجادة مدخل وحوافها ومساحة الباب ومسار الفتح.",
+              "c2_coordination": "تحريك السجادة ومحاذاتها مع إبقاء حركة الباب خالية.",
+              "c3_variability": "يتغير اتجاه انزلاق السجادة وموضعها بعد حركة الداخلين.",
+              "c4_choice_uncertainty": "اختيار المحاذاة التي تغطي المدخل ولا تعوق الباب."
+            },
+            "rationale": "غرض واحد وعلاقة مكانية واضحة مع تغير محدود يجعل الدور بسيطًا."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME012OP001-C01-B1",
+              "order": 1,
+              "text": "رفع طرف السجادة المتحرك"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME012OP001-C01-B2",
+              "order": 2,
+              "text": "سحب السجادة إلى موضع المدخل"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME012OP001-C01-B3",
+              "order": 3,
+              "text": "محاذاة الحواف مع مساحة الباب"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "HOME-012-OP001",
+            "source_corpus_position": 868,
+            "relationship": "CONTRACT_COMPLETION"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 956,
+      "legacy_id": "HOME-045-OP002",
+      "source_record_sha256": "554aace83d60cd7c06334e00a653a21fc0351d3f6419dd9b4156c53d24e3094a",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-HOME045OP002-C01",
+          "source_evidence_ids": [
+            "HOME-045-OP002"
+          ],
+          "source_record_sha256": "554aace83d60cd7c06334e00a653a21fc0351d3f6419dd9b4156c53d24e3094a",
+          "title": "فرد الأغطية على الكراسي",
+          "life_context": "عند تجهيز الأثاث للموسم، توجد أغطية مخصصة للكراسي بعد تنظيف أسطحها.",
+          "functional_intent": "تغطية سطح كل كرسي بالقماش المخصص لحمايته خلال الموسم.",
+          "observable_effect": "تمتد الأغطية فوق المقاعد والظهور وتبقى حوافها موزعة حول الكراسي.",
+          "natural_completion": "ينتهي الدور عند تغطية الكراسي المقصودة وعدم بقاء غطاء مطوي خارج موضعه.",
+          "standalone_role_meaning": "فرد غطاء واقٍ على قطعة أثاث عمل منزلي مفهوم بذاته.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "عدة كراس وأغطية قماش ومقاعد وظهور وحواف.",
+              "c2_coordination": "مطابقة كل غطاء بكرسي ثم توزيع القماش على أجزائه بالتتابع.",
+              "c3_variability": "تختلف أحجام الكراسي والأغطية وشكل مساند الظهر.",
+              "c4_choice_uncertainty": "اختيار اتجاه الغطاء وطريقة توزيع الحواف على كل كرسي."
+            },
+            "rationale": "تعدد قطع الأثاث والحاجة إلى مواءمة الغطاء مع أشكال مختلفة يجعل البنية متوسطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME045OP002-C01-B1",
+              "order": 1,
+              "text": "فتح الغطاء فوق الكرسي"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME045OP002-C01-B2",
+              "order": 2,
+              "text": "توزيع القماش على المقعد والظهر"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-HOME045OP002-C01-B3",
+              "order": 3,
+              "text": "تسوية الحواف حول الكرسي"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "HOME-045-OP002",
+            "source_corpus_position": 956,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 1109,
+      "legacy_id": "SHOP-001-OP003",
+      "source_record_sha256": "8b655010611eacd0efd4243384b1be26ed73e8a6dc0b2924076aa3082c974498",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-SHOP001OP003-C01",
+          "source_evidence_ids": [
+            "SHOP-001-OP003"
+          ],
+          "source_record_sha256": "8b655010611eacd0efd4243384b1be26ed73e8a6dc0b2924076aa3082c974498",
+          "title": "تصنيف القائمة حسب أقسام المتجر",
+          "life_context": "بعد كتابة قائمة المشتريات، تحتوي القائمة عناصر موزعة بين أقسام مختلفة في المتجر.",
+          "functional_intent": "تجميع عناصر كل قسم معًا لتقليل الرجوع بين أقسام المتجر أثناء التسوق.",
+          "observable_effect": "تصبح عناصر الخضروات والمخبوزات والمنزل وغيرها مرتبة تحت أقسام واضحة.",
+          "natural_completion": "ينتهي الدور عند إسناد كل عنصر في القائمة إلى قسم واحد.",
+          "standalone_role_meaning": "تنظيم قائمة بحسب مواقع الحصول على عناصرها دور تخطيط قائم بذاته.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "قائمة عناصر وأقسام متجر ومجموعات مثل الخضروات والمخبوزات والمنزل.",
+              "c2_coordination": "إسناد كل عنصر إلى قسم ثم تجميع العناصر التي تُلتقط من الموقع نفسه.",
+              "c3_variability": "تتغير عناصر القائمة وتنظيم الأقسام بين المتاجر.",
+              "c4_choice_uncertainty": "اختيار القسم الأنسب للعنصر وترتيب مجموعات الأقسام."
+            },
+            "rationale": "تصنيف عناصر كثيرة ضمن بنية متجر متغيرة مع قرارات إسناد يجعل الدور متوسطًا."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-SHOP001OP003-C01-B1",
+              "order": 1,
+              "text": "قراءة عناصر القائمة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-SHOP001OP003-C01-B2",
+              "order": 2,
+              "text": "تحديد قسم المتجر لكل عنصر"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-SHOP001OP003-C01-B3",
+              "order": 3,
+              "text": "إعادة كتابة العناصر في مجموعات الأقسام"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "SHOP-001-OP003",
+            "source_corpus_position": 1109,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 1112,
+      "legacy_id": "SHOP-002-OP003",
+      "source_record_sha256": "add5e3e0a82716218e754332ee7556b79f8bac898b092fd35d012e8b2ce2396c",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-SHOP002OP003-C01",
+          "source_evidence_ids": [
+            "SHOP-002-OP003"
+          ],
+          "source_record_sha256": "add5e3e0a82716218e754332ee7556b79f8bac898b092fd35d012e8b2ce2396c",
+          "title": "كتابة مسودة النواقص الأولية",
+          "life_context": "بعد فحص المواد الموجودة في المنزل، تظهر أصناف نفدت أو قاربت على النفاد.",
+          "functional_intent": "تحويل الملاحظات المنزلية إلى مسودة أولية يمكن مراجعتها قبل التسوق.",
+          "observable_effect": "تصبح أسماء الأصناف الناقصة مكتوبة في قائمة واحدة.",
+          "natural_completion": "ينتهي الدور عند تسجيل جميع النواقص التي ظهرت في جولة المراجعة.",
+          "standalone_role_meaning": "تدوين نواقص المخزون عمل إداري منزلي مفهوم قبل أي قرار شراء.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "ملاحظات عن مخزون منزلي وأسماء أصناف ومسودة قائمة واحدة.",
+              "c2_coordination": "تحويل الملاحظات المتفرقة إلى أسماء مكتوبة قابلة للمراجعة الأسرية.",
+              "c3_variability": "تتغير الأصناف الناقصة وأسماؤها وكمياتها من جولة لأخرى.",
+              "c4_choice_uncertainty": "تحديد ما يستحق الإدراج وصياغة الاسم الذي يميز الصنف."
+            },
+            "rationale": "جمع ملاحظات متغيرة في سجل واحد مع قرارات إدراج وتسميات يجعل البنية متوسطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-SHOP002OP003-C01-B1",
+              "order": 1,
+              "text": "مراجعة أسماء النواقص الملحوظة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-SHOP002OP003-C01-B2",
+              "order": 2,
+              "text": "كتابة كل صنف في المسودة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-SHOP002OP003-C01-B3",
+              "order": 3,
+              "text": "حفظ المسودة للمراجعة الأسرية"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "SHOP-002-OP003",
+            "source_corpus_position": 1112,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 1115,
+      "legacy_id": "SHOP-003-OP003",
+      "source_record_sha256": "83903347f56f86ab31a35e7dbd79602ea17ebdb207dbbc8ca18d674981e23a52",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-SHOP003OP003-C01",
+          "source_evidence_ids": [
+            "SHOP-003-OP003"
+          ],
+          "source_record_sha256": "83903347f56f86ab31a35e7dbd79602ea17ebdb207dbbc8ca18d674981e23a52",
+          "title": "تسجيل الميزانية في تطبيق المصروفات",
+          "life_context": "قبل بدء التسوق، تحدد الأسرة مبلغًا مخصصًا للمشتريات الحالية.",
+          "functional_intent": "حفظ المبلغ المخطط في سجل المصروفات للرجوع إليه أثناء الشراء.",
+          "observable_effect": "يظهر مبلغ التسوق في التطبيق أو الدفتر تحت العملية الحالية.",
+          "natural_completion": "ينتهي الدور عند حفظ الإدخال وظهور المبلغ في سجل الميزانية.",
+          "standalone_role_meaning": "تسجيل مبلغ مخطط في سجل مالي دور إداري قائم بذاته.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "مبلغ مخطط وتطبيق أو دفتر وبند مشتريات وسجل ميزانية.",
+              "c2_coordination": "ربط المبلغ ببند العملية الحالية ثم حفظه ضمن سجل المصروفات.",
+              "c3_variability": "تختلف قيمة الميزانية ووسيلة التسجيل وبنية السجل.",
+              "c4_choice_uncertainty": "اختيار البند الصحيح وموضع إدخال المبلغ."
+            },
+            "rationale": "التعامل مع قيمة ومرجع مالي وواجهة تسجيل متغيرة يجعل بنية الدور متوسطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-SHOP003OP003-C01-B1",
+              "order": 1,
+              "text": "فتح سجل المصروفات"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-SHOP003OP003-C01-B2",
+              "order": 2,
+              "text": "اختيار بند المشتريات"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-SHOP003OP003-C01-B3",
+              "order": 3,
+              "text": "إدخال المبلغ المخطط وحفظه"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "SHOP-003-OP003",
+            "source_corpus_position": 1115,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 1122,
+      "legacy_id": "SHOP-006-OP001",
+      "source_record_sha256": "e29ae78b990b39203c2f340e7c73eee6b6842365c36acf5e978bf7af18a5bf15",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-SHOP006OP001-C01",
+          "source_evidence_ids": [
+            "SHOP-006-OP001"
+          ],
+          "source_record_sha256": "e29ae78b990b39203c2f340e7c73eee6b6842365c36acf5e978bf7af18a5bf15",
+          "title": "طلب الكمية المحددة من موظف القسم",
+          "life_context": "أمام قسم اللحوم والدواجن، تكون المنتجات خلف منصة الخدمة ويستقبل الموظف الطلبات.",
+          "functional_intent": "إبلاغ موظف القسم بنوع المنتج والكمية التي ستدخل في مشتريات الأسرة.",
+          "observable_effect": "يسجل الموظف النوع والكمية ويبدأ تجهيز الطلب المحدد.",
+          "natural_completion": "ينتهي الدور عند تأكيد الموظف للطلب وبدء إعداد الكمية.",
+          "standalone_role_meaning": "تقديم طلب محدد إلى موظف خدمة دور شرائي مفهوم بذاته.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "نوع منتج وكمية ومنصة خدمة وموظف وتجهيز طلب.",
+              "c2_coordination": "نقل مواصفات الطلب إلى الموظف ثم مطابقة ما يعيده من تأكيد.",
+              "c3_variability": "تختلف المنتجات ووحدات الكمية والخيارات المتاحة في القسم.",
+              "c4_choice_uncertainty": "اختيار النوع والكمية وقبول البديل عند عدم التوافر."
+            },
+            "rationale": "التنسيق مع موظف حول مواصفات متعددة ومتغيرة يجعل الدور متوسطًا."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-SHOP006OP001-C01-B1",
+              "order": 1,
+              "text": "تحديد نوع المنتج المطلوب"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-SHOP006OP001-C01-B2",
+              "order": 2,
+              "text": "ذكر الكمية لموظف القسم"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-SHOP006OP001-C01-B3",
+              "order": 3,
+              "text": "تأكيد الطلب عند إعادة الموظف له"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "SHOP-006-OP001",
+            "source_corpus_position": 1122,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    },
+    {
+      "corpus_position": 1125,
+      "legacy_id": "SHOP-007-OP001",
+      "source_record_sha256": "0977ee4162fe5c232f67368446aaee6f12d2ee079956f306bd77ad790b1b66b0",
+      "classification_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150.json",
+      "disposition": "REWRITE_REQUIRED",
+      "output_count": 1,
+      "candidates": [
+        {
+          "id": "CA-0002-SHOP007OP001-C01",
+          "source_evidence_ids": [
+            "SHOP-007-OP001"
+          ],
+          "source_record_sha256": "0977ee4162fe5c232f67368446aaee6f12d2ee079956f306bd77ad790b1b66b0",
+          "title": "اختيار نوع الخبز المطلوب",
+          "life_context": "في قسم المخبوزات، تعرض عدة أنواع من الخبز قبل إضافتها إلى عربة الأسرة.",
+          "functional_intent": "تحديد نوع الخبز الذي سيلبي احتياج المشتريات الحالية.",
+          "observable_effect": "يصبح نوع واحد من الخبز محددًا ويمكن أخذه أو طلبه من القسم.",
+          "natural_completion": "ينتهي الدور عند وضع النوع المختار في السلة أو إبلاغ موظف القسم به.",
+          "standalone_role_meaning": "اختيار منتج من بدائل متجرية دور شرائي قائم بذاته.",
+          "participation_mode": "shared",
+          "complexity": {
+            "valid": true,
+            "level": "moderate",
+            "dimensions": {
+              "c1_elements": "أنواع خبز معروضة واحتياج مشتريات وسلة أو موظف قسم.",
+              "c2_coordination": "مقارنة المعروض بالاحتياج ثم نقل النوع المختار إلى السلة أو الطلب.",
+              "c3_variability": "تتغير الأنواع والأحجام والتوافر بين الزيارات.",
+              "c4_choice_uncertainty": "المفاضلة بين بدائل الخبز وتحديد النوع والحجم."
+            },
+            "rationale": "وجود بدائل متجرية متغيرة وقرار اختيار قبل الحصول على المنتج يجعل البنية متوسطة."
+          },
+          "execution_blocks": [
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-SHOP007OP001-C01-B1",
+              "order": 1,
+              "text": "مراجعة أنواع الخبز المتاحة"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-SHOP007OP001-C01-B2",
+              "order": 2,
+              "text": "تحديد النوع المطلوب"
+            },
+            {
+              "kind": "execution_block",
+              "id": "CA-0002-SHOP007OP001-C01-B3",
+              "order": 3,
+              "text": "وضعه في السلة أو طلبه من الموظف"
+            }
+          ],
+          "lineage": {
+            "source_legacy_id": "SHOP-007-OP001",
+            "source_corpus_position": 1125,
+            "relationship": "NEUTRAL_REWRITE"
+          },
+          "contract_complete": true,
+          "canonical": {
+            "valid": true,
+            "passed_gates": 7,
+            "total_gates": 7,
+            "failed_gates": [],
+            "unsafe": false,
+            "prohibited_semantics": false
+          },
+          "complexity_validation": {
+            "valid": true,
+            "passed_gates": 9,
+            "total_gates": 9,
+            "failed_gates": []
+          },
+          "provenance": {
+            "complete": true,
+            "source_conflict": false,
+            "unresolved": false
+          },
+          "duplicate_conflict": false,
+          "safety_concern": false,
+          "route": "GREEN"
+        }
+      ],
+      "route": "GREEN"
+    }
+  ],
+  "semantic_quality": {
+    "record_specific_rewrites": 31,
+    "record_specific_complexity_rewrites": 31,
+    "anti_template_patterns": [
+      "يصبح أثر",
+      "يظهر دور",
+      "حتى تنتقل عناصره",
+      "يتحقق الأثر المقصود",
+      "جزءًا حقيقيًا من الموقف",
+      "ترتيب الموقف أو أغراضه أو تفاعله",
+      "العناصر المباشرة اللازمة",
+      "يرتبط توقيت الدور بترتيب",
+      "قد تتغير العناصر أو المواضع",
+      "اختيارات محدودة مرتبطة",
+      "الوصف متوسط بنيويًا لوجود أكثر من عنصر"
+    ],
+    "anti_template_scope": [
+      "identity_fields",
+      "execution_blocks",
+      "complexity_c1_c4",
+      "complexity_rationale"
+    ],
+    "anti_template_failures": [],
+    "anti_template_gate": "PASS"
+  }
+}

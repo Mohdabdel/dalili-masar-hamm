@@ -7,7 +7,10 @@ import { buildDraftSelection } from "@/lab/data/space/catalog";
 import { resolveSpaceSpec } from "@/features/space/spec-resolution";
 import { buildFrozenSnapshot, composeDraft } from "@/features/space/compose";
 import { peekUploadedUrl, useUploadedUrls } from "@/features/space/family-uploads";
-import { participationImagePaths, participationImageSrc } from "@/features/space/participation-image";
+import {
+  participationImagePaths,
+  participationImageSrc,
+} from "@/features/space/participation-image";
 import { resolveStepImage, suggestStepImage } from "@/features/space/step-image";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 import type { LabThisTimeSelection } from "@/lab/slice/types";
@@ -56,7 +59,10 @@ export function PreviewPage({ specId }: { specId: string }) {
   const uploadsTick = useUploadedUrls(uploadedPaths);
 
   // tick يضمن إعادة حساب الصفوف بعد اشتقاق روابط الصور المرفوعة — وإلا تبقى فارغة وتُجمّد بلا صور.
-  const rows = useMemo(() => (spec ? composeDraft(spec, selection) : []), [spec, selection, uploadsTick]);
+  const rows = useMemo(() => {
+    void uploadsTick; // يعيد الحساب بعد وصول الروابط الموقّعة.
+    return spec ? composeDraft(spec, selection) : [];
+  }, [spec, selection, uploadsTick]);
   const safeRows = useMemo(
     () =>
       spec
@@ -81,6 +87,7 @@ export function PreviewPage({ specId }: { specId: string }) {
   const blankRows = safeRows.length - validRows.length;
   // لا اعتماد قبل اكتمال اشتقاق روابط صور الأسرة — وإلا تُجمّد البطاقة بلا صور.
   const uploadsPending = uploadedPaths.some((p) => !peekUploadedUrl(p));
+  const titleReady = spec?.title_ar.trim().length > 0 && spec.title_ar !== "مشاركة جديدة";
 
   if (!spec) {
     return (
@@ -210,10 +217,7 @@ export function PreviewPage({ specId }: { specId: string }) {
             ) : layout === "vertical" ? (
               <ol className="space-y-3">
                 {items.map((item, i) => (
-                  <li
-                    key={item.stepId}
-                    className="rounded-2xl border border-border bg-card p-2"
-                  >
+                  <li key={item.stepId} className="rounded-2xl border border-border bg-card p-2">
                     <StepBlocks item={item} index={i + 1} />
                   </li>
                 ))}
@@ -247,7 +251,10 @@ export function PreviewPage({ specId }: { specId: string }) {
         >
           <ul className="space-y-2">
             {assets.map((a) => (
-              <li key={a.id} className="rounded-xl border border-border bg-card p-3 text-sm font-semibold">
+              <li
+                key={a.id}
+                className="rounded-xl border border-border bg-card p-3 text-sm font-semibold"
+              >
                 {a.label_ar}
                 <span className="block text-xs font-normal text-muted-foreground">
                   {a.items.length} عنصر
@@ -295,6 +302,10 @@ export function PreviewPage({ specId }: { specId: string }) {
         <LabNote>لا توجد خطوة واحدة قابلة للعرض — الاعتماد غير متاح الآن.</LabNote>
       )}
 
+      {!titleReady && (
+        <LabNote>اكتبوا اسم المشاركة في مساحة عمل الأسرة قبل اعتماد البطاقة.</LabNote>
+      )}
+
       {latest && (
         <LabNote>
           لديكم بطاقة معتمدة حالياً: «{latest.title_ar}». اعتماد هذه المعاينة يضيف بطاقة جديدة، ولا
@@ -303,14 +314,13 @@ export function PreviewPage({ specId }: { specId: string }) {
       )}
 
       <div className="flex flex-wrap items-center gap-3">
-        <LabButton onClick={approve} disabled={validRows.length === 0 || uploadsPending}>
+        <LabButton
+          onClick={approve}
+          disabled={!titleReady || validRows.length === 0 || uploadsPending}
+        >
           اعتماد بطاقة المشاركة
         </LabButton>
-        <LabLinkButton
-          to={`${base}/workspace/$specId`}
-          params={{ specId }}
-          variant="ghost"
-        >
+        <LabLinkButton to={`${base}/workspace/$specId`} params={{ specId }} variant="ghost">
           رجوع للتعديل
         </LabLinkButton>
         {versions.length > 0 && (
@@ -330,7 +340,5 @@ function safePreviewImage(
 ): ReturnType<typeof resolveStepImage> {
   if (!specId.startsWith("FR-EXP12-02-")) return image;
   if (image.src?.includes("/assets/execution/expansion12-02/")) return image;
-  return resolveStepImage(
-    suggestStepImage(text, { preferredAssetCodePrefix: "VRS-EXP12-02-" }),
-  );
+  return resolveStepImage(suggestStepImage(text, { preferredAssetCodePrefix: "VRS-EXP12-02-" }));
 }

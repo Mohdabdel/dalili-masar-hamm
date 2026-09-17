@@ -1,0 +1,933 @@
+{
+  "artifact": "DALILI_CA_0002_SELECTION_01",
+  "version": "1.0",
+  "status": "FROZEN_DETERMINISTIC_SELECTION_NOT_MATERIALIZED",
+  "selection_rule": "selectCa0002; excludes CA-0001; frozen disposition quotas; round-robin domain coverage.",
+  "source_count": 100,
+  "lane_counts": {
+    "A": 34,
+    "B": 33,
+    "C": 33
+  },
+  "disposition_counts": {
+    "REWRITE_REQUIRED": 75,
+    "SPLIT_REQUIRED": 6,
+    "MERGED_BY_PROVENANCE": 2,
+    "ACCEPTED": 17
+  },
+  "domain_counts": {
+    "DOM-CLO": 15,
+    "DOM-COMM": 14,
+    "DOM-FOOD": 16,
+    "DOM-HEALTH": 16,
+    "DOM-HOME": 23,
+    "DOM-SHOP": 16
+  },
+  "execution_boundary": {
+    "materialization_performed": false,
+    "legacy_master_mutated": false,
+    "canonical_validator_changed": false
+  },
+  "records": [
+    {
+      "selection_ordinal": 1,
+      "lane": "A",
+      "corpus_position": 14,
+      "legacy_id": "CLO-014-OP001",
+      "domain": "DOM-CLO",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050"
+    },
+    {
+      "selection_ordinal": 2,
+      "lane": "B",
+      "corpus_position": 15,
+      "legacy_id": "CLO-015-OP001",
+      "domain": "DOM-CLO",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050"
+    },
+    {
+      "selection_ordinal": 3,
+      "lane": "C",
+      "corpus_position": 17,
+      "legacy_id": "CLO-017-OP001",
+      "domain": "DOM-CLO",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050"
+    },
+    {
+      "selection_ordinal": 4,
+      "lane": "A",
+      "corpus_position": 18,
+      "legacy_id": "CLO-018-OP001",
+      "domain": "DOM-CLO",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050"
+    },
+    {
+      "selection_ordinal": 5,
+      "lane": "B",
+      "corpus_position": 19,
+      "legacy_id": "CLO-019-OP001",
+      "domain": "DOM-CLO",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050"
+    },
+    {
+      "selection_ordinal": 6,
+      "lane": "C",
+      "corpus_position": 20,
+      "legacy_id": "CLO-020-OP001",
+      "domain": "DOM-CLO",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050"
+    },
+    {
+      "selection_ordinal": 7,
+      "lane": "A",
+      "corpus_position": 21,
+      "legacy_id": "CLO-021-OP001",
+      "domain": "DOM-CLO",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050"
+    },
+    {
+      "selection_ordinal": 8,
+      "lane": "B",
+      "corpus_position": 22,
+      "legacy_id": "CLO-022-OP001",
+      "domain": "DOM-CLO",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050"
+    },
+    {
+      "selection_ordinal": 9,
+      "lane": "C",
+      "corpus_position": 23,
+      "legacy_id": "CLO-023-OP001",
+      "domain": "DOM-CLO",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050"
+    },
+    {
+      "selection_ordinal": 10,
+      "lane": "A",
+      "corpus_position": 24,
+      "legacy_id": "CLO-024-OP001",
+      "domain": "DOM-CLO",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050"
+    },
+    {
+      "selection_ordinal": 11,
+      "lane": "B",
+      "corpus_position": 25,
+      "legacy_id": "CLO-025-OP001",
+      "domain": "DOM-CLO",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050"
+    },
+    {
+      "selection_ordinal": 12,
+      "lane": "C",
+      "corpus_position": 26,
+      "legacy_id": "CLO-026-OP001",
+      "domain": "DOM-CLO",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050"
+    },
+    {
+      "selection_ordinal": 13,
+      "lane": "A",
+      "corpus_position": 27,
+      "legacy_id": "CLO-027-OP001",
+      "domain": "DOM-CLO",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050"
+    },
+    {
+      "selection_ordinal": 14,
+      "lane": "B",
+      "corpus_position": 28,
+      "legacy_id": "CLO-028-OP001",
+      "domain": "DOM-CLO",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050"
+    },
+    {
+      "selection_ordinal": 15,
+      "lane": "C",
+      "corpus_position": 29,
+      "legacy_id": "CLO-029-OP001",
+      "domain": "DOM-CLO",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_B001_APPROVED_001_050"
+    },
+    {
+      "selection_ordinal": 16,
+      "lane": "A",
+      "corpus_position": 52,
+      "legacy_id": "COMM-001-OP002",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250"
+    },
+    {
+      "selection_ordinal": 17,
+      "lane": "B",
+      "corpus_position": 53,
+      "legacy_id": "COMM-001-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250"
+    },
+    {
+      "selection_ordinal": 18,
+      "lane": "C",
+      "corpus_position": 54,
+      "legacy_id": "COMM-001-OP004",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250"
+    },
+    {
+      "selection_ordinal": 19,
+      "lane": "A",
+      "corpus_position": 56,
+      "legacy_id": "COMM-002-OP002",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250"
+    },
+    {
+      "selection_ordinal": 20,
+      "lane": "B",
+      "corpus_position": 57,
+      "legacy_id": "COMM-002-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250"
+    },
+    {
+      "selection_ordinal": 21,
+      "lane": "C",
+      "corpus_position": 58,
+      "legacy_id": "COMM-002-OP004",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250"
+    },
+    {
+      "selection_ordinal": 22,
+      "lane": "A",
+      "corpus_position": 59,
+      "legacy_id": "COMM-003-OP001",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250"
+    },
+    {
+      "selection_ordinal": 23,
+      "lane": "B",
+      "corpus_position": 60,
+      "legacy_id": "COMM-003-OP002",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250"
+    },
+    {
+      "selection_ordinal": 24,
+      "lane": "C",
+      "corpus_position": 61,
+      "legacy_id": "COMM-003-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250"
+    },
+    {
+      "selection_ordinal": 25,
+      "lane": "A",
+      "corpus_position": 62,
+      "legacy_id": "COMM-003-OP004",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250"
+    },
+    {
+      "selection_ordinal": 26,
+      "lane": "B",
+      "corpus_position": 63,
+      "legacy_id": "COMM-004-OP001",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250"
+    },
+    {
+      "selection_ordinal": 27,
+      "lane": "C",
+      "corpus_position": 64,
+      "legacy_id": "COMM-004-OP002",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250"
+    },
+    {
+      "selection_ordinal": 28,
+      "lane": "A",
+      "corpus_position": 65,
+      "legacy_id": "COMM-004-OP003",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250"
+    },
+    {
+      "selection_ordinal": 29,
+      "lane": "B",
+      "corpus_position": 66,
+      "legacy_id": "COMM-004-OP004",
+      "domain": "DOM-COMM",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_051_250"
+    },
+    {
+      "selection_ordinal": 30,
+      "lane": "C",
+      "corpus_position": 307,
+      "legacy_id": "FOOD-001-OP003",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_251_325"
+    },
+    {
+      "selection_ordinal": 31,
+      "lane": "A",
+      "corpus_position": 309,
+      "legacy_id": "FOOD-002-OP001",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_251_325"
+    },
+    {
+      "selection_ordinal": 32,
+      "lane": "B",
+      "corpus_position": 310,
+      "legacy_id": "FOOD-002-OP002",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_251_325"
+    },
+    {
+      "selection_ordinal": 33,
+      "lane": "C",
+      "corpus_position": 311,
+      "legacy_id": "FOOD-002-OP003",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_251_325"
+    },
+    {
+      "selection_ordinal": 34,
+      "lane": "A",
+      "corpus_position": 312,
+      "legacy_id": "FOOD-002-OP004",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_251_325"
+    },
+    {
+      "selection_ordinal": 35,
+      "lane": "B",
+      "corpus_position": 313,
+      "legacy_id": "FOOD-002-OP005",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_251_325"
+    },
+    {
+      "selection_ordinal": 36,
+      "lane": "C",
+      "corpus_position": 314,
+      "legacy_id": "FOOD-003-OP001",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_251_325"
+    },
+    {
+      "selection_ordinal": 37,
+      "lane": "A",
+      "corpus_position": 315,
+      "legacy_id": "FOOD-003-OP002",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_251_325"
+    },
+    {
+      "selection_ordinal": 38,
+      "lane": "B",
+      "corpus_position": 316,
+      "legacy_id": "FOOD-003-OP003",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_251_325"
+    },
+    {
+      "selection_ordinal": 39,
+      "lane": "C",
+      "corpus_position": 317,
+      "legacy_id": "FOOD-003-OP004",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_251_325"
+    },
+    {
+      "selection_ordinal": 40,
+      "lane": "A",
+      "corpus_position": 318,
+      "legacy_id": "FOOD-004-OP001",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_251_325"
+    },
+    {
+      "selection_ordinal": 41,
+      "lane": "B",
+      "corpus_position": 319,
+      "legacy_id": "FOOD-004-OP002",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_251_325"
+    },
+    {
+      "selection_ordinal": 42,
+      "lane": "C",
+      "corpus_position": 320,
+      "legacy_id": "FOOD-004-OP003",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_251_325"
+    },
+    {
+      "selection_ordinal": 43,
+      "lane": "A",
+      "corpus_position": 321,
+      "legacy_id": "FOOD-004-OP004",
+      "domain": "DOM-FOOD",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_251_325"
+    },
+    {
+      "selection_ordinal": 44,
+      "lane": "B",
+      "corpus_position": 464,
+      "legacy_id": "FOOD-046-OP002",
+      "domain": "DOM-FOOD",
+      "disposition": "SPLIT_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_451_550"
+    },
+    {
+      "selection_ordinal": 45,
+      "lane": "C",
+      "corpus_position": 478,
+      "legacy_id": "FOOD-050-OP003",
+      "domain": "DOM-FOOD",
+      "disposition": "SPLIT_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_451_550"
+    },
+    {
+      "selection_ordinal": 46,
+      "lane": "A",
+      "corpus_position": 599,
+      "legacy_id": "HEALTH-001-OP002",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650"
+    },
+    {
+      "selection_ordinal": 47,
+      "lane": "B",
+      "corpus_position": 601,
+      "legacy_id": "HEALTH-002-OP001",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650"
+    },
+    {
+      "selection_ordinal": 48,
+      "lane": "C",
+      "corpus_position": 602,
+      "legacy_id": "HEALTH-002-OP002",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650"
+    },
+    {
+      "selection_ordinal": 49,
+      "lane": "A",
+      "corpus_position": 603,
+      "legacy_id": "HEALTH-002-OP003",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650"
+    },
+    {
+      "selection_ordinal": 50,
+      "lane": "B",
+      "corpus_position": 605,
+      "legacy_id": "HEALTH-003-OP002",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650"
+    },
+    {
+      "selection_ordinal": 51,
+      "lane": "C",
+      "corpus_position": 606,
+      "legacy_id": "HEALTH-003-OP003",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650"
+    },
+    {
+      "selection_ordinal": 52,
+      "lane": "A",
+      "corpus_position": 607,
+      "legacy_id": "HEALTH-004-OP001",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650"
+    },
+    {
+      "selection_ordinal": 53,
+      "lane": "B",
+      "corpus_position": 608,
+      "legacy_id": "HEALTH-004-OP002",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650"
+    },
+    {
+      "selection_ordinal": 54,
+      "lane": "C",
+      "corpus_position": 609,
+      "legacy_id": "HEALTH-004-OP003",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650"
+    },
+    {
+      "selection_ordinal": 55,
+      "lane": "A",
+      "corpus_position": 610,
+      "legacy_id": "HEALTH-005-OP001",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650"
+    },
+    {
+      "selection_ordinal": 56,
+      "lane": "B",
+      "corpus_position": 611,
+      "legacy_id": "HEALTH-005-OP002",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650"
+    },
+    {
+      "selection_ordinal": 57,
+      "lane": "C",
+      "corpus_position": 612,
+      "legacy_id": "HEALTH-005-OP003",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650"
+    },
+    {
+      "selection_ordinal": 58,
+      "lane": "A",
+      "corpus_position": 613,
+      "legacy_id": "HEALTH-006-OP001",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650"
+    },
+    {
+      "selection_ordinal": 59,
+      "lane": "B",
+      "corpus_position": 614,
+      "legacy_id": "HEALTH-006-OP002",
+      "domain": "DOM-HEALTH",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650"
+    },
+    {
+      "selection_ordinal": 60,
+      "lane": "C",
+      "corpus_position": 640,
+      "legacy_id": "HEALTH-015-OP003",
+      "domain": "DOM-HEALTH",
+      "disposition": "SPLIT_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650"
+    },
+    {
+      "selection_ordinal": 61,
+      "lane": "A",
+      "corpus_position": 646,
+      "legacy_id": "HEALTH-017-OP003",
+      "domain": "DOM-HEALTH",
+      "disposition": "SPLIT_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_551_650"
+    },
+    {
+      "selection_ordinal": 62,
+      "lane": "B",
+      "corpus_position": 834,
+      "legacy_id": "HOME-002-OP001",
+      "domain": "DOM-HOME",
+      "disposition": "MERGED_BY_PROVENANCE",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_751_850"
+    },
+    {
+      "selection_ordinal": 63,
+      "lane": "C",
+      "corpus_position": 839,
+      "legacy_id": "HOME-003-OP001",
+      "domain": "DOM-HOME",
+      "disposition": "SPLIT_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_751_850"
+    },
+    {
+      "selection_ordinal": 64,
+      "lane": "A",
+      "corpus_position": 847,
+      "legacy_id": "HOME-005-OP001",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_751_850"
+    },
+    {
+      "selection_ordinal": 65,
+      "lane": "B",
+      "corpus_position": 848,
+      "legacy_id": "HOME-005-OP002",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_751_850"
+    },
+    {
+      "selection_ordinal": 66,
+      "lane": "C",
+      "corpus_position": 849,
+      "legacy_id": "HOME-005-OP003",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_751_850"
+    },
+    {
+      "selection_ordinal": 67,
+      "lane": "A",
+      "corpus_position": 850,
+      "legacy_id": "HOME-005-OP004",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_751_850"
+    },
+    {
+      "selection_ordinal": 68,
+      "lane": "B",
+      "corpus_position": 855,
+      "legacy_id": "HOME-007-OP002",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950"
+    },
+    {
+      "selection_ordinal": 69,
+      "lane": "C",
+      "corpus_position": 857,
+      "legacy_id": "HOME-008-OP001",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950"
+    },
+    {
+      "selection_ordinal": 70,
+      "lane": "A",
+      "corpus_position": 858,
+      "legacy_id": "HOME-008-OP002",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950"
+    },
+    {
+      "selection_ordinal": 71,
+      "lane": "B",
+      "corpus_position": 859,
+      "legacy_id": "HOME-009-OP001",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950"
+    },
+    {
+      "selection_ordinal": 72,
+      "lane": "C",
+      "corpus_position": 860,
+      "legacy_id": "HOME-009-OP002",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950"
+    },
+    {
+      "selection_ordinal": 73,
+      "lane": "A",
+      "corpus_position": 861,
+      "legacy_id": "HOME-009-OP003",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950"
+    },
+    {
+      "selection_ordinal": 74,
+      "lane": "B",
+      "corpus_position": 862,
+      "legacy_id": "HOME-010-OP001",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950"
+    },
+    {
+      "selection_ordinal": 75,
+      "lane": "C",
+      "corpus_position": 863,
+      "legacy_id": "HOME-010-OP002",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950"
+    },
+    {
+      "selection_ordinal": 76,
+      "lane": "A",
+      "corpus_position": 864,
+      "legacy_id": "HOME-010-OP003",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950"
+    },
+    {
+      "selection_ordinal": 77,
+      "lane": "B",
+      "corpus_position": 865,
+      "legacy_id": "HOME-011-OP001",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950"
+    },
+    {
+      "selection_ordinal": 78,
+      "lane": "C",
+      "corpus_position": 866,
+      "legacy_id": "HOME-011-OP002",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950"
+    },
+    {
+      "selection_ordinal": 79,
+      "lane": "A",
+      "corpus_position": 867,
+      "legacy_id": "HOME-011-OP003",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950"
+    },
+    {
+      "selection_ordinal": 80,
+      "lane": "B",
+      "corpus_position": 868,
+      "legacy_id": "HOME-012-OP001",
+      "domain": "DOM-HOME",
+      "disposition": "ACCEPTED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950"
+    },
+    {
+      "selection_ordinal": 81,
+      "lane": "C",
+      "corpus_position": 897,
+      "legacy_id": "HOME-021-OP003",
+      "domain": "DOM-HOME",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950"
+    },
+    {
+      "selection_ordinal": 82,
+      "lane": "A",
+      "corpus_position": 950,
+      "legacy_id": "HOME-042-OP002",
+      "domain": "DOM-HOME",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_851_950"
+    },
+    {
+      "selection_ordinal": 83,
+      "lane": "B",
+      "corpus_position": 956,
+      "legacy_id": "HOME-045-OP002",
+      "domain": "DOM-HOME",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050"
+    },
+    {
+      "selection_ordinal": 84,
+      "lane": "C",
+      "corpus_position": 976,
+      "legacy_id": "HOME-052-OP002",
+      "domain": "DOM-HOME",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_951_1050"
+    },
+    {
+      "selection_ordinal": 85,
+      "lane": "A",
+      "corpus_position": 1108,
+      "legacy_id": "SHOP-001-OP002",
+      "domain": "DOM-SHOP",
+      "disposition": "MERGED_BY_PROVENANCE",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150"
+    },
+    {
+      "selection_ordinal": 86,
+      "lane": "B",
+      "corpus_position": 1109,
+      "legacy_id": "SHOP-001-OP003",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150"
+    },
+    {
+      "selection_ordinal": 87,
+      "lane": "C",
+      "corpus_position": 1110,
+      "legacy_id": "SHOP-002-OP001",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150"
+    },
+    {
+      "selection_ordinal": 88,
+      "lane": "A",
+      "corpus_position": 1111,
+      "legacy_id": "SHOP-002-OP002",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150"
+    },
+    {
+      "selection_ordinal": 89,
+      "lane": "B",
+      "corpus_position": 1112,
+      "legacy_id": "SHOP-002-OP003",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150"
+    },
+    {
+      "selection_ordinal": 90,
+      "lane": "C",
+      "corpus_position": 1113,
+      "legacy_id": "SHOP-003-OP001",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150"
+    },
+    {
+      "selection_ordinal": 91,
+      "lane": "A",
+      "corpus_position": 1114,
+      "legacy_id": "SHOP-003-OP002",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150"
+    },
+    {
+      "selection_ordinal": 92,
+      "lane": "B",
+      "corpus_position": 1115,
+      "legacy_id": "SHOP-003-OP003",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150"
+    },
+    {
+      "selection_ordinal": 93,
+      "lane": "C",
+      "corpus_position": 1116,
+      "legacy_id": "SHOP-004-OP001",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150"
+    },
+    {
+      "selection_ordinal": 94,
+      "lane": "A",
+      "corpus_position": 1118,
+      "legacy_id": "SHOP-004-OP003",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150"
+    },
+    {
+      "selection_ordinal": 95,
+      "lane": "B",
+      "corpus_position": 1122,
+      "legacy_id": "SHOP-006-OP001",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150"
+    },
+    {
+      "selection_ordinal": 96,
+      "lane": "C",
+      "corpus_position": 1123,
+      "legacy_id": "SHOP-006-OP002",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150"
+    },
+    {
+      "selection_ordinal": 97,
+      "lane": "A",
+      "corpus_position": 1124,
+      "legacy_id": "SHOP-006-OP003",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150"
+    },
+    {
+      "selection_ordinal": 98,
+      "lane": "B",
+      "corpus_position": 1125,
+      "legacy_id": "SHOP-007-OP001",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150"
+    },
+    {
+      "selection_ordinal": 99,
+      "lane": "C",
+      "corpus_position": 1126,
+      "legacy_id": "SHOP-007-OP002",
+      "domain": "DOM-SHOP",
+      "disposition": "REWRITE_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1051_1150"
+    },
+    {
+      "selection_ordinal": 100,
+      "lane": "A",
+      "corpus_position": 1163,
+      "legacy_id": "SHOP-019-OP003",
+      "domain": "DOM-SHOP",
+      "disposition": "SPLIT_REQUIRED",
+      "source_artifact": "DALILI_CLASSIFICATION_APPROVED_1151_1250"
+    }
+  ]
+}

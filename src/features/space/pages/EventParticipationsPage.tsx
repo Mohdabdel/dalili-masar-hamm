@@ -9,10 +9,10 @@ import {
 import {
   getSpaceEvent,
   participationsForLevel,
+  mvpParticipationsForLevel,
   spaceLevelLabel,
 } from "@/lab/data/space/catalog";
 import { useSlice, useSpaceBase } from "@/features/space/store";
-
 
 export function EventParticipationsPage({ eventId }: { eventId: string }) {
   const base = useSpaceBase();
@@ -38,7 +38,10 @@ export function EventParticipationsPage({ eventId }: { eventId: string }) {
     );
   }
 
-  const specs = participationsForLevel(eventId, level);
+  const specs =
+    base === "/space"
+      ? mvpParticipationsForLevel(eventId, level)
+      : participationsForLevel(eventId, level);
 
   return (
     <LabPage

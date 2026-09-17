@@ -1,5 +1,5 @@
-// بداية سهلة: نبدأ ممّا يحبه الشخص أو يطلبه أو يعود إليه.
-// لا سؤال عن القدرة أو الجاهزية أو الاستقلالية أو المستوى، ولا تصنيف لأحد.
+// «ساعدني أبدأ»: أسئلة سياقية غير تقييمية تقود إلى بدايات مشاركة مرشحة.
+// لا سؤال عن القدرة أو الجاهزية أو الاستقلالية، ولا درجات أو نسب توافق.
 
 import { useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
@@ -14,112 +14,105 @@ import {
 } from "@/lab/components/lab-ui";
 import { FamilyParticipationForm } from "@/features/space/components/FamilyParticipationForm";
 import {
-  REFERENCE_PREFERRED_CONTEXTS,
-  type PreferredContextValue,
-} from "@/lib/entry/preferred-context";
-import { candidatesForPreferredContext } from "@/lib/framework/easy-beginning-corpus";
+  easyStartContextText,
+  recommendEasyStartParticipations,
+  type EasyStartAnswers,
+} from "@/lib/entry/easy-start-quiz";
 import {
   createFamilyAuthoredParticipation,
   createFrameworkCandidateParticipation,
 } from "@/features/space/entry-create";
 import { useSlice, useSpaceBase } from "@/features/space/store";
 
+const QUESTIONS = [
+  {
+    key: "interest",
+    title: "ما المواقف التي تجذب اهتمامه أكثر؟",
+    hint: "اختاروا الأقرب إلى اهتماماته الحالية.",
+    options: [
+      ["food", "الطعام أو المشروبات"],
+      ["music", "الموسيقى أو المقاطع"],
+      ["water", "الماء والتعبئة والسكب"],
+      ["organizing", "ترتيب الأشياء وإعادتها"],
+      ["outings", "التسوق والخروج"],
+      ["hosting", "الضيوف والاجتماعات الأسرية"],
+      ["clothing", "الملابس والعناية بها"],
+      ["other", "شيء آخر"],
+    ],
+  },
+  {
+    key: "routine",
+    title: "أي موقف يتكرر بصورة طبيعية في حياة أسرتكم؟",
+    hint: "نبحث عن فرصة موجودة بالفعل، لا عن مهمة جديدة.",
+    options: [
+      ["meal", "إعداد الطعام أو المائدة"],
+      ["home", "ترتيب المنزل"],
+      ["laundry", "غسل الملابس أو ترتيبها"],
+      ["shopping", "التسوق وتجهيز الخروج"],
+      ["gathering", "زيارة أو لقاء عائلي"],
+      ["health", "موعد صحي أو إجراء يومي"],
+      ["leisure", "وقت الترفيه الأسري"],
+      ["other", "موقف آخر"],
+    ],
+  },
+  {
+    key: "place",
+    title: "أين تفضلون أن تكون البداية؟",
+    hint: "اختاروا المكان الأسهل للأسرة في الوقت الحالي.",
+    options: [
+      ["home", "داخل المنزل"],
+      ["outside", "أثناء خروج قصير"],
+      ["either", "لا فرق؛ اعرضوا الأنسب"],
+    ],
+  },
+  {
+    key: "time",
+    title: "متى يسهل على الأسرة إتاحة فرصة المشاركة؟",
+    hint: "السؤال عن وقت الأسرة، وليس عن جاهزية الشخص.",
+    options: [
+      ["daily", "أثناء حدث يومي قائم"],
+      ["evening", "في المساء"],
+      ["weekend", "في نهاية الأسبوع"],
+      ["outing", "أثناء خروج مخطط"],
+      ["gathering", "عندما تجتمع الأسرة"],
+      ["flexible", "لا وقت محدد"],
+    ],
+  },
+  {
+    key: "shape",
+    title: "أي شكل من المشاركة تفضلونه للبداية؟",
+    hint: "اختاروا شكل الدور، وليس مستوى الشخص.",
+    options: [
+      ["short", "مساهمة قصيرة وواضحة"],
+      ["shared", "دور مشترك مع الأسرة"],
+      ["connected", "عدة إجراءات مترابطة"],
+      ["unsure", "لا نعرف؛ اقترحوا علينا"],
+    ],
+  },
+] as const;
+
 export function EasyBeginningPage() {
   const base = useSpaceBase();
   const { dispatch } = useSlice();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const navigate = useNavigate() as any;
-
-  const [context, setContext] = useState<PreferredContextValue | null>(null);
-  const [ownText, setOwnText] = useState("");
-  const [refine, setRefine] = useState("");
+  const [step, setStep] = useState(0);
+  const [answers, setAnswers] = useState<Partial<EasyStartAnswers>>({});
   const [writingOwn, setWritingOwn] = useState(false);
   const [error, setError] = useState("");
-
   const goWorkspace = (specId: string) =>
     navigate({ to: `${base}/workspace/$specId`, params: { specId } });
 
-  const candidates = context?.source === "reference" ? candidatesForPreferredContext(context.id) : [];
-
-  if (!context) {
+  if (writingOwn) {
     return (
-      <LabPage
-        title="بداية سهلة"
-        intro="نبدأ من شيء يحبه، أو يطلبه، أو يعود إليه — ثم نصنع له مكاناً معنا فيه."
-      >
-        <LabSection title="ما الشيء الذي يحبه ويعود إليه؟">
-          <LabGrid>
-            {REFERENCE_PREFERRED_CONTEXTS.map((c) => (
-              <LabChoiceCard
-                key={c.id}
-                title={c.text}
-                hint={c.hint}
-                onClick={() =>
-                  setContext({ id: c.id, source: "reference", referenceText: c.text })
-                }
-              />
-            ))}
-          </LabGrid>
-        </LabSection>
-
-        <LabSection title="أو اكتبوا شيئاً من حياتكم">
-          <label className="block">
-            <span className="mb-1.5 block text-sm text-muted-foreground">
-              شيء يحبه أو يطلبه أو يعود إليه في بيتكم.
-            </span>
-            <input
-              type="text"
-              value={ownText}
-              onChange={(e) => setOwnText(e.target.value)}
-              placeholder="مثال: يحب أن يجلس معنا وقت تحضير الشاي"
-              className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            />
-          </label>
-          <div className="mt-3">
-            <LabButton
-              disabled={ownText.trim().length < 3}
-              onClick={() => {
-                setWritingOwn(true);
-                setContext({
-                  id: `PCTX-FAMILY-${Date.now()}`,
-                  source: "family",
-                  familyText: ownText.trim(),
-                });
-              }}
-            >
-              نكمل من هنا
-            </LabButton>
-          </div>
-        </LabSection>
-
-        <LabNote>لا نسأل هنا عمّا يستطيعه، بل عمّا يحبه ويشاركنا فيه.</LabNote>
-        <div className="mt-6">
-          <LabLinkButton to="/" variant="ghost">
-            رجوع
-          </LabLinkButton>
-        </div>
-      </LabPage>
-    );
-  }
-
-  const shownContext = context.familyText || context.referenceText || "";
-
-  if (writingOwn || (context.source === "reference" && candidates.length === 0)) {
-    return (
-      <LabPage title="بداية سهلة" intro={shownContext}>
+      <LabPage title="لنجعل البداية سهلة" intro="اكتبوا مشاركة من موقف حقيقي في حياتكم.">
         <FamilyParticipationForm
-          intro="اكتبوا الدور الذي يمكن أن يشارك به داخل هذا الموقف بالذات."
           submitLabel="نبدأ بهذه المشاركة"
-          initial={{ lifeContext: shownContext }}
-          onSubmit={async (answers) => {
+          onSubmit={async (familyAnswers) => {
             try {
               const specId = await createFamilyAuthoredParticipation({
-                answers,
+                answers: familyAnswers,
                 origin: "easy_beginning",
-                preferredContext: {
-                  ...context,
-                  ...(refine.trim() ? { familyText: refine.trim() } : {}),
-                },
                 dispatch,
               });
               goWorkspace(specId);
@@ -129,55 +122,76 @@ export function EasyBeginningPage() {
           }}
         />
         {error && <p className="mt-3 text-sm font-bold text-destructive">{error}</p>}
-        <div className="mt-6 flex flex-wrap gap-3">
-          <LabButton
-            variant="ghost"
-            onClick={() => {
-              setWritingOwn(false);
-              setContext(null);
-            }}
-          >
-            اختيار موقف آخر
+        <div className="mt-6">
+          <LabButton variant="ghost" onClick={() => setWritingOwn(false)}>
+            العودة إلى الأسئلة
           </LabButton>
         </div>
       </LabPage>
     );
   }
 
-  return (
-    <LabPage title="بداية سهلة" intro={shownContext}>
-      <LabSection
-        title="بكلماتكم أنتم (اختياري)"
-        description="يبقى نص المقترح كما هو، وتُحفظ صياغتكم بجانبه."
-      >
-        <input
-          type="text"
-          value={refine}
-          onChange={(e) => setRefine(e.target.value)}
-          placeholder="مثال: ليلة الجمعة بعد العشاء"
-          className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        />
-      </LabSection>
+  if (step < QUESTIONS.length) {
+    const question = QUESTIONS[step];
+    return (
+      <LabPage title="لنجعل البداية سهلة" intro="بضع أسئلة عن الاهتمامات ومواقف حياة الأسرة.">
+        <div className="mb-4 text-sm text-muted-foreground">
+          السؤال {step + 1} من {QUESTIONS.length}
+        </div>
+        <LabSection title={question.title} description={question.hint}>
+          <LabGrid>
+            {question.options.map(([value, label]) => (
+              <LabChoiceCard
+                key={value}
+                title={label}
+                onClick={() => {
+                  setAnswers((current) => ({ ...current, [question.key]: value }));
+                  setStep((current) => current + 1);
+                }}
+              />
+            ))}
+          </LabGrid>
+        </LabSection>
+        <div className="flex flex-wrap gap-3">
+          {step > 0 && (
+            <LabButton variant="ghost" onClick={() => setStep((current) => current - 1)}>
+              السابق
+            </LabButton>
+          )}
+          <LabLinkButton to="/" variant="ghost">
+            رجوع
+          </LabLinkButton>
+        </div>
+      </LabPage>
+    );
+  }
 
-      <LabSection
-        title="ما الذي يمكن أن يشارك به هنا؟"
-        description="اختاروا دوراً واحداً يبدو قريباً من هذا الموقف."
-      >
+  const completed = answers as EasyStartAnswers;
+  const candidates = recommendEasyStartParticipations(completed);
+  const preferredContext = {
+    id: `PCTX-QUIZ-${Date.now()}`,
+    source: "family" as const,
+    familyText: easyStartContextText(completed),
+  };
+
+  return (
+    <LabPage title="لنجعل البداية سهلة" intro="مشاركات يمكن أن تكون نقطة بداية لأسرتكم.">
+      <p className="-mt-2 mb-5 text-xs font-light text-muted-foreground">
+        المسار فعّال، وترشيحات المشاركات قيد التطوير.
+      </p>
+      <LabSection title="اقتراحات البداية">
         <LabGrid>
-          {candidates.map((c) => (
+          {candidates.map((candidate) => (
             <LabChoiceCard
-              key={c.id}
-              title={c.title}
-              hint={c.functional_intent}
-              meta={`${c.execution_blocks.length} خطوة`}
+              key={candidate.id}
+              title={candidate.title}
+              hint={candidate.life_context}
+              meta={`${candidate.execution_blocks.length} خطوات`}
               onClick={async () => {
                 try {
                   const specId = await createFrameworkCandidateParticipation({
-                    participation: c,
-                    preferredContext: {
-                      ...context,
-                      ...(refine.trim() ? { familyText: refine.trim() } : {}),
-                    },
+                    participation: candidate,
+                    preferredContext,
                     dispatch,
                   });
                   goWorkspace(specId);
@@ -190,13 +204,13 @@ export function EasyBeginningPage() {
         </LabGrid>
         {error && <p className="mt-3 text-sm font-bold text-destructive">{error}</p>}
       </LabSection>
-
+      <LabNote>يمكنكم اختيار اقتراح، أو تعديل الإجابات، أو كتابة مشاركة من حياتكم.</LabNote>
       <div className="flex flex-wrap gap-3">
+        <LabButton variant="ghost" onClick={() => setStep(0)}>
+          تعديل الإجابات
+        </LabButton>
         <LabButton variant="ghost" onClick={() => setWritingOwn(true)}>
           نكتب مشاركتنا بأنفسنا
-        </LabButton>
-        <LabButton variant="ghost" onClick={() => setContext(null)}>
-          اختيار موقف آخر
         </LabButton>
       </div>
     </LabPage>

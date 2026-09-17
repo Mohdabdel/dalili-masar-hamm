@@ -108,6 +108,224 @@ export function selectCa0001(rows, target = 50) {
   );
 }
 
+/**
+ * أول دفعة توسع قياسية بعد المعايرة. تستبعد CA-0001 وتوزع كل حصة
+ * دوريًا على المجالات الستة لمنع استهلاك مجال واحد قبل اختبار البقية.
+ */
+export function selectCa0002(rows) {
+  const excluded = new Set(selectCa0001(rows).map((row) => row.legacy_id));
+  const quotas = Object.freeze({
+    REWRITE_REQUIRED: 75,
+    ACCEPTED: 17,
+    SPLIT_REQUIRED: 6,
+    MERGED_BY_PROVENANCE: 2,
+  });
+  const domains = Object.values(DOMAIN_BY_PREFIX);
+  const selected = [];
+
+  for (const [disposition, quota] of Object.entries(quotas)) {
+    const pools = new Map(
+      domains.map((domain) => [
+        domain,
+        rows.filter(
+          (row) =>
+            row.disposition === disposition &&
+            row.domain === domain &&
+            !excluded.has(row.legacy_id),
+        ),
+      ]),
+    );
+    let domainCursor = 0;
+    while (selected.filter((row) => row.disposition === disposition).length < quota) {
+      let added = false;
+      for (let attempt = 0; attempt < domains.length; attempt += 1) {
+        const domain = domains[(domainCursor + attempt) % domains.length];
+        const row = pools.get(domain).shift();
+        if (row) {
+          selected.push(row);
+          excluded.add(row.legacy_id);
+          domainCursor = (domains.indexOf(domain) + 1) % domains.length;
+          added = true;
+          break;
+        }
+      }
+      if (!added) throw new Error(`Unable to satisfy CA-0002 quota for ${disposition}`);
+    }
+  }
+
+  return selected.sort(
+    (a, b) => a.corpus_position - b.corpus_position || a.legacy_id.localeCompare(b.legacy_id),
+  );
+}
+
+/**
+ * دفعة التوسع الثالثة: 300 مصدر جديد بعد استبعاد الدفعتين السابقتين.
+ * الحصص تمثل أكبر البواقي للتوزيع النسبي للمخزون المتبقي (1263 مصدرًا):
+ * 971 إعادة صياغة، 210 مقبول، 63 تقسيم، 19 دمج بالمصدر.
+ */
+export function selectCa0003(rows) {
+  const priorIds = new Set([
+    ...selectCa0001(rows).map((row) => row.legacy_id),
+    ...selectCa0002(rows).map((row) => row.legacy_id),
+  ]);
+  const quotas = Object.freeze({
+    REWRITE_REQUIRED: 231,
+    ACCEPTED: 50,
+    SPLIT_REQUIRED: 15,
+    MERGED_BY_PROVENANCE: 4,
+  });
+  const domains = Object.values(DOMAIN_BY_PREFIX);
+  const selected = [];
+
+  for (const [disposition, quota] of Object.entries(quotas)) {
+    const pools = new Map(
+      domains.map((domain) => [
+        domain,
+        rows.filter(
+          (row) =>
+            row.disposition === disposition &&
+            row.domain === domain &&
+            !priorIds.has(row.legacy_id),
+        ),
+      ]),
+    );
+    let domainCursor = 0;
+    let dispositionCount = 0;
+    while (dispositionCount < quota) {
+      let added = false;
+      for (let attempt = 0; attempt < domains.length; attempt += 1) {
+        const domain = domains[(domainCursor + attempt) % domains.length];
+        const row = pools.get(domain).shift();
+        if (row) {
+          selected.push(row);
+          priorIds.add(row.legacy_id);
+          dispositionCount += 1;
+          domainCursor = (domains.indexOf(domain) + 1) % domains.length;
+          added = true;
+          break;
+        }
+      }
+      if (!added) throw new Error(`Unable to satisfy CA-0003 quota for ${disposition}`);
+    }
+  }
+
+  const domainPools = new Map(
+    domains.map((domain) => [
+      domain,
+      selected
+        .filter((row) => row.domain === domain)
+        .sort(
+          (a, b) =>
+            a.corpus_position - b.corpus_position || a.legacy_id.localeCompare(b.legacy_id),
+        ),
+    ]),
+  );
+  const lanes = [[], [], []];
+  let laneCursor = 0;
+  for (const domain of domains) {
+    for (const row of domainPools.get(domain)) {
+      const minimum = Math.min(...lanes.map((lane) => lane.length));
+      let laneIndex = -1;
+      for (let attempt = 0; attempt < lanes.length; attempt += 1) {
+        const candidate = (laneCursor + attempt) % lanes.length;
+        if (lanes[candidate].length === minimum) {
+          laneIndex = candidate;
+          break;
+        }
+      }
+      if (laneIndex < 0) throw new Error("Unable to balance CA-0003 lanes");
+      lanes[laneIndex].push(row);
+      laneCursor = (laneIndex + 1) % lanes.length;
+    }
+  }
+  return lanes.flat();
+}
+
+/**
+ * دفعة التوسع الرابعة: 300 مصدر جديد بعد استبعاد CA-0001/2/3.
+ * الحصص هي ناتج أكبر البواقي للمخزون المتبقي البالغ 963 مصدرًا.
+ * لا يوجد مخزون متبقٍ في DOM-CLO، لذا يجري التوزيع على المجالات الخمسة
+ * المتاحة فقط دون إنشاء تمثيل مصطنع للمجال المنفد.
+ */
+export function selectCa0004(rows) {
+  const priorIds = new Set([
+    ...selectCa0001(rows).map((row) => row.legacy_id),
+    ...selectCa0002(rows).map((row) => row.legacy_id),
+    ...selectCa0003(rows).map((row) => row.legacy_id),
+  ]);
+  const quotas = Object.freeze({
+    REWRITE_REQUIRED: 231,
+    ACCEPTED: 50,
+    SPLIT_REQUIRED: 15,
+    MERGED_BY_PROVENANCE: 4,
+  });
+  const domains = Object.values(DOMAIN_BY_PREFIX).filter((domain) => domain !== "DOM-CLO");
+  const selected = [];
+
+  for (const [disposition, quota] of Object.entries(quotas)) {
+    const pools = new Map(
+      domains.map((domain) => [
+        domain,
+        rows.filter(
+          (row) =>
+            row.disposition === disposition &&
+            row.domain === domain &&
+            !priorIds.has(row.legacy_id),
+        ),
+      ]),
+    );
+    let domainCursor = 0;
+    let dispositionCount = 0;
+    while (dispositionCount < quota) {
+      let added = false;
+      for (let attempt = 0; attempt < domains.length; attempt += 1) {
+        const domain = domains[(domainCursor + attempt) % domains.length];
+        const row = pools.get(domain).shift();
+        if (row) {
+          selected.push(row);
+          priorIds.add(row.legacy_id);
+          dispositionCount += 1;
+          domainCursor = (domains.indexOf(domain) + 1) % domains.length;
+          added = true;
+          break;
+        }
+      }
+      if (!added) throw new Error(`Unable to satisfy CA-0004 quota for ${disposition}`);
+    }
+  }
+
+  const domainPools = new Map(
+    domains.map((domain) => [
+      domain,
+      selected
+        .filter((row) => row.domain === domain)
+        .sort(
+          (a, b) =>
+            a.corpus_position - b.corpus_position || a.legacy_id.localeCompare(b.legacy_id),
+        ),
+    ]),
+  );
+  const lanes = [[], [], []];
+  let laneCursor = 0;
+  for (const domain of domains) {
+    for (const row of domainPools.get(domain)) {
+      const minimum = Math.min(...lanes.map((lane) => lane.length));
+      let laneIndex = -1;
+      for (let attempt = 0; attempt < lanes.length; attempt += 1) {
+        const candidate = (laneCursor + attempt) % lanes.length;
+        if (lanes[candidate].length === minimum) {
+          laneIndex = candidate;
+          break;
+        }
+      }
+      if (laneIndex < 0) throw new Error("Unable to balance CA-0004 lanes");
+      lanes[laneIndex].push(row);
+      laneCursor = (laneIndex + 1) % lanes.length;
+    }
+  }
+  return lanes.flat();
+}
+
 export function routeContractCandidate(candidate) {
   const canonical = candidate.canonical ?? {};
   const complexity = candidate.complexity ?? {};

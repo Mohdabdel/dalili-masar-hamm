@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { EasyBeginningPage } from "@/features/space/pages/EasyBeginningPage";
 
-const title = "بداية سهلة — دليلي";
-const description = "ابدأوا من شيء يحبه ويعود إليه، واصنعوا لأسرتكم مكاناً معه فيه.";
+const title = "لنجعل البداية سهلة — دليلي";
+const description = "أسئلة قصيرة تقود الأسرة إلى بدايات مشاركة مبنية على الاهتمامات ومواقف الحياة.";
 
 export const Route = createFileRoute("/_authenticated/space/easy")({
   component: SpaceRoute,

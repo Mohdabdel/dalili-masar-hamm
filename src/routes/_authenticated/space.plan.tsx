@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PlanMyselfPage } from "@/features/space/pages/PlanMyselfPage";
 
-const title = "أخطط المشاركة بنفسي — دليلي";
-const description = "صفوا مشاركة من حياتكم كما هي عندكم، وابدأوا مساحة عمل الأسرة مباشرة.";
+const title = "خططها بنفسك — دليلي";
+const description = "انتقلوا مباشرة إلى مساحة عمل الأسرة لبناء مشاركة خاصة بكم.";
 
 export const Route = createFileRoute("/_authenticated/space/plan")({
   component: SpaceRoute,

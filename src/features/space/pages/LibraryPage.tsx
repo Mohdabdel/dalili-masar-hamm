@@ -7,11 +7,14 @@ import {
   libraryDomainNames,
   allSpaceEvents,
   defaultStations,
+  listMvpLibraryEvents,
+  mvpDefaultStations,
+  mvpLibraryDomainNames,
+  mvpSpaceEvents,
   type SpaceContext,
 } from "@/lab/data/space/catalog";
 import { useSlice, useSpaceBase } from "@/features/space/store";
 import { cn } from "@/lib/utils";
-
 
 export function LibraryPage() {
   const base = useSpaceBase();
@@ -19,17 +22,32 @@ export function LibraryPage() {
   const [context, setContext] = useState<SpaceContext>("home");
   const [domain, setDomain] = useState<string>("");
   const [query, setQuery] = useState("");
+  const production = base === "/space";
 
-  const domains = useMemo(() => libraryDomainNames(context), [context]);
-  const events = useMemo(
-    () => listLibraryEvents({ context, domainName: domain || undefined, query, limit: 60 }),
-    [context, domain, query],
+  const domains = useMemo(
+    () => (production ? mvpLibraryDomainNames(context) : libraryDomainNames(context)),
+    [context, production],
   );
-  const total = useMemo(() => allSpaceEvents().length, []);
+  const events = useMemo(
+    () =>
+      (production ? listMvpLibraryEvents : listLibraryEvents)({
+        context,
+        domainName: domain || undefined,
+        query,
+        limit: 60,
+      }),
+    [context, domain, production, query],
+  );
+  const total = useMemo(
+    () => (production ? mvpSpaceEvents().length : allSpaceEvents().length),
+    [production],
+  );
 
   const isStation = (id: string) =>
     (state.stations.includes(id) ||
-      defaultStations(context).some((e) => e.id === id)) &&
+      (production ? mvpDefaultStations(context) : defaultStations(context)).some(
+        (e) => e.id === id,
+      )) &&
     !state.removedStations.includes(id);
 
   return (
@@ -147,15 +165,7 @@ export function LibraryPage() {
   );
 }
 
-function FilterChip({
-  on,
-  onClick,
-  label,
-}: {
-  on: boolean;
-  onClick: () => void;
-  label: string;
-}) {
+function FilterChip({ on, onClick, label }: { on: boolean; onClick: () => void; label: string }) {
   return (
     <button
       type="button"

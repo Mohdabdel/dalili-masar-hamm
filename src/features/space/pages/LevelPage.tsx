@@ -3,13 +3,13 @@ import { LabPage, LabSection, LabNote, LabLinkButton } from "@/lab/components/la
 import {
   getSpaceEvent,
   levelCounts,
+  mvpLevelCounts,
   spaceLevelHint,
   spaceLevelLabel,
 } from "@/lab/data/space/catalog";
 import { useSlice, useSpaceBase } from "@/features/space/store";
 import type { SliceLevel } from "@/lab/slice/types";
 import { cn } from "@/lib/utils";
-
 
 const LEVELS: SliceLevel[] = ["simple", "moderate", "advanced"];
 
@@ -28,7 +28,7 @@ export function LevelPage({ eventId }: { eventId: string }) {
     );
   }
 
-  const counts = levelCounts(eventId);
+  const counts = base === "/space" ? mvpLevelCounts(eventId) : levelCounts(eventId);
   const current = state.levelByEvent[eventId];
 
   return (

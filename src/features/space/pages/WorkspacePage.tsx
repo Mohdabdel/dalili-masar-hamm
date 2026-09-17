@@ -7,14 +7,13 @@ import {
   SupportGenerator,
   type SupportSourceRow,
 } from "@/features/space/components/SupportGenerator";
-import {
-  buildDraftSelection,
-  flatSteps,
-  sourceTextFor,
-} from "@/lab/data/space/catalog";
+import { buildDraftSelection, flatSteps, sourceTextFor } from "@/lab/data/space/catalog";
 import { hasReferenceWording, resolveSpaceSpec } from "@/features/space/spec-resolution";
 import { createFamilyBlock, isFamilyBlockId } from "@/features/space/family-blocks";
-import { participationImagePaths, participationImageSrc } from "@/features/space/participation-image";
+import {
+  participationImagePaths,
+  participationImageSrc,
+} from "@/features/space/participation-image";
 import { stepImageOptions, suggestStepImage } from "@/features/space/step-image";
 import { resolveStepImage, resolvedAssetCode } from "@/features/space/step-image";
 import { uploadFamilyImage, useUploadedUrls } from "@/features/space/family-uploads";
@@ -45,8 +44,6 @@ export function WorkspacePage({ specId }: { specId: string }) {
 
   const versions = snapshotsFor(specId);
   const assets = supportAssetsFor(specId);
-
-  
 
   // المسودة الفعلية تُحسب في نفس دورة العرض الأولى:
   // إمّا مسودة الأسرة المحفوظة، أو المسودة المرجعية الجاهزة — بلا استبدال بعد التركيب.
@@ -102,6 +99,16 @@ export function WorkspacePage({ specId }: { specId: string }) {
   const setSelection = (next: Partial<LabThisTimeSelection>) =>
     dispatch({ type: "selection", value: { ...selection, ...next, specId } });
 
+  const setFamilyTitle = (title: string) => {
+    if (!selection.familySpec) return;
+    setSelection({
+      familySpec: {
+        ...selection.familySpec,
+        title_ar: title,
+      },
+    });
+  };
+
   const renumber = (ids: string[]) => ids.map((stepId, i) => ({ stepId, order: i + 1 }));
   const orderedIds = [...selection.selected].sort((a, b) => a.order - b.order).map((s) => s.stepId);
 
@@ -156,7 +163,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
   };
 
   const applyRange = (nextStartId: string, nextEndId: string) => {
-    const ids = leaves.map((l) => l.step.id);
+    const ids = orderedIds;
     const a = ids.indexOf(nextStartId);
     const b = ids.indexOf(nextEndId);
     if (a < 0 || b < 0) return;
@@ -178,7 +185,6 @@ export function WorkspacePage({ specId }: { specId: string }) {
 
   const textVisibleFor = (stepId: string) => composeTextVisibleFor(selection, stepId);
 
-
   /** يحافظ على توافق الحقول القديمة (presentation/visual) دون ربط الحالتين ببعضهما. */
   const syncLegacy = (
     stepId: string,
@@ -188,7 +194,12 @@ export function WorkspacePage({ specId }: { specId: string }) {
   ) => ({
     presentationByStepId: {
       ...(selection.presentationByStepId ?? {}),
-      [stepId]: imageVisible && textVisible ? ("both" as const) : imageVisible ? ("visual" as const) : ("text" as const),
+      [stepId]:
+        imageVisible && textVisible
+          ? ("both" as const)
+          : imageVisible
+            ? ("visual" as const)
+            : ("text" as const),
     },
     visualByStepId: { ...(selection.visualByStepId ?? {}), [stepId]: src ?? "" },
   });
@@ -283,7 +294,6 @@ export function WorkspacePage({ specId }: { specId: string }) {
     blockOrder: r.blockOrder,
   }));
 
-
   const spares = leaves
     .filter((l) => !orderedIds.includes(l.step.id))
     .map((l) => ({ stepId: l.step.id, label: l.step.instruction_family_ar }));
@@ -328,9 +338,24 @@ export function WorkspacePage({ specId }: { specId: string }) {
     });
   };
 
-
   return (
     <LabPage title={spec.title_ar} intro={spec.eventTitle_ar}>
+      {selection.origin === "family_free" && selection.familySpec && (
+        <LabSection
+          title="اسم المشاركة"
+          description="سمّوها كما تعرفها أسرتكم. يمكنكم تغييره أثناء البناء."
+        >
+          <input
+            type="text"
+            value={
+              selection.familySpec.title_ar === "مشاركة جديدة" ? "" : selection.familySpec.title_ar
+            }
+            onChange={(event) => setFamilyTitle(event.target.value)}
+            placeholder="مثال: غسيل السيارة"
+            className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          />
+        </LabSection>
+      )}
       <LabSection
         title="مسودّتنا"
         description="هذه خطوات المشاركة كما اقترحتها دليلي. أبقوا ما يناسبكم، واحذفوا ما لا تحتاجونه."
@@ -444,7 +469,12 @@ export function WorkspacePage({ specId }: { specId: string }) {
                   }}
                   className="block h-20 w-full overflow-hidden rounded-xl border border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
-                  <img src={option.src} alt={option.title} loading="lazy" className="h-full w-full object-cover" />
+                  <img
+                    src={option.src}
+                    alt={option.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
                 </button>
               </li>
             ))}
@@ -461,9 +491,9 @@ export function WorkspacePage({ specId }: { specId: string }) {
               onChange={(e) => applyRange(e.target.value, endId || e.target.value)}
               className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
-              {leaves.map((l) => (
-                <option key={l.step.id} value={l.step.id}>
-                  {l.step.instruction_family_ar}
+              {rows.map((row) => (
+                <option key={row.stepId} value={row.stepId}>
+                  {row.familyText}
                 </option>
               ))}
             </select>
@@ -475,9 +505,9 @@ export function WorkspacePage({ specId }: { specId: string }) {
               onChange={(e) => applyRange(startId || e.target.value, e.target.value)}
               className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
-              {leaves.map((l) => (
-                <option key={l.step.id} value={l.step.id}>
-                  {l.step.instruction_family_ar}
+              {rows.map((row) => (
+                <option key={row.stepId} value={row.stepId}>
+                  {row.familyText}
                 </option>
               ))}
             </select>
@@ -542,7 +572,6 @@ export function WorkspacePage({ specId }: { specId: string }) {
         )}
       </LabSection>
 
-
       <ConsiderationsPanel
         spec={spec}
         texts={rows.map((r) => r.familyText)}
@@ -587,7 +616,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
 
       <div className="mt-2">
         <LabLinkButton to="/tools" variant="ghost">
-          أدوات المساندة
+          أدوات ووسائل داعمة
         </LabLinkButton>
       </div>
     </LabPage>
@@ -601,7 +630,5 @@ function safeWorkspaceImage(
 ): ReturnType<typeof resolveStepImage> {
   if (!specId.startsWith("FR-EXP12-02-")) return image;
   if (image.src?.includes("/assets/execution/expansion12-02/")) return image;
-  return resolveStepImage(
-    suggestStepImage(text, { preferredAssetCodePrefix: "VRS-EXP12-02-" }),
-  );
+  return resolveStepImage(suggestStepImage(text, { preferredAssetCodePrefix: "VRS-EXP12-02-" }));
 }

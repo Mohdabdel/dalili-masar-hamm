@@ -3,7 +3,7 @@ import { Home, HeartHandshake, Wrench, Settings } from "lucide-react";
 
 const tabs = [
   { to: "/", label: "الرئيسية", icon: Home },
-  { to: "/activities", label: "مشاركاتنا", icon: HeartHandshake },
+  { to: "/space/explore", label: "مشاركاتنا", icon: HeartHandshake },
   { to: "/tools", label: "أدوات دليلي", icon: Wrench },
   { to: "/settings", label: "الإعدادات", icon: Settings },
 ] as const;
@@ -28,7 +28,10 @@ export function BottomNav() {
                     active ? "bg-gradient-gold shadow-card-soft" : ""
                   }`}
                 >
-                  <Icon className={`h-5 w-5 ${active ? "text-primary" : ""}`} strokeWidth={active ? 2.4 : 2} />
+                  <Icon
+                    className={`h-5 w-5 ${active ? "text-primary" : ""}`}
+                    strokeWidth={active ? 2.4 : 2}
+                  />
                 </span>
                 <span className={`text-[10.5px] font-semibold ${active ? "text-primary" : ""}`}>
                   {label}

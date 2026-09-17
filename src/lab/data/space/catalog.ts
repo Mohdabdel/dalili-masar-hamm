@@ -28,7 +28,7 @@ import {
   legacyIdsSupersededByFramework,
 } from "@/lib/framework/discovery";
 import type { FunctionalParticipation } from "@/lib/framework/reference-model";
-
+import { listMvpScopeParticipations } from "@/lib/framework/mvp-scope";
 
 export type SpaceContext = "home" | "community";
 
@@ -117,12 +117,69 @@ export function allSpaceEvents(): SpaceEvent[] {
   return cache;
 }
 
+/** أحداث نطاق MVP فقط؛ لا يُدخل أي صف Legacy إلى سطح التجريب. */
+export function mvpSpaceEvents(): SpaceEvent[] {
+  const byEvent = new Map<string, FunctionalParticipation[]>();
+  for (const participation of listMvpScopeParticipations()) {
+    const eventId = participation.event_id;
+    if (!eventId) continue;
+    const group = byEvent.get(eventId) ?? [];
+    group.push(participation);
+    byEvent.set(eventId, group);
+  }
+
+  return [...byEvent.entries()].map(([eventId, participations]) => {
+    const legacyEvent = findEventById(eventId);
+    const frameworkEvent = frameworkSpaceEvents().find((event) => event.id === eventId);
+    return {
+      id: eventId,
+      title: legacyEvent?.event.name ?? frameworkEvent?.title ?? participations[0].life_context,
+      hint: legacyEvent?.domain.name ?? frameworkEvent?.hint ?? participations[0].life_context,
+      domainName:
+        legacyEvent?.domain.name ?? frameworkEvent?.domainName ?? participations[0].life_context,
+      contexts: legacyEvent
+        ? contextsOf(legacyEvent.domain.id)
+        : (frameworkEvent?.contexts ?? (["home", "community"] as SpaceContext[])),
+      participationCount: participations.length,
+    };
+  });
+}
+
+export function listMvpLibraryEvents(options: {
+  context?: SpaceContext;
+  domainName?: string;
+  query?: string;
+  limit?: number;
+}): SpaceEvent[] {
+  const q = options.query?.trim();
+  let list = mvpSpaceEvents();
+  if (options.context) list = list.filter((event) => event.contexts.includes(options.context!));
+  if (options.domainName) list = list.filter((event) => event.domainName === options.domainName);
+  if (q) list = list.filter((event) => event.title.includes(q) || event.hint.includes(q));
+  return options.limit ? list.slice(0, options.limit) : list;
+}
+
+export function mvpLibraryDomainNames(context?: SpaceContext): string[] {
+  return [
+    ...new Set(
+      mvpSpaceEvents()
+        .filter((event) => !context || event.contexts.includes(context))
+        .map((event) => event.domainName),
+    ),
+  ];
+}
+
+export function mvpDefaultStations(context: SpaceContext): SpaceEvent[] {
+  return mvpSpaceEvents()
+    .filter((event) => event.contexts.includes(context))
+    .slice(0, 8);
+}
+
 export function getSpaceEvent(eventId: string): SpaceEvent | null {
   const ctx = findEventById(eventId);
   if (ctx) return toSpaceEvent(ctx);
   return frameworkSpaceEvents().find((e) => e.id === eventId) ?? null;
 }
-
 
 export function listLibraryEvents(options: {
   context?: SpaceContext;
@@ -215,9 +272,7 @@ function librarySpecsForEvent(eventId: string): LabParticipationSpec[] {
 }
 
 /** تحويل مشاركة مرجعية متوافقة مع الإطار إلى مواصفة عرض — بلا تعديل على المصدر. */
-function specFromFrameworkReference(
-  p: FunctionalParticipation,
-): LabParticipationSpec {
+function specFromFrameworkReference(p: FunctionalParticipation): LabParticipationSpec {
   const blocks = [...p.execution_blocks].sort((a, b) => a.order - b.order);
   const eventCtx = p.event_id ? findEventById(p.event_id) : null;
   return {
@@ -239,6 +294,25 @@ function specFromFrameworkReference(
   };
 }
 
+export function mvpParticipationsForEvent(eventId: string): LabParticipationSpec[] {
+  return listMvpScopeParticipations()
+    .filter((participation) => participation.event_id === eventId)
+    .map(specFromFrameworkReference);
+}
+
+export function mvpParticipationsForLevel(
+  eventId: string,
+  level: SliceLevel,
+): LabParticipationSpec[] {
+  return mvpParticipationsForEvent(eventId).filter((spec) => spec.level === level);
+}
+
+export function mvpLevelCounts(eventId: string): Record<SliceLevel, number> {
+  const counts: Record<SliceLevel, number> = { simple: 0, moderate: 0, advanced: 0 };
+  for (const spec of mvpParticipationsForEvent(eventId)) counts[spec.level] += 1;
+  return counts;
+}
+
 /** المشاركات المرجعية المتوافقة مع الإطار داخل حدث. */
 function frameworkSpecsForEvent(eventId: string): LabParticipationSpec[] {
   return frameworkParticipationsForEvent(eventId).map(specFromFrameworkReference);
@@ -258,10 +332,7 @@ export function participationsForEvent(eventId: string): LabParticipationSpec[] 
   return fixtureSpecsForEvent(eventId);
 }
 
-export function participationsForLevel(
-  eventId: string,
-  level: SliceLevel,
-): LabParticipationSpec[] {
+export function participationsForLevel(eventId: string, level: SliceLevel): LabParticipationSpec[] {
   return participationsForEvent(eventId).filter((s) => s.level === level);
 }
 
@@ -273,9 +344,7 @@ export function levelCounts(eventId: string): Record<SliceLevel, number> {
 
 export function getSpaceSpec(specId: string): LabParticipationSpec | null {
   // 1) مرجع متوافق مع الإطار — يُحلّ بمعرّفه نفسه.
-  const fromFramework = discoverableFrameworkParticipations().find(
-    (p) => p.id === specId,
-  );
+  const fromFramework = discoverableFrameworkParticipations().find((p) => p.id === specId);
   if (fromFramework) return specFromFrameworkReference(fromFramework);
   // 2) المصدر المعتمد: المكتبة/الإنتاج.
   if (specId.startsWith("KB-")) {
@@ -300,7 +369,6 @@ export function getSpaceSpec(specId: string): LabParticipationSpec | null {
   }
   return null;
 }
-
 
 /** الخطوات بترتيب العرض: رئيسية ثم تفاصيلها. */
 export function flatSteps(spec: LabParticipationSpec): Array<{
@@ -430,10 +498,7 @@ export function presentationFor(
 }
 
 /** ترتيب الصورة والجملة — الافتراضي الصورة ثم الجملة. */
-export function blockOrderFor(
-  selection: LabThisTimeSelection,
-  stepId: string,
-): StepBlockOrder {
+export function blockOrderFor(selection: LabThisTimeSelection, stepId: string): StepBlockOrder {
   return selection.blockOrderByStepId?.[stepId] ?? "visual-text";
 }
 

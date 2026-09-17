@@ -1,0 +1,1556 @@
+{
+  "artifact": "DALILI_CA_0002_CONTRACT_ALIGNMENT_RESULT_01",
+  "version": "1.0",
+  "status": "PASS_WITH_ROUTED_EXCEPTIONS_NOT_MATERIALIZED",
+  "source_count": 100,
+  "source_accounted_count": 100,
+  "disposition_counts": {
+    "REWRITE_REQUIRED": 75,
+    "SPLIT_REQUIRED": 6,
+    "MERGED_BY_PROVENANCE": 2,
+    "ACCEPTED": 17
+  },
+  "draft_fp_candidate_count": 104,
+  "canonical_7_of_7_count": 104,
+  "complexity_9_of_9_count": 104,
+  "semantic_quality_pass_count": 104,
+  "provenance_link_count": 2,
+  "split_child_count": 12,
+  "route_counts": {
+    "GREEN": 92,
+    "AMBER": 8,
+    "RED": 0
+  },
+  "exception_sources": {
+    "amber": [
+      "CLO-014-OP001",
+      "CLO-020-OP001",
+      "CLO-021-OP001",
+      "COMM-003-OP003",
+      "FOOD-001-OP003",
+      "FOOD-003-OP001",
+      "FOOD-004-OP004",
+      "HOME-042-OP002"
+    ],
+    "red": []
+  },
+  "conservation": {
+    "selected_sources": 100,
+    "accounted_sources": 100,
+    "unique_source_ids": 100,
+    "duplicate_source_ids": 0,
+    "orphan_outputs": 0,
+    "silent_drops": 0,
+    "gate": "PASS"
+  },
+  "execution_boundary": {
+    "materialization_performed": false,
+    "legacy_master_mutated": false,
+    "canonical_validator_changed": false
+  },
+  "source_outcomes": [
+    {
+      "legacy_id": "CLO-014-OP001",
+      "corpus_position": 14,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "2fc11538cf7dff03a454239d00359c47da2cd0897854ddbb4ddb6d4d2d37331b",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-CLO-014-OP001"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "AMBER",
+      "route_reason": "تشغيل مجفف كهربائي يحتاج شروط سلامة تشغيلية غير محددة في المصدر."
+    },
+    {
+      "legacy_id": "CLO-015-OP001",
+      "corpus_position": 15,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "fa9fc51670ce44474e92fae2662fe45b4beda8957a842590147e7cb2026b52ae",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-CLO015OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "CLO-017-OP001",
+      "corpus_position": 17,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "26dd0249182b534bd753693ee71a535811ad6fedc5b2d599c80f089cdde91ebf",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-CLO017OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "CLO-018-OP001",
+      "corpus_position": 18,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "2525f6cf3e0239cd83b479b7df2425659c7f75e7d4e2c20a152675e237331d4a",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-CLO-018-OP001"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "CLO-019-OP001",
+      "corpus_position": 19,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "21ab121ab833f940bb7d4f0af05befd62de88016eb72dd1a2cdf6db86fd120ca",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-CLO019OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "CLO-020-OP001",
+      "corpus_position": 20,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "0965490498849e192ea0f6ed221a86d02a31dd84d5972841cf10c7ab6b013839",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-CLO020OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "AMBER",
+      "route_reason": "استخدام الإبرة يحتاج شرط سلامة سياقيًا غير مثبت في المصدر."
+    },
+    {
+      "legacy_id": "CLO-021-OP001",
+      "corpus_position": 21,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "e229757dc70b27cab5f7e9af26d1f0a901e26099aacd238abb5ea0e6f81db7c3",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-CLO-021-OP001"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "AMBER",
+      "route_reason": "استخدام الإبرة يحتاج شرط سلامة سياقيًا غير مثبت في المصدر."
+    },
+    {
+      "legacy_id": "CLO-022-OP001",
+      "corpus_position": 22,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "831f76e793a9d41c8732c544af6c8fc15cb37c3c5c732ea60767d5e101caa567",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-CLO022OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "CLO-023-OP001",
+      "corpus_position": 23,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "55969cca71d12ad7b7ed90293bb58016e6b1c831d5ee060143028e7dd848d715",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-CLO023OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "CLO-024-OP001",
+      "corpus_position": 24,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "241091a1c2efa3935275c84ca54099236ebaffd2c0496956eb19dbb7114ab298",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-CLO-024-OP001"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "CLO-025-OP001",
+      "corpus_position": 25,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "8968ff51619d2f252edab3f0a5f19bfd490347483d18cda53b155881d7075d62",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-CLO025OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "CLO-026-OP001",
+      "corpus_position": 26,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "4689bc96e90e9101c2fd8d5293a82dd881ac28aa58fa30bfaf4166149295be75",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-CLO026OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "CLO-027-OP001",
+      "corpus_position": 27,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "35fc1f0bb4c88395abfc026ad2daafecf38d7ccf8ca9c2c8cfbb3bddcae44c0c",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-CLO-027-OP001"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "CLO-028-OP001",
+      "corpus_position": 28,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "6512607a12c4bdce54c462a6ffe8858bd45cc56b065472c569dc42efc10ec74d",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-CLO028OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "CLO-029-OP001",
+      "corpus_position": 29,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "e606cdf9b04dc9ccc4f04b197f648f40a1809b8cc144ebb14c5f4b38d2776fc5",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-CLO029OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "COMM-001-OP002",
+      "corpus_position": 52,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "278527688dd7e221c8eb4395f818be8245609717492b7f5971998578ebf851a0",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-COMM-001-OP002"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "COMM-001-OP003",
+      "corpus_position": 53,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "fdc3eb1fa9759417586413266bb6f09e7ae3a9e23ff382edecb09d8ce59d9132",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-COMM001OP003-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "COMM-001-OP004",
+      "corpus_position": 54,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "67d6478d151e73986203f665215d22e03f7717dd41ca02f0fbe16c258a6b0c8e",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-COMM001OP004-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "COMM-002-OP002",
+      "corpus_position": 56,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "cc8e7064eecf13c0c7269de171d1396ae7a7f37a36dc7e59b4f03e99e9a75250",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-COMM-002-OP002"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "COMM-002-OP003",
+      "corpus_position": 57,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "9909762ef11e15f81f32140bc26770de8c8fa408099d51c19c6e5a2545e6a821",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-COMM002OP003-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "COMM-002-OP004",
+      "corpus_position": 58,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "0793c0a639b495227719fe86fefd4f4e269cdf0d836dcae7437f3104118e3e31",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-COMM002OP004-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "COMM-003-OP001",
+      "corpus_position": 59,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "c384409c3f7426964135eb41d0d2503e27b83c3589d6b5d9bbc090144068a5a2",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-COMM-003-OP001"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "COMM-003-OP002",
+      "corpus_position": 60,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "ddacd17a2a214d28f0e51840f4740f0520f57d8e63c78ec6a95655c3c649c2f8",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-COMM003OP002-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "COMM-003-OP003",
+      "corpus_position": 61,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "7b798b743e49f37b2fa3bddf4c687abc5d139f204fa29b26f981a577df8412c2",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-COMM003OP003-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "AMBER",
+      "route_reason": "عبور الشارع يحتاج شروط نقطة عبور ورؤية أو إشارة ومرافقة آمنة غير مثبتة بالكامل في المصدر."
+    },
+    {
+      "legacy_id": "COMM-003-OP004",
+      "corpus_position": 62,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "a79d04b020eb96a3aaaf542940adeff3bdf6f9c202e9e227f394c0327f9aef75",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-COMM-003-OP004"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "COMM-004-OP001",
+      "corpus_position": 63,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "08b7c794844f66d537e4fae5de8ec4f08e8216a3680e61de44bc91000be27817",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-COMM004OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "COMM-004-OP002",
+      "corpus_position": 64,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "b72170701bd82d390ad01fabfdab0f8d75b632bde5056e44b789f94dc162ec64",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-COMM004OP002-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "COMM-004-OP003",
+      "corpus_position": 65,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "05f8c215efac7c73e3dce8ec72300f0f694d866d4af45a18c8a130cff7ad43d9",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-COMM-004-OP003"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "COMM-004-OP004",
+      "corpus_position": 66,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "a910b56501f5a319c39cd30ab737a8583d1246efa59b6dd7a4cd2ed7835abe7f",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-COMM004OP004-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "FOOD-001-OP003",
+      "corpus_position": 307,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "447ee1b973c9806ba73fc3dc96f0d4f107f1d55d9095a595472df8f6a028cd13",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-FOOD001OP003-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "AMBER",
+      "route_reason": "تقطيع الخبز بأداة حادة يحتاج شرط سلامة تشغيلية غير مثبت في المصدر."
+    },
+    {
+      "legacy_id": "FOOD-002-OP001",
+      "corpus_position": 309,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "19de030afd99692b374731425c18efd95de2fe77743e23d92ddd28e1f8122f18",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-FOOD-002-OP001"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "FOOD-002-OP002",
+      "corpus_position": 310,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "5e6691e13f774c01ee88155d83faccdeb6165d9605dad0246b7af4d7927eb820",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-FOOD002OP002-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "FOOD-002-OP003",
+      "corpus_position": 311,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "bd3453ba3d6ca8584885a6af5db67f1a735e8255d84583c86af505c6e311faaa",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-FOOD002OP003-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "FOOD-002-OP004",
+      "corpus_position": 312,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "a7919a6e771ce0520b53f078809c7557bcecfdc2026ac97e8e8f8e0723e48722",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-FOOD-002-OP004"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "FOOD-002-OP005",
+      "corpus_position": 313,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "33060440c10b25dbc34360efcd2f8e3f2f1da2f8085532932b4ed70d5feef678",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-FOOD002OP005-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "FOOD-003-OP001",
+      "corpus_position": 314,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "0a1fb67f5189fe053ea3c6015868ac30f593982b58d415eb3829f4e03cea098a",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-FOOD003OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "AMBER",
+      "route_reason": "تقطيع مكونات الطعام بأداة حادة يحتاج شرط سلامة تشغيلية غير مثبت في المصدر."
+    },
+    {
+      "legacy_id": "FOOD-003-OP002",
+      "corpus_position": 315,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "bc73d2aa4cadf809975559df2096bf688a643fc296f1f756a3b4120c390cde74",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-FOOD-003-OP002"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "FOOD-003-OP003",
+      "corpus_position": 316,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "a4701fda5f30598a440a4a4278132dbdea91bda9751728e41f35a44d373dcfd0",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-FOOD003OP003-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "FOOD-003-OP004",
+      "corpus_position": 317,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "e9623a87974f20b24e2346607ad146b367069df4e97be17b815b8b3bd1bdc0b2",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-FOOD003OP004-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "FOOD-004-OP001",
+      "corpus_position": 318,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "5e09822da6ac13d6f89d0c477b846fa8182840a7e7acdf450394696937c92013",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-FOOD-004-OP001"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "FOOD-004-OP002",
+      "corpus_position": 319,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "6423d3d6fcc64d572d470df3a8f73726f021af5d258738089381e4939b3e9ce6",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-FOOD004OP002-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "FOOD-004-OP003",
+      "corpus_position": 320,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "3b9af769cd6d43f20b871a6626028482f186e0587b1ae44f55a1b390c8aee441",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-FOOD004OP003-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "FOOD-004-OP004",
+      "corpus_position": 321,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "11764749f25660b4ccec9a32c8173385b5f8461a2e1abd0aa2ba0f93de23300b",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-FOOD-004-OP004"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "AMBER",
+      "route_reason": "حمل مشروبات ساخنة يحتاج حد حرارة وتسليم آمن غير مثبتين في المصدر."
+    },
+    {
+      "legacy_id": "FOOD-046-OP002",
+      "corpus_position": 464,
+      "disposition": "SPLIT_REQUIRED",
+      "source_record_sha256": "0dced77330c6513c4244c8403f51739de942d12c31cc6fcab6a207ca45beb51c",
+      "output_kind": "SPLIT_FUNCTIONAL_PARTICIPATION_DRAFTS",
+      "candidate_ids": [
+        "CA-0002-FOOD046OP002-S01",
+        "CA-0002-FOOD046OP002-S02"
+      ],
+      "fp_validation": "2/2 at 7/7 PASS",
+      "complexity_validation": "2/2 at 9/9 PASS",
+      "semantic_quality_validation": "2/2 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "FOOD-050-OP003",
+      "corpus_position": 478,
+      "disposition": "SPLIT_REQUIRED",
+      "source_record_sha256": "42c069dbdcbcb977e0612b5a6005b263ed67d34f28a75df543ece58ccc2a1956",
+      "output_kind": "SPLIT_FUNCTIONAL_PARTICIPATION_DRAFTS",
+      "candidate_ids": [
+        "CA-0002-FOOD050OP003-C01",
+        "CA-0002-FOOD050OP003-C02"
+      ],
+      "fp_validation": "2/2 at 7/7 PASS",
+      "complexity_validation": "2/2 at 9/9 PASS",
+      "semantic_quality_validation": "2/2 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HEALTH-001-OP002",
+      "corpus_position": 599,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "727f240e18f09df709ebc586e8b35365c60e01dff6c2fc6dfbe0d2841ecddd6e",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-HEALTH-001-OP002"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HEALTH-002-OP001",
+      "corpus_position": 601,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "c8231a61656efa4dc12e5573bc9af19f7045f3f8d68c0e6f095a6539f1e1099c",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HEALTH002OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HEALTH-002-OP002",
+      "corpus_position": 602,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "ea64bf2efd0b92a5c5106ec458622365da8003fad98cea221601496c98cb6d74",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HEALTH002OP002-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HEALTH-002-OP003",
+      "corpus_position": 603,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "0874eea557c59f2c02677d250e5e8bc03b0d7d5dcd07f3d383bb1026a40d5ab3",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-HEALTH-002-OP003"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HEALTH-003-OP002",
+      "corpus_position": 605,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "7083ba3e0295d405f437de325dd18a93a44f993961446f5bd2aa3fb2d434bc36",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HEALTH003OP002-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HEALTH-003-OP003",
+      "corpus_position": 606,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "468d1a0fb31306b0ab325cd474c10c912e0c1d3b17454e4ce2e90ed5c31762be",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HEALTH003OP003-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HEALTH-004-OP001",
+      "corpus_position": 607,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "206bdde0fc11a08f836fe71ba8a35af555f3837667e78503139d81ea2c651562",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-HEALTH-004-OP001"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HEALTH-004-OP002",
+      "corpus_position": 608,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "280f381d656e494e539033440d3f4becc8a5505547a5ed54d63f99bf6f634622",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HEALTH004OP002-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HEALTH-004-OP003",
+      "corpus_position": 609,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "70a59294462fa6564942b9cdd350c4f8e77a3dbec6ce16a6af8448b171e536e6",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HEALTH004OP003-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HEALTH-005-OP001",
+      "corpus_position": 610,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "b1a97abcaf72ad2e0536d536159a4c0095aa6513a78f9a06d5edfe7a71d6e5f1",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-HEALTH-005-OP001"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HEALTH-005-OP002",
+      "corpus_position": 611,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "1366504930b9678eeb21441cc3415378b31a1b8beea41eb411d6c4de2b56b3d2",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HEALTH005OP002-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HEALTH-005-OP003",
+      "corpus_position": 612,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "5396c0b486cefbeeb4ce17c5ed1faab6d13d4be6d64137dcb66d786d77a52809",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HEALTH005OP003-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HEALTH-006-OP001",
+      "corpus_position": 613,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "6f9d4b5e1c2174800015122432193095b9aab714ca5a47a428a5e7c678136de4",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-HEALTH-006-OP001"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HEALTH-006-OP002",
+      "corpus_position": 614,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "956c5c9645667daea6eda4b91491c9f44d61acc02eab7f31c2f5274fe0452979",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HEALTH006OP002-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HEALTH-015-OP003",
+      "corpus_position": 640,
+      "disposition": "SPLIT_REQUIRED",
+      "source_record_sha256": "b1b040be4585204308b7f6cc34cf918f17cce7f7c7a7207fa51bceed90ac93bd",
+      "output_kind": "SPLIT_FUNCTIONAL_PARTICIPATION_DRAFTS",
+      "candidate_ids": [
+        "CA-0002-HEALTH015OP003-S01",
+        "CA-0002-HEALTH015OP003-S02"
+      ],
+      "fp_validation": "2/2 at 7/7 PASS",
+      "complexity_validation": "2/2 at 9/9 PASS",
+      "semantic_quality_validation": "2/2 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HEALTH-017-OP003",
+      "corpus_position": 646,
+      "disposition": "SPLIT_REQUIRED",
+      "source_record_sha256": "44fccaf26523925fb8952622e6482daad368fd9a8bf92741b17b8d9c065b36f1",
+      "output_kind": "SPLIT_FUNCTIONAL_PARTICIPATION_DRAFTS",
+      "candidate_ids": [
+        "CA-0002-A-FP-HEALTH-017-OP003-S1",
+        "CA-0002-A-FP-HEALTH-017-OP003-S2"
+      ],
+      "fp_validation": "2/2 at 7/7 PASS",
+      "complexity_validation": "2/2 at 9/9 PASS",
+      "semantic_quality_validation": "2/2 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-002-OP001",
+      "corpus_position": 834,
+      "disposition": "MERGED_BY_PROVENANCE",
+      "source_record_sha256": "8130d4f6573620822d19bd301611289503eafe7b0449e8c278b07c268f77609b",
+      "output_kind": "PROVENANCE_LINK_ONLY",
+      "candidate_ids": [],
+      "target_reference_id": "FR-EXP12-02-HOME002-OP005",
+      "fp_validation": "NOT_APPLICABLE",
+      "complexity_validation": "NOT_APPLICABLE",
+      "semantic_quality_validation": "NOT_APPLICABLE",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-003-OP001",
+      "corpus_position": 839,
+      "disposition": "SPLIT_REQUIRED",
+      "source_record_sha256": "1b9a60c76eae8076a56d1db3e51ac471f59064d97f2cd1162e7534345fd13512",
+      "output_kind": "SPLIT_FUNCTIONAL_PARTICIPATION_DRAFTS",
+      "candidate_ids": [
+        "CA-0002-HOME003OP001-S01",
+        "CA-0002-HOME003OP001-S02"
+      ],
+      "fp_validation": "2/2 at 7/7 PASS",
+      "complexity_validation": "2/2 at 9/9 PASS",
+      "semantic_quality_validation": "2/2 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-005-OP001",
+      "corpus_position": 847,
+      "disposition": "ACCEPTED",
+      "source_record_sha256": "090f5ae7ba92f3848e7d90530efe36a5428cb13c127339143b09f8cd54e5613a",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-HOME-005-OP001"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-005-OP002",
+      "corpus_position": 848,
+      "disposition": "ACCEPTED",
+      "source_record_sha256": "9b21fd83078a857e335954a687c4d7a6bcce698a39fc552123057e87f46d59f9",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HOME005OP002-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-005-OP003",
+      "corpus_position": 849,
+      "disposition": "ACCEPTED",
+      "source_record_sha256": "c567ebe249d19daab54eb4e64104d726051bfaf9b4f0862e76139ea0586e9f71",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HOME005OP003-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-005-OP004",
+      "corpus_position": 850,
+      "disposition": "ACCEPTED",
+      "source_record_sha256": "88960b01193862baf97b9cffbb79126ae41704045e1b6dc64cf7ba201354bb1c",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-HOME-005-OP004"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-007-OP002",
+      "corpus_position": 855,
+      "disposition": "ACCEPTED",
+      "source_record_sha256": "dc1df109395ec26eea1141167ac34ade35cf6bf0d964bb3cb80221c82905c706",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HOME007OP002-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-008-OP001",
+      "corpus_position": 857,
+      "disposition": "ACCEPTED",
+      "source_record_sha256": "8d81c33604280e80ef086089eded991c6ebe1677f6ddf6a703c0c1f02cfa5538",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HOME008OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-008-OP002",
+      "corpus_position": 858,
+      "disposition": "ACCEPTED",
+      "source_record_sha256": "44c38de4d5baae244256d9d07e6fe833a462c476a9df41c198d1cb9da1bf0194",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-HOME-008-OP002"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-009-OP001",
+      "corpus_position": 859,
+      "disposition": "ACCEPTED",
+      "source_record_sha256": "df0f05a50faf59f76485832c004e41dc836a00320aca1f4f9e5896b78c6a24c5",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HOME009OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-009-OP002",
+      "corpus_position": 860,
+      "disposition": "ACCEPTED",
+      "source_record_sha256": "17c184cecfe480789bbad733e9252d7be13cc0cddd14fdd1e5d1e6b1ab4c8068",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HOME009OP002-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-009-OP003",
+      "corpus_position": 861,
+      "disposition": "ACCEPTED",
+      "source_record_sha256": "aa068c92143458c0e98bd07ee1f59b5ff13b87b29e8d960cf73a8218f2d21d11",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-HOME-009-OP003"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-010-OP001",
+      "corpus_position": 862,
+      "disposition": "ACCEPTED",
+      "source_record_sha256": "a3044cb3a8560b4f3624e9df1303d593155da1fff52c7d0821c42e753201e2c4",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HOME010OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-010-OP002",
+      "corpus_position": 863,
+      "disposition": "ACCEPTED",
+      "source_record_sha256": "ea3d954a5e3e26566378717a61f5cdb5f21c5415bdc91f6124f34e27729d0104",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HOME010OP002-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-010-OP003",
+      "corpus_position": 864,
+      "disposition": "ACCEPTED",
+      "source_record_sha256": "a27de1def3ee0dfffda8da5f90967dc479ef580d652a5903be27878e7e57a1c9",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-HOME-010-OP003"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-011-OP001",
+      "corpus_position": 865,
+      "disposition": "ACCEPTED",
+      "source_record_sha256": "cb8c9dac156f9bd0416202c781b52bebce409604edebd43e9d125e0b2d097eac",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HOME011OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-011-OP002",
+      "corpus_position": 866,
+      "disposition": "ACCEPTED",
+      "source_record_sha256": "e7851a3e396e1749a24029285b6f71a51cbd0e4b82d6a16ab2008ef8c167a098",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HOME011OP002-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-011-OP003",
+      "corpus_position": 867,
+      "disposition": "ACCEPTED",
+      "source_record_sha256": "b9dbc15a35fc038819a4a9ac17790a4d4669003dfad66512b09599192289ac92",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-HOME-011-OP003"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-012-OP001",
+      "corpus_position": 868,
+      "disposition": "ACCEPTED",
+      "source_record_sha256": "e52e58758dfcb2631b6a0ccdb97a0d8edd7ef876b9bd7d5dc79558bcaaefe87a",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HOME012OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-021-OP003",
+      "corpus_position": 897,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "41ea3ac501335655a7e13c768c84b07fe076de8cfe8ecb47a5a951092e6a1305",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HOME021OP003-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-042-OP002",
+      "corpus_position": 950,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "a08ccf48c00ee27e12839dbbd90c44c400b14bb6e0308caa7e3ba09bdab989aa",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-HOME-042-OP002"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "AMBER",
+      "route_reason": "ارتفاع الجهاز وأثر صوت الإنذار وشروط الوصول الآمن غير مثبتة في المصدر."
+    },
+    {
+      "legacy_id": "HOME-045-OP002",
+      "corpus_position": 956,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "554aace83d60cd7c06334e00a653a21fc0351d3f6419dd9b4156c53d24e3094a",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HOME045OP002-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "HOME-052-OP002",
+      "corpus_position": 976,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "9fc0dbcc6a8972660e7e33285bca2d7f143e3ee4b46707a896be883e6f8e8f2f",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-HOME052OP002-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "SHOP-001-OP002",
+      "corpus_position": 1108,
+      "disposition": "MERGED_BY_PROVENANCE",
+      "source_record_sha256": "051e1c48c33102c77664095e4e4118346d9e86a6a5baeed7c9aebd2fdf3aced6",
+      "output_kind": "PROVENANCE_LINK_ONLY",
+      "candidate_ids": [],
+      "fp_validation": "NOT_APPLICABLE",
+      "complexity_validation": "NOT_APPLICABLE",
+      "semantic_quality_validation": "NOT_APPLICABLE",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "SHOP-001-OP003",
+      "corpus_position": 1109,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "8b655010611eacd0efd4243384b1be26ed73e8a6dc0b2924076aa3082c974498",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-SHOP001OP003-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "SHOP-002-OP001",
+      "corpus_position": 1110,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "40223590c00d4bbf7429145e3a2146f9373cc9b272438058e432ac2b2cd80003",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-SHOP002OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "SHOP-002-OP002",
+      "corpus_position": 1111,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "39ff6ea0aa6fa10353f7c4413006a8881c29dd7e5961bc7328c417d2d8ef2c15",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-SHOP-002-OP002"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "SHOP-002-OP003",
+      "corpus_position": 1112,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "add5e3e0a82716218e754332ee7556b79f8bac898b092fd35d012e8b2ce2396c",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-SHOP002OP003-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "SHOP-003-OP001",
+      "corpus_position": 1113,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "2e07f5fb4aaf15d90e38e6fb6be773e8d8586beb25fbcd1bc6cac385f2eb641a",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-SHOP003OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "SHOP-003-OP002",
+      "corpus_position": 1114,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "ee9e98c06408470c9b251e0130fb9e96c92b7dcbd7350ad04457b190a90431bc",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-SHOP-003-OP002"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "SHOP-003-OP003",
+      "corpus_position": 1115,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "83903347f56f86ab31a35e7dbd79602ea17ebdb207dbbc8ca18d674981e23a52",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-SHOP003OP003-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "SHOP-004-OP001",
+      "corpus_position": 1116,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "c48305616e9c9b9db2cb0fc3c496fb5ed3ec1e71753645a25f9da349de8a2935",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-SHOP004OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "SHOP-004-OP003",
+      "corpus_position": 1118,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "52fd750846133daf90d2cc1d6abc6a9fb866f80ee930b69b9c49646d7687d6b1",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-SHOP-004-OP003"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "SHOP-006-OP001",
+      "corpus_position": 1122,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "e29ae78b990b39203c2f340e7c73eee6b6842365c36acf5e978bf7af18a5bf15",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-SHOP006OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "SHOP-006-OP002",
+      "corpus_position": 1123,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "4c4d8885f2ad45bb646001f691626e20af2cd6348f4a9873a0998e79cfd7f032",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-SHOP006OP002-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "SHOP-006-OP003",
+      "corpus_position": 1124,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "7a62f4e91236fa0a9e04300d9dbaf9c4eb2244c20f58f79a12ba5c40ad08ccf8",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-A-FP-SHOP-006-OP003"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "SHOP-007-OP001",
+      "corpus_position": 1125,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "0977ee4162fe5c232f67368446aaee6f12d2ee079956f306bd77ad790b1b66b0",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-SHOP007OP001-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "SHOP-007-OP002",
+      "corpus_position": 1126,
+      "disposition": "REWRITE_REQUIRED",
+      "source_record_sha256": "960c659a9337e3aad7661ec5963ec2e02b6e4f6413f6c4d9f3d6d63b6f302603",
+      "output_kind": "FUNCTIONAL_PARTICIPATION_DRAFT",
+      "candidate_ids": [
+        "CA-0002-SHOP007OP002-C01"
+      ],
+      "fp_validation": "1/1 at 7/7 PASS",
+      "complexity_validation": "1/1 at 9/9 PASS",
+      "semantic_quality_validation": "1/1 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    },
+    {
+      "legacy_id": "SHOP-019-OP003",
+      "corpus_position": 1163,
+      "disposition": "SPLIT_REQUIRED",
+      "source_record_sha256": "7dfd4f0069cb84e3a65effae0c4716644e9e3ce7b9082ec72f199f8bcded243a",
+      "output_kind": "SPLIT_FUNCTIONAL_PARTICIPATION_DRAFTS",
+      "candidate_ids": [
+        "CA-0002-A-FP-SHOP-019-OP003-S1",
+        "CA-0002-A-FP-SHOP-019-OP003-S2"
+      ],
+      "fp_validation": "2/2 at 7/7 PASS",
+      "complexity_validation": "2/2 at 9/9 PASS",
+      "semantic_quality_validation": "2/2 PASS",
+      "route": "GREEN",
+      "route_reason": null
+    }
+  ]
+}

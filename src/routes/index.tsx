@@ -6,7 +6,6 @@ import {
   Sparkles,
   ListChecks,
   Library,
-  PenLine,
   BadgeCheck,
   LogIn,
 } from "lucide-react";
@@ -26,8 +25,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "دليلي — المشاركة هي الحياة نفسها" },
       {
         property: "og:description",
-        content:
-          "الفرصة الموجودة تكفي: جزء صغير من حدث معتاد يكفي لتبدأ المشاركة.",
+        content: "الفرصة الموجودة تكفي: جزء صغير من حدث معتاد يكفي لتبدأ المشاركة.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -64,39 +62,33 @@ const INFO_TABS = [
   },
 ];
 
-// ثلاث استراتيجيات دخول فقط (EN-01) — كلها تصنع نفس المشاركة الأسرية
-// وتدخل نفس المسار: مساحة العمل ← معاينة ← اعتماد ← بطاقة ← تنفيذ.
-const ENTRY_STRATEGIES = [
+// المسار الموجّه هو المدخل الأساسي الوحيد. بقية المداخل تظهر بعد «تخطّي».
+const ALTERNATIVE_ENTRY_STRATEGIES = [
   {
-    title: "بداية سهلة",
-    description: "نبدأ من شيء يحبه أو يطلبه أو يعود إليه، ونصنع له مكاناً معنا فيه.",
-    icon: Sparkles,
-    to: "/space/easy" as const,
-    tone: "teal" as const,
-  },
-  {
-    title: "أخطط المشاركة بنفسي",
-    description: "نصف مشاركة من حياتنا كما هي عندنا، بلا حاجة إلى قائمة جاهزة.",
+    title: "خططها بنفسك",
+    description: "خططوا لمشاركة خاصة بكم داخل مساحة عمل الأسرة.",
     icon: CalendarClock,
     to: "/space/plan" as const,
+    search: undefined,
     tone: "coral" as const,
+  },
+  {
+    title: "ابدأ من روتين أسرتكم",
+    description: "اختاروا موقفًا يتكرر طبيعيًا في يومكم.",
+    icon: ListChecks,
+    to: "/space/explore" as const,
+    search: { lens: "station" as const },
+    tone: "teal" as const,
   },
   {
     title: "استكشف المشاركات الممكنة",
     description: "نتصفح أحداث يومنا أو محطات روتيننا، ونختار مشاركة تشبه حياتنا.",
     icon: Library,
     to: "/space/explore" as const,
+    search: { lens: "event" as const },
     tone: "navy" as const,
   },
 ];
-
-const SECONDARY_PATHS = [
-  { title: "مساحة عمل الأسرة", to: "/space" as const },
-  { title: "محطات روتيننا", to: "/my-routine" as const },
-  { title: "مكتبة المشاركات", to: "/activities/browse" as const },
-];
-
-const JOURNEY_STEPS = ["اختيار", "تجهيز", "تركيب", "معاينة", "اعتماد"] as const;
 
 function FamilySpaceSection() {
   const status = useFamilySpaceStatus();
@@ -121,11 +113,9 @@ function FamilySpaceSection() {
             <LogIn className="h-5 w-5" strokeWidth={2} />
           </span>
           <span className="text-right">
-            <span className="block text-base font-bold text-foreground">
-              سجّلوا الدخول لفتح مساحة عمل أسرتكم
-            </span>
+            <span className="block text-base font-bold text-foreground">سجل مشاركاتكم السابقة</span>
             <span className="mt-0.5 block text-sm text-muted-foreground">
-              مسوداتكم وبطاقاتكم المعتمدة محفوظة هناك.
+              سجّلوا الدخول لعرض المسودات والبطاقات المحفوظة.
             </span>
           </span>
         </span>
@@ -134,65 +124,24 @@ function FamilySpaceSection() {
     );
   }
 
-  const empty = status.drafts.length === 0 && status.approved.length === 0;
-
   return (
-    <div className="mt-3 space-y-3">
-      {empty && (
-        <p className="rounded-2xl border border-border bg-card p-4 text-sm leading-relaxed text-muted-foreground">
-          لم تبدأ مساحة عمل أسرتكم بعد. اختاروا فرصة مشاركة من المسارات أدناه
-          لتجهيز أول بطاقة.
-        </p>
-      )}
-
-      {status.drafts.map((draft) => (
-        <Link
-          key={draft.specId}
-          to="/space/workspace/$specId"
-          params={{ specId: draft.specId }}
-          className="group flex items-center justify-between gap-3 rounded-2xl border-2 border-gold/50 bg-card p-4 shadow-card-soft transition-all hover:-translate-y-0.5 hover:border-gold hover:shadow-elegant"
-        >
-          <span className="flex min-w-0 items-center gap-3">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-gold text-primary">
-              <PenLine className="h-5 w-5" strokeWidth={2} />
-            </span>
-            <span className="min-w-0 text-right">
-              <span className="block truncate text-base font-bold text-foreground">
-                {draft.title}
-              </span>
-              <span className="mt-0.5 block text-sm text-muted-foreground">
-                مسودة قيد التجهيز — أكملوا من حيث توقفتم
-              </span>
-            </span>
+    <Link
+      to="/space"
+      className="mt-3 flex items-center justify-between gap-3 rounded-2xl border border-border bg-card p-4 transition-colors hover:bg-accent"
+    >
+      <span className="flex items-center gap-3">
+        <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+          <BadgeCheck className="h-5 w-5" aria-hidden />
+        </span>
+        <span>
+          <span className="block text-base font-bold">سجل مشاركاتكم السابقة</span>
+          <span className="block text-sm text-muted-foreground">
+            {status.drafts.length} مسودة · {status.approved.length} بطاقة معتمدة
           </span>
-          <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
-        </Link>
-      ))}
-
-      {status.approved.map((card) => (
-        <Link
-          key={card.specId}
-          to="/space/card/$specId"
-          params={{ specId: card.specId }}
-          className="group flex items-center justify-between gap-3 rounded-2xl border-2 border-primary/30 bg-card p-4 shadow-card-soft transition-all hover:-translate-y-0.5 hover:shadow-elegant"
-        >
-          <span className="flex min-w-0 items-center gap-3">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground">
-              <BadgeCheck className="h-5 w-5" strokeWidth={2} />
-            </span>
-            <span className="min-w-0 text-right">
-              <span className="block truncate text-base font-bold text-foreground">
-                {card.title}
-              </span>
-              <span className="mt-0.5 block text-sm text-muted-foreground">
-                بطاقة معتمدة — النسخة {card.latestVersion}
-              </span>
-            </span>
-          </span>
-          <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
-        </Link>
-      ))}
-    </div>
+        </span>
+      </span>
+      <ChevronLeft className="h-5 w-5 text-muted-foreground" aria-hidden />
+    </Link>
   );
 }
 
@@ -234,10 +183,7 @@ function InfoTabs() {
           className="mt-2 rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 p-3"
         >
           {current.body.map((p) => (
-            <p
-              key={p}
-              className="mt-1 text-sm leading-relaxed text-primary-foreground/85"
-            >
+            <p key={p} className="mt-1 text-sm leading-relaxed text-primary-foreground/85">
               {p}
             </p>
           ))}
@@ -258,6 +204,7 @@ function InfoTabs() {
 }
 
 function LandingPage() {
+  const [showAlternatives, setShowAlternatives] = useState(false);
   return (
     <PageShell
       title="دليلي"
@@ -266,13 +213,9 @@ function LandingPage() {
     >
       {/* مقدمة مختصرة — بطاقة التعريف */}
       <section className="relative mt-1 overflow-hidden rounded-[2rem] border border-border bg-card p-5 shadow-card-soft">
-        <span
-          aria-hidden
-          className="absolute inset-y-0 start-0 w-1.5 rounded-s-[2rem] bg-coral"
-        />
+        <span aria-hidden className="absolute inset-y-0 start-0 w-1.5 rounded-s-[2rem] bg-coral" />
         <p className="max-w-[52ch] text-[0.98rem] font-bold leading-relaxed text-foreground">
-          دليلي يساعد الأسرة على تهيئة فرص مشاركة الأشخاص ذوي الإعاقة في أحداث
-          حياتهم اليومية.
+          دليلي يساعد الأسرة على تهيئة فرص مشاركة الأشخاص ذوي الإعاقة في أحداث حياتهم اليومية.
         </p>
         <p className="mt-3 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
           المشاركة ليست تدريبًا على الحياة… المشاركة هي الحياة نفسها.
@@ -280,23 +223,7 @@ function LandingPage() {
         <p className="mt-1 text-sm font-bold text-coral">الفرصة الموجودة تكفي.</p>
       </section>
 
-      {/* مساحة عمل الأسرة — بطاقة بنتو داكنة بارزة */}
-      <section className="relative mt-5 overflow-hidden rounded-[2rem] bg-gradient-primary p-5 text-primary-foreground shadow-elegant">
-        <span
-          aria-hidden
-          className="absolute -bottom-8 -start-8 h-32 w-32 rounded-full bg-primary-foreground/10 blur-2xl"
-        />
-        <h2 className="relative font-display text-lg font-bold">
-          مساحة عمل أسرتكم
-        </h2>
-        <p className="relative mt-1 text-sm leading-relaxed text-primary-foreground/75">
-          كل بطاقة تمرّ برحلة واحدة: {JOURNEY_STEPS.join(" ← ")} — وتبقى
-          محفوظة لأسرتكم.
-        </p>
-        <div className="relative">
-          <FamilySpaceSection />
-        </div>
-      </section>
+      <FamilySpaceSection />
 
       {/* دعوة الاكتشاف — شبكة بنتو */}
       <section className="mt-7">
@@ -304,80 +231,90 @@ function LandingPage() {
           هل تفكرون في مشاركة ابنكم أو ابنتكم في بعض أحداث حياتكم اليومية؟
         </h2>
         <p className="mt-1 px-1 text-sm leading-relaxed text-muted-foreground">
-          ابدأوا من الطريقة التي تشبهكم — وكلها تصل إلى نفس مساحة عمل الأسرة.
+          ابدأوا بمسار موجه بسيط، أو تخطّوه إذا كنتم تعرفون ما تريدون.
         </p>
 
-        <div className="mt-3 grid grid-cols-2 gap-3">
-          {ENTRY_STRATEGIES.map(({ title, description, icon: Icon, to, tone }) => {
-            const filled = tone === "teal";
-            return (
-              <Link
-                key={title}
-                to={to}
-                className={cn(
-                  "group flex min-h-40 flex-col justify-between gap-3 rounded-[2rem] border p-4 shadow-card-soft transition-all hover:-translate-y-0.5 hover:shadow-elegant",
-                  tone === "navy" && "col-span-2 min-h-32",
-                  filled
-                    ? "border-teal bg-teal text-teal-foreground"
-                    : "border-border bg-card",
-                )}
-              >
-                <span
-                  className={cn(
-                    "flex h-11 w-11 items-center justify-center rounded-2xl",
-                    filled
-                      ? "bg-teal-foreground/20 text-teal-foreground"
-                      : tone === "navy"
-                        ? "bg-primary/10 text-primary"
-                        : "bg-coral/10 text-coral",
-                  )}
-                >
-                  <Icon className="h-5 w-5" strokeWidth={2} />
-                </span>
-                <span className="text-right">
-                  <span
-                    className={cn(
-                      "block text-base font-bold",
-                      filled ? "text-teal-foreground" : "text-foreground",
-                    )}
-                  >
-                    {title}
-                  </span>
-                  <span
-                    className={cn(
-                      "mt-1 block text-sm leading-relaxed",
-                      filled
-                        ? "text-teal-foreground/80"
-                        : "text-muted-foreground",
-                    )}
-                  >
-                    {description}
-                  </span>
-                </span>
-              </Link>
-            );
-          })}
-        </div>
+        <Link
+          to="/space/easy"
+          className="mt-3 flex min-h-40 flex-col justify-between gap-3 rounded-[2rem] border border-teal bg-teal p-5 text-teal-foreground shadow-card-soft transition-all hover:-translate-y-0.5 hover:shadow-elegant"
+        >
+          <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-teal-foreground/20">
+            <Sparkles className="h-5 w-5" aria-hidden />
+          </span>
+          <span>
+            <span className="block text-lg font-bold">لنجعل البداية سهلة</span>
+            <span className="mt-1 block text-sm leading-relaxed text-teal-foreground/80">
+              أسئلة قصيرة تقترح بدايات مبنية على الاهتمامات ومواقف حياة الأسرة.
+            </span>
+          </span>
+        </Link>
 
-        <div className="mt-3 flex flex-wrap gap-2 px-1">
-          {SECONDARY_PATHS.map((p) => (
-            <Link
-              key={p.title}
-              to={p.to}
-              className="inline-flex min-h-11 items-center rounded-xl border border-border bg-card px-4 text-sm font-bold text-foreground transition-colors hover:bg-accent"
-            >
-              {p.title}
-            </Link>
-          ))}
-        </div>
+        <button
+          type="button"
+          onClick={() => setShowAlternatives((value) => !value)}
+          aria-expanded={showAlternatives}
+          className="mx-auto mt-3 block min-h-11 px-4 text-sm font-bold text-primary underline underline-offset-4"
+        >
+          {showAlternatives ? "إخفاء الطرق الأخرى" : "تخطّي واختيار طريقة أخرى"}
+        </button>
+
+        {showAlternatives && (
+          <div className="mt-3 grid gap-3 sm:grid-cols-3">
+            {ALTERNATIVE_ENTRY_STRATEGIES.map(
+              ({ title, description, icon: Icon, to, tone, search }) => {
+                const filled = tone === "teal";
+                return (
+                  <Link
+                    key={title}
+                    to={to}
+                    search={search}
+                    className={cn(
+                      "group flex min-h-36 flex-col justify-between gap-3 rounded-[2rem] border p-4 shadow-card-soft transition-all hover:-translate-y-0.5 hover:shadow-elegant",
+                      filled ? "border-teal bg-teal text-teal-foreground" : "border-border bg-card",
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        "flex h-11 w-11 items-center justify-center rounded-2xl",
+                        filled
+                          ? "bg-teal-foreground/20 text-teal-foreground"
+                          : tone === "navy"
+                            ? "bg-primary/10 text-primary"
+                            : "bg-coral/10 text-coral",
+                      )}
+                    >
+                      <Icon className="h-5 w-5" strokeWidth={2} />
+                    </span>
+                    <span className="text-right">
+                      <span
+                        className={cn(
+                          "block text-base font-bold",
+                          filled ? "text-teal-foreground" : "text-foreground",
+                        )}
+                      >
+                        {title}
+                      </span>
+                      <span
+                        className={cn(
+                          "mt-1 block text-sm leading-relaxed",
+                          filled ? "text-teal-foreground/80" : "text-muted-foreground",
+                        )}
+                      >
+                        {description}
+                      </span>
+                    </span>
+                  </Link>
+                );
+              },
+            )}
+          </div>
+        )}
       </section>
 
       {/* مشاركاتي النشطة */}
       <section className="mt-5 rounded-[2rem] border border-border bg-card p-5 shadow-card-soft">
         <div className="flex items-center justify-between gap-3 px-1">
-          <h2 className="font-display text-lg font-bold text-foreground">
-            مشاركاتي النشطة
-          </h2>
+          <h2 className="font-display text-lg font-bold text-foreground">مشاركاتي النشطة</h2>
           <span className="text-xs font-bold text-teal">عرض الكل</span>
         </div>
         <p className="mt-1 px-1 text-sm leading-relaxed text-muted-foreground">
@@ -391,9 +328,7 @@ function LandingPage() {
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
               <ListChecks className="h-5 w-5" strokeWidth={2} />
             </span>
-            <span className="text-base font-bold text-foreground">
-              افتحوا مشاركاتنا النشطة
-            </span>
+            <span className="text-base font-bold text-foreground">افتحوا مشاركاتنا النشطة</span>
           </span>
           <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
         </Link>

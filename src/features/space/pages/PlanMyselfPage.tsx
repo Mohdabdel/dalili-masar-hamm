@@ -1,11 +1,10 @@
-// أخطط المشاركة بنفسي: الأسرة تعرّف مشاركتها بلا أي مرجع ولا معرّف مكتبة.
-// لا يُختلق معرّف KB-*، ولا نص مصدر، ولا مستوى للشخص.
+// خططها بنفسك: انتقال مباشر إلى قالب مساحة الأسرة.
+// لا أسئلة وسيطة، ولا معرّف KB-*، ولا حقول دلالية مختلقة.
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
-import { LabPage, LabLinkButton } from "@/lab/components/lab-ui";
-import { FamilyParticipationForm } from "@/features/space/components/FamilyParticipationForm";
-import { createFamilyAuthoredParticipation } from "@/features/space/entry-create";
+import { LabPage, LabLinkButton, LabNote } from "@/lab/components/lab-ui";
+import { createBlankFamilyParticipation } from "@/features/space/entry-create";
 import { useSlice, useSpaceBase } from "@/features/space/store";
 
 export function PlanMyselfPage() {
@@ -14,28 +13,19 @@ export function PlanMyselfPage() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const navigate = useNavigate() as any;
   const [error, setError] = useState("");
+  const started = useRef(false);
+
+  useEffect(() => {
+    if (started.current) return;
+    started.current = true;
+    void createBlankFamilyParticipation({ dispatch })
+      .then((specId) => navigate({ to: `${base}/workspace/$specId`, params: { specId } }))
+      .catch(() => setError("لم نستطع فتح مساحة العمل الآن. جرّبوا مرة أخرى."));
+  }, [base, dispatch, navigate]);
 
   return (
-    <LabPage
-      title="أخطط المشاركة بنفسي"
-      intro="صفوا مشاركة من حياتكم كما هي عندكم. لا نحتاج أي مشاركة جاهزة من قوائم دليلي."
-    >
-      <FamilyParticipationForm
-        intro="أسئلة قصيرة عن الموقف نفسه، لا عن الشخص."
-        submitLabel="نبدأ مساحة العمل"
-        onSubmit={async (answers) => {
-          try {
-            const specId = await createFamilyAuthoredParticipation({
-              answers,
-              origin: "family_free",
-              dispatch,
-            });
-            navigate({ to: `${base}/workspace/$specId`, params: { specId } });
-          } catch {
-            setError("لم نستطع بدء المشاركة الآن. جرّبوا مرة أخرى.");
-          }
-        }}
-      />
+    <LabPage title="خططها بنفسك" intro="جارٍ فتح قالب بناء مشاركة خاصة بأسرتكم.">
+      {!error && <LabNote>لا توجد أسئلة قبل مساحة العمل؛ ستكتبون الاسم والخطوات هناك.</LabNote>}
       {error && <p className="mt-3 text-sm font-bold text-destructive">{error}</p>}
       <div className="mt-6">
         <LabLinkButton to="/" variant="ghost">

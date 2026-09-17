@@ -2,9 +2,13 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ExplorePage } from "@/features/space/pages/ExplorePage";
 
 const title = "استكشف المشاركات الممكنة — دليلي";
-const description = "اكتشفوا المشاركات من خلال أحداث يومكم أو محطات روتينكم، واختاروا واحدة تبدأون بها.";
+const description =
+  "اكتشفوا المشاركات من خلال أحداث يومكم أو محطات روتينكم، واختاروا واحدة تبدأون بها.";
 
 export const Route = createFileRoute("/_authenticated/space/explore")({
+  validateSearch: (search: Record<string, unknown>) => ({
+    lens: search.lens === "station" ? ("station" as const) : ("event" as const),
+  }),
   component: SpaceRoute,
   head: () => ({
     meta: [
@@ -19,5 +23,6 @@ export const Route = createFileRoute("/_authenticated/space/explore")({
 });
 
 function SpaceRoute() {
-  return <ExplorePage />;
+  const { lens } = Route.useSearch();
+  return <ExplorePage initialLens={lens} />;
 }

@@ -4,6 +4,7 @@
 import { createFamilyParticipation } from "@/lib/family-participation";
 import {
   draftSelectionForFamilySpec,
+  familySpecId,
   specFromFamilyAnswers,
   specFromFrameworkParticipation,
   toCandidate,
@@ -19,6 +20,46 @@ import type { FunctionalParticipation } from "@/lib/framework/reference-model";
 import type { SliceAction } from "@/features/space/store";
 import type { SliceContext } from "@/lab/slice/types";
 
+/**
+ * يفتح قالباً فارغاً تملكه الأسرة مباشرةً.
+ * لا نختلق هوية وظيفية أو إجابات دلالية لم تقدّمها الأسرة؛ تُبنى المسودة داخل مساحة العمل.
+ */
+export async function createBlankFamilyParticipation(input: {
+  dispatch: (action: SliceAction) => void;
+}): Promise<string> {
+  const participation = await createFamilyParticipation({
+    origin: "family_free",
+    identity: null,
+  });
+  const specId = familySpecId(participation.id);
+  input.dispatch({
+    type: "selection",
+    value: {
+      specId,
+      selected: [],
+      chosenExecutionOptionByStepId: {},
+      supportTools: [],
+      familyTextByStepId: {},
+      visualByStepId: {},
+      presentationByStepId: {},
+      blockOrderByStepId: {},
+      drafted: true,
+      origin: "family_free",
+      familySpec: {
+        id: specId,
+        eventId: "",
+        eventTitle_ar: "",
+        level: "moderate",
+        context: "home",
+        title_ar: "مشاركة جديدة",
+        majorSteps: [],
+        provenance: "family",
+      },
+    },
+  });
+  return specId;
+}
+
 /** مشاركة تكتبها الأسرة بنفسها — لا مرجع ولا معرّف مكتبة. */
 export async function createFamilyAuthoredParticipation(input: {
   answers: FamilyParticipationAnswers;
@@ -28,7 +69,12 @@ export async function createFamilyAuthoredParticipation(input: {
 }): Promise<string> {
   const validity = validateFamilyAnswers(input.answers);
   if (!validity.valid) {
-    throw new Error(`INVALID_FUNCTIONAL_PARTICIPATION: ${validity.gates.filter((g) => !g.passed).map((g) => g.gate).join(",")}`);
+    throw new Error(
+      `INVALID_FUNCTIONAL_PARTICIPATION: ${validity.gates
+        .filter((g) => !g.passed)
+        .map((g) => g.gate)
+        .join(",")}`,
+    );
   }
   // الهوية تُشتق من التعريف المتحقَّق منه وحده؛ أبعاد C1–C4 تبقى غائبة لأنها غير معروفة.
   const identity = identityFromValidatedCandidate(toCandidate(input.answers));
@@ -65,8 +111,7 @@ export async function createFrameworkCandidateParticipation(input: {
     participationId: created.id,
     participation: input.participation,
     context: input.context,
-    preferredContextText:
-      input.preferredContext.familyText || input.preferredContext.referenceText,
+    preferredContextText: input.preferredContext.familyText || input.preferredContext.referenceText,
   });
   const selection = draftSelectionForFamilySpec({
     spec,
