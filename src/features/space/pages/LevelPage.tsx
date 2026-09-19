@@ -63,7 +63,7 @@ export function LevelPage({ eventId }: { eventId: string }) {
                   current === lv ? "text-primary-foreground/80" : "text-muted-foreground",
                 )}
               >
-                {counts[lv] > 0 ? `${counts[lv]} مشاركة` : "لا يوجد الآن"}
+                {counts[lv] > 0 ? `${counts[lv]} مشاركة` : "لا توجد مشاركة بهذا المستوى"}
               </span>
             </button>
           ))}

@@ -4,7 +4,6 @@ import {
   ChevronLeft,
   CalendarClock,
   Sparkles,
-  ListChecks,
   Library,
   Images,
 } from "lucide-react";
@@ -70,14 +69,6 @@ const ALTERNATIVE_ENTRY_STRATEGIES = [
     to: "/space/plan" as const,
     search: undefined,
     tone: "coral" as const,
-  },
-  {
-    title: "ابدأ من روتين أسرتكم",
-    description: "اختاروا موقفًا يتكرر طبيعيًا في يومكم.",
-    icon: ListChecks,
-    to: "/space/explore" as const,
-    search: { lens: "station" as const },
-    tone: "teal" as const,
   },
   {
     title: "استكشف المشاركات الممكنة",
@@ -154,7 +145,7 @@ function LandingPage() {
   return (
     <PageShell
       title="دليلي"
-      description="مساحة مشاركات الأسرة داخل الحياة اليومية"
+      description="المشاركة ليست تدريبًا على الحياة… المشاركة هي الحياة نفسها."
       headerExtra={<InfoTabs />}
     >
       {/* أول إجراء حسب مشاركات الأسرة، بعد حسم حالة الدخول. */}
@@ -190,7 +181,7 @@ function LandingPage() {
         {!hasApprovedCard && (
           <div className="mt-5 rounded-2xl border border-border bg-card p-4">
             <p className="font-bold leading-relaxed text-foreground">دليلي يساعد الأسرة على تهيئة فرص مشاركة الأشخاص ذوي الإعاقة في أحداث حياتهم اليومية.</p>
-            <p className="mt-2 text-sm text-muted-foreground">المشاركة ليست تدريبًا على الحياة… المشاركة هي الحياة نفسها. الفرصة الموجودة تكفي.</p>
+            <p className="mt-2 text-sm text-muted-foreground">الفرصة الموجودة تكفي.</p>
           </div>
         )}
 
@@ -204,7 +195,7 @@ function LandingPage() {
         </button>
 
         {showAlternatives && (
-          <div className="mt-3 grid gap-3 sm:grid-cols-3">
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">
             {ALTERNATIVE_ENTRY_STRATEGIES.map(
               ({ title, description, icon: Icon, to, tone, search }) => {
                 const filled = tone === "teal";

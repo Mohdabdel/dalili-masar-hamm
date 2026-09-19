@@ -364,7 +364,9 @@ export function WorkspacePage({ specId }: { specId: string }) {
       )}
       <LabSection
         title="مسودّتنا"
-        description="هذه خطوات المشاركة كما اقترحتها دليلي. أبقوا ما يناسبكم، واحذفوا ما لا تحتاجونه."
+        description={selection.origin === "family_free"
+          ? "اكتبوا خطوات مشاركتكم بالترتيب، ثم أضيفوا العبارة والصورة التي تناسب كل خطوة."
+          : "هذه خطوات المشاركة كما اقترحتها دليلي. أبقوا ما يناسبكم، واحذفوا ما لا تحتاجونه."}
       >
         <StepComposer
           rows={rows}
