@@ -6,11 +6,9 @@ import {
   Sparkles,
   ListChecks,
   Library,
-  BadgeCheck,
-  LogIn,
+  Images,
 } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
-import { useFamilySpaceStatus } from "@/features/space/home-status";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
@@ -90,61 +88,6 @@ const ALTERNATIVE_ENTRY_STRATEGIES = [
   },
 ];
 
-function FamilySpaceSection() {
-  const status = useFamilySpaceStatus();
-
-  if (status.loading) {
-    return (
-      <div className="mt-3 space-y-2" role="status" aria-live="polite">
-        <span className="sr-only">جارٍ تحميل حالة مساحة الأسرة</span>
-        <div className="h-16 animate-pulse rounded-2xl bg-muted" />
-      </div>
-    );
-  }
-
-  if (!status.signedIn) {
-    return (
-      <Link
-        to="/auth"
-        className="mt-3 flex items-center justify-between gap-3 rounded-2xl border-2 border-dashed border-border bg-card p-4 transition-all hover:border-gold"
-      >
-        <span className="flex items-center gap-3">
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-muted text-muted-foreground">
-            <LogIn className="h-5 w-5" strokeWidth={2} />
-          </span>
-          <span className="text-right">
-            <span className="block text-base font-bold text-foreground">سجل مشاركاتكم السابقة</span>
-            <span className="mt-0.5 block text-sm text-muted-foreground">
-              سجّلوا الدخول لعرض المسودات والبطاقات المحفوظة.
-            </span>
-          </span>
-        </span>
-        <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground" />
-      </Link>
-    );
-  }
-
-  return (
-    <Link
-      to="/space"
-      className="mt-3 flex items-center justify-between gap-3 rounded-2xl border border-border bg-card p-4 transition-colors hover:bg-accent"
-    >
-      <span className="flex items-center gap-3">
-        <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-          <BadgeCheck className="h-5 w-5" aria-hidden />
-        </span>
-        <span>
-          <span className="block text-base font-bold">سجل مشاركاتكم السابقة</span>
-          <span className="block text-sm text-muted-foreground">
-            {status.drafts.length} مسودة · {status.approved.length} بطاقة معتمدة
-          </span>
-        </span>
-      </span>
-      <ChevronLeft className="h-5 w-5 text-muted-foreground" aria-hidden />
-    </Link>
-  );
-}
-
 function InfoTabs() {
   const [active, setActive] = useState<string | null>(null);
   const current = INFO_TABS.find((t) => t.id === active) ?? null;
@@ -222,8 +165,6 @@ function LandingPage() {
         </p>
         <p className="mt-1 text-sm font-bold text-coral">الفرصة الموجودة تكفي.</p>
       </section>
-
-      <FamilySpaceSection />
 
       {/* دعوة الاكتشاف — شبكة بنتو */}
       <section className="mt-7">
@@ -311,24 +252,21 @@ function LandingPage() {
         )}
       </section>
 
-      {/* مشاركاتي النشطة */}
+      {/* أدوات دليلي — مدخل واضح من الصفحة العامة */}
       <section className="mt-5 rounded-[2rem] border border-border bg-card p-5 shadow-card-soft">
-        <div className="flex items-center justify-between gap-3 px-1">
-          <h2 className="font-display text-lg font-bold text-foreground">مشاركاتي النشطة</h2>
-          <span className="text-xs font-bold text-teal">عرض الكل</span>
-        </div>
+        <h2 className="font-display text-lg font-bold text-foreground">أدوات دليلي</h2>
         <p className="mt-1 px-1 text-sm leading-relaxed text-muted-foreground">
-          تابعوا المشاركات الجارية وسجّلوا ما فعلتموه اليوم.
+          صمّموا معينات بصرية وجداول ووسائل تواصل تناسب أسرتكم.
         </p>
         <Link
-          to="/active-participations"
+          to="/tools"
           className="group mt-3 flex items-center justify-between gap-3 rounded-2xl border border-border bg-secondary p-4 transition-all hover:-translate-y-0.5 hover:shadow-elegant"
         >
           <span className="flex items-center gap-3">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
-              <ListChecks className="h-5 w-5" strokeWidth={2} />
+              <Images className="h-5 w-5" strokeWidth={2} />
             </span>
-            <span className="text-base font-bold text-foreground">افتحوا مشاركاتنا النشطة</span>
+            <span className="text-base font-bold text-foreground">استكشفوا الأدوات</span>
           </span>
           <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
         </Link>

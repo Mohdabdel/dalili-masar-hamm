@@ -10,6 +10,7 @@ import {
   LabGrid,
   LabChoiceCard,
   LabLinkButton,
+  LabBackLink,
 } from "@/lab/components/lab-ui";
 import {
   allSpaceEvents,
@@ -40,6 +41,7 @@ export function ExplorePage({ initialLens = "event" }: { initialLens?: Lens }) {
     <LabPage
       title="استكشف المشاركات الممكنة"
       intro="اطّلعوا على ما يحدث في يومكم، ثم اختاروا مشاركة واحدة تريدون العمل عليها."
+      back={<LabBackLink to="/">الصفحة الرئيسية</LabBackLink>}
     >
       <div role="group" aria-label="عدسة الاستكشاف" className="mb-5 grid grid-cols-2 gap-2">
         <Tab on={lens === "event"} onClick={() => setLens("event")}>

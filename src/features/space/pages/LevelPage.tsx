@@ -1,5 +1,5 @@
 import { useNavigate } from "@tanstack/react-router";
-import { LabPage, LabSection, LabNote, LabLinkButton } from "@/lab/components/lab-ui";
+import { LabPage, LabSection, LabNote, LabLinkButton, LabBackLink } from "@/lab/components/lab-ui";
 import {
   getSpaceEvent,
   levelCounts,
@@ -35,6 +35,7 @@ export function LevelPage({ eventId }: { eventId: string }) {
     <LabPage
       title={event.title}
       intro="ما مستوى المشاركة الذي يناسب ما تريدون القيام به هذه المرة؟"
+      back={<LabBackLink to={`${base}/explore`}>الاستكشاف</LabBackLink>}
     >
       <LabSection title="اختاروا المستوى">
         <div role="group" aria-label="مستوى المشاركة" className="grid grid-cols-3 gap-2 sm:gap-3">

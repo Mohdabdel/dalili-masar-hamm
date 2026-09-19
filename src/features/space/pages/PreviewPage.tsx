@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { LabPage, LabSection, LabNote, LabButton, LabLinkButton } from "@/lab/components/lab-ui";
+import { LabPage, LabSection, LabNote, LabButton, LabLinkButton, LabBackLink } from "@/lab/components/lab-ui";
 import { StepBlocks, type ComposerItem } from "@/lab/components/space/FamilyComposer";
 import { buildDraftSelection } from "@/lab/data/space/catalog";
 import { resolveSpaceSpec } from "@/features/space/spec-resolution";
@@ -136,6 +136,7 @@ export function PreviewPage({ specId }: { specId: string }) {
     <LabPage
       title={`معاينة بطاقة: ${spec.title_ar}`}
       intro="هذه هي البطاقة كما ستظهر تماماً. لم تُعتمد بعد — يمكنكم الرجوع والتعديل، أو اعتمادها كما هي."
+      back={<LabBackLink to={`${base}/workspace/$specId`} params={{ specId }}>مساحة العمل</LabBackLink>}
     >
       {participationSrc && (
         <LabSection

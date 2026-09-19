@@ -11,6 +11,7 @@ import {
   LabChoiceCard,
   LabButton,
   LabLinkButton,
+  LabBackLink,
 } from "@/lab/components/lab-ui";
 import { FamilyParticipationForm } from "@/features/space/components/FamilyParticipationForm";
 import {
@@ -105,7 +106,8 @@ export function EasyBeginningPage() {
 
   if (writingOwn) {
     return (
-      <LabPage title="لنجعل البداية سهلة" intro="اكتبوا مشاركة من موقف حقيقي في حياتكم.">
+      <LabPage title="لنجعل البداية سهلة" intro="اكتبوا مشاركة من موقف حقيقي في حياتكم."
+        back={<LabButton variant="ghost" onClick={() => setWritingOwn(false)}>العودة إلى الاقتراحات</LabButton>}>
         <FamilyParticipationForm
           submitLabel="نبدأ بهذه المشاركة"
           onSubmit={async (familyAnswers) => {
@@ -134,7 +136,10 @@ export function EasyBeginningPage() {
   if (step < QUESTIONS.length) {
     const question = QUESTIONS[step];
     return (
-      <LabPage title="لنجعل البداية سهلة" intro="بضع أسئلة عن الاهتمامات ومواقف حياة الأسرة.">
+      <LabPage title="لنجعل البداية سهلة" intro="بضع أسئلة عن الاهتمامات ومواقف حياة الأسرة."
+        back={step > 0
+          ? <LabButton variant="ghost" onClick={() => setStep((current) => current - 1)}>السؤال السابق</LabButton>
+          : <LabBackLink to="/">الصفحة الرئيسية</LabBackLink>}>
         <div className="mb-4 text-sm text-muted-foreground">
           السؤال {step + 1} من {QUESTIONS.length}
         </div>
@@ -175,7 +180,8 @@ export function EasyBeginningPage() {
   };
 
   return (
-    <LabPage title="لنجعل البداية سهلة" intro="مشاركات يمكن أن تكون نقطة بداية لأسرتكم.">
+    <LabPage title="لنجعل البداية سهلة" intro="مشاركات يمكن أن تكون نقطة بداية لأسرتكم."
+      back={<LabButton variant="ghost" onClick={() => setStep(QUESTIONS.length - 1)}>السؤال السابق</LabButton>}>
       <p className="-mt-2 mb-5 text-xs font-light text-muted-foreground">
         المسار فعّال، وترشيحات المشاركات قيد التطوير.
       </p>

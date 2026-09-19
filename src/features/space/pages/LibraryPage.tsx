@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link as RouterLink } from "@tanstack/react-router";
 import { Plus, Check, Search } from "lucide-react";
-import { LabPage, LabSection, LabNote } from "@/lab/components/lab-ui";
+import { LabPage, LabSection, LabNote, LabBackLink } from "@/lab/components/lab-ui";
 import {
   listLibraryEvents,
   libraryDomainNames,
@@ -51,6 +51,7 @@ export function LibraryPage() {
     <LabPage
       title="مكتبة الحياة"
       intro={`${total} حدثاً متاحاً في هذا النموذج. تصفحوا حسب المجال أو ابحثوا مباشرة.`}
+      back={<LabBackLink to={`${base}/explore`}>الاستكشاف</LabBackLink>}
     >
       <LabSection title="تصفية">
         <div className="grid gap-3">

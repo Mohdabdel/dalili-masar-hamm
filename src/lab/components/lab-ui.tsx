@@ -11,21 +11,44 @@ export function LabPage({
   intro,
   children,
   footer,
+  back,
 }: {
   title: string;
   intro?: string;
   children: ReactNode;
   footer?: ReactNode;
+  back?: ReactNode;
 }) {
   return (
     <section className="mx-auto w-full max-w-3xl px-4 py-6">
       <header className="mb-5">
+        {back && <nav aria-label="الرجوع" className="mb-4">{back}</nav>}
         <h1 className="text-2xl font-bold leading-snug text-foreground sm:text-3xl">{title}</h1>
         {intro && <p className="mt-2 max-w-[60ch] text-base leading-relaxed text-muted-foreground">{intro}</p>}
       </header>
       {children}
       {footer && <div className="mt-8">{footer}</div>}
     </section>
+  );
+}
+
+/** وجهة رجوع محددة؛ تبقى صالحة حتى عند فتح الصفحة مباشرة من رابط محفوظ. */
+export function LabBackLink({ to, params, children }: {
+  to: string;
+  params?: Record<string, string>;
+  children: ReactNode;
+}) {
+  return (
+    <Link
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      to={to as any}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      params={params as any}
+      className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-border px-4 text-sm font-bold text-foreground hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+    >
+      <ChevronLeft className="h-4 w-4 rotate-180" aria-hidden />
+      {children}
+    </Link>
   );
 }
 

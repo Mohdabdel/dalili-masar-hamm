@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from "react";
-import { LabPage, LabSection, LabNote, LabLinkButton } from "@/lab/components/lab-ui";
+import { LabPage, LabSection, LabNote, LabLinkButton, LabBackLink } from "@/lab/components/lab-ui";
 import { StepBlocks, type ComposerItem } from "@/lab/components/space/FamilyComposer";
 import { StepComposer, type ComposerStepRow } from "@/features/space/components/StepComposer";
 import { ConsiderationsPanel } from "@/features/space/components/ConsiderationsPanel";
@@ -339,7 +339,13 @@ export function WorkspacePage({ specId }: { specId: string }) {
   };
 
   return (
-    <LabPage title={spec.title_ar} intro={spec.eventTitle_ar}>
+    <LabPage
+      title={spec.title_ar}
+      intro={spec.eventTitle_ar}
+      back={(!selection.origin || selection.origin === "reference") && spec.eventId
+        ? <LabBackLink to={`${base}/$eventId/participations`} params={{ eventId: spec.eventId }}>اختيار المشاركة</LabBackLink>
+        : <LabBackLink to={`${base}`}>مساحة الأسرة</LabBackLink>}
+    >
       {selection.origin === "family_free" && selection.familySpec && (
         <LabSection
           title="اسم المشاركة"

@@ -4,6 +4,7 @@ import { ChevronDown, ChevronLeft, X, Menu, Info, Images, CalendarRange, Message
 import { } from "@/lab/components/lab-ui";
 import { defaultStations, getSpaceEvent } from "@/lab/data/space/catalog";
 import { resolveSpaceSpec } from "@/features/space/spec-resolution";
+import { useFamilySpaceStatus } from "@/features/space/home-status";
 import { useSlice, useSpaceBase } from "@/features/space/store";
 import { cn } from "@/lib/utils";
 
@@ -11,6 +12,7 @@ import { cn } from "@/lib/utils";
 export function SpaceHomePage() {
   const base = useSpaceBase();
   const { state, dispatch } = useSlice();
+  const familyStatus = useFamilySpaceStatus();
   const [summaryOpen, setSummaryOpen] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
   const [view, setView] = useState<"active" | "history">("active");
@@ -57,7 +59,13 @@ export function SpaceHomePage() {
     <div className="mx-auto w-full max-w-3xl px-4 pb-16 pt-5">
       {/* هيدر خفيف */}
       <header className="flex items-center justify-between gap-3">
-        <span className="text-lg font-bold text-foreground">دليلي</span>
+        <div>
+          <Link to="/" className="inline-flex min-h-10 items-center gap-1 text-sm font-bold text-muted-foreground hover:text-foreground">
+            <ChevronLeft className="h-4 w-4 rotate-180" aria-hidden />
+            الصفحة الرئيسية
+          </Link>
+          <h1 className="text-lg font-bold text-foreground">مساحة الأسرة</h1>
+        </div>
         <button
           type="button"
           onClick={() => setInfoOpen(true)}
@@ -79,6 +87,44 @@ export function SpaceHomePage() {
       </p>
 
       <Stations state={state} dispatch={dispatch} />
+
+      {base === "/space" && !familyStatus.loading && familyStatus.signedIn && (
+        <section className="mt-9">
+          <h2 className="text-lg font-bold text-foreground">مشاركاتكم المحفوظة</h2>
+          {familyStatus.drafts.length === 0 && familyStatus.approved.length === 0 ? (
+            <p className="mt-2 text-sm text-muted-foreground">لا توجد مشاركات محفوظة الآن.</p>
+          ) : (
+            <ul className="mt-3 space-y-2">
+              {familyStatus.drafts
+                .filter((draft) => !familyStatus.approved.some((card) => card.specId === draft.specId))
+                .map((draft) => (
+                <li key={draft.specId}>
+                  <Link
+                    to={`${base}/workspace/$specId`}
+                    params={{ specId: draft.specId }}
+                    className="flex min-h-11 items-center justify-between rounded-xl border border-border px-4 text-sm font-bold hover:bg-accent"
+                  >
+                    <span>{draft.title} <span className="text-muted-foreground">— مسودة</span></span>
+                    <ChevronLeft className="h-4 w-4 shrink-0" aria-hidden />
+                  </Link>
+                </li>
+              ))}
+              {familyStatus.approved.map((card) => (
+                <li key={card.specId}>
+                  <Link
+                    to={`${base}/card/$specId`}
+                    params={{ specId: card.specId }}
+                    className="flex min-h-11 items-center justify-between rounded-xl border border-border px-4 text-sm font-bold hover:bg-accent"
+                  >
+                    <span>{card.title} <span className="text-muted-foreground">— بطاقة معتمدة</span></span>
+                    <ChevronLeft className="h-4 w-4 shrink-0" aria-hidden />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
 
       {/* مشاركاتنا */}
       <section className="mt-9">
@@ -150,6 +196,16 @@ export function SpaceHomePage() {
           </>
         )}
       </section>
+
+      {base === "/space" && (
+        <Link
+          to="/active-participations"
+          className="mt-4 flex min-h-11 items-center justify-between rounded-xl border border-border px-4 text-sm font-bold text-foreground hover:bg-accent"
+        >
+          افتحوا المشاركات النشطة وتسجيل اليوم
+          <ChevronLeft className="h-4 w-4 shrink-0" aria-hidden />
+        </Link>
+      )}
 
       {/* أدوات دليلي */}
       <section className="mt-9">

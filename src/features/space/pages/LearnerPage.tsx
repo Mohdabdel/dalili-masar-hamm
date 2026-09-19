@@ -83,6 +83,9 @@ export function LearnerPage({ snapshotId }: { snapshotId: string }) {
 
   return (
     <div className="mx-auto flex min-h-[85dvh] w-full max-w-xl flex-col justify-between px-4 py-6">
+      <LabLinkButton to={`${base}/card/$specId`} params={{ specId: snap.participationSpecId }} variant="ghost">
+        العودة إلى البطاقة
+      </LabLinkButton>
       <div className="mb-4 text-center text-base font-bold text-muted-foreground" aria-live="polite">
         {isDone ? "النهاية" : `${i + 1} / ${stepFrames.length}`}
       </div>

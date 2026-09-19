@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Lock, Unlock, History, Printer, ChevronDown } from "lucide-react";
-import { LabPage, LabSection, LabNote, LabButton, LabLinkButton } from "@/lab/components/lab-ui";
+import { LabPage, LabSection, LabNote, LabButton, LabLinkButton, LabBackLink } from "@/lab/components/lab-ui";
 import { StepFrame } from "@/lab/components/StepFrame";
 import { SPACE_SUPPORT_TOOLS } from "@/lab/data/space/catalog";
 import { resolveSpaceSpec } from "@/features/space/spec-resolution";
@@ -33,6 +33,7 @@ export function CardsPage({ specId }: { specId: string }) {
     <LabPage
       title={spec.title_ar}
       intro={`${spec.eventTitle_ar} — كل البطاقات هنا تنتمي إلى هذه المشاركة، حتى لو غطّت أجزاء مختلفة منها.`}
+      back={<LabBackLink to={`${base}`}>مساحة الأسرة</LabBackLink>}
     >
       {snapshots.length === 0 ? (
         <LabNote>لا توجد بطاقة معتمدة بعد لهذه المشاركة.</LabNote>

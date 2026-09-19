@@ -6,6 +6,7 @@ import {
   LabNote,
   LabButton,
   LabLinkButton,
+  LabBackLink,
 } from "@/lab/components/lab-ui";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 import type { SliceLifecycleChoice, SliceTone } from "@/lab/slice/types";
@@ -104,6 +105,7 @@ export function FeedbackPage({
     <LabPage
       title={`كيف كانت ${snap.title_ar} اليوم؟`}
       intro="أغلقنا هذه المرة. ما يلي اختياري بالكامل: انطباع الأسرة فقط، لا تقييم ولا درجات ولا نِسَب."
+      back={<LabBackLink to={`${base}/card/$specId`} params={{ specId: snap.participationSpecId }}>البطاقة المعتمدة</LabBackLink>}
     >
       <LabSection title="انطباع اليوم" description="اختياري.">
         <div className="flex flex-wrap gap-2">

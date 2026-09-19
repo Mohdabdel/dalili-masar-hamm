@@ -5,6 +5,7 @@ import {
   LabChoiceCard,
   LabNote,
   LabLinkButton,
+  LabBackLink,
 } from "@/lab/components/lab-ui";
 import {
   getSpaceEvent,
@@ -47,6 +48,7 @@ export function EventParticipationsPage({ eventId }: { eventId: string }) {
     <LabPage
       title={`${event.title} — مستوى ${spaceLevelLabel[level]}`}
       intro="اختاروا المشاركة التي تريدون العمل عليها هذه المرة."
+      back={<LabBackLink to={`${base}/$eventId/level`} params={{ eventId }}>اختيار المستوى</LabBackLink>}
     >
       <LabSection title={`مشاركات متاحة (${specs.length})`}>
         {specs.length === 0 ? (
