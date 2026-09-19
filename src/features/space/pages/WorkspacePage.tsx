@@ -344,7 +344,9 @@ export function WorkspacePage({ specId }: { specId: string }) {
       intro={spec.eventTitle_ar}
       back={(!selection.origin || selection.origin === "reference") && spec.eventId
         ? <LabBackLink to={`${base}/$eventId/participations`} params={{ eventId: spec.eventId }}>اختيار المشاركة</LabBackLink>
-        : <LabBackLink to={`${base}`}>مساحة الأسرة</LabBackLink>}
+        : selection.origin === "family_free" && base === "/space"
+          ? <LabBackLink to="/">الصفحة الرئيسية</LabBackLink>
+          : <LabBackLink to={`${base}`}>مساحة الأسرة</LabBackLink>}
     >
       {selection.origin === "family_free" && selection.familySpec && (
         <LabSection

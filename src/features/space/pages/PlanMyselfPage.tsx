@@ -19,7 +19,7 @@ export function PlanMyselfPage() {
     if (started.current) return;
     started.current = true;
     void createBlankFamilyParticipation({ dispatch })
-      .then((specId) => navigate({ to: `${base}/workspace/$specId`, params: { specId } }))
+      .then((specId) => navigate({ to: `${base}/workspace/$specId`, params: { specId }, replace: true }))
       .catch(() => setError("لم نستطع فتح مساحة العمل الآن. جرّبوا مرة أخرى."));
   }, [base, dispatch, navigate]);
 

@@ -86,7 +86,7 @@ export function SpaceHomePage() {
         المشاركة ليست تدريبًا على الحياة… المشاركة هي الحياة نفسها.
       </p>
 
-      <Stations state={state} dispatch={dispatch} />
+      {base !== "/space" && <Stations state={state} dispatch={dispatch} />}
 
       {base === "/space" && !familyStatus.loading && familyStatus.signedIn && (
         <section className="mt-9">
