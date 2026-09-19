@@ -10,6 +10,9 @@ interface PageShellProps {
   description?: string;
   breadcrumbs?: Crumb[];
   headerExtra?: ReactNode;
+  backTo?: string;
+  backParams?: Record<string, string>;
+  backSearch?: Record<string, unknown>;
   children: ReactNode;
 }
 
@@ -19,6 +22,9 @@ export function PageShell({
   description,
   breadcrumbs,
   headerExtra,
+  backTo,
+  backParams,
+  backSearch,
   children,
 }: PageShellProps) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
@@ -28,7 +34,7 @@ export function PageShell({
       <header className="sticky top-0 z-30 bg-gradient-primary text-primary-foreground shadow-elegant">
         <div className="mx-auto max-w-2xl px-5 pt-[calc(env(safe-area-inset-top)+0.75rem)] pb-4">
           <div className="mb-2 flex items-center justify-between gap-2">
-            {!isHome ? <BackButton /> : <span />}
+            {!isHome ? <BackButton to={backTo} params={backParams} search={backSearch} /> : <span />}
             <Link
               to="/space/library"
               className="inline-flex items-center gap-1 rounded-lg bg-primary-foreground/10 px-2.5 py-1 text-[11px] font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/20"

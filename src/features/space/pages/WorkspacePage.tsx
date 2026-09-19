@@ -28,14 +28,14 @@ import type {
   LabThisTimeSelection,
 } from "@/lab/slice/types";
 
-export function WorkspacePage({ specId }: { specId: string }) {
+export function WorkspacePage({ specId, initialTab }: { specId: string; initialTab?: "tools" }) {
   const base = useSpaceBase();
   const { state, dispatch } = useSlice();
   const spec = resolveSpaceSpec(specId, state.selections);
   const { snapshotsFor } = useSliceHelpers();
   const [newBlockText, setNewBlockText] = useState("");
   const [showImagePicker, setShowImagePicker] = useState(false);
-  const [activeTab, setActiveTab] = useState<"draft" | "considerations" | "tools">("draft");
+  const [activeTab, setActiveTab] = useState<"draft" | "considerations" | "tools">(initialTab ?? "draft");
   const participationFileRef = useRef<HTMLInputElement | null>(null);
 
   const versions = snapshotsFor(specId);
@@ -588,7 +588,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
 
       <div id="tools-panel" role="tabpanel" aria-labelledby="tools-tab" hidden={activeTab !== "tools"}>
       <div className="mt-2">
-        <LabLinkButton to="/tools" variant="ghost">
+        <LabLinkButton to="/tools" search={base === "/space" ? { source: "workspace", specId } : undefined} variant="ghost">
           أدوات ووسائل داعمة
         </LabLinkButton>
       </div>

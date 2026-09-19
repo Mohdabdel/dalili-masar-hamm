@@ -7,6 +7,11 @@ import { useVisualToolProjects } from "@/lib/visual-tools/use-visual-tools";
 import { VISUAL_TOOL_TYPES, getToolMeta } from "@/lib/visual-tools/types";
 
 export const Route = createFileRoute("/tools/")({
+  validateSearch: (search: Record<string, unknown>) => ({
+    source: search.source === "workspace" && typeof search.specId === "string" && /^[A-Za-z0-9_-]{1,120}$/.test(search.specId)
+      ? ("workspace" as const) : undefined,
+    specId: typeof search.specId === "string" && /^[A-Za-z0-9_-]{1,120}$/.test(search.specId) ? search.specId : undefined,
+  }),
   head: () => ({
     meta: [
       { title: "أدوات ووسائل داعمة | دليلي" },
@@ -29,19 +34,27 @@ export const Route = createFileRoute("/tools/")({
 
 function ToolsHomePage() {
   const navigate = useNavigate();
+  const { source, specId } = Route.useSearch();
+  const returnSearch = {
+    source: source === "workspace" && specId ? source : undefined,
+    specId: source === "workspace" ? specId : undefined,
+  };
   const projects = useVisualToolProjects();
 
   function start(type: (typeof VISUAL_TOOL_TYPES)[number]["type"]) {
     const p = createProject(type);
-    navigate({ to: "/tools/$projectId", params: { projectId: p.id } });
+    navigate({ to: "/tools/$projectId", params: { projectId: p.id }, search: returnSearch });
   }
 
   return (
     <PageShell
       title="أدوات ووسائل داعمة"
       description="أدوات بصرية تصنعها الأسرة بنفسها، وتبقى محفوظة على جهازها فقط"
+      backTo={source === "workspace" && specId ? "/space/workspace/$specId" : "/"}
+      backParams={source === "workspace" && specId ? { specId } : undefined}
+      backSearch={source === "workspace" && specId ? { tab: "tools" } : undefined}
       breadcrumbs={[
-        { label: "دليلي", to: "/activities" },
+        { label: "دليلي", to: "/" },
         { label: "أدوات ووسائل داعمة" },
       ]}
     >
@@ -85,7 +98,7 @@ function ToolsHomePage() {
                     type="button"
                     className="min-w-0 flex-1 text-right"
                     onClick={() =>
-                      navigate({ to: "/tools/$projectId", params: { projectId: p.id } })
+                      navigate({ to: "/tools/$projectId", params: { projectId: p.id }, search: returnSearch })
                     }
                   >
                     <span className="block truncate text-sm font-bold text-foreground">

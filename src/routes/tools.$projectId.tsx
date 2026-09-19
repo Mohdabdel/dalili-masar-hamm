@@ -5,6 +5,11 @@ import { useHydratedTools, useVisualToolProject } from "@/lib/visual-tools/use-v
 import { getToolMeta } from "@/lib/visual-tools/types";
 
 export const Route = createFileRoute("/tools/$projectId")({
+  validateSearch: (search: Record<string, unknown>) => ({
+    source: search.source === "workspace" && typeof search.specId === "string" && /^[A-Za-z0-9_-]{1,120}$/.test(search.specId)
+      ? ("workspace" as const) : undefined,
+    specId: typeof search.specId === "string" && /^[A-Za-z0-9_-]{1,120}$/.test(search.specId) ? search.specId : undefined,
+  }),
   ssr: false,
   head: () => ({
     meta: [
@@ -29,6 +34,11 @@ export const Route = createFileRoute("/tools/$projectId")({
 
 function ToolEditorPage() {
   const { projectId } = Route.useParams();
+  const { source, specId } = Route.useSearch();
+  const returnSearch = {
+    source: source === "workspace" && specId ? source : undefined,
+    specId: source === "workspace" ? specId : undefined,
+  };
   const project = useVisualToolProject(projectId);
   const hydrated = useHydratedTools();
 
@@ -36,13 +46,15 @@ function ToolEditorPage() {
     return (
       <PageShell
         title="أدوات ووسائل داعمة"
+        backTo="/tools"
+        backSearch={returnSearch}
         breadcrumbs={[{ label: "أدوات ووسائل داعمة", to: "/tools" }]}
       >
         <p dir="rtl" className="rounded-2xl border border-dashed border-border p-6 text-center text-sm text-muted-foreground">
           {hydrated ? (
             <>
               لم نجد هذه الأداة على هذا الجهاز.{" "}
-              <Link to="/tools" className="font-semibold text-primary underline">
+              <Link to="/tools" search={returnSearch} className="font-semibold text-primary underline">
                 العودة إلى قائمة الأدوات
               </Link>
             </>
@@ -59,6 +71,8 @@ function ToolEditorPage() {
       title={project.title}
       subtitle={getToolMeta(project.type).titleAr}
       description="خاص بأسرتك — يُحفظ تلقائيًا على هذا الجهاز"
+      backTo="/tools"
+      backSearch={returnSearch}
       breadcrumbs={[
         { label: "أدوات ووسائل داعمة", to: "/tools" },
         { label: project.title },

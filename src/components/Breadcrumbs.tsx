@@ -36,13 +36,19 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
   );
 }
 
-export function BackButton() {
+export function BackButton({ to, params, search }: { to?: string; params?: Record<string, string>; search?: Record<string, unknown> }) {
   const router = useRouter();
+  const className = "inline-flex items-center gap-1 rounded-lg bg-primary-foreground/10 px-2.5 py-1 text-[11px] font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/20";
+  if (to) return (
+    <Link to={to as never} params={params as never} search={search as never} className={className} aria-label="رجوع">
+      <ChevronLeft className="h-3.5 w-3.5" /> رجوع
+    </Link>
+  );
   return (
     <button
       type="button"
       onClick={() => router.history.back()}
-      className="inline-flex items-center gap-1 rounded-lg bg-primary-foreground/10 px-2.5 py-1 text-[11px] font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/20"
+      className={className}
       aria-label="رجوع"
     >
       <ChevronLeft className="h-3.5 w-3.5" />
