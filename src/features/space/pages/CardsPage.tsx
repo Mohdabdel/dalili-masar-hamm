@@ -229,7 +229,7 @@ function SnapshotConsiderations({ ids }: { ids: string[] }) {
         className="flex min-h-11 w-full items-center justify-between gap-3 text-start text-sm font-bold"
       >
         <span>
-          اعتبارات قد تساعد
+          اعتبارات أثناء التطبيق
           <span className="ms-2 font-normal text-muted-foreground">
             ({items.length > 0 ? `${items.length} محفوظة` : "اختيارية"})
           </span>

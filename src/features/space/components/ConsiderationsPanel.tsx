@@ -4,10 +4,7 @@
 
 import { useMemo, useState } from "react";
 import { Check } from "lucide-react";
-import {
-  contextualConsiderations,
-  type ContextualConsideration,
-} from "@/features/space/considerations-context";
+import { contextualConsiderations } from "@/features/space/considerations-context";
 import type { LabParticipationSpec } from "@/lab/slice/types";
 import { cn } from "@/lib/utils";
 
@@ -25,6 +22,8 @@ export function ConsiderationsPanel({
   onToggle: (id: string, next: boolean) => void;
 }) {
   const [showAll, setShowAll] = useState(false);
+  const [activeId, setActiveId] = useState<string | null>(null);
+  const [revealedId, setRevealedId] = useState<string | null>(null);
 
   const all = useMemo(
     () => contextualConsiderations({ spec, texts, stepCount }),
@@ -34,72 +33,64 @@ export function ConsiderationsPanel({
   const selected = new Set(selectedIds);
   const visible = showAll ? all : all.filter((c) => c.suggested || selected.has(c.id));
 
-  const groups = useMemo(() => {
-    const map = new Map<string, { title: string; items: ContextualConsideration[] }>();
-    for (const item of visible) {
-      const entry = map.get(item.groupId) ?? { title: item.groupTitle, items: [] };
-      entry.items.push(item);
-      map.set(item.groupId, entry);
-    }
-    return [...map.values()];
-  }, [visible]);
+  const active = visible.find((item) => item.id === activeId) ?? visible[0];
+  const showSolutions = active?.id === revealedId;
+  const tones = ["border-teal/30 bg-teal/10", "border-coral/30 bg-coral/10", "border-primary/20 bg-accent/50", "border-border bg-muted/70"];
 
   return (
-    <details className="rounded-2xl border border-border bg-card p-3">
-      <summary className="cursor-pointer text-sm font-bold">
-        اعتبارات قد تساعد ({selectedIds.length > 0 ? `اخترتم ${selectedIds.length}` : "اختيارية"})
-      </summary>
-
-      <p className="mt-3 text-sm text-muted-foreground">
-        ملاحظات موقفية للأسرة فقط. لا شيء منها مطلوب، ولا يظهر أي منها للمشارك. اختاروا ما يناسب
-        مشاركتكم لتبقى معكم.
+    <section className="rounded-2xl border border-border bg-card p-3">
+      <h2 className="text-base font-bold">اعتبارات أثناء التطبيق</h2>
+      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+        في مواقف قد تواجهكم أثناء التطبيق، يمكنكم تجربة الحلول المقترحة.
       </p>
 
-      <div className="mt-3 space-y-4">
-        {groups.map((group) => (
-          <section key={group.title}>
-            <h3 className="mb-2 text-sm font-bold text-foreground">{group.title}</h3>
-            <ul className="space-y-2">
-              {group.items.map((item) => {
-                const isOn = selected.has(item.id);
-                return (
-                  <li
-                    key={item.id}
-                    className={cn(
-                      "rounded-xl border p-3",
-                      isOn ? "border-primary bg-accent/40" : "border-border",
-                    )}
-                  >
-                    <div className="flex items-start justify-between gap-2">
-                      <span className="min-w-0 text-base font-bold">{item.title}</span>
-                      <button
-                        type="button"
-                        onClick={() => onToggle(item.id, !isOn)}
-                        aria-pressed={isOn}
-                        className="inline-flex min-h-11 shrink-0 items-center gap-1 rounded-xl border border-border px-3 text-sm font-bold hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                      >
-                        {isOn && <Check className="h-4 w-4" aria-hidden />}
-                        {isOn ? "محفوظ معنا" : "احفظوه معنا"}
-                      </button>
-                    </div>
-                    <p className="mt-1 text-sm text-muted-foreground">{item.notice}</p>
-                    {isOn && (
-                      <>
-                        <p className="mt-2 text-sm leading-relaxed">{item.considerations}</p>
-                        <ul className="mt-2 list-disc space-y-1 pe-5 text-sm text-muted-foreground">
-                          {item.actions.map((a) => (
-                            <li key={a}>{a}</li>
-                          ))}
-                        </ul>
-                      </>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </section>
+      <div role="tablist" aria-label="مواقف أثناء التطبيق" className="mt-4 flex flex-wrap gap-2">
+        {visible.map((item, index) => (
+          <button key={item.id} type="button" role="tab" id={`situation-${item.id}`}
+            aria-controls="situation-solutions" aria-selected={active?.id === item.id}
+            tabIndex={active?.id === item.id ? 0 : -1}
+            onClick={() => { setActiveId(item.id); setRevealedId(null); }}
+            onKeyDown={(event) => {
+              const direction = event.key === "ArrowLeft" ? 1 : event.key === "ArrowRight" ? -1 : 0;
+              if (!direction && event.key !== "Home" && event.key !== "End") return;
+              event.preventDefault();
+              const next = event.key === "Home" ? 0 : event.key === "End" ? visible.length - 1
+                : (index + direction + visible.length) % visible.length;
+              setActiveId(visible[next].id);
+              setRevealedId(null);
+              const buttons = event.currentTarget.parentElement?.querySelectorAll<HTMLButtonElement>('[role="tab"]');
+              buttons?.[next]?.focus();
+            }}
+            className={cn("min-h-11 rounded-xl border px-3 py-2 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring", tones[index % tones.length],
+              active?.id === item.id && "ring-2 ring-primary ring-offset-2")}
+          >
+            {item.title}{selected.has(item.id) ? " ✓" : ""}
+          </button>
         ))}
       </div>
+
+      {active && <div id="situation-solutions" role="tabpanel" aria-labelledby={`situation-${active.id}`}
+        className="mt-4 rounded-xl border border-border bg-background p-4">
+        <h3 className="font-bold">{active.title}</h3>
+        <p className="mt-2 text-sm text-muted-foreground">{active.notice}</p>
+        <button type="button" onClick={() => setRevealedId(showSolutions ? null : active.id)}
+          aria-expanded={showSolutions} aria-controls="situation-solutions-content"
+          className="mt-3 min-h-11 rounded-xl border border-border px-3 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+          {showSolutions ? "إخفاء الحلول المقترحة" : "جرّب الحلول المقترحة"}
+        </button>
+        {showSolutions && <div id="situation-solutions-content">
+          <p className="mt-3 text-sm leading-relaxed">{active.considerations}</p>
+          <ul className="mt-3 list-disc space-y-2 pe-5 text-sm leading-relaxed">
+            {active.actions.map((action) => <li key={action}>{action}</li>)}
+          </ul>
+          <button type="button" onClick={() => onToggle(active.id, !selected.has(active.id))}
+            aria-pressed={selected.has(active.id)}
+            className="mt-4 inline-flex min-h-11 items-center gap-1 rounded-xl border border-border px-3 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+            {selected.has(active.id) && <Check className="h-4 w-4" aria-hidden />}
+            {selected.has(active.id) ? "محفوظ معنا" : "احفظوه معنا"}
+          </button>
+        </div>}
+      </div>}
 
       <button
         type="button"
@@ -108,6 +99,6 @@ export function ConsiderationsPanel({
       >
         {showAll ? "اعرضوا المناسب لهذه المشاركة فقط" : `اعرضوا كل الاعتبارات (${all.length})`}
       </button>
-    </details>
+    </section>
   );
 }

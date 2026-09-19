@@ -370,7 +370,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
         <button type="button" role="tab" id="considerations-tab" aria-controls="considerations-panel" aria-selected={activeTab === "considerations"}
           onClick={() => setActiveTab("considerations")}
           className={`min-h-11 shrink-0 rounded-xl px-3 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${activeTab === "considerations" ? "bg-primary text-primary-foreground" : "border border-border bg-card"}`}>
-          اعتبارات قد تساعد
+          اعتبارات أثناء التطبيق
         </button>
         <button type="button" role="tab" id="easier-tab" aria-controls="easier-panel" aria-selected={activeTab === "easier"}
           onClick={() => setActiveTab("easier")}
