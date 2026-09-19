@@ -1,4 +1,4 @@
-import { defineMcp } from "@lovable.dev/mcp-js";
+import { auth, defineMcp } from "@lovable.dev/mcp-js";
 import listActivities from "./tools/list-activities";
 import listMessages from "./tools/list-messages";
 import listResources from "./tools/list-resources";
