@@ -19,6 +19,8 @@ import {
   mvpSpaceEvents,
 } from "@/lab/data/space/catalog";
 import { useSpaceBase } from "@/features/space/store";
+import { CURATED_EXPLORE } from "@/features/space/curated-explore";
+import { mvpParticipationsForEvent } from "@/lab/data/space/catalog";
 import { cn } from "@/lib/utils";
 
 type Lens = "event" | "station";
@@ -28,6 +30,7 @@ export function ExplorePage({ initialLens = "event" }: { initialLens?: Lens }) {
   const [lens, setLens] = useState<Lens>(initialLens);
 
   const production = base === "/space";
+  const curated = production ? CURATED_EXPLORE[lens] : null;
   const events = (production ? mvpSpaceEvents() : allSpaceEvents()).filter(
     (e) => e.participationCount > 0,
   );
@@ -52,7 +55,22 @@ export function ExplorePage({ initialLens = "event" }: { initialLens?: Lens }) {
         </Tab>
       </div>
 
-      {lens === "event" ? (
+      {curated ? (
+        <LabSection
+          title={`${lens === "event" ? "أحداث اليوم" : "محطات روتيننا"} (${curated.length})`}
+          description="اختاروا موقفًا لفتح مشاركة محددة، ثم عدّلوا خطوات بطاقتها بما يناسب أسرتكم."
+        >
+          <LabGrid>
+            {curated.map((item) => {
+              const participation = mvpParticipationsForEvent(item.eventId).find((p) => p.id === item.specId);
+              if (!participation) return null;
+              return <LabChoiceCard key={item.specId} title={item.title}
+                hint={participation.title_ar} meta={`${participation.majorSteps.length} خطوات`}
+                to={`${base}/workspace/$specId`} params={{ specId: item.specId }} />;
+            })}
+          </LabGrid>
+        </LabSection>
+      ) : lens === "event" ? (
         <LabSection
           title={`أحداث اليوم (${events.length})`}
           description="الحدث نفسه ليس مشاركة؛ افتحوه لتروا المشاركات التي يمكن اختيارها بداخله."
@@ -97,9 +115,7 @@ export function ExplorePage({ initialLens = "event" }: { initialLens?: Lens }) {
       )}
 
       <div className="flex flex-wrap gap-3">
-        <LabLinkButton to={`${base}/library`} variant="ghost">
-          كل المشاركات
-        </LabLinkButton>
+        {!production && <LabLinkButton to={`${base}/library`} variant="ghost">كل المشاركات</LabLinkButton>}
         <LabLinkButton to="/" variant="ghost">
           رجوع
         </LabLinkButton>

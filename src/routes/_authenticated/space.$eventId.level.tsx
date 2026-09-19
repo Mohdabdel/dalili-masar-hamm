@@ -1,5 +1,6 @@
-import { createFileRoute, useParams } from "@tanstack/react-router";
+import { createFileRoute, Navigate, useParams } from "@tanstack/react-router";
 import { LevelPage } from "@/features/space/pages/LevelPage";
+import { curatedByEvent } from "@/features/space/curated-explore";
 
 export const Route = createFileRoute("/_authenticated/space/$eventId/level")({
   component: SpaceRoute,
@@ -17,5 +18,7 @@ export const Route = createFileRoute("/_authenticated/space/$eventId/level")({
 
 function SpaceRoute() {
   const { eventId } = useParams({ from: "/_authenticated/space/$eventId/level" });
+  const curated = curatedByEvent(eventId);
+  if (curated) return <Navigate to="/space/workspace/$specId" params={{ specId: curated.specId }} replace />;
   return <LevelPage eventId={eventId} />;
 }

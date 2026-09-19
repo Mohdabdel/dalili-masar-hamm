@@ -12,6 +12,7 @@ import {
   participationImageSrc,
 } from "@/features/space/participation-image";
 import { resolveStepImage, suggestStepImage } from "@/features/space/step-image";
+import { curatedBySpec } from "@/features/space/curated-explore";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 import type { LabThisTimeSelection } from "@/lab/slice/types";
 
@@ -339,6 +340,7 @@ function safePreviewImage(
   text: string,
   image: ReturnType<typeof resolveStepImage>,
 ): ReturnType<typeof resolveStepImage> {
+  if (curatedBySpec(specId)) return image;
   if (!specId.startsWith("FR-EXP12-02-")) return image;
   if (image.src?.includes("/assets/execution/expansion12-02/")) return image;
   return resolveStepImage(suggestStepImage(text, { preferredAssetCodePrefix: "VRS-EXP12-02-" }));

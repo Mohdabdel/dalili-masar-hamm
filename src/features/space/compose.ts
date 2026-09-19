@@ -14,6 +14,7 @@ import {
   suggestStepImage,
 } from "@/features/space/step-image";
 import { findFamilyBlock, isFamilyBlockId } from "@/features/space/family-blocks";
+import { curatedBySpec } from "@/features/space/curated-explore";
 import type {
   LabCardFrame,
   LabCardSnapshot,
@@ -51,6 +52,15 @@ export function imageRefFor(
   if (map && stepId in map) {
     const ref = map[stepId] ?? null;
     if (shouldUseStoredImageRef(spec.id, ref)) return ref;
+  }
+  // لا نربط صورة آلياً بنموذج الاستكشاف إلا إذا تحقق المشهد لهذه الخطوة؛
+  // تظل صور الأسرة المختارة صراحةً محفوظة في map أعلاه.
+  if (curatedBySpec(spec.id)) {
+    const verified: Record<string, string> = {
+      "FR-EXP12-02-SHOP005-OP003-S1": "VRS-EXP12-02-SHOP-PRODUCE-S01",
+      "FR-EXP12-FOOD-002-OP002-S2": "VRS-EXP12-FOOD-VEG-RINSE-001",
+    };
+    return verified[stepId] ? { sourceAssetCode: verified[stepId] } : null;
   }
   const legacySrc = selection.visualByStepId?.[stepId];
   const legacy = shouldUseLegacyVisualSrc(spec.id, legacySrc) ? refFromLegacySrc(legacySrc) : null;

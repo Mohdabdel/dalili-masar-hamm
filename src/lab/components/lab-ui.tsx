@@ -33,9 +33,10 @@ export function LabPage({
 }
 
 /** وجهة رجوع محددة؛ تبقى صالحة حتى عند فتح الصفحة مباشرة من رابط محفوظ. */
-export function LabBackLink({ to, params, children }: {
+export function LabBackLink({ to, params, search, children }: {
   to: string;
   params?: Record<string, string>;
+  search?: Record<string, unknown>;
   children: ReactNode;
 }) {
   return (
@@ -44,6 +45,7 @@ export function LabBackLink({ to, params, children }: {
       to={to as any}
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       params={params as any}
+      search={search as any}
       className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-border px-4 text-sm font-bold text-foreground hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
     >
       <ChevronLeft className="h-4 w-4 rotate-180" aria-hidden />

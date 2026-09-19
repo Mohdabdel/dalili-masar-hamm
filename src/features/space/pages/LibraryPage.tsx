@@ -9,10 +9,10 @@ import {
   defaultStations,
   listMvpLibraryEvents,
   mvpDefaultStations,
-  mvpLibraryDomainNames,
   mvpSpaceEvents,
 } from "@/lab/data/space/catalog";
 import { useSlice, useSpaceBase } from "@/features/space/store";
+import { CURATED_EXPLORE } from "@/features/space/curated-explore";
 import { cn } from "@/lib/utils";
 
 export function LibraryPage() {
@@ -23,20 +23,28 @@ export function LibraryPage() {
   const production = base === "/space";
 
   const domains = useMemo(
-    () => (production ? mvpLibraryDomainNames() : libraryDomainNames()),
+    () => production
+      ? [...new Set(mvpSpaceEvents()
+          .filter((event) => [...CURATED_EXPLORE.event, ...CURATED_EXPLORE.station].some((item) => item.eventId === event.id))
+          .map((event) => event.domainName))]
+      : libraryDomainNames(),
     [production],
   );
   const events = useMemo(
-    () =>
-      (production ? listMvpLibraryEvents : listLibraryEvents)({
+    () => {
+      const list = (production ? listMvpLibraryEvents : listLibraryEvents)({
         domainName: domain || undefined,
         query,
         limit: 60,
-      }),
+      });
+      if (!production) return list;
+      const visible = new Set([...CURATED_EXPLORE.event, ...CURATED_EXPLORE.station].map((item) => item.eventId));
+      return list.filter((event) => visible.has(event.id));
+    },
     [domain, production, query],
   );
   const total = useMemo(
-    () => (production ? mvpSpaceEvents().length : allSpaceEvents().length),
+    () => (production ? new Set([...CURATED_EXPLORE.event, ...CURATED_EXPLORE.station].map((item) => item.eventId)).size : allSpaceEvents().length),
     [production],
   );
 

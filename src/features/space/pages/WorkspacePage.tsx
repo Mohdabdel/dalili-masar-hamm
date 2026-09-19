@@ -24,6 +24,7 @@ import {
   textVisibleFor as composeTextVisibleFor,
 } from "@/features/space/compose";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
+import { curatedBySpec } from "@/features/space/curated-explore";
 import { toSupportInstance } from "@/lib/support/taxonomy";
 import type {
   LabParticipationImage,
@@ -342,7 +343,9 @@ export function WorkspacePage({ specId }: { specId: string }) {
     <LabPage
       title={spec.title_ar}
       intro={spec.eventTitle_ar}
-      back={(!selection.origin || selection.origin === "reference") && spec.eventId
+      back={base === "/space" && curatedBySpec(specId)
+        ? <LabBackLink to="/space/explore" search={{ lens: curatedBySpec(specId) }}>الاستكشاف</LabBackLink>
+        : (!selection.origin || selection.origin === "reference") && spec.eventId
         ? <LabBackLink to={`${base}/$eventId/participations`} params={{ eventId: spec.eventId }}>اختيار المشاركة</LabBackLink>
         : selection.origin === "family_free" && base === "/space"
           ? <LabBackLink to="/">الصفحة الرئيسية</LabBackLink>
@@ -638,6 +641,7 @@ function safeWorkspaceImage(
   text: string,
   image: ReturnType<typeof resolveStepImage>,
 ): ReturnType<typeof resolveStepImage> {
+  if (curatedBySpec(specId)) return image;
   if (!specId.startsWith("FR-EXP12-02-")) return image;
   if (image.src?.includes("/assets/execution/expansion12-02/")) return image;
   return resolveStepImage(suggestStepImage(text, { preferredAssetCodePrefix: "VRS-EXP12-02-" }));
