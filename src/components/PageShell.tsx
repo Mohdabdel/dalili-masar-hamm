@@ -24,7 +24,7 @@ export function PageShell({
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const isHome = pathname === "/";
   return (
-    <div className="min-h-screen bg-background pb-28">
+    <div className="min-h-screen min-w-0 bg-background pb-[calc(env(safe-area-inset-bottom)+8rem)]">
       <header className="sticky top-0 z-30 bg-gradient-primary text-primary-foreground shadow-elegant">
         <div className="mx-auto max-w-2xl px-5 pt-[calc(env(safe-area-inset-top)+0.75rem)] pb-4">
           <div className="mb-2 flex items-center justify-between gap-2">

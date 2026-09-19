@@ -16,10 +16,10 @@ export function BottomNav() {
         {tabs.map(({ to, label, icon: Icon }) => {
           const active = to === "/" ? pathname === "/" : pathname.startsWith(to);
           return (
-            <li key={to} className="flex-1">
+            <li key={to} className="min-w-0 flex-1">
               <Link
                 to={to}
-                className={`flex flex-col items-center gap-1 rounded-xl py-2 transition-all ${
+                className={`flex min-h-11 min-w-0 flex-col items-center gap-1 rounded-xl py-2 transition-all ${
                   active ? "text-primary" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -33,7 +33,7 @@ export function BottomNav() {
                     strokeWidth={active ? 2.4 : 2}
                   />
                 </span>
-                <span className={`text-[10.5px] font-semibold ${active ? "text-primary" : ""}`}>
+                <span className={`max-w-full break-words text-center text-[10.5px] font-semibold ${active ? "text-primary" : ""}`}>
                   {label}
                 </span>
               </Link>

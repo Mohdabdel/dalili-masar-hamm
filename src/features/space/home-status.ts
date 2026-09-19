@@ -23,6 +23,7 @@ export interface FamilySpaceStatus {
   signedIn: boolean;
   drafts: FamilyDraftItem[];
   approved: FamilyApprovedItem[];
+  current: FamilyApprovedItem | null;
 }
 
 const EMPTY: FamilySpaceStatus = {
@@ -30,6 +31,7 @@ const EMPTY: FamilySpaceStatus = {
   signedIn: false,
   drafts: [],
   approved: [],
+  current: null,
 };
 
 /** المشاركات المملوكة للأسرة تحمل عنوانها داخل مسودتها، لا في المكتبة المرجعية. */
@@ -68,12 +70,14 @@ export function useFamilySpaceStatus(): FamilySpaceStatus {
         return;
       }
 
-      const [draftsRes, snapshotsRes] = await Promise.all([
+      const [draftsRes, snapshotsRes, participationsRes, cardStatesRes] = await Promise.all([
         supabase.from("participation_drafts").select("spec_id, selection"),
         supabase
           .from("participation_snapshots")
-          .select("version_number, snapshot_data")
+          .select("id, family_participation_id, version_number, snapshot_data")
           .order("version_number", { ascending: true }),
+        supabase.from("active_participations").select("id, status"),
+        supabase.from("participation_card_states").select("snapshot_id, closed"),
       ]);
 
       if (cancelled) return;
@@ -85,15 +89,26 @@ export function useFamilySpaceStatus(): FamilySpaceStatus {
 
       // آخر نسخة معتمدة لكل مشاركة (الإدراج تصاعدي، فالأخير هو الأحدث).
       const latestBySpec = new Map<string, FamilyApprovedItem>();
+      const openParticipationIds = new Set((participationsRes.data ?? [])
+        .filter((row) => row.status === "active")
+        .map((row) => row.id));
+      const closedSnapshotIds = new Set((cardStatesRes.data ?? [])
+        .filter((row) => row.closed)
+        .map((row) => row.snapshot_id));
+      let current: FamilyApprovedItem | null = null;
       for (const row of snapshotsRes.data ?? []) {
         const snap = row.snapshot_data as unknown as LabCardSnapshot;
         const specId = snap?.participationSpecId ?? "";
         if (!specId) continue;
-        latestBySpec.set(specId, {
+        const item = {
           specId,
           title: specTitle(specId, snap?.participationTitle_ar),
           latestVersion: row.version_number,
-        });
+        };
+        latestBySpec.set(specId, item);
+        if (openParticipationIds.has(row.family_participation_id) && !closedSnapshotIds.has(row.id)) {
+          current = item;
+        }
       }
 
       setStatus({
@@ -101,6 +116,7 @@ export function useFamilySpaceStatus(): FamilySpaceStatus {
         signedIn: true,
         drafts,
         approved: [...latestBySpec.values()],
+        current,
       });
     })().catch(() => {
       if (!cancelled) setStatus((s) => ({ ...s, loading: false }));

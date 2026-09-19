@@ -10,7 +10,6 @@ import {
   LabGrid,
   LabChoiceCard,
   LabButton,
-  LabLinkButton,
   LabBackLink,
 } from "@/lab/components/lab-ui";
 import { FamilyParticipationForm } from "@/features/space/components/FamilyParticipationForm";
@@ -24,6 +23,7 @@ import {
   createFrameworkCandidateParticipation,
 } from "@/features/space/entry-create";
 import { useSlice, useSpaceBase } from "@/features/space/store";
+import type { FunctionalParticipation } from "@/lib/framework/reference-model";
 
 const QUESTIONS = [
   {
@@ -101,6 +101,7 @@ export function EasyBeginningPage() {
   const [answers, setAnswers] = useState<Partial<EasyStartAnswers>>({});
   const [writingOwn, setWritingOwn] = useState(false);
   const [error, setError] = useState("");
+  const [openingId, setOpeningId] = useState<string | null>(null);
   const goWorkspace = (specId: string) =>
     navigate({ to: `${base}/workspace/$specId`, params: { specId } });
 
@@ -124,11 +125,6 @@ export function EasyBeginningPage() {
           }}
         />
         {error && <p className="mt-3 text-sm font-bold text-destructive">{error}</p>}
-        <div className="mt-6">
-          <LabButton variant="ghost" onClick={() => setWritingOwn(false)}>
-            العودة إلى الأسئلة
-          </LabButton>
-        </div>
       </LabPage>
     );
   }
@@ -140,8 +136,13 @@ export function EasyBeginningPage() {
         back={step > 0
           ? <LabButton variant="ghost" onClick={() => setStep((current) => current - 1)}>السؤال السابق</LabButton>
           : <LabBackLink to="/">الصفحة الرئيسية</LabBackLink>}>
-        <div className="mb-4 text-sm text-muted-foreground">
-          السؤال {step + 1} من {QUESTIONS.length}
+        <div className="sticky top-0 z-20 mb-5 rounded-xl border border-border bg-background/95 p-3 backdrop-blur"
+          role="progressbar" aria-label="تقدم أسئلة البداية"
+          aria-valuemin={1} aria-valuemax={QUESTIONS.length} aria-valuenow={step + 1}>
+          <span className="mb-2 block text-sm font-bold">{step + 1} من {QUESTIONS.length}</span>
+          <div className="h-2 overflow-hidden rounded-full bg-muted" aria-hidden>
+            <div className="h-full rounded-full bg-primary" style={{ width: `${((step + 1) / QUESTIONS.length) * 100}%` }} />
+          </div>
         </div>
         <LabSection title={question.title} description={question.hint}>
           <LabGrid>
@@ -157,16 +158,6 @@ export function EasyBeginningPage() {
             ))}
           </LabGrid>
         </LabSection>
-        <div className="flex flex-wrap gap-3">
-          {step > 0 && (
-            <LabButton variant="ghost" onClick={() => setStep((current) => current - 1)}>
-              السابق
-            </LabButton>
-          )}
-          <LabLinkButton to="/" variant="ghost">
-            رجوع
-          </LabLinkButton>
-        </div>
       </LabPage>
     );
   }
@@ -178,47 +169,68 @@ export function EasyBeginningPage() {
     source: "family" as const,
     familyText: easyStartContextText(completed),
   };
+  const openCandidate = async (candidate: FunctionalParticipation) => {
+    if (openingId) return;
+    setOpeningId(candidate.id);
+    try {
+      const specId = await createFrameworkCandidateParticipation({
+        participation: candidate,
+        preferredContext,
+        dispatch,
+      });
+      goWorkspace(specId);
+    } catch {
+      setError("لم نستطع بدء المشاركة الآن. جرّبوا مرة أخرى.");
+      setOpeningId(null);
+    }
+  };
 
   return (
     <LabPage title="لنجعل البداية سهلة" intro="مشاركات يمكن أن تكون نقطة بداية لأسرتكم."
       back={<LabButton variant="ghost" onClick={() => setStep(QUESTIONS.length - 1)}>السؤال السابق</LabButton>}>
-      <p className="-mt-2 mb-5 text-xs font-light text-muted-foreground">
-        المسار فعّال، وترشيحات المشاركات قيد التطوير.
+      <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
+        رتّبنا الاقتراحات استنادًا إلى إجاباتكم؛ اختاروا ما يناسب واقعكم.
       </p>
-      <LabSection title="اقتراحات البداية">
-        <LabGrid>
-          {candidates.map((candidate) => (
-            <LabChoiceCard
-              key={candidate.id}
-              title={candidate.title}
-              hint={candidate.life_context}
-              meta={`${candidate.execution_blocks.length} خطوات`}
-              onClick={async () => {
-                try {
-                  const specId = await createFrameworkCandidateParticipation({
-                    participation: candidate,
-                    preferredContext,
-                    dispatch,
-                  });
-                  goWorkspace(specId);
-                } catch {
-                  setError("لم نستطع بدء المشاركة الآن. جرّبوا مرة أخرى.");
-                }
-              }}
-            />
-          ))}
-        </LabGrid>
-        {error && <p className="mt-3 text-sm font-bold text-destructive">{error}</p>}
-      </LabSection>
-      <LabNote>يمكنكم اختيار اقتراح، أو تعديل الإجابات، أو كتابة مشاركة من حياتكم.</LabNote>
-      <div className="flex flex-wrap gap-3">
-        <LabButton variant="ghost" onClick={() => setStep(0)}>
+      {candidates[0] && (
+        <LabSection title="أقرب اقتراح لإجاباتكم">
+          <SuggestionCard candidate={candidates[0]} onOpen={() => void openCandidate(candidates[0])} disabled={openingId !== null} />
+        </LabSection>
+      )}
+      {candidates.length > 1 && (
+        <LabSection title="اقتراحات أخرى">
+          <div className="space-y-3">
+            {candidates.slice(1).map((candidate) => (
+              <SuggestionCard key={candidate.id} candidate={candidate} onOpen={() => void openCandidate(candidate)} disabled={openingId !== null} />
+            ))}
+          </div>
+        </LabSection>
+      )}
+      {candidates.length === 0 && <LabNote>لا توجد اقتراحات متاحة حاليًا. يمكنكم إضافة فرصة من حياتكم.</LabNote>}
+      {error && <p role="alert" className="mt-3 text-sm font-bold text-destructive">{error}</p>}
+      <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm font-bold text-primary">
+        <button type="button" className="min-h-11 underline underline-offset-4" onClick={() => setStep(0)}>
           تعديل الإجابات
-        </LabButton>
-        <LabButton variant="ghost" onClick={() => setWritingOwn(true)}>
-          نكتب مشاركتنا بأنفسنا
-        </LabButton>
+        </button>
+        <button type="button" className="min-h-11 underline underline-offset-4" onClick={() => setWritingOwn(true)}>
+          إضافة فرصة أخرى
+        </button>
       </div>
     </LabPage>
+  );
+}
+
+function SuggestionCard({ candidate, onOpen, disabled }: {
+  candidate: FunctionalParticipation;
+  onOpen: () => void;
+  disabled: boolean;
+}) {
+  return (
+    <button type="button" onClick={onOpen} disabled={disabled}
+      className="w-full min-w-0 rounded-2xl border border-border bg-card p-4 text-start hover:border-primary/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-60">
+      <span className="block break-words text-lg font-bold">{candidate.title}</span>
+      <span className="mt-2 block break-words text-sm text-muted-foreground">الموقف: {candidate.life_context}</span>
+      <span className="mt-1 block text-sm text-muted-foreground">عدد الخطوات: {candidate.execution_blocks.length}</span>
+      <span className="mt-3 block font-bold text-primary">عرض الخطوات</span>
+    </button>
   );
 }

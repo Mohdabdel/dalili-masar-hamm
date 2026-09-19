@@ -9,6 +9,7 @@ import {
   Images,
 } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
+import { useFamilySpaceStatus } from "@/features/space/home-status";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
@@ -148,47 +149,50 @@ function InfoTabs() {
 
 function LandingPage() {
   const [showAlternatives, setShowAlternatives] = useState(false);
+  const family = useFamilySpaceStatus();
+  const hasApprovedCard = family.signedIn && family.approved.length > 0;
   return (
     <PageShell
       title="دليلي"
       description="مساحة مشاركات الأسرة داخل الحياة اليومية"
       headerExtra={<InfoTabs />}
     >
-      {/* مقدمة مختصرة — بطاقة التعريف */}
-      <section className="relative mt-1 overflow-hidden rounded-[2rem] border border-border bg-card p-5 shadow-card-soft">
-        <span aria-hidden className="absolute inset-y-0 start-0 w-1.5 rounded-s-[2rem] bg-coral" />
-        <p className="max-w-[52ch] text-[0.98rem] font-bold leading-relaxed text-foreground">
-          دليلي يساعد الأسرة على تهيئة فرص مشاركة الأشخاص ذوي الإعاقة في أحداث حياتهم اليومية.
-        </p>
-        <p className="mt-3 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
-          المشاركة ليست تدريبًا على الحياة… المشاركة هي الحياة نفسها.
-        </p>
-        <p className="mt-1 text-sm font-bold text-coral">الفرصة الموجودة تكفي.</p>
-      </section>
-
-      {/* دعوة الاكتشاف — شبكة بنتو */}
-      <section className="mt-7">
-        <h2 className="px-1 font-display text-lg font-bold leading-snug text-foreground">
-          هل تفكرون في مشاركة ابنكم أو ابنتكم في بعض أحداث حياتكم اليومية؟
-        </h2>
-        <p className="mt-1 px-1 text-sm leading-relaxed text-muted-foreground">
-          ابدأوا بمسار موجه بسيط، أو تخطّوه إذا كنتم تعرفون ما تريدون.
-        </p>
-
-        <Link
-          to="/space/easy"
-          className="mt-3 flex min-h-40 flex-col justify-between gap-3 rounded-[2rem] border border-teal bg-teal p-5 text-teal-foreground shadow-card-soft transition-all hover:-translate-y-0.5 hover:shadow-elegant"
-        >
+      {/* أول إجراء حسب مشاركات الأسرة، بعد حسم حالة الدخول. */}
+      <section className="mt-1">
+        {family.loading ? (
+          <p role="status" className="rounded-2xl border border-border p-5 text-sm text-muted-foreground">جارٍ تحميل مساحة الأسرة…</p>
+        ) : family.current ? (
+          <Link
+            to="/space/card/$specId"
+            params={{ specId: family.current.specId }}
+            className="flex min-h-32 flex-col justify-between gap-3 rounded-[2rem] bg-teal p-5 text-teal-foreground shadow-card-soft"
+          >
+            <span className="text-xl font-bold">متابعة المشاركة</span>
+            <span className="text-base">{family.current.title}</span>
+          </Link>
+        ) : (
+          <Link
+            to="/space/easy"
+            className="flex min-h-40 flex-col justify-between gap-3 rounded-[2rem] bg-teal p-5 text-teal-foreground shadow-card-soft transition-all hover:shadow-elegant"
+          >
           <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-teal-foreground/20">
             <Sparkles className="h-5 w-5" aria-hidden />
           </span>
           <span>
-            <span className="block text-lg font-bold">لنجعل البداية سهلة</span>
+            <span className="block text-lg font-bold">ابدأوا مشاركة جديدة</span>
             <span className="mt-1 block text-sm leading-relaxed text-teal-foreground/80">
-              أسئلة قصيرة تقترح بدايات مبنية على الاهتمامات ومواقف حياة الأسرة.
+              أجيبوا عن 5 أسئلة قصيرة لنقترح فرص مشاركة من مواقف حياة أسرتكم اليومية.
             </span>
           </span>
-        </Link>
+          </Link>
+        )}
+
+        {!hasApprovedCard && (
+          <div className="mt-5 rounded-2xl border border-border bg-card p-4">
+            <p className="font-bold leading-relaxed text-foreground">دليلي يساعد الأسرة على تهيئة فرص مشاركة الأشخاص ذوي الإعاقة في أحداث حياتهم اليومية.</p>
+            <p className="mt-2 text-sm text-muted-foreground">المشاركة ليست تدريبًا على الحياة… المشاركة هي الحياة نفسها. الفرصة الموجودة تكفي.</p>
+          </div>
+        )}
 
         <button
           type="button"
@@ -196,7 +200,7 @@ function LandingPage() {
           aria-expanded={showAlternatives}
           className="mx-auto mt-3 block min-h-11 px-4 text-sm font-bold text-primary underline underline-offset-4"
         >
-          {showAlternatives ? "إخفاء الطرق الأخرى" : "تخطّي واختيار طريقة أخرى"}
+          {showAlternatives ? "إخفاء طرق البدء الأخرى" : "طرق أخرى لبدء المشاركة"}
         </button>
 
         {showAlternatives && (
