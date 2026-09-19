@@ -2,6 +2,7 @@ import { useMemo, useRef, useState } from "react";
 import { LabPage, LabSection, LabNote, LabLinkButton, LabBackLink } from "@/lab/components/lab-ui";
 import { StepBlocks, type ComposerItem } from "@/lab/components/space/FamilyComposer";
 import { StepComposer, type ComposerStepRow } from "@/features/space/components/StepComposer";
+import { FamilyPhotoLibrary } from "@/features/space/components/FamilyPhotoLibrary";
 import { ConsiderationsPanel } from "@/features/space/components/ConsiderationsPanel";
 import {
   SupportGenerator,
@@ -245,6 +246,14 @@ export function WorkspacePage({ specId }: { specId: string }) {
     }
   };
 
+  const pickFamilyImage = (stepId: string, path: string) => {
+    const ref: LabStepImageRef = { sourceAssetCode: "", uploadedPath: path };
+    setSelection({
+      imageRefByStepId: { ...(selection.imageRefByStepId ?? {}), [stepId]: ref },
+      ...syncLegacy(stepId, imageVisibleFor(stepId), textVisibleFor(stepId), ""),
+    });
+  };
+
   const setText = (stepId: string, text: string) =>
     setSelection({
       familyTextByStepId: { ...(selection.familyTextByStepId ?? {}), [stepId]: text },
@@ -381,6 +390,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
           onToggleText={toggleText}
           onPickImage={pickImage}
           onUploadImage={uploadImage}
+          onPickFamilyImage={pickFamilyImage}
           onMove={move}
           onRemove={removeStep}
           showSourceText={hasReferenceWording(spec)}
@@ -469,6 +479,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
             )}
           </div>
         </div>
+        <FamilyPhotoLibrary onSelect={(path) => setParticipationImage({ source: "family_upload", uploadedPath: path })} />
         {showImagePicker && (
           <ul className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-5">
             {stepImageOptions().map((option) => (

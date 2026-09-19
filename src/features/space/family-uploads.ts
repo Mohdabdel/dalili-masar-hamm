@@ -81,3 +81,22 @@ export async function uploadFamilyImage(file: File): Promise<string> {
   await ensureUploadedUrl(path);
   return path;
 }
+
+/** صور مجلد الأسرة الحالي فقط؛ تعتمد القراءة على سياسة التخزين الخاصة بالمستخدم. */
+export async function listFamilyImages(): Promise<{ path: string; url: string }[]> {
+  const { data: userData, error: userError } = await supabase.auth.getUser();
+  if (userError || !userData.user) throw new Error("لا توجد جلسة دخول فعالة");
+  const folder = userData.user.id;
+  const paths: string[] = [];
+  for (let offset = 0; ; offset += 100) {
+    const { data, error } = await supabase.storage.from(BUCKET).list(folder, {
+      limit: 100, offset, sortBy: { column: "name", order: "desc" },
+    });
+    if (error) throw error;
+    paths.push(...(data ?? []).filter((item) => item.id !== null && /^.+\.(png|jpe?g|webp|gif|avif)$/i.test(item.name))
+      .map((item) => `${folder}/${item.name}`));
+    if (!data || data.length < 100) break;
+  }
+  const urls = await Promise.all(paths.map((path) => ensureUploadedUrl(path)));
+  return paths.flatMap((path, index) => urls[index] ? [{ path, url: urls[index]! }] : []);
+}

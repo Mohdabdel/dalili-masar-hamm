@@ -16,6 +16,7 @@ import {
   X,
 } from "lucide-react";
 import { stepImageOptions, type ResolvedStepImage } from "@/features/space/step-image";
+import { FamilyPhotoLibrary } from "@/features/space/components/FamilyPhotoLibrary";
 import { cn } from "@/lib/utils";
 
 export interface ComposerStepRow {
@@ -37,6 +38,7 @@ export function StepComposer({
   onToggleText,
   onPickImage,
   onUploadImage,
+  onPickFamilyImage,
   onMove,
   onRemove,
   showSourceText = true,
@@ -49,6 +51,7 @@ export function StepComposer({
   onPickImage: (stepId: string, assetCode: string | null) => void;
   /** يرفع صورة من جهاز الأسرة ويختارها لهذه الخطوة. */
   onUploadImage?: (stepId: string, file: File) => Promise<void> | void;
+  onPickFamilyImage?: (stepId: string, path: string) => void;
   onMove: (stepId: string, direction: -1 | 1) => void;
   onRemove: (stepId: string) => void;
   /** العبارة المرجعية تُعرض فقط حين يكون للمشاركة مصدر مرجعي ثابت. */
@@ -253,6 +256,10 @@ export function StepComposer({
           {pickerFor === activeRow.stepId && (
             <div className="mt-3 rounded-2xl border border-border p-2">
               <p className="mb-2 px-1 text-sm font-bold">اختاروا صورة لهذه الخطوة</p>
+              {onPickFamilyImage && <FamilyPhotoLibrary key={activeRow.stepId} onSelect={(path) => {
+                onPickFamilyImage(activeRow.stepId, path);
+                setPickerFor(null);
+              }} />}
               <ul className="grid grid-cols-3 gap-2 sm:grid-cols-5">
                 {onUploadImage && (
                   <li>

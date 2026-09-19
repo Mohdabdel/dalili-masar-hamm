@@ -170,7 +170,7 @@ function LandingPage() {
             <Sparkles className="h-5 w-5" aria-hidden />
           </span>
           <span>
-            <span className="block text-lg font-bold">ابدأوا مشاركة جديدة</span>
+            <span className="block text-lg font-bold">لنجعل البداية سهلة</span>
             <span className="mt-1 block text-sm leading-relaxed text-teal-foreground/80">
               أجيبوا عن 5 أسئلة قصيرة لنقترح فرص مشاركة من مواقف حياة أسرتكم اليومية.
             </span>
