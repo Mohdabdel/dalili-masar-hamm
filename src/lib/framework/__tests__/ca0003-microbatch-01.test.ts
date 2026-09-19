@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import fs from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
@@ -16,7 +17,7 @@ const reviewedRecordCountPerLane = 100;
 const records = lanes.flatMap((lane) => lane.records.slice(0, reviewedRecordCountPerLane));
 const candidates = records.flatMap((record) => record.candidates);
 const mergeTargets = new Set(
-  records.flatMap((record) => record.provenance_links.map((link) => link.target_id)),
+  records.flatMap((record) => record.provenance_links.map((link: any) => link.target_id)),
 );
 const identities = records.map((record) => ({
   sourceId: record.source.legacy_id,
@@ -26,7 +27,7 @@ const identities = records.map((record) => ({
 }));
 const normalize = (value: string) =>
   value.normalize("NFKC").replace(/[«».,،؛:()]/gu, " ").replace(/\s+/gu, " ").trim();
-const semanticFields = (candidate) => [
+const semanticFields = (candidate: any) => [
   candidate.life_context,
   candidate.functional_intent,
   candidate.observable_effect,
@@ -34,14 +35,14 @@ const semanticFields = (candidate) => [
   candidate.standalone_role_meaning,
   ...Object.values(candidate.complexity.dimensions),
   candidate.complexity.rationale,
-  ...candidate.execution_blocks.map((block) => block.text),
+  ...candidate.execution_blocks.map((block: any) => block.text),
 ];
 
 describe("CA-0003 reviewed micro-batches substantive acceptance", () => {
   it("matches every reviewed frozen source in each lane", () => {
     expect(records).toHaveLength(reviewedRecordCountPerLane * 3);
     for (const record of records) {
-      const frozen = selection.records.find((row) => row.legacy_id === record.source.legacy_id);
+      const frozen = selection.records.find((row: any) => row.legacy_id === record.source.legacy_id);
       expect(record.source).toEqual(frozen);
     }
   });
@@ -63,7 +64,7 @@ describe("CA-0003 reviewed micro-batches substantive acceptance", () => {
         parentEventId: record.source.source_identity.parent_event_id,
         domainId: record.source.source_identity.domain_id,
         disposition: record.source.disposition,
-        candidateIds: record.candidates.map((candidate) => candidate.id),
+        candidateIds: record.candidates.map((candidate: any) => candidate.id),
         mergeTargetId: record.provenance_links[0]?.target_id,
         declaredRoute: record.route,
         materializationPerformed: false,

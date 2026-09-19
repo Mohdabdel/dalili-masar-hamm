@@ -198,7 +198,7 @@ function LandingPage() {
           <div className="mt-3 grid gap-3 sm:grid-cols-2">
             {ALTERNATIVE_ENTRY_STRATEGIES.map(
               ({ title, description, icon: Icon, to, tone, search }) => {
-                const filled = tone === "teal";
+                const filled = (tone as string) === "teal";
                 return (
                   <Link
                     key={title}

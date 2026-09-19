@@ -11,7 +11,7 @@ import { safeAuthReturnPath } from "@/lib/auth-return";
 
 export const Route = createFileRoute("/auth")({
   ssr: false,
-  validateSearch: (search: Record<string, unknown>) => ({
+  validateSearch: (search: Record<string, unknown>): { returnTo?: string } => ({
     returnTo: safeAuthReturnPath(search.returnTo),
   }),
   head: () => ({

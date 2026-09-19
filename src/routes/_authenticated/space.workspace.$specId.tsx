@@ -2,7 +2,7 @@ import { createFileRoute, useParams } from "@tanstack/react-router";
 import { WorkspacePage } from "@/features/space/pages/WorkspacePage";
 
 export const Route = createFileRoute("/_authenticated/space/workspace/$specId")({
-  validateSearch: (search: Record<string, unknown>) => ({
+  validateSearch: (search: Record<string, unknown>): { tab?: "tools" } => ({
     tab: search.tab === "tools" ? ("tools" as const) : undefined,
   }),
   component: SpaceRoute,

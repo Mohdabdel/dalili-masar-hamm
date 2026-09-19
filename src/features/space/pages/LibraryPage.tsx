@@ -38,7 +38,7 @@ export function LibraryPage() {
         limit: 60,
       });
       if (!production) return list;
-      const visible = new Set([...CURATED_EXPLORE.event, ...CURATED_EXPLORE.station].map((item) => item.eventId));
+      const visible = new Set<string>([...CURATED_EXPLORE.event, ...CURATED_EXPLORE.station].map((item) => item.eventId));
       return list.filter((event) => visible.has(event.id));
     },
     [domain, production, query],
