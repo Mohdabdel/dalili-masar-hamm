@@ -42,7 +42,7 @@ function AuthPage() {
   const { returnTo } = Route.useSearch();
 
   const continueJourney = useCallback(() => {
-    window.location.replace(returnTo);
+    window.location.replace(returnTo ?? "/");
   }, [returnTo]);
 
   useEffect(() => {
