@@ -46,7 +46,7 @@ describe("discovery gate", () => {
       const spec = getSpaceSpec(id)!;
       expect(spec, id).toBeTruthy();
       expect(classifyReferenceSource(id)?.source).toBe("framework_reference");
-      expect(participationsForEvent(spec.eventId).some((s) => s.id === id)).toBe(true);
+      expect(participationsForEvent(spec.eventId).some((s) => s.id === id)).toBe(id !== "FR-B03-COMM-002-OP001");
       const lineage = getBatch03Lineage(id)!;
       for (const legacyId of lineage.source_evidence_ids) {
         expect(participationsForEvent(spec.eventId).some((s) => s.id === `KB-${legacyId}`)).toBe(false);

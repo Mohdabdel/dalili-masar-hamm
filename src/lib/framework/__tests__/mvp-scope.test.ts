@@ -12,8 +12,8 @@ import { classifyReferenceSource } from "../source-boundary";
 describe("DALILI MVP scope 01", () => {
   it("يثبت حزمة من 30 مشاركة فقط ولا يحول 1413 Legacy إلى هدف", () => {
     expect(MVP_SCOPE_ID).toBe("DALILI_MVP_SCOPE_01");
-    expect(MVP_SCOPE_PARTICIPATION_IDS).toHaveLength(30);
-    expect(new Set(MVP_SCOPE_PARTICIPATION_IDS).size).toBe(30);
+    expect(MVP_SCOPE_PARTICIPATION_IDS).toHaveLength(29);
+    expect(new Set(MVP_SCOPE_PARTICIPATION_IDS).size).toBe(29);
     expect(MVP_SCOPE_PARTICIPATION_IDS.every((id) => !id.startsWith("KB-"))).toBe(true);
   });
 

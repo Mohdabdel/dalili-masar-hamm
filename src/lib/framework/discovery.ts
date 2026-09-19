@@ -35,8 +35,13 @@ export function discoverableFrameworkParticipations(): FunctionalParticipation[]
 export function frameworkParticipationsForEvent(
   eventId: string,
 ): FunctionalParticipation[] {
-  return discoverableFrameworkParticipations().filter(
-    (p) => p.event_id === eventId,
+  const all = discoverableFrameworkParticipations();
+  const migratedLegacyIds = new Set(
+    all.map((p) => getMigrationLineage(p.id)?.legacy_id).filter((id): id is string => Boolean(id)),
+  );
+  return all.filter((p) =>
+    p.event_id === eventId &&
+    !(getBatch03Lineage(p.id)?.source_evidence_ids.some((id) => migratedLegacyIds.has(id))),
   );
 }
 

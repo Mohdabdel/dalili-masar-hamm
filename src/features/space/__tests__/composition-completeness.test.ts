@@ -32,6 +32,31 @@ function baseSelection(): LabThisTimeSelection {
 }
 
 describe("family-created execution blocks", () => {
+  it("preserves an explicit family image or deletion on EXP12-02 through approval", () => {
+    const expandedSpec = { ...spec, id: "FR-EXP12-02-SHOP005-OP003", provenance: "framework_reference" as const };
+    const selection: LabThisTimeSelection = {
+      ...baseSelection(), specId: expandedSpec.id,
+      imageRefByStepId: { S1: { sourceAssetCode: "VRS-B03-COMM-PICNIC-PREP-001" } },
+    };
+    const chosen = composeDraft(expandedSpec, selection)[0];
+    expect(chosen.imageRef?.sourceAssetCode).toBe("VRS-B03-COMM-PICNIC-PREP-001");
+    const snapshot = buildFrozenSnapshot({
+      spec: expandedSpec, selection, rows: [chosen], version: 1,
+      label_ar: "اختيار الأسرة", date: "2026-09-19", supportAssets: [],
+    });
+    expect(snapshot.frames[0].sourceAssetCode).toBe("VRS-B03-COMM-PICNIC-PREP-001");
+    const removed = composeDraft(expandedSpec, {
+      ...selection, imageRefByStepId: { S1: null },
+    })[0];
+    expect(removed.imageRef).toBeNull();
+    expect(removed.image.src).toBeNull();
+    expect(removed.assetCode).toBeNull();
+    const uploaded = composeDraft(expandedSpec, {
+      ...selection, imageRefByStepId: { S1: { sourceAssetCode: "", uploadedPath: "family/photo.jpg" } },
+    })[0];
+    expect(uploaded.imageRef?.uploadedPath).toBe("family/photo.jpg");
+    expect(uploaded.assetCode).toBeNull();
+  });
   it("gets a stable id that is neither an index nor a master step id", () => {
     const block = createFamilyBlock("يمسك الوعاء");
     expect(isFamilyBlockId(block.id)).toBe(true);

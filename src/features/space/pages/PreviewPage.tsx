@@ -11,8 +11,6 @@ import {
   participationImagePaths,
   participationImageSrc,
 } from "@/features/space/participation-image";
-import { resolveStepImage, suggestStepImage } from "@/features/space/step-image";
-import { curatedBySpec } from "@/features/space/curated-explore";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 import type { LabThisTimeSelection } from "@/lab/slice/types";
 
@@ -64,16 +62,7 @@ export function PreviewPage({ specId }: { specId: string }) {
     void uploadsTick; // يعيد الحساب بعد وصول الروابط الموقّعة.
     return spec ? composeDraft(spec, selection) : [];
   }, [spec, selection, uploadsTick]);
-  const safeRows = useMemo(
-    () =>
-      spec
-        ? rows.map((r) => ({
-            ...r,
-            image: safePreviewImage(spec.id, r.familyText, r.image),
-          }))
-        : rows,
-    [rows, spec],
-  );
+  const safeRows = rows;
 
   // خطوة صالحة للاعتماد: تعرض صورة، أو نصاً غير فارغ. الخطوة الفارغة لا تُعتمد.
   const validRows = useMemo(
@@ -88,7 +77,7 @@ export function PreviewPage({ specId }: { specId: string }) {
   const blankRows = safeRows.length - validRows.length;
   // لا اعتماد قبل اكتمال اشتقاق روابط صور الأسرة — وإلا تُجمّد البطاقة بلا صور.
   const uploadsPending = uploadedPaths.some((p) => !peekUploadedUrl(p));
-  const titleReady = spec?.title_ar.trim().length > 0 && spec.title_ar !== "مشاركة جديدة";
+  const titleReady = Boolean(spec?.title_ar.trim()) && spec?.title_ar !== "مشاركة جديدة";
 
   if (!spec) {
     return (
@@ -333,15 +322,4 @@ export function PreviewPage({ specId }: { specId: string }) {
       </div>
     </LabPage>
   );
-}
-
-function safePreviewImage(
-  specId: string,
-  text: string,
-  image: ReturnType<typeof resolveStepImage>,
-): ReturnType<typeof resolveStepImage> {
-  if (curatedBySpec(specId)) return image;
-  if (!specId.startsWith("FR-EXP12-02-")) return image;
-  if (image.src?.includes("/assets/execution/expansion12-02/")) return image;
-  return resolveStepImage(suggestStepImage(text, { preferredAssetCodePrefix: "VRS-EXP12-02-" }));
 }

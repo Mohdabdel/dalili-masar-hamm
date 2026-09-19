@@ -4,11 +4,13 @@
 import { supabase } from "@/integrations/supabase/client";
 import { buildFamilyParticipationRow } from "@/lib/family-participation";
 import { classifyReferenceSource } from "@/lib/framework/source-boundary";
+import { parseIdentityBlock, type FunctionalIdentityBlock } from "@/lib/framework/participation-identity";
 
 export interface ActiveParticipation {
   id: string;
   /** مرجع المكتبة — قد يكون فارغاً لمشاركة أنشأتها الأسرة بنفسها. */
   opportunity_id: string | null;
+  functional_identity?: FunctionalIdentityBlock | null;
   routine_station_id: string | null;
   status: string;
   completion_source: string | null;
@@ -23,11 +25,11 @@ export async function listActiveParticipations(): Promise<ActiveParticipation[]>
   const { data, error } = await supabase
     .from("active_participations")
     .select(
-      "id, opportunity_id, routine_station_id, status, completion_source, started_at, completed_at, closed_at",
+      "id, opportunity_id, functional_identity, routine_station_id, status, completion_source, started_at, completed_at, closed_at",
     )
     .order("started_at", { ascending: true });
   if (error) throw error;
-  return data ?? [];
+  return (data ?? []).map((row) => ({ ...row, functional_identity: parseIdentityBlock(row.functional_identity) }));
 }
 
 export async function startParticipation(input: {

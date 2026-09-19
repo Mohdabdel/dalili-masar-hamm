@@ -60,11 +60,19 @@ export function StepComposer({
   const [pickerFor, setPickerFor] = useState<string | null>(null);
   const [uploadingFor, setUploadingFor] = useState<string | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const previousIds = useRef(rows.map((row) => row.stepId));
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const options = stepImageOptions();
   const canRemove = rows.length > 1;
   const safeIndex = Math.min(activeIndex, Math.max(rows.length - 1, 0));
   const activeRow = rows[safeIndex];
+
+  useEffect(() => {
+    const ids = rows.map((row) => row.stepId);
+    const addedIndex = ids.findIndex((id) => !previousIds.current.includes(id));
+    if (addedIndex >= 0) setActiveIndex(addedIndex);
+    previousIds.current = ids;
+  }, [rows]);
 
   useEffect(() => {
     if (activeIndex > Math.max(rows.length - 1, 0)) {

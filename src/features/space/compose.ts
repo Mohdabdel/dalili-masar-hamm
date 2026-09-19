@@ -50,8 +50,8 @@ export function imageRefFor(
 ): LabStepImageRef | null {
   const map = selection.imageRefByStepId;
   if (map && stepId in map) {
-    const ref = map[stepId] ?? null;
-    if (shouldUseStoredImageRef(spec.id, ref)) return ref;
+    // An explicit choice, including removing an image, always wins over suggestions.
+    return map[stepId] ?? null;
   }
   // لا نربط صورة آلياً بنموذج الاستكشاف إلا إذا تحقق المشهد لهذه الخطوة؛
   // تظل صور الأسرة المختارة صراحةً محفوظة في map أعلاه.
@@ -85,15 +85,6 @@ function shouldUseLegacyVisualSrc(specId: string, src: string | null | undefined
     return src.includes("/assets/execution/expansion12-02/");
   }
   return true;
-}
-
-function shouldUseStoredImageRef(specId: string, ref: LabStepImageRef | null): boolean {
-  if (!ref) return true;
-  if (ref.uploadedPath) return true;
-  if (!specId.startsWith("FR-EXP12-02-")) return true;
-  const source = ref.sourceAssetCode ?? "";
-  const derived = ref.derivedAssetCode ?? "";
-  return source.startsWith("VRS-EXP12-02-") || derived.startsWith("VRS-EXP12-02-");
 }
 
 export function imageVisibleFor(selection: LabThisTimeSelection, stepId: string): boolean {

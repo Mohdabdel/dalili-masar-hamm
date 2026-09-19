@@ -10,7 +10,7 @@ describe("MVP discovery surface", () => {
     expect(participations.map((participation) => participation.id).sort()).toEqual(
       [...MVP_SCOPE_PARTICIPATION_IDS].sort(),
     );
-    expect(participations).toHaveLength(30);
+    expect(participations).toHaveLength(29);
     expect(participations.every((participation) => !participation.id.startsWith("KB-"))).toBe(true);
   });
 });

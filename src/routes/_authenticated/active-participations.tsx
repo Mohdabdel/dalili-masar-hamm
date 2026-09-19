@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { toast } from "sonner";
 import { PageShell } from "@/components/PageShell";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,8 @@ import {
   type ParticipationCardData,
 } from "@/components/ParticipationCard";
 import { findOpportunityContextById } from "@/lib/knowledge-base";
+import { supabase } from "@/integrations/supabase/client";
+import { familySpecId } from "@/lib/entry/family-spec";
 import { partOfDayLabel, isPartOfDay } from "@/lib/daily-events";
 import {
   getActiveRoutine,
@@ -48,7 +50,9 @@ export const Route = createFileRoute("/_authenticated/active-participations")({
 });
 
 function ActiveParticipationsPage() {
+  const navigate = useNavigate();
   const [items, setItems] = useState<ActiveParticipation[]>([]);
+  const [draftTitles, setDraftTitles] = useState<Record<string, string>>({});
   const [stations, setStations] = useState<RoutineStation[]>([]);
   const [logs, setLogs] = useState<DailyLog[]>([]);
   const [loading, setLoading] = useState(true);
@@ -57,11 +61,17 @@ function ActiveParticipationsPage() {
 
   const load = async () => {
     try {
-      const [list, todayLogs, routine] = await Promise.all([
+      const [list, todayLogs, routine, drafts] = await Promise.all([
         listActiveParticipations(),
         listTodayLogs(),
         getActiveRoutine(),
+        supabase.from("participation_drafts").select("spec_id, selection"),
       ]);
+      if (drafts.error) throw drafts.error;
+      setDraftTitles(Object.fromEntries((drafts.data ?? []).map((draft) => [
+        draft.spec_id,
+        (draft.selection as { familySpec?: { title_ar?: string } } | null)?.familySpec?.title_ar?.trim() || "مشاركة جديدة",
+      ])));
       setItems(list);
       setLogs(todayLogs);
       setStations(routine ? await getStations(routine.id) : []);
@@ -158,6 +168,8 @@ function ActiveParticipationsPage() {
                 <ul className="space-y-2">
                   {list.map((item) => {
                     const ctx = findOpportunityContextById(item.opportunity_id ?? "");
+                    const familySpec = familySpecId(item.id);
+                    const familyDraft = draftTitles[familySpec];
                     const log = logs.find(
                       (l) => l.active_participation_id === item.id,
                     );
@@ -170,10 +182,10 @@ function ActiveParticipationsPage() {
                               <p className="text-base font-bold text-foreground">
                                 {ctx?.opportunity.card?.title ??
                                   ctx?.opportunity.name ??
-                                  item.opportunity_id}
+                                  familyDraft ?? item.functional_identity?.title ?? "مشاركة جديدة"}
                               </p>
                               <p className="mt-1 text-xs text-muted-foreground">
-                                {ctx ? `${ctx.domain.name} › ${ctx.event.name}` : ""}
+                                {ctx ? `${ctx.domain.name} › ${ctx.event.name}` : familyDraft ? "من إعداد أسرتكم" : ""}
                                 {item.status === "completed"
                                   ? ` · مكتملة${
                                       item.completion_source === "routine_station"
@@ -213,8 +225,11 @@ function ActiveParticipationsPage() {
                               <Button
                                 size="sm"
                                 variant="secondary"
-                                onClick={() => openCard(item.opportunity_id ?? "")}
-                                disabled={!item.opportunity_id}
+                                onClick={() => {
+                                  if (familyDraft) void navigate({ to: "/space/workspace/$specId", params: { specId: familySpec }, search: { tab: undefined } });
+                                  else openCard(item.opportunity_id ?? "");
+                                }}
+                                disabled={!familyDraft && !item.opportunity_id}
                               >
                                 فتح
                               </Button>

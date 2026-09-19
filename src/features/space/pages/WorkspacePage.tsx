@@ -11,7 +11,7 @@ import {
   participationImagePaths,
   participationImageSrc,
 } from "@/features/space/participation-image";
-import { stepImageOptions, suggestStepImage } from "@/features/space/step-image";
+import { stepImageOptions } from "@/features/space/step-image";
 import { resolveStepImage, resolvedAssetCode } from "@/features/space/step-image";
 import { uploadFamilyImage, useUploadedUrls } from "@/features/space/family-uploads";
 import {
@@ -272,10 +272,7 @@ export function WorkspacePage({ specId, initialTab }: { specId: string; initialT
   };
 
   const composed = composeDraft(spec, selection);
-  const safeComposed = composed.map((r) => ({
-    ...r,
-    image: safeWorkspaceImage(spec.id, r.familyText, r.image),
-  }));
+  const safeComposed = composed;
   void uploadsTick;
   const participationSrc = participationImageSrc(participationImage);
 
@@ -595,15 +592,4 @@ export function WorkspacePage({ specId, initialTab }: { specId: string; initialT
       </div>
     </LabPage>
   );
-}
-
-function safeWorkspaceImage(
-  specId: string,
-  text: string,
-  image: ReturnType<typeof resolveStepImage>,
-): ReturnType<typeof resolveStepImage> {
-  if (curatedBySpec(specId)) return image;
-  if (!specId.startsWith("FR-EXP12-02-")) return image;
-  if (image.src?.includes("/assets/execution/expansion12-02/")) return image;
-  return resolveStepImage(suggestStepImage(text, { preferredAssetCodePrefix: "VRS-EXP12-02-" }));
 }
