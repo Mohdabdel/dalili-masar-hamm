@@ -1,43 +1,19 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { Card, CardContent } from "@/components/ui/card";
-import { PlusCircle, Users, UserCircle, CalendarClock, ListChecks } from "lucide-react";
+import { UserCircle } from "lucide-react";
 
 export const Route = createFileRoute("/settings")({
   head: () => ({
     meta: [
       { title: "الإعدادات — دليلي" },
-      { name: "description", content: "إعدادات التطبيق والتحكم في المحتوى." },
+      { name: "description", content: "إدارة حساب الأسرة في دليلي." },
     ],
   }),
   component: SettingsPage,
 });
 
 const items = [
-  {
-    to: "/my-routine" as const,
-    title: "روتين يومنا",
-    subtitle: "ابنِ محطات يومكم من أحداث الحياة اليومية",
-    icon: CalendarClock,
-  },
-  {
-    to: "/active-participations" as const,
-    title: "المشاركات النشطة",
-    subtitle: "تابعوا ما تشاركون فيه حالياً وسجّلوا إنجاز اليوم",
-    icon: ListChecks,
-  },
-  {
-    to: "/settings/add-event" as const,
-    title: "إضافة حدث جديد",
-    subtitle: "ابدأ بإنشاء حدث أو فرصة مشاركة جديدة",
-    icon: PlusCircle,
-  },
-  {
-    to: "/settings/family" as const,
-    title: "ملف الأسرة",
-    subtitle: "بيانات الأسرة والشاب أو الشابة",
-    icon: Users,
-  },
   {
     to: "/account" as const,
     title: "حساب الأسرة",
@@ -48,7 +24,7 @@ const items = [
 
 function SettingsPage() {
   return (
-    <PageShell title="الإعدادات" subtitle="إدارة المحتوى والتفضيلات">
+    <PageShell title="الإعدادات" subtitle="إدارة حساب الأسرة">
       <div className="space-y-4">
         {items.map(({ to, title, subtitle, icon: Icon }) => (
           <Link key={to} to={to}>
