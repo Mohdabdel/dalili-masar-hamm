@@ -4,10 +4,6 @@ import { StepBlocks, type ComposerItem } from "@/lab/components/space/FamilyComp
 import { StepComposer, type ComposerStepRow } from "@/features/space/components/StepComposer";
 import { FamilyPhotoLibrary } from "@/features/space/components/FamilyPhotoLibrary";
 import { ConsiderationsPanel } from "@/features/space/components/ConsiderationsPanel";
-import {
-  SupportGenerator,
-  type SupportSourceRow,
-} from "@/features/space/components/SupportGenerator";
 import { buildDraftSelection, flatSteps, sourceTextFor } from "@/lab/data/space/catalog";
 import { hasReferenceWording, resolveSpaceSpec } from "@/features/space/spec-resolution";
 import { createFamilyBlock, isFamilyBlockId } from "@/features/space/family-blocks";
@@ -26,12 +22,9 @@ import {
 } from "@/features/space/compose";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 import { curatedBySpec } from "@/features/space/curated-explore";
-import { toSupportInstance } from "@/lib/support/taxonomy";
 import type {
   LabParticipationImage,
   LabStepImageRef,
-  LabSupportAssetConfig,
-  LabSupportAssetType,
   LabThisTimeSelection,
 } from "@/lab/slice/types";
 
@@ -39,14 +32,13 @@ export function WorkspacePage({ specId }: { specId: string }) {
   const base = useSpaceBase();
   const { state, dispatch } = useSlice();
   const spec = resolveSpaceSpec(specId, state.selections);
-  const { snapshotsFor, supportAssetsFor } = useSliceHelpers();
+  const { snapshotsFor } = useSliceHelpers();
   const [newBlockText, setNewBlockText] = useState("");
   const [showImagePicker, setShowImagePicker] = useState(false);
-  const [activeTab, setActiveTab] = useState<"draft" | "considerations" | "easier" | "tools">("draft");
+  const [activeTab, setActiveTab] = useState<"draft" | "considerations" | "tools">("draft");
   const participationFileRef = useRef<HTMLInputElement | null>(null);
 
   const versions = snapshotsFor(specId);
-  const assets = supportAssetsFor(specId);
 
   // المسودة الفعلية تُحسب في نفس دورة العرض الأولى:
   // إمّا مسودة الأسرة المحفوظة، أو المسودة المرجعية الجاهزة — بلا استبدال بعد التركيب.
@@ -317,38 +309,6 @@ export function WorkspacePage({ specId }: { specId: string }) {
     });
   };
 
-  /** مصدر توليد الوسائل: الخطوات الباقية في مسودّتنا بعباراتها وصورها. */
-  const supportRows: SupportSourceRow[] = safeComposed
-    .filter((r) => r.textVisible || r.imageVisible)
-    .map((r) => ({
-      stepId: r.stepId,
-      text: r.textVisible ? r.familyText : "",
-      assetCode: r.imageVisible ? r.assetCode : null,
-      src: r.imageVisible ? r.image.src : null,
-    }));
-
-  const addSupportAsset = (input: {
-    categoryId: string;
-    type: LabSupportAssetType;
-    label: string;
-    items: string[];
-    config: LabSupportAssetConfig;
-  }) => {
-    dispatch({
-      type: "support.add",
-      value: {
-        id: crypto.randomUUID(),
-        type: input.type,
-        categoryId: input.categoryId,
-        label_ar: `${input.label} — ${spec.title_ar}`,
-        specId,
-        createdAt: new Date().toISOString().slice(0, 10),
-        items: input.items,
-        config: input.config,
-      },
-    });
-  };
-
   return (
     <LabPage
       title={spec.title_ar}
@@ -371,11 +331,6 @@ export function WorkspacePage({ specId }: { specId: string }) {
           onClick={() => setActiveTab("considerations")}
           className={`min-h-11 shrink-0 rounded-xl px-3 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${activeTab === "considerations" ? "bg-primary text-primary-foreground" : "border border-border bg-card"}`}>
           اعتبارات أثناء التطبيق
-        </button>
-        <button type="button" role="tab" id="easier-tab" aria-controls="easier-panel" aria-selected={activeTab === "easier"}
-          onClick={() => setActiveTab("easier")}
-          className={`min-h-11 shrink-0 rounded-xl px-3 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${activeTab === "easier" ? "bg-primary text-primary-foreground" : "border border-border bg-card"}`}>
-          هل هناك شيء قد يجعل المشاركة أسهل؟
         </button>
         <button type="button" role="tab" id="tools-tab" aria-controls="tools-panel" aria-selected={activeTab === "tools"}
           onClick={() => setActiveTab("tools")}
@@ -629,42 +584,6 @@ export function WorkspacePage({ specId }: { specId: string }) {
         selectedIds={selection.considerationIds ?? []}
         onToggle={toggleConsideration}
       />
-      </div>
-
-      <div id="easier-panel" role="tabpanel" aria-labelledby="easier-tab" hidden={activeTab !== "easier"}>
-      <details className="rounded-2xl border border-border bg-card p-3">
-        <summary className="cursor-pointer text-sm font-bold">
-          هل هناك شيء قد يجعل المشاركة أسهل؟
-        </summary>
-        <div className="mt-3">
-          <SupportGenerator rows={supportRows} onGenerate={addSupportAsset} />
-        </div>
-        {assets.length > 0 && (
-          <ul className="mt-3 space-y-2">
-            {assets.map((a) => (
-              <li
-                key={a.id}
-                className="flex items-center justify-between gap-3 rounded-xl border border-border bg-card p-3"
-              >
-                <span className="min-w-0">
-                  <span className="block truncate text-sm font-bold">{a.label_ar}</span>
-                  <span className="block text-xs text-muted-foreground">
-                    {toSupportInstance(a).categoryLabel_ar} · مستقل عن بطاقة المشارك —{" "}
-                    {a.items.length} عنصر
-                  </span>
-                </span>
-                <button
-                  type="button"
-                  onClick={() => dispatch({ type: "support.remove", id: a.id })}
-                  className="min-h-11 shrink-0 rounded-xl border border-border px-3 text-xs font-bold text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                >
-                  إزالة
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
-      </details>
       </div>
 
       <div id="tools-panel" role="tabpanel" aria-labelledby="tools-tab" hidden={activeTab !== "tools"}>
