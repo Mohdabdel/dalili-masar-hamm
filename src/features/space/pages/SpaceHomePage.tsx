@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
 import { Link as RouterLink } from "@tanstack/react-router";
-import { ChevronDown, ChevronLeft, Home, Trees, X, Menu, Info, Images, CalendarRange, MessageSquare } from "lucide-react";
+import { ChevronDown, ChevronLeft, X, Menu, Info, Images, CalendarRange, MessageSquare } from "lucide-react";
 import { } from "@/lab/components/lab-ui";
-import { defaultStations, getSpaceEvent, type SpaceContext } from "@/lab/data/space/catalog";
+import { defaultStations, getSpaceEvent } from "@/lab/data/space/catalog";
 import { resolveSpaceSpec } from "@/features/space/spec-resolution";
 import { useSlice, useSpaceBase } from "@/features/space/store";
 import { cn } from "@/lib/utils";
@@ -11,7 +11,6 @@ import { cn } from "@/lib/utils";
 export function SpaceHomePage() {
   const base = useSpaceBase();
   const { state, dispatch } = useSlice();
-  const [context, setContext] = useState<SpaceContext | null>(null);
   const [summaryOpen, setSummaryOpen] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
   const [view, setView] = useState<"active" | "history">("active");
@@ -79,23 +78,7 @@ export function SpaceHomePage() {
         المشاركة ليست تدريبًا على الحياة… المشاركة هي الحياة نفسها.
       </p>
 
-      {/* داخل / خارج المنزل */}
-      <div role="group" aria-label="مكان المشاركة" className="mt-6 flex flex-wrap gap-2">
-        <ContextButton
-          on={context === "home"}
-          onClick={() => setContext(context === "home" ? null : "home")}
-          icon={<Home className="h-4 w-4" aria-hidden />}
-          label="داخل المنزل"
-        />
-        <ContextButton
-          on={context === "community"}
-          onClick={() => setContext(context === "community" ? null : "community")}
-          icon={<Trees className="h-4 w-4" aria-hidden />}
-          label="خارج المنزل"
-        />
-      </div>
-
-      {context && <Stations context={context} state={state} dispatch={dispatch} />}
+      <Stations state={state} dispatch={dispatch} />
 
       {/* مشاركاتنا */}
       <section className="mt-9">
@@ -318,20 +301,21 @@ function TaskBlock({
 }
 
 function Stations({
-  context,
   state,
   dispatch,
 }: {
-  context: SpaceContext;
   state: ReturnType<typeof useSlice>["state"];
   dispatch: ReturnType<typeof useSlice>["dispatch"];
 }) {
   const base = useSpaceBase();
-  const defaults = defaultStations(context).filter((e) => !state.removedStations.includes(e.id));
+  const defaults = [...new Map(
+    (["home", "community"] as const)
+      .flatMap(defaultStations)
+      .map((station) => [station.id, station] as const),
+  ).values()].filter((e) => !state.removedStations.includes(e.id));
   const added = state.stations
     .map(getSpaceEvent)
     .filter((e): e is NonNullable<typeof e> => Boolean(e))
-    .filter((e) => e.contexts.includes(context))
     .filter((e) => !defaults.some((d) => d.id === e.id));
   const stations = [...defaults, ...added];
 
@@ -379,33 +363,6 @@ function Stations({
   );
 }
 
-function ContextButton({
-  on,
-  onClick,
-  icon,
-  label,
-}: {
-  on: boolean;
-  onClick: () => void;
-  icon: React.ReactNode;
-  label: string;
-}) {
-  return (
-    <button
-      type="button"
-      aria-pressed={on}
-      onClick={onClick}
-      className={cn(
-        "inline-flex min-h-[44px] items-center gap-2 rounded-xl border px-4 text-base font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-        on ? "border-primary bg-primary text-primary-foreground" : "border-border text-foreground hover:bg-accent",
-      )}
-    >
-      {icon}
-      {label}
-    </button>
-  );
-}
-
 function Panel({
   title,
   onClose,
@@ -448,7 +405,7 @@ const INFO_SECTIONS = [
   },
   {
     title: "دليل الاستخدام",
-    body: "ابدأوا من داخل المنزل أو خارجه، اختاروا محطة من يومكم، ثم مشاركة واحدة. تصنعون منها بطاقة، وتبقى البطاقة كما اعتمدتموها.",
+    body: "اختاروا محطة من يومكم، ثم مشاركة واحدة. تصنعون منها بطاقة، وتبقى البطاقة كما اعتمدتموها.",
   },
   {
     title: "اعتبارات",

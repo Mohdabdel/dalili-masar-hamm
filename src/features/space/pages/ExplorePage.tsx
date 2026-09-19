@@ -16,7 +16,6 @@ import {
   defaultStations,
   mvpDefaultStations,
   mvpSpaceEvents,
-  type SpaceContext,
 } from "@/lab/data/space/catalog";
 import { useSpaceBase } from "@/features/space/store";
 import { cn } from "@/lib/utils";
@@ -26,13 +25,16 @@ type Lens = "event" | "station";
 export function ExplorePage({ initialLens = "event" }: { initialLens?: Lens }) {
   const base = useSpaceBase();
   const [lens, setLens] = useState<Lens>(initialLens);
-  const [context, setContext] = useState<SpaceContext>("home");
 
   const production = base === "/space";
   const events = (production ? mvpSpaceEvents() : allSpaceEvents()).filter(
-    (e) => e.contexts.includes(context) && e.participationCount > 0,
+    (e) => e.participationCount > 0,
   );
-  const stations = production ? mvpDefaultStations(context) : defaultStations(context);
+  const stations = [...new Map(
+    (["home", "community"] as const)
+      .flatMap((place) => production ? mvpDefaultStations(place) : defaultStations(place))
+      .map((station) => [station.id, station] as const),
+  ).values()];
 
   return (
     <LabPage
@@ -45,15 +47,6 @@ export function ExplorePage({ initialLens = "event" }: { initialLens?: Lens }) {
         </Tab>
         <Tab on={lens === "station"} onClick={() => setLens("station")}>
           حسب محطات روتيننا
-        </Tab>
-      </div>
-
-      <div role="group" aria-label="مكان المشاركة" className="mb-5 grid grid-cols-2 gap-2">
-        <Tab on={context === "home"} onClick={() => setContext("home")}>
-          داخل المنزل
-        </Tab>
-        <Tab on={context === "community"} onClick={() => setContext("community")}>
-          خارج المنزل
         </Tab>
       </div>
 

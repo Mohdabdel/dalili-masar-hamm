@@ -11,7 +11,6 @@ import {
   mvpDefaultStations,
   mvpLibraryDomainNames,
   mvpSpaceEvents,
-  type SpaceContext,
 } from "@/lab/data/space/catalog";
 import { useSlice, useSpaceBase } from "@/features/space/store";
 import { cn } from "@/lib/utils";
@@ -19,24 +18,22 @@ import { cn } from "@/lib/utils";
 export function LibraryPage() {
   const base = useSpaceBase();
   const { state, dispatch } = useSlice();
-  const [context, setContext] = useState<SpaceContext>("home");
   const [domain, setDomain] = useState<string>("");
   const [query, setQuery] = useState("");
   const production = base === "/space";
 
   const domains = useMemo(
-    () => (production ? mvpLibraryDomainNames(context) : libraryDomainNames(context)),
-    [context, production],
+    () => (production ? mvpLibraryDomainNames() : libraryDomainNames()),
+    [production],
   );
   const events = useMemo(
     () =>
       (production ? listMvpLibraryEvents : listLibraryEvents)({
-        context,
         domainName: domain || undefined,
         query,
         limit: 60,
       }),
-    [context, domain, production, query],
+    [domain, production, query],
   );
   const total = useMemo(
     () => (production ? mvpSpaceEvents().length : allSpaceEvents().length),
@@ -45,8 +42,8 @@ export function LibraryPage() {
 
   const isStation = (id: string) =>
     (state.stations.includes(id) ||
-      (production ? mvpDefaultStations(context) : defaultStations(context)).some(
-        (e) => e.id === id,
+      (["home", "community"] as const).some((place) =>
+        (production ? mvpDefaultStations(place) : defaultStations(place)).some((e) => e.id === id),
       )) &&
     !state.removedStations.includes(id);
 
@@ -57,28 +54,6 @@ export function LibraryPage() {
     >
       <LabSection title="تصفية">
         <div className="grid gap-3">
-          <div role="group" aria-label="مكان الحدث" className="grid grid-cols-2 gap-3">
-            {(["home", "community"] as SpaceContext[]).map((c) => (
-              <button
-                key={c}
-                type="button"
-                aria-pressed={context === c}
-                onClick={() => {
-                  setContext(c);
-                  setDomain("");
-                }}
-                className={cn(
-                  "min-h-11 rounded-xl border text-base font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-                  context === c
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : "border-border bg-card",
-                )}
-              >
-                {c === "home" ? "داخل المنزل" : "خارج المنزل"}
-              </button>
-            ))}
-          </div>
-
           <label className="relative block">
             <span className="sr-only">ابحثوا عن حدث</span>
             <Search
