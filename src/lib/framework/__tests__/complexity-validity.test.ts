@@ -49,7 +49,7 @@ describe("complexity validity — CX-01..CX-09", () => {
         dimensions: {
           ...FIXTURE_SIMPLE.complexity.dimensions,
           c5_score: "1",
-        },
+        } as never,
       },
     });
     expect(extra.codes).toContain("INVALID_DIMENSION_SHAPE");

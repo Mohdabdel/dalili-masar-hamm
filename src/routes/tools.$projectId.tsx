@@ -5,7 +5,7 @@ import { useHydratedTools, useVisualToolProject } from "@/lib/visual-tools/use-v
 import { getToolMeta } from "@/lib/visual-tools/types";
 
 export const Route = createFileRoute("/tools/$projectId")({
-  validateSearch: (search: Record<string, unknown>) => ({
+  validateSearch: (search: Record<string, unknown>): { source?: "workspace"; specId?: string } => ({
     source: search.source === "workspace" && typeof search.specId === "string" && /^[A-Za-z0-9_-]{1,120}$/.test(search.specId)
       ? ("workspace" as const) : undefined,
     specId: typeof search.specId === "string" && /^[A-Za-z0-9_-]{1,120}$/.test(search.specId) ? search.specId : undefined,

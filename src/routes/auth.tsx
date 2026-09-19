@@ -11,7 +11,7 @@ import { safeAuthReturnPath } from "@/lib/auth-return";
 
 export const Route = createFileRoute("/auth")({
   ssr: false,
-  validateSearch: (search: Record<string, unknown>) => ({
+  validateSearch: (search: Record<string, unknown>): { returnTo?: string } => ({
     returnTo: safeAuthReturnPath(search.returnTo),
   }),
   head: () => ({
@@ -42,7 +42,7 @@ function AuthPage() {
   const { returnTo } = Route.useSearch();
 
   const continueJourney = useCallback(() => {
-    window.location.replace(returnTo);
+    window.location.replace(returnTo ?? "/");
   }, [returnTo]);
 
   useEffect(() => {
