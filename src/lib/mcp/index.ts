@@ -4,11 +4,20 @@ import listMessages from "./tools/list-messages";
 import listResources from "./tools/list-resources";
 import listCalendar from "./tools/list-calendar";
 
+// حماية خادم الأدوات: لا تُستدعى أي أداة إلا بعد دخول موثّق عبر حساب المشروع.
+const supabaseUrl =
+  import.meta.env['VITE_SUPABASE_URL'] ?? "https://ostynbvalzvwoponwhbq.supabase.co";
+
 export default defineMcp({
   name: "daleeli-masar-himam-mcp",
   title: "Daleeli - Masar Himam MCP",
   version: "0.1.0",
   instructions:
     "Tools for the Daleeli - Masar Himam transitional-planning app: browse daily-living activities, interpreted-behavior guidance, UAE institutional resources, and the community events calendar.",
+  auth: auth.oauth.issuer({
+    issuer: `${supabaseUrl}/auth/v1`,
+    acceptedAudiences: ["authenticated"],
+    resourceName: "Daleeli - Masar Himam MCP",
+  }),
   tools: [listActivities, listMessages, listResources, listCalendar],
 });
