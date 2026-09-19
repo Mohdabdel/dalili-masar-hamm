@@ -42,6 +42,7 @@ export function WorkspacePage({ specId }: { specId: string }) {
   const { snapshotsFor, supportAssetsFor } = useSliceHelpers();
   const [newBlockText, setNewBlockText] = useState("");
   const [showImagePicker, setShowImagePicker] = useState(false);
+  const [activeTab, setActiveTab] = useState<"draft" | "considerations" | "easier" | "tools">("draft");
   const participationFileRef = useRef<HTMLInputElement | null>(null);
 
   const versions = snapshotsFor(specId);
@@ -360,6 +361,29 @@ export function WorkspacePage({ specId }: { specId: string }) {
           ? <LabBackLink to="/">الصفحة الرئيسية</LabBackLink>
           : <LabBackLink to={`${base}`}>مساحة الأسرة</LabBackLink>}
     >
+      <div role="tablist" aria-label="أقسام إعداد المشاركة" className="sticky top-0 z-20 -mx-4 mb-5 flex gap-2 overflow-x-auto border-b border-border bg-background/95 px-4 py-3 backdrop-blur-sm">
+        <button type="button" role="tab" id="draft-tab" aria-controls="draft-panel" aria-selected={activeTab === "draft"}
+          onClick={() => setActiveTab("draft")}
+          className={`min-h-11 shrink-0 rounded-xl px-3 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${activeTab === "draft" ? "bg-primary text-primary-foreground" : "border border-border bg-card"}`}>
+          إعداد المشاركة
+        </button>
+        <button type="button" role="tab" id="considerations-tab" aria-controls="considerations-panel" aria-selected={activeTab === "considerations"}
+          onClick={() => setActiveTab("considerations")}
+          className={`min-h-11 shrink-0 rounded-xl px-3 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${activeTab === "considerations" ? "bg-primary text-primary-foreground" : "border border-border bg-card"}`}>
+          اعتبارات قد تساعد
+        </button>
+        <button type="button" role="tab" id="easier-tab" aria-controls="easier-panel" aria-selected={activeTab === "easier"}
+          onClick={() => setActiveTab("easier")}
+          className={`min-h-11 shrink-0 rounded-xl px-3 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${activeTab === "easier" ? "bg-primary text-primary-foreground" : "border border-border bg-card"}`}>
+          هل هناك شيء قد يجعل المشاركة أسهل؟
+        </button>
+        <button type="button" role="tab" id="tools-tab" aria-controls="tools-panel" aria-selected={activeTab === "tools"}
+          onClick={() => setActiveTab("tools")}
+          className={`min-h-11 shrink-0 rounded-xl px-3 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${activeTab === "tools" ? "bg-primary text-primary-foreground" : "border border-border bg-card"}`}>
+          أدوات ووسائل داعمة
+        </button>
+      </div>
+      <div id="draft-panel" role="tabpanel" aria-labelledby="draft-tab" hidden={activeTab !== "draft"}>
       {selection.origin === "family_free" && selection.familySpec && (
         <LabSection
           title="اسم المشاركة"
@@ -596,6 +620,8 @@ export function WorkspacePage({ specId }: { specId: string }) {
         )}
       </LabSection>
 
+      </div>
+      <div id="considerations-panel" role="tabpanel" aria-labelledby="considerations-tab" hidden={activeTab !== "considerations"}>
       <ConsiderationsPanel
         spec={spec}
         texts={rows.map((r) => r.familyText)}
@@ -603,7 +629,9 @@ export function WorkspacePage({ specId }: { specId: string }) {
         selectedIds={selection.considerationIds ?? []}
         onToggle={toggleConsideration}
       />
+      </div>
 
+      <div id="easier-panel" role="tabpanel" aria-labelledby="easier-tab" hidden={activeTab !== "easier"}>
       <details className="rounded-2xl border border-border bg-card p-3">
         <summary className="cursor-pointer text-sm font-bold">
           هل هناك شيء قد يجعل المشاركة أسهل؟
@@ -637,11 +665,14 @@ export function WorkspacePage({ specId }: { specId: string }) {
           </ul>
         )}
       </details>
+      </div>
 
+      <div id="tools-panel" role="tabpanel" aria-labelledby="tools-tab" hidden={activeTab !== "tools"}>
       <div className="mt-2">
         <LabLinkButton to="/tools" variant="ghost">
           أدوات ووسائل داعمة
         </LabLinkButton>
+      </div>
       </div>
     </LabPage>
   );
