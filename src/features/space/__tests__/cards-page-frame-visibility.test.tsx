@@ -1,16 +1,16 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import { SnapshotFrameTile } from "../components/SnapshotFrameTile";
-import type { LabFrozenFrame } from "@/lab/slice/types";
+import type { LabCardFrame } from "@/lab/slice/types";
 
-const base: LabFrozenFrame = {
+const base: LabCardFrame = {
   sourceStepId: "S1",
   order: 1,
   text_short_ar: "نضع الكوب على المائدة",
   assetRef: "/assets/test/cup.webp",
-} as LabFrozenFrame;
+} as LabCardFrame;
 
-const render = (f: Partial<LabFrozenFrame>) =>
+const render = (f: Partial<LabCardFrame>) =>
   renderToStaticMarkup(<SnapshotFrameTile frame={{ ...base, ...f }} />);
 
 describe("CardsPage frame tile respects approved snapshot flags", () => {

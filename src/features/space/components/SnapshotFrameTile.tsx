@@ -1,11 +1,11 @@
 import { StepFrame } from "@/lab/components/StepFrame";
-import type { LabFrozenFrame } from "@/lab/slice/types";
+import type { LabCardFrame } from "@/lab/slice/types";
 
 /**
  * يحسم ظهور الصورة/النص من حقول النسخة المعتمدة كما هي.
  * النسخ الأقدم بلا أعلام: presentation إن وُجد، وإلا نفس fallback بطاقة المشارك.
  */
-export function frameVisibility(frame: LabFrozenFrame): { showImage: boolean; showText: boolean } {
+export function frameVisibility(frame: LabCardFrame): { showImage: boolean; showText: boolean } {
   const text = frame.text_short_ar || frame.familyText_ar || "";
   const p = frame.presentation;
   const showImage =
@@ -15,7 +15,7 @@ export function frameVisibility(frame: LabFrozenFrame): { showImage: boolean; sh
   return { showImage, showText: showText && Boolean(text) };
 }
 
-export function SnapshotFrameTile({ frame }: { frame: LabFrozenFrame }) {
+export function SnapshotFrameTile({ frame }: { frame: LabCardFrame }) {
   const { showImage, showText } = frameVisibility(frame);
   const text = frame.text_short_ar || frame.familyText_ar || "";
   const image = showImage ? (
