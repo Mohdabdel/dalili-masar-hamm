@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Lock, Unlock, History, Printer, ChevronDown } from "lucide-react";
 import { LabPage, LabSection, LabNote, LabButton, LabLinkButton, LabBackLink } from "@/lab/components/lab-ui";
-import { StepFrame } from "@/lab/components/StepFrame";
+import { SnapshotFrameTile } from "@/features/space/components/SnapshotFrameTile";
 import { SPACE_SUPPORT_TOOLS } from "@/lab/data/space/catalog";
 import { resolveSpaceSpec } from "@/features/space/spec-resolution";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
@@ -73,10 +73,7 @@ export function CardsPage({ specId }: { specId: string }) {
                   <ol className="mb-3 grid grid-cols-3 gap-2 sm:grid-cols-4">
                     {participationFrames.map((f) => (
                       <li key={`${snap.id}-${f.order}`}>
-                        <StepFrame asset={f.assetRef} label={f.text_short_ar} size="md" />
-                        <p className="mt-1 text-center text-sm font-semibold leading-snug">
-                          {f.text_short_ar}
-                        </p>
+                        <SnapshotFrameTile frame={f} />
                       </li>
                     ))}
                     <li
