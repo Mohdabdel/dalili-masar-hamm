@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import {
   LabPage,
@@ -11,6 +11,8 @@ import {
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 import type { SliceLifecycleChoice, SliceTone } from "@/lab/slice/types";
 import { cn } from "@/lib/utils";
+import type { SliceAction } from "@/features/space/store";
+import { persistFeedbackActions, routineFeedbackActions } from "@/features/space/feedback-plan";
 
 
 const TONES: { id: SliceTone; label: string }[] = [
@@ -48,12 +50,16 @@ export function FeedbackPage({
 }) {
   const base = useSpaceBase();
   const { snapshotById } = useSliceHelpers();
-  const { dispatch } = useSlice();
+  const { dispatch, persistDispatch } = useSlice();
   const snap = snapshotById(snapshotId);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const navigate = useNavigate() as any;
 
   const [tone, setTone] = useState<SliceTone | null>(null);
+  const [saving, setSaving] = useState(false);
+  const savingRef = useRef(false);
+  const completed = useRef(new Set<string>());
+  const [saveError, setSaveError] = useState("");
   const [reasons, setReasons] = useState<string[]>([]);
   const [lifecycle, setLifecycle] = useState<
     SliceLifecycleChoice | typeof CLOSE_PARTICIPATION | null
@@ -67,10 +73,20 @@ export function FeedbackPage({
     );
   }
 
-  const save = () => {
+  const save = async () => {
+    if (savingRef.current) return;
+    if (lifecycle === "make_routine" && !snap.eventId) {
+      setSaveError("هذه المشاركة الخاصة غير مرتبطة بمحطة بعد. اختاروا محطة من مكتبة الحياة أولاً، أو اختاروا «نكررها» للاحتفاظ بها كمشاركة مستقلة.");
+      return;
+    }
+    savingRef.current = true;
+    setSaving(true);
+    setSaveError("");
+    const actions: SliceAction[] = [];
+    try {
     // الانطباع اختياري تماماً؛ يُحفظ فقط إن اختارته الأسرة.
     if (tone) {
-      dispatch({
+      actions.push({
         type: "feedback",
         value: {
           snapshotId,
@@ -82,15 +98,15 @@ export function FeedbackPage({
       });
     }
     if (lifecycle === "close_card") {
-      dispatch({ type: "card.close", snapshotId });
+      actions.push({ type: "card.close", snapshotId });
     } else if (lifecycle === CLOSE_PARTICIPATION) {
-      dispatch({ type: "participation.close", specId: snap.participationSpecId });
+      actions.push({ type: "participation.close", specId: snap.participationSpecId });
+    } else if (lifecycle === "make_routine") {
+      actions.push(...(routineFeedbackActions(snap.participationSpecId, snap.eventId) ?? []));
     } else if (lifecycle) {
-      dispatch({ type: "lifecycle", specId: snap.participationSpecId, value: lifecycle });
+      actions.push({ type: "lifecycle", specId: snap.participationSpecId, value: lifecycle });
     }
-    if (lifecycle === "make_routine" && snap.eventId) {
-      dispatch({ type: "station.add", eventId: snap.eventId });
-    }
+    await persistFeedbackActions(actions, persistDispatch ?? dispatch, completed.current);
     if (lifecycle === "adjust" || lifecycle === "expand") {
       navigate({
         to: `${base}/workspace/$specId`,
@@ -98,6 +114,12 @@ export function FeedbackPage({
       });
     } else {
       navigate({ to: `${base}/card/$specId`, params: { specId: snap.participationSpecId } });
+    }
+    } catch {
+      setSaveError("لم تكتمل عملية الحفظ. بقيتم هنا لإعادة المحاولة؛ قد تكون بعض الاختيارات السابقة حُفظت.");
+    } finally {
+      savingRef.current = false;
+      setSaving(false);
     }
   };
 
@@ -164,9 +186,10 @@ export function FeedbackPage({
       </LabSection>
 
       <div className="flex flex-wrap gap-3">
-        <LabButton onClick={save}>حفظ</LabButton>
+        <LabButton onClick={save} disabled={saving}>{saving ? "جارٍ الحفظ…" : "حفظ"}</LabButton>
         <LabButton
           variant="ghost"
+          disabled={saving}
           onClick={() =>
             navigate({ to: `${base}/card/$specId`, params: { specId: snap.participationSpecId } })
           }
@@ -174,6 +197,13 @@ export function FeedbackPage({
           تخطّي الآن
         </LabButton>
       </div>
+      {saveError && <p role="alert" className="mt-3 text-destructive">{saveError}</p>}
+      {lifecycle === "make_routine" && !snap.eventId && (
+        <div className="mt-3">
+          <LabNote>إضافة محطة من المكتبة لا تربط هذه المشاركة الخاصة بها تلقائيًا. يمكنكم إبقاء المشاركة مستقلة الآن؛ الربط المباشر بالمحطة يحتاج استكمالًا لاحقًا.</LabNote>
+          <LabLinkButton to={`${base}/library`}>استعراض محطات مكتبة الحياة</LabLinkButton>
+        </div>
+      )}
 
       <div className="mt-4">
         <LabNote>
@@ -199,3 +229,4 @@ function Chip({ label, on, onClick }: { label: string; on: boolean; onClick: () 
     </button>
   );
 }
+

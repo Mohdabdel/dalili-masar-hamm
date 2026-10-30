@@ -72,7 +72,7 @@ export function VisualToolEditor({ project }: { project: VisualToolProject }) {
           </div>
         </div>
         <p className="mt-3 text-xs text-muted-foreground">
-          يُحفظ العمل تلقائيًا على جهازك. هذه أداة خاصة بأسرتك ولا تُضاف إلى محتوى دليلي العام.
+          يُحفظ كل تعديل ناجح على هذا الجهاز فقط؛ لا تُزامَن الأدوات بين الأجهزة. عند تعذّر الحفظ تظهر رسالة تنبيه.
         </p>
       </div>
 
@@ -168,7 +168,9 @@ export function VisualToolEditor({ project }: { project: VisualToolProject }) {
                         size="icon"
                         aria-label="حذف العنصر"
                         className="text-destructive"
-                        onClick={() => removeItem(project.id, item.id)}
+                        onClick={() => {
+                          if (window.confirm("حذف هذا العنصر؟ لا يمكن التراجع عن الحذف.")) removeItem(project.id, item.id);
+                        }}
                       >
                         <Trash2 className="h-4 w-4" />
                       </Button>

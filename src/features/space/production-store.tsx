@@ -168,27 +168,32 @@ async function linkParticipationToStation(
   refs: Refs,
   participationId: string,
   eventId?: string,
+  strict = false,
 ): Promise<void> {
   if (!eventId) return;
   const stationId = refs.stationRowByEvent[eventId];
   if (!stationId) return;
-  const { data: existing } = await supabase
+  const { data: existing, error: readError } = await supabase
     .from("participation_station_links")
     .select("id")
     .eq("family_participation_id", participationId)
     .eq("routine_station_id", stationId)
     .maybeSingle();
-  if (existing) return;
-  const { error } = await supabase.from("participation_station_links").insert({
-    family_participation_id: participationId,
-    routine_station_id: stationId,
-  });
-  log("stationLink")(error);
-  await supabase
+  if (readError && strict) throw readError;
+  if (!existing) {
+    const { error } = await supabase.from("participation_station_links").insert({
+      family_participation_id: participationId,
+      routine_station_id: stationId,
+    });
+    log("stationLink")(error);
+    if (error && strict) throw error;
+  }
+  const { error: updateError } = await supabase
     .from("active_participations")
     .update({ routine_station_id: stationId })
     .eq("id", participationId)
     .is("routine_station_id", null);
+  if (updateError && strict) throw updateError;
 }
 
 async function ensureRoutineId(refs: Refs): Promise<string | null> {
@@ -360,7 +365,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
   }, []);
 
   // ---------- الحفظ ----------
-  const persist = useCallback(async (action: SliceAction, snapshotState: SliceState) => {
+  const persist = useCallback(async (action: SliceAction, snapshotState: SliceState, strict = false) => {
     const r = refs.current;
     switch (action.type) {
       case "selection": {
@@ -372,7 +377,10 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
             { spec_id: sel.specId, selection: sel as any },
             { onConflict: "user_id,spec_id" },
           )
-          .then(({ error }) => failed("draft", "تعذّر حفظ التعديل")(error));
+          .then(({ error }) => {
+            failed("draft", "تعذّر حفظ التعديل")(error);
+            if (error && strict) throw error;
+          });
         break;
       }
       case "snapshot": {
@@ -474,7 +482,10 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
       case "participation.close":
       case "participation.reopen": {
         const participationId = r.participationBySpec[action.specId];
-        if (!participationId) return;
+        if (!participationId) {
+          if (strict) throw new Error("تعذّر العثور على المشاركة");
+          return;
+        }
         const closing = action.type === "participation.close";
         const { error } = await supabase
           .from("active_participations")
@@ -484,6 +495,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           })
           .eq("id", participationId);
         failed("participationState", "تعذّر تحديث حالة المشاركة")(error);
+        if (error && strict) throw error;
         break;
       }
 
@@ -497,6 +509,7 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           { onConflict: "user_id,snapshot_id" },
         );
         failed("cardState", "تعذّر تحديث حالة البطاقة")(error);
+        if (error && strict) throw error;
         break;
       }
       case "feedback": {
@@ -508,16 +521,21 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           reasons: action.value.reasons,
         });
         failed("feedback", "تعذّر حفظ الانطباع")(error);
+        if (error && strict) throw error;
         break;
       }
       case "lifecycle": {
         const participationId = await ensureParticipation(r, action.specId);
-        if (!participationId) return;
+        if (!participationId) {
+          if (strict) throw new Error("تعذّر العثور على المشاركة");
+          return;
+        }
         const { error } = await supabase
           .from("active_participations")
           .update({ lifecycle_choice: action.value })
           .eq("id", participationId);
         failed("lifecycle", "تعذّر حفظ اختياركم")(error);
+        if (error && strict) throw error;
         break;
       }
       case "support.add": {
@@ -565,7 +583,11 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
       }
       case "station.add": {
         const routineId = await ensureRoutineId(r);
-        if (!routineId || r.stationRowByEvent[action.eventId]) return;
+        if (!routineId) {
+          if (strict) throw new Error("تعذّر فتح محطات الأسرة");
+          return;
+        }
+        if (r.stationRowByEvent[action.eventId]) return;
         try {
           await addRoutineStation({
             routineId,
@@ -577,7 +599,16 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
           for (const s of stations) r.stationRowByEvent[s.daily_event_id] = s.id;
         } catch (error) {
           log("stationAdd")(error);
+          if (strict) throw error;
         }
+        break;
+      }
+      case "station.link": {
+        const participationId = await ensureParticipation(r, action.specId);
+        if (!participationId || !r.stationRowByEvent[action.eventId]) {
+          throw new Error("تعذّر ربط المشاركة بالمحطة");
+        }
+        await linkParticipationToStation(r, participationId, action.eventId, true);
         break;
       }
       case "station.remove": {
@@ -628,12 +659,16 @@ export function ProductionSpaceProvider({ children }: { children: ReactNode }) {
             : action;
 
       rawDispatch(prepared);
-      void persist(prepared, stateRef.current);
+      void persist(prepared, stateRef.current).catch(log("persist"));
     },
     [persist],
   );
 
-  const value = useMemo(() => ({ state, dispatch }), [state, dispatch]);
+  const persistDispatch = useCallback(async (action: SliceAction) => {
+    await persist(action, stateRef.current, true);
+    rawDispatch(action);
+  }, [persist]);
+  const value = useMemo(() => ({ state, dispatch, persistDispatch }), [state, dispatch, persistDispatch]);
 
   // لا نعرض المساحة قبل استرجاع بيانات الأسرة، حتى لا تُستبدل مسودة محفوظة بمسودة جديدة.
   if (!hydrated) {

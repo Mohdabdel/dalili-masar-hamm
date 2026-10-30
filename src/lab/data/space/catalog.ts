@@ -4,6 +4,7 @@
 import {
   getAllEvents,
   findEventById,
+  findEventDomainName,
   getDomainCategory,
   type FlatEvent,
 } from "@/lib/knowledge-base";
@@ -98,7 +99,7 @@ function frameworkSpaceEvents(): SpaceEvent[] {
     id: e.id,
     title: e.title,
     hint: e.life_context,
-    domainName: e.life_context,
+    domainName: findEventDomainName(e.id) ?? "مشاركات الحياة اليومية",
     contexts: ["home", "community"] as SpaceContext[],
     participationCount: e.participationCount,
   }));
@@ -136,7 +137,7 @@ export function mvpSpaceEvents(): SpaceEvent[] {
       title: legacyEvent?.event.name ?? frameworkEvent?.title ?? participations[0].life_context,
       hint: legacyEvent?.domain.name ?? frameworkEvent?.hint ?? participations[0].life_context,
       domainName:
-        legacyEvent?.domain.name ?? frameworkEvent?.domainName ?? participations[0].life_context,
+        legacyEvent?.domain.name ?? findEventDomainName(eventId) ?? frameworkEvent?.domainName ?? "مشاركات الحياة اليومية",
       contexts: legacyEvent
         ? contextsOf(legacyEvent.domain.id)
         : (frameworkEvent?.contexts ?? (["home", "community"] as SpaceContext[])),
@@ -568,3 +569,4 @@ export const SPACE_SUPPORT_ASSET_TYPES = [
   { type: "time" as const, label: "تنظيم زمني", hint: "ما الذي يساعد على فهم الوقت؟" },
   { type: "schedule" as const, label: "جدول مصور", hint: "بأي ترتيب؟" },
 ];
+

@@ -81,5 +81,18 @@ export function recommendEasyStartParticipations(
 }
 
 export function easyStartContextText(answers: EasyStartAnswers): string {
-  return `اهتمام ${answers.interest}، موقف ${answers.routine}، مكان ${answers.place}، وقت ${answers.time}، وبداية ${answers.shape}`;
+  const labels: { [K in keyof EasyStartAnswers]: Record<EasyStartAnswers[K], string> } = {
+    interest: { food: "الطعام أو المشروبات", music: "الموسيقى أو المقاطع", water: "الماء والتعبئة والسكب", organizing: "ترتيب الأشياء وإعادتها", outings: "التسوق والخروج", hosting: "الضيوف والاجتماعات الأسرية", clothing: "الملابس والعناية بها", other: "شيء آخر" },
+    routine: { meal: "إعداد الطعام أو المائدة", home: "ترتيب المنزل", laundry: "غسل الملابس أو ترتيبها", shopping: "التسوق وتجهيز الخروج", gathering: "زيارة أو لقاء عائلي", health: "موعد صحي أو إجراء يومي", leisure: "وقت الترفيه الأسري", other: "موقف آخر" },
+    place: { home: "داخل المنزل", outside: "أثناء خروج قصير", either: "لا فرق؛ اعرضوا الأنسب" },
+    time: { daily: "أثناء حدث يومي قائم", evening: "في المساء", weekend: "في نهاية الأسبوع", outing: "أثناء خروج مخطط", gathering: "عندما تجتمع الأسرة", flexible: "لا وقت محدد" },
+    shape: { short: "مساهمة قصيرة وواضحة", shared: "دور مشترك مع الأسرة", connected: "عدة إجراءات مترابطة", unsure: "لا نعرف؛ اقترحوا علينا" },
+  };
+  const label = (key: keyof EasyStartAnswers) => {
+    const group = labels[key] as Record<string, string>;
+    const value = answers[key];
+    return Object.prototype.hasOwnProperty.call(group, value) ? group[value] : "غير محدد";
+  };
+  return `اهتمام: ${label("interest")}، موقف: ${label("routine")}، مكان: ${label("place")}، وقت: ${label("time")}، وبداية: ${label("shape")}`;
 }
+

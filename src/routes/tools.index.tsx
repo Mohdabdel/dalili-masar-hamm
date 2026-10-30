@@ -3,7 +3,7 @@ import { Clock, Plus, Trash2 } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { Button } from "@/components/ui/button";
 import { createProject, deleteProject } from "@/lib/visual-tools/store";
-import { useVisualToolProjects } from "@/lib/visual-tools/use-visual-tools";
+import { useVisualToolProjects, useVisualToolsError, useVisualToolsScope } from "@/lib/visual-tools/use-visual-tools";
 import { VISUAL_TOOL_TYPES, getToolMeta } from "@/lib/visual-tools/types";
 
 export const Route = createFileRoute("/tools/")({
@@ -40,9 +40,12 @@ function ToolsHomePage() {
     specId: source === "workspace" ? specId : undefined,
   };
   const projects = useVisualToolProjects();
+  const error = useVisualToolsError();
+  const scope = useVisualToolsScope();
 
   function start(type: (typeof VISUAL_TOOL_TYPES)[number]["type"]) {
     const p = createProject(type);
+    if (!p) return;
     navigate({ to: "/tools/$projectId", params: { projectId: p.id }, search: returnSearch });
   }
 
@@ -59,6 +62,11 @@ function ToolsHomePage() {
       ]}
     >
       <div dir="rtl" className="space-y-6">
+        <p className="text-sm text-muted-foreground">
+          {scope.kind === "user" ? "أدوات هذا الحساب على هذا الجهاز فقط؛ لا تُزامَن بين الأجهزة." : "أدوات الزائر مشتركة بين زوار هذا المتصفح؛ تجنبوا إدخال بيانات خاصة."}
+          {" "}الأدوات القديمة المشتركة محفوظة منفصلة ولا تُسند تلقائيًا لأي حساب.
+        </p>
+        {error && <p role="alert" className="text-destructive">{error}</p>}
         <section className="space-y-3">
           <h2 className="text-base font-bold text-foreground">اختر أداة لتبدأ</h2>
           <div className="grid gap-3">
@@ -67,6 +75,7 @@ function ToolsHomePage() {
                 key={t.type}
                 type="button"
                 onClick={() => start(t.type)}
+                disabled={scope.kind === "pending"}
                 className="rounded-2xl border border-border bg-card p-4 text-right shadow-sm transition hover:border-primary hover:shadow-md"
               >
                 <div className="flex items-center justify-between gap-2">
@@ -115,7 +124,9 @@ function ToolsHomePage() {
                     size="icon"
                     aria-label="حذف الأداة"
                     className="text-destructive"
-                    onClick={() => deleteProject(p.id)}
+                    onClick={() => {
+                      if (window.confirm("حذف هذه الأداة من هذا الجهاز؟ لا يمكن التراجع عن الحذف.")) deleteProject(p.id);
+                    }}
                   >
                     <Trash2 className="h-4 w-4" />
                   </Button>
@@ -128,3 +139,4 @@ function ToolsHomePage() {
     </PageShell>
   );
 }
+

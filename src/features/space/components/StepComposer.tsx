@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { stepImageOptions, type ResolvedStepImage } from "@/features/space/step-image";
 import { FamilyPhotoLibrary } from "@/features/space/components/FamilyPhotoLibrary";
+import { ExternalImageGuide } from "./ExternalImageGuide";
 import { cn } from "@/lib/utils";
 
 export interface ComposerStepRow {
@@ -36,6 +37,7 @@ export function StepComposer({
   onResetText,
   onToggleImage,
   onToggleText,
+  onTextOnly,
   onPickImage,
   onUploadImage,
   onPickFamilyImage,
@@ -48,6 +50,7 @@ export function StepComposer({
   onResetText: (stepId: string) => void;
   onToggleImage: (stepId: string, visible: boolean) => void;
   onToggleText: (stepId: string, visible: boolean) => void;
+  onTextOnly: (stepId: string) => void;
   onPickImage: (stepId: string, assetCode: string | null) => void;
   /** يرفع صورة من جهاز الأسرة ويختارها لهذه الخطوة. */
   onUploadImage?: (stepId: string, file: File) => Promise<void> | void;
@@ -59,6 +62,7 @@ export function StepComposer({
 }) {
   const [pickerFor, setPickerFor] = useState<string | null>(null);
   const [uploadingFor, setUploadingFor] = useState<string | null>(null);
+  const [uploadError, setUploadError] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
   const previousIds = useRef(rows.map((row) => row.stepId));
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -83,9 +87,12 @@ export function StepComposer({
   const handleFile = async (stepId: string, file: File | undefined) => {
     if (!file || !onUploadImage) return;
     setUploadingFor(stepId);
+    setUploadError("");
     try {
       await onUploadImage(stepId, file);
       setPickerFor(null);
+    } catch {
+      setUploadError("لم تكتمل إضافة الصورة. الصورة السابقة باقية؛ أعيدوا المحاولة.");
     } finally {
       setUploadingFor(null);
     }
@@ -171,7 +178,7 @@ export function StepComposer({
             <div>
               {!activeRow.imageVisible ? (
                 <div className="grid aspect-[4/3] place-items-center rounded-2xl border border-dashed border-border bg-muted/30 p-2 text-center text-xs font-bold text-muted-foreground">
-                  بدون صورة
+                  اخترتم الاكتفاء بالنص. يمكن إضافة صورة لاحقًا.
                 </div>
               ) : activeRow.image.src ? (
                 <div className="overflow-hidden rounded-2xl border border-border bg-muted">
@@ -183,16 +190,25 @@ export function StepComposer({
                   />
                 </div>
               ) : (
-                <div className="grid aspect-[4/3] place-items-center rounded-2xl border border-dashed border-border bg-muted/30 p-2 text-center text-xs font-semibold text-muted-foreground">
-                  {activeRow.image.compositePending
-                    ? "الصورة المتاحة تجمع أكثر من مشهد — نجهّز صورة لهذه الخطوة"
-                    : "مساحة الصورة — اختاروا صورة مناسبة"}
-                </div>
+                <button type="button" onClick={() => setPickerFor(activeRow.stepId)}
+                  aria-label="إضافة صورة مناسبة للخطوة"
+                  className="grid aspect-[4/3] w-full place-items-center gap-2 rounded-2xl border border-dashed border-border bg-muted/30 p-3 text-center text-xs font-semibold text-muted-foreground">
+                  <ImageIcon className="h-8 w-8" aria-hidden />
+                  <span>إضافة صورة مناسبة للخطوة</span>
+                  <span>هذا الرمز يظهر في المحرر فقط.</span>
+                </button>
               )}
               <div className="mt-2 flex gap-1">
                 <Mini
                   className="flex-1 justify-center"
-                  onClick={() => onToggleImage(activeRow.stepId, !activeRow.imageVisible)}
+                  onClick={() => {
+                    if (activeRow.imageVisible) onTextOnly(activeRow.stepId);
+                    else {
+                      onToggleImage(activeRow.stepId, true);
+                      if (!activeRow.image.src) setPickerFor(activeRow.stepId);
+                    }
+                  }}
+                  disabled={activeRow.imageVisible && !activeRow.familyText.trim()}
                   aria-pressed={!activeRow.imageVisible}
                 >
                   {activeRow.imageVisible ? (
@@ -200,7 +216,7 @@ export function StepComposer({
                   ) : (
                     <Eye className="h-4 w-4" aria-hidden />
                   )}
-                  {activeRow.imageVisible ? "إخفاء الصورة" : "إظهار الصورة"}
+                  {activeRow.imageVisible ? "الاكتفاء بالنص" : "إضافة أو إظهار صورة"}
                 </Mini>
                 <Mini
                   onClick={() =>
@@ -264,6 +280,10 @@ export function StepComposer({
           {pickerFor === activeRow.stepId && (
             <div className="mt-3 rounded-2xl border border-border p-2">
               <p className="mb-2 px-1 text-sm font-bold">اختاروا صورة لهذه الخطوة</p>
+              <div className="mb-3">
+                <ExternalImageGuide key={activeRow.stepId} stepText={activeRow.familyText} />
+              </div>
+              {uploadError && <p role="alert" className="mb-3 text-sm text-destructive">{uploadError}</p>}
               {onPickFamilyImage && <FamilyPhotoLibrary key={activeRow.stepId} onSelect={(path) => {
                 onPickFamilyImage(activeRow.stepId, path);
                 setPickerFor(null);
@@ -278,7 +298,7 @@ export function StepComposer({
                       className="grid h-20 w-full place-items-center gap-1 rounded-xl border border-dashed border-primary/60 bg-primary/5 px-1 text-xs font-bold text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50"
                     >
                       <Upload className="h-4 w-4" aria-hidden />
-                      {uploadingFor === activeRow.stepId ? "جارٍ الرفع…" : "ارفعوا صورة"}
+                      {uploadingFor === activeRow.stepId ? "جارٍ الرفع…" : "رفع صورة من الجهاز"}
                     </button>
                     <input
                       ref={fileInputRef}
@@ -297,12 +317,13 @@ export function StepComposer({
                   <button
                     type="button"
                     onClick={() => {
-                      onPickImage(activeRow.stepId, null);
+                      onTextOnly(activeRow.stepId);
                       setPickerFor(null);
                     }}
+                    disabled={!activeRow.familyText.trim()}
                     className="grid h-20 w-full place-items-center rounded-xl border border-dashed border-border text-xs font-bold text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   >
-                    بلا صورة
+                    الاكتفاء بالنص
                   </button>
                 </li>
                 {options.map((option) => (
@@ -358,3 +379,4 @@ function Mini({ children, className, ...rest }: React.ButtonHTMLAttributes<HTMLB
     </button>
   );
 }
+
