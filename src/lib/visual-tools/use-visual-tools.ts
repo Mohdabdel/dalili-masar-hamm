@@ -3,6 +3,10 @@ import {
   getProjectsSnapshot,
   getServerSnapshot,
   subscribeProjects,
+  getStoreErrorSnapshot,
+  getServerStoreErrorSnapshot,
+  getScopeSnapshot,
+  getServerScopeSnapshot,
 } from "./store";
 import type { VisualToolProject, VisualToolType } from "./types";
 
@@ -21,9 +25,13 @@ export function useVisualToolProject(id: string): VisualToolProject | null {
 
 /** هل اكتمل الترطيب (لتفادي وميض "غير موجود" أثناء SSR). */
 export function useHydratedTools(): boolean {
-  return useSyncExternalStore(
-    subscribeProjects,
-    () => true,
-    () => false,
-  );
+  return useVisualToolsScope().kind !== "pending";
+}
+
+export function useVisualToolsScope() {
+  return useSyncExternalStore(subscribeProjects, getScopeSnapshot, getServerScopeSnapshot);
+}
+
+export function useVisualToolsError() {
+  return useSyncExternalStore(subscribeProjects, getStoreErrorSnapshot, getServerStoreErrorSnapshot);
 }

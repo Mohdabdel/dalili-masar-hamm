@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { VisualToolEditor } from "@/components/visual-tools/VisualToolEditor";
-import { useHydratedTools, useVisualToolProject } from "@/lib/visual-tools/use-visual-tools";
+import { useHydratedTools, useVisualToolProject, useVisualToolsError } from "@/lib/visual-tools/use-visual-tools";
 import { getToolMeta } from "@/lib/visual-tools/types";
 
 export const Route = createFileRoute("/tools/$projectId")({
@@ -41,6 +41,7 @@ function ToolEditorPage() {
   };
   const project = useVisualToolProject(projectId);
   const hydrated = useHydratedTools();
+  const error = useVisualToolsError();
 
   if (!project) {
     return (
@@ -51,16 +52,16 @@ function ToolEditorPage() {
         breadcrumbs={[{ label: "أدوات ووسائل داعمة", to: "/tools" }]}
       >
         <p dir="rtl" className="rounded-2xl border border-dashed border-border p-6 text-center text-sm text-muted-foreground">
-          {hydrated ? (
+          {error || (hydrated ? (
             <>
-              لم نجد هذه الأداة على هذا الجهاز.{" "}
+              هذه الأداة غير متاحة لهذا الحساب على هذا الجهاز.{" "}
               <Link to="/tools" search={returnSearch} className="font-semibold text-primary underline">
                 العودة إلى قائمة الأدوات
               </Link>
             </>
           ) : (
             "جارٍ فتح الأداة…"
-          )}
+          ))}
         </p>
       </PageShell>
     );
@@ -70,7 +71,7 @@ function ToolEditorPage() {
     <PageShell
       title={project.title}
       subtitle={getToolMeta(project.type).titleAr}
-      description="خاص بأسرتك — يُحفظ تلقائيًا على هذا الجهاز"
+      description="تُحفظ أدوات الحساب على هذا الجهاز فقط؛ لا تُزامَن بين الأجهزة. أدوات الزائر مشتركة بين زوار المتصفح."
       backTo="/tools"
       backSearch={returnSearch}
       breadcrumbs={[
@@ -78,7 +79,9 @@ function ToolEditorPage() {
         { label: project.title },
       ]}
     >
-      <VisualToolEditor project={project} />
+      {error && <p role="alert" className="text-destructive">{error}</p>}
+      <VisualToolEditor key={project.userId + ":" + project.id} project={project} />
     </PageShell>
   );
 }
+

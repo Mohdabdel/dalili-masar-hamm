@@ -7,7 +7,7 @@ import {
   getRenderableVisualAssets,
   type CanonicalVisualAsset,
 } from "@/lib/visual-asset-catalog";
-import { derivedFor, isDerivedAsset } from "@/features/space/derived-assets";
+import { isDerivedAsset } from "@/features/space/derived-assets";
 import { peekUploadedUrl } from "@/features/space/family-uploads";
 import type { LabStepImageRef } from "@/lab/slice/types";
 
@@ -41,15 +41,6 @@ export function stepImageOptions(): StepImageOption[] {
       }));
   }
   return optionsCache;
-}
-
-/** أول مشهد مشتق صالح من لوحة مركّبة، إن وُجد. */
-function firstDerivedCode(sourceAssetCode: string): string | null {
-  for (const record of derivedFor(sourceAssetCode)) {
-    const asset = getCanonicalVisualAsset(record.derivedAssetCode);
-    if (asset && !asset.missingBinary && asset.assetPath) return record.derivedAssetCode;
-  }
-  return null;
 }
 
 let bySrcCache: Map<string, CanonicalVisualAsset> | null = null;
@@ -95,12 +86,7 @@ export function resolveStepImage(ref: LabStepImageRef | null | undefined): Resol
   const source = getCanonicalVisualAsset(ref.sourceAssetCode);
   if (!source || source.missingBinary || !source.assetPath) return EMPTY;
   if (isCompositeAsset(source)) {
-    // لوحة متعددة المشاهد: نعرض المشهد المشتق الأول بدل اللوحة كاملة.
-    const code = firstDerivedCode(source.assetCode);
-    const derived = code ? getCanonicalVisualAsset(code) : null;
-    if (derived?.assetPath) {
-      return { src: derived.assetPath, compositePending: false, title: derived.titleAr };
-    }
+    // لا نختار أول مشهد اعتباطياً؛ يلزم اختيار مشهد محدد للخطوة.
     return { src: null, compositePending: true, title: source.titleAr };
   }
   return { src: source.assetPath, compositePending: false, title: source.titleAr };
@@ -114,7 +100,7 @@ export function resolvedAssetCode(ref: LabStepImageRef | null | undefined): stri
   if (!ref.sourceAssetCode) return null;
   const source = getCanonicalVisualAsset(ref.sourceAssetCode);
   if (!source) return null;
-  if (isCompositeAsset(source)) return firstDerivedCode(source.assetCode);
+  if (isCompositeAsset(source)) return null;
   return source.assetCode;
 }
 
@@ -143,19 +129,8 @@ export function suggestStepImage(
   );
   if (exact) return { sourceAssetCode: exact.code };
 
-  let best: { code: string; hits: number } | null = null;
-  for (const option of choices) {
-    const words = option.title
-      .replace(/[.،]/g, " ")
-      .split(/\s+/)
-      .filter((w) => w.length > 2);
-    let hits = 0;
-    for (const w of words) if (clean.includes(w)) hits += 1;
-    // المشهد المشتق (صورة واحدة واضحة) يسبق غيره عند التساوي.
-    const score = hits > 0 ? hits + (option.derived ? 0.5 : 0) : 0;
-    if (score > 0 && (!best || score > best.hits)) best = { code: option.code, hits: score };
-  }
-  return best ? { sourceAssetCode: best.code } : null;
+  // التخمين بكلمة مشتركة قد يعرض فعلاً مختلفاً. اتركوا النص عند غياب تطابق دقيق.
+  return null;
 }
 
 function prioritizeOptions(prefix: string | undefined): StepImageOption[] {

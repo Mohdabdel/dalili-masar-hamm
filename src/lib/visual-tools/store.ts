@@ -33,7 +33,9 @@ export type VisualToolsScope =
   | { kind: "guest" }
   | { kind: "user"; userId: string };
 
-let scope: VisualToolsScope = { kind: "pending" };
+const PENDING_SCOPE: VisualToolsScope = { kind: "pending" };
+const EMPTY: VisualToolProject[] = [];
+let scope: VisualToolsScope = PENDING_SCOPE;
 let cache: VisualToolProject[] | null = null;
 let lastError: string | null = null;
 let authWired = false;
@@ -81,22 +83,31 @@ function ensureAuthWiring() {
   if (authWired || typeof window === "undefined") return;
   authWired = true;
 
-  void supabase.auth.getSession().then(({ data }) => {
-    const userId = data.session?.user?.id;
-    setScope(userId ? { kind: "user", userId } : { kind: "guest" });
-  });
-
+  let authRevision = 0;
   supabase.auth.onAuthStateChange((event, session) => {
-    if (event === "SIGNED_IN" || event === "SIGNED_OUT" || event === "USER_UPDATED") {
+    if (event === "INITIAL_SESSION" || event === "SIGNED_IN" || event === "SIGNED_OUT" || event === "USER_UPDATED") {
+      authRevision += 1;
       const userId = session?.user?.id;
       setScope(userId ? { kind: "user", userId } : { kind: "guest" });
     }
+  });
+  const initialRevision = authRevision;
+  void supabase.auth.getSession().then(({ data, error }) => {
+    if (authRevision !== initialRevision) return;
+    if (error) throw error;
+    const userId = data.session?.user?.id;
+    setScope(userId ? { kind: "user", userId } : { kind: "guest" });
+  }).catch(() => {
+    if (authRevision !== initialRevision) return;
+    // Fail closed: do not expose guest or account data when identity is unknown.
+    lastError = "تعذّر التحقق من الحساب. أعيدوا تحميل الصفحة قبل فتح الأدوات.";
+    notify();
   });
 
   // تبويب آخر على نفس الحساب عدّل البيانات — نعيد القراءة من التخزين.
   window.addEventListener("storage", (event) => {
     const key = storageKeyFor(scope);
-    if (key && event.key === key) {
+    if (key && (event.key === key || event.key === null)) {
       cache = null;
       notify();
     }
@@ -105,9 +116,9 @@ function ensureAuthWiring() {
 
 function read(): VisualToolProject[] {
   if (cache) return cache;
-  if (typeof window === "undefined") return [];
+  if (typeof window === "undefined") return EMPTY;
   const key = storageKeyFor(scope);
-  if (!key) return [];
+  if (!key) return EMPTY;
   try {
     const raw = window.localStorage.getItem(key);
     const parsed = raw ? (JSON.parse(raw) as VisualToolProject[]) : [];
@@ -161,8 +172,6 @@ export function getServerSnapshot(): VisualToolProject[] {
   return EMPTY;
 }
 
-const EMPTY: VisualToolProject[] = [];
-
 /** آخر خطأ حفظ — null عندما تكون آخر كتابة ناجحة. */
 export function getStoreErrorSnapshot(): string | null {
   return lastError;
@@ -178,7 +187,7 @@ export function getScopeSnapshot(): VisualToolsScope {
 }
 
 export function getServerScopeSnapshot(): VisualToolsScope {
-  return { kind: "pending" };
+  return PENDING_SCOPE;
 }
 
 /* ---------- عمليات المشاريع ---------- */
@@ -334,3 +343,4 @@ export function __resetVisualToolsForTests() {
   lastError = null;
   authWired = false;
 }
+

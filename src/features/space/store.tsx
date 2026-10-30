@@ -68,6 +68,7 @@ export type SliceAction =
   | { type: "lifecycle"; specId: string; value: SliceLifecycleChoice }
   | { type: "station.add"; eventId: string }
   | { type: "station.remove"; eventId: string }
+  | { type: "station.link"; eventId: string; specId: string }
   | { type: "card.close"; snapshotId: string }
   | { type: "card.reopen"; snapshotId: string }
   | { type: "run.start"; runId: string; snapshotId: string }
@@ -194,6 +195,8 @@ export function sliceReducer(state: SliceState, action: SliceAction): SliceState
 export interface SliceStore {
   state: SliceState;
   dispatch: (a: SliceAction) => void;
+  /** حفظ مؤكد قبل الانتقال، للمسارات التي تحتاج إظهار فشل الحفظ. */
+  persistDispatch?: (a: SliceAction) => Promise<void>;
 }
 
 export const SliceCtx = createContext<SliceStore | null>(null);

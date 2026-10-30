@@ -22,6 +22,7 @@ import {
 } from "@/features/space/compose";
 import { useSlice, useSliceHelpers, useSpaceBase } from "@/features/space/store";
 import { curatedBySpec } from "@/features/space/curated-explore";
+import { textOnlySelection } from "@/features/space/image-generation-guide";
 import type {
   LabParticipationImage,
   LabStepImageRef,
@@ -30,7 +31,7 @@ import type {
 
 export function WorkspacePage({ specId, initialTab }: { specId: string; initialTab?: "tools" }) {
   const base = useSpaceBase();
-  const { state, dispatch } = useSlice();
+  const { state, dispatch, persistDispatch } = useSlice();
   const spec = resolveSpaceSpec(specId, state.selections);
   const { snapshotsFor } = useSliceHelpers();
   const [newBlockText, setNewBlockText] = useState("");
@@ -53,6 +54,8 @@ export function WorkspacePage({ specId, initialTab }: { specId: string; initialT
       supportTools: [],
     };
   }, [state.selections, spec, specId]);
+  const latestSelection = useRef(selection);
+  latestSelection.current = selection;
 
   const leaves = useMemo(() => {
     if (!spec) return [];
@@ -220,7 +223,8 @@ export function WorkspacePage({ specId, initialTab }: { specId: string; initialT
     const src = resolveStepImage(ref).src;
     setSelection({
       imageRefByStepId: { ...(selection.imageRefByStepId ?? {}), [stepId]: ref },
-      ...syncLegacy(stepId, imageVisibleFor(stepId), textVisibleFor(stepId), src),
+      imageVisibleByStepId: { ...selection.imageVisibleByStepId, [stepId]: Boolean(assetCode) },
+      ...syncLegacy(stepId, Boolean(assetCode), textVisibleFor(stepId), src),
     });
   };
 
@@ -230,12 +234,20 @@ export function WorkspacePage({ specId, initialTab }: { specId: string; initialT
       const path = await uploadFamilyImage(file);
       const ref: LabStepImageRef = { sourceAssetCode: "", uploadedPath: path };
       const src = resolveStepImage(ref).src;
-      setSelection({
-        imageRefByStepId: { ...(selection.imageRefByStepId ?? {}), [stepId]: ref },
-        ...syncLegacy(stepId, imageVisibleFor(stepId), textVisibleFor(stepId), src),
-      });
-    } catch {
-      window.alert("لم نستطع رفع الصورة. جرّبوا صورة أخرى أو أعيدوا المحاولة.");
+      const current = latestSelection.current;
+      if (!current.selected.some((step) => step.stepId === stepId)) throw new Error("الخطوة لم تعد في المسودة");
+      const visibleText = composeTextVisibleFor(current, stepId);
+      const next = {
+        ...current,
+        imageRefByStepId: { ...current.imageRefByStepId, [stepId]: ref },
+        imageVisibleByStepId: { ...current.imageVisibleByStepId, [stepId]: true },
+        presentationByStepId: { ...current.presentationByStepId, [stepId]: visibleText ? "both" as const : "visual" as const },
+        visualByStepId: { ...current.visualByStepId, [stepId]: src ?? "" },
+      };
+      if (persistDispatch) await persistDispatch({ type: "selection", value: next });
+      else dispatch({ type: "selection", value: next });
+    } catch (error) {
+      throw error;
     }
   };
 
@@ -243,7 +255,8 @@ export function WorkspacePage({ specId, initialTab }: { specId: string; initialT
     const ref: LabStepImageRef = { sourceAssetCode: "", uploadedPath: path };
     setSelection({
       imageRefByStepId: { ...(selection.imageRefByStepId ?? {}), [stepId]: ref },
-      ...syncLegacy(stepId, imageVisibleFor(stepId), textVisibleFor(stepId), ""),
+      imageVisibleByStepId: { ...selection.imageVisibleByStepId, [stepId]: true },
+      ...syncLegacy(stepId, true, textVisibleFor(stepId), ""),
     });
   };
 
@@ -318,7 +331,7 @@ export function WorkspacePage({ specId, initialTab }: { specId: string; initialT
           ? <LabBackLink to="/">الصفحة الرئيسية</LabBackLink>
           : <LabBackLink to={`${base}`}>مساحة الأسرة</LabBackLink>}
     >
-      <div role="tablist" aria-label="أقسام إعداد المشاركة" className="sticky top-0 z-20 -mx-4 mb-5 flex gap-2 overflow-x-auto border-b border-border bg-background/95 px-4 py-3 backdrop-blur-sm">
+      <div role="tablist" aria-label="أقسام إعداد المشاركة" className="sticky top-0 z-20 -mx-4 mb-5 flex flex-wrap gap-2 border-b border-border bg-background/95 px-4 py-3 backdrop-blur-sm">
         <button type="button" role="tab" id="draft-tab" aria-controls="draft-panel" aria-selected={activeTab === "draft"}
           onClick={() => setActiveTab("draft")}
           className={`min-h-11 shrink-0 rounded-xl px-3 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${activeTab === "draft" ? "bg-primary text-primary-foreground" : "border border-border bg-card"}`}>
@@ -364,6 +377,7 @@ export function WorkspacePage({ specId, initialTab }: { specId: string; initialT
           onResetText={resetText}
           onToggleImage={toggleImage}
           onToggleText={toggleText}
+          onTextOnly={(stepId) => dispatch({ type: "selection", value: textOnlySelection(selection, stepId) })}
           onPickImage={pickImage}
           onUploadImage={uploadImage}
           onPickFamilyImage={pickFamilyImage}
@@ -593,3 +607,4 @@ export function WorkspacePage({ specId, initialTab }: { specId: string; initialT
     </LabPage>
   );
 }
+

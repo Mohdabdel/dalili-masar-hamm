@@ -515,6 +515,12 @@ export function findEventById(eventId: string): FlatEvent | null {
   return getAllEvents().find((e) => e.event.id === eventId) ?? null;
 }
 
+/** مجال الحدث من المصدر، حتى إن لم تكن بطاقاته القديمة مكتملة للنشر. */
+export function findEventDomainName(eventId: string): string | undefined {
+  const event = (parseCsv(eventsCsv) as unknown as EventRow[]).find((row) => row.event_id === eventId);
+  return event ? built.domains.find((domain) => domain.id === event.domain_id)?.name : undefined;
+}
+
 /** بحث عن فرصة مشاركة مع سياقها الكامل (مجال ← حدث). */
 export function findOpportunityContextById(
   opportunityId: string,

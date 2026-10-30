@@ -87,7 +87,7 @@ export function LearnerPage({ snapshotId }: { snapshotId: string }) {
         العودة إلى البطاقة
       </LabLinkButton>
       <div className="mb-4 text-center text-base font-bold text-muted-foreground" aria-live="polite">
-        {isDone ? "النهاية" : `${i + 1} / ${stepFrames.length}`}
+        {isDone ? "النهاية" : `الخطوة ${i + 1} من ${stepFrames.length}`}
       </div>
 
       {isDone ? (
@@ -151,3 +151,4 @@ export function LearnerPage({ snapshotId }: { snapshotId: string }) {
     </div>
   );
 }
+
