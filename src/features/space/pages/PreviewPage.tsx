@@ -147,7 +147,7 @@ export function PreviewPage({ specId }: { specId: string }) {
         ) : (
           <>
             <div
-              className="mb-3 inline-flex rounded-xl border border-border bg-card p-1"
+              className="mb-3 inline-flex max-w-full flex-wrap rounded-xl border border-border bg-card p-1"
               role="group"
               aria-label="طريقة معاينة الخطوات"
             >

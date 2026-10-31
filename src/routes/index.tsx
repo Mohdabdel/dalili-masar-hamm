@@ -229,11 +229,11 @@ function LandingPage() {
           to="/tools"
           className="group mt-3 flex items-center justify-between gap-3 rounded-2xl border border-border bg-secondary p-4 transition-all hover:-translate-y-0.5 hover:shadow-elegant"
         >
-          <span className="flex items-center gap-3">
+          <span className="flex min-w-0 items-center gap-3">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
               <Images className="h-5 w-5" strokeWidth={2} />
             </span>
-            <span className="text-base font-bold text-foreground">استكشفوا الأدوات</span>
+            <span className="min-w-0 break-words text-base font-bold text-foreground">استكشفوا الأدوات</span>
           </span>
           <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
         </Link>

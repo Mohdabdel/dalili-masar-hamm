@@ -76,7 +76,7 @@ export function LabChoiceCard({
   const inner = (
     <span className="flex w-full items-center justify-between gap-3">
       <span className="min-w-0 text-start">
-        <span className="block text-lg font-bold leading-snug text-foreground">{title}</span>
+        <span className="block break-words text-lg font-bold leading-snug text-foreground">{title}</span>
         {hint && <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">{hint}</span>}
         {meta && <span className="mt-1.5 block text-xs font-semibold text-primary">{meta}</span>}
       </span>
@@ -85,7 +85,7 @@ export function LabChoiceCard({
   );
 
   const className = cn(
-    "flex min-h-[64px] w-full items-center rounded-2xl border bg-card p-4 text-start transition-colors",
+    "flex min-h-[64px] w-full min-w-0 items-center rounded-2xl border bg-card p-4 text-start transition-colors",
     "hover:border-primary/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
     selected ? "border-primary ring-2 ring-primary/30" : "border-border",
   );
