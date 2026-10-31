@@ -6,6 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { resolveSession } from "@/lib/auth-session";
 import { getSpaceSpec } from "@/lab/data/space/catalog";
 import type { LabCardSnapshot } from "@/lab/slice/types";
+import { latestTimestamp, pickLatestParticipation, type LatestCandidate } from "@/features/space/latest-participation";
 
 export interface FamilyDraftItem {
   specId: string;
@@ -23,7 +24,8 @@ export interface FamilySpaceStatus {
   signedIn: boolean;
   drafts: FamilyDraftItem[];
   approved: FamilyApprovedItem[];
-  current: FamilyApprovedItem | null;
+  /** آخر مشاركة مفتوحة استُخدمت أو عُدّلت (بطاقة معتمدة مفتوحة أو مسودة). */
+  current: LatestCandidate | null;
 }
 
 const EMPTY: FamilySpaceStatus = {
@@ -70,14 +72,15 @@ export function useFamilySpaceStatus(): FamilySpaceStatus {
         return;
       }
 
-      const [draftsRes, snapshotsRes, participationsRes, cardStatesRes] = await Promise.all([
-        supabase.from("participation_drafts").select("spec_id, selection"),
+      const [draftsRes, snapshotsRes, participationsRes, cardStatesRes, runsRes] = await Promise.all([
+        supabase.from("participation_drafts").select("spec_id, selection, updated_at"),
         supabase
           .from("participation_snapshots")
-          .select("id, family_participation_id, version_number, snapshot_data")
+          .select("id, family_participation_id, version_number, snapshot_data, approved_at, created_at")
           .order("version_number", { ascending: true }),
         supabase.from("active_participations").select("id, status"),
         supabase.from("participation_card_states").select("snapshot_id, closed"),
+        supabase.from("participation_runs").select("snapshot_id, started_at, ended_at, updated_at"),
       ]);
 
       if (cancelled) return;
@@ -95,7 +98,12 @@ export function useFamilySpaceStatus(): FamilySpaceStatus {
       const closedSnapshotIds = new Set((cardStatesRes.data ?? [])
         .filter((row) => row.closed)
         .map((row) => row.snapshot_id));
-      let current: FamilyApprovedItem | null = null;
+      const openCardBySpec = new Map<string, FamilyApprovedItem>();
+      const activityBySpec = new Map<string, string[]>();
+      const specBySnapshot = new Map<string, string>();
+      const pushActivity = (specId: string, ...values: Array<string | null | undefined>) => {
+        activityBySpec.set(specId, [...(activityBySpec.get(specId) ?? []), ...values.filter((v): v is string => Boolean(v))]);
+      };
       for (const row of snapshotsRes.data ?? []) {
         const snap = row.snapshot_data as unknown as LabCardSnapshot;
         const specId = snap?.participationSpecId ?? "";
@@ -106,10 +114,40 @@ export function useFamilySpaceStatus(): FamilySpaceStatus {
           latestVersion: row.version_number,
         };
         latestBySpec.set(specId, item);
+        specBySnapshot.set(row.id, specId);
+        pushActivity(specId, row.approved_at, row.created_at);
+        // المشاركة المفتوحة ذات أحدث نسخة غير مغلقة تُعدّ «بطاقة مفتوحة».
         if (openParticipationIds.has(row.family_participation_id) && !closedSnapshotIds.has(row.id)) {
-          current = item;
+          openCardBySpec.set(specId, item);
+        } else if (openCardBySpec.get(specId) && closedSnapshotIds.has(row.id)) {
+          // أحدث نسخة أُغلقت: تبقى النسخة المفتوحة السابقة صالحة للمتابعة.
         }
       }
+      for (const run of runsRes.data ?? []) {
+        const specId = specBySnapshot.get(run.snapshot_id);
+        if (specId) pushActivity(specId, run.started_at, run.ended_at, run.updated_at);
+      }
+      for (const row of draftsRes.data ?? []) pushActivity(row.spec_id, row.updated_at);
+
+      const candidates: LatestCandidate[] = [];
+      for (const card of openCardBySpec.values()) {
+        candidates.push({
+          specId: card.specId,
+          title: card.title,
+          kind: "card",
+          lastActivity: latestTimestamp(activityBySpec.get(card.specId) ?? []),
+        });
+      }
+      for (const draft of drafts) {
+        if (latestBySpec.has(draft.specId)) continue; // لها بطاقة: تُعامل كبطاقة لا كمسودة.
+        candidates.push({
+          specId: draft.specId,
+          title: draft.title,
+          kind: "draft",
+          lastActivity: latestTimestamp(activityBySpec.get(draft.specId) ?? []),
+        });
+      }
+      const current = pickLatestParticipation(candidates);
 
       setStatus({
         loading: false,
