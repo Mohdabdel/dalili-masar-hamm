@@ -81,7 +81,7 @@ describe("Expansion sample 12-02 visual readiness", () => {
       },
     });
     // الصورة المحفوظة على الخطوة اختيار مقصود: لا تُستبدل تلقائيًا بأصل أحدث.
-    expect(rows[0].assetCode).toBe("VRS-B03-SHOP-BAGS");
+    expect(rows[0].imageRef).toEqual({ sourceAssetCode: "VRS-B03-SHOP-BAGS" });
     expect(rows[0].assetCode).not.toBe("VRS-EXP12-02-SHOP-PRODUCE-S02");
   });
 
