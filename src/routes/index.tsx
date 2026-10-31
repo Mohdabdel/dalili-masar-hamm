@@ -6,6 +6,7 @@ import {
   Sparkles,
   Library,
   Images,
+  FolderHeart,
 } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { useFamilySpaceStatus } from "@/features/space/home-status";
@@ -53,29 +54,35 @@ const INFO_TABS = [
     id: "guide",
     title: "دليل الاستخدام",
     body: [
-      "اختاروا حدثًا معتادًا في يومكم، ثم حدّدوا الجزء الذي يمكن مشاركته، وجهّزوا بطاقة مشاركة قصيرة بلغتكم وصوركم.",
-      "تجدون الشرح الكامل في صفحة دليل المشاركة.",
+      "١. اختاروا طريقة البدء: «بداية سهلة» بأسئلة قصيرة عن الاهتمامات ومواقف يومكم، أو «استكشفوا المشاركات» من أحداث اليوم ومحطات الروتين، أو «خططوها بأنفسكم» باسم مشاركة وخطوة واحدة على الأقل.",
+      "٢. في مساحة الإعداد: عدّلوا العبارات بلهجتكم، رتّبوا الخطوات واختاروا بدايتها ونهايتها، وأضيفوا صورة من دليلي أو من صوركم أو اكتفوا بالنص. وتجدون اعتبارات أثناء التطبيق وأدوات داعمة.",
+      "٣. عاينوا البطاقة خطوة بخطوة أو رأسيًا أو أفقيًا، ثم اعتمدوها. كل اعتماد ينشئ إصدارًا ثابتًا لا يتغير.",
+      "٤. افتحوا بطاقة المشارك أو اطبعوها، وبعد المشاركة اختاروا: نكررها، نغيّر شيئًا، أو ليس الآن. تجدون كل ذلك في «مشاركاتنا».",
     ],
-    link: true,
   },
 ];
 
-// المسار الموجّه هو المدخل الأساسي الوحيد. بقية المداخل تظهر بعد «تخطّي».
-const ALTERNATIVE_ENTRY_STRATEGIES = [
+// مداخل الرئيسية المعتمدة بعد «بداية سهلة» (الظاهرة دائمًا).
+const ENTRY_POINTS = [
   {
-    title: "خططها بنفسك",
-    description: "خططوا لمشاركة خاصة بكم داخل مساحة عمل الأسرة.",
+    title: "استكشفوا المشاركات",
+    description: "من أحداث يومكم أو محطات روتينكم إلى مشاركة تشبه حياتكم.",
+    icon: Library,
+    to: "/space/explore" as const,
+    tone: "navy" as const,
+  },
+  {
+    title: "خططوها بأنفسكم",
+    description: "اسم مشاركة من واقع أسرتكم وخطوة واحدة على الأقل.",
     icon: CalendarClock,
     to: "/space/plan" as const,
-    search: undefined,
     tone: "coral" as const,
   },
   {
-    title: "استكشف المشاركات الممكنة",
-    description: "نتصفح أحداث يومنا أو محطات روتيننا، ونختار مشاركة تشبه حياتنا.",
-    icon: Library,
-    to: "/space/explore" as const,
-    search: { lens: "event" as const },
+    title: "مشاركاتنا",
+    description: "المسودات والمشاركات الحالية والبطاقات والسجل في مكان واحد.",
+    icon: FolderHeart,
+    to: "/space/participations" as const,
     tone: "navy" as const,
   },
 ];
@@ -122,16 +129,6 @@ function InfoTabs() {
               {p}
             </p>
           ))}
-          {current.link && (
-            <Link
-              to="/participation-guide"
-              search={{ tab: "guide" as const }}
-              className="mt-3 inline-flex min-h-11 items-center gap-1 text-sm font-bold text-coral"
-            >
-              افتحوا دليل المشاركة
-              <ChevronLeft className="h-4 w-4" aria-hidden />
-            </Link>
-          )}
         </div>
       )}
     </div>
@@ -139,112 +136,87 @@ function InfoTabs() {
 }
 
 function LandingPage() {
-  const [showAlternatives, setShowAlternatives] = useState(false);
   const family = useFamilySpaceStatus();
   const hasApprovedCard = family.signedIn && family.approved.length > 0;
+  const current = family.current;
   return (
     <PageShell
       title="دليلي"
       description="المشاركة ليست تدريبًا على الحياة… المشاركة هي الحياة نفسها."
       headerExtra={<InfoTabs />}
     >
-      {/* أول إجراء حسب مشاركات الأسرة، بعد حسم حالة الدخول. */}
-      <section className="mt-1">
+      <section className="mt-1 space-y-3">
         {family.loading ? (
           <p role="status" className="rounded-2xl border border-border p-5 text-sm text-muted-foreground">جارٍ تحميل مساحة الأسرة…</p>
-        ) : family.current ? (
-          <Link
-            to="/space/card/$specId"
-            params={{ specId: family.current.specId }}
-            className="flex min-h-32 flex-col justify-between gap-3 rounded-[2rem] bg-teal p-5 text-teal-foreground shadow-card-soft"
-          >
-            <span className="text-xl font-bold">متابعة المشاركة</span>
-            <span className="text-base">{family.current.title}</span>
-          </Link>
-        ) : (
-          <Link
-            to="/space/easy"
-            className="flex min-h-40 flex-col justify-between gap-3 rounded-[2rem] bg-teal p-5 text-teal-foreground shadow-card-soft transition-all hover:shadow-elegant"
-          >
+        ) : current ? (
+          current.kind === "card" ? (
+            <Link
+              to="/space/card/$specId"
+              params={{ specId: current.specId }}
+              className="flex min-h-32 flex-col justify-between gap-3 rounded-[2rem] bg-primary p-5 text-primary-foreground shadow-card-soft"
+            >
+              <span className="text-xl font-bold">متابعة المشاركة</span>
+              <span className="text-base">{current.title}</span>
+            </Link>
+          ) : (
+            <Link
+              to="/space/workspace/$specId"
+              params={{ specId: current.specId }}
+              className="flex min-h-32 flex-col justify-between gap-3 rounded-[2rem] bg-primary p-5 text-primary-foreground shadow-card-soft"
+            >
+              <span className="text-xl font-bold">متابعة المشاركة</span>
+              <span className="text-base">{current.title} <span className="opacity-80">— مسودة</span></span>
+            </Link>
+          )
+        ) : null}
+
+        {/* بداية سهلة: ظاهرة دائمًا، قبل إنشاء أي بطاقة وبعده. */}
+        <Link
+          to="/space/easy"
+          className="flex min-h-36 flex-col justify-between gap-3 rounded-[2rem] bg-teal p-5 text-teal-foreground shadow-card-soft transition-all hover:shadow-elegant"
+        >
           <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-teal-foreground/20">
             <Sparkles className="h-5 w-5" aria-hidden />
           </span>
           <span>
-            <span className="block text-lg font-bold">لنجعل البداية سهلة</span>
+            <span className="block text-lg font-bold">
+              {current ? "ابدأوا مشاركة أخرى — بداية سهلة" : "لنجعل البداية سهلة"}
+            </span>
             <span className="mt-1 block text-sm leading-relaxed text-teal-foreground/80">
-              أجيبوا عن 5 أسئلة قصيرة لنقترح فرص مشاركة من مواقف حياة أسرتكم اليومية.
+              أسئلة قصيرة عن الاهتمامات ومواقف حياة أسرتكم، ثم اقتراحات مشاركة تختارون منها.
             </span>
           </span>
-          </Link>
-        )}
+        </Link>
 
-        {!hasApprovedCard && (
-          <div className="mt-5 rounded-2xl border border-border bg-card p-4">
+        {!family.loading && !hasApprovedCard && (
+          <div className="rounded-2xl border border-border bg-card p-4">
             <p className="font-bold leading-relaxed text-foreground">دليلي يساعد الأسرة على تهيئة فرص مشاركة الأشخاص ذوي الإعاقة في أحداث حياتهم اليومية.</p>
             <p className="mt-2 text-sm text-muted-foreground">الفرصة الموجودة تكفي.</p>
           </div>
         )}
 
-        <button
-          type="button"
-          onClick={() => setShowAlternatives((value) => !value)}
-          aria-expanded={showAlternatives}
-          className="mx-auto mt-3 block min-h-11 px-4 text-sm font-bold text-primary underline underline-offset-4"
-        >
-          {showAlternatives ? "إخفاء طرق البدء الأخرى" : "طرق أخرى لبدء المشاركة"}
-        </button>
-
-        {showAlternatives && (
-          <div className="mt-3 grid gap-3 sm:grid-cols-2">
-            {ALTERNATIVE_ENTRY_STRATEGIES.map(
-              ({ title, description, icon: Icon, to, tone, search }) => {
-                const filled = (tone as string) === "teal";
-                return (
-                  <Link
-                    key={title}
-                    to={to}
-                    search={search}
-                    className={cn(
-                      "group flex min-h-36 flex-col justify-between gap-3 rounded-[2rem] border p-4 shadow-card-soft transition-all hover:-translate-y-0.5 hover:shadow-elegant",
-                      filled ? "border-teal bg-teal text-teal-foreground" : "border-border bg-card",
-                    )}
-                  >
-                    <span
-                      className={cn(
-                        "flex h-11 w-11 items-center justify-center rounded-2xl",
-                        filled
-                          ? "bg-teal-foreground/20 text-teal-foreground"
-                          : tone === "navy"
-                            ? "bg-primary/10 text-primary"
-                            : "bg-coral/10 text-coral",
-                      )}
-                    >
-                      <Icon className="h-5 w-5" strokeWidth={2} />
-                    </span>
-                    <span className="text-right">
-                      <span
-                        className={cn(
-                          "block text-base font-bold",
-                          filled ? "text-teal-foreground" : "text-foreground",
-                        )}
-                      >
-                        {title}
-                      </span>
-                      <span
-                        className={cn(
-                          "mt-1 block text-sm leading-relaxed",
-                          filled ? "text-teal-foreground/80" : "text-muted-foreground",
-                        )}
-                      >
-                        {description}
-                      </span>
-                    </span>
-                  </Link>
-                );
-              },
-            )}
-          </div>
-        )}
+        <div className="grid gap-3 sm:grid-cols-3">
+          {ENTRY_POINTS.map(({ title, description, icon: Icon, to, tone }) => (
+            <Link
+              key={title}
+              to={to}
+              className="group flex min-h-32 flex-col justify-between gap-3 rounded-[2rem] border border-border bg-card p-4 shadow-card-soft transition-all hover:-translate-y-0.5 hover:shadow-elegant"
+            >
+              <span
+                className={cn(
+                  "flex h-11 w-11 items-center justify-center rounded-2xl",
+                  tone === "navy" ? "bg-primary/10 text-primary" : "bg-coral/10 text-coral",
+                )}
+              >
+                <Icon className="h-5 w-5" strokeWidth={2} />
+              </span>
+              <span className="text-right">
+                <span className="block text-base font-bold text-foreground">{title}</span>
+                <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">{description}</span>
+              </span>
+            </Link>
+          ))}
+        </div>
       </section>
 
       {/* أدوات دليلي — مدخل واضح من الصفحة العامة */}
