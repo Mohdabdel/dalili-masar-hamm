@@ -33,7 +33,9 @@ export function CardsPage({ specId }: { specId: string }) {
     <LabPage
       title={spec.title_ar}
       intro={`${spec.eventTitle_ar} — كل البطاقات هنا تنتمي إلى هذه المشاركة، حتى لو غطّت أجزاء مختلفة منها.`}
-      back={<LabBackLink to={`${base}`}>مساحة الأسرة</LabBackLink>}
+      back={base === "/space"
+        ? <LabBackLink to="/space/participations">مشاركاتنا</LabBackLink>
+        : <LabBackLink to={`${base}`}>مساحة الأسرة</LabBackLink>}
     >
       {snapshots.length === 0 ? (
         <LabNote>لا توجد بطاقة معتمدة بعد لهذه المشاركة.</LabNote>
