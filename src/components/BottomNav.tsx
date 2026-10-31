@@ -1,11 +1,11 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Home, HeartHandshake, Wrench, Settings } from "lucide-react";
+import { Home, HeartHandshake, Wrench, UserRound } from "lucide-react";
 
 const tabs = [
   { to: "/", label: "الرئيسية", icon: Home },
-  { to: "/space/explore", label: "مشاركاتنا", icon: HeartHandshake },
+  { to: "/space/participations", label: "مشاركاتنا", icon: HeartHandshake },
   { to: "/tools", label: "أدوات دليلي", icon: Wrench },
-  { to: "/settings", label: "الإعدادات", icon: Settings },
+  { to: "/account", label: "الحساب", icon: UserRound },
 ] as const;
 
 export function BottomNav() {
