@@ -1,5 +1,4 @@
-import { redirect as legacyRedirect } from "@tanstack/react-router";
-import { createFileRoute, redirect } from "@tanstack/react-router";
+import { createFileRoute, redirect, redirect as legacyRedirect } from "@tanstack/react-router";
 
 // Legacy local-only form is outside the approved participation flow.
 // Keep the URL as a redirect so existing bookmarks return to settings.

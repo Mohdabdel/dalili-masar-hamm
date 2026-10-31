@@ -1,5 +1,4 @@
-import { redirect as legacyRedirect } from "@tanstack/react-router";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect as legacyRedirect } from "@tanstack/react-router";
 import { ReminderVisual } from "@/components/ReminderCardPilot";
 import { decodePayload } from "@/lib/reminder-assets";
 import { Button } from "@/components/ui/button";

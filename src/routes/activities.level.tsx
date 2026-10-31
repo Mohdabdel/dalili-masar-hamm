@@ -1,5 +1,4 @@
-import { redirect as legacyRedirect } from "@tanstack/react-router";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect as legacyRedirect } from "@tanstack/react-router";
 import { ChevronLeft, Info, Layers } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import {

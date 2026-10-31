@@ -1,5 +1,4 @@
-import { redirect as legacyRedirect } from "@tanstack/react-router";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect as legacyRedirect } from "@tanstack/react-router";
 import { SpaceHomePage } from "@/features/space/pages/SpaceHomePage";
 
 export const Route = createFileRoute("/_authenticated/space/")({

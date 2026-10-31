@@ -1,5 +1,4 @@
-import { redirect as legacyRedirect } from "@tanstack/react-router";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect as legacyRedirect } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { CalendarDays, Globe } from "lucide-react";
 import { PageShell } from "@/components/PageShell";

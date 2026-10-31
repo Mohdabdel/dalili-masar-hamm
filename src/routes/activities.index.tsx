@@ -1,6 +1,5 @@
-import { redirect as legacyRedirect } from "@tanstack/react-router";
 import { useState } from "react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect as legacyRedirect } from "@tanstack/react-router";
 import {
   BookOpen,
   CalendarRange,

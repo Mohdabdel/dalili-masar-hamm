@@ -1,6 +1,5 @@
-import { redirect as legacyRedirect } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, useNavigate, redirect as legacyRedirect } from "@tanstack/react-router";
 import { toast } from "sonner";
 import { PageShell } from "@/components/PageShell";
 import { Button } from "@/components/ui/button";

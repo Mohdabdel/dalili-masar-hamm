@@ -1,5 +1,4 @@
-import { redirect as legacyRedirect } from "@tanstack/react-router";
-import { createFileRoute, Outlet } from "@tanstack/react-router";
+import { createFileRoute, Outlet, redirect as legacyRedirect } from "@tanstack/react-router";
 import { LabStateProvider } from "@/lab/state/lab-state";
 import { LabShell } from "@/lab/components/LabShell";
 

@@ -1,5 +1,4 @@
-import { redirect as legacyRedirect } from "@tanstack/react-router";
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound, redirect as legacyRedirect } from "@tanstack/react-router";
 import { z } from "zod";
 import { PageShell } from "@/components/PageShell";
 import { HomeHierarchy } from "@/components/HomeHierarchy";
