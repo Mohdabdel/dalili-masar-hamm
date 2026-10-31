@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 
-const created = vi.fn(async () => ({ id: "00000000-0000-0000-0000-000000000001" }));
+const { created } = vi.hoisted(() => ({ created: vi.fn(async () => ({ id: "00000000-0000-0000-0000-000000000001" })) }));
 vi.mock("@/lib/family-participation", () => ({ createFamilyParticipation: created }));
 
 import { createBlankFamilyParticipation } from "@/features/space/entry-create";
