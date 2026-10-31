@@ -1,3 +1,4 @@
+import { redirect as legacyRedirect } from "@tanstack/react-router";
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
@@ -16,6 +17,10 @@ import {
 import { PageShell } from "@/components/PageShell";
 
 export const Route = createFileRoute("/activities/")({
+  // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
+  beforeLoad: () => {
+    throw legacyRedirect({ to: "/space/explore", replace: true });
+  },
   head: () => ({
     meta: [
       { title: "دليلي — مساحة مشاركات الأسرة" },

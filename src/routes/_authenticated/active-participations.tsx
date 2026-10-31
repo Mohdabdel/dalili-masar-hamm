@@ -1,3 +1,4 @@
+import { redirect as legacyRedirect } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { toast } from "sonner";
@@ -29,6 +30,10 @@ import {
 } from "@/lib/active-participations";
 
 export const Route = createFileRoute("/_authenticated/active-participations")({
+  // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
+  beforeLoad: () => {
+    throw legacyRedirect({ to: "/space/participations", replace: true });
+  },
   head: () => ({
     meta: [
       { title: "المشاركات النشطة — دليلي" },

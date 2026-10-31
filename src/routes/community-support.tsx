@@ -1,3 +1,4 @@
+import { redirect as legacyRedirect } from "@tanstack/react-router";
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo } from "react";
 import { PageShell } from "@/components/PageShell";
@@ -5,6 +6,10 @@ import { ServiceDirectory } from "@/components/ServiceDirectory";
 import { getCommunityServices } from "@/lib/service-directories";
 
 export const Route = createFileRoute("/community-support")({
+  // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
+  beforeLoad: () => {
+    throw legacyRedirect({ to: "/", replace: true });
+  },
   head: () => ({
     meta: [
       { title: "مصادر الدعم المجتمعي | دليلي" },

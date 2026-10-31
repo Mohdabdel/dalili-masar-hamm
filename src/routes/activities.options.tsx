@@ -1,3 +1,4 @@
+import { redirect as legacyRedirect } from "@tanstack/react-router";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { z } from "zod";
 import {
@@ -21,6 +22,10 @@ const searchSchema = z.object({
 });
 
 export const Route = createFileRoute("/activities/options")({
+  // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
+  beforeLoad: () => {
+    throw legacyRedirect({ to: "/space/explore", replace: true });
+  },
   validateSearch: searchSchema,
   head: () => ({
     meta: [

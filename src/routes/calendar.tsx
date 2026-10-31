@@ -1,3 +1,4 @@
+import { redirect as legacyRedirect } from "@tanstack/react-router";
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { CalendarDays, Globe } from "lucide-react";
@@ -8,6 +9,10 @@ import { DetailSheet } from "@/components/DetailSheet";
 import { calendarEvents, type CalendarEvent } from "@/lib/data";
 
 export const Route = createFileRoute("/calendar")({
+  // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
+  beforeLoad: () => {
+    throw legacyRedirect({ to: "/", replace: true });
+  },
   head: () => ({
     meta: [
       { title: "تقويم الفعاليات 2026 | دليلي - مسار همم" },

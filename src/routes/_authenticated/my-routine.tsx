@@ -1,3 +1,4 @@
+import { redirect as legacyRedirect } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ChevronDown, Search, CalendarRange } from "lucide-react";
@@ -5,6 +6,10 @@ import { PageShell } from "@/components/PageShell";
 import { getResolvedStations } from "@/lib/daily-stations";
 
 export const Route = createFileRoute("/_authenticated/my-routine")({
+  // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
+  beforeLoad: () => {
+    throw legacyRedirect({ to: "/space/participations", replace: true });
+  },
   head: () => ({
     meta: [
       { title: "مشاركات الروتين اليومي — دليلي" },

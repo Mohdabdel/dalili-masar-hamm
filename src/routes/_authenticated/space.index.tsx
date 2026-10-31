@@ -1,7 +1,12 @@
+import { redirect as legacyRedirect } from "@tanstack/react-router";
 import { createFileRoute } from "@tanstack/react-router";
 import { SpaceHomePage } from "@/features/space/pages/SpaceHomePage";
 
 export const Route = createFileRoute("/_authenticated/space/")({
+  // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
+  beforeLoad: () => {
+    throw legacyRedirect({ to: "/space/participations", replace: true });
+  },
   component: SpaceRoute,
   head: () => ({
     meta: [

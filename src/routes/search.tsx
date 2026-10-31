@@ -1,3 +1,4 @@
+import { redirect as legacyRedirect } from "@tanstack/react-router";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { PageShell } from "@/components/PageShell";
@@ -8,6 +9,10 @@ import { ChevronLeft, X } from "lucide-react";
 import { searchIndex, kindLabel, type SearchKind } from "@/lib/search-index";
 
 export const Route = createFileRoute("/search")({
+  // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
+  beforeLoad: () => {
+    throw legacyRedirect({ to: "/space/explore", replace: true });
+  },
   head: () => ({
     meta: [
       { title: "البحث | دليلي" },
