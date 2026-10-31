@@ -184,7 +184,7 @@ export function PreviewPage({ specId }: { specId: string }) {
                     <StepBlocks item={currentItem} index={safeStep + 1} />
                   </div>
                 )}
-                <div className="mt-3 flex items-center gap-2">
+                <div className="mt-3 flex flex-wrap items-center gap-2">
                   <button
                     type="button"
                     onClick={() => setCurrentStep((v) => Math.max(0, v - 1))}
@@ -257,7 +257,7 @@ export function PreviewPage({ specId }: { specId: string }) {
       )}
 
       <LabSection title="تفاصيل البطاقة">
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-2 [&>*]:min-w-0">
           <label className="block">
             <span className="mb-1 block text-sm font-bold">اسم البطاقة</span>
             <input

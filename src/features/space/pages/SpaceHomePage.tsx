@@ -154,7 +154,7 @@ export function SpaceHomePage() {
           </div>
         ) : (
           <>
-            <div role="group" aria-label="عرض المشاركات" className="mt-4 flex gap-2">
+            <div role="group" aria-label="عرض المشاركات" className="mt-4 flex flex-wrap gap-2">
               <ViewTab on={view === "active"} onClick={() => setView("active")}>
                 المشاركات الحالية
               </ViewTab>
