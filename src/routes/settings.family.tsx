@@ -1,4 +1,4 @@
-import { createFileRoute, redirect, redirect as legacyRedirect } from "@tanstack/react-router";
+import { createFileRoute, redirect as legacyRedirect } from "@tanstack/react-router";
 
 // Legacy local-only profile is outside the approved family account flow.
 // Keep the URL as a redirect without deleting locally saved information.
