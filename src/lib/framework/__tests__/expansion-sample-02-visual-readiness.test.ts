@@ -66,7 +66,7 @@ describe("Expansion sample 12-02 visual readiness", () => {
     expect(rows[0].assetCode).toBe("VRS-EXP12-02-FOOD-SERVE-S01");
   });
 
-  it("upgrades stale stored image refs when composing Batch05 workspace rows", () => {
+  it("keeps a stored step image choice as-is (no silent replacement of the family's choice)", () => {
     const spec = getSpaceSpec("FR-EXP12-02-SHOP005-OP003");
     expect(spec).toBeTruthy();
     if (!spec) return;
@@ -80,8 +80,9 @@ describe("Expansion sample 12-02 visual readiness", () => {
         [stepId]: { sourceAssetCode: "VRS-B03-SHOP-BAGS" },
       },
     });
-    expect(rows[0].image.src).toContain("/assets/execution/expansion12-02/");
-    expect(rows[0].assetCode).toBe("VRS-EXP12-02-SHOP-PRODUCE-S02");
+    // الصورة المحفوظة على الخطوة اختيار مقصود: لا تُستبدل تلقائيًا بأصل أحدث.
+    expect(rows[0].assetCode).toBe("VRS-B03-SHOP-BAGS");
+    expect(rows[0].assetCode).not.toBe("VRS-EXP12-02-SHOP-PRODUCE-S02");
   });
 
   it("keeps inserted image bindings as review assets, not final pilot approvals", () => {
