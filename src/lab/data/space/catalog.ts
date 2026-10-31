@@ -30,6 +30,7 @@ import {
 } from "@/lib/framework/discovery";
 import type { FunctionalParticipation } from "@/lib/framework/reference-model";
 import { listMvpScopeParticipations } from "@/lib/framework/mvp-scope";
+import { pilotSpecById } from "@/features/space/community-pilot-corpus";
 
 export type SpaceContext = "home" | "community";
 
@@ -344,6 +345,9 @@ export function levelCounts(eventId: string): Record<SliceLevel, number> {
 }
 
 export function getSpaceSpec(specId: string): LabParticipationSpec | null {
+  // 0) نموذج تجريبي من corpus المجتمع — يُحلّ بمعرّفه التجريبي PILOT-*.
+  const fromPilot = pilotSpecById(specId);
+  if (fromPilot) return fromPilot;
   // 1) مرجع متوافق مع الإطار — يُحلّ بمعرّفه نفسه.
   const fromFramework = discoverableFrameworkParticipations().find((p) => p.id === specId);
   if (fromFramework) return specFromFrameworkReference(fromFramework);
