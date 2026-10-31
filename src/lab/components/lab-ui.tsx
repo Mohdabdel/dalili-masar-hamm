@@ -58,6 +58,7 @@ export function LabChoiceCard({
   title,
   hint,
   meta,
+  badge,
   to,
   params,
   search,
@@ -67,6 +68,8 @@ export function LabChoiceCard({
   title: string;
   hint?: string;
   meta?: string;
+  /** شارة صغيرة تُعرض بجانب العنوان (مثل «تجريبي»). */
+  badge?: string;
   to?: string;
   params?: Record<string, string>;
   search?: Record<string, unknown>;
@@ -76,7 +79,14 @@ export function LabChoiceCard({
   const inner = (
     <span className="flex w-full items-center justify-between gap-3">
       <span className="min-w-0 text-start">
-        <span className="block break-words text-lg font-bold leading-snug text-foreground">{title}</span>
+        <span className="flex flex-wrap items-center gap-2">
+          <span className="break-words text-lg font-bold leading-snug text-foreground">{title}</span>
+          {badge && (
+            <span className="rounded-full border border-border bg-muted px-2 py-0.5 text-xs font-semibold text-muted-foreground">
+              {badge}
+            </span>
+          )}
+        </span>
         {hint && <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">{hint}</span>}
         {meta && <span className="mt-1.5 block text-xs font-semibold text-primary">{meta}</span>}
       </span>
