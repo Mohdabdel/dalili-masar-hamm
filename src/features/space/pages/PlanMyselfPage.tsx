@@ -15,13 +15,16 @@ export function PlanMyselfPage() {
   const [error, setError] = useState("");
   const started = useRef(false);
   const [busy, setBusy] = useState(false);
+  const [title, setTitle] = useState("");
+  const [firstStep, setFirstStep] = useState("");
+  const ready = title.trim().length > 0 && firstStep.trim().length > 0;
 
   const start = async () => {
-    if (started.current) return;
+    if (started.current || !ready) return;
     started.current = true;
     setBusy(true);
     try {
-      const specId = await createBlankFamilyParticipation({ dispatch });
+      const specId = await createBlankFamilyParticipation({ dispatch, title, firstStep });
       await navigate({ to: `${base}/workspace/$specId`, params: { specId }, replace: true });
     } catch {
       started.current = false;
@@ -32,10 +35,24 @@ export function PlanMyselfPage() {
 
   return (
     <LabPage title="خططها بنفسك" intro="اكتبوا اسم المشاركة وخطواتها في مساحة العمل.">
-      <LabNote>لن تُنشأ مسودة حتى تختاروا بدء المشاركة.</LabNote>
+      <div className="space-y-4">
+        <label className="block">
+          <span className="mb-1 block text-sm font-bold">اسم المشاركة</span>
+          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}
+            placeholder="مثال: غسيل السيارة"
+            className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
+        </label>
+        <label className="block">
+          <span className="mb-1 block text-sm font-bold">أول خطوة</span>
+          <input type="text" value={firstStep} onChange={(e) => setFirstStep(e.target.value)}
+            placeholder="مثال: يحضر الدلو"
+            className="min-h-11 w-full rounded-xl border border-border bg-card px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
+        </label>
+      </div>
+      <LabNote>لن تُنشأ مسودة حتى تكتبوا الاسم وخطوة واحدة على الأقل ثم تختاروا البدء.</LabNote>
       {error && <p className="mt-3 text-sm font-bold text-destructive">{error}</p>}
       <div className="mt-6 flex flex-wrap gap-3">
-        <LabButton onClick={start} disabled={busy}>{busy ? "جارٍ الفتح…" : "ابدأوا تخطيط المشاركة"}</LabButton>
+        <LabButton onClick={start} disabled={busy || !ready}>{busy ? "جارٍ الفتح…" : "ابدأوا تخطيط المشاركة"}</LabButton>
         <LabLinkButton to="/" variant="ghost">
           الصفحة الرئيسية
         </LabLinkButton>

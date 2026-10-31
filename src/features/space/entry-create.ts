@@ -2,6 +2,7 @@
 // الهوية القانونية = active_participations.id (Foundation 03)؛ ولا مسار خاص لأي مدخل.
 
 import { createFamilyParticipation } from "@/lib/family-participation";
+import { createFamilyBlock } from "@/features/space/family-blocks";
 import {
   draftSelectionForFamilySpec,
   familySpecId,
@@ -26,7 +27,15 @@ import type { SliceContext } from "@/lab/slice/types";
  */
 export async function createBlankFamilyParticipation(input: {
   dispatch: (action: SliceAction) => void;
+  /** اسم المشاركة كما كتبته الأسرة — مطلوب قبل إنشاء أي مسودة. */
+  title?: string;
+  /** أول خطوة كتبتها الأسرة — مطلوبة قبل إنشاء أي مسودة. */
+  firstStep?: string;
 }): Promise<string> {
+  const title = input.title?.trim() ?? "";
+  const firstStep = input.firstStep?.trim() ?? "";
+  if (!title || !firstStep) throw new Error("FAMILY_DRAFT_NEEDS_TITLE_AND_STEP");
+  const block = createFamilyBlock(firstStep);
   const participation = await createFamilyParticipation({
     origin: "family_free",
     identity: null,
@@ -36,10 +45,13 @@ export async function createBlankFamilyParticipation(input: {
     type: "selection",
     value: {
       specId,
-      selected: [],
+      selected: [{ stepId: block.id, order: 1 }],
+      startStepId: block.id,
+      endStepId: block.id,
+      familyBlocks: [block],
       chosenExecutionOptionByStepId: {},
       supportTools: [],
-      familyTextByStepId: {},
+      familyTextByStepId: { [block.id]: firstStep },
       visualByStepId: {},
       presentationByStepId: {},
       blockOrderByStepId: {},
@@ -51,7 +63,7 @@ export async function createBlankFamilyParticipation(input: {
         eventTitle_ar: "",
         level: "moderate",
         context: "home",
-        title_ar: "مشاركة جديدة",
+        title_ar: title,
         majorSteps: [],
         provenance: "family",
       },
