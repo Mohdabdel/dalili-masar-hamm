@@ -96,7 +96,7 @@ function InfoTabs() {
       <div
         role="tablist"
         aria-label="تعرّف على دليلي"
-        className="grid grid-cols-3 gap-1.5 rounded-2xl bg-primary-foreground/10 p-1.5"
+        className="grid grid-cols-[repeat(auto-fit,minmax(5.5rem,1fr))] gap-1.5 rounded-2xl bg-primary-foreground/10 p-1.5"
       >
         {INFO_TABS.map((item) => {
           const on = item.id === active;
@@ -108,7 +108,7 @@ function InfoTabs() {
               aria-selected={on}
               onClick={() => setActive(on ? null : item.id)}
               className={cn(
-                "min-h-[44px] rounded-xl px-2 text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                "min-h-[44px] min-w-0 break-words rounded-xl px-2 text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                 on
                   ? "bg-coral text-coral-foreground shadow-card-soft"
                   : "text-primary-foreground/75 hover:bg-primary-foreground/10 hover:text-primary-foreground",
