@@ -95,6 +95,9 @@ export function useFamilySpaceStatus(): FamilySpaceStatus {
       const openParticipationIds = new Set((participationsRes.data ?? [])
         .filter((row) => row.status === "active")
         .map((row) => row.id));
+      const closedParticipationIds = new Set((participationsRes.data ?? [])
+        .filter((row) => row.status === "closed")
+        .map((row) => row.id));
       const closedSnapshotIds = new Set((cardStatesRes.data ?? [])
         .filter((row) => row.closed)
         .map((row) => row.snapshot_id));
@@ -119,8 +122,6 @@ export function useFamilySpaceStatus(): FamilySpaceStatus {
         // المشاركة المفتوحة ذات أحدث نسخة غير مغلقة تُعدّ «بطاقة مفتوحة».
         if (openParticipationIds.has(row.family_participation_id) && !closedSnapshotIds.has(row.id)) {
           openCardBySpec.set(specId, item);
-        } else if (openCardBySpec.get(specId) && closedSnapshotIds.has(row.id)) {
-          // أحدث نسخة أُغلقت: تبقى النسخة المفتوحة السابقة صالحة للمتابعة.
         }
       }
       for (const run of runsRes.data ?? []) {
@@ -140,6 +141,8 @@ export function useFamilySpaceStatus(): FamilySpaceStatus {
       }
       for (const draft of drafts) {
         if (latestBySpec.has(draft.specId)) continue; // لها بطاقة: تُعامل كبطاقة لا كمسودة.
+        // مسودة مشاركة أسرية مغلقة لا تُعرض للمتابعة.
+        if (draft.specId.startsWith("FAM-") && closedParticipationIds.has(draft.specId.slice(4))) continue;
         candidates.push({
           specId: draft.specId,
           title: draft.title,
