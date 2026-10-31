@@ -42,9 +42,10 @@ export interface LabParticipationSpec {
   /**
    * مصدر صياغة الخطوات:
    * legacy_master/framework_reference = صياغة مرجعية ثابتة،
-   * family = صياغة الأسرة وحدها (لا يوجد نص مرجعي ولا يُختلق).
+   * family = صياغة الأسرة وحدها (لا يوجد نص مرجعي ولا يُختلق)،
+   * community_pilot = نموذج تجريبي من corpus المجتمع المعلن المصدر.
    */
-  provenance?: "legacy_master" | "framework_reference" | "family";
+  provenance?: "legacy_master" | "framework_reference" | "family" | "community_pilot";
 }
 
 /** كيف تُعرض الخطوة للمشارك: صورة وجملة، صورة فقط، أو جملة فقط. */
