@@ -15,7 +15,7 @@ const searchSchema = z.object({
 export const Route = createFileRoute("/activities/$category")({
   // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
   beforeLoad: () => {
-    throw legacyRedirect({ to: "/space/explore", replace: true });
+    throw legacyRedirect({ to: "/space/explore", search: { lens: "event" }, replace: true });
   },
   parseParams: (p) => {
     if (p.category !== "home" && p.category !== "community") throw notFound();

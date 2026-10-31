@@ -18,7 +18,7 @@ import { PageShell } from "@/components/PageShell";
 export const Route = createFileRoute("/activities/")({
   // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
   beforeLoad: () => {
-    throw legacyRedirect({ to: "/space/explore", replace: true });
+    throw legacyRedirect({ to: "/space/explore", search: { lens: "event" }, replace: true });
   },
   head: () => ({
     meta: [

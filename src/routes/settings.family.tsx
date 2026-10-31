@@ -7,7 +7,4 @@ export const Route = createFileRoute("/settings/family")({
   beforeLoad: () => {
     throw legacyRedirect({ to: "/", replace: true });
   },
-  beforeLoad: () => {
-    throw redirect({ to: "/settings" });
-  },
 });

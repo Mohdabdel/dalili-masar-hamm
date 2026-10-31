@@ -17,7 +17,7 @@ import { knowledgeDomains } from "@/lib/knowledge-base";
 export const Route = createFileRoute("/activities/my-day")({
   // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
   beforeLoad: () => {
-    throw legacyRedirect({ to: "/space/explore", replace: true });
+    throw legacyRedirect({ to: "/space/explore", search: { lens: "event" }, replace: true });
   },
   head: () => ({
     meta: [

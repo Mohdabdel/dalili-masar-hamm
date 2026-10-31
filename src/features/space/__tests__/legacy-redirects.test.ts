@@ -8,7 +8,6 @@ const REDIRECTS: Record<string, string> = {
   "_authenticated/active-participations.tsx": "/space/participations",
   "_authenticated/space.index.tsx": "/space/participations",
   "_authenticated/my-routine.tsx": "/space/participations",
-  "help-me-choose.tsx": "/space/easy",
   "participation-guide.tsx": "/space/explore",
   "search.tsx": "/space/explore",
   "activities.index.tsx": "/space/explore",
@@ -26,16 +25,21 @@ const REDIRECTS: Record<string, string> = {
   "settings.family.tsx": "/",
   "settings.add-event.tsx": "/",
   "lab.tsx": "/",
-  "learner.$id.tsx": "/",
 };
 
 describe("إعادة توجيه المسارات القديمة", () => {
   for (const [file, target] of Object.entries(REDIRECTS)) {
     it(`${file} → ${target}`, () => {
       const src = readFileSync(resolve(ROUTES, file), "utf8");
-      expect(src).toContain(`throw legacyRedirect({ to: "${target}", replace: true })`);
+      const extra = target === "/space/explore" ? ', search: { lens: "event" }' : "";
+      expect(src).toContain(`throw legacyRedirect({ to: "${target}"${extra}, replace: true })`);
     });
   }
+
+  it("help-me-choose → /space/easy", () => {
+    const src = readFileSync(resolve(ROUTES, "help-me-choose.tsx"), "utf8");
+    expect(src).toContain('redirect({ to: "/space/easy" })');
+  });
 
   it("شاشة المستويات تُتجاوز إلى مشاركات الحدث", () => {
     const src = readFileSync(resolve(ROUTES, "_authenticated/space.$eventId.level.tsx"), "utf8");

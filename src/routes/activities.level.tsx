@@ -11,7 +11,7 @@ import {
 export const Route = createFileRoute("/activities/level")({
   // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
   beforeLoad: () => {
-    throw legacyRedirect({ to: "/space/explore", replace: true });
+    throw legacyRedirect({ to: "/space/explore", search: { lens: "event" }, replace: true });
   },
   head: () => ({
     meta: [
