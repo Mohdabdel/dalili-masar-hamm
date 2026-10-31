@@ -138,7 +138,7 @@ export function StepComposer({
 
       <ol>
         <li key={activeRow.stepId} className="rounded-2xl border border-border bg-card p-3">
-          <div className="flex items-start justify-between gap-2">
+          <div className="flex flex-wrap items-start justify-between gap-2">
             <span className="text-sm font-bold text-muted-foreground">
               الخطوة {safeIndex + 1}
               {activeRow.familyAuthored && (

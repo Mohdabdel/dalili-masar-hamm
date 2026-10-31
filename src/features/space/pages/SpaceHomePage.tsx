@@ -59,7 +59,7 @@ export function SpaceHomePage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-4 pb-16 pt-5">
       {/* هيدر خفيف */}
-      <header className="flex items-center justify-between gap-3">
+      <header className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <Link to="/" className="inline-flex min-h-10 items-center gap-1 text-sm font-bold text-muted-foreground hover:text-foreground">
             <ChevronLeft className="h-4 w-4 rotate-180" aria-hidden />
@@ -121,9 +121,9 @@ export function SpaceHomePage() {
 
       {/* مشاركاتنا */}
       <section className="mt-9">
-        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3">
-          <h2 className="truncate text-lg font-bold text-foreground">{base === "/space" ? "المشاركات والبطاقات" : "مشاركاتنا"}</h2>
-          <div className="flex shrink-0 gap-2">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h2 className="min-w-0 break-words text-lg font-bold text-foreground">{base === "/space" ? "المشاركات والبطاقات" : "مشاركاتنا"}</h2>
+          <div className="flex flex-wrap gap-2">
             <button
               type="button"
               onClick={() => setSummaryOpen(true)}
@@ -154,7 +154,7 @@ export function SpaceHomePage() {
           </div>
         ) : (
           <>
-            <div role="group" aria-label="عرض المشاركات" className="mt-4 flex gap-2">
+            <div role="group" aria-label="عرض المشاركات" className="mt-4 flex flex-wrap gap-2">
               <ViewTab on={view === "active"} onClick={() => setView("active")}>
                 المشاركات الحالية
               </ViewTab>

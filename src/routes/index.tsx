@@ -96,7 +96,7 @@ function InfoTabs() {
       <div
         role="tablist"
         aria-label="تعرّف على دليلي"
-        className="grid grid-cols-3 gap-1.5 rounded-2xl bg-primary-foreground/10 p-1.5"
+        className="grid grid-cols-[repeat(auto-fit,minmax(5.5rem,1fr))] gap-1.5 rounded-2xl bg-primary-foreground/10 p-1.5"
       >
         {INFO_TABS.map((item) => {
           const on = item.id === active;
@@ -108,7 +108,7 @@ function InfoTabs() {
               aria-selected={on}
               onClick={() => setActive(on ? null : item.id)}
               className={cn(
-                "min-h-[44px] rounded-xl px-2 text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                "min-h-[44px] min-w-0 break-words rounded-xl px-2 text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                 on
                   ? "bg-coral text-coral-foreground shadow-card-soft"
                   : "text-primary-foreground/75 hover:bg-primary-foreground/10 hover:text-primary-foreground",
@@ -229,11 +229,11 @@ function LandingPage() {
           to="/tools"
           className="group mt-3 flex items-center justify-between gap-3 rounded-2xl border border-border bg-secondary p-4 transition-all hover:-translate-y-0.5 hover:shadow-elegant"
         >
-          <span className="flex items-center gap-3">
+          <span className="flex min-w-0 items-center gap-3">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
               <Images className="h-5 w-5" strokeWidth={2} />
             </span>
-            <span className="text-base font-bold text-foreground">استكشفوا الأدوات</span>
+            <span className="min-w-0 break-words text-base font-bold text-foreground">استكشفوا الأدوات</span>
           </span>
           <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-1" />
         </Link>

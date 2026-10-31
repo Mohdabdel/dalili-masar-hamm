@@ -111,12 +111,12 @@ export function LearnerPage({ snapshotId }: { snapshotId: string }) {
         </div>
       )}
 
-      <div className="mt-8 flex items-center gap-3">
+      <div className="mt-8 flex flex-wrap items-center gap-3">
         <button
           type="button"
           onClick={() => setI((v) => Math.max(0, v - 1))}
           disabled={i === 0}
-          className="inline-flex min-h-[64px] flex-1 items-center justify-center gap-2 rounded-2xl border-2 border-border bg-card text-xl font-bold disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          className="inline-flex min-h-[64px] min-w-[7rem] flex-1 items-center justify-center gap-2 rounded-2xl border-2 border-border bg-card text-xl font-bold disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           <ChevronRight className="h-6 w-6" aria-hidden />
           السابق
@@ -133,7 +133,7 @@ export function LearnerPage({ snapshotId }: { snapshotId: string }) {
                 search: { runId },
               });
             }}
-            className="inline-flex min-h-[64px] flex-1 items-center justify-center rounded-2xl bg-primary text-xl font-bold text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="inline-flex min-h-[64px] min-w-[7rem] flex-1 items-center justify-center rounded-2xl bg-primary text-xl font-bold text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             انتهينا
           </button>
@@ -141,7 +141,7 @@ export function LearnerPage({ snapshotId }: { snapshotId: string }) {
           <button
             type="button"
             onClick={() => setI((v) => Math.min(frames.length - 1, v + 1))}
-            className="inline-flex min-h-[64px] flex-1 items-center justify-center gap-2 rounded-2xl bg-primary text-xl font-bold text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="inline-flex min-h-[64px] min-w-[7rem] flex-1 items-center justify-center gap-2 rounded-2xl bg-primary text-xl font-bold text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             التالي
             <ChevronLeft className="h-6 w-6" aria-hidden />
