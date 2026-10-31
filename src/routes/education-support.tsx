@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect as legacyRedirect } from "@tanstack/react-router";
 import { useMemo } from "react";
 import { Wrench } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
@@ -10,6 +10,10 @@ import { getEducationServices, getResources } from "@/lib/service-directories";
 import { VISUAL_TOOL_TYPES } from "@/lib/visual-tools/types";
 
 export const Route = createFileRoute("/education-support")({
+  // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
+  beforeLoad: () => {
+    throw legacyRedirect({ to: "/", replace: true });
+  },
   head: () => ({
     meta: [
       { title: "مصادر الدعم التعليمي | دليلي" },

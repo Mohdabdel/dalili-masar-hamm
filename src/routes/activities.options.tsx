@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect as legacyRedirect } from "@tanstack/react-router";
 import { z } from "zod";
 import {
   CalendarDays,
@@ -21,6 +21,10 @@ const searchSchema = z.object({
 });
 
 export const Route = createFileRoute("/activities/options")({
+  // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
+  beforeLoad: () => {
+    throw legacyRedirect({ to: "/space/explore", search: { lens: "event" }, replace: true });
+  },
   validateSearch: searchSchema,
   head: () => ({
     meta: [

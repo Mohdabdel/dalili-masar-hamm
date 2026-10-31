@@ -7,7 +7,8 @@ describe("Arabic readiness labels", () => {
   it("uses Arabic labels for the tested breakfast journey", () => {
     const text = easyStartContextText(answers);
     expect(text).toContain("الطعام أو المشروبات");
-    expect(text).toContain("داخل المنزل");
+    // سؤال المكان المستقل أُزيل من البداية السهلة؛ السياق يُفهم من الموقف.
+    expect(text).not.toContain("داخل المنزل");
     expect(text).not.toMatch(/food|meal|home|daily|short/);
   });
   it("does not leak unknown stored enum values", () => {

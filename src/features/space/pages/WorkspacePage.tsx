@@ -86,7 +86,7 @@ export function WorkspacePage({ specId, initialTab }: { specId: string; initialT
       >
         <div className="flex flex-wrap gap-3">
           <LabLinkButton to={`${base}`}>رجوع إلى مساحة الأسرة</LabLinkButton>
-          <LabLinkButton to="/activities/level" variant="ghost">
+          <LabLinkButton to="/space/explore" variant="ghost">
             اختيار مشاركة جديدة
           </LabLinkButton>
         </div>

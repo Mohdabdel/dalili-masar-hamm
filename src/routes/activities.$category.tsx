@@ -1,4 +1,4 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound, redirect as legacyRedirect } from "@tanstack/react-router";
 import { z } from "zod";
 import { PageShell } from "@/components/PageShell";
 import { HomeHierarchy } from "@/components/HomeHierarchy";
@@ -13,6 +13,10 @@ const searchSchema = z.object({
 });
 
 export const Route = createFileRoute("/activities/$category")({
+  // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
+  beforeLoad: () => {
+    throw legacyRedirect({ to: "/space/explore", search: { lens: "event" }, replace: true });
+  },
   parseParams: (p) => {
     if (p.category !== "home" && p.category !== "community") throw notFound();
     return { category: p.category as ActivityCategory };

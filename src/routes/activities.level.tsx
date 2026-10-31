@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect as legacyRedirect } from "@tanstack/react-router";
 import { ChevronLeft, Info, Layers } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import {
@@ -9,6 +9,10 @@ import {
 } from "@/lib/knowledge-base";
 
 export const Route = createFileRoute("/activities/level")({
+  // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
+  beforeLoad: () => {
+    throw legacyRedirect({ to: "/space/explore", search: { lens: "event" }, replace: true });
+  },
   head: () => ({
     meta: [
       { title: "اختر مستوى المشاركة | دليلي للمشاركة الحياتية" },

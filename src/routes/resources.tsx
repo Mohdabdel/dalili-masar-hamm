@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect as legacyRedirect } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   Accordion,
@@ -17,6 +17,10 @@ import {
 } from "@/lib/support-portal";
 
 export const Route = createFileRoute("/resources")({
+  // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
+  beforeLoad: () => {
+    throw legacyRedirect({ to: "/", replace: true });
+  },
   head: () => ({
     meta: [
       { title: "بوابة الدعم والخدمات | دليلي - مسار همم" },

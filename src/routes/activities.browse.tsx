@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect as legacyRedirect } from "@tanstack/react-router";
 import { z } from "zod";
 import { PageShell } from "@/components/PageShell";
 import { HomeHierarchy } from "@/components/HomeHierarchy";
@@ -20,6 +20,10 @@ const searchSchema = z.object({
 });
 
 export const Route = createFileRoute("/activities/browse")({
+  // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
+  beforeLoad: () => {
+    throw legacyRedirect({ to: "/space/explore", search: { lens: "event" }, replace: true });
+  },
   validateSearch: searchSchema,
   head: () => ({
     meta: [

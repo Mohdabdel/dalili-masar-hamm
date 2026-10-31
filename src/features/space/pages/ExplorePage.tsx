@@ -84,7 +84,7 @@ export function ExplorePage({ initialLens = "event" }: { initialLens?: Lens }) {
                   key={e.id}
                   title={e.title}
                   hint={e.domainName}
-                  to={`${base}/$eventId/level`}
+                  to={`${base}/$eventId/participations`}
                   params={{ eventId: e.id }}
                 />
               ))}
@@ -105,7 +105,7 @@ export function ExplorePage({ initialLens = "event" }: { initialLens?: Lens }) {
                   key={s.id}
                   title={s.title}
                   hint={s.domainName}
-                  to={`${base}/$eventId/level`}
+                  to={`${base}/$eventId/participations`}
                   params={{ eventId: s.id }}
                 />
               ))}

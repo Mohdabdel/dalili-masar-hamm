@@ -7,6 +7,7 @@ import { resolveSpaceSpec } from "@/features/space/spec-resolution";
 import { useFamilySpaceStatus } from "@/features/space/home-status";
 import { useSlice, useSpaceBase } from "@/features/space/store";
 import { cn } from "@/lib/utils";
+import { TodayParticipationsSection } from "@/features/space/components/TodayParticipationsSection";
 
 
 export function SpaceHomePage() {
@@ -64,7 +65,7 @@ export function SpaceHomePage() {
             <ChevronLeft className="h-4 w-4 rotate-180" aria-hidden />
             الصفحة الرئيسية
           </Link>
-          <h1 className="text-lg font-bold text-foreground">مساحة الأسرة</h1>
+          <h1 className="text-lg font-bold text-foreground">{base === "/space" ? "مشاركاتنا" : "مساحة الأسرة"}</h1>
         </div>
         <button
           type="button"
@@ -88,48 +89,40 @@ export function SpaceHomePage() {
 
       {base !== "/space" && <Stations state={state} dispatch={dispatch} />}
 
-      {base === "/space" && !familyStatus.loading && familyStatus.signedIn && (
-        <section className="mt-9">
-          <h2 className="text-lg font-bold text-foreground">مشاركاتكم المحفوظة</h2>
-          {familyStatus.drafts.length === 0 && familyStatus.approved.length === 0 ? (
-            <p className="mt-2 text-sm text-muted-foreground">لا توجد مشاركات محفوظة الآن.</p>
-          ) : (
-            <ul className="mt-3 space-y-2">
-              {familyStatus.drafts
-                .filter((draft) => !familyStatus.approved.some((card) => card.specId === draft.specId))
-                .map((draft) => (
-                <li key={draft.specId}>
-                  <Link
-                    to={`${base}/workspace/$specId`}
-                    params={{ specId: draft.specId }}
-                    className="flex min-h-11 items-center justify-between rounded-xl border border-border px-4 text-sm font-bold hover:bg-accent"
-                  >
-                    <span>{draft.title} <span className="text-muted-foreground">— مسودة</span></span>
-                    <ChevronLeft className="h-4 w-4 shrink-0" aria-hidden />
-                  </Link>
-                </li>
-              ))}
-              {familyStatus.approved.map((card) => (
-                <li key={card.specId}>
-                  <Link
-                    to={`${base}/card/$specId`}
-                    params={{ specId: card.specId }}
-                    className="flex min-h-11 items-center justify-between rounded-xl border border-border px-4 text-sm font-bold hover:bg-accent"
-                  >
-                    <span>{card.title} <span className="text-muted-foreground">— بطاقة معتمدة</span></span>
-                    <ChevronLeft className="h-4 w-4 shrink-0" aria-hidden />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
-      )}
+      {/* المسودات: مشاركات لم تُعتمد لها بطاقة بعد. البطاقات المعتمدة تظهر أدناه. */}
+      {base === "/space" && !familyStatus.loading && familyStatus.signedIn && (() => {
+        const drafts = familyStatus.drafts.filter(
+          (draft) => !familyStatus.approved.some((card) => card.specId === draft.specId),
+        );
+        return (
+          <section className="mt-9">
+            <h2 className="text-lg font-bold text-foreground">المسودات</h2>
+            {drafts.length === 0 ? (
+              <p className="mt-2 text-sm text-muted-foreground">لا توجد مسودات الآن.</p>
+            ) : (
+              <ul className="mt-3 space-y-2">
+                {drafts.map((draft) => (
+                  <li key={draft.specId}>
+                    <Link
+                      to={`${base}/workspace/$specId`}
+                      params={{ specId: draft.specId }}
+                      className="flex min-h-11 items-center justify-between rounded-xl border border-border px-4 text-sm font-bold hover:bg-accent"
+                    >
+                      <span>{draft.title} <span className="text-muted-foreground">— مسودة</span></span>
+                      <ChevronLeft className="h-4 w-4 shrink-0" aria-hidden />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+        );
+      })()}
 
       {/* مشاركاتنا */}
       <section className="mt-9">
         <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3">
-          <h2 className="truncate text-lg font-bold text-foreground">مشاركاتنا</h2>
+          <h2 className="truncate text-lg font-bold text-foreground">{base === "/space" ? "المشاركات والبطاقات" : "مشاركاتنا"}</h2>
           <div className="flex shrink-0 gap-2">
             <button
               type="button"
@@ -163,7 +156,7 @@ export function SpaceHomePage() {
           <>
             <div role="group" aria-label="عرض المشاركات" className="mt-4 flex gap-2">
               <ViewTab on={view === "active"} onClick={() => setView("active")}>
-                المشاركات الفعالة
+                المشاركات الحالية
               </ViewTab>
               <ViewTab on={view === "history"} onClick={() => setView("history")}>
                 السجل
@@ -197,15 +190,7 @@ export function SpaceHomePage() {
         )}
       </section>
 
-      {base === "/space" && (
-        <Link
-          to="/active-participations"
-          className="mt-4 flex min-h-11 items-center justify-between rounded-xl border border-border px-4 text-sm font-bold text-foreground hover:bg-accent"
-        >
-          افتحوا المشاركات النشطة وتسجيل اليوم
-          <ChevronLeft className="h-4 w-4 shrink-0" aria-hidden />
-        </Link>
-      )}
+      {base === "/space" && familyStatus.signedIn && <TodayParticipationsSection />}
 
       {/* أدوات دليلي */}
       <section className="mt-9">
@@ -387,7 +372,7 @@ function Stations({
           {stations.map((e) => (
             <li key={e.id} className="flex items-center gap-1">
               <Link
-                to={`${base}/$eventId/level`}
+                to={`${base}/$eventId/participations`}
                 params={{ eventId: e.id }}
                 className="flex min-h-[48px] min-w-0 flex-1 items-center justify-between gap-2 rounded-xl px-2 text-start hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect as legacyRedirect } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { MessageCircle, Hand, Volume2, type LucideIcon } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
@@ -8,6 +8,10 @@ import { DetailSheet } from "@/components/DetailSheet";
 import { messages, type InterpretedMessage } from "@/lib/data";
 
 export const Route = createFileRoute("/messages")({
+  // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
+  beforeLoad: () => {
+    throw legacyRedirect({ to: "/", replace: true });
+  },
   head: () => ({
     meta: [
       { title: "التصرفات والرسائل التعبيرية | دليلي - مسار همم" },

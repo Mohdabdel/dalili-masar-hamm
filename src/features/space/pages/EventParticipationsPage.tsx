@@ -10,12 +10,56 @@ import {
 import {
   getSpaceEvent,
   participationsForLevel,
-  mvpParticipationsForLevel,
+  mvpParticipationsForEvent,
   spaceLevelLabel,
 } from "@/lab/data/space/catalog";
 import { useSlice, useSpaceBase } from "@/features/space/store";
 
 export function EventParticipationsPage({ eventId }: { eventId: string }) {
+  const base = useSpaceBase();
+  if (base === "/space") return <FamilyEventParticipations eventId={eventId} />;
+  return <LabEventParticipations eventId={eventId} />;
+}
+
+/** مسار الأسرة: من الحدث إلى المشاركة مباشرة، بلا شاشة مستويات. */
+function FamilyEventParticipations({ eventId }: { eventId: string }) {
+  const event = getSpaceEvent(eventId);
+  if (!event) {
+    return (
+      <LabPage title="هذا الحدث غير متاح">
+        <LabLinkButton to="/space/explore">رجوع إلى الاستكشاف</LabLinkButton>
+      </LabPage>
+    );
+  }
+  const specs = mvpParticipationsForEvent(eventId);
+  return (
+    <LabPage
+      title={event.title}
+      intro="اختاروا المشاركة التي تريدون إعدادها هذه المرة."
+      back={<LabBackLink to="/space/explore">الاستكشاف</LabBackLink>}
+    >
+      <LabSection title={`مشاركات متاحة (${specs.length})`}>
+        {specs.length === 0 ? (
+          <LabNote>لا توجد مشاركات متاحة في هذا الحدث حاليًا. جرّبوا حدثًا آخر.</LabNote>
+        ) : (
+          <LabGrid>
+            {specs.map((s) => (
+              <LabChoiceCard
+                key={s.id}
+                title={s.title_ar}
+                hint={`${s.majorSteps.length} خطوة في المسار الكامل`}
+                to="/space/workspace/$specId"
+                params={{ specId: s.id }}
+              />
+            ))}
+          </LabGrid>
+        )}
+      </LabSection>
+    </LabPage>
+  );
+}
+
+function LabEventParticipations({ eventId }: { eventId: string }) {
   const base = useSpaceBase();
   const event = getSpaceEvent(eventId);
   const { state } = useSlice();
@@ -39,10 +83,7 @@ export function EventParticipationsPage({ eventId }: { eventId: string }) {
     );
   }
 
-  const specs =
-    base === "/space"
-      ? mvpParticipationsForLevel(eventId, level)
-      : participationsForLevel(eventId, level);
+  const specs = participationsForLevel(eventId, level);
 
   return (
     <LabPage

@@ -1,14 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AllCardsPage } from "@/features/space/pages/AllCardsPage";
+import { SpaceHomePage } from "@/features/space/pages/SpaceHomePage";
 
 export const Route = createFileRoute("/_authenticated/space/participations")({
   component: SpaceRoute,
   head: () => ({
     meta: [
-      { title: "بطاقاتنا — دليلي" },
-      { name: "description", content: "كل المشاركات التي اعتمدت لها الأسرة بطاقة." },
-      { property: "og:title", content: "بطاقاتنا — دليلي" },
-      { property: "og:description", content: "كل المشاركات التي اعتمدت لها الأسرة بطاقة." },
+      { title: "مشاركاتنا — دليلي" },
+      { name: "description", content: "مسودات الأسرة ومشاركاتها الحالية وبطاقاتها المعتمدة وتسجيل اليوم والسجل." },
+      { property: "og:title", content: "مشاركاتنا — دليلي" },
+      { property: "og:description", content: "مسودات الأسرة ومشاركاتها الحالية وبطاقاتها المعتمدة وتسجيل اليوم والسجل." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -16,5 +16,5 @@ export const Route = createFileRoute("/_authenticated/space/participations")({
 });
 
 function SpaceRoute() {
-  return <AllCardsPage />;
+  return <SpaceHomePage />;
 }

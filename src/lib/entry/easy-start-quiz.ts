@@ -5,6 +5,7 @@ export type EasyStartInterest =
   "food" | "music" | "water" | "organizing" | "outings" | "hosting" | "clothing" | "other";
 export type EasyStartRoutine =
   "meal" | "home" | "laundry" | "shopping" | "gathering" | "health" | "leisure" | "other";
+/** @deprecated لم يعد يُسأل؛ يُقبل في الإجابات القديمة ويُتجاهل في الحساب. */
 export type EasyStartPlace = "home" | "outside" | "either";
 export type EasyStartTime = "daily" | "evening" | "weekend" | "outing" | "gathering" | "flexible";
 export type EasyStartShape = "short" | "shared" | "connected" | "unsure";
@@ -12,7 +13,8 @@ export type EasyStartShape = "short" | "shared" | "connected" | "unsure";
 export interface EasyStartAnswers {
   interest: EasyStartInterest;
   routine: EasyStartRoutine;
-  place: EasyStartPlace;
+  /** لا يُسأل ولا يؤثر في الاقتراحات؛ السياق يُفهم من الموقف. */
+  place?: EasyStartPlace;
   time: EasyStartTime;
   shape: EasyStartShape;
 }
@@ -50,13 +52,6 @@ function tokenScore(text: string, tokens: string[], weight: number): number {
   return tokens.reduce((score, token) => score + (text.includes(token) ? weight : 0), 0);
 }
 
-function isOutside(participation: FunctionalParticipation): boolean {
-  return (
-    /-(COMM|SHOP|HEALTH)-/.test(participation.id) ||
-    /(خارج|متجر|حديقة|عيادة|موعد|سيارة)/.test(textOf(participation))
-  );
-}
-
 export function recommendEasyStartParticipations(
   answers: EasyStartAnswers,
   limit = 5,
@@ -67,8 +62,6 @@ export function recommendEasyStartParticipations(
       let score = tokenScore(text, TOKENS[answers.interest], 3);
       score += tokenScore(text, TOKENS[answers.routine], 3);
       score += tokenScore(text, TOKENS[answers.time], 1);
-      const outside = isOutside(participation);
-      if (answers.place === "either" || (answers.place === "outside") === outside) score += 2;
       if (answers.shape === "short" && participation.complexity.level === "simple") score += 2;
       if (answers.shape === "shared" && participation.participation_mode === "shared") score += 2;
       if (answers.shape === "connected" && participation.complexity.level !== "simple") score += 2;
@@ -81,18 +74,17 @@ export function recommendEasyStartParticipations(
 }
 
 export function easyStartContextText(answers: EasyStartAnswers): string {
-  const labels: { [K in keyof EasyStartAnswers]: Record<EasyStartAnswers[K], string> } = {
+  const labels: { [K in Exclude<keyof EasyStartAnswers, "place">]: Record<NonNullable<EasyStartAnswers[K]>, string> } = {
     interest: { food: "الطعام أو المشروبات", music: "الموسيقى أو المقاطع", water: "الماء والتعبئة والسكب", organizing: "ترتيب الأشياء وإعادتها", outings: "التسوق والخروج", hosting: "الضيوف والاجتماعات الأسرية", clothing: "الملابس والعناية بها", other: "شيء آخر" },
     routine: { meal: "إعداد الطعام أو المائدة", home: "ترتيب المنزل", laundry: "غسل الملابس أو ترتيبها", shopping: "التسوق وتجهيز الخروج", gathering: "زيارة أو لقاء عائلي", health: "موعد صحي أو إجراء يومي", leisure: "وقت الترفيه الأسري", other: "موقف آخر" },
-    place: { home: "داخل المنزل", outside: "أثناء خروج قصير", either: "لا فرق؛ اعرضوا الأنسب" },
     time: { daily: "أثناء حدث يومي قائم", evening: "في المساء", weekend: "في نهاية الأسبوع", outing: "أثناء خروج مخطط", gathering: "عندما تجتمع الأسرة", flexible: "لا وقت محدد" },
     shape: { short: "مساهمة قصيرة وواضحة", shared: "دور مشترك مع الأسرة", connected: "عدة إجراءات مترابطة", unsure: "لا نعرف؛ اقترحوا علينا" },
   };
-  const label = (key: keyof EasyStartAnswers) => {
+  const label = (key: Exclude<keyof EasyStartAnswers, "place">) => {
     const group = labels[key] as Record<string, string>;
-    const value = answers[key];
+    const value = answers[key] ?? "";
     return Object.prototype.hasOwnProperty.call(group, value) ? group[value] : "غير محدد";
   };
-  return `اهتمام: ${label("interest")}، موقف: ${label("routine")}، مكان: ${label("place")}، وقت: ${label("time")}، وبداية: ${label("shape")}`;
+  return `اهتمام: ${label("interest")}، موقف: ${label("routine")}، وقت: ${label("time")}، وبداية: ${label("shape")}`;
 }
 

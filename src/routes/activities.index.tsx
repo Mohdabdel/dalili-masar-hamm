@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect as legacyRedirect } from "@tanstack/react-router";
 import {
   BookOpen,
   CalendarRange,
@@ -16,6 +16,10 @@ import {
 import { PageShell } from "@/components/PageShell";
 
 export const Route = createFileRoute("/activities/")({
+  // مسار قديم خارج خريطة التجربة المعتمدة: الرابط المباشر يُعاد توجيهه ولا يعرض الواجهة القديمة.
+  beforeLoad: () => {
+    throw legacyRedirect({ to: "/space/explore", search: { lens: "event" }, replace: true });
+  },
   head: () => ({
     meta: [
       { title: "دليلي — مساحة مشاركات الأسرة" },

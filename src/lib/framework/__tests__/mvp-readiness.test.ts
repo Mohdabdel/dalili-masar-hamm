@@ -19,7 +19,8 @@ describe("DALILI MVP readiness gate 01", () => {
     expect(summary.mvpReadyCandidate).toBe(true);
     expect(summary.mvpReady).toBe(MVP_READY);
     expect(summary.mvpReady).toBe(false);
-    expect(summary.scopeSize).toBe(30);
+    // 29 بعد إزالة النسخة المكررة من «تحضير مواد النزهة» (Batch 03 مقابل الإطار).
+    expect(summary.scopeSize).toBe(29);
     expect(summary.journeyCount).toBe(3);
   });
 

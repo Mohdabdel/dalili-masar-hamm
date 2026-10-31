@@ -1,8 +1,16 @@
-import { createFileRoute, Navigate, useParams } from "@tanstack/react-router";
+import { createFileRoute, Navigate, redirect, useParams } from "@tanstack/react-router";
 import { LevelPage } from "@/features/space/pages/LevelPage";
 import { curatedByEvent } from "@/features/space/curated-explore";
 
 export const Route = createFileRoute("/_authenticated/space/$eventId/level")({
+  // لا شاشة مستويات في تجربة الأسرة: من الحدث إلى المشاركات مباشرة.
+  beforeLoad: ({ params }) => {
+    const curated = curatedByEvent(params.eventId);
+    if (curated) {
+      throw redirect({ to: "/space/workspace/$specId", params: { specId: curated.specId }, replace: true });
+    }
+    throw redirect({ to: "/space/$eventId/participations", params: { eventId: params.eventId }, replace: true });
+  },
   component: SpaceRoute,
   head: () => ({
     meta: [
