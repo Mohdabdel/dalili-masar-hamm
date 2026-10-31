@@ -387,7 +387,7 @@ function Stations({
           {stations.map((e) => (
             <li key={e.id} className="flex items-center gap-1">
               <Link
-                to={`${base}/$eventId/level`}
+                to={`${base}/$eventId/participations`}
                 params={{ eventId: e.id }}
                 className="flex min-h-[48px] min-w-0 flex-1 items-center justify-between gap-2 rounded-xl px-2 text-start hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >

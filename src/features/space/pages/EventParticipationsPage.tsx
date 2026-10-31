@@ -83,10 +83,7 @@ function LabEventParticipations({ eventId }: { eventId: string }) {
     );
   }
 
-  const specs =
-    base === "/space"
-      ? mvpParticipationsForLevel(eventId, level)
-      : participationsForLevel(eventId, level);
+  const specs = participationsForLevel(eventId, level);
 
   return (
     <LabPage
