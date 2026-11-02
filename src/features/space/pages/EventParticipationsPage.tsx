@@ -14,10 +14,6 @@ import {
   spaceLevelLabel,
 } from "@/lab/data/space/catalog";
 import { useSlice, useSpaceBase } from "@/features/space/store";
-import {
-  pilotEventById,
-  pilotSpecsForEvent,
-} from "@/features/space/community-pilot-corpus";
 
 export function EventParticipationsPage({ eventId }: { eventId: string }) {
   const base = useSpaceBase();
@@ -27,32 +23,6 @@ export function EventParticipationsPage({ eventId }: { eventId: string }) {
 
 /** مسار الأسرة: من الحدث إلى المشاركة مباشرة، بلا شاشة مستويات. */
 function FamilyEventParticipations({ eventId }: { eventId: string }) {
-  const pilotEvent = pilotEventById(eventId);
-  if (pilotEvent) {
-    const pilotSpecs = pilotSpecsForEvent(eventId);
-    return (
-      <LabPage
-        title={pilotEvent.title}
-        intro="نموذج تجريبي من عينة مجتمعية معلنة المصدر. اختاروا المشاركة التي تريدون إعدادها هذه المرة."
-        back={<LabBackLink to="/space/explore">الاستكشاف</LabBackLink>}
-      >
-        <LabSection title={`مشاركات متاحة (${pilotSpecs.length})`}>
-          <LabGrid>
-            {pilotSpecs.map((s) => (
-              <LabChoiceCard
-                key={s.id}
-                title={s.title_ar}
-                hint={`${s.majorSteps.length} خطوات في المسار الكامل`}
-                badge="تجريبي"
-                to="/space/workspace/$specId"
-                params={{ specId: s.id }}
-              />
-            ))}
-          </LabGrid>
-        </LabSection>
-      </LabPage>
-    );
-  }
   const event = getSpaceEvent(eventId);
   if (!event) {
     return (

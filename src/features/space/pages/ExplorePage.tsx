@@ -20,7 +20,6 @@ import {
 } from "@/lab/data/space/catalog";
 import { useSpaceBase } from "@/features/space/store";
 import { CURATED_EXPLORE } from "@/features/space/curated-explore";
-import { COMMUNITY_PILOT_EVENTS } from "@/features/space/community-pilot-corpus";
 import { mvpParticipationsForEvent } from "@/lab/data/space/catalog";
 import { cn } from "@/lib/utils";
 
@@ -112,26 +111,6 @@ export function ExplorePage({ initialLens = "event" }: { initialLens?: Lens }) {
               ))}
             </LabGrid>
           )}
-        </LabSection>
-      )}
-
-      {production && (
-        <LabSection
-          title="نماذج مجتمعية تجريبية"
-          description="نماذج مشاركة في أحداث مجتمعية، معاد صياغتها وفق عقد دليلي الحالي من عينة معلنة المصدر. اختاروا حدثًا لعرض مشاركتيه."
-        >
-          <LabGrid>
-            {COMMUNITY_PILOT_EVENTS.map((event) => (
-              <LabChoiceCard
-                key={event.id}
-                title={event.title}
-                hint={event.description}
-                badge="تجريبي"
-                to={`${base}/$eventId/participations`}
-                params={{ eventId: event.id }}
-              />
-            ))}
-          </LabGrid>
         </LabSection>
       )}
 
